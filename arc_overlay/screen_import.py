@@ -93,7 +93,19 @@ def _max_dimension() -> int:
         return SAFE_MAX_DIMENSION
 
 
-async def _recognize(engine, path: Path) -> list[str]:
+def _line_box(line) -> tuple[str, float, float, float, float]:
+    """(текст, x, y, ширина, высота) строки — рамка вокруг её слов."""
+    rects = [word.bounding_rect for word in line.words]
+    if not rects:
+        return line.text, 0, 0, 0, 0
+    left = min(r.x for r in rects)
+    top = min(r.y for r in rects)
+    right = max(r.x + r.width for r in rects)
+    bottom = max(r.y + r.height for r in rects)
+    return line.text, left, top, right - left, bottom - top
+
+
+async def _recognize(engine, path: Path, boxes: bool = False) -> list:
     from winrt.windows.graphics.imaging import BitmapDecoder
     from winrt.windows.storage import FileAccessMode, StorageFile
 
@@ -102,11 +114,13 @@ async def _recognize(engine, path: Path) -> list[str]:
     decoder = await BitmapDecoder.create_async(stream)
     bitmap = await decoder.get_software_bitmap_async()
     result = await engine.recognize_async(bitmap)
-    return [line.text for line in result.lines]
+    return [_line_box(line) if boxes else line.text for line in result.lines]
 
 
-def recognize_image(image: QImage, work_path: Path) -> list[str]:
+def recognize_image(image: QImage, work_path: Path, boxes: bool = False) -> list:
     """Строки текста на картинке. Вызывать из фонового потока (см. RecognizeThread).
+
+    С boxes=True каждая строка — (текст, x, y, ширина, высота) в пикселях исходной картинки.
 
     Бросает OcrUnavailable, если распознавание недоступно.
     """
@@ -119,9 +133,12 @@ def recognize_image(image: QImage, work_path: Path) -> list[str]:
                              Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
     image.save(str(work_path))
     try:
-        return asyncio.run(asyncio.wait_for(_recognize(engine, work_path), TIMEOUT_SECONDS))
+        lines = asyncio.run(asyncio.wait_for(_recognize(engine, work_path, boxes), TIMEOUT_SECONDS))
     except asyncio.TimeoutError as error:
         raise OcrUnavailable("Распознавание текста не ответило вовремя.") from error
+    if boxes and abs(factor - 1) > 0.05:
+        lines = [(text, x / factor, y / factor, w / factor, h / factor) for text, x, y, w, h in lines]
+    return lines
 
 
 class RecognizeThread(QThread):
@@ -130,14 +147,15 @@ class RecognizeThread(QThread):
     recognized = pyqtSignal(list)
     failed = pyqtSignal(str)
 
-    def __init__(self, image: QImage, work_path: Path):
+    def __init__(self, image: QImage, work_path: Path, boxes: bool = False):
         super().__init__()
         self._image = image
         self._path = work_path
+        self._boxes = boxes
 
     def run(self):
         try:
-            self.recognized.emit(recognize_image(self._image, self._path))
+            self.recognized.emit(recognize_image(self._image, self._path, self._boxes))
         except OcrUnavailable as error:
             self.failed.emit(str(error))
         except Exception as error:  # noqa: BLE001 — любая ошибка Windows API должна дойти до игрока текстом

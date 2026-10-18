@@ -115,6 +115,8 @@ class OverlayCard(QWidget):
         self._before_help = None  # что было на карточке до временной панели (справка, сводка)
         self._panel = ""  # какая временная панель открыта: "help", "shopping" или ""
         self._shopping: list = []
+        self._shopping_note = ""
+        self._item = None  # ItemReport для панели «брать или продавать»
         self._editing = False
         self._drag_offset: QPoint | None = None
         self._previous_window = None
@@ -197,10 +199,23 @@ class OverlayCard(QWidget):
     def toggle_help(self):
         self._toggle_panel("help", self._render_help)
 
-    def toggle_shopping(self, items: list):
-        """Сводка «что собрать»: items — [(предмет, количество, [квесты])]."""
+    def toggle_shopping(self, items: list, note: str = ""):
+        """Сводка «что собрать»: items — [(предмет, количество, [для чего])]."""
         self._shopping = items
+        self._shopping_note = note
         self._toggle_panel("shopping", self._render_shopping)
+
+    @property
+    def panel(self) -> str:
+        return self._panel
+
+    def show_item(self, report):
+        """Панель «брать или продавать» (report — items.ItemReport). Повторный вызов обновляет её."""
+        self._item = report
+        if self._panel == "item":
+            self._render_item()
+        else:
+            self._toggle_panel("item", self._render_item)
 
     def close_panel(self):
         """Закрывает справку или сводку, если открыта, и возвращает прежнее содержимое."""
@@ -314,7 +329,34 @@ class OverlayCard(QWidget):
                 for name, qty, quests in self._shopping
             )
             body = f"<table style='margin-top:{self._px(6)}px;' cellspacing='{self._px(3)}'>{rows}</table>"
+        if self._shopping_note:
+            body += f"<p style='color:{MUTED}; font-size:{self._px(12)}px;'>{esc(self._shopping_note)}</p>"
         self._set_content(title + body, footer=f"{shortcuts.key('shopping')} — закрыть сводку", wide=True)
+
+    def _render_item(self):
+        esc = html.escape
+        r = self._item
+        color = SUCCESS if r.keep else (ACCENT if r.later_quests or r.later_workshops else MUTED)
+        parts = [
+            f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>{esc(r.item.name)}</div>",
+            f"<div style='color:{color}; font-size:{self._px(15)}px; font-weight:bold;'>{esc(r.verdict)}</div>",
+        ]
+
+        def section(title: str, lines: list[str]):
+            if lines:
+                parts.append(f"<p style='margin-top:{self._px(6)}px;'><span style='color:{MUTED};'>{esc(title)}</span>"
+                             f"<br>{'<br>'.join(esc(line) for line in lines)}</p>")
+
+        section("Для активных квестов:", [f"{qty}× — {name}" for name, qty in r.quests])
+        section("Для мастерских (следующий уровень):", [f"{qty}× — {name}, ур. {lv}" for name, lv, qty in r.workshops])
+        later = r.later_quests[:4] + ([f"и ещё {len(r.later_quests) - 4}"] if len(r.later_quests) > 4 else [])
+        section("Понадобится в квестах, которые ещё не взяты:", later)
+        section("Для мастерских позже:", [f"{qty}× — {name}, ур. {lv}" for name, lv, qty in r.later_workshops[:4]])
+        section("Разбирается на:", [", ".join(f"{qty}× {name}" for name, qty in r.recycles)] if r.recycles else [])
+        if r.item.value:
+            parts.append(f"<div style='color:{MUTED};'>Цена продажи: {r.item.value} монет</div>")
+        self._set_content("".join(parts),
+                          footer=f"{shortcuts.key('item')} — проверить другой предмет · закроется само", wide=True)
 
     def _render_help(self):
         rows = "".join(

@@ -2,6 +2,7 @@
 
 Источники:
 - RaidTheory/arcraiders-data (MIT) — официальные русские названия, цели, предметы, враги;
+- RaidTheory/arcraiders-data — также предметы (цена, разборка) и улучшения мастерских;
 - arcraiders.wiki (CC BY-SA 4.0) — гайды со скриншотами и квесты, которых ещё нет в arcraiders-data.
 
 Использование (нужен Pillow: pip install -r requirements-dev.txt):
@@ -170,6 +171,31 @@ class Hints:
             if parts:
                 hints.append(f"{text(item['name'])}: " + "; ".join(parts) + ".")
         return hints[:5]
+
+
+def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[dict]]:
+    """Предметы (для проверки «брать или продавать») и улучшения мастерских по уровням."""
+    items = []
+    for item_id, item in sorted(hints.items.items()):
+        name = text(item["name"])
+        if not name or not re.search("[а-яё]", name, re.I):
+            continue
+        items.append({
+            "id": item_id,
+            "name": name,
+            "en": text(item["name"], "en"),
+            "value": int(item.get("value") or 0),
+            "recycles": {k: int(v) for k, v in (item.get("recyclesInto") or {}).items() if k in hints.items},
+        })
+    workshops = []
+    for path in sorted((data_dir / "hideout").glob("*.json")):
+        bench = json.loads(path.read_text(encoding="utf-8"))
+        levels = [{"level": int(level["level"]),
+                   "items": {r["itemId"]: int(r["quantity"]) for r in level.get("requirementItemIds", [])}}
+                  for level in bench.get("levels", [])]
+        if any(level["items"] for level in levels):  # хранилище улучшается за монеты, верстак — без уровней
+            workshops.append({"id": bench["id"], "name": text(bench["name"]), "levels": levels})
+    return items, workshops
 
 
 def download_images(quest_id: str, images: list[dict], urls: dict[str, str], tr: Translator) -> list[dict]:
@@ -395,6 +421,8 @@ def build(data_dir: Path) -> dict:
             {"search_query": f"ARC Raiders {quest['aliases'][0]} quest guide"})
 
     MISSING_TRANSLATIONS[:] = tr.missing
+    items, workshops = items_and_workshops(data_dir, hints)
+    print(f"Предметов: {len(items)}, мастерских: {len(workshops)}")
     return {
         "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
                   "Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). "
@@ -402,6 +430,8 @@ def build(data_dir: Path) -> dict:
         "maps": [{"id": m, "name": en, "name_ru": ru, "aliases": aliases, **maps.get(m, {})}
                  for m, (en, ru, aliases) in MAPS.items()],
         "quests": quests,
+        "items": items,
+        "workshops": workshops,
     }
 
 

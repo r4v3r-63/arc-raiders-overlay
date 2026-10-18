@@ -150,3 +150,31 @@ def test_zoom_uses_full_size_wiki_image(app, tmp_path):
     big.save(str(path))
     app._full_image_ready(page, path)
     assert app.zoom._pixmap.width() == 3000
+
+
+def test_item_check_shows_panel_and_workshop_levels(app):
+    app._item_cursor = (100, 100)
+    app._item_recognized([("Провода", 80, 80, 100, 30)])
+    assert app.card.panel == "item" and "Провода" in app.card._label.text()
+    app._close_item_panel()
+    assert app.card.panel == ""
+    app._item_recognized([("Пустой экран", 0, 0, 10, 10)])
+    assert "Не нашёл" in app.card._label.text()
+
+    app.set_workshop_level("equipment_bench", 1)
+    app._fill_workshops_menu()
+    assert any("ур. 1" in a.text() for a in app._workshops_menu.actions())
+    app.show_shopping()
+    assert "Верстак для снаряжения → ур. 2" in app.card._label.text()
+    app.show_shopping()
+    app.set_workshop_level("equipment_bench", None)
+    assert "equipment_bench" not in app.progress.workshops
+
+
+def test_workshop_levels_saved(tmp_path):
+    from arc_overlay.progress import Progress
+
+    progress = Progress.load(tmp_path / "p.json")
+    progress.workshops["scrappy"] = 3
+    progress.save()
+    assert Progress.load(tmp_path / "p.json").workshops == {"scrappy": 3}

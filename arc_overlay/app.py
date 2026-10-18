@@ -7,11 +7,12 @@ import os
 import sys
 from pathlib import Path
 
-from PyQt6.QtCore import QLockFile, QStandardPaths, Qt, QTimer, QUrl
-from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QGuiApplication, QIcon, QPainter, QPixmap
+from PyQt6.QtCore import QLockFile, QRect, QStandardPaths, Qt, QTimer, QUrl
+from PyQt6.QtGui import (QAction, QActionGroup, QColor, QCursor, QDesktopServices, QFont, QGuiApplication, QIcon,
+                         QPainter, QPixmap)
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import autostart, guide, paths, shortcuts, winapi
+from . import autostart, guide, items, paths, shortcuts, winapi
 from .hotkeys_window import HotkeysWindow
 from .zoom import ZoomWindow
 from .progress import Progress, shopping_list
@@ -31,6 +32,8 @@ REMOTE_DB_URL = REMOTE_DATA_URL + "quests.json"
 DB_MAX_AGE = 24 * 60 * 60  # свежая база с GitHub скачивается раз в сутки
 UPDATE_CHECK_MAX_AGE = 6 * 60 * 60  # проверка новой версии программы — раз в 6 часов
 SYNC_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
+ITEM_PANEL_MS = 20 * 1000  # панель «брать или продавать» закрывается сама
+ITEM_GRAB_SIZE = (1600, 1100)  # область вокруг курсора, где ищем подсказку с названием предмета
 
 
 def make_tray_icon() -> QIcon:
@@ -61,6 +64,9 @@ class OverlayApp:
         self._map_on = False  # игрок открыл карту с точками квеста
         self._map_index = 0  # какая из карт квеста показана
         self._full_images: dict[str, QPixmap] = {}  # скриншоты вики в полном размере
+        self._item_timer = QTimer()
+        self._item_timer.setSingleShot(True)
+        self._item_timer.timeout.connect(self._close_item_panel)
         self.downloader = CachedDownloader()
         self.progress = Progress.load(paths.user_data_dir() / "прогресс.json")
         self.downloader.cleanup()
@@ -168,6 +174,8 @@ class OverlayApp:
         self._active_menu = menu.addMenu("Активные квесты")
         self._active_menu.aboutToShow.connect(self._fill_active_menu)
         menu.addAction(shopping_action)
+        self._workshops_menu = menu.addMenu("Мастерские")
+        self._workshops_menu.aboutToShow.connect(self._fill_workshops_menu)
         import_action = QAction("Найти квесты на экране", menu)
         import_action.triggered.connect(self.import_from_screen)
         menu.addAction(import_action)
@@ -262,9 +270,16 @@ class OverlayApp:
 
     # --- что собрать ------------------------------------------------------
 
-    def show_shopping(self):
+    def _active_quests(self) -> list[Quest]:
         quests = [self.progress.resolve(self.db, entry) for entry in self.progress.active]
-        self.card.toggle_shopping(shopping_list([q for q in quests if q]))
+        return [q for q in quests if q]
+
+    def show_shopping(self):
+        extra = items.workshop_shopping(self.db, self.progress.workshops)
+        note = ""
+        if self.db.workshops and not self.progress.workshops:
+            note = "Мастерские не учтены: отметьте их уровни в меню значка в трее → «Мастерские»."
+        self.card.toggle_shopping(shopping_list(self._active_quests(), extra), note)
         self.set_card_visible(True)
 
     # --- новая версия программы -------------------------------------------
@@ -327,7 +342,8 @@ class OverlayApp:
         return {
             "input": self.input.open, "next_step": self.next_step, "prev_step": self.prev_step,
             "switch_quest": self.switch_quest, "complete": self.complete_quest,
-            "import": self.import_from_screen, "shopping": self.show_shopping, "guide": self.toggle_guide,
+            "import": self.import_from_screen, "shopping": self.show_shopping,
+            "item": self.check_item, "guide": self.toggle_guide,
             "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
             "map": self.toggle_map,
             "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
@@ -455,6 +471,76 @@ class OverlayApp:
             notice = f"Найдено на экране: {names}. Все они уже в списке."
         self.show_current(notice)
         self.set_card_visible(True)
+
+    # --- брать или продавать ------------------------------------------------
+
+    def check_item(self):
+        """Снимок экрана вокруг курсора → название предмета из подсказки игры → нужен ли он."""
+        if getattr(self, "_recognizer", None) is not None and self._recognizer.isRunning():
+            return
+        self.card.hide()  # карточка не должна закрыть подсказку игры на снимке
+        self.input.hide()
+        QTimer.singleShot(150, self._grab_item)
+
+    def _grab_item(self):
+        screen = QGuiApplication.primaryScreen()
+        image = screen.grabWindow(0).toImage()
+        self._apply_visibility()
+        ratio = image.width() / max(1, screen.geometry().width())
+        pos = QCursor.pos() - screen.geometry().topLeft()
+        cx, cy = pos.x() * ratio, pos.y() * ratio
+        width, height = ITEM_GRAB_SIZE
+        area = QRect(int(cx - width / 2), int(cy - height / 2), width, height).intersected(image.rect())
+        if area.isEmpty():
+            area = image.rect()
+        self._item_cursor = (cx - area.x(), cy - area.y())
+        self._recognizer = screen_import.RecognizeThread(image.copy(area), paths.cache_dir() / "предмет.png",
+                                                         boxes=True)
+        self._recognizer.recognized.connect(self._item_recognized)
+        self._recognizer.failed.connect(lambda message: self._show_notice(message))
+        self._recognizer.start()
+
+    def _item_recognized(self, lines: list):
+        item = items.match_item(self.db, lines, self._item_cursor)
+        if item is None:
+            self._show_notice("Не нашёл название предмета. Наведите курсор на предмет, чтобы появилась подсказка "
+                              f"с его названием, и нажмите {shortcuts.key('item')} ещё раз.")
+            return
+        report = items.item_report(self.db, item, self._active_quests(), self.progress.completed,
+                                   self.progress.workshops)
+        self.card.show_item(report)
+        self.set_card_visible(True)
+        self._item_timer.start(ITEM_PANEL_MS)
+
+    def _close_item_panel(self):
+        if self.card.panel == "item":
+            self.card.close_panel()
+
+    def _fill_workshops_menu(self):
+        """Уровни мастерских: по ним «Что собрать» и проверка предмета считают нужное для улучшений."""
+        self._workshops_menu.clear()
+        for workshop in self.db.workshops:
+            level = self.progress.workshops.get(workshop.id)
+            title = workshop.name + ("" if level is None else " — не построен" if level == 0 else f" — ур. {level}")
+            sub = self._workshops_menu.addMenu(title)
+            group = QActionGroup(sub)
+            first = 0 if workshop.requirements(1) else 1  # если первый уровень бесплатный, «не построен» не бывает
+            options = [(None, "Не учитывать")] + [
+                (lv, "Не построен" if lv == 0 else f"Уровень {lv}" + (" (максимум)" if lv == workshop.max_level else ""))
+                for lv in range(first, workshop.max_level + 1)]
+            for value, text in options:
+                action = sub.addAction(text)
+                action.setCheckable(True)
+                action.setChecked(value == level)
+                action.setActionGroup(group)
+                action.triggered.connect(lambda _checked, w=workshop.id, v=value: self.set_workshop_level(w, v))
+
+    def set_workshop_level(self, workshop_id: str, level: int | None):
+        if level is None:
+            self.progress.workshops.pop(workshop_id, None)
+        else:
+            self.progress.workshops[workshop_id] = level
+        self.progress.save()
 
     def _show_notice(self, text: str):
         """Сообщение на карточке поверх текущего квеста (или приглашения)."""

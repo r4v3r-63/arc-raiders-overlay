@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T16:08:44Z",
+  "generated_at": "2026-10-18T16:22:17Z",
   "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -6240,6 +6240,5185 @@
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369917",
       "guide": null,
       "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Wires+Crossed+quest+guide"
+    }
+  ],
+  "items": [
+    {
+      "id": "acoustic_guitar",
+      "name": "Акустическая гитара",
+      "en": "Acoustic Guitar",
+      "value": 7000,
+      "recycles": {
+        "metal_parts": 4,
+        "wires": 6
+      }
+    },
+    {
+      "id": "adrenaline_shot",
+      "name": "Инъекция адреналина",
+      "en": "Adrenaline Shot",
+      "value": 300,
+      "recycles": {
+        "chemicals": 1,
+        "plastic_parts": 1
+      }
+    },
+    {
+      "id": "advanced_arc_powercell",
+      "name": "Продвинутая энергоячейка ARC",
+      "en": "Advanced ARC Powercell",
+      "value": 640,
+      "recycles": {
+        "arc_powercell": 2
+      }
+    },
+    {
+      "id": "advanced_electrical_components",
+      "name": "Продвинутые электрические компоненты",
+      "en": "Advanced Electrical Components",
+      "value": 1750,
+      "recycles": {
+        "electrical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "advanced_mechanical_components",
+      "name": "Продвинутые механические компоненты",
+      "en": "Advanced Mechanical Components",
+      "value": 1750,
+      "recycles": {
+        "mechanical_components": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "agave",
+      "name": "Агава",
+      "en": "Agave",
+      "value": 1000,
+      "recycles": {
+        "assorted_seeds": 3
+      }
+    },
+    {
+      "id": "agave_juice",
+      "name": "Сок агавы",
+      "en": "Agave Juice",
+      "value": 1800,
+      "recycles": {}
+    },
+    {
+      "id": "air_freshener",
+      "name": "Освежитель воздуха",
+      "en": "Air Freshener",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "alarm_clock",
+      "name": "Будильник",
+      "en": "Alarm Clock",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 6,
+        "processor": 1
+      }
+    },
+    {
+      "id": "alien_duck",
+      "name": "Инопланетная уточка",
+      "en": "Alien Duck",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "ancient_fort_security_code",
+      "name": "Код безопасности Древнего Форта",
+      "en": "Ancient Fort Security Code",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "angled_grip_i",
+      "name": "Угловая рукоятка I",
+      "en": "Angled Grip I",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 6
+      }
+    },
+    {
+      "id": "angled_grip_ii",
+      "name": "Угловая рукоятка II",
+      "en": "Angled Grip II",
+      "value": 2000,
+      "recycles": {
+        "duct_tape": 1,
+        "mechanical_components": 1
+      }
+    },
+    {
+      "id": "angled_grip_ii_blueprint",
+      "name": "Чертеж — Угловая рукоятка II",
+      "en": "Angled Grip II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "angled_grip_iii",
+      "name": "Угловая рукоятка III",
+      "en": "Angled Grip III",
+      "value": 5000,
+      "recycles": {
+        "duct_tape": 2,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "angled_grip_iii_blueprint",
+      "name": "Чертеж — Угловая рукоятка III",
+      "en": "Angled Grip III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "antiseptic",
+      "name": "Антисептик",
+      "en": "Antiseptic",
+      "value": 1000,
+      "recycles": {
+        "chemicals": 10
+      }
+    },
+    {
+      "id": "anvil_blueprint",
+      "name": "Чертеж — Наковальня",
+      "en": "Anvil Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "anvil_i",
+      "name": "Наковальня I",
+      "en": "Anvil I",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "anvil_ii",
+      "name": "Наковальня II",
+      "en": "Anvil II",
+      "value": 7000,
+      "recycles": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 3
+      }
+    },
+    {
+      "id": "anvil_iii",
+      "name": "Наковальня III",
+      "en": "Anvil III",
+      "value": 10000,
+      "recycles": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 4
+      }
+    },
+    {
+      "id": "anvil_iv",
+      "name": "Наковальня IV",
+      "en": "Anvil IV",
+      "value": 13000,
+      "recycles": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 5
+      }
+    },
+    {
+      "id": "anvil_splitter",
+      "name": "Разделитель Наковальни",
+      "en": "Anvil Splitter",
+      "value": 7000,
+      "recycles": {
+        "mod_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "aphelion",
+      "name": "Афелий",
+      "en": "Aphelion",
+      "value": 27500,
+      "recycles": {
+        "complex_gun_parts": 1,
+        "magnetic_accelerator": 2
+      }
+    },
+    {
+      "id": "aphelion_blueprint",
+      "name": "Чертеж — Афелий",
+      "en": "Aphelion Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "apricot",
+      "name": "Абрикос",
+      "en": "Apricot",
+      "value": 640,
+      "recycles": {
+        "assorted_seeds": 3
+      }
+    },
+    {
+      "id": "arc_alloy",
+      "name": "Сплав ARC",
+      "en": "ARC Alloy",
+      "value": 200,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "arc_circuitry",
+      "name": "Электронная схема ARC",
+      "en": "ARC Circuitry",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "arc_coolant",
+      "name": "Охлаждающее вещество ARC",
+      "en": "ARC Coolant",
+      "value": 1000,
+      "recycles": {
+        "chemicals": 16
+      }
+    },
+    {
+      "id": "arc_flex_rubber",
+      "name": "Гибкая резина ARC",
+      "en": "ARC Flex Rubber",
+      "value": 1000,
+      "recycles": {
+        "rubber_parts": 16
+      }
+    },
+    {
+      "id": "arc_motion_core",
+      "name": "Движущее ядро ARC",
+      "en": "ARC Motion Core",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "arc_performance_steel",
+      "name": "Высокопрочная сталь ARC",
+      "en": "ARC Performance Steel",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 12
+      }
+    },
+    {
+      "id": "arc_powercell",
+      "name": "Энергоячейка ARC",
+      "en": "ARC Powercell",
+      "value": 270,
+      "recycles": {}
+    },
+    {
+      "id": "arc_synthetic_resin",
+      "name": "Синтетическая смола ARC",
+      "en": "ARC Synthetic Resin",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 14
+      }
+    },
+    {
+      "id": "arc_thermo_lining",
+      "name": "Термоподкладка ARC",
+      "en": "ARC Thermo Lining",
+      "value": 1000,
+      "recycles": {
+        "fabric": 16
+      }
+    },
+    {
+      "id": "arpeggio_i",
+      "name": "Арпеджио I",
+      "en": "Arpeggio I",
+      "value": 5500,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "arpeggio_ii",
+      "name": "Арпеджио II",
+      "en": "Arpeggio II",
+      "value": 8000,
+      "recycles": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 3
+      }
+    },
+    {
+      "id": "arpeggio_iii",
+      "name": "Арпеджио III",
+      "en": "Arpeggio III",
+      "value": 11500,
+      "recycles": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 4
+      }
+    },
+    {
+      "id": "arpeggio_iv",
+      "name": "Арпеджио IV",
+      "en": "Arpeggio IV",
+      "value": 15000,
+      "recycles": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 5
+      }
+    },
+    {
+      "id": "assorted_seeds",
+      "name": "Различные семена",
+      "en": "Assorted Seeds",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "bandage",
+      "name": "Бинт",
+      "en": "Bandage",
+      "value": 250,
+      "recycles": {
+        "fabric": 2
+      }
+    },
+    {
+      "id": "barricade_kit",
+      "name": "Набор баррикад",
+      "en": "Barricade Kit",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 4
+      }
+    },
+    {
+      "id": "barricade_kit_blueprint",
+      "name": "Чертёж набора баррикад",
+      "en": "Barricade Kit Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "bastion_cell",
+      "name": "Ячейка Бастиона",
+      "en": "Bastion Cell",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "battery",
+      "name": "Батарея",
+      "en": "Battery",
+      "value": 250,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "bettina_blueprint",
+      "name": "Чертеж — Беттина",
+      "en": "Bettina Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "bettina_i",
+      "name": "Беттина I",
+      "en": "Bettina I",
+      "value": 8000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "bettina_ii",
+      "name": "Беттина II",
+      "en": "Bettina II",
+      "value": 11000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "bettina_iii",
+      "name": "Беттина III",
+      "en": "Bettina III",
+      "value": 14000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "bettina_iv",
+      "name": "Беттина IV",
+      "en": "Bettina IV",
+      "value": 18000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "bicycle_pump",
+      "name": "Велосипедный насос",
+      "en": "Bicycle Pump",
+      "value": 2000,
+      "recycles": {
+        "canister": 4,
+        "metal_parts": 10
+      }
+    },
+    {
+      "id": "binoculars",
+      "name": "Бинокль",
+      "en": "Binoculars",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 4,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "blaze_grenade",
+      "name": "Пламенная граната",
+      "en": "Blaze Grenade",
+      "value": 1600,
+      "recycles": {
+        "metal_parts": 4,
+        "oil": 2
+      }
+    },
+    {
+      "id": "blaze_grenade_blueprint",
+      "name": "Чертёж огненной гранаты",
+      "en": "Blaze Grenade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "blaze_grenade_trap",
+      "name": "Лазерная ловушка: Огонь",
+      "en": "Blaze Grenade Trap",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "bloated_tuna_can",
+      "name": "Вздутая банка тунца",
+      "en": "Bloated Tuna Can",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "blue_gate_cellar_key",
+      "name": "Ключ от подвала Синих Врат",
+      "en": "Blue Gate Cellar Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "blue_gate_communication_tower_key",
+      "name": "Ключ от Коммуникационной Башни у Синих Ворот",
+      "en": "Blue Gate Communication Tower Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "blue_gate_confiscation_room_key",
+      "name": "Ключ от комнаты конфиската Синих ворот",
+      "en": "Blue Gate Confiscation Room Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "blue_gate_village_key",
+      "name": "Ключ от деревни Синих Врат",
+      "en": "Blue Gate Village Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "blue_light_stick",
+      "name": "Синий химический фонарь",
+      "en": "Blue Light Stick",
+      "value": 150,
+      "recycles": {
+        "chemicals": 1
+      }
+    },
+    {
+      "id": "blue_light_stick_blueprint",
+      "name": "Чертёж синего светящегося стержня",
+      "en": "Blue Light Stick Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "bobcat_blueprint",
+      "name": "Чертеж — Бобкэт",
+      "en": "Bobcat Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "bobcat_i",
+      "name": "Бобкэт I",
+      "en": "Bobcat I",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "light_gun_parts": 2
+      }
+    },
+    {
+      "id": "bobcat_ii",
+      "name": "Бобкэт II",
+      "en": "Bobcat II",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "light_gun_parts": 3
+      }
+    },
+    {
+      "id": "bobcat_iii",
+      "name": "Бобкэт III",
+      "en": "Bobcat III",
+      "value": 22000,
+      "recycles": {
+        "advanced_mechanical_components": 4,
+        "light_gun_parts": 4
+      }
+    },
+    {
+      "id": "bobcat_iv",
+      "name": "Бобкэт IV",
+      "en": "Bobcat IV",
+      "value": 27000,
+      "recycles": {
+        "advanced_mechanical_components": 5,
+        "light_gun_parts": 4
+      }
+    },
+    {
+      "id": "bombardier_cell",
+      "name": "Ячейка Бомбардира",
+      "en": "Bombardier Cell",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "breathtaking_snow_globe",
+      "name": "Захватывающий снежный шар",
+      "en": "Breathtaking Snow Globe",
+      "value": 7000,
+      "recycles": {}
+    },
+    {
+      "id": "broken_flashlight",
+      "name": "Сломанный фонарик",
+      "en": "Broken Flashlight",
+      "value": 1000,
+      "recycles": {
+        "battery": 2,
+        "metal_parts": 6
+      }
+    },
+    {
+      "id": "broken_guidance_system",
+      "name": "Сломанная система наведения",
+      "en": "Broken Guidance System",
+      "value": 2000,
+      "recycles": {
+        "processor": 4
+      }
+    },
+    {
+      "id": "broken_handheld_radio",
+      "name": "Сломанное портативное радио",
+      "en": "Broken Handheld Radio",
+      "value": 2000,
+      "recycles": {
+        "sensors": 3,
+        "wires": 2
+      }
+    },
+    {
+      "id": "broken_taser",
+      "name": "Сломанный электрошокер",
+      "en": "Broken Taser",
+      "value": 1000,
+      "recycles": {
+        "battery": 2,
+        "wires": 2
+      }
+    },
+    {
+      "id": "buried_city_hospital_key",
+      "name": "Ключ от больницы Погребённого города",
+      "en": "Buried City Hospital Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "buried_city_jkv_employee_access_card",
+      "name": "Карта доступа сотрудника JKV Погребённого города",
+      "en": "Buried City JKV Employee Access Card",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "buried_city_residential_master_key",
+      "name": "Главный ключ от жилых районов Погребённого города",
+      "en": "Buried City Residential Master Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "buried_city_town_hall_key",
+      "name": "Ключ от мэрии в Погребенном городе",
+      "en": "Buried City Town Hall Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "burletta_blueprint",
+      "name": "Чертеж Бурлетты",
+      "en": "Burletta Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "burletta_i",
+      "name": "Бурлетта I",
+      "en": "Burletta I",
+      "value": 2900,
+      "recycles": {
+        "mechanical_components": 1,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "burletta_ii",
+      "name": "Бурлетта II",
+      "en": "Burletta II",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "burletta_iii",
+      "name": "Бурлетта III",
+      "en": "Burletta III",
+      "value": 7000,
+      "recycles": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 3
+      }
+    },
+    {
+      "id": "burletta_iv",
+      "name": "Бурлетта IV",
+      "en": "Burletta IV",
+      "value": 10000,
+      "recycles": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 4
+      }
+    },
+    {
+      "id": "burned_arc_circuitry",
+      "name": "Сгоревшая схема Arc",
+      "en": "Burned Arc Circuitry",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "burnt_out_candles",
+      "name": "Сгоревшие свечи",
+      "en": "Burnt-Out Candles",
+      "value": 640,
+      "recycles": {}
+    },
+    {
+      "id": "camera_lens",
+      "name": "Объектив камеры",
+      "en": "Camera Lens",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 8
+      }
+    },
+    {
+      "id": "candle_holder",
+      "name": "Подсвечник",
+      "en": "Candle Holder",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "candleberries",
+      "name": "Свечные ягоды",
+      "en": "Candleberries",
+      "value": 460,
+      "recycles": {
+        "assorted_seeds": 2
+      }
+    },
+    {
+      "id": "canister",
+      "name": "Канистра",
+      "en": "Canister",
+      "value": 300,
+      "recycles": {
+        "plastic_parts": 3
+      }
+    },
+    {
+      "id": "canto_blueprint",
+      "name": "Canto Чертеж",
+      "en": "Canto Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "cat_bed",
+      "name": "Кошачья лежанка",
+      "en": "Cat Bed",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "celeste_journal",
+      "name": "Дневник Селесты",
+      "en": "Celeste's Journal",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "chemicals",
+      "name": "Химикаты",
+      "en": "Chemicals",
+      "value": 50,
+      "recycles": {}
+    },
+    {
+      "id": "coffee_pot",
+      "name": "Кофейник",
+      "en": "Coffee Pot",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "colorful_shoes_green",
+      "name": "Разноцветная обувь (зеленая)",
+      "en": "Colorful Shoes (Green)",
+      "value": 7000,
+      "recycles": {}
+    },
+    {
+      "id": "colorful_shoes_red",
+      "name": "Разноцветная обувь (красная)",
+      "en": "Colorful Shoes (Red)",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "colorful_shoes_silver",
+      "name": "Разноцветная обувь (серебристая)",
+      "en": "Colorful Shoes (Silver)",
+      "value": 10000,
+      "recycles": {}
+    },
+    {
+      "id": "combat_mk1",
+      "name": "Бой 1",
+      "en": "Combat Mk. 1",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 3,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "combat_mk2",
+      "name": "Бой 2",
+      "en": "Combat Mk. 2",
+      "value": 2000,
+      "recycles": {
+        "electrical_components": 1,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "combat_mk3_aggressive",
+      "name": "Боевой Mk. 3 (Агрессивный)",
+      "en": "Combat Mk. 3 (Aggressive)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "combat_mk3_aggressive_blueprint",
+      "name": "Чертёж Боевой Mk. 3 (Агрессивный)",
+      "en": "Combat Mk. 3 (Aggressive) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "combat_mk3_flanking",
+      "name": "Боевой Mk. 3 (Фланговый)",
+      "en": "Combat Mk. 3 (Flanking)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "combat_mk3_flanking_blueprint",
+      "name": "Чертеж — Боевой Mk. 3 (Фланговый)",
+      "en": "Combat Mk. 3 (Flanking) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "comet_igniter",
+      "name": "Воспламенитель «Комета»",
+      "en": "Comet Igniter",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 2,
+        "crude_explosives": 2
+      }
+    },
+    {
+      "id": "compensator_i",
+      "name": "Компенсатор I",
+      "en": "Compensator I",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 5
+      }
+    },
+    {
+      "id": "compensator_ii",
+      "name": "Компенсатор II",
+      "en": "Compensator II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "compensator_ii_blueprint",
+      "name": "Чертёж компенсатора II",
+      "en": "Compensator II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "compensator_iii",
+      "name": "Компенсатор III",
+      "en": "Compensator III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 2
+      }
+    },
+    {
+      "id": "compensator_iii_blueprint",
+      "name": "Чертеж — Компенсатор III",
+      "en": "Compensator III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "complex_gun_parts",
+      "name": "Сложные детали оружия",
+      "en": "Complex Gun Parts",
+      "value": 3000,
+      "recycles": {
+        "simple_gun_parts": 3
+      }
+    },
+    {
+      "id": "complex_gun_parts_blueprint",
+      "name": "Чертёж сложных деталей оружия",
+      "en": "Complex Gun Parts Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "coolant",
+      "name": "Охлаждающая жидкость",
+      "en": "Coolant",
+      "value": 1000,
+      "recycles": {
+        "chemicals": 5,
+        "oil": 2
+      }
+    },
+    {
+      "id": "cooling_coil",
+      "name": "Охлаждающий змеевик",
+      "en": "Cooling Coil",
+      "value": 1000,
+      "recycles": {
+        "chemicals": 6,
+        "steel_spring": 2
+      }
+    },
+    {
+      "id": "cooling_fan",
+      "name": "Охлаждающий вентилятор",
+      "en": "Cooling Fan",
+      "value": 2000,
+      "recycles": {
+        "plastic_parts": 14,
+        "wires": 4
+      }
+    },
+    {
+      "id": "cracked_bioscanner",
+      "name": "Треснувший биосканер",
+      "en": "Cracked Bioscanner",
+      "value": 1000,
+      "recycles": {
+        "battery": 3,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "crash_mat",
+      "name": "Посадочный мат",
+      "en": "Crash Mat",
+      "value": 1200,
+      "recycles": {
+        "fabric": 6,
+        "plastic_parts": 3
+      }
+    },
+    {
+      "id": "crash_mat_blueprint",
+      "name": "Чертеж посадочного мата",
+      "en": "Crash Mat Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "crude_explosives",
+      "name": "Самодельная взрывчатка",
+      "en": "Crude Explosives",
+      "value": 270,
+      "recycles": {
+        "chemicals": 3
+      }
+    },
+    {
+      "id": "crumpled_plastic_bottle",
+      "name": "Смятая пластиковая бутылка",
+      "en": "Crumpled Plastic Bottle",
+      "value": 270,
+      "recycles": {
+        "plastic_parts": 4
+      }
+    },
+    {
+      "id": "dam_control_tower_key",
+      "name": "Ключ от диспетчерской вышки у дамбы",
+      "en": "Dam Control Tower Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "dam_controlled_access_zone_key",
+      "name": "Ключ от зоны ограниченного доступа на Дамбе",
+      "en": "Dam Controlled Access Zone Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "dam_staff_room_key",
+      "name": "Ключ от комнаты персонала дамбы",
+      "en": "Dam Staff Room Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "dam_surveillance_key",
+      "name": "Ключ от комнаты наблюдения дамбы",
+      "en": "Dam Surveillance Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "dam_testing_annex_key",
+      "name": "Ключ от испытательной пристройки плотины",
+      "en": "Dam Testing Annex Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "damaged_arc_motion_core",
+      "name": "Поврежденное движущее ядро ARC",
+      "en": "Damaged ARC Motion Core",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "damaged_arc_powercell",
+      "name": "Повреждённая энергоячейка ARC",
+      "en": "Damaged ARC Powercell",
+      "value": 293,
+      "recycles": {
+        "arc_alloy": 1
+      }
+    },
+    {
+      "id": "damaged_fireball_burner",
+      "name": "Поврежденная горелка огненного шара",
+      "en": "Damaged Fireball Burner",
+      "value": 270,
+      "recycles": {
+        "arc_alloy": 1
+      }
+    },
+    {
+      "id": "damaged_heat_sink",
+      "name": "Поврежденный теплопоглотитель",
+      "en": "Damaged Heat Sink",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 6,
+        "wires": 2
+      }
+    },
+    {
+      "id": "damaged_hornet_driver",
+      "name": "Поврежденный драйвер Шершня",
+      "en": "Damaged Hornet Driver",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "damaged_rocketeer_driver",
+      "name": "Поврежденный драйвер Ракетчика",
+      "en": "Damaged Rocketeer Driver",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "damaged_snitch_scanner",
+      "name": "Поврежденный сканер Snitch",
+      "en": "Damaged Snitch Scanner",
+      "value": 659,
+      "recycles": {}
+    },
+    {
+      "id": "damaged_tick_pod",
+      "name": "Поврежденная оболочка Блохи",
+      "en": "Damaged Tick Pod",
+      "value": 270,
+      "recycles": {
+        "arc_alloy": 1
+      }
+    },
+    {
+      "id": "damaged_wasp_driver",
+      "name": "Поврежденная оболочка Осы",
+      "en": "Damaged Wasp Driver",
+      "value": 270,
+      "recycles": {
+        "arc_alloy": 1
+      }
+    },
+    {
+      "id": "dart_board",
+      "name": "Мишень для дартса",
+      "en": "Dart Board",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "deadline",
+      "name": "Крайний срок",
+      "en": "Deadline",
+      "value": 6000,
+      "recycles": {
+        "arc_circuitry": 1,
+        "explosive_compound": 1
+      }
+    },
+    {
+      "id": "deadline_blueprint",
+      "name": "Чертеж Deadline",
+      "en": "Deadline Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "defibrillator",
+      "name": "Дефибриллятор",
+      "en": "Defibrillator",
+      "value": 1000,
+      "recycles": {
+        "moss": 1,
+        "plastic_parts": 1
+      }
+    },
+    {
+      "id": "defibrillator_blueprint",
+      "name": "Чертеж — Дефибриллятор",
+      "en": "Defibrillator Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "deflated_football",
+      "name": "Сдутый футбольный мяч",
+      "en": "Deflated Football",
+      "value": 1000,
+      "recycles": {
+        "fabric": 9,
+        "rubber_parts": 9
+      }
+    },
+    {
+      "id": "degraded_arc_rubber",
+      "name": "Изношенная резина ARC",
+      "en": "Degraded ARC Rubber",
+      "value": 640,
+      "recycles": {
+        "rubber_parts": 11
+      }
+    },
+    {
+      "id": "diving_goggles",
+      "name": "Очки для плавания",
+      "en": "Diving Goggles",
+      "value": 640,
+      "recycles": {
+        "rubber_parts": 12
+      }
+    },
+    {
+      "id": "dockmasters_detector",
+      "name": "Детектор начальника порта",
+      "en": "Dockmaster's Detector",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "dodgers_note",
+      "name": "Записка Доджера",
+      "en": "Dodger's Note",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "dog_collar",
+      "name": "Собачий ошейник",
+      "en": "Dog Collar",
+      "value": 640,
+      "recycles": {
+        "fabric": 8,
+        "metal_parts": 1
+      }
+    },
+    {
+      "id": "dolabra_blueprint",
+      "name": "Dolabra Чертеж",
+      "en": "Dolabra Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "doodly_duck",
+      "name": "Разрисованная уточка",
+      "en": "Doodly Duck",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "door_blocker",
+      "name": "Блокиратор дверей",
+      "en": "Door Blocker",
+      "value": 270,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "dried_out_arc_resin",
+      "name": "Высохшая смола ARC",
+      "en": "Dried-Out ARC Resin",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 9
+      }
+    },
+    {
+      "id": "duct_tape",
+      "name": "Скотч",
+      "en": "Duct Tape",
+      "value": 300,
+      "recycles": {
+        "fabric": 3
+      }
+    },
+    {
+      "id": "durable_cloth",
+      "name": "Прочная ткань",
+      "en": "Durable Cloth",
+      "value": 640,
+      "recycles": {
+        "fabric": 6
+      }
+    },
+    {
+      "id": "dusty_film_reel",
+      "name": "Пыльная катушка с пленкой",
+      "en": "Dusty Film Reel",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "electrical_components",
+      "name": "Электрические компоненты",
+      "en": "Electrical Components",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 3,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "elephant_obelisk",
+      "name": "Обелиск слона",
+      "en": "Elephant Obelisk",
+      "value": 10000,
+      "recycles": {}
+    },
+    {
+      "id": "empty_wine_bottle",
+      "name": "Пустая бутылка из-под вина",
+      "en": "Empty Wine Bottle",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "energy_clip",
+      "name": "Энергетический зажим",
+      "en": "Energy Clip",
+      "value": 200,
+      "recycles": {}
+    },
+    {
+      "id": "equalizer",
+      "name": "Уравнитель",
+      "en": "Equalizer",
+      "value": 27500,
+      "recycles": {
+        "complex_gun_parts": 1,
+        "magnetic_accelerator": 2
+      }
+    },
+    {
+      "id": "equalizer_blueprint",
+      "name": "Чертёж Уравнителя",
+      "en": "Equalizer Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "equatorial_sundial",
+      "name": "Экваториальные солнечные часы",
+      "en": "Equatorial Sundial",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "espresso_machine_parts",
+      "name": "Детали кофемашины",
+      "en": "Espresso Machine Parts",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "esr_analyzer",
+      "name": "Анализатор СОЭ",
+      "en": "ESR Analyzer",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "exodus_modules",
+      "name": "Модули Исхода",
+      "en": "Exodus Modules",
+      "value": 2750,
+      "recycles": {
+        "magnet": 2,
+        "processor": 2
+      }
+    },
+    {
+      "id": "experimental_seed_sample",
+      "name": "Экспериментальный образец семян",
+      "en": "Experimental Seed Sample",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "expired_pasta",
+      "name": "Просроченные макароны",
+      "en": "Expired Pasta",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "expired_respirator",
+      "name": "Просроченный респиратор",
+      "en": "Expired Respirator",
+      "value": 640,
+      "recycles": {
+        "fabric": 4,
+        "rubber_parts": 8
+      }
+    },
+    {
+      "id": "expired_security_code",
+      "name": "Просроченный код безопасности",
+      "en": "Expired Security Code",
+      "value": 10,
+      "recycles": {}
+    },
+    {
+      "id": "explosive_compound",
+      "name": "Взрывчатое вещество",
+      "en": "Explosive Compound",
+      "value": 1000,
+      "recycles": {
+        "crude_explosives": 2
+      }
+    },
+    {
+      "id": "explosive_mine",
+      "name": "Взрывная мина",
+      "en": "Explosive Mine",
+      "value": 1500,
+      "recycles": {
+        "oil": 1,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "explosive_mine_blueprint",
+      "name": "Чертеж — Взрывная мина",
+      "en": "Explosive Mine Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_barrel_i",
+      "name": "Удлиненный ствол I",
+      "en": "Extended Barrel I",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 5
+      }
+    },
+    {
+      "id": "extended_barrel_ii",
+      "name": "Удлиненный ствол II",
+      "en": "Extended Barrel II",
+      "value": 3000,
+      "recycles": {
+        "mechanical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "extended_barrel_ii_blueprint",
+      "name": "Чертеж — Удлиненный ствол II",
+      "en": "Extended Barrel II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_barrel_iii",
+      "name": "Удлиненный ствол III",
+      "en": "Extended Barrel III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "extended_barrel_iii_blueprint",
+      "name": "Чертеж — Удлиненный ствол III",
+      "en": "Extended Barrel III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_light_mag_i",
+      "name": "Увеличенный магазин для легкого оружия I",
+      "en": "Extended Light Mag I",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 6
+      }
+    },
+    {
+      "id": "extended_light_mag_ii",
+      "name": "Увеличенный магазин для легкого оружия II",
+      "en": "Extended Light Mag II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "extended_light_mag_ii_blueprint",
+      "name": "Чертеж — Увеличенный магазин для легкого оружия II",
+      "en": "Extended Light Mag II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_light_mag_iii",
+      "name": "Увеличенный магазин для легкого оружия III",
+      "en": "Extended Light Mag III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "steel_spring": 2
+      }
+    },
+    {
+      "id": "extended_light_mag_iii_blueprint",
+      "name": "Чертеж — Увеличенный магазин для легкого оружия III",
+      "en": "Extended Light Mag III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_medium_mag_i",
+      "name": "Увеличенный магазин для оружия среднего калибра I",
+      "en": "Extended Medium Mag I",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 6
+      }
+    },
+    {
+      "id": "extended_medium_mag_ii",
+      "name": "Увеличенный магазин для оружия среднего калибра II",
+      "en": "Extended Medium Mag II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "extended_medium_mag_ii_blueprint",
+      "name": "Чертеж — Увеличенный магазин для оружия среднего калибра II",
+      "en": "Extended Medium Mag II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_medium_mag_iii",
+      "name": "Увеличенный магазин для оружия среднего калибра III",
+      "en": "Extended Medium Mag III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "steel_spring": 2
+      }
+    },
+    {
+      "id": "extended_medium_mag_iii_blueprint",
+      "name": "Чертеж — Увеличенный магазин для оружия среднего калибра III",
+      "en": "Extended Medium Mag III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_shotgun_mag_i",
+      "name": "Увеличенный магазин дробовика II",
+      "en": "Extended Shotgun Mag I",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 6
+      }
+    },
+    {
+      "id": "extended_shotgun_mag_ii",
+      "name": "Увеличенный магазин дробовика II",
+      "en": "Extended Shotgun Mag II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "extended_shotgun_mag_ii_blueprint",
+      "name": "Чертёж расширенного магазина для дробовика II",
+      "en": "Extended Shotgun Mag II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "extended_shotgun_mag_iii",
+      "name": "Расширенный магазин для дробовика III",
+      "en": "Extended Shotgun Mag III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "steel_spring": 2
+      }
+    },
+    {
+      "id": "extended_shotgun_mag_iii_blueprint",
+      "name": "Чертеж расширенного магазина для дробовика III",
+      "en": "Extended Shotgun Mag III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "fabric",
+      "name": "Ткань",
+      "en": "Fabric",
+      "value": 50,
+      "recycles": {}
+    },
+    {
+      "id": "faded_photograph",
+      "name": "Выцветшая фотография",
+      "en": "Faded Photograph",
+      "value": 640,
+      "recycles": {}
+    },
+    {
+      "id": "familiar_duck",
+      "name": "Знакомая уточка",
+      "en": "Familiar Duck",
+      "value": 7000,
+      "recycles": {}
+    },
+    {
+      "id": "ferro_i",
+      "name": "Ферро I",
+      "en": "Ferro I",
+      "value": 475,
+      "recycles": {
+        "metal_parts": 2,
+        "rubber_parts": 1
+      }
+    },
+    {
+      "id": "ferro_ii",
+      "name": "Ферро II",
+      "en": "Ferro II",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 4,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "ferro_iii",
+      "name": "Ферро III",
+      "en": "Ferro III",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 6,
+        "simple_gun_parts": 1
+      }
+    },
+    {
+      "id": "ferro_iv",
+      "name": "Ферро IV",
+      "en": "Ferro IV",
+      "value": 2900,
+      "recycles": {
+        "mechanical_components": 1,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "fertilizer",
+      "name": "Удобрение",
+      "en": "Fertilizer",
+      "value": 1000,
+      "recycles": {
+        "assorted_seeds": 2
+      }
+    },
+    {
+      "id": "film_reel",
+      "name": "Кинопленка",
+      "en": "Film Reel",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "fine_wristwatch",
+      "name": "Изысканные наручные часы",
+      "en": "Fine Wristwatch",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "fireball_burner",
+      "name": "Горелка Огнешара",
+      "en": "Fireball Burner",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 1,
+        "crude_explosives": 1
+      }
+    },
+    {
+      "id": "firecracker",
+      "name": "Петарда",
+      "en": "Firecracker",
+      "value": 270,
+      "recycles": {
+        "plastic_parts": 3
+      }
+    },
+    {
+      "id": "firefly_burner",
+      "name": "Горелка «Светлячок»",
+      "en": "Firefly Burner",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 2,
+        "crude_explosives": 2
+      }
+    },
+    {
+      "id": "fireworks_box",
+      "name": "Коробка фейерверков",
+      "en": "Fireworks Box",
+      "value": 2000,
+      "recycles": {
+        "explosive_compound": 1
+      }
+    },
+    {
+      "id": "fireworks_box_blueprint",
+      "name": "Чертеж — Коробка фейерверков",
+      "en": "Fireworks Box Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "first_wave_compass",
+      "name": "Компас Первой Волны",
+      "en": "First Wave Compass",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "first_wave_rations",
+      "name": "Пайки Первой Волны",
+      "en": "First Wave Rations",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "first_wave_tape",
+      "name": "Кассета Первой Волны",
+      "en": "First Wave Tape",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "flame_spray",
+      "name": "Пламенный балончик",
+      "en": "Flame Spray",
+      "value": 2000,
+      "recycles": {
+        "canister": 1,
+        "fireball_burner": 1
+      }
+    },
+    {
+      "id": "flashy_duck",
+      "name": "Яркая уточка",
+      "en": "Flashy Duck",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "flow_controller",
+      "name": "Регулятор Потока",
+      "en": "Flow Controller",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "flushing_terminal_key",
+      "name": "Ключ от терминала Flushing",
+      "en": "Flushing Terminal Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "fossilized_lightning",
+      "name": "Окаменевшая молния",
+      "en": "Fossilized Lightning",
+      "value": 4000,
+      "recycles": {
+        "explosive_compound": 3
+      }
+    },
+    {
+      "id": "free_loadout_augment",
+      "name": "Бесплатное улучшение снаряжения",
+      "en": "Free Loadout Augment",
+      "value": 660,
+      "recycles": {
+        "plastic_parts": 6,
+        "rubber_parts": 6
+      }
+    },
+    {
+      "id": "frequency_modulation_box",
+      "name": "Коробка частотной модуляции",
+      "en": "Frequency Modulation Box",
+      "value": 3000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "fried_motherboard",
+      "name": "Сгоревшая материнская плата",
+      "en": "Fried Motherboard",
+      "value": 2000,
+      "recycles": {
+        "electrical_components": 2,
+        "plastic_parts": 5
+      }
+    },
+    {
+      "id": "fruit_mix",
+      "name": "Фруктовый микс",
+      "en": "Fruit Mix",
+      "value": 1800,
+      "recycles": {}
+    },
+    {
+      "id": "frying_pan",
+      "name": "Сковорода",
+      "en": "Frying Pan",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "garlic_press",
+      "name": "Пресс для чеснока",
+      "en": "Garlic Press",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 12
+      }
+    },
+    {
+      "id": "gas_grenade",
+      "name": "Газовая граната",
+      "en": "Gas Grenade",
+      "value": 270,
+      "recycles": {
+        "chemicals": 1,
+        "rubber_parts": 1
+      }
+    },
+    {
+      "id": "gas_grenade_trap",
+      "name": "Лазерная ловушка: Газ",
+      "en": "Gas Grenade Trap",
+      "value": 300,
+      "recycles": {}
+    },
+    {
+      "id": "gas_mine",
+      "name": "Газовая мина",
+      "en": "Gas Mine",
+      "value": 270,
+      "recycles": {
+        "chemicals": 1,
+        "rubber_parts": 1
+      }
+    },
+    {
+      "id": "gas_mine_blueprint",
+      "name": "Чертеж — Газовая мина",
+      "en": "Gas Mine Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "geiger_counter",
+      "name": "Счётчик Гейгера",
+      "en": "Geiger Counter",
+      "value": 3500,
+      "recycles": {
+        "battery": 3,
+        "exodus_modules": 1
+      }
+    },
+    {
+      "id": "gentle_duck",
+      "name": "Нежная уточка",
+      "en": "Gentle Duck",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "glitched_arc_circuitry",
+      "name": "Глючная схема ARC",
+      "en": "Glitched ARC Circuitry",
+      "value": 5000,
+      "recycles": {
+        "arc_alloy": 6,
+        "exodus_modules": 1
+      }
+    },
+    {
+      "id": "glitched_arc_light_ring",
+      "name": "Глючное световое кольцо ARC",
+      "en": "Glitched ARC Light Ring",
+      "value": 3000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "glitched_arc_phased_array",
+      "name": "Глюченая фазированная решётка ARC",
+      "en": "Glitched ARC Phased Array",
+      "value": 2000,
+      "recycles": {
+        "arc_alloy": 3,
+        "sensors": 2
+      }
+    },
+    {
+      "id": "glitched_arc_power_converter",
+      "name": "Преобразователь энергии дефектной машины ARC",
+      "en": "Glitched ARC Power Converter",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "glitched_arc_transmitter",
+      "name": "Глючный передатчик ARC",
+      "en": "Glitched ARC Transmitter",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 1,
+        "electrical_components": 1
+      }
+    },
+    {
+      "id": "great_mullein",
+      "name": "Коровяк",
+      "en": "Great Mullein",
+      "value": 300,
+      "recycles": {
+        "assorted_seeds": 2
+      }
+    },
+    {
+      "id": "green_light_stick",
+      "name": "Зеленый химический фонарь",
+      "en": "Green Light Stick",
+      "value": 150,
+      "recycles": {
+        "chemicals": 1
+      }
+    },
+    {
+      "id": "green_light_stick_blueprint",
+      "name": "Чертёж зелёной светящейся палочки",
+      "en": "Green Light Stick Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "hairpin_i",
+      "name": "Заколка I",
+      "en": "Hairpin I",
+      "value": 450,
+      "recycles": {
+        "metal_parts": 2,
+        "rubber_parts": 1
+      }
+    },
+    {
+      "id": "hairpin_ii",
+      "name": "Заколка II",
+      "en": "Hairpin II",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 4,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "hairpin_iii",
+      "name": "Заколка III",
+      "en": "Hairpin III",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 6,
+        "simple_gun_parts": 1
+      }
+    },
+    {
+      "id": "hairpin_iv",
+      "name": "Заколка IV",
+      "en": "Hairpin IV",
+      "value": 2900,
+      "recycles": {
+        "mechanical_components": 1,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "headphones",
+      "name": "Наушники",
+      "en": "Headphones",
+      "value": 1000,
+      "recycles": {
+        "rubber_parts": 7,
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "heavy_ammo",
+      "name": "Тяжелый патрон",
+      "en": "Heavy Ammo",
+      "value": 12,
+      "recycles": {}
+    },
+    {
+      "id": "heavy_fuze_grenade",
+      "name": "Тяжелая граната с детонатором",
+      "en": "Heavy Fuze Grenade",
+      "value": 1600,
+      "recycles": {
+        "oil": 1,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "heavy_gun_parts",
+      "name": "Детали для тяжелого оружия",
+      "en": "Heavy Gun Parts",
+      "value": 700,
+      "recycles": {
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "heavy_gun_parts_blueprint",
+      "name": "Чертеж деталей тяжелого оружия",
+      "en": "Heavy Gun Parts Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "heavy_shield",
+      "name": "Тяжелый щит",
+      "en": "Heavy Shield",
+      "value": 5500,
+      "recycles": {
+        "arc_circuitry": 2,
+        "voltage_converter": 1
+      }
+    },
+    {
+      "id": "herbal_bandage",
+      "name": "Травяной бинт",
+      "en": "Herbal Bandage",
+      "value": 900,
+      "recycles": {
+        "assorted_seeds": 2,
+        "fabric": 5
+      }
+    },
+    {
+      "id": "hidden_bunker_key",
+      "name": "Ключ от скрытого бункера",
+      "en": "Hidden Bunker Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "horizontal_grip",
+      "name": "Горизонтальная Рукоятка",
+      "en": "Horizontal Grip",
+      "value": 7000,
+      "recycles": {
+        "duct_tape": 2,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "hornet_driver",
+      "name": "Драйвер Шершня",
+      "en": "Hornet Driver",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 1,
+        "electrical_components": 1
+      }
+    },
+    {
+      "id": "household_cleaner",
+      "name": "Чистящее средство",
+      "en": "Household Cleaner",
+      "value": 640,
+      "recycles": {
+        "chemicals": 11
+      }
+    },
+    {
+      "id": "hullcracker_blueprint",
+      "name": "Чертёж Hullcracker",
+      "en": "Hullcracker Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "hullcracker_i",
+      "name": "Взломщик корпусов I",
+      "en": "Hullcracker I",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "hullcracker_ii",
+      "name": "Взломщик корпусов II",
+      "en": "Hullcracker II",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "hullcracker_iii",
+      "name": "Взломщик корпусов III",
+      "en": "Hullcracker III",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "heavy_gun_parts": 4
+      }
+    },
+    {
+      "id": "hullcracker_iv",
+      "name": "Взломщик корпусов IV",
+      "en": "Hullcracker IV",
+      "value": 22000,
+      "recycles": {
+        "advanced_mechanical_components": 4,
+        "heavy_gun_parts": 5
+      }
+    },
+    {
+      "id": "humidifier",
+      "name": "Увлажнитель",
+      "en": "Humidifier",
+      "value": 1000,
+      "recycles": {
+        "canister": 2,
+        "wires": 2
+      }
+    },
+    {
+      "id": "ice_cream_scooper",
+      "name": "Ложка для мороженого",
+      "en": "Ice Cream Scooper",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 7
+      }
+    },
+    {
+      "id": "il_toro_blueprint",
+      "name": "Чертеж — Эль-Торо",
+      "en": "Il Toro Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "il_toro_i",
+      "name": "Эль-Торо I",
+      "en": "Il Toro I",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "il_toro_ii",
+      "name": "Эль-Торо II",
+      "en": "Il Toro II",
+      "value": 7000,
+      "recycles": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 3
+      }
+    },
+    {
+      "id": "il_toro_iii",
+      "name": "Эль-Торо III",
+      "en": "Il Toro III",
+      "value": 10000,
+      "recycles": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 4
+      }
+    },
+    {
+      "id": "il_toro_iv",
+      "name": "Эль-Торо IV",
+      "en": "Il Toro IV",
+      "value": 13000,
+      "recycles": {
+        "mechanical_components": 5,
+        "simple_gun_parts": 5
+      }
+    },
+    {
+      "id": "impure_arc_coolant",
+      "name": "Загрязненное охлаждающее вещество ARC",
+      "en": "Impure ARC Coolant",
+      "value": 640,
+      "recycles": {
+        "chemicals": 12
+      }
+    },
+    {
+      "id": "industrial_battery",
+      "name": "Промышленная батарея",
+      "en": "Industrial Battery",
+      "value": 1000,
+      "recycles": {
+        "battery": 2,
+        "chemicals": 7
+      }
+    },
+    {
+      "id": "industrial_charger",
+      "name": "Промышленное зарядное устройство",
+      "en": "Industrial Charger",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 5,
+        "voltage_converter": 1
+      }
+    },
+    {
+      "id": "industrial_magnet",
+      "name": "Промышленный магнит",
+      "en": "Industrial Magnet",
+      "value": 1000,
+      "recycles": {
+        "magnet": 2,
+        "metal_parts": 4
+      }
+    },
+    {
+      "id": "ion_sputter",
+      "name": "Ионный распылитель",
+      "en": "Ion Sputter",
+      "value": 6000,
+      "recycles": {
+        "exodus_modules": 1,
+        "voltage_converter": 4
+      }
+    },
+    {
+      "id": "jolt_mine",
+      "name": "Электрическая мина",
+      "en": "Jolt Mine",
+      "value": 850,
+      "recycles": {
+        "battery": 1,
+        "plastic_parts": 2
+      }
+    },
+    {
+      "id": "jolt_mine_blueprint",
+      "name": "Чертеж — Электрическая мина",
+      "en": "Jolt Mine Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "jupiter",
+      "name": "Юпитер",
+      "en": "Jupiter",
+      "value": 27500,
+      "recycles": {
+        "complex_gun_parts": 1,
+        "magnetic_accelerator": 2
+      }
+    },
+    {
+      "id": "jupiter_blueprint",
+      "name": "Чертеж Юпитера",
+      "en": "Jupiter Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "kettle_i",
+      "name": "Чайник I",
+      "en": "Kettle I",
+      "value": 840,
+      "recycles": {
+        "metal_parts": 3,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "kettle_ii",
+      "name": "Чайник II",
+      "en": "Kettle II",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 6,
+        "rubber_parts": 6
+      }
+    },
+    {
+      "id": "kettle_iii",
+      "name": "Чайник III",
+      "en": "Kettle III",
+      "value": 3000,
+      "recycles": {
+        "metal_parts": 12,
+        "simple_gun_parts": 1
+      }
+    },
+    {
+      "id": "kettle_iv",
+      "name": "Чайник IV",
+      "en": "Kettle IV",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "kinetic_converter",
+      "name": "Кинетический преобразователь",
+      "en": "Kinetic Converter",
+      "value": 7000,
+      "recycles": {
+        "duct_tape": 2,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "laboratory_reagents",
+      "name": "Лабораторные реагенты",
+      "en": "Laboratory Reagents",
+      "value": 2000,
+      "recycles": {
+        "chemicals": 16,
+        "crude_explosives": 3
+      }
+    },
+    {
+      "id": "lances_mixtape_5th_edition",
+      "name": "Микстейп Лэнса (5-е издание)",
+      "en": "Lance's Mixtape (5th Edition)",
+      "value": 10000,
+      "recycles": {}
+    },
+    {
+      "id": "launcher_ammo",
+      "name": "Патрон для ракетницы",
+      "en": "Launcher Ammo",
+      "value": 250,
+      "recycles": {}
+    },
+    {
+      "id": "leaper_pulse_unit",
+      "name": "Импульсный блок Прыгуна",
+      "en": "Leaper Pulse Unit",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "lemon",
+      "name": "Лимон",
+      "en": "Lemon",
+      "value": 640,
+      "recycles": {
+        "assorted_seeds": 3
+      }
+    },
+    {
+      "id": "leviathans_crown_ship_model",
+      "name": "Модель корабля «Leviathan's Crown»",
+      "en": "\"Leviathan's Crown\" Ship Model",
+      "value": 10000,
+      "recycles": {}
+    },
+    {
+      "id": "library_book",
+      "name": "Книга",
+      "en": "Book",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "lidar_scanner",
+      "name": "Лидарный сканер",
+      "en": "Lidar Scanner",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "light_ammo",
+      "name": "Легкий патрон",
+      "en": "Light Ammo",
+      "value": 4,
+      "recycles": {}
+    },
+    {
+      "id": "light_bulb",
+      "name": "Лампочка",
+      "en": "Light Bulb",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "light_gun_parts",
+      "name": "Детали для легкого оружия",
+      "en": "Light Gun Parts",
+      "value": 700,
+      "recycles": {
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "light_gun_parts_blueprint",
+      "name": "Чертеж — Детали для легкого оружия",
+      "en": "Light Gun Parts Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "light_impact_grenade",
+      "name": "Легкая граната",
+      "en": "Light Impact Grenade",
+      "value": 270,
+      "recycles": {
+        "chemicals": 1,
+        "plastic_parts": 1
+      }
+    },
+    {
+      "id": "light_shield",
+      "name": "Легкий щит",
+      "en": "Light Shield",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 4
+      }
+    },
+    {
+      "id": "lightweight_stock",
+      "name": "Облегченный приклад",
+      "en": "Lightweight Stock",
+      "value": 5000,
+      "recycles": {
+        "duct_tape": 1,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "lightweight_stock_blueprint",
+      "name": "Чертёж облегчённого приклада",
+      "en": "Lightweight Stock Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "lil_smoke_grenade",
+      "name": "Маленькая дымовая граната",
+      "en": "Li'l Smoke Grenade",
+      "value": 300,
+      "recycles": {
+        "chemicals": 1,
+        "plastic_parts": 1
+      }
+    },
+    {
+      "id": "looting_mk1",
+      "name": "Добыча 1",
+      "en": "Looting Mk. 1",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 3,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "looting_mk2",
+      "name": "Добыча 2",
+      "en": "Looting Mk. 2",
+      "value": 2000,
+      "recycles": {
+        "electrical_components": 1,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "looting_mk3_cautious",
+      "name": "Мародёрство Mk. 3 (Осторожное)",
+      "en": "Looting Mk. 3 (Cautious)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "looting_mk3_safekeeper",
+      "name": "Мародёрство Mk. 3 (Хранитель)",
+      "en": "Looting Mk. 3 (Safekeeper)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "looting_mk3_safekeeper_blueprint",
+      "name": "Чертеж: Мародерство Мк. 3 (Хранитель)",
+      "en": "Looting Mk. 3 (Safekeeper) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "looting_mk3_survivor",
+      "name": "Добыча 3 (Выживший)",
+      "en": "Looting Mk. 3 (Survivor)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "looting_mk3_survivor_blueprint",
+      "name": "Чертеж грабительского Mk. 3 (выживший)",
+      "en": "Looting Mk. 3 (Survivor) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "lure_grenade",
+      "name": "Граната-приманка",
+      "en": "Lure Grenade",
+      "value": 1000,
+      "recycles": {
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "lure_grenade_blueprint",
+      "name": "Чертеж — Граната-приманка",
+      "en": "Lure Grenade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "lure_grenade_trap",
+      "name": "Лазерная ловушка: Приманка",
+      "en": "Lure Grenade Trap",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "magnet",
+      "name": "Магнит",
+      "en": "Magnet",
+      "value": 300,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "magnetic_accelerator",
+      "name": "Магнитный ускоритель",
+      "en": "Magnetic Accelerator",
+      "value": 5500,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "arc_motion_core": 1
+      }
+    },
+    {
+      "id": "magnetron",
+      "name": "Магнетрон",
+      "en": "Magnetron",
+      "value": 6000,
+      "recycles": {
+        "magnetic_accelerator": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "major_aivas_mementos",
+      "name": "Памятные вещи майора Айвы",
+      "en": "Major Aiva's Mementos",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "major_aivas_patch",
+      "name": "Нашивка майора Айвы",
+      "en": "Major Aiva's Patch",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "marano_market_business_card",
+      "name": "Визитка рынка Марано",
+      "en": "Marano Market Business Card",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "matriarch_reactor",
+      "name": "Реактор Матриарха",
+      "en": "Matriarch Reactor",
+      "value": 11000,
+      "recycles": {
+        "magnetic_accelerator": 1,
+        "power_rod": 1
+      }
+    },
+    {
+      "id": "mechanical_components",
+      "name": "Механические компоненты",
+      "en": "Mechanical Components",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 3,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "medium_ammo",
+      "name": "Патрон среднего калибра",
+      "en": "Medium Ammo",
+      "value": 6,
+      "recycles": {}
+    },
+    {
+      "id": "medium_gun_parts",
+      "name": "Детали для оружия среднего калибра",
+      "en": "Medium Gun Parts",
+      "value": 700,
+      "recycles": {
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "medium_gun_parts_blueprint",
+      "name": "Чертёж средних деталей оружия",
+      "en": "Medium Gun Parts Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "medium_shield",
+      "name": "Средний щит",
+      "en": "Medium Shield",
+      "value": 2000,
+      "recycles": {
+        "arc_circuitry": 1
+      }
+    },
+    {
+      "id": "metal_brackets",
+      "name": "Металлические скобы",
+      "en": "Metal Brackets",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "metal_parts",
+      "name": "Металлические детали",
+      "en": "Metal Parts",
+      "value": 75,
+      "recycles": {}
+    },
+    {
+      "id": "microscope",
+      "name": "Микроскоп",
+      "en": "Microscope",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "magnet": 3
+      }
+    },
+    {
+      "id": "mini_centrifuge",
+      "name": "Мини-центрифуга",
+      "en": "Mini Centrifuge",
+      "value": 3000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "canister": 2
+      }
+    },
+    {
+      "id": "mod_components",
+      "name": "Компоненты для модификаций",
+      "en": "Mod Components",
+      "value": 1750,
+      "recycles": {
+        "mechanical_components": 1,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "moisture_meter",
+      "name": "Измеритель влажности",
+      "en": "Moisture Meter",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "moss",
+      "name": "Мох",
+      "en": "Moss",
+      "value": 500,
+      "recycles": {
+        "assorted_seeds": 3
+      }
+    },
+    {
+      "id": "motor",
+      "name": "Мотор",
+      "en": "Motor",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 2,
+        "oil": 2
+      }
+    },
+    {
+      "id": "mushroom",
+      "name": "Гриб",
+      "en": "Mushroom",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "music_album",
+      "name": "Музыкальный альбом",
+      "en": "Music Album",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "music_box",
+      "name": "Музыкальная шкатулка",
+      "en": "Music Box",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "muzzle_brake_i",
+      "name": "Дульный тормоз I",
+      "en": "Muzzle Brake I",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 5
+      }
+    },
+    {
+      "id": "muzzle_brake_ii",
+      "name": "Дульный тормоз II",
+      "en": "Muzzle Brake II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "muzzle_brake_ii_blueprint",
+      "name": "Чертёж дульного тормоза II",
+      "en": "Muzzle Brake II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "muzzle_brake_iii",
+      "name": "Дульный тормоз III",
+      "en": "Muzzle Brake III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 2
+      }
+    },
+    {
+      "id": "muzzle_brake_iii_blueprint",
+      "name": "Чертеж — Дульный тормоз III",
+      "en": "Muzzle Brake III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "noisemaker",
+      "name": "Шумелка",
+      "en": "Noisemaker",
+      "value": 640,
+      "recycles": {
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "number_plate",
+      "name": "Номерной знак",
+      "en": "Number Plate",
+      "value": 270,
+      "recycles": {
+        "metal_parts": 3
+      }
+    },
+    {
+      "id": "nutrient_meter",
+      "name": "Измеритель питательных веществ",
+      "en": "Nutrient Meter",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "official_shutdown_documentation",
+      "name": "Официальная документация о прекращении работы",
+      "en": "Official Shutdown Documentation",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "oil",
+      "name": "Масло",
+      "en": "Oil",
+      "value": 300,
+      "recycles": {
+        "chemicals": 3
+      }
+    },
+    {
+      "id": "old_world_books",
+      "name": "Книги Старого мира",
+      "en": "Old World Books",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "olives",
+      "name": "Оливки",
+      "en": "Olives",
+      "value": 640,
+      "recycles": {
+        "assorted_seeds": 2
+      }
+    },
+    {
+      "id": "osprey_blueprint",
+      "name": "Чертеж — Ястреб",
+      "en": "Osprey Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "osprey_i",
+      "name": "Ястреб I",
+      "en": "Osprey I",
+      "value": 7000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "osprey_ii",
+      "name": "Ястреб II",
+      "en": "Osprey II",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "osprey_iii",
+      "name": "Ястреб III",
+      "en": "Osprey III",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "osprey_iv",
+      "name": "Ястреб IV",
+      "en": "Osprey IV",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "padded_stock",
+      "name": "Мягкий приклад",
+      "en": "Padded Stock",
+      "value": 5000,
+      "recycles": {
+        "duct_tape": 1,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "padded_stock_blueprint",
+      "name": "Чертеж: Мягкий приклад",
+      "en": "Padded Stock Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "painted_box",
+      "name": "Расписная коробка",
+      "en": "Painted Box",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "patrol_car_key",
+      "name": "Ключ от патрульной машины",
+      "en": "Patrol Car Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "photoelectric_cloak",
+      "name": "Фотоэлектрический плащ",
+      "en": "Photoelectric Cloak",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "pilgrims_peak_security_code",
+      "name": "Код безопасности Пилгримс Пик",
+      "en": "Pilgrim's Peak Security Code",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "plastic_parts",
+      "name": "Пластиковые детали",
+      "en": "Plastic Parts",
+      "value": 60,
+      "recycles": {}
+    },
+    {
+      "id": "playing_cards",
+      "name": "Игральные карты",
+      "en": "Playing Cards",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "polluted_air_filter",
+      "name": "Загрязненный воздушный фильтр",
+      "en": "Polluted Air Filter",
+      "value": 1000,
+      "recycles": {
+        "fabric": 6,
+        "oil": 2
+      }
+    },
+    {
+      "id": "pop_trigger",
+      "name": "Поп-триггер",
+      "en": "Pop Trigger",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 1,
+        "crude_explosives": 1
+      }
+    },
+    {
+      "id": "portable_tv",
+      "name": "Портативный телевизор",
+      "en": "Portable TV",
+      "value": 2000,
+      "recycles": {
+        "battery": 2,
+        "wires": 6
+      }
+    },
+    {
+      "id": "possibly_toxic_plant",
+      "name": "Возможно ядовитое растение",
+      "en": "Possibly Toxic Plant",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "poster_of_natural_wonders",
+      "name": "Плакат Чудеса природы",
+      "en": "Poster of Natural Wonders",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "pottery",
+      "name": "Глиняная посуда",
+      "en": "Pottery",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "power_bank",
+      "name": "Портативный аккумулятор",
+      "en": "Power Bank",
+      "value": 1000,
+      "recycles": {
+        "battery": 2,
+        "wires": 2
+      }
+    },
+    {
+      "id": "power_cable",
+      "name": "Кабель питания",
+      "en": "Power Cable",
+      "value": 1000,
+      "recycles": {
+        "wires": 4
+      }
+    },
+    {
+      "id": "power_rod",
+      "name": "Энергетический стержень",
+      "en": "Power Rod",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "arc_circuitry": 1
+      }
+    },
+    {
+      "id": "powered_descender",
+      "name": "Моторизованный спусковой механизм",
+      "en": "Powered Descender",
+      "value": 10000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "arc_circuitry": 2
+      }
+    },
+    {
+      "id": "powered_descender_blueprint",
+      "name": "Чертеж моторизованного спускового устройства",
+      "en": "Powered Descender Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "precision_gimbal",
+      "name": "Прецизионный подвес",
+      "en": "Precision Gimbal",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "prickly_pear",
+      "name": "Опунция",
+      "en": "Prickly Pear",
+      "value": 640,
+      "recycles": {
+        "assorted_seeds": 3
+      }
+    },
+    {
+      "id": "processor",
+      "name": "Процессор",
+      "en": "Processor",
+      "value": 500,
+      "recycles": {
+        "plastic_parts": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "project_heartwood_blueprints",
+      "name": "Чертежи проекта «Хартвуд»",
+      "en": "Project Heartwood Blueprints",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "projector",
+      "name": "Проектор",
+      "en": "Projector",
+      "value": 1000,
+      "recycles": {
+        "processor": 1,
+        "wires": 2
+      }
+    },
+    {
+      "id": "pulse_mine",
+      "name": "Импульсная мина",
+      "en": "Pulse Mine",
+      "value": 470,
+      "recycles": {
+        "chemicals": 6
+      }
+    },
+    {
+      "id": "pulse_mine_blueprint",
+      "name": "Чертеж — Импульсная мина",
+      "en": "Pulse Mine Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "queen_reactor",
+      "name": "Реактор королевы",
+      "en": "Queen Reactor",
+      "value": 11000,
+      "recycles": {
+        "magnetic_accelerator": 1,
+        "power_rod": 1
+      }
+    },
+    {
+      "id": "radio",
+      "name": "Радио",
+      "en": "Radio",
+      "value": 1000,
+      "recycles": {
+        "sensors": 1,
+        "speaker_component": 1
+      }
+    },
+    {
+      "id": "radio_relay",
+      "name": "Радиорелейная станция",
+      "en": "Radio Relay",
+      "value": 3000,
+      "recycles": {
+        "sensors": 2,
+        "speaker_component": 2
+      }
+    },
+    {
+      "id": "raider_flag",
+      "name": "Флаг рейдера",
+      "en": "Raider Flag",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "raider_hatch_key",
+      "name": "Ключ от рейдерского люка",
+      "en": "Raider Hatch Key",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "raiders_refuge_security_code",
+      "name": "Код безопасности Убежища Рейдеров",
+      "en": "Raider's Refuge Security Code",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "rascal_blueprint",
+      "name": "Чертеж Раскала",
+      "en": "Rascal Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "rascal_i",
+      "name": "Раскал I",
+      "en": "Rascal I",
+      "value": 7000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "rascal_ii",
+      "name": "Раскал II",
+      "en": "Rascal II",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "rascal_iii",
+      "name": "Раскал III",
+      "en": "Rascal III",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "rascal_iv",
+      "name": "Раскал IV",
+      "en": "Rascal IV",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "rattler_i",
+      "name": "Трещетка I",
+      "en": "Rattler I",
+      "value": 1750,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "rattler_ii",
+      "name": "Трещетка II",
+      "en": "Rattler II",
+      "value": 3000,
+      "recycles": {
+        "metal_parts": 12
+      }
+    },
+    {
+      "id": "rattler_iii",
+      "name": "Трещетка III",
+      "en": "Rattler III",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 3,
+        "simple_gun_parts": 1
+      }
+    },
+    {
+      "id": "rattler_iv",
+      "name": "Трещетка IV",
+      "en": "Rattler IV",
+      "value": 7000,
+      "recycles": {
+        "mechanical_components": 4,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "recorder",
+      "name": "Флейта",
+      "en": "Recorder",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 10
+      }
+    },
+    {
+      "id": "red_coral_jewelry",
+      "name": "Украшение из красного коралла",
+      "en": "Red Coral Jewelry",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "red_light_stick",
+      "name": "Красный химический фонарь",
+      "en": "Red Light Stick",
+      "value": 150,
+      "recycles": {
+        "chemicals": 1
+      }
+    },
+    {
+      "id": "red_light_stick_blueprint",
+      "name": "Чертёж красной светящейся палочки",
+      "en": "Red Light Stick Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "reinforced_reception_security_code",
+      "name": "Код безопасности Усиленной Приёмной",
+      "en": "Reinforced Reception Security Code",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "remote_control",
+      "name": "Пульт дистанционного управления",
+      "en": "Remote Control",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 7,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "remote_raider_flare",
+      "name": "Устройство дистанционного пуска рейдерской ракеты",
+      "en": "Remote Raider Flare",
+      "value": 270,
+      "recycles": {
+        "chemicals": 1,
+        "rubber_parts": 1
+      }
+    },
+    {
+      "id": "remote_raider_flare_blueprint",
+      "name": "Чертёж дистанционной сигнальной ракеты рейдера",
+      "en": "Remote Raider Flare Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "renegade_i",
+      "name": "Ренегат I",
+      "en": "Renegade I",
+      "value": 7000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "renegade_ii",
+      "name": "Ренегат II",
+      "en": "Renegade II",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "renegade_iii",
+      "name": "Ренегат III",
+      "en": "Renegade III",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "renegade_iv",
+      "name": "Ренегат IV",
+      "en": "Renegade IV",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "resin",
+      "name": "Смола",
+      "en": "Resin",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "ripped_safety_vest",
+      "name": "Рваный сигнальный жилет",
+      "en": "Ripped Safety Vest",
+      "value": 1000,
+      "recycles": {
+        "durable_cloth": 1,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "riven_tides_classified_records_keycard",
+      "name": "Карта-ключ к секретным архивам Riven Tides",
+      "en": "Riven Tides Classified Records Keycard",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_crane_house_keycard",
+      "name": "Карта-ключ к крановому домику Riven Tides",
+      "en": "Riven Tides Crane House Keycard",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_102",
+      "name": "Карта-ключ отеля Riven Tides № 102",
+      "en": "Riven Tides Hotel Keycard No. 102",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_107",
+      "name": "Карта-ключ отеля Riven Tides № 107",
+      "en": "Riven Tides Hotel Keycard No. 107",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_113",
+      "name": "Карта-ключ отеля Riven Tides № 113",
+      "en": "Riven Tides Hotel Keycard No. 113",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_205",
+      "name": "Карта-ключ отеля Riven Tides № 205",
+      "en": "Riven Tides Hotel Keycard No. 205",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_208",
+      "name": "Карта-ключ отеля Riven Tides № 208",
+      "en": "Riven Tides Hotel Keycard No. 208",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_311",
+      "name": "Карта-ключ отеля Riven Tides № 311",
+      "en": "Riven Tides Hotel Keycard No. 311",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_hotel_keycard_no_404",
+      "name": "Карта-ключ отеля Riven Tides № 404",
+      "en": "Riven Tides Hotel Keycard No. 404",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "riven_tides_secure_storage_keycard",
+      "name": "Карта-ключ к охраняемому складу Riven Tides",
+      "en": "Riven Tides Secure Storage Keycard",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "rocket_thruster",
+      "name": "Ракетный двигатель",
+      "en": "Rocket Thruster",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 6,
+        "synthesized_fuel": 2
+      }
+    },
+    {
+      "id": "rocketeer_driver",
+      "name": "Драйвер Ракетчика",
+      "en": "Rocketeer Driver",
+      "value": 3000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "arc_alloy": 3
+      }
+    },
+    {
+      "id": "roots",
+      "name": "Корни",
+      "en": "Roots",
+      "value": 640,
+      "recycles": {
+        "assorted_seeds": 1
+      }
+    },
+    {
+      "id": "rope",
+      "name": "Веревка",
+      "en": "Rope",
+      "value": 500,
+      "recycles": {
+        "fabric": 5
+      }
+    },
+    {
+      "id": "rosary",
+      "name": "Чётки",
+      "en": "Rosary",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "rotary_encoder",
+      "name": "Поворотный энкодер",
+      "en": "Rotary Encoder",
+      "value": 3000,
+      "recycles": {
+        "electrical_components": 2,
+        "processor": 2
+      }
+    },
+    {
+      "id": "rubber_duck",
+      "name": "Резиновая уточка",
+      "en": "Rubber Duck",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "rubber_pad",
+      "name": "Резиновый коврик",
+      "en": "Rubber Pad",
+      "value": 1000,
+      "recycles": {
+        "rubber_parts": 18
+      }
+    },
+    {
+      "id": "rubber_parts",
+      "name": "Резиновые детали",
+      "en": "Rubber Parts",
+      "value": 50,
+      "recycles": {}
+    },
+    {
+      "id": "ruined_accordion",
+      "name": "Сломанный аккордеон",
+      "en": "Ruined Accordion",
+      "value": 2000,
+      "recycles": {
+        "rubber_parts": 18,
+        "steel_spring": 3
+      }
+    },
+    {
+      "id": "ruined_augment",
+      "name": "Испорченный аугмент",
+      "en": "Ruined Augment",
+      "value": 270,
+      "recycles": {
+        "plastic_parts": 2,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "ruined_baton",
+      "name": "Сломанная дубинка",
+      "en": "Ruined Baton",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 6,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "ruined_handcuffs",
+      "name": "Сломанные наручники",
+      "en": "Ruined Handcuffs",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "ruined_parachute",
+      "name": "Испорченный парашют",
+      "en": "Ruined Parachute",
+      "value": 640,
+      "recycles": {
+        "fabric": 10
+      }
+    },
+    {
+      "id": "ruined_riot_shield",
+      "name": "Разрушенный щит",
+      "en": "Ruined Riot Shield",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 10,
+        "rubber_parts": 6
+      }
+    },
+    {
+      "id": "ruined_tactical_vest",
+      "name": "Испорченный тактический жилет",
+      "en": "Ruined Tactical Vest",
+      "value": 640,
+      "recycles": {
+        "fabric": 5,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "rusted_bolts",
+      "name": "Ржавые болты",
+      "en": "Rusted Bolts",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "rusted_gear",
+      "name": "Ржавая шестиренка",
+      "en": "Rusted Gear",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 2,
+        "metal_parts": 4
+      }
+    },
+    {
+      "id": "rusted_shut_medical_kit",
+      "name": "Аптечка со ржавым замком",
+      "en": "Rusted Shut Medical Kit",
+      "value": 2000,
+      "recycles": {
+        "antiseptic": 1,
+        "syringe": 2
+      }
+    },
+    {
+      "id": "rusted_tools",
+      "name": "Ржавые инструменты",
+      "en": "Rusted Tools",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 8,
+        "steel_spring": 1
+      }
+    },
+    {
+      "id": "rusty_arc_steel",
+      "name": "Ржавая сталь ARC",
+      "en": "Rusty ARC Steel",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 8
+      }
+    },
+    {
+      "id": "sample_cleaner",
+      "name": "Очиститель образцов",
+      "en": "Sample Cleaner",
+      "value": 3000,
+      "recycles": {
+        "assorted_seeds": 14,
+        "electrical_components": 2
+      }
+    },
+    {
+      "id": "scout_patrol_note",
+      "name": "Записка разведывательного патруля",
+      "en": "Scout Patrol Note",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "secret_meeting_info",
+      "name": "Информация о секретной встрече",
+      "en": "Secret Meeting Info",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "seed_vault_box_key",
+      "name": "Ключ от ящика хранилища семян",
+      "en": "Seed Vault Box Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "seeker_grenade",
+      "name": "Самонаводящаяся граната",
+      "en": "Seeker Grenade",
+      "value": 640,
+      "recycles": {
+        "crude_explosives": 1
+      }
+    },
+    {
+      "id": "seeker_grenade_blueprint",
+      "name": "Чертёж — Самонаводящаяся граната",
+      "en": "Seeker Grenade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "sensors",
+      "name": "Датчики",
+      "en": "Sensors",
+      "value": 500,
+      "recycles": {
+        "metal_parts": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "sentinel_firing_core",
+      "name": "Огневое ядро стража",
+      "en": "Sentinel Firing Core",
+      "value": 2000,
+      "recycles": {
+        "arc_alloy": 2,
+        "mechanical_components": 2
+      }
+    },
+    {
+      "id": "sextant",
+      "name": "Секстант",
+      "en": "Sextant",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "shaker",
+      "name": "Шейкер",
+      "en": "Shaker",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 10
+      }
+    },
+    {
+      "id": "shield_recharger",
+      "name": "Устройство для перезарядки щита",
+      "en": "Shield Recharger",
+      "value": 520,
+      "recycles": {
+        "rubber_parts": 4
+      }
+    },
+    {
+      "id": "shotgun_ammo",
+      "name": "Патрон для дробовика",
+      "en": "Shotgun Ammo",
+      "value": 20,
+      "recycles": {}
+    },
+    {
+      "id": "shotgun_choke_i",
+      "name": "Чок для дробовика I",
+      "en": "Shotgun Choke I",
+      "value": 640,
+      "recycles": {
+        "metal_parts": 5
+      }
+    },
+    {
+      "id": "shotgun_choke_ii",
+      "name": "Чок для дробовика II",
+      "en": "Shotgun Choke II",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "shotgun_choke_ii_blueprint",
+      "name": "Чертеж — Чок для дробовика II",
+      "en": "Shotgun Choke II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "shotgun_choke_iii",
+      "name": "Чок для дробовика III",
+      "en": "Shotgun Choke III",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 2
+      }
+    },
+    {
+      "id": "shotgun_choke_iii_blueprint",
+      "name": "Чертеж — Чок для дробовика III",
+      "en": "Shotgun Choke III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "shotgun_silencer",
+      "name": "Глушитель для дробовика",
+      "en": "Shotgun Silencer",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "shotgun_silencer_blueprint",
+      "name": "Чертеж — Глушитель для дробовика",
+      "en": "Shotgun Silencer Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "showstopper",
+      "name": "Коронный номер",
+      "en": "Showstopper",
+      "value": 2100,
+      "recycles": {
+        "electrical_components": 1,
+        "voltage_converter": 1
+      }
+    },
+    {
+      "id": "showstopper_blueprint",
+      "name": "Чертеж — Коронный номер",
+      "en": "Showstopper Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "shrapnel_grenade",
+      "name": "Осколочная граната",
+      "en": "Shrapnel Grenade",
+      "value": 800,
+      "recycles": {
+        "crude_explosives": 1,
+        "metal_parts": 1
+      }
+    },
+    {
+      "id": "shredder_gyro",
+      "name": "Гироскоп Измельчителя",
+      "en": "Shredder Gyro",
+      "value": 2000,
+      "recycles": {
+        "arc_alloy": 2,
+        "mechanical_components": 2
+      }
+    },
+    {
+      "id": "signal_amplifier",
+      "name": "Усилитель сигнала",
+      "en": "Signal Amplifier",
+      "value": 3000,
+      "recycles": {
+        "electrical_components": 2,
+        "voltage_converter": 2
+      }
+    },
+    {
+      "id": "silencer_i",
+      "name": "Глушитель I",
+      "en": "Silencer I",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "silencer_i_blueprint",
+      "name": "Чертёж глушителя I",
+      "en": "Silencer I Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "silencer_ii",
+      "name": "Глушитель II",
+      "en": "Silencer II",
+      "value": 5000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 2
+      }
+    },
+    {
+      "id": "silencer_ii_blueprint",
+      "name": "Чертёж глушителя II",
+      "en": "Silencer II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "silencer_iii",
+      "name": "Глушитель III",
+      "en": "Silencer III",
+      "value": 7000,
+      "recycles": {
+        "mod_components": 1,
+        "wires": 3
+      }
+    },
+    {
+      "id": "silver_teaspoon_set",
+      "name": "Набор серебряных чайных ложек",
+      "en": "Silver Teaspoon Set",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "simple_gun_parts",
+      "name": "Простые детали для оружия",
+      "en": "Simple Gun Parts",
+      "value": 330,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "sirena_dorata_ship_model",
+      "name": "Модель корабля «Sirena Dorata»",
+      "en": "\"Sirena Dorata\" Ship Model",
+      "value": 7000,
+      "recycles": {}
+    },
+    {
+      "id": "smoke_grenade",
+      "name": "Дымовая граната",
+      "en": "Smoke Grenade",
+      "value": 1000,
+      "recycles": {
+        "canister": 1,
+        "chemicals": 2
+      }
+    },
+    {
+      "id": "smoke_grenade_blueprint",
+      "name": "Чертеж — Дымовая граната",
+      "en": "Smoke Grenade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "smoke_grenade_trap",
+      "name": "Лазерная ловушка: Дым",
+      "en": "Smoke Grenade Trap",
+      "value": 640,
+      "recycles": {}
+    },
+    {
+      "id": "snap_blast_grenade",
+      "name": "Разрывная граната",
+      "en": "Snap Blast Grenade",
+      "value": 800,
+      "recycles": {
+        "chemicals": 1,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "snap_hook",
+      "name": "Крюк с защелкой",
+      "en": "Snap Hook",
+      "value": 14000,
+      "recycles": {
+        "power_rod": 1,
+        "rope": 3
+      }
+    },
+    {
+      "id": "snap_hook_blueprint",
+      "name": "Чертёж Snap Hook",
+      "en": "Snap Hook Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "snitch_scanner",
+      "name": "Сканер Стукача",
+      "en": "Snitch Scanner",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 1,
+        "electrical_components": 1
+      }
+    },
+    {
+      "id": "snowball",
+      "name": "Снежок",
+      "en": "Snowball",
+      "value": 10,
+      "recycles": {}
+    },
+    {
+      "id": "spaceport_container_storage_key",
+      "name": "Ключ от хранилища контейнеров космопорта",
+      "en": "Spaceport Container Storage Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "spaceport_control_tower_key",
+      "name": "Ключ от диспетчерской башни космопорта",
+      "en": "Spaceport Control Tower Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "spaceport_trench_tower_key",
+      "name": "Ключ от башни траншей космопорта",
+      "en": "Spaceport Trench Tower Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "spaceport_warehouse_key",
+      "name": "Ключ от склада космопорта",
+      "en": "Spaceport Warehouse Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "speaker_component",
+      "name": "Компонент динамика",
+      "en": "Speaker Component",
+      "value": 500,
+      "recycles": {
+        "plastic_parts": 2,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "spectrometer",
+      "name": "Спектрометр",
+      "en": "Spectrometer",
+      "value": 3000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "spectrum_analyzer",
+      "name": "Анализатор спектра",
+      "en": "Spectrum Analyzer",
+      "value": 3500,
+      "recycles": {
+        "exodus_modules": 1,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "spotter_relay",
+      "name": "Передатчик Наводчика",
+      "en": "Spotter Relay",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 1,
+        "electrical_components": 1
+      }
+    },
+    {
+      "id": "spring_cushion",
+      "name": "Пружинная подушка",
+      "en": "Spring Cushion",
+      "value": 2000,
+      "recycles": {
+        "durable_cloth": 2,
+        "steel_spring": 2
+      }
+    },
+    {
+      "id": "stable_stock_i",
+      "name": "Надежный приклад I",
+      "en": "Stable Stock I",
+      "value": 640,
+      "recycles": {
+        "rubber_parts": 6
+      }
+    },
+    {
+      "id": "stable_stock_ii",
+      "name": "Надежный приклад II",
+      "en": "Stable Stock II",
+      "value": 2000,
+      "recycles": {
+        "duct_tape": 1,
+        "mechanical_components": 1
+      }
+    },
+    {
+      "id": "stable_stock_ii_blueprint",
+      "name": "Чертеж — Надежный приклад II",
+      "en": "Stable Stock II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "stable_stock_iii",
+      "name": "Надежный приклад III",
+      "en": "Stable Stock III",
+      "value": 5000,
+      "recycles": {
+        "duct_tape": 2,
+        "mod_components": 1
+      }
+    },
+    {
+      "id": "stable_stock_iii_blueprint",
+      "name": "Чертеж — Надежный приклад III",
+      "en": "Stable Stock III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "stack_of_movie_tapes",
+      "name": "Стопка видеокассет",
+      "en": "Stack of Movie Tapes",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "statuette",
+      "name": "Статуэтка",
+      "en": "Statuette",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "steel_spring",
+      "name": "Стальная пружина",
+      "en": "Steel Spring",
+      "value": 300,
+      "recycles": {
+        "metal_parts": 2
+      }
+    },
+    {
+      "id": "stella_montis_archives_key",
+      "name": "Ключ от архива Стелла Монтис",
+      "en": "Stella Montis Archives Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "stella_montis_assembly_admin_key",
+      "name": "Административный Ключ Сборочного Цеха Стелла Монтис",
+      "en": "Stella Montis Assembly Admin Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "stella_montis_medical_storage_key",
+      "name": "Ключ от медицинского склада Стелла Монтис",
+      "en": "Stella Montis Medical Storage Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "stella_montis_security_checkpoint_key",
+      "name": "Ключ от контрольно-пропускного пункта Стелла Монтис",
+      "en": "Stella Montis Security Checkpoint Key",
+      "value": 100,
+      "recycles": {}
+    },
+    {
+      "id": "sterilized_bandage",
+      "name": "Стерильный бинт",
+      "en": "Sterilized Bandage",
+      "value": 2000,
+      "recycles": {
+        "antiseptic": 1,
+        "fabric": 1
+      }
+    },
+    {
+      "id": "stitcher_i",
+      "name": "Сшиватель I",
+      "en": "Stitcher I",
+      "value": 800,
+      "recycles": {
+        "metal_parts": 3,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "stitcher_ii",
+      "name": "Сшиватель II",
+      "en": "Stitcher II",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 6,
+        "rubber_parts": 6
+      }
+    },
+    {
+      "id": "stitcher_iii",
+      "name": "Сшиватель III",
+      "en": "Stitcher III",
+      "value": 3000,
+      "recycles": {
+        "metal_parts": 12,
+        "simple_gun_parts": 1
+      }
+    },
+    {
+      "id": "stitcher_iv",
+      "name": "Сшиватель IV",
+      "en": "Stitcher IV",
+      "value": 5000,
+      "recycles": {
+        "mechanical_components": 2,
+        "simple_gun_parts": 2
+      }
+    },
+    {
+      "id": "surge_coil_blueprint",
+      "name": "Surge Coil Чертеж",
+      "en": "Surge Coil Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "surge_shield_recharger",
+      "name": "Устройство для мгновенной перезарядки щита",
+      "en": "Surge Shield Recharger",
+      "value": 1200,
+      "recycles": {
+        "electrical_components": 1
+      }
+    },
+    {
+      "id": "surveyor_vault",
+      "name": "Сейф Наблюдателя",
+      "en": "Surveyor Vault",
+      "value": 1000,
+      "recycles": {
+        "arc_alloy": 1,
+        "mechanical_components": 1
+      }
+    },
+    {
+      "id": "synthesized_fuel",
+      "name": "Синтезированное топливо",
+      "en": "Synthesized Fuel",
+      "value": 700,
+      "recycles": {
+        "chemicals": 1,
+        "oil": 1
+      }
+    },
+    {
+      "id": "syringe",
+      "name": "Шприц",
+      "en": "Syringe",
+      "value": 500,
+      "recycles": {
+        "chemicals": 2,
+        "plastic_parts": 3
+      }
+    },
+    {
+      "id": "tactical_mk1",
+      "name": "Стратегия 1",
+      "en": "Tactical Mk. 1",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 3,
+        "rubber_parts": 3
+      }
+    },
+    {
+      "id": "tactical_mk2",
+      "name": "Стратегия 2",
+      "en": "Tactical Mk. 2",
+      "value": 2000,
+      "recycles": {
+        "electrical_components": 1,
+        "magnet": 1
+      }
+    },
+    {
+      "id": "tactical_mk3_defensive",
+      "name": "Тактический Mk. 3 (Оборонительный)",
+      "en": "Tactical Mk. 3 (Defensive)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "tactical_mk3_defensive_blueprint",
+      "name": "Чертеж — Тактический Mk. 3 (Оборонительный)",
+      "en": "Tactical Mk. 3 (Defensive) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tactical_mk3_healing",
+      "name": "Стратегия 3 (Лечение)",
+      "en": "Tactical Mk. 3 (Healing)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "tactical_mk3_healing_blueprint",
+      "name": "Чертеж тактического Mk. 3 (лечение)",
+      "en": "Tactical Mk. 3 (Healing) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tactical_mk3_revival",
+      "name": "Стратегия 3 (Возрождение)",
+      "en": "Tactical Mk. 3 (Revival)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "tactical_mk3_revival_blueprint",
+      "name": "Чертеж: Тактика Мк. 3 (Реанимация)",
+      "en": "Tactical Mk. 3 (Revival) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tactical_mk3_smoke",
+      "name": "Тактический Mk. 3 (Дым)",
+      "en": "Tactical Mk. 3 (Smoke)",
+      "value": 5000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "tactical_mk3_smoke_blueprint",
+      "name": "Чертеж тактического Mk. 3 (дым)",
+      "en": "Tactical Mk. 3 (Smoke) Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tagging_grenade",
+      "name": "Маркирующая граната",
+      "en": "Tagging Grenade",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 1,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "tagging_grenade_blueprint",
+      "name": "Чертеж — Маркирующая граната",
+      "en": "Tagging Grenade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tattered_arc_lining",
+      "name": "Потрепанная ARC-Подкладка",
+      "en": "Tattered Arc Lining",
+      "value": 640,
+      "recycles": {
+        "fabric": 12
+      }
+    },
+    {
+      "id": "tattered_clothes",
+      "name": "Рваная одежда",
+      "en": "Tattered Clothes",
+      "value": 640,
+      "recycles": {
+        "fabric": 11
+      }
+    },
+    {
+      "id": "telemetry_transceiver",
+      "name": "Телеметрический приемопередатчик",
+      "en": "Telemetry Transceiver",
+      "value": 3000,
+      "recycles": {
+        "advanced_electrical_components": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "tellurion",
+      "name": "Теллурион",
+      "en": "Tellurion",
+      "value": 7000,
+      "recycles": {}
+    },
+    {
+      "id": "tempest_blueprint",
+      "name": "Чертеж — Буря",
+      "en": "Tempest Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tempest_i",
+      "name": "Буря I",
+      "en": "Tempest I",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "tempest_ii",
+      "name": "Буря II",
+      "en": "Tempest II",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "tempest_iii",
+      "name": "Буря III",
+      "en": "Tempest III",
+      "value": 22000,
+      "recycles": {
+        "advanced_mechanical_components": 4,
+        "medium_gun_parts": 4
+      }
+    },
+    {
+      "id": "tempest_iv",
+      "name": "Буря IV",
+      "en": "Tempest IV",
+      "value": 27000,
+      "recycles": {
+        "advanced_mechanical_components": 5,
+        "medium_gun_parts": 4
+      }
+    },
+    {
+      "id": "thermostat",
+      "name": "Термостат",
+      "en": "Thermostat",
+      "value": 1000,
+      "recycles": {
+        "rubber_parts": 7,
+        "sensors": 1
+      }
+    },
+    {
+      "id": "tick_pod",
+      "name": "Оболочка Блохи",
+      "en": "Tick Pod",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 2,
+        "chemicals": 2
+      }
+    },
+    {
+      "id": "toaster",
+      "name": "Тостер",
+      "en": "Toaster",
+      "value": 1000,
+      "recycles": {
+        "plastic_parts": 5,
+        "wires": 3
+      }
+    },
+    {
+      "id": "torn_blanket",
+      "name": "Рваное одеяло",
+      "en": "Torn Blanket",
+      "value": 640,
+      "recycles": {
+        "fabric": 12
+      }
+    },
+    {
+      "id": "torn_book",
+      "name": "Порванная книга",
+      "en": "Torn Book",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "torrente_blueprint",
+      "name": "Чертеж Torrente",
+      "en": "Torrente Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "torrente_i",
+      "name": "Торренте I",
+      "en": "Torrente I",
+      "value": 7000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "torrente_ii",
+      "name": "Торренте II",
+      "en": "Torrente II",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "torrente_iii",
+      "name": "Торренте III",
+      "en": "Torrente III",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "torrente_iv",
+      "name": "Торренте IV",
+      "en": "Torrente IV",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "trailblazer",
+      "name": "Первопроходец",
+      "en": "Trailblazer",
+      "value": 2200,
+      "recycles": {
+        "crude_explosives": 2
+      }
+    },
+    {
+      "id": "trailblazer_blueprint",
+      "name": "Чертёж — Trailblazer",
+      "en": "Trailblazer Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "train_model",
+      "name": "Модель поезда",
+      "en": "Train Model",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "trigger_nade",
+      "name": "Управляемая граната",
+      "en": "Trigger 'Nade",
+      "value": 1000,
+      "recycles": {
+        "chemicals": 1,
+        "processor": 1
+      }
+    },
+    {
+      "id": "trigger_nade_blueprint",
+      "name": "Чертеж — Триггер-граната",
+      "en": "Trigger Nade Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "tropical_duck",
+      "name": "Тропическая уточка",
+      "en": "Tropical Duck",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "turbine_compressor",
+      "name": "Турбинный компрессор",
+      "en": "Turbine Compressor",
+      "value": 5000,
+      "recycles": {
+        "arc_circuitry": 1,
+        "arc_motion_core": 1
+      }
+    },
+    {
+      "id": "turbo_pump",
+      "name": "Турбонасос",
+      "en": "Turbo Pump",
+      "value": 2000,
+      "recycles": {
+        "mechanical_components": 1,
+        "oil": 3
+      }
+    },
+    {
+      "id": "twilight_compass_ship_model",
+      "name": "Модель корабля «Twilight Compass»",
+      "en": "\"Twilight Compass\" Ship Model",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "unusable_weapon",
+      "name": "Непригодное оружие",
+      "en": "Unusable Weapon",
+      "value": 2000,
+      "recycles": {
+        "metal_parts": 4,
+        "simple_gun_parts": 5
+      }
+    },
+    {
+      "id": "vase",
+      "name": "Ваза",
+      "en": "Vase",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "velocity_ship_model",
+      "name": "Модель корабля «Velocity»",
+      "en": "\"Velocity\" Ship Model",
+      "value": 3000,
+      "recycles": {}
+    },
+    {
+      "id": "venator_blueprint",
+      "name": "Чертеж — Охотник",
+      "en": "Venator Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "venator_i",
+      "name": "Охотник I",
+      "en": "Venator I",
+      "value": 7000,
+      "recycles": {
+        "advanced_mechanical_components": 1,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "venator_ii",
+      "name": "Охотник II",
+      "en": "Venator II",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 2
+      }
+    },
+    {
+      "id": "venator_iii",
+      "name": "Охотник III",
+      "en": "Venator III",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "venator_iv",
+      "name": "Охотник IV",
+      "en": "Venator IV",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "medium_gun_parts": 3
+      }
+    },
+    {
+      "id": "vertical_grip_i",
+      "name": "Вертикальная рукоятка I",
+      "en": "Vertical Grip I",
+      "value": 640,
+      "recycles": {
+        "plastic_parts": 6
+      }
+    },
+    {
+      "id": "vertical_grip_ii",
+      "name": "Вертикальная рукоятка II",
+      "en": "Vertical Grip II",
+      "value": 2000,
+      "recycles": {
+        "duct_tape": 1,
+        "mechanical_components": 1
+      }
+    },
+    {
+      "id": "vertical_grip_ii_blueprint",
+      "name": "Чертеж — Вертикальная рукоятка II",
+      "en": "Vertical Grip II Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "vertical_grip_iii",
+      "name": "Вертикальная рукоятка III",
+      "en": "Vertical Grip III",
+      "value": 5000,
+      "recycles": {
+        "duct_tape": 2,
+        "mechanical_components": 2
+      }
+    },
+    {
+      "id": "vertical_grip_iii_blueprint",
+      "name": "Чертеж вертикальной рукояти III",
+      "en": "Vertical Grip III Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "very_comfortable_pillow",
+      "name": "Очень удобная подушка",
+      "en": "Very Comfortable Pillow",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "vintage_steering_wheel",
+      "name": "Винтажный руль",
+      "en": "Vintage Steering Wheel",
+      "value": 2000,
+      "recycles": {}
+    },
+    {
+      "id": "vita_shot",
+      "name": "Витаминная сыворотка",
+      "en": "Vita Shot",
+      "value": 2200,
+      "recycles": {
+        "chemicals": 4,
+        "syringe": 1
+      }
+    },
+    {
+      "id": "vita_shot_blueprint",
+      "name": "Чертёж Вита-инъекции",
+      "en": "Vita Shot Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "vita_spray",
+      "name": "Вита-спрей",
+      "en": "Vita Spray",
+      "value": 3400,
+      "recycles": {
+        "antiseptic": 1,
+        "canister": 1
+      }
+    },
+    {
+      "id": "vita_spray_blueprint",
+      "name": "Чертёж Вита-спрея",
+      "en": "Vita Spray Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "volcanic_rock",
+      "name": "Вулканическая порода",
+      "en": "Volcanic Rock",
+      "value": 270,
+      "recycles": {}
+    },
+    {
+      "id": "voltage_converter",
+      "name": "Преобразователь напряжения",
+      "en": "Voltage Converter",
+      "value": 500,
+      "recycles": {
+        "rubber_parts": 1,
+        "wires": 1
+      }
+    },
+    {
+      "id": "vulcano_blueprint",
+      "name": "Чертеж — Вулкан",
+      "en": "Vulcano Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "vulcano_i",
+      "name": "Вулкан I",
+      "en": "Vulcano I",
+      "value": 10000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 2
+      }
+    },
+    {
+      "id": "vulcano_ii",
+      "name": "Вулкан II",
+      "en": "Vulcano II",
+      "value": 13000,
+      "recycles": {
+        "advanced_mechanical_components": 2,
+        "heavy_gun_parts": 3
+      }
+    },
+    {
+      "id": "vulcano_iii",
+      "name": "Вулкан III",
+      "en": "Vulcano III",
+      "value": 17000,
+      "recycles": {
+        "advanced_mechanical_components": 3,
+        "heavy_gun_parts": 4
+      }
+    },
+    {
+      "id": "vulcano_iv",
+      "name": "Вулкан IV",
+      "en": "Vulcano IV",
+      "value": 22000,
+      "recycles": {
+        "advanced_mechanical_components": 4,
+        "heavy_gun_parts": 5
+      }
+    },
+    {
+      "id": "wasp_driver",
+      "name": "Драйвер Осы",
+      "en": "Wasp Driver",
+      "value": 640,
+      "recycles": {
+        "arc_alloy": 2
+      }
+    },
+    {
+      "id": "water_filter",
+      "name": "Водяной фильтр",
+      "en": "Water Filter",
+      "value": 1000,
+      "recycles": {
+        "canister": 3,
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "water_pump",
+      "name": "Водяной насос",
+      "en": "Water Pump",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 4,
+        "oil": 2
+      }
+    },
+    {
+      "id": "white_flag",
+      "name": "Белый флаг",
+      "en": "White Flag",
+      "value": 640,
+      "recycles": {
+        "fabric": 5,
+        "plastic_parts": 1
+      }
+    },
+    {
+      "id": "white_flag_blueprint",
+      "name": "Чертеж белого флага",
+      "en": "White Flag Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "wind_sprite_ship_model",
+      "name": "Модель корабля «Wind Sprite»",
+      "en": "\"Wind Sprite\" Ship Model",
+      "value": 1000,
+      "recycles": {}
+    },
+    {
+      "id": "wires",
+      "name": "Провода",
+      "en": "Wires",
+      "value": 200,
+      "recycles": {
+        "rubber_parts": 2
+      }
+    },
+    {
+      "id": "wolfpack",
+      "name": "Волчья стая",
+      "en": "Wolfpack",
+      "value": 6000,
+      "recycles": {
+        "arc_motion_core": 1,
+        "explosive_compound": 1
+      }
+    },
+    {
+      "id": "wolfpack_blueprint",
+      "name": "Чертеж — Волчья стая",
+      "en": "Wolfpack Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "yellow_light_stick",
+      "name": "Желтый химический фонарь",
+      "en": "Yellow Light Stick",
+      "value": 150,
+      "recycles": {
+        "chemicals": 1
+      }
+    },
+    {
+      "id": "yellow_light_stick_blueprint",
+      "name": "Жёлтая светящаяся палочка",
+      "en": "Yellow Light Stick Blueprint",
+      "value": 5000,
+      "recycles": {}
+    },
+    {
+      "id": "zipline",
+      "name": "Зиплайн",
+      "en": "Zipline",
+      "value": 1000,
+      "recycles": {
+        "metal_parts": 1,
+        "rope": 1
+      }
+    }
+  ],
+  "workshops": [
+    {
+      "id": "equipment_bench",
+      "name": "Верстак для снаряжения",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "plastic_parts": 25,
+            "fabric": 30
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "power_cable": 3,
+            "electrical_components": 5,
+            "hornet_driver": 5
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "industrial_battery": 3,
+            "advanced_electrical_components": 5,
+            "bastion_cell": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "explosives_bench",
+      "name": "Верстак для взрывчатки",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "chemicals": 50,
+            "arc_alloy": 6
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "synthesized_fuel": 3,
+            "crude_explosives": 5,
+            "pop_trigger": 5
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "laboratory_reagents": 3,
+            "explosive_compound": 5,
+            "rocketeer_driver": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "med_station",
+      "name": "Медицинская лаборатория",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "fabric": 50,
+            "arc_alloy": 6
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "cracked_bioscanner": 2,
+            "durable_cloth": 5,
+            "tick_pod": 8
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "rusted_shut_medical_kit": 3,
+            "antiseptic": 8,
+            "surveyor_vault": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "refiner",
+      "name": "Очиститель",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "metal_parts": 60,
+            "arc_powercell": 5
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "toaster": 3,
+            "arc_motion_core": 5,
+            "fireball_burner": 8
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "motor": 3,
+            "arc_circuitry": 10,
+            "bombardier_cell": 6
+          }
+        }
+      ]
+    },
+    {
+      "id": "scrappy",
+      "name": "Плюшкин",
+      "levels": [
+        {
+          "level": 1,
+          "items": {}
+        },
+        {
+          "level": 2,
+          "items": {
+            "dog_collar": 1
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "lemon": 3,
+            "apricot": 3
+          }
+        },
+        {
+          "level": 4,
+          "items": {
+            "prickly_pear": 6,
+            "olives": 6,
+            "cat_bed": 1
+          }
+        },
+        {
+          "level": 5,
+          "items": {
+            "mushroom": 12,
+            "apricot": 12,
+            "very_comfortable_pillow": 3
+          }
+        }
+      ]
+    },
+    {
+      "id": "utility_bench",
+      "name": "Верстак для инструментов",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "plastic_parts": 50,
+            "arc_alloy": 6
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "damaged_heat_sink": 2,
+            "electrical_components": 5,
+            "snitch_scanner": 6
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "fried_motherboard": 3,
+            "advanced_electrical_components": 5,
+            "leaper_pulse_unit": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "weapon_bench",
+      "name": "Оружейный верстак",
+      "levels": [
+        {
+          "level": 1,
+          "items": {
+            "metal_parts": 20,
+            "rubber_parts": 30
+          }
+        },
+        {
+          "level": 2,
+          "items": {
+            "rusted_tools": 3,
+            "mechanical_components": 5,
+            "wasp_driver": 8
+          }
+        },
+        {
+          "level": 3,
+          "items": {
+            "rusted_gear": 3,
+            "advanced_mechanical_components": 5,
+            "sentinel_firing_core": 4
+          }
+        }
+      ]
     }
   ]
 }

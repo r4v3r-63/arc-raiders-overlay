@@ -25,6 +25,29 @@ class GameMap:
 
 
 @dataclass
+class Item:
+    id: str
+    name: str
+    en: str = ""
+    value: int = 0  # цена продажи, монет
+    recycles: dict[str, int] = field(default_factory=dict)  # id предмета → сколько получится при разборке
+
+
+@dataclass
+class Workshop:
+    id: str
+    name: str
+    levels: list[dict] = field(default_factory=list)  # {"level": 2, "items": {id предмета: штук}}
+
+    @property
+    def max_level(self) -> int:
+        return max((level["level"] for level in self.levels), default=0)
+
+    def requirements(self, level: int) -> dict[str, int]:
+        return next((dict(lv["items"]) for lv in self.levels if lv["level"] == level), {})
+
+
+@dataclass
 class Quest:
     name: str
     steps: list[str]
@@ -56,8 +79,11 @@ def normalize(text: str) -> str:
 
 
 class QuestDB:
-    def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = ""):
+    def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = "",
+                 items: list[Item] | None = None, workshops: list[Workshop] | None = None):
         self.generated_at = generated_at  # дата сборки базы, ISO 8601 (UTC)
+        self.items = {i.id: i for i in items or []}
+        self.workshops = list(workshops or [])
         self.quests = quests
         self._by_id = {q.id: q for q in quests if q.id}
         self.maps = {m.id: m for m in maps or []}
@@ -103,7 +129,11 @@ class QuestDB:
             )
             for item in data.get("quests", [])
         ]
-        return cls(quests, maps, data.get("generated_at", ""))
+        items = [Item(id=i["id"], name=i["name"], en=i.get("en", ""), value=int(i.get("value", 0)),
+                      recycles=dict(i.get("recycles", {}))) for i in data.get("items", [])]
+        workshops = [Workshop(id=w["id"], name=w["name"], levels=list(w.get("levels", [])))
+                     for w in data.get("workshops", [])]
+        return cls(quests, maps, data.get("generated_at", ""), items, workshops)
 
     def names(self) -> list[str]:
         return [q.name for q in self.quests]

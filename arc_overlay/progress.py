@@ -8,10 +8,10 @@
 from __future__ import annotations
 
 import json
-import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
+from .items import parse_required
 from .quest_db import Quest, QuestDB
 
 AUTO_ADD_LIMIT = 3  # если после квеста открывается больше квестов, сами они не добавляются
@@ -30,6 +30,7 @@ class Progress:
     active: list[ActiveQuest] = field(default_factory=list)
     current: int = 0
     completed: list[str] = field(default_factory=list)  # id выполненных квестов
+    workshops: dict[str, int] = field(default_factory=dict)  # уровни мастерских, которые отметил игрок
 
     @classmethod
     def load(cls, path: Path) -> "Progress":
@@ -39,13 +40,15 @@ class Progress:
             progress.active = [ActiveQuest(**item) for item in data.get("active", [])]
             progress.current = int(data.get("current", 0))
             progress.completed = list(data.get("completed", []))
+            progress.workshops = {str(k): int(v) for k, v in data.get("workshops", {}).items()}
         except (OSError, ValueError, TypeError):
             pass  # файла нет или он испорчен — начинаем с чистого листа
         progress._clamp()
         return progress
 
     def save(self):
-        data = {"active": [asdict(a) for a in self.active], "current": self.current, "completed": self.completed}
+        data = {"active": [asdict(a) for a in self.active], "current": self.current, "completed": self.completed,
+                "workshops": self.workshops}
         tmp = self.path.with_suffix(".tmp")
         tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
         tmp.replace(self.path)
@@ -127,15 +130,18 @@ class Progress:
         return quest, added, skipped
 
 
-def shopping_list(quests: list[Quest]) -> list[tuple[str, int, list[str]]]:
-    """Предметы, которые нужно собрать для квестов: [(предмет, всего штук, [квесты])], по алфавиту."""
+def shopping_list(quests: list[Quest], extra: list[tuple[str, int, str]] | None = None
+                  ) -> list[tuple[str, int, list[str]]]:
+    """Предметы, которые нужно собрать: [(предмет, всего штук, [для чего])], по алфавиту.
+
+    extra — другие нужды, например мастерские: [(предмет, штук, для чего)].
+    """
+    rows = [(*parse_required(item), quest.name) for quest in quests for item in quest.required_items]
+    rows += [(qty, name, purpose) for name, qty, purpose in extra or []]
     totals: dict[str, list] = {}
-    for quest in quests:
-        for item in quest.required_items:
-            match = re.match(r"^\s*(\d+)\s*[×x]\s*(.+)$", item)
-            qty, name = (int(match.group(1)), match.group(2).strip()) if match else (1, item.strip())
-            entry = totals.setdefault(name.lower(), [name, 0, []])
-            entry[1] += qty
-            if quest.name not in entry[2]:
-                entry[2].append(quest.name)
+    for qty, name, purpose in rows:
+        entry = totals.setdefault(name.lower(), [name, 0, []])
+        entry[1] += qty
+        if purpose not in entry[2]:
+            entry[2].append(purpose)
     return [tuple(v) for _, v in sorted(totals.items())]
