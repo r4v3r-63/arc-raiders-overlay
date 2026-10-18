@@ -15,6 +15,7 @@ from . import autostart, guide, paths, winapi
 from .progress import Progress
 from .input_window import InputWindow
 from .net import CachedDownloader
+from .onboarding import OnboardingWindow
 from .overlay import OverlayCard
 from .quest_db import REMOTE_DATA_URL, Quest, QuestDB
 
@@ -89,6 +90,12 @@ class OverlayApp:
         autostart.refresh()
         self.show_current()
         self.sync()
+
+        self.settings = paths.settings()
+        self.onboarding = OnboardingWindow()
+        self.onboarding.finished.connect(self._onboarding_finished)
+        if not self.settings.value("onboarding_done", False, type=bool):
+            self.onboarding.open()
         self._sync_timer = QTimer()
         self._sync_timer.timeout.connect(self.sync)
         self._sync_timer.start(SYNC_CHECK_INTERVAL_MS)
@@ -111,6 +118,8 @@ class OverlayApp:
         menu = QMenu()
         enter = QAction("Ввести квест", menu)
         enter.triggered.connect(self.input.open)
+        tour_action = QAction("Как пользоваться", menu)
+        tour_action.triggered.connect(lambda: self.onboarding.open())
         help_action = QAction("Сочетания клавиш (?)", menu)
         help_action.triggered.connect(self.show_help)
         edit_action = QAction("Переместить / изменить масштаб", menu)
@@ -144,6 +153,7 @@ class OverlayApp:
         menu.addAction(self._toggle_action)
         menu.addAction(edit_action)
         menu.addAction(help_action)
+        menu.addAction(tour_action)
         menu.addSeparator()
         for action in self._quest_actions:
             menu.addAction(action)
@@ -212,6 +222,10 @@ class OverlayApp:
             self.progress.save()
 
     # --- активные квесты --------------------------------------------------
+
+    def _onboarding_finished(self):
+        self.settings.setValue("onboarding_done", True)
+        self.settings.sync()
 
     def show_current(self, notice: str = ""):
         """Показывает текущий активный квест (или приглашение ввести квест, если список пуст)."""
