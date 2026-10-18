@@ -83,4 +83,7 @@ ARC Raiders и все игровые материалы © Embark Studios AB. П
 
 ## Лицензия
 
-Код программы — [MIT](LICENSE). Тексты гайдов с вики, их перевод и скриншоты — CC BY-SA 4.0.
+Код программы — [MIT](LICENSE). Данные сторонних источников сохраняют свои лицензии:
+данные квестов из arcraiders-data — MIT; тексты гайдов с вики, их перевод
+(`tools/translations/ru.json`) и скриншоты в `arc_overlay/data/guides` — CC BY-SA 4.0;
+названия и материалы игры — © Embark Studios AB.

@@ -19,13 +19,3 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
-
----
-
-The MIT License above covers the source code of this program. Third-party data
-bundled with it keeps its own license:
-
-- quest data from RaidTheory/arcraiders-data — MIT;
-- guide texts, their Russian translations (tools/translations/ru.json) and
-  screenshots in arc_overlay/data/guides from arcraiders.wiki — CC BY-SA 4.0;
-- ARC Raiders names and game materials — © Embark Studios AB.
