@@ -41,7 +41,7 @@ class OverlayApp:
     def __init__(self, app: QApplication):
         self.app = app
         self.db = QuestDB.load()
-        self.card = OverlayCard(HOTKEY_INPUT)
+        self.card = OverlayCard(self.db, HOTKEY_INPUT)
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
 

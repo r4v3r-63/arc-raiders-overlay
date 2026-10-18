@@ -1,71 +1,2081 @@
 {
-  "source": "https://arcraiders.wiki/wiki/Quests",
-  "note": "Статичная стартовая база для MVP. На этапе 2 её заменит автоматический парсер вики.",
+  "source": "https://github.com/RaidTheory/arcraiders-data (MIT) — данные игры © Embark Studios AB",
+  "maps": [
+    {
+      "id": "dam_battlegrounds",
+      "name": "Dam Battlegrounds",
+      "aliases": [
+        "дамба",
+        "дамба поля боя",
+        "dam"
+      ]
+    },
+    {
+      "id": "the_spaceport",
+      "name": "The Spaceport",
+      "aliases": [
+        "космопорт",
+        "spaceport"
+      ]
+    },
+    {
+      "id": "buried_city",
+      "name": "Buried City",
+      "aliases": [
+        "погребенный город"
+      ]
+    },
+    {
+      "id": "the_blue_gate",
+      "name": "The Blue Gate",
+      "aliases": [
+        "синие врата",
+        "синяя врата",
+        "blue gate"
+      ]
+    },
+    {
+      "id": "stella_montis",
+      "name": "Stella Montis",
+      "aliases": [
+        "звезда горы"
+      ]
+    },
+    {
+      "id": "riven_tides",
+      "name": "Riven Tides",
+      "aliases": [
+        "бурные потоки"
+      ]
+    }
+  ],
   "quests": [
     {
-      "name": "Picking Up The Pieces",
-      "trader": "Shani",
-      "locations": ["Any"],
+      "id": "a_bad_feeling",
+      "name": "Дурное предчувствие",
+      "aliases": [
+        "A Bad Feeling"
+      ],
+      "trader": "Селеста",
+      "locations": [],
+      "one_round": false,
       "required_items": [],
       "steps": [
-        "Открой карту и иди в любую зону со значком категории лута",
-        "Обыщи 3 контейнера"
-      ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces"
-    },
-    {
-      "name": "Clearer Skies",
-      "trader": "Shani",
-      "locations": ["Any"],
-      "required_items": ["3× ARC Alloy"],
-      "steps": [
-        "Уничтожь 3 машины ARC (проще всего — мелкие, вроде Wasp)",
-        "Собери 3 ARC Alloy с обломков и отнеси Шани"
-      ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Clearer_Skies"
-    },
-    {
-      "name": "Trash Into Treasure",
-      "trader": "Shani",
-      "locations": ["Any"],
-      "required_items": ["6× Wires", "1× Battery"],
-      "steps": [
-        "Добудь 6 Wires (можно разбирать лут на переработку)",
-        "Добудь 1 Battery и сдай всё Шани"
-      ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure"
-    },
-    {
-      "name": "Off The Radar",
-      "trader": "Shani",
-      "locations": ["Any"],
-      "required_items": [],
-      "steps": [
-        "За один рейд: найди Field Depot — постройку с синим брезентом и антенной на крыше",
-        "Почини антенну на крыше Field Depot"
-      ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Off_The_Radar"
-    },
-    {
-      "name": "A Bad Feeling",
-      "trader": "Celeste",
-      "locations": ["Any"],
-      "required_items": [],
-      "steps": [
-        "Найди и обыщи любой ARC Probe или ARC Courier (Probe слышно издалека, к упавшему Courier ведёт столб дыма)"
+        "Найдите и обыщите любой зонд ARC или доставщик ARC"
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/A_Bad_Feeling"
     },
     {
-      "name": "Hatch Repairs",
-      "trader": "Shani",
-      "locations": ["Any"],
+      "id": "a_balanced_harvest",
+      "name": "Достойный урожай",
+      "aliases": [
+        "A Balanced Harvest"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
       "required_items": [],
       "steps": [
-        "Почини протекающие гидравлические трубы у Raider Hatch (такие люки отмечены на карте)",
-        "Найди Hatch Key в маленьком ящике рядом с этим люком"
+        "Идите в исследовательско-административный центр.",
+        "Найдите лабораторию 1 на верхнем этаже, над приемной.",
+        "Найдите какую-либо информацию о сельскохозяйственных исследованиях."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Balanced_Harvest"
+    },
+    {
+      "id": "a_better_use",
+      "name": "Применение получше",
+      "aliases": [
+        "A Better Use"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Запросите ящик с припасами через станцию вызова.",
+        "Возьмите добычу из ящика с припасами."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Better_Use"
+    },
+    {
+      "id": "a_dead_end",
+      "name": "Тупик",
+      "aliases": [
+        "A Dead End"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Пыльная катушка с пленкой"
+      ],
+      "steps": [
+        "Найдите подземные базы «МАНТИКОРЫ».",
+        "Найдите путь в запертую комнату в крыле службы безопасности.",
+        "Поищите в запертой комнате записи о проекте «Вечная зелень».",
+        "Найдите пыльную кинопленку.",
+        "Доставьте Шани пыльную кинопленку."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Dead_End"
+    },
+    {
+      "id": "a_first_foothold",
+      "name": "Первый плацдарм",
+      "aliases": [
+        "A First Foothold"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Стабилизируйте смотровую площадку у хребтов.",
+        "Включите терминал связи у оливковой рощи.",
+        "Поверните спутниковые тарелки на крыше церкви к северу от хранилища данных.",
+        "Закрепите крышу постройки рейдеров в прогалине зверолова."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_First_Foothold"
+    },
+    {
+      "id": "a_lay_of_the_land",
+      "name": "Рельеф местности",
+      "aliases": [
+        "A Lay of the Land"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Лидарный сканер"
+      ],
+      "steps": [
+        "Доберитесь до склада Jiangsu.",
+        "Найдите записи о поставках в офисе бригадира.",
+        "Найдите локаторы в центре управления полетами диспетчерской вышки A6.",
+        "Доставьте Шани лазерные локаторы (1)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Lay_of_the_Land"
+    },
+    {
+      "id": "a_new_type_of_plant",
+      "name": "Новое растение",
+      "aliases": [
+        "A New Type of Plant"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Возможно ядовитое растение"
+      ],
+      "steps": [
+        "Найдите новое растение у обломков «Барона» на старом поле битвы.",
+        "Доставьте Лэнсу потенциально ядовитое растение."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_New_Type_of_Plant"
+    },
+    {
+      "id": "a_prime_specimen",
+      "name": "Превосходный образец",
+      "aliases": [
+        "A Prime Specimen"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": true,
+      "required_items": [
+        "2× Энергоячейка ARC"
+      ],
+      "steps": [
+        "Добудьте энергоячейки ARC: 2.",
+        "Взаимодействуйте с «Дровосеком» ARC.",
+        "Заберите добычу с «Дровосека» ARC."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Prime_Specimen"
+    },
+    {
+      "id": "a_reveal_in_ruins",
+      "name": "Что скрывают развалины",
+      "aliases": [
+        "A Reveal in Ruins"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Анализатор СОЭ"
+      ],
+      "steps": [
+        "Найдите анализатор СОЭ в аптеке Погребенного города.",
+        "Доставьте Лэнсу анализатор СОЭ."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Reveal_in_Ruins"
+    },
+    {
+      "id": "a_rising_tide",
+      "name": "Прилив",
+      "aliases": [
+        "A Rising Tide"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите забаррикадированную квартиру бригадира к югу от Пьяцца Рома в Погребенном городе.",
+        "Получите доступ к цифровому журналу бригадира.",
+        "Доберитесь до центра производства энергии на поле битвы у дамбы.",
+        "Найдите путь в зону контролируемого доступа.",
+        "Найдите в зоне контролируемого доступа сведения о проекте по реконструкции, которым занимался бригадир."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Rising_Tide"
+    },
+    {
+      "id": "a_symbol_of_unification",
+      "name": "Символ единства",
+      "aliases": [
+        "A Symbol of Unification"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до аванпоста Формикаи на поле битвы у дамбы.",
+        "Найдите флаг в аванпосте Формикаи.",
+        "Поднимите флаг на небольшой платформе с видом на Алые озера."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Symbol_of_Unification"
+    },
+    {
+      "id": "a_toxic_trail",
+      "name": "Ядовитый след",
+      "aliases": [
+        "A Toxic Trail"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Вернитесь к водозабору у здания диспетчерской водоочистителя.",
+        "Осмотрите болото, чтобы найти, откуда могла появиться бочка.",
+        "Сфотографируйте грузовик с бочками.",
+        "Поищите в грузовике зацепки о личности диверсанта."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Toxic_Trail"
+    },
+    {
+      "id": "a_warm_place_to_rest",
+      "name": "Место покоя",
+      "aliases": [
+        "A Warm Place To Rest"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите покинутый лагерь на шоссе.",
+        "Узнайте, есть ли выжившие.",
+        "Идите по красным меткам.",
+        "Осмотрите могилу."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Warm_Place_To_Rest"
+    },
+    {
+      "id": "a_wrench_in_the_works",
+      "name": "Ключ в деле",
+      "aliases": [
+        "A Wrench in the Works"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Обыщите автобусы у западных ворот.",
+        "Найдите хранилище с припасами для саботажа, спрятанное в водонапорных башнях."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Wrench_in_the_Works"
+    },
+    {
+      "id": "after_rain_comes",
+      "name": "После дождя",
+      "aliases": [
+        "After Rain Comes"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [
+        "5× Провода",
+        "2× Батарея"
+      ],
+      "steps": [
+        "Найдите затопленные солнечные панели около апартаментов «Грандиозо».",
+        "Почините солнечные панели, используя 5 проводов и 2 батареи."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/After_Rain_Comes"
+    },
+    {
+      "id": "armored_transports",
+      "name": "Бронированные машины",
+      "aliases": [
+        "Armored Transports"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до контрольного пункта.",
+        "Найдите ключ-карту от бронированной патрульной машины в будках охраны.",
+        "Доберитесь до транспортного туннеля у контрольного пункта Синих ворот.",
+        "Найдите и откройте заднюю дверь патрульной машины."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Armored_Transports"
+    },
+    {
+      "id": "back_on_top",
+      "name": "Снова на вершине",
+      "aliases": [
+        "Back on Top"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Отметьте Геометрическое здание на поле битвы у дамбы.",
+        "Отметьте белую смотровую вышку к югу от складского комплекса Синих ворот.",
+        "Отметьте южную траншейную вышку в космопорте.",
+        "Отметьте погребенное здание с граффити в Погребенном городе."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Back_on_Top"
+    },
+    {
+      "id": "battening_down",
+      "name": "Меры предосторожности",
+      "aliases": [
+        "Battening Down"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "riven_tides"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Сфотографируйте трещины на волнорезе.",
+        "Возьмите образцы на побережье отельного пляжа.",
+        "Устраните утечку нефтепровода на северо-востоке."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Battening_Down"
+    },
+    {
+      "id": "bees",
+      "name": "Пчелы!",
+      "aliases": [
+        "Bees!"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до оливковой рощи у Синих ворот.",
+        "Поищите ульи в оливковой роще."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Bees!"
+    },
+    {
+      "id": "bombing_run",
+      "name": "Заход на цель",
+      "aliases": [
+        "Bombing Run"
+      ],
+      "trader": "Шани",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Ячейка Бомбардира"
+      ],
+      "steps": [
+        "Уничтожьте «Бомбардира».",
+        "Доставьте Шани ячейку «Бомбардира»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Bombing_Run"
+    },
+    {
+      "id": "broken_monument",
+      "name": "Поврежденный памятник",
+      "aliases": [
+        "Broken Monument"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Кассета Первой Волны",
+        "1× Компас Первой Волны",
+        "1× Пайки Первой Волны"
+      ],
+      "steps": [
+        "Доберитесь до памятного места рядом со свалкой металлолома.",
+        "Найдите компас среди сломанных автомобилей.",
+        "Поищите видеокассету рядом с контейнерами цилиндрической формы.",
+        "Поищите старые полевые пайки в рейдерском лагере.",
+        "Доставьте Тянь Вэнь кассету времен Первой волны.",
+        "Доставьте Тянь Вэнь компас времен Первой волны.",
+        "Доставьте Тянь Вэнь пайки времен Первой волны."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Broken_Monument"
+    },
+    {
+      "id": "building_a_library",
+      "name": "Создавая библиотеку",
+      "aliases": [
+        "Building a Library"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [
+        "3× Книга"
+      ],
+      "steps": [
+        "Найдите библиотеку в центре города.",
+        "Найдите 1 книгу с любовным романом.",
+        "Найдите 1 детективный роман.",
+        "Найдите 1 приключенческую книгу.",
+        "Доставьте Аполлону книги (3)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Building_a_Library"
+    },
+    {
+      "id": "celestes_journals",
+      "name": "Дневники Селесты",
+      "aliases": [
+        "Celeste’s Journals"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [
+        "2× Дневник Селесты"
+      ],
+      "steps": [
+        "Найдите дневники Селесты в аванпосте на южном болоте.",
+        "Найдите дневники Селесты в восточном рейдерском аванпосте.",
+        "Доставьте Селесте дневники (2)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Celeste’s_Journals"
+    },
+    {
+      "id": "clamoring_for_attention",
+      "name": "Привлечение внимания",
+      "aliases": [
+        "Clamoring for Attention"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Используйте 3 провода, чтобы починить и включить аварийную сирену у складского комплекса.",
+        "Используйте батарею, чтобы запустить стереосистему в деревне.",
+        "Опробуйте гудок любого автобуса у контрольного пункта."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clamoring_for_Attention"
+    },
+    {
+      "id": "clearer_skies",
+      "name": "Чистое небо",
+      "aliases": [
+        "Clearer Skies"
+      ],
+      "trader": "Шани",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "3× Сплав ARC"
+      ],
+      "steps": [
+        "Уничтожьте машины ARC (3)",
+        "Добудьте сплав ARC (3) для Шани"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clearer_Skies"
+    },
+    {
+      "id": "cold_storage",
+      "name": "Холодное хранилище",
+      "aliases": [
+        "Cold Storage"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Книги Старого мира"
+      ],
+      "steps": [
+        "Обыщите любой контейнер J Kozma Ventures.",
+        "Доставьте Шани книги старого мира."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Cold_Storage"
+    },
+    {
+      "id": "collision_course",
+      "name": "Траектория столкновения",
+      "aliases": [
+        "Collision Course"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Воспламенитель «Комета»"
+      ],
+      "steps": [
+        "Уничтожьте «Комету».",
+        "Доставьте Тянь Вэнь запальное устройство «Кометы»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Collision_Course"
+    },
+    {
+      "id": "combat_recon",
+      "name": "Разведка боем",
+      "aliases": [
+        "Combat Recon"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Передатчик Наводчика"
+      ],
+      "steps": [
+        "Осмотрите укрытие на лестнице гаража на парковке.",
+        "Осмотрите укрытие в кустах рядом с парком Марано.",
+        "Осмотрите укрытие на одном из чердаков рядом с главной улицей.",
+        "Уничтожьте «Наводчиков»: 2.",
+        "Доставьте Шани передатчик «Наводчика»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Combat_Recon"
+    },
+    {
+      "id": "communication_hideout",
+      "name": "Убежище центра связи",
+      "aliases": [
+        "Communication Hideout"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до красной вышки в Старом городе.",
+        "Найдите пропавший элемент батареи.",
+        "Установите элемент батареи в генератор.",
+        "Включите питание от генератора.",
+        "Включите терминал антенны около красной вышки."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Communication_Hideout"
+    },
+    {
+      "id": "deciphering_the_data",
+      "name": "Расшифровка данных",
+      "aliases": [
+        "Deciphering The Data"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Используйте магнетический дешифратор в здании Управления подачей топлива.",
+        "Доберитесь до зоны прилета космопорта.",
+        "Используйте магнетический дешифратор на верхнем этаже зоны прилета."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Deciphering_The_Data"
+    },
+    {
+      "id": "digging_up_dirt",
+      "name": "Нарыть компромат",
+      "aliases": [
+        "Digging Up Dirt"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Отыщите комплекс «Санта Мария» в Старом городе.",
+        "Отыщите тайник во дворе."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Digging_Up_Dirt"
+    },
+    {
+      "id": "doctors_orders",
+      "name": "Указания врача",
+      "aliases": [
+        "Doctor's Orders"
+      ],
+      "trader": "Лэнс",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Шприц",
+        "2× Антисептик",
+        "1× Прочная ткань",
+        "1× Коровяк"
+      ],
+      "steps": [
+        "Добудьте 1 шприц.",
+        "Добудьте антисептик (2).",
+        "Добудьте 1 прочную ткань.",
+        "Добудьте 1 коровяк."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Doctor's_Orders"
+    },
+    {
+      "id": "dormant_barons",
+      "name": "Спящие «Бароны»",
+      "aliases": [
+        "Dormant Barons"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Соберите ресурсы с обломков «Барона»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Dormant_Barons"
+    },
+    {
+      "id": "down_to_earth",
+      "name": "Приземленные загадки",
+      "aliases": [
+        "Down to Earth"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Посетите полевую станцию.",
+        "Доставьте ящик на полевую станцию.",
+        "Получите награду"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Down_to_Earth"
+    },
+    {
+      "id": "dust_on_the_wires",
+      "name": "Пыль на проводах",
+      "aliases": [
+        "Dust on the Wires"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Записка разведывательного патруля"
+      ],
+      "steps": [
+        "Зайдите в любую полевую станцию к востоку от космопорта.",
+        "Используйте полевую радиостанцию, чтобы передать Шани последнюю запись разведчиков.",
+        "Задействуйте терминал разведчиков в старой рейдерской башне севернее ремонтного ангара.",
+        "Найдите следы разведчиков возле ремонтного ангара.",
+        "Изучите всё, что оставили после себя разведчики.",
+        "Доставьте Шани записку разведчиков."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Dust_on_the_Wires"
+    },
+    {
+      "id": "echoes_of_victory_ridge",
+      "name": "Эхо Хребта победы",
+      "aliases": [
+        "Echoes of Victory Ridge"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Нашивка майора Айвы"
+      ],
+      "steps": [
+        "Доберитесь до Хребта победы.",
+        "Добудьте планы сражений из убежища под разрушенным шоссе.",
+        "Доставьте Селесте нашивку майора Айвы."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Echoes_of_Victory_Ridge"
+    },
+    {
+      "id": "espresso",
+      "name": "Эспрессо",
+      "aliases": [
+        "Espresso"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Детали кофемашины"
+      ],
+      "steps": [
+        "Найдите кофемашину и разберите ее на запчасти.",
+        "Раздобудьте детали кофемашины для Аполлона."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Espresso"
+    },
+    {
+      "id": "eyes_in_the_sky",
+      "name": "Взгляд в небеса",
+      "aliases": [
+        "Eyes in the Sky"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Установите лазерный локатор на крыше диспетчерской вышки на поле битвы у дамбы.",
+        "Установите лазерный локатор в диспетчерской вышке космопорта.",
+        "Установите лазерный локатор над вывеской галереи в Погребенном городе."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_in_the_Sky"
+    },
+    {
+      "id": "eyes_on_the_prize",
+      "name": "Вижу цель, не вижу препятствий",
+      "aliases": [
+        "Eyes on the Prize"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [
+        "3× Провода"
+      ],
+      "steps": [
+        "Найдите уединенную террасу на крыше к юго-западу от Южной станции (ориентируйтесь на синий брезент).",
+        "Перенастройте солнечную панель, используя 3 провода."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_on_the_Prize"
+    },
+    {
+      "id": "flickering_threat",
+      "name": "Мерцающая угроза",
+      "aliases": [
+        "Flickering Threat"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [
+        "4× Провода"
+      ],
+      "steps": [
+        "Найдите помещение с генератором.",
+        "Почините генератор, использовав 4 провода.",
+        "Найдите вентиляционную шахту.",
+        "Возобновите подачу питания с помощью переключателя под лестницей."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Flickering_Threat"
+    },
+    {
+      "id": "fragmented_logs",
+      "name": "Разрозненные записи",
+      "aliases": [
+        "Fragmented Logs"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Зайдите в любую диспетчерскую песочницы для роботов и используйте 1 электротехнический компонент, чтобы починить неработающий терминал.",
+        "Включите питание в любом кабельном помещении рядом с песочницей для роботов.",
+        "Запустите главный терминал в технических помещениях культурного архива."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Fragmented_Logs"
+    },
+    {
+      "id": "furtive_meetings",
+      "name": "Плодотворные встречи",
+      "aliases": [
+        "Furtive Meetings"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Информация о секретной встрече"
+      ],
+      "steps": [
+        "Осмотрите тайное место встречи под лестницей в корпусе медицинских исследований.",
+        "Найдите тайное место встречи возле вентиляционной шахты где-то между песочницей для роботов Б и сейфом с семенами.",
+        "Найдите тайное место встречи внизу лестницы, соединяющей культурный архив и сейф с семенами.",
+        "Обыщите место встречи.",
+        "Принесите Шани информацию о тайных встречах."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Furtive_Meetings"
+    },
+    {
+      "id": "greasing_her_palms",
+      "name": "Взяточные запчасти",
+      "aliases": [
+        "Greasing Her Palms"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Проберитесь в закрытую комнату в здании диспетчерской водоочистителя на поле битвы у дамбы.",
+        "Найдите ракетные двигатели снаружи цеха сбора ракет в космопорте.",
+        "Проберитесь в забаррикадированную часть шестого этажа здания космических полетов в Погребенном городе."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Greasing_Her_Palms"
+    },
+    {
+      "id": "groundbreaking",
+      "name": "Первый шаг",
+      "aliases": [
+        "Groundbreaking"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Проникните в запертую комнату на Вершине странника.",
+        "Поищите в комнате данные о строительных исследованиях.",
+        "Найдите здание, изображенное на доске.",
+        "Сфотографируйте недостроенный жилой комплекс."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Groundbreaking"
+    },
+    {
+      "id": "hatch_repairs",
+      "name": "Ремонт люков",
+      "aliases": [
+        "Hatch Repairs"
+      ],
+      "trader": "Шани",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Устраните утечку гидропровода у рейдерского люка."
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Hatch_Repairs"
+    },
+    {
+      "id": "in_my_image",
+      "name": "По образу и подобию",
+      "aliases": [
+        "In My Image"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Зайдите в Стелла Монтис.",
+        "Найдите и осмотрите андроидов (3)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/In_My_Image"
+    },
+    {
+      "id": "industrial_espionage",
+      "name": "Промышленный шпионаж",
+      "aliases": [
+        "Industrial Espionage"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите тайник с оружием Тянь Вэнь у заправки на окраине.",
+        "Доставьте Бурлетту в тайник с оружием конкурента.",
+        "Подложите жучок в тайник с оружием."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Industrial_Espionage"
+    },
+    {
+      "id": "into_the_fray",
+      "name": "В самое пекло",
+      "aliases": [
+        "Into the Fray"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Импульсный блок Прыгуна"
+      ],
+      "steps": [
+        "Уничтожьте «Прыгуна».",
+        "Добудьте импульсный блок «Прыгуна»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Into_the_Fray"
+    },
+    {
+      "id": "keeping_an_eye_out",
+      "name": "Бдительное око",
+      "aliases": [
+        "Keeping an Eye Out"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите обрушившееся шоссе у южного края пустыря.",
+        "Найдите хранилище Бильгуна и поищите в нем намеки, где он."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_an_Eye_Out"
+    },
+    {
+      "id": "keeping_the_memory",
+      "name": "В память о былом",
+      "aliases": [
+        "Keeping the Memory"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до развалин среди холмов Формикаи.",
+        "Найдите пропавший шлем.",
+        "Верните шлем на мемориал."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_the_Memory"
+    },
+    {
+      "id": "last_entry",
+      "name": "Последняя запись",
+      "aliases": [
+        "Last Entry"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Официальная документация о прекращении работы"
+      ],
+      "steps": [
+        "Найдите нужное рабочее место в сейфе с семенами и поищите зацепки.",
+        "Найдите ключ, спрятанный в соседнем помещении.",
+        "Обыщите сейф с семенами и откройте камеру с семенами.",
+        "Обыщите камеру с семенами.",
+        "Принесите Шани официальную документацию о закрытии проекта."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Last_Entry"
+    },
+    {
+      "id": "life_of_a_pharmacist",
+      "name": "Жизнь аптекаря",
+      "aliases": [
+        "Life of a Pharmacist"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите «Арбусто Фармачия» у разрушенного шоссе.",
+        "Соберите материалы о хобби аптекаря.",
+        "Соберите материалы о семье аптекаря.",
+        "Соберите материалы о вкусах аптекаря.",
+        "Соберите материалы о навыках аптекаря."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Life_of_a_Pharmacist"
+    },
+    {
+      "id": "line_in_the_sand",
+      "name": "Линия на песке",
+      "aliases": [
+        "Line in the Sand"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Выясните, почему поезд так и не дошел до станции Марано.",
+        "Выясните, кто организовал кражу.",
+        "Найдите, куда припрятали клапаны двигателей.",
+        "Обыщите подвал близлежащей квартиры продавца."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Line_in_the_Sand"
+    },
+    {
+      "id": "lost_in_transmission",
+      "name": "Трудности связи",
+      "aliases": [
+        "Lost in Transmission"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Зайдите в диспетчерскую вышку А6.",
+        "Поднимитесь на верх диспетчерской вышки A6.",
+        "Установите связь через терминал."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Lost_in_Transmission"
+    },
+    {
+      "id": "marked_for_death",
+      "name": "Метка смерти",
+      "aliases": [
+        "Marked for Death"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Обыщите склады Su Durante на окраине Погребенного города.",
+        "Обыщите тайник Тянь Вэнь около складов.",
+        "Идите по следу."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Marked_for_Death"
+    },
+    {
+      "id": "market_correction",
+      "name": "Коррекция рынка",
+      "aliases": [
+        "Market Correction"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите тайник у станции Марано.",
+        "Саботируйте тайник."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Market_Correction"
+    },
+    {
+      "id": "medical_merchandise",
+      "name": "Медицинские товары",
+      "aliases": [
+        "Medical Merchandise"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Обыщите контейнеры (2) в комнатах досмотра зоны отправления космопорта.",
+        "Обыщите контейнеры (3) в больнице Погребенного города.",
+        "Обыщите контейнеры (2) в медкабинете исследовательско-административного центра на поле битвы у дамбы."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Medical_Merchandise"
+    },
+    {
+      "id": "mixed_signals",
+      "name": "Смешанный сигнал",
+      "aliases": [
+        "Mixed Signals"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Сейф Наблюдателя"
+      ],
+      "steps": [
+        "Уничтожьте «Наблюдателя».",
+        "Добудьте 1 сейф «Наблюдателя»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Mixed_Signals"
+    },
+    {
+      "id": "movie_night",
+      "name": "Киновечер",
+      "aliases": [
+        "Movie Night"
+      ],
+      "trader": "Аполлон",
+      "locations": [],
+      "one_round": true,
+      "required_items": [
+        "1× Портативный телевизор",
+        "1× Стопка видеокассет"
+      ],
+      "steps": [
+        "Доставьте Аполлону портативный телевизор.",
+        "Найдите в культурном архиве «Стелла Монтис» кассеты со старыми фильмами.",
+        "Доставьте Аполлону кассеты с фильмами."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Movie_Night"
+    },
+    {
+      "id": "off_the_radar",
+      "name": "Уход в тень",
+      "aliases": [
+        "Off The Radar"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Посетите полевую станцию",
+        "Почините антенну на крыше полевой станции"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Off_The_Radar"
+    },
+    {
+      "id": "on_deaf_ears",
+      "name": "Проблемы со слухом",
+      "aliases": [
+        "On Deaf Ears"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите списки слушателей лекций исследовательницы в компьютере на стойке администрации.",
+        "Узнайте, где исследовательница проводила лекции, и отыщите записи.",
+        "Найдите информацию о прототипах на компьютере в корпусе медицинских исследований.",
+        "Найдите в мастерских сборочного цеха распечатанные записи о поставках."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/On_Deaf_Ears"
+    },
+    {
+      "id": "on_the_map",
+      "name": "На карте",
+      "aliases": [
+        "On The Map"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите место повреждения топливопровода и передайте свое местоположение.",
+        "Отправляйтесь к антенне возле здания Управления подачи топлива и передайте свое местоположение.",
+        "Отправляйтесь к кактусам у разлома в стене и передайте свое местоположение.",
+        "Передайте свое местоположение с крыши хранилища контейнеров.",
+        "Найдите накрытый брезентом контейнер и отметьте его."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/On_The_Map"
+    },
+    {
+      "id": "our_presence_up_there",
+      "name": "Наше присутствие наверху",
+      "aliases": [
+        "Our Presence up There"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Зайдите в Геометрическое здание на дамбе.",
+        "Найдите и используйте переключатель питания.",
+        "Завершите установку антенны на крыше."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Our_Presence_up_There"
+    },
+    {
+      "id": "out_of_the_shadows",
+      "name": "Из тени",
+      "aliases": [
+        "Out of the Shadows"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Драйвер Ракетчика"
+      ],
+      "steps": [
+        "Уничтожьте «Ракетчика».",
+        "Добудьте драйвер «Ракетчика»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Out_of_the_Shadows"
+    },
+    {
+      "id": "outstanding_balance",
+      "name": "Непогашенный долг",
+      "aliases": [
+        "Outstanding Balance"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Записка Доджера"
+      ],
+      "steps": [
+        "Поищите хранилище Плута в транспортном туннеле.",
+        "Обыщите место, где Плут заключал сделки, возле антенны Вершины странника.",
+        "Доставьте Тянь Вэнь записку Плута."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Outstanding_Balance"
+    },
+    {
+      "id": "paving_the_way",
+      "name": "Проложить путь",
+      "aliases": [
+        "Paving the Way"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "the_blue_gate",
+        "buried_city",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Отправляйтесь к любому зданию ENELICA.",
+        "Поищите доску с заметкой от исследователя.",
+        "Отправляйтесь в Погребенный город и поднимитесь на этаж над «Конвинио» на Пьяцца Рома.",
+        "Найдите квартиру исследователя и поищите полезные данные."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Paving_the_Way"
+    },
+    {
+      "id": "picking_up_the_pieces",
+      "name": "Сбор по крупицам",
+      "aliases": [
+        "Picking Up The Pieces"
+      ],
+      "trader": "Шани",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Зайдите в любую зону со значком добычи на карте",
+        "Возьмите добычу из контейнеров (3)"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces"
+    },
+    {
+      "id": "power_out",
+      "name": "Отключение энергии",
+      "aliases": [
+        "Power Out"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите электроподстанцию к югу от космопорта.",
+        "Поищите следы пропавшего инженера.",
+        "Установите предохранитель.",
+        "Восстановите питание."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Power_Out"
+    },
+    {
+      "id": "prescriptions_of_the_past",
+      "name": "Лекарства прошлого",
+      "aliases": [
+        "Prescriptions of the Past"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Зайдите в зону отправления космопорта.",
+        "Найдите комнату медосмотра в зоне отправления.",
+        "Поищите записи."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Prescriptions_of_the_Past"
+    },
+    {
+      "id": "reduced_to_rubble",
+      "name": "Одни только щепки",
+      "aliases": [
+        "Reduced to Rubble"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Сфотографируйте разрушенное шоссе.",
+        "Идите к разломам.",
+        "Идите по следам разрушения через разломы.",
+        "Осмотрите неизвестные машины ARC."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Reduced_to_Rubble"
+    },
+    {
+      "id": "safe_harbor",
+      "name": "Тихая гавань",
+      "aliases": [
+        "Safe Harbor"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "riven_tides"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Прецизионный подвес"
+      ],
+      "steps": [
+        "Найдите подсказку, оставленную сотрудником кухни.",
+        "Найдите место с рисунка.",
+        "Раскопайте деталь.",
+        "Доставьте Тянь Вэнь карданный подвес гироскопа."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Harbor"
+    },
+    {
+      "id": "safe_passage",
+      "name": "Безопасный проход",
+      "aliases": [
+        "Safe Passage"
+      ],
+      "trader": "Аполлон",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте 2 машины ARC при помощи любых взрывных гранат."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Passage"
+    },
+    {
+      "id": "settled_in_full",
+      "name": "В расчете",
+      "aliases": [
+        "Settled in Full"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Ячейка Бастиона"
+      ],
+      "steps": [
+        "Уничтожьте «Бастион».",
+        "Доставьте Тянь Вэнь ячейку «Бастиона»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Settled_in_Full"
+    },
+    {
+      "id": "shoring_up_defenses",
+      "name": "Прибрежная оборона",
+      "aliases": [
+        "Shoring Up Defenses"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "riven_tides"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте «Ос»: 5.",
+        "Уничтожьте «Светлячков»: 3.",
+        "Используйте сплав ARC (1), чтобы укрепить постройку рейдеров на любом из кранов складской площадки.",
+        "Забейте досками окна в отеле."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Shoring_Up_Defenses"
+    },
+    {
+      "id": "snap_and_salvage",
+      "name": "Фотогеничные детали",
+      "aliases": [
+        "Snap and Salvage"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Магнетрон",
+        "1× Регулятор Потока"
+      ],
+      "steps": [
+        "Сфотографируйте самоходного робота в песочнице.",
+        "Найдите бумаги в помещении контрольного пункта охраны у лобби.",
+        "Доставьте Тянь Вэнь магнетрон.",
+        "Доставьте Тянь Вэнь регулятор потока."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Snap_and_Salvage"
+    },
+    {
+      "id": "source_of_the_contamination",
+      "name": "Источник заражения",
+      "aliases": [
+        "Source of the Contamination"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до водоочистителя на дамбе.",
+        "Найдите водозабор около болота.",
+        "Изучите подозрительные объекты."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Source_of_the_Contamination"
+    },
+    {
+      "id": "sparks_fly",
+      "name": "Искры летят",
+      "aliases": [
+        "Sparks Fly"
+      ],
+      "trader": "Аполлон",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте «Шершня» с помощью триггер-гранаты или разрывной гранаты"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Sparks_Fly"
+    },
+    {
+      "id": "stable_housing",
+      "name": "Устойчивые дома",
+      "aliases": [
+        "Stable Housing"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Чертежи проекта «Хартвуд»"
+      ],
+      "steps": [
+        "Идите на мост охраны.",
+        "Найдите сейф в боковой комнате у лестницы на третьем этаже.",
+        "Поднимитесь в диспетчерскую на четвертом этаже.",
+        "Используйте принтер карт доступа, чтобы создать карту к сейфу.",
+        "Поищите другие способы вскрыть сейф.",
+        "Добудьте содержимое сейфа.",
+        "Доставьте Тянь Вэнь чертежи проекта «Вечная зелень»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Stable_Housing"
+    },
+    {
+      "id": "straight_record",
+      "name": "Поправки",
+      "aliases": [
+        "Straight Record"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до Хребта победы.",
+        "Найдите старую электромагнитную ловушку.",
+        "Обесточьте первый переключатель.",
+        "Обесточьте второй переключатель.",
+        "Обесточьте третий переключатель.",
+        "Отключите электромагнитную ловушку."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Straight_Record"
+    },
+    {
+      "id": "switching_the_supply",
+      "name": "Смена груза",
+      "aliases": [
+        "Switching the Supply"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите туннели под космопортом.",
+        "Найдите и поверните вентиль в туннелях под космопортом."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Switching_the_Supply"
+    },
+    {
+      "id": "test_case",
+      "name": "Прецедент",
+      "aliases": [
+        "Test Case"
+      ],
+      "trader": "Аполлон",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Драйвер Шершня",
+        "1× Горелка Огнешара",
+        "1× Горелка «Светлячок»"
+      ],
+      "steps": [
+        "Доставьте Аполлону драйвер «Шершня».",
+        "Доставьте Аполлону горелку «Огнешара».",
+        "Уничтожьте «Светлячка».",
+        "Доставьте Аполлону горелку «Светлячка»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Test_Case"
+    },
+    {
+      "id": "the_clean_dream",
+      "name": "Чистый сон",
+      "aliases": [
+        "The Clean Dream"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "the_spaceport",
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Обыщите контейнеры (4) в подземных туннелях космопорта.",
+        "Найдите и осмотрите какую-либо систему фильтрации в туннелях",
+        "Посетите бункер технического обслуживания в Синих Воротах.",
+        "Осмотрите систему очистки в бункере.",
+        "Найдите и сфотографируйте в бункере."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Clean_Dream"
+    },
+    {
+      "id": "the_league",
+      "name": "Лига",
+      "aliases": [
+        "The League"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "dam_battlegrounds",
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Сдутый футбольный мяч",
+        "1× Велосипедный насос"
+      ],
+      "steps": [
+        "Доставьте Аполлону сдутый футбольный мяч.",
+        "Доставьте Аполлону велосипедный насос.",
+        "Сфотографируйте цель рядом с водонапорными башнями на поле битвы у дамбы.",
+        "Сфотографируйте футбольные журналы в любом киоске Погребенного города."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_League"
+    },
+    {
+      "id": "the_majors_footlocker",
+      "name": "Личные вещи майора",
+      "aliases": [
+        "The Major’s Footlocker"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Памятные вещи майора Айвы"
+      ],
+      "steps": [
+        "Найдите памятные вещи майора Айвы в апартаментах к северо-западу от дамбы.",
+        "Доставьте Тянь Вэнь памятные вещи майора Айвы."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Major’s_Footlocker"
+    },
+    {
+      "id": "the_right_tool",
+      "name": "Подходящий инструмент",
+      "aliases": [
+        "The Right Tool"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте «Огнешар»",
+        "Уничтожьте «Шершня»",
+        "Уничтожьте «Турель»"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Right_Tool"
+    },
+    {
+      "id": "the_root_of_the_matter",
+      "name": "Суть проблемы",
+      "aliases": [
+        "The Root of the Matter"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Экспериментальный образец семян"
+      ],
+      "steps": [
+        "Идите в исследовательский центр.",
+        "Найдите сейф с семенами в «комнате с красивым видом».",
+        "Доставьте Селесте экспериментальный образец семян."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Root_of_the_Matter"
+    },
+    {
+      "id": "the_stench_of_corruption",
+      "name": "Попахивает коррупцией",
+      "aliases": [
+        "The Stench of Corruption"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до юго-западного лобби в зоне отправления.",
+        "Найдите служебную раздевалку.",
+        "Поищите в комнате зацепки о личности диверсанта.",
+        "Доберитесь до туннелей под космопортом.",
+        "Найдите любой промывочный терминал и используйте ключ для обхода протокола."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Stench_of_Corruption"
+    },
+    {
+      "id": "the_trifecta",
+      "name": "Триада",
+      "aliases": [
+        "The Trifecta"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "the_blue_gate",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [
+        "2× Драйвер Осы",
+        "2× Драйвер Шершня",
+        "2× Сканер Стукача"
+      ],
+      "steps": [
+        "Уничтожьте «Осу».",
+        "Добудьте для Шани драйвер «Осы».",
+        "Уничтожьте «Шершня»",
+        "Добудьте для Шани драйвер «Шершня».",
+        "Уничтожьте «Стукача»",
+        "Добудьте сканер «Стукача» для Шани"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Trifecta"
+    },
+    {
+      "id": "trash_into_treasure",
+      "name": "И хлам богатство",
+      "aliases": [
+        "Trash Into Treasure"
+      ],
+      "trader": "Шани",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "6× Провода",
+        "1× Батарея"
+      ],
+      "steps": [
+        "Добудьте провода (6)",
+        "Добудьте 1 батарею"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure"
+    },
+    {
+      "id": "tribute_to_toledo",
+      "name": "Дань уважения Толедо",
+      "aliases": [
+        "Tribute to Toledo"
+      ],
+      "trader": "Селеста",
+      "locations": [],
+      "one_round": false,
+      "required_items": [
+        "1× Энергетический стержень"
+      ],
+      "steps": [
+        "Добудьте элемент питания для Селесты."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Tribute_to_Toledo"
+    },
+    {
+      "id": "turnabout",
+      "name": "Разворот",
+      "aliases": [
+        "Turnabout"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Идите к северной траншейной вышке.",
+        "Найдите файлы для шантажа и передайте их Селесте."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Turnabout"
+    },
+    {
+      "id": "unexpected_initiative",
+      "name": "Неожиданное дело",
+      "aliases": [
+        "Unexpected Initiative"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city"
+      ],
+      "one_round": true,
+      "required_items": [
+        "1× Измеритель питательных веществ",
+        "1× Измеритель влажности"
+      ],
+      "steps": [
+        "Обыщите апартаменты «Грандиозо» в Погребенном городе.",
+        "Найдите измеритель влажности на крыше апартаментов «Грандиозо».",
+        "Доберитесь до Пьяцца Рома в Погребенном городе.",
+        "Найдите измеритель питательных веществ в разрушенном саду на крыше на Пьяцца Рома.",
+        "Доставьте Тянь Вэнь измеритель питательных веществ.",
+        "Доставьте Тянь Вэнь измеритель влажности."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Unexpected_Initiative"
+    },
+    {
+      "id": "untended_garden",
+      "name": "Запущенный сад",
+      "aliases": [
+        "Untended Garden"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Идите к комплексу гидропонного купола.",
+        "Получите доступ к архиву данных в одном из куполов.",
+        "Загрузите данные через терминал любой полевой станции."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Untended_Garden"
+    },
+    {
+      "id": "waking_the_grid",
+      "name": "Пробуждение сети",
+      "aliases": [
+        "Waking the Grid"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Включите датчики системы безопасности в охранной вышке.",
+        "Включите в работу центр обеспечения безопасности в зоне отправления.",
+        "Поищите свидетельства взлома в станции данных в зоне прилета."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Waking_the_Grid"
+    },
+    {
+      "id": "water_troubles",
+      "name": "Проблемы с водой",
+      "aliases": [
+        "Water Troubles"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "dam_battlegrounds"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите туннель к переливу под балконом у Красного озера.",
+        "Найдите точку забора воды района.",
+        "Возьмите пробу воды."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Water_Troubles"
+    },
+    {
+      "id": "what_goes_around",
+      "name": "Что посеешь...",
+      "aliases": [
+        "What Goes Around"
+      ],
+      "trader": "Аполлон",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте любую машину ARC, используя горелку «Огнешара»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/What_Goes_Around"
+    },
+    {
+      "id": "what_we_left_behind",
+      "name": "Следы прошлого",
+      "aliases": [
+        "What We Left Behind"
+      ],
+      "trader": "Тянь Вэнь",
+      "locations": [
+        "buried_city",
+        "the_spaceport",
+        "dam_battlegrounds"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Обыщите контейнеры (2) в рейдерском лагере под гаражом на парковке в Погребенном городе.",
+        "Поищите что-нибудь полезное в аванпосте на южном болоте на поле битвы у дамбы.",
+        "Поищите что-нибудь полезное в убежище Бильгуна рядом с хранилищем контейнеров в космопорте."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/What_We_Left_Behind"
+    },
+    {
+      "id": "with_a_trace",
+      "name": "По горячим следам",
+      "aliases": [
+        "With A Trace"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до пустыря.",
+        "Найдите следы тех, кто вывел из строя машины ARC.",
+        "Осмотрите украшенные обломки",
+        "Осмотрите устройство связи."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/With_A_Trace"
+    },
+    {
+      "id": "with_a_view",
+      "name": "С видом",
+      "aliases": [
+        "With a View"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "stella_montis"
+      ],
+      "one_round": false,
+      "required_items": [
+        "1× Поворотный энкодер",
+        "1× Ионный распылитель"
+      ],
+      "steps": [
+        "Добудьте поворотный преобразователь.",
+        "Загляните в любую диспетчерскую у сборочной линии.",
+        "Используйте поворотный преобразователь, чтобы активировать переключатель сервера.",
+        "Используйте ближайший компьютер, чтобы было проще определить правильные детали.",
+        "Доставьте Шани ионный распылитель."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/With_a_View"
+    },
+    {
+      "id": "worth_your_salt",
+      "name": "Мастер своего дела",
+      "aliases": [
+        "Worth Your Salt"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Идите в цех сбора ракет.",
+        "Найдите на высоте спрятанный прототип батареи.",
+        "Принесите прототип батареи к промышленному заряднику.",
+        "Используйте машины, чтобы зарядить батарею.",
+        "Доставьте заряженную батарею в условную точку в углу."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Worth_Your_Salt"
     }
   ]
 }

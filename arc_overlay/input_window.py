@@ -29,9 +29,9 @@ class InputWindow(QWidget):
         )
 
         self.quest_edit = QLineEdit()
-        self.quest_edit.setPlaceholderText("например, Clearer Skies")
+        self.quest_edit.setPlaceholderText("например, Чистое небо")
         self.location_edit = QLineEdit()
-        self.location_edit.setPlaceholderText("необязательно, например, Buried City")
+        self.location_edit.setPlaceholderText("необязательно, например, Космопорт")
         self.error_label = QLabel()
         self.error_label.setStyleSheet("color: #ff8a65;")
         self.error_label.setWordWrap(True)

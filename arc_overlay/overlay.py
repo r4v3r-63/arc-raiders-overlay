@@ -8,7 +8,7 @@ from PyQt6.QtCore import QPoint, QRectF, Qt
 from PyQt6.QtGui import QColor, QGuiApplication, QPainter, QPainterPath
 from PyQt6.QtWidgets import QLabel, QVBoxLayout, QWidget
 
-from .quest_db import Quest
+from .quest_db import Quest, QuestDB
 
 CARD_WIDTH = 380
 SCREEN_MARGIN = 24
@@ -20,7 +20,7 @@ WARNING = "#ff8a65"
 
 
 class OverlayCard(QWidget):
-    def __init__(self, hotkey_hint: str):
+    def __init__(self, db: QuestDB, hotkey_hint: str):
         super().__init__()
         self.setWindowFlags(
             Qt.WindowType.FramelessWindowHint
@@ -41,6 +41,7 @@ class OverlayCard(QWidget):
         layout.setContentsMargins(18, 14, 18, 14)
         layout.addWidget(self._label)
 
+        self._db = db
         self._hotkey_hint = hotkey_hint
         self._quest: Quest | None = None
         self._location = ""
@@ -76,6 +77,8 @@ class OverlayCard(QWidget):
         q = self._quest
         esc = html.escape
         parts = [f"<div style='color:{ACCENT}; font-size:16px; font-weight:bold;'>{esc(q.name)}</div>"]
+        if q.english_name:
+            parts.append(f"<div style='color:{MUTED}; font-size:12px;'>{esc(q.english_name)}</div>")
         meta = []
         if q.trader:
             meta.append(f"Торговец: {esc(q.trader)}")
@@ -83,12 +86,13 @@ class OverlayCard(QWidget):
             meta.append(f"Локация: {esc(self._location)}")
         if meta:
             parts.append(f"<div style='color:{MUTED};'>{' · '.join(meta)}</div>")
-        if not q.available_at(self._location):
-            places = ", ".join(q.locations)
+        if not self._db.available_at(q, self._location):
+            places = ", ".join(self._db.map_names(q))
             parts.append(f"<p style='color:{WARNING};'>Этот квест выполняется на: {esc(places)}</p>")
         if q.steps:
+            one_round = " · всё за один рейд" if q.one_round else ""
             parts.append(
-                f"<p><span style='color:{MUTED};'>Шаг {self._step + 1} из {len(q.steps)}</span><br>"
+                f"<p><span style='color:{MUTED};'>Шаг {self._step + 1} из {len(q.steps)}{one_round}</span><br>"
                 f"<span style='font-size:15px;'>{esc(q.steps[self._step])}</span></p>"
             )
         else:
