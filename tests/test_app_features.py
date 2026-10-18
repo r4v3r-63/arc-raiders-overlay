@@ -280,3 +280,12 @@ def test_blueprint_hotkey_and_window(app):
     visible = [window._list.item(i) for i in range(window._list.count()) if not window._list.item(i).isHidden()]
     assert visible and all("аковальн" in r.text().lower() for r in visible)
     window.close()
+
+
+def test_item_web_search(app, monkeypatch):
+    opened = []
+    monkeypatch.setattr(app, "_open", opened.append)
+    app.on_item_submitted("мини-насос")
+    assert "Технологии" in app.card._label.text() or "технологии" in app.card._label.text()  # места с вики
+    app.open_guide_in_browser()
+    assert opened and "google.com/search" in opened[0] and "%D0%9C%D0%B8%D0%BD%D0%B8" in opened[0]

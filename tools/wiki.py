@@ -47,6 +47,28 @@ def fetch_quest_pages() -> dict[str, str]:
     return pages
 
 
+def item_locations(names: list[str]) -> dict[str, list[str]]:
+    """{английское название предмета: типы мест с лутом из карточки предмета на вики}."""
+    result = {}
+    for i in range(0, len(names), 50):
+        data = api(action="query", prop="revisions", rvprop="content", rvslots="main", redirects=1,
+                   titles="|".join(names[i:i + 50]))
+        query = data.get("query", {})
+        # Вики могла поправить регистр или перенаправить: возвращаем ответ под тем названием, что спрашивали.
+        renamed = {r["to"]: r["from"] for key in ("normalized", "redirects") for r in query.get(key, [])}
+        for page in query.get("pages", {}).values():
+            if not page.get("revisions"):
+                continue
+            title = page["title"]
+            while title in renamed:
+                title = renamed[title]
+            location = parse_infobox(page["revisions"][0]["slots"]["main"]["*"], "item").get("location", "")
+            types = [t.strip() for t in re.split(r"[\n,/]", location) if t.strip()]
+            if types:
+                result[title] = types
+    return result
+
+
 def image_urls(files: list[str]) -> dict[str, dict]:
     """{имя файла: {"url": прямая ссылка, "sha1": контрольная сумма текущей версии}}."""
     urls = {}
@@ -147,8 +169,8 @@ def parse_objectives(wikitext: str) -> list[str]:
     return [o for o in objectives if o]
 
 
-def parse_infobox(wikitext: str) -> dict[str, str]:
-    match = re.search(r"\{\{Infobox quest(.*?)\n\}\}", wikitext, re.S)
+def parse_infobox(wikitext: str, kind: str = "quest") -> dict[str, str]:
+    match = re.search(r"\{\{Infobox " + kind + r"(.*?)\n\}\}", wikitext, re.S)
     fields = {}
     for line in (match.group(1) if match else "").splitlines():
         key, sep, value = line.strip().lstrip("|").partition("=")

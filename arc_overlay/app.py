@@ -7,6 +7,7 @@ import os
 import re
 import sys
 from pathlib import Path
+from urllib.parse import urlencode
 
 from PyQt6.QtCore import QLockFile, QRect, QStandardPaths, Qt, QTimer, QUrl
 from PyQt6.QtGui import (QAction, QActionGroup, QColor, QCursor, QDesktopServices, QFont, QGuiApplication, QIcon,
@@ -1011,6 +1012,11 @@ class OverlayApp:
                                               f"({shortcuts.key('open_browser')})")
 
     def open_guide_in_browser(self):
+        item = self.card.item
+        if item is not None:  # открыта карточка предмета — ищем в интернете, где его найти
+            query = f"ARC Raiders {item.item.name} где найти"
+            self._open("https://www.google.com/search?" + urlencode({"q": query}))
+            return
         quest = self.card.quest
         if quest:
             self._open(quest.steam_url or quest.video_url)

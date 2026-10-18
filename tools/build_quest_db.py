@@ -284,6 +284,22 @@ def items_and_workshops(data_dir: Path, hints: Hints, modules: list | None = Non
     return items, workshops, bench_names
 
 
+def add_wiki_locations(items: list[dict]):
+    """Где лежит предмет, если основной источник этого не знает (новые предметы): из карточки на вики."""
+    missing = [i for i in items if not i["found"] and i["en"]]
+    try:
+        locations = wiki.item_locations(sorted({i["en"] for i in missing}))
+    except (OSError, ValueError, KeyError) as error:
+        print(f"  вики недоступна ({error!r}) — места новых предметов не дополнены")
+        return
+    known = set(LOOT_CATEGORIES_RU)
+    for item in missing:
+        types = [t for t in locations.get(item["en"], []) if t in known]
+        if types:
+            item["found"] = types
+    print(f"  места с лутом дополнены с вики: {sum(1 for i in missing if i['found'])} предметов")
+
+
 def save_image(url: str, target: Path, max_width: int, quality: int) -> bool:
     """Скачивает картинку, уменьшает до max_width и сохраняет в JPEG. False — не получилось."""
     from PIL import Image
@@ -553,6 +569,7 @@ def build(data_dir: Path) -> dict:
     remove_unused_images(quests, maps, old_db)
     MISSING_TRANSLATIONS[:] = tr.missing
     items, workshops, bench_names = items_and_workshops(data_dir, hints, modules)
+    add_wiki_locations(items)
     print(f"Предметов: {len(items)}, мастерских: {len(workshops)}")
     return {
         "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "

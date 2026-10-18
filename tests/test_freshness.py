@@ -25,3 +25,11 @@ def test_lagging_only_after_grace_period():
     assert lagging and "Live Update 3.0" in report
     assert not cf.check(update, {"arctracker.io": date(2026, 11, 2)}, date(2026, 11, 10))[0]
     assert not cf.check(None, stale, date(2026, 11, 10))[0]
+
+
+def test_item_infobox_location():
+    import wiki
+
+    text = "{{Infobox item\n| name = Mini Pump\n| location       = Technological<br>Electrical\n}}"
+    location = wiki.parse_infobox(text, "item")["location"]
+    assert location.split("\n") == ["Technological", "Electrical"]

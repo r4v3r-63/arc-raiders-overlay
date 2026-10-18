@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T19:03:56Z",
+  "generated_at": "2026-10-18T19:09:29Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -8383,7 +8383,9 @@
       "en": "ARC Conductive Coupler",
       "value": 100,
       "recycles": {},
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -8423,7 +8425,9 @@
       "en": "ARC Data Module",
       "value": 2000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -8469,7 +8473,9 @@
       "en": "ARC Insulated Coupler",
       "value": 100,
       "recycles": {},
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -8593,7 +8599,9 @@
       "en": "ARC Plated Coupler",
       "value": 100,
       "recycles": {},
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -8818,7 +8826,11 @@
       "en": "Archive Desk Lamp",
       "value": 5000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Commercial",
+        "Residential",
+        "Old World"
+      ],
       "drops": []
     },
     {
@@ -8919,7 +8931,9 @@
         "advanced_arc_powercell": 4,
         "advanced_mechanical_components": 1
       },
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -10057,7 +10071,9 @@
         "arc_alloy": 1,
         "explosive_compound": 1
       },
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -10095,7 +10111,11 @@
       "en": "Bureau Desk Lamp",
       "value": 1000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Commercial",
+        "Residential",
+        "Old World"
+      ],
       "drops": []
     },
     {
@@ -10344,7 +10364,10 @@
       "recycles": {
         "metal_parts": 2
       },
-      "found": [],
+      "found": [
+        "Mechanical",
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -10376,7 +10399,10 @@
         "plastic_parts": 2,
         "wires": 1
       },
-      "found": [],
+      "found": [
+        "Technological",
+        "Electrical"
+      ],
       "drops": []
     },
     {
@@ -11543,7 +11569,10 @@
       "en": "Desk Lamp",
       "value": 2000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Commercial",
+        "Residential"
+      ],
       "drops": []
     },
     {
@@ -11555,7 +11584,10 @@
         "speaker_component": 1,
         "wires": 2
       },
-      "found": [],
+      "found": [
+        "Technological",
+        "Electrical"
+      ],
       "drops": []
     },
     {
@@ -12106,7 +12138,9 @@
       "en": "Emperor Modulator",
       "value": 7000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -12329,7 +12363,9 @@
       "en": "Exodus Technical Handbook",
       "value": 1000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Exodus"
+      ],
       "drops": []
     },
     {
@@ -13940,7 +13976,10 @@
       "recycles": {
         "mechanical_components": 1
       },
-      "found": [],
+      "found": [
+        "Mechanical",
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -13951,7 +13990,9 @@
       "recycles": {
         "metal_parts": 4
       },
-      "found": [],
+      "found": [
+        "Residential"
+      ],
       "drops": []
     },
     {
@@ -14997,7 +15038,10 @@
         "mechanical_components": 2,
         "steel_spring": 2
       },
-      "found": [],
+      "found": [
+        "Mechanical",
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -15689,7 +15733,9 @@
         "magnetic_accelerator": 1,
         "power_rod": 1
       },
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": [
         {
           "name": "Матриарх",
@@ -15936,7 +15982,10 @@
         "plastic_parts": 2,
         "sensors": 1
       },
-      "found": [],
+      "found": [
+        "Technological",
+        "Electrical"
+      ],
       "drops": []
     },
     {
@@ -17341,7 +17390,10 @@
       "recycles": {
         "advanced_mechanical_components": 1
       },
-      "found": [],
+      "found": [
+        "Mechanical",
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -17419,7 +17471,9 @@
       "en": "Raider Logbook",
       "value": 640,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Raider"
+      ],
       "drops": []
     },
     {
@@ -18064,7 +18118,9 @@
         "durable_cloth": 1,
         "magnet": 1
       },
-      "found": [],
+      "found": [
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -19193,7 +19249,9 @@
         "arc_alloy": 1,
         "simple_gun_parts": 1
       },
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {
@@ -19756,7 +19814,11 @@
       "en": "Stencil Parts",
       "value": 1,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Commercial",
+        "Residential",
+        "Industrial"
+      ],
       "drops": []
     },
     {
@@ -20887,7 +20949,10 @@
         "calculator": 2,
         "electrical_components": 2
       },
-      "found": [],
+      "found": [
+        "Technological",
+        "Electrical"
+      ],
       "drops": []
     },
     {
@@ -21280,7 +21345,9 @@
         "advanced_electrical_components": 1,
         "arc_circuitry": 2
       },
-      "found": [],
+      "found": [
+        "ARC"
+      ],
       "drops": []
     },
     {

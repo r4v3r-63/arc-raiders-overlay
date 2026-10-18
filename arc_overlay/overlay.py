@@ -385,7 +385,8 @@ class OverlayCard(QWidget):
         section("Получается разборкой:", [", ".join(w.sources[:6]) + (" …" if len(w.sources) > 6 else "")]
                 if w.sources else [])
         if not (w.types or w.drops or w.sources):
-            parts.append(f"<div style='color:{MUTED};'>Где искать — в базе не указано.</div>")
+            parts.append(f"<div style='color:{MUTED};'>Где искать — в базе не указано, "
+                         f"{esc(shortcuts.key('open_browser'))} — поискать в интернете.</div>")
         section("Крафт:", r.craft + ([r.blueprint] if r.blueprint else []))
         section("Купить:", r.vendors)
         section("Разбирается на:", [", ".join(f"{qty}× {name}" for name, qty in r.recycles)] if r.recycles else [])
@@ -394,6 +395,7 @@ class OverlayCard(QWidget):
         footer = f"{shortcuts.key('item')} — проверить предмет под курсором · {shortcuts.key('find_item')} — найти"
         if w.maps:
             footer += f"\n{shortcuts.key('map')} — эти места на карте"
+        footer += f"\n{shortcuts.key('open_browser')} — поискать в интернете, где найти"
         if r.item.unlocks or r.item.blueprint:
             footer += f"\n{shortcuts.key('blueprint')} — отметить чертёж изученным / не изученным"
         self._set_content("".join(parts), footer=footer, wide=True)
