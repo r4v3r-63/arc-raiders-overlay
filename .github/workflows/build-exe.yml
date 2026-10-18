@@ -68,13 +68,19 @@ jobs:
           if ($p.ExitCode -ne 0) { throw "Самопроверка не прошла, код $($p.ExitCode)" }
 
       - name: Проверка распознавания текста
+        # На сервере GitHub распознавание текста Windows может быть недоступно или зависать:
+        # это предупреждение, а не ошибка — выпуск не блокируем, у игроков оно работает.
         timeout-minutes: 3
-        continue-on-error: true  # на сервере GitHub может не быть языка распознавания — не блокируем выпуск
         shell: pwsh
         run: |
-          $p = Start-Process dist/ARC-Raiders-Overlay/ARC-Raiders-Overlay.exe -ArgumentList "--ocr-test" -Wait -PassThru -RedirectStandardOutput ocr.txt
+          $p = Start-Process dist/ARC-Raiders-Overlay/ARC-Raiders-Overlay.exe -ArgumentList "--ocr-test" -PassThru -RedirectStandardOutput ocr.txt
+          if (-not $p.WaitForExit(90000)) {
+            $p.Kill($true)
+            Write-Output "::warning::Распознавание текста не ответило за 90 секунд на сервере GitHub"
+            exit 0
+          }
           Get-Content ocr.txt
-          if ($p.ExitCode -ne 0) { throw "Распознавание не прошло, код $($p.ExitCode)" }
+          if ($p.ExitCode -ne 0) { Write-Output "::warning::Распознавание текста не прошло на сервере GitHub, код $($p.ExitCode)" }
 
       - name: Упаковать в ZIP
         shell: pwsh

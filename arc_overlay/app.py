@@ -952,7 +952,10 @@ def main() -> int:
     if "--ocr-test" in sys.argv:
         os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
         _app = QApplication(sys.argv)
-        return ocr_self_test()
+        code = ocr_self_test()
+        sys.stdout.flush()
+        # Зависший вызов Windows в фоновом потоке не даёт процессу завершиться обычным путём.
+        os._exit(code)
     if "--self-test" in sys.argv:
         os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
         _app = QApplication(sys.argv)
