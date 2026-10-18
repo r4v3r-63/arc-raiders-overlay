@@ -1,11 +1,14 @@
-"""Короткий обзор возможностей при первом запуске (и по пункту «Как пользоваться» в трее)."""
+"""Короткий обзор возможностей при первом запуске (и по пункту «Как пользоваться» в трее).
+
+Тем же окном после обновления один раз показывается «Что нового» (NEWS).
+"""
 
 from __future__ import annotations
 
 import html
 
 from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QGuiApplication, QKeyEvent
+from PyQt6.QtGui import QGuiApplication, QKeyEvent, QTextDocument
 from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
 from . import shortcuts
@@ -49,6 +52,34 @@ PAGES = [
 ]
 
 
+# Новое в программе, свежее сверху: (номер, заголовок, текст). Номер только растёт:
+# по нему программа понимает, что игрок ещё не видел. Добавляя новость, дайте ей следующий номер.
+NEWS = [
+    (5, "Поиск предметов",
+     "`{find_item}` — введите название предмета: программа покажет, в каких местах с лутом он лежит "
+     "и на каких картах таких мест больше всего. `{map}` отметит эти места на карте."),
+    (4, "Мастерские в «Что собрать»",
+     "Отметьте уровни мастерских в меню значка в трее → «Мастерские» — сводка `{shopping}` добавит "
+     "предметы для следующего уровня."),
+    (3, "Брать или продавать?",
+     "Наведите курсор на предмет в игре и нажмите `{item}`: программа скажет, нужен ли он для квестов "
+     "и мастерских, на что разбирается и сколько стоит."),
+    (2, "Карта с точками квеста",
+     "`{map}` — карта локации с местами квеста: цифра у точки — номер шага, текущий шаг выделен."),
+    (1, "Скриншоты в полном размере",
+     "`{zoom}` открывает скриншот гайда на весь экран, а скриншоты с вики теперь в полном размере."),
+]
+LATEST_NEWS = max(number for number, _, _ in NEWS)
+
+
+def news_pages(seen: int) -> list[tuple[str, str]]:
+    """Одна страница «Что нового» со всем, что новее seen (пусто — нечего показывать)."""
+    fresh = [(title, text) for number, title, text in NEWS if number > seen]
+    if not fresh:
+        return []
+    return [("Что нового", "\n\n".join(f"`{title}`\n{text}" for title, text in fresh))]
+
+
 def _format(text: str) -> str:
     text = text.format(**{action: shortcuts.key(action) for action in shortcuts.DEFAULTS})
     parts = html.escape(text).split("`")
@@ -59,11 +90,14 @@ def _format(text: str) -> str:
 class OnboardingWindow(QWidget):
     finished = pyqtSignal()
 
-    def __init__(self):
+    def __init__(self, pages: list[tuple[str, str]] | None = None, title: str = "Как пользоваться",
+                 finish_text: str = "Начать"):
         super().__init__()
+        self._pages = pages or PAGES
+        self._finish_text = finish_text
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint | Qt.WindowType.WindowStaysOnTopHint
                             | Qt.WindowType.Tool)
-        self.setWindowTitle("Как пользоваться")
+        self.setWindowTitle(title)
         self.setFixedWidth(520)
         self.setStyleSheet(
             "QWidget { background: #1b1f27; color: #f0f0f0; font-size: 14px; }"
@@ -112,18 +146,29 @@ class OnboardingWindow(QWidget):
         return self._page
 
     def show_page(self, index: int):
-        self._page = max(0, min(index, len(PAGES) - 1))
-        title, text = PAGES[self._page]
+        self._page = max(0, min(index, len(self._pages) - 1))
+        title, text = self._pages[self._page]
         self._title.setText(title)
         self._text.setText(_format(text))
-        self._counter.setText(f"{self._page + 1} из {len(PAGES)}")
+        # Длинный текст («Что нового») не должен обрезаться: высота по переносу строк при ширине окна.
+        self._text.ensurePolished()
+        doc = QTextDocument()
+        doc.setDefaultFont(self._text.font())
+        doc.setHtml(self._text.text())
+        doc.setTextWidth(self.width() - 48)
+        self._text.setMinimumHeight(max(170, int(doc.size().height()) + 8))
+        self._counter.setText(f"{self._page + 1} из {len(self._pages)}")
+        self._counter.setVisible(len(self._pages) > 1)
         self._back.setVisible(self._page > 0)
-        last = self._page == len(PAGES) - 1
-        self._next.setText("Начать" if last else "Далее")
+        last = self._page == len(self._pages) - 1
+        self._next.setText(self._finish_text if last else "Далее")
         self._skip.setVisible(not last)
 
+    def set_pages(self, pages: list[tuple[str, str]]):
+        self._pages = pages
+
     def _forward(self):
-        if self._page == len(PAGES) - 1:
+        if self._page == len(self._pages) - 1:
             self.finish()
         else:
             self.show_page(self._page + 1)

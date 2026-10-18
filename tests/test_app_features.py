@@ -194,3 +194,36 @@ def test_item_search_and_item_map(app):
     assert not app.map_view.isVisible()
     app.on_item_submitted("батарейка")  # единственный похожий предмет находится сам
     assert "Батарея" in app.card._label.text()
+
+
+def test_whats_new_after_update(qapp, tmp_path, monkeypatch):
+    from arc_overlay import onboarding, paths
+    from arc_overlay.app import OverlayApp
+
+    ini = str(tmp_path / "n.ini")
+    monkeypatch.setattr(paths, "user_data_dir", lambda: tmp_path)
+    monkeypatch.setattr(paths, "cache_dir", lambda: tmp_path)
+    monkeypatch.setattr(paths, "settings", lambda: QSettings(ini, QSettings.Format.IniFormat))
+    old = QSettings(ini, QSettings.Format.IniFormat)
+    old.setValue("onboarding_done", True)  # игрок с прошлой версии: обзор прошёл, новостей не видел
+    old.setValue("news_seen", onboarding.LATEST_NEWS - 1)
+    old.sync()
+
+    overlay = OverlayApp(qapp)
+    overlay._game_timer.stop()
+    overlay.input.close_and_return_focus()
+    assert overlay.news.isVisible() and not overlay.onboarding.isVisible()
+    assert onboarding.NEWS[0][1] in overlay.news._text.text()
+    assert onboarding.NEWS[1][1] not in overlay.news._text.text()  # уже видел
+    overlay.news._next.click()
+    assert not overlay.news.isVisible()
+    assert QSettings(ini, QSettings.Format.IniFormat).value("news_seen", type=int) == onboarding.LATEST_NEWS
+    overlay.show_news(only_unseen=True)
+    assert not overlay.news.isVisible()  # второй раз сам не показывается
+    overlay.show_news(only_unseen=False)  # из меню трея — все новости
+    assert overlay.news.isVisible() and onboarding.NEWS[-1][1] in overlay.news._text.text()
+    overlay.news.finish()
+
+
+def test_new_user_sees_tour_not_news(app):
+    assert not app.news.isVisible()

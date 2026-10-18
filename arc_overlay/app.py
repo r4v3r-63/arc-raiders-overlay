@@ -19,7 +19,7 @@ from .progress import Progress, shopping_list
 from . import screen_import
 from .input_window import InputWindow
 from .net import CachedDownloader
-from .onboarding import OnboardingWindow
+from .onboarding import LATEST_NEWS, NEWS, OnboardingWindow, news_pages
 from .overlay import OverlayCard
 from .quest_db import DATA_DIR, REMOTE_DATA_URL, Quest, QuestDB
 
@@ -101,8 +101,13 @@ class OverlayApp:
 
         self.onboarding = OnboardingWindow()
         self.onboarding.finished.connect(self._onboarding_finished)
+        self.news = OnboardingWindow(title="Что нового", finish_text="Понятно")
+        self.news.finished.connect(self._news_seen)
         if not self.settings.value("onboarding_done", False, type=bool):
-            self.onboarding.open()
+            self.onboarding.open()  # в обзоре уже всё новое — «Что нового» новичку не нужен
+            self._news_seen()
+        else:
+            self.show_news(only_unseen=True)
         self._sync_timer = QTimer()
         self._sync_timer.timeout.connect(self.sync)
         self._sync_timer.start(SYNC_CHECK_INTERVAL_MS)
@@ -136,6 +141,8 @@ class OverlayApp:
         enter.triggered.connect(self.input.open)
         tour_action = QAction("Как пользоваться", menu)
         tour_action.triggered.connect(lambda: self.onboarding.open())
+        news_action = QAction("Что нового", menu)
+        news_action.triggered.connect(lambda: self.show_news(only_unseen=False))
         hotkeys_action = QAction("Горячие клавиши…", menu)
         hotkeys_action.triggered.connect(self.open_hotkeys_window)
         help_action = QAction("Сочетания клавиш (?)", menu)
@@ -190,6 +197,7 @@ class OverlayApp:
         menu.addAction(help_action)
         menu.addAction(hotkeys_action)
         menu.addAction(tour_action)
+        menu.addAction(news_action)
         menu.addSeparator()
         for action in self._quest_actions:
             menu.addAction(action)
@@ -383,6 +391,18 @@ class OverlayApp:
             QMessageBox.warning(None, "Горячие клавиши",
                                 "Не удалось занять: " + ", ".join(failed)
                                 + ".\nИх уже использует другая программа — выберите другие сочетания.")
+
+    def show_news(self, only_unseen: bool):
+        """«Что нового»: после обновления — только непрочитанное, из меню трея — последние новости."""
+        seen = self.settings.value("news_seen", 0, type=int) if only_unseen else LATEST_NEWS - len(NEWS)
+        pages = news_pages(seen)
+        if pages:
+            self.news.set_pages(pages)
+            self.news.open()
+
+    def _news_seen(self):
+        self.settings.setValue("news_seen", LATEST_NEWS)
+        self.settings.sync()
 
     def _onboarding_finished(self):
         self.settings.setValue("onboarding_done", True)
