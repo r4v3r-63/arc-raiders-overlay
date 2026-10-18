@@ -1,6 +1,10 @@
-# Собирает ARC-Raiders-Overlay.exe на Windows при каждом изменении кода и публикует его
-# в Releases. Ссылка на скачивание всегда одна:
-# https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.exe
+# Собирает программу на Windows при каждом изменении кода и публикует ZIP в Releases.
+# Ссылка на скачивание всегда одна:
+# https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip
+#
+# Сборка папкой (onedir), а не одним файлом: однофайловый .exe распаковывает себя в %TEMP%
+# и запускает вторую копию — антивирусы (например, Касперский) принимают это за троян.
+# Загрузчик PyInstaller собирается из исходников по той же причине.
 name: Сборка exe
 
 on:
@@ -33,21 +37,30 @@ jobs:
           python-version: "3.12"
 
       - name: Установить зависимости
-        run: pip install -r requirements.txt pyinstaller
+        env:
+          PYINSTALLER_COMPILE_BOOTLOADER: "1"
+        run: |
+          pip install -r requirements.txt
+          pip install --no-binary pyinstaller pyinstaller
 
       - name: Собрать exe
         run: >
-          pyinstaller --noconfirm --onefile --windowed
+          pyinstaller --noconfirm --onedir --windowed
           --name ARC-Raiders-Overlay
           --icon assets/icon.ico
+          --version-file assets/version_info.txt
           --add-data "arc_overlay/data;arc_overlay/data"
           run_overlay.py
 
       - name: Самопроверка exe
         shell: pwsh
         run: |
-          $p = Start-Process dist/ARC-Raiders-Overlay.exe -ArgumentList "--self-test" -Wait -PassThru
+          $p = Start-Process dist/ARC-Raiders-Overlay/ARC-Raiders-Overlay.exe -ArgumentList "--self-test" -Wait -PassThru
           if ($p.ExitCode -ne 0) { throw "Самопроверка не прошла, код $($p.ExitCode)" }
+
+      - name: Упаковать в ZIP
+        shell: pwsh
+        run: Compress-Archive -Path dist/ARC-Raiders-Overlay -DestinationPath ARC-Raiders-Overlay.zip
 
       - name: Опубликовать в Releases
         shell: bash
@@ -55,8 +68,8 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete exe --cleanup-tag --yes || true
-          gh release create exe dist/ARC-Raiders-Overlay.exe \
+          gh release create exe ARC-Raiders-Overlay.zip \
             --title "ARC Raiders — подсказчик" \
-            --notes "Последняя сборка из коммита ${GITHUB_SHA::7}. Скачай ARC-Raiders-Overlay.exe и запусти — установка не нужна." \
+            --notes "Последняя сборка из коммита ${GITHUB_SHA::7}. Скачай ARC-Raiders-Overlay.zip, распакуй в любую папку и запусти ARC-Raiders-Overlay.exe — установка не нужна." \
             --target "$GITHUB_SHA" \
             --latest
