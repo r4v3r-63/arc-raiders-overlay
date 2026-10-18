@@ -50,6 +50,7 @@ jobs:
           --name ARC-Raiders-Overlay
           --icon assets/icon.ico
           --version-file assets/version_info.txt
+          --collect-all winrt
           --add-data "arc_overlay/data;arc_overlay/data"
           run_overlay.py
 
@@ -58,6 +59,14 @@ jobs:
         run: |
           $p = Start-Process dist/ARC-Raiders-Overlay/ARC-Raiders-Overlay.exe -ArgumentList "--self-test" -Wait -PassThru
           if ($p.ExitCode -ne 0) { throw "Самопроверка не прошла, код $($p.ExitCode)" }
+
+      - name: Проверка распознавания текста
+        continue-on-error: true  # на сервере GitHub может не быть языка распознавания — не блокируем выпуск
+        shell: pwsh
+        run: |
+          $p = Start-Process dist/ARC-Raiders-Overlay/ARC-Raiders-Overlay.exe -ArgumentList "--ocr-test" -Wait -PassThru -RedirectStandardOutput ocr.txt
+          Get-Content ocr.txt
+          if ($p.ExitCode -ne 0) { throw "Распознавание не прошло, код $($p.ExitCode)" }
 
       - name: Упаковать в ZIP
         shell: pwsh

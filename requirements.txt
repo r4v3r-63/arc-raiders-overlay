@@ -1,1 +1,10 @@
 PyQt6>=6.6
+# Распознавание текста Windows для импорта квестов с экрана (Ctrl+Shift+I)
+winrt-runtime>=3.2; sys_platform == "win32"
+winrt-Windows.Foundation>=3.2; sys_platform == "win32"
+winrt-Windows.Foundation.Collections>=3.2; sys_platform == "win32"
+winrt-Windows.Globalization>=3.2; sys_platform == "win32"
+winrt-Windows.Graphics.Imaging>=3.2; sys_platform == "win32"
+winrt-Windows.Media.Ocr>=3.2; sys_platform == "win32"
+winrt-Windows.Storage>=3.2; sys_platform == "win32"
+winrt-Windows.Storage.Streams>=3.2; sys_platform == "win32"
