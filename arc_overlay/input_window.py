@@ -92,7 +92,8 @@ class InputWindow(QWidget):
 
     def open(self):
         """Показывает окно и забирает фокус, запомнив, какое окно (игра) было активно."""
-        self._previous_window = winapi.get_foreground_window()
+        if not self.isVisible():  # повторное нажатие не должно запомнить само окно ввода вместо игры
+            self._previous_window = winapi.get_foreground_window()
         self.error_label.hide()
         self.adjustSize()
         screen = QGuiApplication.primaryScreen().availableGeometry()

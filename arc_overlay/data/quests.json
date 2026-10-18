@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T16:32:03Z",
+  "generated_at": "2026-10-18T17:18:16Z",
   "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -11,7 +11,7 @@
         "поле битвы у дамбы",
         "dam"
       ],
-      "image": "maps/dam_battlegrounds.jpg",
+      "image": "maps/dam_battlegrounds-7bd6fad3a7.jpg",
       "rooms": [
         {
           "name": "West Broken Bridge",
@@ -212,7 +212,7 @@
         "spaceport",
         "space port"
       ],
-      "image": "maps/the_spaceport.jpg",
+      "image": "maps/the_spaceport-5946425d81.jpg",
       "rooms": [
         {
           "name": "Fuel Depot",
@@ -416,7 +416,7 @@
       "aliases": [
         "погребенный город"
       ],
-      "image": "maps/buried_city.jpg",
+      "image": "maps/buried_city-e6fc76d99a.jpg",
       "rooms": [
         {
           "name": "Hospital",
@@ -506,7 +506,7 @@
         "синие ворота",
         "blue gate"
       ],
-      "image": "maps/the_blue_gate.jpg",
+      "image": "maps/the_blue_gate-b116990f8b.jpg",
       "rooms": [
         {
           "name": "Village",
@@ -673,7 +673,7 @@
       "aliases": [
         "стелла монтис"
       ],
-      "image": "maps/stella_montis.jpg",
+      "image": "maps/stella_montis-a7188a54c9.jpg",
       "rooms": [
         {
           "name": "Collapsed Tunnel",
@@ -765,7 +765,7 @@
       "aliases": [
         "бурные потоки"
       ],
-      "image": "maps/riven_tides.jpg",
+      "image": "maps/riven_tides-b3e23e40ed.jpg",
       "rooms": [
         {
           "name": "Wavebreaker",
@@ -864,7 +864,7 @@
         "перевал пендола",
         "пендола"
       ],
-      "image": "maps/pendola_pass.jpg",
+      "image": "maps/pendola_pass-e55ca9f3d9.jpg",
       "rooms": [
         {
           "name": "Deep-Space Telescope",
@@ -1020,13 +1020,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_balanced_harvest/01.jpg",
+            "file": "guides/a_balanced_harvest/aa2098fecc70.jpg",
             "caption": "Комната с объектом на верхнем этаже",
             "source": "https://arcraiders.wiki/wiki/File:Balanced_harvest_door.jpg",
             "original": "https://arcraiders.wiki/w/images/7/73/Balanced_harvest_door.jpg"
           },
           {
-            "file": "guides/a_balanced_harvest/02.jpg",
+            "file": "guides/a_balanced_harvest/0abdd2435a92.jpg",
             "caption": "Объект, который нужно собрать",
             "source": "https://arcraiders.wiki/wiki/File:Balanced_harvest_obj.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c9/Balanced_harvest_obj.jpg"
@@ -1099,25 +1099,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_dead_end/01.jpg",
+            "file": "guides/a_dead_end/6212b796dfde.jpg",
             "caption": "Отнесите батареи к запертой двери",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Carry_Battery.png",
             "original": "https://arcraiders.wiki/w/images/1/1c/Quest_A_Dead_End_Carry_Battery.png"
           },
           {
-            "file": "guides/a_dead_end/02.jpg",
+            "file": "guides/a_dead_end/9dda88699ecf.jpg",
             "caption": "Установите батареи у запертой двери",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Place_Battery.png",
             "original": "https://arcraiders.wiki/w/images/e/eb/Quest_A_Dead_End_Place_Battery.png"
           },
           {
-            "file": "guides/a_dead_end/03.jpg",
+            "file": "guides/a_dead_end/0aaf5713a354.jpg",
             "caption": "Включите запись рядом с мониторами",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Play_Recording.png",
             "original": "https://arcraiders.wiki/w/images/4/43/Quest_A_Dead_End_Play_Recording.png"
           },
           {
-            "file": "guides/a_dead_end/04.jpg",
+            "file": "guides/a_dead_end/5084396c109a.jpg",
             "caption": "Найдите кинопленку рядом с мониторами",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Search.png",
             "original": "https://arcraiders.wiki/w/images/5/5a/Quest_A_Dead_End_Search.png"
@@ -1185,49 +1185,49 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_first_foothold/01.jpg",
+            "file": "guides/a_first_foothold/703dd9035eb8.jpg",
             "caption": "Смотровая площадка у хребтов на карте.",
             "source": "https://arcraiders.wiki/wiki/File:ObservationDeck_Ridgeline_Map.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d6/ObservationDeck_Ridgeline_Map.jpg"
           },
           {
-            "file": "guides/a_first_foothold/02.jpg",
+            "file": "guides/a_first_foothold/afe18bcf8402.jpg",
             "caption": "Смотровая площадка в игре. Взаимодействуйте с её боковыми частями.",
             "source": "https://arcraiders.wiki/wiki/File:ObservationDeck_Ridgeline.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c0/ObservationDeck_Ridgeline.jpg"
           },
           {
-            "file": "guides/a_first_foothold/03.jpg",
+            "file": "guides/a_first_foothold/f31f040806fc.jpg",
             "caption": "Терминал связи у оливковой рощи на карте.",
             "source": "https://arcraiders.wiki/wiki/File:CommsTerminal_OliveGrove_Map.jpg",
             "original": "https://arcraiders.wiki/w/images/d/dc/CommsTerminal_OliveGrove_Map.jpg"
           },
           {
-            "file": "guides/a_first_foothold/04.jpg",
+            "file": "guides/a_first_foothold/ca2a56c90a8e.jpg",
             "caption": "Терминал связи в игре. Взаимодействуйте с оранжевым терминалом.",
             "source": "https://arcraiders.wiki/wiki/File:CommsTerminal_OliveGrove.jpg",
             "original": "https://arcraiders.wiki/w/images/6/66/CommsTerminal_OliveGrove.jpg"
           },
           {
-            "file": "guides/a_first_foothold/05.jpg",
+            "file": "guides/a_first_foothold/7a92086ada8c.jpg",
             "caption": "Церковь со спутниковой тарелкой на крыше, у хранилища данных, на карте.",
             "source": "https://arcraiders.wiki/wiki/File:ChurchSatelite_DataVault_Map.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c1/ChurchSatelite_DataVault_Map.jpg"
           },
           {
-            "file": "guides/a_first_foothold/06.jpg",
+            "file": "guides/a_first_foothold/70b15270f769.jpg",
             "caption": "Церковь со спутниковой тарелкой в игре. Заберитесь по строительным лесам к тарелке.",
             "source": "https://arcraiders.wiki/wiki/File:ChurchSatelite_DataVault.jpg",
             "original": "https://arcraiders.wiki/w/images/6/6b/ChurchSatelite_DataVault.jpg"
           },
           {
-            "file": "guides/a_first_foothold/07.jpg",
+            "file": "guides/a_first_foothold/2db6a85ce176.jpg",
             "caption": "Постройка рейдеров у прогалины зверолова на карте.",
             "source": "https://arcraiders.wiki/wiki/File:RoofPlates_TrappersGlade_Map.jpg",
             "original": "https://arcraiders.wiki/w/images/3/3e/RoofPlates_TrappersGlade_Map.jpg"
           },
           {
-            "file": "guides/a_first_foothold/08.jpg",
+            "file": "guides/a_first_foothold/62f68ff07379.jpg",
             "caption": "Постройка рейдеров в игре. Взаимодействуйте с её верхом, чтобы закрепить крышу.",
             "source": "https://arcraiders.wiki/wiki/File:RoofPlates_TrappersGlade.jpg",
             "original": "https://arcraiders.wiki/w/images/5/56/RoofPlates_TrappersGlade.jpg"
@@ -1283,25 +1283,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_lay_of_the_land/01.jpg",
+            "file": "guides/a_lay_of_the_land/97bed694ab7f.jpg",
             "caption": "Записи о поставках в офисе бригадира",
             "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_obj_1.jpg",
             "original": "https://arcraiders.wiki/w/images/4/45/Lay_of_the_land_obj_1.jpg"
           },
           {
-            "file": "guides/a_lay_of_the_land/02.jpg",
+            "file": "guides/a_lay_of_the_land/d6166b0a7e26.jpg",
             "caption": "Записи о поставках на карте",
             "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_map_1.jpg",
             "original": "https://arcraiders.wiki/w/images/1/18/Lay_of_the_land_map_1.jpg"
           },
           {
-            "file": "guides/a_lay_of_the_land/03.jpg",
+            "file": "guides/a_lay_of_the_land/cd1d43fdb995.jpg",
             "caption": "Лидарные сканеры в диспетчерской вышке А6",
             "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_obj_2.jpg",
             "original": "https://arcraiders.wiki/w/images/9/92/Lay_of_the_land_obj_2.jpg"
           },
           {
-            "file": "guides/a_lay_of_the_land/04.jpg",
+            "file": "guides/a_lay_of_the_land/5afb174aba5f.jpg",
             "caption": "Лидарные сканеры на карте",
             "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_map_2.jpg",
             "original": "https://arcraiders.wiki/w/images/b/ba/Lay_of_the_land_map_2.jpg"
@@ -1350,7 +1350,7 @@
         ],
         "images": [
           {
-            "file": "guides/a_new_type_of_plant/01.jpg",
+            "file": "guides/a_new_type_of_plant/eed086499b72.jpg",
             "caption": "Где растёт ядовитое растение",
             "source": "https://arcraiders.wiki/wiki/File:Toxic_Plant_Location.png",
             "original": "https://arcraiders.wiki/w/images/f/fe/Toxic_Plant_Location.png"
@@ -1463,37 +1463,37 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_rising_tide/01.jpg",
+            "file": "guides/a_rising_tide/6ed0d8bccf31.jpg",
             "caption": "Электронный журнал на карте",
             "source": "https://arcraiders.wiki/wiki/File:A_Rising_Tide_digital_logbook_location_map.jpg",
             "original": "https://arcraiders.wiki/w/images/0/08/A_Rising_Tide_digital_logbook_location_map.jpg"
           },
           {
-            "file": "guides/a_rising_tide/02.jpg",
+            "file": "guides/a_rising_tide/561df89a35ce.jpg",
             "caption": "Где электронный журнал (вход в самом дальнем от Пьяцца Рома здании)",
             "source": "https://arcraiders.wiki/wiki/File:A_Rising_Tide_digital_logbook_location.jpg",
             "original": "https://arcraiders.wiki/w/images/7/7d/A_Rising_Tide_digital_logbook_location.jpg"
           },
           {
-            "file": "guides/a_rising_tide/03.jpg",
+            "file": "guides/a_rising_tide/9304f9c6c291.jpg",
             "caption": "Откройте электронный журнал бригадира",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Search.png",
             "original": "https://arcraiders.wiki/w/images/2/20/Quest_A_Rising_Tide_Search.png"
           },
           {
-            "file": "guides/a_rising_tide/04.jpg",
+            "file": "guides/a_rising_tide/6633adbad2d1.jpg",
             "caption": "Отнесите топливный элемент наверх по лестницам",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Carry_Fuel_Cell.png",
             "original": "https://arcraiders.wiki/w/images/0/04/Quest_A_Rising_Tide_Carry_Fuel_Cell.png"
           },
           {
-            "file": "guides/a_rising_tide/05.jpg",
+            "file": "guides/a_rising_tide/838f36ef3ffd.jpg",
             "caption": "Вставьте топливный элемент в генератор",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Insert_Fuel_Cell.png",
             "original": "https://arcraiders.wiki/w/images/3/37/Quest_A_Rising_Tide_Insert_Fuel_Cell.png"
           },
           {
-            "file": "guides/a_rising_tide/06.jpg",
+            "file": "guides/a_rising_tide/1db9a32d525d.jpg",
             "caption": "Сфотографируйте доску в открытой комнате",
             "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Take_Photo.png",
             "original": "https://arcraiders.wiki/w/images/5/59/Quest_A_Rising_Tide_Take_Photo.png"
@@ -1541,19 +1541,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_symbol_of_unification/01.jpg",
+            "file": "guides/a_symbol_of_unification/676e35653b23.jpg",
             "caption": "Аванпост Формикаи.",
             "source": "https://arcraiders.wiki/wiki/File:MapLocation.png",
             "original": "https://arcraiders.wiki/w/images/3/32/MapLocation.png"
           },
           {
-            "file": "guides/a_symbol_of_unification/02.jpg",
+            "file": "guides/a_symbol_of_unification/a9fcaa7fa821.jpg",
             "caption": "Флаг лежит в сумке на медицинской койке.",
             "source": "https://arcraiders.wiki/wiki/File:Flag.png",
             "original": "https://arcraiders.wiki/w/images/7/76/Flag.png"
           },
           {
-            "file": "guides/a_symbol_of_unification/03.jpg",
+            "file": "guides/a_symbol_of_unification/48a478924426.jpg",
             "caption": "Балкон, где нужно поднять флаг.",
             "source": "https://arcraiders.wiki/wiki/File:Flagpole.png",
             "original": "https://arcraiders.wiki/w/images/2/26/Flagpole.png"
@@ -1629,19 +1629,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_warm_place_to_rest/01.jpg",
+            "file": "guides/a_warm_place_to_rest/046171ad79b2.jpg",
             "caption": "Найдите покинутый лагерь на шоссе",
             "source": "https://arcraiders.wiki/wiki/File:Highway_camp_map.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d3/Highway_camp_map.jpg"
           },
           {
-            "file": "guides/a_warm_place_to_rest/02.jpg",
+            "file": "guides/a_warm_place_to_rest/8570ec05fad3.jpg",
             "caption": "Поищите следы выживших",
             "source": "https://arcraiders.wiki/wiki/File:Abandoned_highway_camp_3p.png",
             "original": "https://arcraiders.wiki/w/images/f/fa/Abandoned_highway_camp_3p.png"
           },
           {
-            "file": "guides/a_warm_place_to_rest/03.jpg",
+            "file": "guides/a_warm_place_to_rest/ab0ffb871f8d.jpg",
             "caption": "Осмотрите могилу",
             "source": "https://arcraiders.wiki/wiki/File:A_Warm_Place_to_Rest_Grave_Location.png",
             "original": "https://arcraiders.wiki/w/images/e/e7/A_Warm_Place_to_Rest_Grave_Location.png"
@@ -1762,43 +1762,43 @@
         ],
         "images": [
           {
-            "file": "guides/armored_transports/01.jpg",
+            "file": "guides/armored_transports/69988293a55a.jpg",
             "caption": "Где ключ-карта бронированного патруля",
             "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-02-key-location-map.png",
             "original": "https://arcraiders.wiki/w/images/d/dd/Armored-Transport-02-key-location-map.png"
           },
           {
-            "file": "guides/armored_transports/02.jpg",
+            "file": "guides/armored_transports/ac56c3f974d4.jpg",
             "caption": "Ключ-карта бронированного патруля",
             "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-02-key-location-detail.png",
             "original": "https://arcraiders.wiki/w/images/8/8c/Armored-Transport-02-key-location-detail.png"
           },
           {
-            "file": "guides/armored_transports/03.jpg",
+            "file": "guides/armored_transports/c9f1d133e686.jpg",
             "caption": "Вход в туннель",
             "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-03-tunnel-entrance.png",
             "original": "https://arcraiders.wiki/w/images/2/23/Armored-Transport-03-tunnel-entrance.png"
           },
           {
-            "file": "guides/armored_transports/04.jpg",
+            "file": "guides/armored_transports/c9ea75f3fc4b.jpg",
             "caption": "Одна из запертых машин на карте",
             "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-04-car-location-map.png",
             "original": "https://arcraiders.wiki/w/images/8/8b/Armored-Transport-04-car-location-map.png"
           },
           {
-            "file": "guides/armored_transports/05.jpg",
+            "file": "guides/armored_transports/f580b04f576a.jpg",
             "caption": "Одна из запертых машин",
             "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-04-car-location-detail.png",
             "original": "https://arcraiders.wiki/w/images/e/ee/Armored-Transport-04-car-location-detail.png"
           },
           {
-            "file": "guides/armored_transports/06.jpg",
+            "file": "guides/armored_transports/575d20c60d14.jpg",
             "caption": "Будка охраны с запасным ключом",
             "source": "https://arcraiders.wiki/wiki/File:Spare_Key_Guard_Shack.jpg",
             "original": "https://arcraiders.wiki/w/images/b/bc/Spare_Key_Guard_Shack.jpg"
           },
           {
-            "file": "guides/armored_transports/07.jpg",
+            "file": "guides/armored_transports/c724c95db6ec.jpg",
             "caption": "Где запасной ключ в будке охраны",
             "source": "https://arcraiders.wiki/wiki/File:Spare_Key_Box.jpg",
             "original": "https://arcraiders.wiki/w/images/8/8e/Spare_Key_Box.jpg"
@@ -1862,25 +1862,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/back_on_top/01.jpg",
+            "file": "guides/back_on_top/972e6bbc2e00.jpg",
             "caption": "Место для квеста «Снова на вершине» на поле битвы у дамбы",
             "source": "https://arcraiders.wiki/wiki/File:BackOnTop_Dam.png",
             "original": "https://arcraiders.wiki/w/images/a/a9/BackOnTop_Dam.png"
           },
           {
-            "file": "guides/back_on_top/02.jpg",
+            "file": "guides/back_on_top/b41a4c61ccd4.jpg",
             "caption": "Место для квеста «Снова на вершине» у Синих ворот",
             "source": "https://arcraiders.wiki/wiki/File:BackOnTop_BlueGate.png",
             "original": "https://arcraiders.wiki/w/images/f/fb/BackOnTop_BlueGate.png"
           },
           {
-            "file": "guides/back_on_top/03.jpg",
+            "file": "guides/back_on_top/f3197981768a.jpg",
             "caption": "Место для квеста «Снова на вершине» в космопорте",
             "source": "https://arcraiders.wiki/wiki/File:BackOnTop_SpacePort.png",
             "original": "https://arcraiders.wiki/w/images/c/cf/BackOnTop_SpacePort.png"
           },
           {
-            "file": "guides/back_on_top/04.jpg",
+            "file": "guides/back_on_top/259d68bfc92d.jpg",
             "caption": "Место для квеста «Снова на вершине» в Погребенном городе",
             "source": "https://arcraiders.wiki/wiki/File:BackOnTop_BuriedCity.png",
             "original": "https://arcraiders.wiki/w/images/6/63/BackOnTop_BuriedCity.png"
@@ -2064,13 +2064,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/building_a_library/01.jpg",
+            "file": "guides/building_a_library/342ad8ffc654.jpg",
             "caption": "Внутри библиотеки",
             "source": "https://arcraiders.wiki/wiki/File:Building_a_library_quest_location.png",
             "original": "https://arcraiders.wiki/w/images/8/8e/Building_a_library_quest_location.png"
           },
           {
-            "file": "guides/building_a_library/02.jpg",
+            "file": "guides/building_a_library/3dfd5887a5c0.jpg",
             "caption": "Где может появиться книга",
             "source": "https://arcraiders.wiki/wiki/File:Adventure_Book_Location.png",
             "original": "https://arcraiders.wiki/w/images/2/21/Adventure_Book_Location.png"
@@ -2118,25 +2118,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/celestes_journals/01.jpg",
+            "file": "guides/celestes_journals/4bd57561ff61.jpg",
             "caption": "Южный дневник на карте",
             "source": "https://arcraiders.wiki/wiki/File:Swamp.png",
             "original": "https://arcraiders.wiki/w/images/3/3e/Swamp.png"
           },
           {
-            "file": "guides/celestes_journals/02.jpg",
+            "file": "guides/celestes_journals/41477086e388.jpg",
             "caption": "Дневник Селесты у болота",
             "source": "https://arcraiders.wiki/wiki/File:Swamp_Exact_Location.png",
             "original": "https://arcraiders.wiki/w/images/3/3c/Swamp_Exact_Location.png"
           },
           {
-            "file": "guides/celestes_journals/03.jpg",
+            "file": "guides/celestes_journals/2160af13c038.jpg",
             "caption": "Северный дневник на карте",
             "source": "https://arcraiders.wiki/wiki/File:North.png",
             "original": "https://arcraiders.wiki/w/images/e/eb/North.png"
           },
           {
-            "file": "guides/celestes_journals/04.jpg",
+            "file": "guides/celestes_journals/5f7d716339e8.jpg",
             "caption": "Дневник Селесты на севере",
             "source": "https://arcraiders.wiki/wiki/File:North_Exact_Location.png",
             "original": "https://arcraiders.wiki/w/images/8/89/North_Exact_Location.png"
@@ -2197,19 +2197,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/clamoring_for_attention/01.jpg",
+            "file": "guides/clamoring_for_attention/98df951406da.jpg",
             "caption": "Ремонт аварийной сирены",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Sound_Klaxon.png",
             "original": "https://arcraiders.wiki/w/images/b/b6/Quest_Clamoring_For_Attention_Sound_Klaxon.png"
           },
           {
-            "file": "guides/clamoring_for_attention/02.jpg",
+            "file": "guides/clamoring_for_attention/6e66217eb4c4.jpg",
             "caption": "Замена батареи в магнитофоне",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Replace_Battery_And_Play.png",
             "original": "https://arcraiders.wiki/w/images/1/15/Quest_Clamoring_For_Attention_Replace_Battery_And_Play.png"
           },
           {
-            "file": "guides/clamoring_for_attention/03.jpg",
+            "file": "guides/clamoring_for_attention/7d91f2afd37b.jpg",
             "caption": "Гудок автобуса",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Sound_Bus_Horn.png",
             "original": "https://arcraiders.wiki/w/images/c/ce/Quest_Clamoring_For_Attention_Sound_Bus_Horn.png"
@@ -2279,13 +2279,13 @@
         ],
         "images": [
           {
-            "file": "guides/cold_storage/01.jpg",
+            "file": "guides/cold_storage/ffd172a94bb8.jpg",
             "caption": "Контейнер у погрузочной площадки.",
             "source": "https://arcraiders.wiki/wiki/File:J_container_loading_bay.jpg",
             "original": "https://arcraiders.wiki/w/images/2/2f/J_container_loading_bay.jpg"
           },
           {
-            "file": "guides/cold_storage/02.jpg",
+            "file": "guides/cold_storage/13f0a5986543.jpg",
             "caption": "Обыщите контейнер.",
             "source": "https://arcraiders.wiki/wiki/File:J_countainer_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/b/bf/J_countainer_3p.jpg"
@@ -2387,49 +2387,49 @@
         "text": [],
         "images": [
           {
-            "file": "guides/communication_hideout/01.jpg",
+            "file": "guides/communication_hideout/44d41bd87aa8.jpg",
             "caption": "Общая зона квеста",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-01-area.png",
             "original": "https://arcraiders.wiki/w/images/a/a9/Communication-Hideout-01-area.png"
           },
           {
-            "file": "guides/communication_hideout/02.jpg",
+            "file": "guides/communication_hideout/818f5e1ed633.jpg",
             "caption": "Где батарея",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-02-bat-location-map.png",
             "original": "https://arcraiders.wiki/w/images/1/1c/Communication-Hideout-02-bat-location-map.png"
           },
           {
-            "file": "guides/communication_hideout/03.jpg",
+            "file": "guides/communication_hideout/021997a497ff.jpg",
             "caption": "Батарея, которую нужно подобрать",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-02-bat-location-detail.png",
             "original": "https://arcraiders.wiki/w/images/7/77/Communication-Hideout-02-bat-location-detail.png"
           },
           {
-            "file": "guides/communication_hideout/04.jpg",
+            "file": "guides/communication_hideout/5f105450e004.jpg",
             "caption": "Где генератор",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-03-bat-install-map.png",
             "original": "https://arcraiders.wiki/w/images/3/30/Communication-Hideout-03-bat-install-map.png"
           },
           {
-            "file": "guides/communication_hideout/05.jpg",
+            "file": "guides/communication_hideout/56a0536f8976.jpg",
             "caption": "Установка батареи",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-03-bat-install-detail.png",
             "original": "https://arcraiders.wiki/w/images/d/da/Communication-Hideout-03-bat-install-detail.png"
           },
           {
-            "file": "guides/communication_hideout/06.jpg",
+            "file": "guides/communication_hideout/fa591580f6e5.jpg",
             "caption": "Включение питания",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-04-gen-power.png",
             "original": "https://arcraiders.wiki/w/images/7/7c/Communication-Hideout-04-gen-power.png"
           },
           {
-            "file": "guides/communication_hideout/07.jpg",
+            "file": "guides/communication_hideout/a130b4b8431c.jpg",
             "caption": "Где терминал антенны",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-05-boot-map.png",
             "original": "https://arcraiders.wiki/w/images/6/6c/Communication-Hideout-05-boot-map.png"
           },
           {
-            "file": "guides/communication_hideout/08.jpg",
+            "file": "guides/communication_hideout/98cc99741722.jpg",
             "caption": "Запуск терминала антенны",
             "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-05-boot-detail.png",
             "original": "https://arcraiders.wiki/w/images/d/d8/Communication-Hideout-05-boot-detail.png"
@@ -2482,31 +2482,31 @@
         "text": [],
         "images": [
           {
-            "file": "guides/deciphering_the_data/01.jpg",
+            "file": "guides/deciphering_the_data/e37960379e6d.jpg",
             "caption": "Первое место: здание Управления подачей топлива (вход с юго-западной стороны).",
             "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_1.jpg",
             "original": "https://arcraiders.wiki/w/images/a/a7/Deciphering_the_data_1.jpg"
           },
           {
-            "file": "guides/deciphering_the_data/02.jpg",
+            "file": "guides/deciphering_the_data/2fba3ae98c5b.jpg",
             "caption": "Войдите в дверь с надписью «Fuel Control — Authorised Personnel Only» рядом.",
             "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_2.jpg",
             "original": "https://arcraiders.wiki/w/images/6/67/Deciphering_the_data_2.jpg"
           },
           {
-            "file": "guides/deciphering_the_data/03.jpg",
+            "file": "guides/deciphering_the_data/3beb423ccedc.jpg",
             "caption": "В конце комнаты найдите терминал с действием «расшифровать данные».",
             "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_3.jpg",
             "original": "https://arcraiders.wiki/w/images/8/81/Deciphering_the_data_3.jpg"
           },
           {
-            "file": "guides/deciphering_the_data/04.jpg",
+            "file": "guides/deciphering_the_data/5db9d13310f8.jpg",
             "caption": "Второе место: зона прилета, верхний этаж.",
             "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_4.jpg",
             "original": "https://arcraiders.wiki/w/images/d/df/Deciphering_the_data_4.jpg"
           },
           {
-            "file": "guides/deciphering_the_data/05.jpg",
+            "file": "guides/deciphering_the_data/9e247252522c.jpg",
             "caption": "Среди офисов на верхнем этаже найдите ряд терминалов и взаимодействуйте с предпоследним справа, чтобы завершить квест.",
             "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_5.jpg",
             "original": "https://arcraiders.wiki/w/images/b/b7/Deciphering_the_data_5.jpg"
@@ -2552,19 +2552,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/digging_up_dirt/01.jpg",
+            "file": "guides/digging_up_dirt/6be2a3d1921b.jpg",
             "caption": "Где вход",
             "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Entrance_Location.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e0/Digging_Up_Dirt_Entrance_Location.jpg"
           },
           {
-            "file": "guides/digging_up_dirt/02.jpg",
+            "file": "guides/digging_up_dirt/ae49ef19e5d0.jpg",
             "caption": "Как выглядит внутри",
             "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Interior_.jpg",
             "original": "https://arcraiders.wiki/w/images/7/71/Digging_Up_Dirt_Interior_.jpg"
           },
           {
-            "file": "guides/digging_up_dirt/03.jpg",
+            "file": "guides/digging_up_dirt/6f6d54015034.jpg",
             "caption": "Где точка взаимодействия",
             "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Interaction_Prompt.jpg",
             "original": "https://arcraiders.wiki/w/images/2/29/Digging_Up_Dirt_Interaction_Prompt.jpg"
@@ -2715,25 +2715,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/dust_on_the_wires/01.jpg",
+            "file": "guides/dust_on_the_wires/5679a951d694.jpg",
             "caption": "Повторная отправка журнала с восточной полевой станции",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Resend_Log_1.png",
             "original": "https://arcraiders.wiki/w/images/0/0b/Quest_Dust_On_The_Wires_Resend_Log_1.png"
           },
           {
-            "file": "guides/dust_on_the_wires/02.jpg",
+            "file": "guides/dust_on_the_wires/7beb5285a6db.jpg",
             "caption": "Повторная отправка журнала с рейдерской башни у ремонтного ангара",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Resend_Log_2.png",
             "original": "https://arcraiders.wiki/w/images/3/36/Quest_Dust_On_The_Wires_Resend_Log_2.png"
           },
           {
-            "file": "guides/dust_on_the_wires/03.jpg",
+            "file": "guides/dust_on_the_wires/edf6ca1a29ab.jpg",
             "caption": "Передача местоположения у останков разведчика",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Transmit_Location.png",
             "original": "https://arcraiders.wiki/w/images/2/2f/Quest_Dust_On_The_Wires_Transmit_Location.png"
           },
           {
-            "file": "guides/dust_on_the_wires/04.jpg",
+            "file": "guides/dust_on_the_wires/c1ed6d835c7a.jpg",
             "caption": "Поиск зацепок у останков разведчика",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Search_For_Clues.png",
             "original": "https://arcraiders.wiki/w/images/f/fd/Quest_Dust_On_The_Wires_Search_For_Clues.png"
@@ -2773,13 +2773,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/echoes_of_victory_ridge/01.jpg",
+            "file": "guides/echoes_of_victory_ridge/016ef6516f7b.jpg",
             "caption": "Место для квеста «Эхо победы»",
             "source": "https://arcraiders.wiki/wiki/File:Echos_of_Victory_Map.png",
             "original": "https://arcraiders.wiki/w/images/a/a2/Echos_of_Victory_Map.png"
           },
           {
-            "file": "guides/echoes_of_victory_ridge/02.jpg",
+            "file": "guides/echoes_of_victory_ridge/aa0245496494.jpg",
             "caption": "Место под мостом",
             "source": "https://arcraiders.wiki/wiki/File:Echos_of_VIctory_1.png",
             "original": "https://arcraiders.wiki/w/images/1/19/Echos_of_VIctory_1.png"
@@ -2818,7 +2818,7 @@
         "text": [],
         "images": [
           {
-            "file": "guides/espresso/01.jpg",
+            "file": "guides/espresso/737af07ea1de.jpg",
             "caption": "Кофемашина на карте",
             "source": "https://arcraiders.wiki/wiki/File:Location_of_Espresso_Machine.webp",
             "original": "https://arcraiders.wiki/w/images/3/32/Location_of_Espresso_Machine.webp"
@@ -2868,37 +2868,37 @@
         "text": [],
         "images": [
           {
-            "file": "guides/eyes_in_the_sky/01.jpg",
+            "file": "guides/eyes_in_the_sky/a0ee23c02024.jpg",
             "caption": "Поле битвы у дамбы: карта",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_dam_map.jpg",
             "original": "https://arcraiders.wiki/w/images/2/2e/Eyes_in_the_sky_dam_map.jpg"
           },
           {
-            "file": "guides/eyes_in_the_sky/02.jpg",
+            "file": "guides/eyes_in_the_sky/3ca9a135629a.jpg",
             "caption": "Поле битвы у дамбы: место",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_dam.jpg",
             "original": "https://arcraiders.wiki/w/images/7/78/Eyes_in_the_sky_dam.jpg"
           },
           {
-            "file": "guides/eyes_in_the_sky/03.jpg",
+            "file": "guides/eyes_in_the_sky/de0a66277d72.jpg",
             "caption": "Космопорт: карта",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_spaceport_map.jpg",
             "original": "https://arcraiders.wiki/w/images/3/38/Eyes_in_the_sky_spaceport_map.jpg"
           },
           {
-            "file": "guides/eyes_in_the_sky/04.jpg",
+            "file": "guides/eyes_in_the_sky/13c6931d04a7.jpg",
             "caption": "Космопорт: место",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_spaceport.jpg",
             "original": "https://arcraiders.wiki/w/images/9/97/Eyes_in_the_sky_spaceport.jpg"
           },
           {
-            "file": "guides/eyes_in_the_sky/05.jpg",
+            "file": "guides/eyes_in_the_sky/9c7a47e766c9.jpg",
             "caption": "Погребенный город: карта",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_buried_map.jpg",
             "original": "https://arcraiders.wiki/w/images/7/7a/Eyes_in_the_sky_buried_map.jpg"
           },
           {
-            "file": "guides/eyes_in_the_sky/06.jpg",
+            "file": "guides/eyes_in_the_sky/782d6afa65da.jpg",
             "caption": "Погребенный город: место (нужен зиплайн)",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_buried.jpg",
             "original": "https://arcraiders.wiki/w/images/a/a3/Eyes_in_the_sky_buried.jpg"
@@ -2939,13 +2939,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/eyes_on_the_prize/01.jpg",
+            "file": "guides/eyes_on_the_prize/f771126b4cd2.jpg",
             "caption": "Место для квеста «Глаза на призе» на карте",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_on_the_prize_map.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c5/Eyes_on_the_prize_map.jpg"
           },
           {
-            "file": "guides/eyes_on_the_prize/02.jpg",
+            "file": "guides/eyes_on_the_prize/10b71be878c1.jpg",
             "caption": "Место для квеста «Глаза на призе»",
             "source": "https://arcraiders.wiki/wiki/File:Eyes_on_the_prize.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d4/Eyes_on_the_prize.jpg"
@@ -3178,25 +3178,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/groundbreaking/01.jpg",
+            "file": "guides/groundbreaking/0de856de2db9.jpg",
             "caption": "Проникните в запертую комнату на Вершине странника",
             "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_110624.png",
             "original": "https://arcraiders.wiki/w/images/8/8b/Screenshot_2026-01-01_110624.png"
           },
           {
-            "file": "guides/groundbreaking/02.jpg",
+            "file": "guides/groundbreaking/fceb96681348.jpg",
             "caption": "Поищите в комнате строительные исследования",
             "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_110606.png",
             "original": "https://arcraiders.wiki/w/images/5/58/Screenshot_2026-01-01_110606.png"
           },
           {
-            "file": "guides/groundbreaking/03.jpg",
+            "file": "guides/groundbreaking/5a1ccca2cf39.jpg",
             "caption": "Здание, которое нужно сфотографировать",
             "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_111153.png",
             "original": "https://arcraiders.wiki/w/images/b/b3/Screenshot_2026-01-01_111153.png"
           },
           {
-            "file": "guides/groundbreaking/04.jpg",
+            "file": "guides/groundbreaking/8bdc18d92668.jpg",
             "caption": "Сфотографируйте заброшенный жилой комплекс",
             "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_111140.png",
             "original": "https://arcraiders.wiki/w/images/2/2a/Screenshot_2026-01-01_111140.png"
@@ -3232,19 +3232,19 @@
         ],
         "images": [
           {
-            "file": "guides/hatch_repairs/01.jpg",
+            "file": "guides/hatch_repairs/ba699666da28.jpg",
             "caption": "Люк Good Old Baron's Hatch на поле битвы у дамбы, пример ящика.",
             "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_1.png",
             "original": "https://arcraiders.wiki/w/images/0/06/Raider_Hatch_Key_Container_1.png"
           },
           {
-            "file": "guides/hatch_repairs/02.jpg",
+            "file": "guides/hatch_repairs/17c9fd3b615e.jpg",
             "caption": "Люк Good Old Baron's Hatch на поле битвы у дамбы, ящик крупным планом.",
             "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_2.png",
             "original": "https://arcraiders.wiki/w/images/5/5f/Raider_Hatch_Key_Container_2.png"
           },
           {
-            "file": "guides/hatch_repairs/03.jpg",
+            "file": "guides/hatch_repairs/10f517393f1e.jpg",
             "caption": "Люк Lucky Hatch у Синих ворот, ящик крупным планом.",
             "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_3.png",
             "original": "https://arcraiders.wiki/w/images/c/c4/Raider_Hatch_Key_Container_3.png"
@@ -3309,13 +3309,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/industrial_espionage/01.jpg",
+            "file": "guides/industrial_espionage/07daf44e6d36.jpg",
             "caption": "Место для квеста «Промышленный шпионаж» на карте",
             "source": "https://arcraiders.wiki/wiki/File:Industrial_espionage_map.jpg",
             "original": "https://arcraiders.wiki/w/images/b/b6/Industrial_espionage_map.jpg"
           },
           {
-            "file": "guides/industrial_espionage/02.jpg",
+            "file": "guides/industrial_espionage/37cfbcfd7014.jpg",
             "caption": "Место для квеста «Промышленный шпионаж»",
             "source": "https://arcraiders.wiki/wiki/File:Industrial_espionage.jpg",
             "original": "https://arcraiders.wiki/w/images/a/aa/Industrial_espionage.jpg"
@@ -3396,13 +3396,13 @@
         ],
         "images": [
           {
-            "file": "guides/keeping_an_eye_out/01.jpg",
+            "file": "guides/keeping_an_eye_out/fae60fd07295.jpg",
             "caption": "Вид из убежища Бильгуна.",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Keeping_An_Eye_Out_Hideout_View.png",
             "original": "https://arcraiders.wiki/w/images/7/72/Quest_Keeping_An_Eye_Out_Hideout_View.png"
           },
           {
-            "file": "guides/keeping_an_eye_out/02.jpg",
+            "file": "guides/keeping_an_eye_out/e5a0f12b846a.jpg",
             "caption": "Фото символа-глаза Бильгуна.",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Keeping_An_Eye_Out_Take_Photo.png",
             "original": "https://arcraiders.wiki/w/images/5/54/Quest_Keeping_An_Eye_Out_Take_Photo.png"
@@ -3448,19 +3448,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/keeping_the_memory/01.jpg",
+            "file": "guides/keeping_the_memory/4df5572a083c.jpg",
             "caption": "",
             "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_map.jpg",
             "original": "https://arcraiders.wiki/w/images/a/ac/Keeping_the_memory_map.jpg"
           },
           {
-            "file": "guides/keeping_the_memory/02.jpg",
+            "file": "guides/keeping_the_memory/3ec4fc61ba18.jpg",
             "caption": "Куст со шлемом",
             "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_1.jpg",
             "original": "https://arcraiders.wiki/w/images/6/6a/Keeping_the_memory_1.jpg"
           },
           {
-            "file": "guides/keeping_the_memory/03.jpg",
+            "file": "guides/keeping_the_memory/e7f5f71123d5.jpg",
             "caption": "Куда положить шлем",
             "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_2.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e3/Keeping_the_memory_2.jpg"
@@ -3541,31 +3541,31 @@
         "text": [],
         "images": [
           {
-            "file": "guides/life_of_a_pharmacist/01.jpg",
+            "file": "guides/life_of_a_pharmacist/8b1b7d2887f6.jpg",
             "caption": "В аптеке войдите через главный вход и поднимитесь наверх.",
             "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_1.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e5/Life_of_a_pharmacist_1.jpg"
           },
           {
-            "file": "guides/life_of_a_pharmacist/02.jpg",
+            "file": "guides/life_of_a_pharmacist/b68669c68352.jpg",
             "caption": "Первый предмет — рамка с фотографией на стене.",
             "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_2.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c1/Life_of_a_pharmacist_2.jpg"
           },
           {
-            "file": "guides/life_of_a_pharmacist/03.jpg",
+            "file": "guides/life_of_a_pharmacist/ec1a2711f5d1.jpg",
             "caption": "Второй предмет — пианино.",
             "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_3.jpg",
             "original": "https://arcraiders.wiki/w/images/2/21/Life_of_a_pharmacist_3.jpg"
           },
           {
-            "file": "guides/life_of_a_pharmacist/04.jpg",
+            "file": "guides/life_of_a_pharmacist/24da8805f157.jpg",
             "caption": "Третий предмет — растение в горшке.",
             "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_4.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d2/Life_of_a_pharmacist_4.jpg"
           },
           {
-            "file": "guides/life_of_a_pharmacist/05.jpg",
+            "file": "guides/life_of_a_pharmacist/f7bbd2dfb7fb.jpg",
             "caption": "Последний предмет лежит на столе.",
             "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_5.jpg",
             "original": "https://arcraiders.wiki/w/images/5/51/Life_of_a_pharmacist_5.jpg"
@@ -3604,37 +3604,37 @@
         "text": [],
         "images": [
           {
-            "file": "guides/line_in_the_sand/01.jpg",
+            "file": "guides/line_in_the_sand/a450cf1ed24b.jpg",
             "caption": "Где сошедший с рельсов поезд",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_map_1.jpg",
             "original": "https://arcraiders.wiki/w/images/7/75/Line_in_the_sand_map_1.jpg"
           },
           {
-            "file": "guides/line_in_the_sand/02.jpg",
+            "file": "guides/line_in_the_sand/d410b81d1cc8.jpg",
             "caption": "Выясните, кто организовал ограбление",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_2.jpg",
             "original": "https://arcraiders.wiki/w/images/2/2f/Line_in_the_sand_2.jpg"
           },
           {
-            "file": "guides/line_in_the_sand/03.jpg",
+            "file": "guides/line_in_the_sand/23a80c971ab8.jpg",
             "caption": "Поищите зацепки",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_2.1.jpg",
             "original": "https://arcraiders.wiki/w/images/3/3d/Line_in_the_sand_2.1.jpg"
           },
           {
-            "file": "guides/line_in_the_sand/04.jpg",
+            "file": "guides/line_in_the_sand/06f1fd69fab1.jpg",
             "caption": "Выясните, где спрятаны клапаны двигателей",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_3.jpg",
             "original": "https://arcraiders.wiki/w/images/8/81/Line_in_the_sand_3.jpg"
           },
           {
-            "file": "guides/line_in_the_sand/05.jpg",
+            "file": "guides/line_in_the_sand/4891be36d93a.jpg",
             "caption": "Обыщите подвал в квартире торговца неподалёку",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_4.jpg",
             "original": "https://arcraiders.wiki/w/images/d/db/Line_in_the_sand_4.jpg"
           },
           {
-            "file": "guides/line_in_the_sand/06.jpg",
+            "file": "guides/line_in_the_sand/2223f2ac2193.jpg",
             "caption": "Обыщите подвал в квартире торговца неподалёку",
             "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_4.1.jpg",
             "original": "https://arcraiders.wiki/w/images/a/a3/Line_in_the_sand_4.1.jpg"
@@ -3682,19 +3682,19 @@
         ],
         "images": [
           {
-            "file": "guides/lost_in_transmission/01.jpg",
+            "file": "guides/lost_in_transmission/bce716e7b6e8.jpg",
             "caption": "Зайдите в диспетчерскую вышку А6",
             "source": "https://arcraiders.wiki/wiki/File:Control_tower_zip.jpg",
             "original": "https://arcraiders.wiki/w/images/f/f3/Control_tower_zip.jpg"
           },
           {
-            "file": "guides/lost_in_transmission/02.jpg",
+            "file": "guides/lost_in_transmission/414c69a689c1.jpg",
             "caption": "Поднимитесь наверх с помощью ключа от диспетчерской башни космопорта",
             "source": "https://arcraiders.wiki/wiki/File:Control_tower_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/c/cd/Control_tower_3p.jpg"
           },
           {
-            "file": "guides/lost_in_transmission/03.jpg",
+            "file": "guides/lost_in_transmission/8276a333b2ab.jpg",
             "caption": "Установите соединение с терминала",
             "source": "https://arcraiders.wiki/wiki/File:Computer_control_tower.jpg",
             "original": "https://arcraiders.wiki/w/images/1/1e/Computer_control_tower.jpg"
@@ -3732,13 +3732,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/marked_for_death/01.jpg",
+            "file": "guides/marked_for_death/0cc6922dccea.jpg",
             "caption": "Тайник снаружи склада, с северной стороны здания",
             "source": "https://arcraiders.wiki/wiki/File:Marked_for_death_1.jpg",
             "original": "https://arcraiders.wiki/w/images/d/df/Marked_for_death_1.jpg"
           },
           {
-            "file": "guides/marked_for_death/02.jpg",
+            "file": "guides/marked_for_death/f39a07570011.jpg",
             "caption": "Идите по следам дальше на северо-запад, в кусты на дюне",
             "source": "https://arcraiders.wiki/wiki/File:Marked_for_death_2.jpg",
             "original": "https://arcraiders.wiki/w/images/f/f5/Marked_for_death_2.jpg"
@@ -3775,13 +3775,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/market_correction/01.jpg",
+            "file": "guides/market_correction/da4791c64b34.jpg",
             "caption": "Место для квеста «Коррекция рынка» на карте",
             "source": "https://arcraiders.wiki/wiki/File:Market_correction_map.jpg",
             "original": "https://arcraiders.wiki/w/images/a/a2/Market_correction_map.jpg"
           },
           {
-            "file": "guides/market_correction/02.jpg",
+            "file": "guides/market_correction/3507996a2d63.jpg",
             "caption": "Где цель квеста",
             "source": "https://arcraiders.wiki/wiki/File:Market_correction.jpg",
             "original": "https://arcraiders.wiki/w/images/8/88/Market_correction.jpg"
@@ -3917,7 +3917,7 @@
         "text": [],
         "images": [
           {
-            "file": "guides/movie_night/01.jpg",
+            "file": "guides/movie_night/028f954ab6bd.jpg",
             "caption": "Вид от первого лица",
             "source": "https://arcraiders.wiki/wiki/File:ArcRaidersVhsTapes_cropped.jpg",
             "original": "https://arcraiders.wiki/w/images/b/b6/ArcRaidersVhsTapes_cropped.jpg"
@@ -4081,19 +4081,19 @@
         ],
         "images": [
           {
-            "file": "guides/our_presence_up_there/01.jpg",
+            "file": "guides/our_presence_up_there/839d0c4c2af0.jpg",
             "caption": "Рубильник на карте",
             "source": "https://arcraiders.wiki/wiki/File:20260109082826_1.jpg",
             "original": "https://arcraiders.wiki/w/images/3/3b/20260109082826_1.jpg"
           },
           {
-            "file": "guides/our_presence_up_there/02.jpg",
+            "file": "guides/our_presence_up_there/3c60136ffec3.jpg",
             "caption": "Переключите рубильник",
             "source": "https://arcraiders.wiki/wiki/File:20260109082818_1.jpg",
             "original": "https://arcraiders.wiki/w/images/3/34/20260109082818_1.jpg"
           },
           {
-            "file": "guides/our_presence_up_there/03.jpg",
+            "file": "guides/our_presence_up_there/7c8660476f7e.jpg",
             "caption": "Почините антенну",
             "source": "https://arcraiders.wiki/wiki/File:20260109082801_1.jpg",
             "original": "https://arcraiders.wiki/w/images/2/2e/20260109082801_1.jpg"
@@ -4176,13 +4176,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/outstanding_balance/01.jpg",
+            "file": "guides/outstanding_balance/0b3099806b5d.jpg",
             "caption": "Тайник Плута на карте (под землёй)",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Outstanding_Balance_Dodger_Stash_Map.png",
             "original": "https://arcraiders.wiki/w/images/0/06/Quest_Outstanding_Balance_Dodger_Stash_Map.png"
           },
           {
-            "file": "guides/outstanding_balance/02.jpg",
+            "file": "guides/outstanding_balance/2bf17f817d43.jpg",
             "caption": "Как выглядит тайник Плута",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Outstanding_Balance_Dodger_Stash.png",
             "original": "https://arcraiders.wiki/w/images/a/a2/Quest_Outstanding_Balance_Dodger_Stash.png"
@@ -4233,25 +4233,25 @@
         ],
         "images": [
           {
-            "file": "guides/paving_the_way/01.jpg",
+            "file": "guides/paving_the_way/d7f45e72abbb.jpg",
             "caption": "Доска объявлений в центре производства энергии.",
             "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_.png",
             "original": "https://arcraiders.wiki/w/images/c/c3/Paving_the_Way_.png"
           },
           {
-            "file": "guides/paving_the_way/02.jpg",
+            "file": "guides/paving_the_way/cc202058d94f.jpg",
             "caption": "Доска объявлений в центре производства энергии на карте.",
             "source": "https://arcraiders.wiki/wiki/File:Paving_The_Way.png",
             "original": "https://arcraiders.wiki/w/images/f/f6/Paving_The_Way.png"
           },
           {
-            "file": "guides/paving_the_way/03.jpg",
+            "file": "guides/paving_the_way/531d46a3d7e5.jpg",
             "caption": "Точка взаимодействия в квартире исследователя на 6-м этаже.",
             "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_-_Buried_City.png",
             "original": "https://arcraiders.wiki/w/images/e/e0/Paving_the_Way_-_Buried_City.png"
           },
           {
-            "file": "guides/paving_the_way/04.jpg",
+            "file": "guides/paving_the_way/2332b46d4bbe.jpg",
             "caption": "Квартира исследователя в доме «Конвинио» на карте.",
             "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_-_Buried_City_Map_Location.png",
             "original": "https://arcraiders.wiki/w/images/6/67/Paving_the_Way_-_Buried_City_Map_Location.png"
@@ -4316,13 +4316,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/power_out/01.jpg",
+            "file": "guides/power_out/bf138669fced.jpg",
             "caption": "",
             "source": "https://arcraiders.wiki/wiki/File:Missing_Container_-_Power_Out.png",
             "original": "https://arcraiders.wiki/w/images/5/53/Missing_Container_-_Power_Out.png"
           },
           {
-            "file": "guides/power_out/02.jpg",
+            "file": "guides/power_out/a4cb9a1148c2.jpg",
             "caption": "",
             "source": "https://arcraiders.wiki/wiki/File:Power_Cell_Switch.png",
             "original": "https://arcraiders.wiki/w/images/8/80/Power_Cell_Switch.png"
@@ -4408,25 +4408,25 @@
         ],
         "images": [
           {
-            "file": "guides/reduced_to_rubble/01.jpg",
+            "file": "guides/reduced_to_rubble/54a25d551cf3.jpg",
             "caption": "Разрушенное шоссе.",
             "source": "https://arcraiders.wiki/wiki/File:Highway_map.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c0/Highway_map.jpg"
           },
           {
-            "file": "guides/reduced_to_rubble/02.jpg",
+            "file": "guides/reduced_to_rubble/a8f431f8fcf8.jpg",
             "caption": "Сфотографируйте разрушенное шоссе.",
             "source": "https://arcraiders.wiki/wiki/File:Highway_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e4/Highway_3p.jpg"
           },
           {
-            "file": "guides/reduced_to_rubble/03.jpg",
+            "file": "guides/reduced_to_rubble/dd9917814a2d.jpg",
             "caption": "Где неизвестная машина ARC.",
             "source": "https://arcraiders.wiki/wiki/File:Arc_map.jpg",
             "original": "https://arcraiders.wiki/w/images/3/3c/Arc_map.jpg"
           },
           {
-            "file": "guides/reduced_to_rubble/04.jpg",
+            "file": "guides/reduced_to_rubble/cda3a9dc4fa6.jpg",
             "caption": "Осмотрите её и эвакуируйтесь.",
             "source": "https://arcraiders.wiki/wiki/File:Arc_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/0/06/Arc_3p.jpg"
@@ -4467,25 +4467,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/safe_harbor/01.jpg",
+            "file": "guides/safe_harbor/ddd3bd081b3b.jpg",
             "caption": "Найдите зацепку, оставленную работниками кухни ресторана",
             "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_1.jpg",
             "original": "https://arcraiders.wiki/w/images/b/b6/Safe_Harbor_1.jpg"
           },
           {
-            "file": "guides/safe_harbor/02.jpg",
+            "file": "guides/safe_harbor/a3a649ca78af.jpg",
             "caption": "Найдите зацепку, оставленную работниками кухни ресторана",
             "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_1.1.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d8/Safe_Harbor_1.1.jpg"
           },
           {
-            "file": "guides/safe_harbor/03.jpg",
+            "file": "guides/safe_harbor/ea8f7438cf31.jpg",
             "caption": "Найдите место, изображённое на наброске",
             "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_2.jpg",
             "original": "https://arcraiders.wiki/w/images/3/35/Safe_Harbor_2.jpg"
           },
           {
-            "file": "guides/safe_harbor/04.jpg",
+            "file": "guides/safe_harbor/d1783aa99b57.jpg",
             "caption": "Откопайте закопанную деталь",
             "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_3.jpg",
             "original": "https://arcraiders.wiki/w/images/1/1f/Safe_Harbor_3.jpg"
@@ -4632,7 +4632,7 @@
         "text": [],
         "images": [
           {
-            "file": "guides/snap_and_salvage/01.jpg",
+            "file": "guides/snap_and_salvage/ccc562a2f402.jpg",
             "caption": "Ровер в песочнице для роботов А",
             "source": "https://arcraiders.wiki/wiki/File:Sandbox_Rover_obj.png",
             "original": "https://arcraiders.wiki/w/images/1/16/Sandbox_Rover_obj.png"
@@ -4670,13 +4670,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/source_of_the_contamination/01.jpg",
+            "file": "guides/source_of_the_contamination/bf1397a25e83.jpg",
             "caption": "Найдите водозабор около болота",
             "source": "https://arcraiders.wiki/wiki/File:Flood_spill_map.jpg",
             "original": "https://arcraiders.wiki/w/images/7/7a/Flood_spill_map.jpg"
           },
           {
-            "file": "guides/source_of_the_contamination/02.jpg",
+            "file": "guides/source_of_the_contamination/cc2e15121c2e.jpg",
             "caption": "Осмотрите подозрительные предметы",
             "source": "https://arcraiders.wiki/wiki/File:Flood_spill.jpg",
             "original": "https://arcraiders.wiki/w/images/c/c2/Flood_spill.jpg"
@@ -4753,13 +4753,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/stable_housing/01.jpg",
+            "file": "guides/stable_housing/6a8fb653f8a2.jpg",
             "caption": "Печать карты доступа на четвёртом этаже",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Stable_Housing_Print_Access_Card.png",
             "original": "https://arcraiders.wiki/w/images/d/db/Quest_Stable_Housing_Print_Access_Card.png"
           },
           {
-            "file": "guides/stable_housing/02.jpg",
+            "file": "guides/stable_housing/341a4da5a720.jpg",
             "caption": "Цифровой код на третьем этаже",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Stable_Housing_Inspect_Notes.png",
             "original": "https://arcraiders.wiki/w/images/5/5a/Quest_Stable_Housing_Inspect_Notes.png"
@@ -4800,31 +4800,31 @@
         "text": [],
         "images": [
           {
-            "file": "guides/straight_record/01.jpg",
+            "file": "guides/straight_record/f71d1117332d.jpg",
             "caption": "Места для квеста «Честная запись»",
             "source": "https://arcraiders.wiki/wiki/File:Straight_Record-Map.png",
             "original": "https://arcraiders.wiki/w/images/6/6e/Straight_Record-Map.png"
           },
           {
-            "file": "guides/straight_record/02.jpg",
+            "file": "guides/straight_record/bd320ab6c22b.jpg",
             "caption": "«Честная запись»: ЭМИ-ловушка",
             "source": "https://arcraiders.wiki/wiki/File:Straight_record_1.jpg",
             "original": "https://arcraiders.wiki/w/images/1/1e/Straight_record_1.jpg"
           },
           {
-            "file": "guides/straight_record/03.jpg",
+            "file": "guides/straight_record/1c04ae17c491.jpg",
             "caption": "«Честная запись»: рубильник №1",
             "source": "https://arcraiders.wiki/wiki/File:Straight_record_2.jpg",
             "original": "https://arcraiders.wiki/w/images/d/d3/Straight_record_2.jpg"
           },
           {
-            "file": "guides/straight_record/04.jpg",
+            "file": "guides/straight_record/5bcbc7fd35ed.jpg",
             "caption": "«Честная запись»: рубильник №2",
             "source": "https://arcraiders.wiki/wiki/File:Straight_record_3.jpg",
             "original": "https://arcraiders.wiki/w/images/b/b0/Straight_record_3.jpg"
           },
           {
-            "file": "guides/straight_record/05.jpg",
+            "file": "guides/straight_record/a896a1c1738d.jpg",
             "caption": "«Честная запись»: рубильник №3",
             "source": "https://arcraiders.wiki/wiki/File:Straight_record_4.jpg",
             "original": "https://arcraiders.wiki/w/images/3/35/Straight_record_4.jpg"
@@ -4861,7 +4861,7 @@
         "text": [],
         "images": [
           {
-            "file": "guides/switching_the_supply/01.jpg",
+            "file": "guides/switching_the_supply/2be1aedc9e03.jpg",
             "caption": "Где вентиль",
             "source": "https://arcraiders.wiki/wiki/File:Switching_the_Supply_objective_location.png",
             "original": "https://arcraiders.wiki/w/images/6/64/Switching_the_Supply_objective_location.png"
@@ -4946,13 +4946,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/the_clean_dream/01.jpg",
+            "file": "guides/the_clean_dream/b98f0bbe5191.jpg",
             "caption": "Это цель «Система фильтрации»",
             "source": "https://arcraiders.wiki/wiki/File:Filtration.jpg",
             "original": "https://arcraiders.wiki/w/images/9/90/Filtration.jpg"
           },
           {
-            "file": "guides/the_clean_dream/02.jpg",
+            "file": "guides/the_clean_dream/8f8cdde7d0d5.jpg",
             "caption": "Точка взаимодействия для квеста об очистке",
             "source": "https://arcraiders.wiki/wiki/File:Purification_Quest_Interact_Location.jpg",
             "original": "https://arcraiders.wiki/w/images/f/f6/Purification_Quest_Interact_Location.jpg"
@@ -5008,13 +5008,13 @@
         ],
         "images": [
           {
-            "file": "guides/the_league/01.jpg",
+            "file": "guides/the_league/0d816f702a62.jpg",
             "caption": "Один из киосков чуть севернее станции Марано",
             "source": "https://arcraiders.wiki/wiki/File:Location_on_Map.png",
             "original": "https://arcraiders.wiki/w/images/9/9a/Location_on_Map.png"
           },
           {
-            "file": "guides/the_league/02.jpg",
+            "file": "guides/the_league/c44a1be640eb.jpg",
             "caption": "Киоск в Погребенном городе у станции Марано",
             "source": "https://arcraiders.wiki/wiki/File:Kiosk_on_Buried_City.png",
             "original": "https://arcraiders.wiki/w/images/3/3e/Kiosk_on_Buried_City.png"
@@ -5053,13 +5053,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/the_majors_footlocker/01.jpg",
+            "file": "guides/the_majors_footlocker/2306b3794241.jpg",
             "caption": "Сундук майора на карте",
             "source": "https://arcraiders.wiki/wiki/File:Majors_footlocker_map.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e8/Majors_footlocker_map.jpg"
           },
           {
-            "file": "guides/the_majors_footlocker/02.jpg",
+            "file": "guides/the_majors_footlocker/ca935de6f48d.jpg",
             "caption": "Цель на 3-м этаже",
             "source": "https://arcraiders.wiki/wiki/File:Majors_footlocker_obj.jpg",
             "original": "https://arcraiders.wiki/w/images/e/e7/Majors_footlocker_obj.jpg"
@@ -5145,13 +5145,13 @@
         ],
         "images": [
           {
-            "file": "guides/the_root_of_the_matter/01.jpg",
+            "file": "guides/the_root_of_the_matter/430a07b3dcb7.jpg",
             "caption": "Комната на карте",
             "source": "https://arcraiders.wiki/wiki/File:11111.png",
             "original": "https://arcraiders.wiki/w/images/d/d8/11111.png"
           },
           {
-            "file": "guides/the_root_of_the_matter/02.jpg",
+            "file": "guides/the_root_of_the_matter/ceff81b6e677.jpg",
             "caption": "Комната с отличным видом",
             "source": "https://arcraiders.wiki/wiki/File:22222.png",
             "original": "https://arcraiders.wiki/w/images/0/0d/22222.png"
@@ -5197,25 +5197,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/the_stench_of_corruption/01.jpg",
+            "file": "guides/the_stench_of_corruption/9210ca32a9c1.jpg",
             "caption": "Где раздевалка персонала в зоне отправления",
             "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Door_Staff_Locker_Room.png",
             "original": "https://arcraiders.wiki/w/images/6/61/The_Stench_Of_Corruption_Door_Staff_Locker_Room.png"
           },
           {
-            "file": "guides/the_stench_of_corruption/02.jpg",
+            "file": "guides/the_stench_of_corruption/939eb8e20aee.jpg",
             "caption": "Дверь в раздевалку персонала",
             "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Door_Staff_Locker_Room_2.png",
             "original": "https://arcraiders.wiki/w/images/4/4e/The_Stench_Of_Corruption_Door_Staff_Locker_Room_2.png"
           },
           {
-            "file": "guides/the_stench_of_corruption/03.jpg",
+            "file": "guides/the_stench_of_corruption/709090d4b9c6.jpg",
             "caption": "Где найти ключ в раздевалке персонала",
             "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Staff_Locker_Room_Key_Interaction.png",
             "original": "https://arcraiders.wiki/w/images/2/22/The_Stench_Of_Corruption_Staff_Locker_Room_Key_Interaction.png"
           },
           {
-            "file": "guides/the_stench_of_corruption/04.jpg",
+            "file": "guides/the_stench_of_corruption/4c0dfc9c4f34.jpg",
             "caption": "Где использовать ключ в подземных туннелях",
             "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Tunnels_Key_Interaction.png",
             "original": "https://arcraiders.wiki/w/images/9/9c/The_Stench_Of_Corruption_Tunnels_Key_Interaction.png"
@@ -5409,25 +5409,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/unexpected_initiative/01.jpg",
+            "file": "guides/unexpected_initiative/d1659834d9f5.jpg",
             "caption": "Крыша на Пьяцца Рома",
             "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_123742.png",
             "original": "https://arcraiders.wiki/w/images/1/1e/Sn%C3%ADmek_obrazovky_2025-11-16_123742.png"
           },
           {
-            "file": "guides/unexpected_initiative/02.jpg",
+            "file": "guides/unexpected_initiative/da78b13ffc7e.jpg",
             "caption": "Измеритель питательных веществ на Пьяцца Рома",
             "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_123756.png",
             "original": "https://arcraiders.wiki/w/images/8/8b/Sn%C3%ADmek_obrazovky_2025-11-16_123756.png"
           },
           {
-            "file": "guides/unexpected_initiative/03.jpg",
+            "file": "guides/unexpected_initiative/a0b4d5756864.jpg",
             "caption": "Крыша апартаментов «Грандиозо»",
             "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_124507.png",
             "original": "https://arcraiders.wiki/w/images/9/90/Sn%C3%ADmek_obrazovky_2025-11-16_124507.png"
           },
           {
-            "file": "guides/unexpected_initiative/04.jpg",
+            "file": "guides/unexpected_initiative/55c87dc5bbd7.jpg",
             "caption": "Квестовый предмет в апартаментах «Грандиозо»",
             "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_124441.png",
             "original": "https://arcraiders.wiki/w/images/3/38/Sn%C3%ADmek_obrazovky_2025-11-16_124441.png"
@@ -5475,19 +5475,19 @@
         ],
         "images": [
           {
-            "file": "guides/untended_garden/01.jpg",
+            "file": "guides/untended_garden/0d908d9860eb.jpg",
             "caption": "Здание с данными",
             "source": "https://arcraiders.wiki/wiki/File:Dome_map.png",
             "original": "https://arcraiders.wiki/w/images/7/78/Dome_map.png"
           },
           {
-            "file": "guides/untended_garden/02.jpg",
+            "file": "guides/untended_garden/8952561332df.jpg",
             "caption": "Скачайте исследовательские данные с компьютерного терминала",
             "source": "https://arcraiders.wiki/wiki/File:Dome_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/1/1d/Dome_3p.jpg"
           },
           {
-            "file": "guides/untended_garden/03.jpg",
+            "file": "guides/untended_garden/baa6f605e31a.jpg",
             "caption": "Загрузите данные на любой полевой станции. Ближайшая — к юго-западу от здания с данными, её видно на карте.",
             "source": "https://arcraiders.wiki/wiki/File:Field_depot_3p.jpg",
             "original": "https://arcraiders.wiki/w/images/2/20/Field_depot_3p.jpg"
@@ -5540,19 +5540,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/waking_the_grid/01.jpg",
+            "file": "guides/waking_the_grid/f4824021e5e2.jpg",
             "caption": "Включение датчиков охраны",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Activate_Security_Sensors.png",
             "original": "https://arcraiders.wiki/w/images/c/cb/Quest_Waking_The_Grid_Activate_Security_Sensors.png"
           },
           {
-            "file": "guides/waking_the_grid/02.jpg",
+            "file": "guides/waking_the_grid/6be7c270adc4.jpg",
             "caption": "Запуск электросети",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Bring_Online.png",
             "original": "https://arcraiders.wiki/w/images/a/ac/Quest_Waking_The_Grid_Bring_Online.png"
           },
           {
-            "file": "guides/waking_the_grid/03.jpg",
+            "file": "guides/waking_the_grid/54f5727d399a.jpg",
             "caption": "Перерезание проводов сигнализации",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Cut_The_Wires.png",
             "original": "https://arcraiders.wiki/w/images/4/47/Quest_Waking_The_Grid_Cut_The_Wires.png"
@@ -5591,25 +5591,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/water_troubles/01.jpg",
+            "file": "guides/water_troubles/614e032dceab.jpg",
             "caption": "Туннель к переливу — на внешней стене дамбы",
             "source": "https://arcraiders.wiki/wiki/File:19a74975eb49-screenshotUrl.png",
             "original": "https://arcraiders.wiki/w/images/c/c8/19a74975eb49-screenshotUrl.png"
           },
           {
-            "file": "guides/water_troubles/02.jpg",
+            "file": "guides/water_troubles/3b7723e9de02.jpg",
             "caption": "Войдите в туннель к переливу",
             "source": "https://arcraiders.wiki/wiki/File:19a74976ee85-screenshotUrl.png",
             "original": "https://arcraiders.wiki/w/images/2/2a/19a74976ee85-screenshotUrl.png"
           },
           {
-            "file": "guides/water_troubles/03.jpg",
+            "file": "guides/water_troubles/9abc0df5c105.jpg",
             "caption": "В конце туннеля слева находится водозабор",
             "source": "https://arcraiders.wiki/wiki/File:19a7497782360-screenshotUrl.png",
             "original": "https://arcraiders.wiki/w/images/9/94/19a7497782360-screenshotUrl.png"
           },
           {
-            "file": "guides/water_troubles/04.jpg",
+            "file": "guides/water_troubles/bae29c1549b6.jpg",
             "caption": "Возьмите пробу воды",
             "source": "https://arcraiders.wiki/wiki/File:19a74978b2021-screenshotUrl.png",
             "original": "https://arcraiders.wiki/w/images/3/35/19a74978b2021-screenshotUrl.png"
@@ -5736,25 +5736,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/with_a_trace/01.jpg",
+            "file": "guides/with_a_trace/86dcf53706eb.jpg",
             "caption": "Знаки",
             "source": "https://arcraiders.wiki/wiki/File:The_Signs.png",
             "original": "https://arcraiders.wiki/w/images/c/c9/The_Signs.png"
           },
           {
-            "file": "guides/with_a_trace/02.jpg",
+            "file": "guides/with_a_trace/7472c8464eb3.jpg",
             "caption": "Где знаки",
             "source": "https://arcraiders.wiki/wiki/File:The_Signs_Location.png",
             "original": "https://arcraiders.wiki/w/images/b/ba/The_Signs_Location.png"
           },
           {
-            "file": "guides/with_a_trace/03.jpg",
+            "file": "guides/with_a_trace/535c9376dc35.jpg",
             "caption": "Где устройство связи / украшенные обломки",
             "source": "https://arcraiders.wiki/wiki/File:Adorned_Wreckage_Location.jpg",
             "original": "https://arcraiders.wiki/w/images/1/1d/Adorned_Wreckage_Location.jpg"
           },
           {
-            "file": "guides/with_a_trace/04.jpg",
+            "file": "guides/with_a_trace/478e6764067b.jpg",
             "caption": "Осмотрите устройство связи",
             "source": "https://arcraiders.wiki/wiki/File:Inspect_the_communication_device.jpg",
             "original": "https://arcraiders.wiki/w/images/2/29/Inspect_the_communication_device.jpg"
@@ -5841,19 +5841,19 @@
         "text": [],
         "images": [
           {
-            "file": "guides/worth_your_salt/01.jpg",
+            "file": "guides/worth_your_salt/d8984531054c.jpg",
             "caption": "Как найти прототип батареи",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Search_For_Battery.png",
             "original": "https://arcraiders.wiki/w/images/f/fd/Quest_Worth_Your_Salt_Search_For_Battery.png"
           },
           {
-            "file": "guides/worth_your_salt/02.jpg",
+            "file": "guides/worth_your_salt/cb45eb27dae5.jpg",
             "caption": "Использование промышленного зарядного устройства",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Charge_Battery.png",
             "original": "https://arcraiders.wiki/w/images/e/e6/Quest_Worth_Your_Salt_Charge_Battery.png"
           },
           {
-            "file": "guides/worth_your_salt/03.jpg",
+            "file": "guides/worth_your_salt/85ce4a4d1cd9.jpg",
             "caption": "Доставка прототипа батареи",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Place_Battery.png",
             "original": "https://arcraiders.wiki/w/images/8/87/Quest_Worth_Your_Salt_Place_Battery.png"
@@ -5899,13 +5899,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/a_path_not_yours/01.jpg",
+            "file": "guides/a_path_not_yours/07541081bba4.jpg",
             "caption": "Как найти лагерь кочевников",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png",
             "original": "https://arcraiders.wiki/w/images/f/fb/Quest_Clean_Hands_Nomad_Item.png"
           },
           {
-            "file": "guides/a_path_not_yours/02.jpg",
+            "file": "guides/a_path_not_yours/5d8737fde4de.jpg",
             "caption": "Экваториальные солнечные часы на верху церкви",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png",
             "original": "https://arcraiders.wiki/w/images/d/d4/Quest_Clean_Hands_Hold_Item.png"
@@ -6120,13 +6120,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/clean_hands/01.jpg",
+            "file": "guides/clean_hands/07541081bba4.jpg",
             "caption": "Как найти лагерь кочевников",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png",
             "original": "https://arcraiders.wiki/w/images/f/fb/Quest_Clean_Hands_Nomad_Item.png"
           },
           {
-            "file": "guides/clean_hands/02.jpg",
+            "file": "guides/clean_hands/5d8737fde4de.jpg",
             "caption": "Экваториальные солнечные часы на верху церкви",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png",
             "original": "https://arcraiders.wiki/w/images/d/d4/Quest_Clean_Hands_Hold_Item.png"
@@ -6178,25 +6178,25 @@
         "text": [],
         "images": [
           {
-            "file": "guides/divided/01.jpg",
+            "file": "guides/divided/f6afab2fd20c.jpg",
             "caption": "Запись на погрузочной платформе",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Loading_Platform.png",
             "original": "https://arcraiders.wiki/w/images/0/05/Quest_Divided_Loading_Platform.png"
           },
           {
-            "file": "guides/divided/02.jpg",
+            "file": "guides/divided/26bf7e2b3f9a.jpg",
             "caption": "Запись на метеостанции",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Weather_Station.png",
             "original": "https://arcraiders.wiki/w/images/f/f2/Quest_Divided_Weather_Station.png"
           },
           {
-            "file": "guides/divided/03.jpg",
+            "file": "guides/divided/3c46657f4de7.jpg",
             "caption": "Запись на диспетчерской башне",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Dispatch_Tower.png",
             "original": "https://arcraiders.wiki/w/images/7/7b/Quest_Divided_Dispatch_Tower.png"
           },
           {
-            "file": "guides/divided/04.jpg",
+            "file": "guides/divided/ff5dece9215f.jpg",
             "caption": "Запись на станции Almatera",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Almatera_Station.png",
             "original": "https://arcraiders.wiki/w/images/b/be/Quest_Divided_Almatera_Station.png"
@@ -6388,13 +6388,13 @@
         "text": [],
         "images": [
           {
-            "file": "guides/taking_stock/01.jpg",
+            "file": "guides/taking_stock/07541081bba4.jpg",
             "caption": "Как найти лагерь кочевников",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png",
             "original": "https://arcraiders.wiki/w/images/f/fb/Quest_Clean_Hands_Nomad_Item.png"
           },
           {
-            "file": "guides/taking_stock/02.jpg",
+            "file": "guides/taking_stock/5d8737fde4de.jpg",
             "caption": "Экваториальные солнечные часы на верху церкви",
             "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png",
             "original": "https://arcraiders.wiki/w/images/d/d4/Quest_Clean_Hands_Hold_Item.png"

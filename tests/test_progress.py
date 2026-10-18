@@ -74,3 +74,24 @@ def test_shopping_list_sums_items_across_quests():
         ("Ключ", 1, ["Другой"]),
         ("Провода", 8, ["И хлам богатство", "Другой"]),
     ]
+
+
+def test_bad_entries_skipped_and_broken_file_kept(tmp_path):
+    path = tmp_path / "p.json"
+    path.write_text('{"active": [{"id": "a", "name": "А"}, {"id": "b"}], "current": 0}', encoding="utf-8")
+    assert [a.id for a in Progress.load(path).active] == ["a"]
+    path.write_text("[]", encoding="utf-8")  # не словарь — не падаем
+    assert Progress.load(path).active == []
+    assert (tmp_path / "p.json.bad").exists()  # испорченный файл не потерян
+
+
+def test_save_survives_locked_file(tmp_path, monkeypatch):
+    from pathlib import Path
+
+    progress = Progress.load(tmp_path / "p.json")
+
+    def locked(*args, **kwargs):
+        raise PermissionError("занят")
+
+    monkeypatch.setattr(Path, "replace", locked)
+    progress.save()  # не бросает исключение

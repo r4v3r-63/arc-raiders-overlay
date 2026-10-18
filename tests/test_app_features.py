@@ -227,3 +227,37 @@ def test_whats_new_after_update(qapp, tmp_path, monkeypatch):
 
 def test_new_user_sees_tour_not_news(app):
     assert not app.news.isVisible()
+
+
+def test_release_commit_marker_in_notes(app, tmp_path):
+    release = tmp_path / "release.json"
+    release.write_text(json.dumps({"target_commitish": "same", "body": "текст\n<!-- commit: abcdef1234 -->"}),
+                       encoding="utf-8")
+    app._release_loaded(release, "abcdef1234")
+    assert not app._update_action.isVisible()
+    app._release_loaded(release, "0000000")
+    assert app._update_action.isVisible()
+
+
+def test_second_capture_waits_for_first(app, monkeypatch):
+    from PyQt6.QtCore import QTimer
+
+    calls = []
+    monkeypatch.setattr(QTimer, "singleShot", lambda ms, fn: calls.append(fn))
+    app.import_from_screen()
+    app.check_item()  # пока идёт первое распознавание, второе не запускается
+    assert len(calls) == 1
+    app._capture_finished()
+    app.check_item()
+    assert len(calls) == 2
+
+
+def test_hourly_steam_sync_keeps_open_panel(app, tmp_path):
+    app.on_submitted("Первый плацдарм")
+    page = tmp_path / "steam.html"
+    page.write_text("<div class='subSectionTitle'>x</div>", encoding="utf-8")
+    app._steam_guide_loaded(page)
+    app.toggle_guide()
+    app.show_help()
+    app._steam_guide_loaded(page)  # то же руководство — справка остаётся открытой
+    assert app.card.panel == "help"

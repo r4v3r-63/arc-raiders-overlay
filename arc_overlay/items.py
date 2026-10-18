@@ -81,6 +81,8 @@ def where_to_find(db: QuestDB, item: Item) -> Where:
     wanted = set(item.found)
     where.types = [f"{db.loot_types[t]} ({t})" if t in db.loot_types else t for t in item.found]
     for game_map in db.maps.values():
+        if not game_map.image:
+            continue  # без картинки места не показать
         rooms = [r for r in game_map.rooms if wanted & set(r.get("types", []))]
         if rooms:
             where.maps.append(MapSpots(game_map.id, game_map.name_ru or game_map.name, rooms))

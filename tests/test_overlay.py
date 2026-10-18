@@ -102,3 +102,21 @@ def test_opacity_is_clamped_saved_and_reset(qapp, tmp_path):
     assert again.opacity == 20
     again.reset_geometry()
     assert again.opacity == 75 and settings.value("opacity") is None
+
+
+def test_panel_over_guide_keeps_screenshot(qapp, tmp_path):
+    from PyQt6.QtGui import QPixmap
+
+    from arc_overlay.guide import GuidePage
+
+    card, _ = make_card(tmp_path)
+    card.show_quest(card._db.quests[0])
+    card.show_guide_page(GuidePage("вики", "", "текст", "x.jpg"), 0, 1)
+    pixmap = QPixmap(10, 10)
+    card.set_image(pixmap)
+    card.toggle_help()
+    assert card.current_pixmap is None
+    late = QPixmap(20, 20)
+    card.set_image(late)  # догрузился, пока открыта справка — не показываем поверх справки
+    card.toggle_help()
+    assert card.current_pixmap is not None and card.current_pixmap.width() == 20

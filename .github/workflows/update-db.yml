@@ -47,6 +47,7 @@ jobs:
             echo "База не изменилась" >> "$GITHUB_STEP_SUMMARY"
           else
             git commit -m "Автообновление базы квестов"
+            git pull --rebase origin main  # пока собиралась база, в main могли запушить
             git push
             echo "База обновлена: $(git log -1 --format=%h)" >> "$GITHUB_STEP_SUMMARY"
           fi

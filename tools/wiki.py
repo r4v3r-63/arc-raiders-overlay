@@ -23,27 +23,42 @@ def api(**params) -> dict:
 
 def fetch_quest_pages() -> dict[str, str]:
     """Возвращает {название страницы: викитекст} для всех страниц категории Quests."""
-    members = api(action="query", list="categorymembers", cmtitle="Category:Quests", cmlimit=500)
-    titles = [m["title"] for m in members["query"]["categorymembers"]]
+    titles, cont = [], {}
+    while True:
+        # Только статьи (namespace 0): подкатегории и шаблоны в категории — не квесты.
+        members = api(action="query", list="categorymembers", cmtitle="Category:Quests", cmnamespace=0, cmlimit=500,
+                      **cont)
+        titles += [m["title"] for m in members["query"]["categorymembers"]]
+        cont = members.get("continue", {})
+        if not cont:
+            break
     pages = {}
     for i in range(0, len(titles), 50):
-        data = api(action="query", prop="revisions", rvprop="content", rvslots="main", titles="|".join(titles[i:i + 50]))
-        for page in data["query"]["pages"].values():
-            pages[page["title"]] = page["revisions"][0]["slots"]["main"]["*"]
+        cont = {}
+        while True:
+            data = api(action="query", prop="revisions", rvprop="content", rvslots="main",
+                       titles="|".join(titles[i:i + 50]), **cont)
+            for page in data["query"]["pages"].values():
+                if page.get("revisions"):  # без содержимого — удалённая страница или ответ не влез, придёт дальше
+                    pages[page["title"]] = page["revisions"][0]["slots"]["main"]["*"]
+            cont = data.get("continue", {})
+            if not cont:
+                break
     return pages
 
 
-def image_urls(files: list[str]) -> dict[str, str]:
-    """{имя файла: прямая ссылка на картинку}."""
+def image_urls(files: list[str]) -> dict[str, dict]:
+    """{имя файла: {"url": прямая ссылка, "sha1": контрольная сумма текущей версии}}."""
     urls = {}
     for i in range(0, len(files), 50):
         titles = "|".join("File:" + f for f in files[i:i + 50])
-        data = api(action="query", prop="imageinfo", iiprop="url", titles=titles)
+        data = api(action="query", prop="imageinfo", iiprop="url|sha1", titles=titles)
         normalized = {n["to"]: n["from"] for n in data["query"].get("normalized", [])}
         for page in data["query"]["pages"].values():
             if "imageinfo" in page:
                 title = normalized.get(page["title"], page["title"])
-                urls[title.removeprefix("File:")] = page["imageinfo"][0]["url"]
+                info = page["imageinfo"][0]
+                urls[title.removeprefix("File:")] = {"url": info["url"], "sha1": info.get("sha1", "")}
     return urls
 
 
@@ -56,7 +71,9 @@ def clean(text: str) -> str:
     """Убирает вики-разметку, оставляя читаемый текст."""
     text = re.sub(r"<ref[^>]*?/>|<ref.*?</ref>", "", text, flags=re.S)
     text = re.sub(r"<!--.*?-->", "", text, flags=re.S)
-    text = re.sub(r"\{\{[^{}]*\}\}", "", text)
+    previous = None
+    while previous != text:  # вложенные шаблоны {{a|{{b}}}} снимаются изнутри наружу
+        previous, text = text, re.sub(r"\{\{[^{}]*\}\}", "", text)
     text = re.sub(r"\[\[(?:[^|\]]*\|)?([^\]]*)\]\]", r"\1", text)
     text = re.sub(r"\[https?://\S+ ([^\]]*)\]", r"\1", text)
     text = re.sub(r"'{2,}", "", text)
@@ -121,6 +138,10 @@ def parse_objectives(wikitext: str) -> list[str]:
             if params.get("optional") == "yes" and not label.startswith("(Optional)"):
                 label = "(Optional) " + label
             objectives.append(label)
+    total = len(re.findall(r"\{\{QuestObjective\b", body))
+    if total > len(objectives):
+        # Внутри цели вложенный шаблон или ссылка, которые регулярное выражение не разбирает.
+        print(f"  внимание: разобрано целей {len(objectives)} из {total}, проверьте разбор вики-разметки")
     if not objectives:
         objectives = [clean(l.lstrip("*# ")) for l in body.splitlines() if l.strip().startswith(("*", "#"))]
     return [o for o in objectives if o]

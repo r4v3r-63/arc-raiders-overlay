@@ -18,19 +18,31 @@ from . import paths
 
 UNUSED_DAYS = 30  # файлы, которые столько дней не открывались, удаляются при запуске
 USER_AGENT = b"Mozilla/5.0 (Windows NT 10.0; Win64; x64) arc-raiders-overlay"
+TRANSFER_TIMEOUT_MS = 30_000  # зависшее соединение не должно навсегда занять загрузку
+
+
+def is_image(data: bytes) -> bool:
+    """Проверка для картинок: вместо них иногда приходит страница с ошибкой (Wi-Fi в гостинице и т. п.)."""
+    from PyQt6.QtGui import QImage
+
+    return QImage().loadFromData(data)
 
 
 class CachedDownloader:
     def __init__(self, directory: Path | None = None):
         self._manager = QNetworkAccessManager()
+        self._manager.setTransferTimeout(TRANSFER_TIMEOUT_MS)
         self._dir = directory or paths.cache_dir()
         self._waiting: dict[str, list] = {}
 
     def path_for(self, url: str) -> Path:
         return self._dir / hashlib.sha1(url.encode()).hexdigest()
 
-    def get(self, url: str, callback, max_age: float | None = None):
-        """Вызывает callback(путь к файлу или None). max_age — сколько секунд кэш считается свежим."""
+    def get(self, url: str, callback, max_age: float | None = None, validate=None):
+        """Вызывает callback(путь к файлу или None). max_age — сколько секунд кэш считается свежим.
+
+        validate(данные) → False — ответ не тот (страница с ошибкой вместо файла): кэш не трогаем.
+        """
         path = self.path_for(url)
         if path.exists() and (max_age is None or time.time() - path.stat().st_mtime < max_age):
             self._touch(path)
@@ -44,20 +56,26 @@ class CachedDownloader:
         request.setRawHeader(b"User-Agent", USER_AGENT)
         request.setRawHeader(b"Accept-Language", b"ru")
         reply = self._manager.get(request)
-        reply.finished.connect(lambda: self._finished(url, path, reply))
+        reply.finished.connect(lambda: self._finished(url, path, reply, validate))
 
-    def _finished(self, url: str, path: Path, reply: QNetworkReply):
-        ok = reply.error() == QNetworkReply.NetworkError.NoError
-        if ok:
-            tmp = path.with_suffix(".tmp")
-            tmp.write_bytes(bytes(reply.readAll()))
-            tmp.replace(path)
+    def _finished(self, url: str, path: Path, reply: QNetworkReply, validate=None):
+        callbacks = self._waiting.pop(url, [])
+        status = reply.attribute(QNetworkRequest.Attribute.HttpStatusCodeAttribute)
+        ok = reply.error() == QNetworkReply.NetworkError.NoError and status in (None, 200)
+        data = bytes(reply.readAll()) if ok else b""
         reply.deleteLater()
+        if ok and (validate is None or validate(data)):
+            try:
+                tmp = path.with_suffix(".tmp")
+                tmp.write_bytes(data)
+                tmp.replace(path)
+            except OSError:
+                pass  # диск занят или полон — отдадим прежнюю копию, если есть
         # Нет сети — отдаём устаревшую копию, если она есть.
         result = path if path.exists() else None
         if result:
             self._touch(result)
-        for callback in self._waiting.pop(url, []):
+        for callback in callbacks:
             callback(result)
 
     @staticmethod

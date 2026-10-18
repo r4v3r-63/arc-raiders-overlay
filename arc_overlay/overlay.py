@@ -9,7 +9,7 @@ from __future__ import annotations
 
 import html
 
-from PyQt6.QtCore import QPoint, QRectF, QSettings, Qt
+from PyQt6.QtCore import QPoint, QRectF, QSettings, Qt, pyqtSignal
 from PyQt6.QtGui import QColor, QGuiApplication, QPainter, QPainterPath, QPen, QPixmap
 from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QSlider, QVBoxLayout, QWidget
 
@@ -35,6 +35,8 @@ def _lines(text: str) -> str:
 
 
 class OverlayCard(QWidget):
+    editing_changed = pyqtSignal(bool)  # видимость после настройки решает приложение (карточка вне игры прячется)
+
     def __init__(self, db: QuestDB, settings: QSettings | None = None):
         super().__init__()
         self.setWindowFlags(
@@ -117,6 +119,8 @@ class OverlayCard(QWidget):
         self._shopping: list = []
         self._shopping_note = ""
         self._item = None  # ItemReport для панели «брать или продавать»
+        self._saved_pixmap: QPixmap | None = None  # скриншот гайда, пока поверх открыта панель
+        self._keeps_image = False  # текущее содержимое показывает скриншот (страница гайда)
         self._editing = False
         self._drag_offset: QPoint | None = None
         self._previous_window = None
@@ -190,6 +194,9 @@ class OverlayCard(QWidget):
             self._show(lambda: self._render_guide(page, index, total, status))
 
     def set_image(self, pixmap: QPixmap | None, placeholder: str = ""):
+        if self._panel:  # скриншот догрузился, пока открыта панель: покажем, когда её закроют
+            self._saved_pixmap = pixmap
+            return
         self._pixmap = pixmap if pixmap is not None and not pixmap.isNull() else None
         self._image.setPixmap(QPixmap())
         self._image.setText("" if self._pixmap else placeholder)
@@ -229,6 +236,13 @@ class OverlayCard(QWidget):
             self._panel = ""
             self._render = previous
             previous()
+            self._restore_image()
+
+    def _restore_image(self):
+        """Возвращает скриншот гайда, который был на карточке до панели."""
+        saved, self._saved_pixmap = self._saved_pixmap, None
+        if self._keeps_image and saved is not None:
+            self.set_image(saved)
 
     def _toggle_panel(self, panel: str, render):
         if self._before_help is not None:
@@ -238,7 +252,10 @@ class OverlayCard(QWidget):
             self._render = previous
             if was == panel:  # повторное нажатие закрывает панель
                 previous()
+                self._restore_image()
                 return
+        else:
+            self._saved_pixmap = self._pixmap
         self._before_help = self._render
         self._panel = panel
         self._render = render
@@ -246,6 +263,7 @@ class OverlayCard(QWidget):
 
     def _show(self, render):
         self._before_help = None
+        self._saved_pixmap = None
         self._panel = ""
         self._render = render
         render()
@@ -396,6 +414,7 @@ class OverlayCard(QWidget):
             footer = EDIT_HINT
         self._footer.setText(_lines(footer))
         self._footer.setVisible(bool(footer))
+        self._keeps_image = keep_image
         if not keep_image:
             self._pixmap = None
             self._image.hide()
@@ -511,6 +530,7 @@ class OverlayCard(QWidget):
             self.setVisible(visible)
             winapi.set_foreground_window(self._previous_window)
             self._previous_window = None
+        self.editing_changed.emit(editing)
 
     def toggle_editing(self):
         self.set_editing(not self._editing)

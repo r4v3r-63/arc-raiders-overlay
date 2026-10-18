@@ -25,3 +25,10 @@ def test_tolerates_ocr_typos_and_english():
 def test_no_duplicates_and_short_lines_skipped():
     db = QuestDB.load()
     assert len(match_quests(db, ["Чистое небо", "чистое небо", "ok", ""])) == 1
+
+
+def test_short_names_need_exact_match():
+    db = QuestDB.load()
+    short = next(q for q in db.quests if 4 <= len(q.name) < 8)
+    assert match_quests(db, [short.name + "ии"]) == []  # «тупики» не превращается в «Тупик»
+    assert match_quests(db, [short.name]) == [short]

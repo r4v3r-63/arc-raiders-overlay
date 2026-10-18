@@ -16,6 +16,7 @@
 
 from __future__ import annotations
 
+import hashlib
 import io
 import json
 import os
@@ -113,14 +114,14 @@ class Hints:
 
     def __init__(self, data_dir: Path):
         self.items = {}
-        for path in (data_dir / "items").glob("*.json"):
+        for path in sorted((data_dir / "items").glob("*.json")):  # порядок не зависит от файловой системы
             item = json.loads(path.read_text(encoding="utf-8"))
             self.items[item["id"]] = item
         self.bots = json.loads((data_dir / "bots.json").read_text(encoding="utf-8"))
         # Длинные названия раньше коротких, чтобы «Wasp Driver» не превратился в «Wasp».
         self.item_names = sorted(
             ((text(i["name"], "en"), i["id"]) for i in self.items.values() if len(text(i["name"], "en")) > 3),
-            key=lambda pair: -len(pair[0]),
+            key=lambda pair: (-len(pair[0]), pair[0]),
         )
 
     def item_ru(self, item_id: str) -> str:
@@ -205,25 +206,39 @@ def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[
     return items, workshops
 
 
-def download_images(quest_id: str, images: list[dict], urls: dict[str, str], tr: Translator) -> list[dict]:
+def save_image(url: str, target: Path, max_width: int, quality: int) -> bool:
+    """Скачивает картинку, уменьшает до max_width и сохраняет в JPEG. False — не получилось."""
     from PIL import Image
 
+    try:
+        req = urllib.request.Request(url, headers={"User-Agent": wiki.USER_AGENT})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            picture = Image.open(io.BytesIO(resp.read())).convert("RGB")
+    except (OSError, ValueError) as error:  # сеть, 404, вместо картинки пришла страница с ошибкой
+        print(f"  не удалось скачать {url}: {error}")
+        return False
+    if picture.width > max_width:
+        picture = picture.resize((max_width, round(picture.height * max_width / picture.width)), Image.LANCZOS)
+    target.parent.mkdir(parents=True, exist_ok=True)
+    picture.save(target, "JPEG", quality=quality, optimize=True)
+    return True
+
+
+def download_images(quest_id: str, images: list[dict], urls: dict[str, dict], tr: Translator) -> list[dict]:
     result = []
     folder = GUIDES_DIR / quest_id
-    for n, image in enumerate(images, start=1):
-        url = urls.get(image["file"]) or urls.get(image["file"].replace("_", " "))
-        if not url:
+    for image in images:
+        info = urls.get(image["file"]) or urls.get(image["file"].replace("_", " "))
+        if not info:
             print(f"  нет картинки на вики: {image['file']}")
             continue
-        target = folder / f"{n:02d}.jpg"
-        if not target.exists():
-            folder.mkdir(parents=True, exist_ok=True)
-            req = urllib.request.Request(url, headers={"User-Agent": wiki.USER_AGENT})
-            with urllib.request.urlopen(req, timeout=60) as resp:
-                picture = Image.open(io.BytesIO(resp.read())).convert("RGB")
-            if picture.width > IMAGE_MAX_WIDTH:
-                picture = picture.resize((IMAGE_MAX_WIDTH, round(picture.height * IMAGE_MAX_WIDTH / picture.width)), Image.LANCZOS)
-            picture.save(target, "JPEG", quality=82, optimize=True)
+        url = info["url"]
+        # Имя файла — по контрольной сумме версии на вики: новая версия картинки скачается заново,
+        # а перестановка картинок в гайде не перепутает их с подписями.
+        key = info["sha1"] or hashlib.sha1(url.encode()).hexdigest()
+        target = folder / f"{key[:12]}.jpg"
+        if not target.exists() and not save_image(url, target, IMAGE_MAX_WIDTH, 82):
+            continue
         result.append({
             "file": target.relative_to(DATA_DIR).as_posix(),
             "caption": tr(image["caption"]) if image["caption"] else "",
@@ -240,6 +255,7 @@ HUB_MAP_IDS = {"dam-battlegrounds": "dam_battlegrounds", "spaceport": "the_space
                "the-blue-gate": "the_blue_gate", "stella-montis": "stella_montis", "riven-tides": "riven_tides",
                "pendola-pass": "pendola_pass"}
 MAP_IMAGE_WIDTH = 1600
+STEAM_MIN_SECTIONS = 50  # меньше разделов — Steam отдал не руководство
 
 
 def fetch_maps() -> dict[str, dict]:
@@ -256,18 +272,24 @@ def fetch_maps() -> dict[str, dict]:
         map_id = HUB_MAP_IDS.get(item["id"])
         if not map_id or not item.get("rooms"):
             continue
-        target = folder / f"{map_id}.jpg"
-        if not target.exists():
-            # Координаты мест заданы относительно этой («detail») картинки.
-            url = item.get("image") or f"{HUB_RAW}maps/{item['id']}-detail.jpg"
-            url = url.replace("https://tyler45455.github.io/Arc-Raiders-hub/", HUB_RAW)
+        # Координаты мест заданы относительно этой («detail») картинки. Картинка скачивается каждый раз
+        # и называется по своему содержимому: если на сайте её заменят, точки не съедут.
+        url = item.get("image") or f"{HUB_RAW}maps/{item['id']}-detail.jpg"
+        url = url.replace("https://tyler45455.github.io/Arc-Raiders-hub/", HUB_RAW)
+        try:
             req = urllib.request.Request(url, headers={"User-Agent": wiki.USER_AGENT})
             with urllib.request.urlopen(req, timeout=60) as resp:
-                picture = Image.open(io.BytesIO(resp.read())).convert("RGB")
-            if picture.width > MAP_IMAGE_WIDTH:
-                picture = picture.resize((MAP_IMAGE_WIDTH, round(picture.height * MAP_IMAGE_WIDTH / picture.width)),
-                                         Image.LANCZOS)
-            picture.save(target, "JPEG", quality=85, optimize=True)
+                raw = resp.read()
+            target = folder / f"{map_id}-{hashlib.sha1(raw).hexdigest()[:10]}.jpg"
+            if not target.exists():
+                picture = Image.open(io.BytesIO(raw)).convert("RGB")
+                if picture.width > MAP_IMAGE_WIDTH:
+                    picture = picture.resize((MAP_IMAGE_WIDTH, round(picture.height * MAP_IMAGE_WIDTH / picture.width)),
+                                             Image.LANCZOS)
+                picture.save(target, "JPEG", quality=85, optimize=True)
+        except (OSError, ValueError) as error:
+            print(f"  карта {map_id}: не удалось скачать картинку ({error}), беру из прошлой базы")
+            continue
         result[map_id] = {
             "image": target.relative_to(DATA_DIR).as_posix(),
             # types — типы лута в этом месте (как на легенде карты): Mechanical, Medical…
@@ -392,28 +414,34 @@ def build(data_dir: Path) -> dict:
         ids = [i for i in quest.pop("_next") if i in known_ids] + [id_by_name[norm(n)] for n in names if norm(n) in id_by_name]
         quest["next"] = list(dict.fromkeys(i for i in ids if i != quest["id"]))
 
+    old_db = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
     print("Загружаю карты и места на них…")
+    old_maps = {m["id"]: {"image": m["image"], "rooms": m["rooms"]} for m in old_db.get("maps", []) if m.get("rooms")}
     try:
         maps = fetch_maps()
-    except OSError as error:
-        print(f"  не удалось: {error}; карты из прошлой базы")
-        old = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
-        maps = {m["id"]: {"image": m["image"], "rooms": m["rooms"]} for m in old.get("maps", []) if m.get("rooms")}
+    except (OSError, ValueError, KeyError) as error:  # сайт недоступен или поменял формат
+        print(f"  не удалось: {error!r}; карты из прошлой базы")
+        maps = {}
+    for map_id, old in old_maps.items():  # карты, которые не загрузились, — из прошлой базы
+        if map_id not in maps and (DATA_DIR / old["image"]).exists():
+            maps[map_id] = old
     for quest in quests:
         quest["places"] = quest_places(quest.pop("_objectives_en"), quest["locations"], maps)
     print(f"  карт: {len(maps)}, квестов с точками: {sum(1 for q in quests if q['places'])}")
 
     print("Загружаю оглавление русского руководства в Steam…")
+    # Ссылки из прошлой сборки: на случай, если Steam недоступен или раздела квеста сейчас не нашлось.
+    old_steam = {norm_ru(q["name"]): q["steam_url"] for q in old_db.get("quests", []) if q.get("steam_url")}
     try:
-        steam = {norm_ru(title): url for title, url in steam_guide.fetch_sections().items()}
+        sections = steam_guide.fetch_sections()
+        if len(sections) < STEAM_MIN_SECTIONS:
+            # Steam ответил, но не руководством (капча, вход, другая разметка).
+            raise OSError(f"в руководстве найдено разделов: {len(sections)}")
+        steam = {norm_ru(title): url for title, url in sections.items()}
     except OSError as error:
-        # Steam недоступен — оставляем ссылки из прошлой сборки, программа всё равно обновит их сама.
         print(f"  не удалось: {error}; беру ссылки из прошлой базы")
         steam = {}
-        if OUT_PATH.exists():
-            for old in json.loads(OUT_PATH.read_text(encoding="utf-8"))["quests"]:
-                if old.get("steam_url"):
-                    steam[norm_ru(old["name"])] = old["steam_url"]
+    steam = {**old_steam, **steam}
 
     print("Скачиваю скриншоты…")
     for quest in quests:
@@ -429,6 +457,7 @@ def build(data_dir: Path) -> dict:
         quest["video_url"] = "https://www.youtube.com/results?" + urllib.parse.urlencode(
             {"search_query": f"ARC Raiders {quest['aliases'][0]} quest guide"})
 
+    remove_unused_images(quests, maps, old_db)
     MISSING_TRANSLATIONS[:] = tr.missing
     items, workshops = items_and_workshops(data_dir, hints)
     print(f"Предметов: {len(items)}, мастерских: {len(workshops)}")
@@ -443,6 +472,22 @@ def build(data_dir: Path) -> dict:
         "workshops": workshops,
         "loot_types": LOOT_CATEGORIES_RU,
     }
+
+
+def remove_unused_images(quests: list[dict], maps: dict[str, dict], old_db: dict):
+    """Удаляет скриншоты и карты, на которые новая база больше не ссылается."""
+    used = {i["file"] for q in quests if q["guide"] for i in q["guide"]["images"]}
+    used |= {m["image"] for m in maps.values()}
+    old_guides = sum(1 for q in old_db.get("quests", []) if q.get("guide"))
+    if sum(1 for q in quests if q["guide"]) < old_guides * 0.8:
+        print("  гайдов заметно меньше, чем в прошлой базе, — старые картинки не удаляю")
+        return
+    for path in list(GUIDES_DIR.glob("*/*.jpg")) + list((DATA_DIR / "maps").glob("*.jpg")):
+        if path.relative_to(DATA_DIR).as_posix() not in used:
+            path.unlink()
+    for folder in GUIDES_DIR.iterdir():
+        if folder.is_dir() and not any(folder.iterdir()):
+            folder.rmdir()
 
 
 def main() -> int:

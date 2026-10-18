@@ -37,12 +37,29 @@ class Progress:
         progress = cls(path)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            progress.active = [ActiveQuest(**item) for item in data.get("active", [])]
+            if not isinstance(data, dict):
+                raise ValueError("не словарь")
+        except FileNotFoundError:
+            return progress
+        except (OSError, ValueError) as error:
+            # Испорченный файл не затираем молча: копия остаётся рядом, начинаем с чистого листа.
+            print(f"прогресс не прочитан: {error}")
+            try:
+                path.replace(path.with_name(path.name + ".bad"))
+            except OSError:
+                pass
+            return progress
+        for item in data.get("active", []):
+            try:  # испорченная запись пропускается, остальные квесты сохраняются
+                progress.active.append(ActiveQuest(str(item["id"]), str(item["name"]), int(item.get("step", 0))))
+            except (KeyError, TypeError, ValueError, AttributeError):
+                continue
+        try:
             progress.current = int(data.get("current", 0))
-            progress.completed = list(data.get("completed", []))
+            progress.completed = [str(i) for i in data.get("completed", [])]
             progress.workshops = {str(k): int(v) for k, v in data.get("workshops", {}).items()}
-        except (OSError, ValueError, TypeError):
-            pass  # файла нет или он испорчен — начинаем с чистого листа
+        except (TypeError, ValueError, AttributeError):
+            pass
         progress._clamp()
         return progress
 
@@ -50,8 +67,11 @@ class Progress:
         data = {"active": [asdict(a) for a in self.active], "current": self.current, "completed": self.completed,
                 "workshops": self.workshops}
         tmp = self.path.with_suffix(".tmp")
-        tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
-        tmp.replace(self.path)
+        try:
+            tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")
+            tmp.replace(self.path)
+        except OSError as error:  # файл занят антивирусом или синхронизацией — сохранится в следующий раз
+            print(f"прогресс не сохранён: {error}")
 
     def _clamp(self):
         self.current = max(0, min(self.current, len(self.active) - 1)) if self.active else 0

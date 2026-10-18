@@ -4,6 +4,7 @@ from __future__ import annotations
 
 import json
 import os
+import re
 import sys
 from pathlib import Path
 
@@ -18,6 +19,7 @@ from .zoom import ZoomWindow
 from .progress import Progress, shopping_list
 from . import screen_import
 from .input_window import InputWindow
+from . import net
 from .net import CachedDownloader
 from .onboarding import LATEST_NEWS, NEWS, OnboardingWindow, news_pages
 from .overlay import OverlayCard
@@ -35,6 +37,13 @@ SYNC_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, 
 ITEM_PANEL_MS = 20 * 1000  # панель «брать или продавать» закрывается сама
 ITEM_SEARCH_PANEL_MS = 90 * 1000  # найденный поиском предмет читают дольше
 ITEM_GRAB_SIZE = (1600, 1100)  # область вокруг курсора, где ищем подсказку с названием предмета
+
+
+def _is_json(data: bytes) -> bool:
+    try:
+        return isinstance(json.loads(data.decode("utf-8")), dict)
+    except ValueError:
+        return False
 
 
 def make_tray_icon() -> QIcon:
@@ -59,6 +68,9 @@ class OverlayApp:
         self.settings = paths.settings()
         shortcuts.load(self.settings)
         self.card = OverlayCard(self.db)
+        self.card.editing_changed.connect(lambda _editing: self._apply_visibility())
+        self._capturing = False  # идёт снимок экрана и распознавание
+        self._recognizer = None
         self.zoom = ZoomWindow()
         self._zoom_on = False  # игрок открыл скриншот на весь экран
         self.map_view = ZoomWindow()
@@ -93,9 +105,13 @@ class OverlayApp:
         app.installNativeEventFilter(self.hotkeys)
         failed = self.register_hotkeys()
         app.aboutToQuit.connect(self.hotkeys.unregister_all)
+        app.aboutToQuit.connect(self._stop_recognizer)
 
         self.tray = self._make_tray()
-        autostart.refresh()
+        try:
+            autostart.refresh()
+        except OSError:
+            pass  # реестр закрыт политикой — программа работает и без этого
         self.show_current()
         self.sync()
 
@@ -138,7 +154,7 @@ class OverlayApp:
         tray.setToolTip("ARC Raiders — подсказчик")
         menu = QMenu()
         enter = QAction("Ввести квест", menu)
-        enter.triggered.connect(self.input.open)
+        enter.triggered.connect(self.open_quest_input)
         tour_action = QAction("Как пользоваться", menu)
         tour_action.triggered.connect(lambda: self.onboarding.open())
         news_action = QAction("Что нового", menu)
@@ -309,8 +325,11 @@ class OverlayApp:
         if not path:
             return
         try:
-            latest = json.loads(path.read_text(encoding="utf-8")).get("target_commitish", "")
-        except (ValueError, AttributeError):
+            release = json.loads(path.read_text(encoding="utf-8"))
+            # Коммит сборки — скрытой строкой в описании релиза (релиз обновляется на месте).
+            marker = re.search(r"<!-- commit: ([0-9a-f]{7,40}) -->", release.get("body") or "")
+            latest = marker.group(1) if marker else release.get("target_commitish", "")
+        except (OSError, ValueError, AttributeError, TypeError):
             return
         if latest and latest != commit:
             self._update_action.setVisible(True)
@@ -354,10 +373,10 @@ class OverlayApp:
 
     def _hotkey_callbacks(self) -> dict:
         return {
-            "input": self.input.open, "next_step": self.next_step, "prev_step": self.prev_step,
+            "input": self.open_quest_input, "next_step": self.next_step, "prev_step": self.prev_step,
             "switch_quest": self.switch_quest, "complete": self.complete_quest,
             "import": self.import_from_screen, "shopping": self.show_shopping,
-            "item": self.check_item, "find_item": self.item_input.open, "guide": self.toggle_guide,
+            "item": self.check_item, "find_item": self.open_item_search, "guide": self.toggle_guide,
             "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
             "map": self.toggle_map,
             "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
@@ -368,8 +387,13 @@ class OverlayApp:
         """Регистрирует сочетания из настроек; возвращает те, что занять не удалось."""
         self.hotkeys.unregister_all()
         failed = []
+        used = set()
         for action, callback in self._hotkey_callbacks().items():
             native = shortcuts.to_native(shortcuts.bindings()[action])
+            if native in used:  # новое сочетание по умолчанию совпало с тем, что игрок выбрал сам
+                failed.append(f"{shortcuts.key(action)} (назначено на два действия)")
+                continue
+            used.add(native)
             if native is None or not self.hotkeys.register(*native, callback):
                 failed.append(shortcuts.key(action))
         return failed
@@ -462,22 +486,57 @@ class OverlayApp:
 
     # --- импорт квестов с экрана --------------------------------------------
 
+    def _open_input(self, window: InputWindow, other: InputWindow):
+        """Открывает окно ввода; второе окно ввода закрывается, а фокус потом вернётся игре, а не ему."""
+        previous = None
+        if other.isVisible():
+            previous = other._previous_window
+            other.hide()
+        window.open()
+        if previous is not None:
+            window._previous_window = previous
+
+    def open_quest_input(self):
+        self._open_input(self.input, self.item_input)
+
+    def open_item_search(self):
+        self._open_input(self.item_input, self.input)
+
+    # --- снимок экрана и распознавание ----------------------------------------
+
+    def _capture(self, grab, delay_ms: int):
+        """Прячет свои окна (их не должно быть на снимке) и через delay_ms делает снимок."""
+        if self._capturing:
+            return  # предыдущее распознавание ещё идёт
+        self._capturing = True
+        for window in (self.card, self.input, self.item_input, self.zoom, self.map_view):
+            window.hide()  # вернёт _apply_visibility
+        QTimer.singleShot(delay_ms, grab)
+
+    def _recognize(self, image, file_name: str, on_done, boxes: bool = False):
+        thread = screen_import.RecognizeThread(image, paths.cache_dir() / file_name, boxes)
+        thread.recognized.connect(on_done)
+        thread.failed.connect(self._show_notice)
+        thread.finished.connect(self._capture_finished)
+        self._recognizer = thread  # ссылка живёт, пока поток не закончит: следующий снимок только после
+        thread.start()
+
+    def _capture_finished(self):
+        self._capturing = False
+
+    def _stop_recognizer(self):
+        if self._recognizer is not None and self._recognizer.isRunning():
+            self._recognizer.wait(5000)
+
     def import_from_screen(self):
         """Снимок экрана → распознавание → найденные квесты в список активных."""
-        if getattr(self, "_recognizer", None) is not None and self._recognizer.isRunning():
-            return
-        self.card.hide()  # своя карточка не должна попасть в снимок (вернёт _apply_visibility)
-        self.input.hide()
-        QTimer.singleShot(200, self._grab_screen)
+        self._capture(self._grab_screen, 200)
 
     def _grab_screen(self):
         image = QGuiApplication.primaryScreen().grabWindow(0).toImage()
         self._apply_visibility()
         self._show_notice("Ищу квесты на экране…")
-        self._recognizer = screen_import.RecognizeThread(image, paths.cache_dir() / "экран.png")
-        self._recognizer.recognized.connect(self._screen_recognized)
-        self._recognizer.failed.connect(lambda message: self._show_notice(message))
-        self._recognizer.start()
+        self._recognize(image, "экран.png", self._screen_recognized)
 
     def _screen_recognized(self, lines: list):
         found = screen_import.match_quests(self.db, lines)
@@ -502,14 +561,11 @@ class OverlayApp:
 
     def check_item(self):
         """Снимок экрана вокруг курсора → название предмета из подсказки игры → нужен ли он."""
-        if getattr(self, "_recognizer", None) is not None and self._recognizer.isRunning():
-            return
-        self.card.hide()  # карточка не должна закрыть подсказку игры на снимке
-        self.input.hide()
-        QTimer.singleShot(150, self._grab_item)
+        self._capture(self._grab_item, 150)
 
     def _grab_item(self):
-        screen = QGuiApplication.primaryScreen()
+        # Экран, на котором курсор: игра может быть и на втором мониторе.
+        screen = QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()
         image = screen.grabWindow(0).toImage()
         self._apply_visibility()
         ratio = image.width() / max(1, screen.geometry().width())
@@ -520,11 +576,7 @@ class OverlayApp:
         if area.isEmpty():
             area = image.rect()
         self._item_cursor = (cx - area.x(), cy - area.y())
-        self._recognizer = screen_import.RecognizeThread(image.copy(area), paths.cache_dir() / "предмет.png",
-                                                         boxes=True)
-        self._recognizer.recognized.connect(self._item_recognized)
-        self._recognizer.failed.connect(lambda message: self._show_notice(message))
-        self._recognizer.start()
+        self._recognize(image.copy(area), "предмет.png", self._item_recognized, boxes=True)
 
     def _item_recognized(self, lines: list):
         item = items.match_item(self.db, lines, self._item_cursor)
@@ -550,6 +602,7 @@ class OverlayApp:
         report = items.item_report(self.db, item, self._active_quests(), self.progress.completed,
                                    self.progress.workshops)
         self._close_map()
+        self._close_zoom()
         self.card.show_item(report)
         self.set_card_visible(True)
         self._item_timer.start(close_after_ms)
@@ -563,6 +616,9 @@ class OverlayApp:
 
     def _fill_workshops_menu(self):
         """Уровни мастерских: по ним «Что собрать» и проверка предмета считают нужное для улучшений."""
+        for action in self._workshops_menu.actions():
+            if action.menu() is not None:
+                action.menu().deleteLater()  # clear() подменю не удаляет
         self._workshops_menu.clear()
         for workshop in self.db.workshops:
             level = self.progress.workshops.get(workshop.id)
@@ -671,16 +727,17 @@ class OverlayApp:
         page = self.pages[self.page_index]
         self.card.show_guide_page(page, self.page_index, len(self.pages), self.steam_status)
         if not page.image:
+            self._close_zoom()  # на странице без скриншота смотреть крупно нечего
             return
         if page.image.startswith("http"):
             self.card.set_image(None, "Загружаю скриншот…")
-            self.downloader.get(page.image, lambda path, p=page: self._image_ready(p, path))
+            self.downloader.get(page.image, lambda path, p=page: self._image_ready(p, path), validate=net.is_image)
         else:
             self.card.set_image(QPixmap(page.image))
         self._update_zoom()
 
     def _image_ready(self, page: guide.GuidePage, path):
-        if self.guide_mode and self.pages and self.pages[self.page_index] is page:
+        if self.guide_mode and self.pages and self.page_index < len(self.pages) and self.pages[self.page_index] is page:
             self.card.set_image(QPixmap(str(path)) if path else None, "" if path else "Скриншот не загрузился")
             self._update_zoom()
 
@@ -718,7 +775,8 @@ class OverlayApp:
             if page.full in self._full_images:
                 pixmap = self._full_images[page.full]
             else:
-                self.downloader.get(page.full, lambda path, p=page: self._full_image_ready(p, path))
+                self.downloader.get(page.full, lambda path, p=page: self._full_image_ready(p, path),
+                                    validate=net.is_image)
         caption = " — ".join(filter(None, [page.title, page.text]))
         hint = (f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать · "
                 f"{shortcuts.key('zoom')} — закрыть · {self.page_index + 1} из {len(self.pages)}")
@@ -758,11 +816,11 @@ class OverlayApp:
         if self._map_on:
             self._close_map()
             return
-        self._map_item = self.card.item if self.card.panel == "item" else None
-        self._map_index = 0 if self._map_item is not None else self._map_index
+        item = self.card.item
+        # С панелью предмета — места, где его искать; если таких карт нет — карта квеста.
+        self._map_item = item if item is not None and item.where.maps else None
         if self._map_item is not None:
-            if not self._map_item.where.maps:
-                return
+            self._map_index = 0
         elif self.card.quest is None:
             return
         elif not self.quest_maps():
@@ -791,7 +849,7 @@ class OverlayApp:
             url = REMOTE_DATA_URL + game_map.image
             pixmap = self._full_images.get(url)
             if pixmap is None:
-                self.downloader.get(url, lambda path, u=url: self._map_image_ready(u, path))
+                self.downloader.get(url, lambda path, u=url: self._map_image_ready(u, path), validate=net.is_image)
                 return
         name = game_map.name_ru or game_map.name
         if self._map_item is not None:
@@ -814,6 +872,8 @@ class OverlayApp:
         self.map_view.show_image(pixmap, caption, hint, markers)
 
     def _map_image_ready(self, url: str, path):
+        if not self._map_on:
+            return  # карту уже закрыли
         pixmap = QPixmap(str(path)) if path else QPixmap()
         if pixmap.isNull():
             self._close_map()
@@ -824,7 +884,8 @@ class OverlayApp:
 
     def _map_ids(self) -> list[str]:
         if self._map_item is not None:
-            return [s.map_id for s in self._map_item.where.maps if self.db.maps[s.map_id].image]
+            return [s.map_id for s in self._map_item.where.maps
+                    if s.map_id in self.db.maps and self.db.maps[s.map_id].image]
         return self.quest_maps()
 
     def _close_map(self):
@@ -839,38 +900,48 @@ class OverlayApp:
 
     def sync_db(self):
         """Скачивает свежую базу квестов с GitHub (её раз в сутки пересобирает GitHub Actions)."""
-        self.downloader.get(REMOTE_DB_URL, self._remote_db_loaded, max_age=DB_MAX_AGE)
+        self.downloader.get(REMOTE_DB_URL, self._remote_db_loaded, max_age=DB_MAX_AGE, validate=_is_json)
 
     def _remote_db_loaded(self, path):
         if not path:
             return
         try:
             remote = QuestDB.from_dict(json.loads(path.read_text(encoding="utf-8")))
-        except (ValueError, KeyError, TypeError, AttributeError):
+            newer = isinstance(remote.generated_at, str) and remote.generated_at > self.db.generated_at
+        except (OSError, ValueError, KeyError, TypeError, AttributeError):
             return  # битый или чужой файл — остаёмся на текущей базе
-        if len(remote.quests) < 50 or remote.generated_at <= self.db.generated_at:
+        if len(remote.quests) < 50 or not newer:
             return
         self.db = remote
         self.card.set_db(remote)
         self.merge_steam_quests()
+        if self.card.quest is not None and not self.guide_mode and not self.card.panel and not self._map_on:
+            self.show_current()  # шаги и подсказки текущего квеста — из новой базы
 
     def sync_steam_guide(self):
         """Скачивает руководство Steam (не чаще раза в сутки) и добавляет в поиск новые квесты из него."""
-        self.downloader.get(STEAM_GUIDE_URL, self._steam_guide_loaded, max_age=STEAM_MAX_AGE)
+        self.downloader.get(STEAM_GUIDE_URL, self._steam_guide_loaded, max_age=STEAM_MAX_AGE,
+                            validate=lambda data: b"subSectionTitle" in data)
 
     def _steam_guide_loaded(self, path):
         self._steam_sync_done = True
+        changed = not path
         if path:
-            page_html = path.read_text(encoding="utf-8", errors="replace")
+            try:
+                page_html = path.read_text(encoding="utf-8", errors="replace")
+            except OSError:
+                page_html = self.steam_html
             if page_html != self.steam_html:
+                changed = True
                 self.steam_html = page_html
                 self.steam_pages.clear()
                 self.merge_steam_quests()
                 if self.card.quest is None and self.progress.active:
                     self.show_current()  # текущий квест мог оказаться из руководства Steam
-        self.load_steam_guide()
-        self.rebuild_pages()
-        self.render_page()
+        if changed and not self.card.panel:  # раз в час без изменений карточку не трогаем
+            self.load_steam_guide()
+            self.rebuild_pages()
+            self.render_page()
 
     def merge_steam_quests(self) -> int:
         """Квесты из руководства, которых нет в базе, становятся доступны для поиска."""
@@ -879,7 +950,7 @@ class OverlayApp:
             url = f"{STEAM_GUIDE_URL}#{item.section_id}"
             quest = self.db.find_exact(item.title)
             if quest is not None:
-                quest.steam_url = quest.steam_url or url
+                quest.steam_url = url  # номер раздела из живого руководства точнее, чем в базе
                 continue
             game_map = self.db.find_map_exact(item.category)
             self.db.add(Quest(
@@ -968,6 +1039,23 @@ def ocr_self_test() -> int:
     return 0 if len(found) >= 2 else 1
 
 
+def _log_unhandled(exc_type, exc, tb):
+    """Ошибка в обработчике Qt иначе закрыла бы программу без следа: пишем её в «Данные\\ошибки.log»."""
+    import datetime
+    import traceback
+
+    text = "".join(traceback.format_exception(exc_type, exc, tb))
+    print(text, file=sys.stderr)
+    try:
+        log = paths.user_data_dir() / "ошибки.log"
+        if log.exists() and log.stat().st_size > 1_000_000:
+            log.unlink()  # не даём журналу разрастись
+        with open(log, "a", encoding="utf-8") as f:
+            f.write(f"--- {datetime.datetime.now():%Y-%m-%d %H:%M:%S}\n{text}\n")
+    except OSError:
+        pass
+
+
 def main() -> int:
     if "--ocr-test" in sys.argv:
         os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
@@ -990,5 +1078,6 @@ def main() -> int:
                                 "Программа уже запущена — её значок «?» в трее рядом с часами.")
         return 0
     paths.migrate_legacy()
+    sys.excepthook = _log_unhandled  # с ним PyQt не завершает программу при ошибке в обработчике
     _overlay = OverlayApp(app)
     return app.exec()
