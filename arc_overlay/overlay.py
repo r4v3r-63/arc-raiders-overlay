@@ -108,6 +108,9 @@ class OverlayCard(QWidget):
     def quest(self) -> Quest | None:
         return self._quest
 
+    def set_db(self, db: QuestDB):
+        self._db = db
+
     @property
     def scale(self) -> float:
         return self._scale

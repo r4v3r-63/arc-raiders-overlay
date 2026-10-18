@@ -62,3 +62,30 @@ def test_reset_geometry(qapp, tmp_path):
     card.reset_geometry()
     assert card.scale == 1.0
     assert settings.value("scale") is None
+
+
+def test_newer_remote_db_replaces_bundled(qapp, tmp_path):
+    import json
+
+    from arc_overlay.app import OverlayApp
+    from arc_overlay.quest_db import DEFAULT_DB_PATH
+
+    app = OverlayApp(qapp)
+    data = json.loads(DEFAULT_DB_PATH.read_text(encoding="utf-8"))
+    data["quests"].append({**data["quests"][0], "id": "new", "name": "Совсем новый квест", "aliases": []})
+
+    older = tmp_path / "older.json"
+    older.write_text(json.dumps({**data, "generated_at": "2000-01-01T00:00:00Z"}), encoding="utf-8")
+    app._remote_db_loaded(older)
+    assert app.db.find_exact("Совсем новый квест") is None
+
+    newer = tmp_path / "newer.json"
+    newer.write_text(json.dumps({**data, "generated_at": "2999-01-01T00:00:00Z"}), encoding="utf-8")
+    app._remote_db_loaded(newer)
+    assert app.db.find_exact("Совсем новый квест") is not None
+    assert app.card._db is app.db
+
+    broken = tmp_path / "broken.json"
+    broken.write_text("<html>не база</html>", encoding="utf-8")
+    app._remote_db_loaded(broken)
+    assert app.db.find_exact("Совсем новый квест") is not None

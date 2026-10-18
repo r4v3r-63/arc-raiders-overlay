@@ -17,10 +17,12 @@ from __future__ import annotations
 
 import io
 import json
+import os
 import re
 import sys
 import urllib.parse
 import urllib.request
+from datetime import datetime, timezone
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -197,6 +199,22 @@ def download_images(quest_id: str, images: list[dict], urls: dict[str, str], tr:
     return result
 
 
+MISSING_TRANSLATIONS: list[str] = []
+
+
+def report_missing_translations():
+    """Печатает строки без перевода; в GitHub Actions — ещё и в отчёт о запуске."""
+    if not MISSING_TRANSLATIONS:
+        return
+    lines = [f"Нет перевода для {len(MISSING_TRANSLATIONS)} строк (показаны по-английски), "
+             f"добавь их в tools/translations/ru.json:"] + [f"- {s}" for s in MISSING_TRANSLATIONS]
+    print("\n" + "\n".join(lines))
+    summary = os.environ.get("GITHUB_STEP_SUMMARY")
+    if summary:
+        with open(summary, "a", encoding="utf-8") as f:
+            f.write("\n".join(lines) + "\n")
+
+
 def build(data_dir: Path) -> dict:
     tr = Translator(TRANSLATIONS_PATH)
     official = {k: v for k, v in json.loads(OFFICIAL_NAMES_PATH.read_text(encoding="utf-8")).items() if not k.startswith("_")}
@@ -266,7 +284,16 @@ def build(data_dir: Path) -> dict:
         })
 
     print("Загружаю оглавление русского руководства в Steam…")
-    steam = {norm_ru(title): url for title, url in steam_guide.fetch_sections().items()}
+    try:
+        steam = {norm_ru(title): url for title, url in steam_guide.fetch_sections().items()}
+    except OSError as error:
+        # Steam недоступен — оставляем ссылки из прошлой сборки, программа всё равно обновит их сама.
+        print(f"  не удалось: {error}; беру ссылки из прошлой базы")
+        steam = {}
+        if OUT_PATH.exists():
+            for old in json.loads(OUT_PATH.read_text(encoding="utf-8"))["quests"]:
+                if old.get("steam_url"):
+                    steam[norm_ru(old["name"])] = old["steam_url"]
 
     print("Скачиваю скриншоты…")
     for quest in quests:
@@ -282,10 +309,7 @@ def build(data_dir: Path) -> dict:
         quest["video_url"] = "https://www.youtube.com/results?" + urllib.parse.urlencode(
             {"search_query": f"ARC Raiders {quest['aliases'][0]} quest guide"})
 
-    if tr.missing:
-        print(f"\nНет перевода для {len(tr.missing)} строк (показаны по-английски):")
-        for s in tr.missing:
-            print("  " + s)
+    MISSING_TRANSLATIONS[:] = tr.missing
     return {
         "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
                   "Игровые материалы © Embark Studios AB.",
@@ -299,7 +323,17 @@ def main() -> int:
         print(__doc__)
         return 1
     db = build(Path(sys.argv[1]))
+    # Дата сборки меняется, только если изменилось содержимое: по ней программа
+    # понимает, что база на GitHub новее встроенной.
+    old = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
+    old_generated = old.pop("generated_at", None)
+    if old == db and old_generated:
+        generated = old_generated
+    else:
+        generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    db = {"generated_at": generated, **db}
     OUT_PATH.write_text(json.dumps(db, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+    report_missing_translations()
     with_guides = sum(1 for q in db["quests"] if q["guide"])
     with_steam = sum(1 for q in db["quests"] if q["steam_url"])
     print(f"Записано квестов: {len(db['quests'])}, с гайдом с вики: {with_guides}, "

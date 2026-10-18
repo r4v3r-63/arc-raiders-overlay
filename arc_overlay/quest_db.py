@@ -10,6 +10,8 @@ from pathlib import Path
 
 DATA_DIR = Path(__file__).resolve().parent / "data"
 DEFAULT_DB_PATH = DATA_DIR / "quests.json"
+# Отсюда программа скачивает свежую базу и недостающие скриншоты (их обновляет GitHub Actions).
+REMOTE_DATA_URL = "https://raw.githubusercontent.com/r4v3r-63/arc-raiders-overlay/main/arc_overlay/data/"
 
 
 @dataclass
@@ -50,7 +52,8 @@ def normalize(text: str) -> str:
 
 
 class QuestDB:
-    def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None):
+    def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = ""):
+        self.generated_at = generated_at  # дата сборки базы, ISO 8601 (UTC)
         self.quests = quests
         self.maps = {m.id: m for m in maps or []}
         self._by_name: dict[str, Quest] = {}
@@ -65,7 +68,10 @@ class QuestDB:
     @classmethod
     def load(cls, path: Path = DEFAULT_DB_PATH) -> "QuestDB":
         with open(path, encoding="utf-8") as f:
-            data = json.load(f)
+            return cls.from_dict(json.load(f))
+
+    @classmethod
+    def from_dict(cls, data: dict) -> "QuestDB":
         maps = [
             GameMap(id=m["id"], name=m["name"], name_ru=m.get("name_ru", ""), aliases=list(m.get("aliases", [])))
             for m in data.get("maps", [])
@@ -89,7 +95,7 @@ class QuestDB:
             )
             for item in data.get("quests", [])
         ]
-        return cls(quests, maps)
+        return cls(quests, maps, data.get("generated_at", ""))
 
     def names(self) -> list[str]:
         return [q.name for q in self.quests]

@@ -1,0 +1,52 @@
+# Раз в сутки пересобирает встроенную базу квестов из arcraiders-data, arcraiders.wiki
+# и оглавления руководства Steam. Если что-то изменилось — коммитит новую базу в main;
+# программа у игроков скачивает её сама (arc_overlay/app.py, sync_db).
+name: Обновление базы квестов
+
+on:
+  schedule:
+    - cron: "17 3 * * *"  # каждый день в 03:17 UTC (06:17 по Москве)
+  workflow_dispatch:       # кнопка «Run workflow» во вкладке Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: update-db
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Установить зависимости
+        run: pip install -r requirements-dev.txt
+
+      - name: Скачать arcraiders-data
+        run: git clone --depth 1 https://github.com/RaidTheory/arcraiders-data /tmp/arcraiders-data
+
+      - name: Собрать базу
+        run: python tools/build_quest_db.py /tmp/arcraiders-data
+
+      - name: Проверить базу
+        run: python -m pytest -q tests/test_quest_db.py tests/test_guide.py
+
+      - name: Закоммитить изменения
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add arc_overlay/data
+          if git diff --cached --quiet; then
+            echo "База не изменилась" >> "$GITHUB_STEP_SUMMARY"
+          else
+            git commit -m "Автообновление базы квестов"
+            git push
+            echo "База обновлена: $(git log -1 --format=%h)" >> "$GITHUB_STEP_SUMMARY"
+          fi

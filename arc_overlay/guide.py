@@ -12,7 +12,7 @@ import re
 from dataclasses import dataclass
 from pathlib import Path
 
-from .quest_db import DATA_DIR, Quest
+from .quest_db import DATA_DIR, REMOTE_DATA_URL, Quest
 
 IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
 USER_GUIDES_DIR = Path(__file__).resolve().parent.parent / "мои_скриншоты"
@@ -110,8 +110,10 @@ def wiki_pages(quest: Quest) -> list[GuidePage]:
     pages = []
     for n, image in enumerate(images):
         caption = image.get("caption", "")
-        pages.append(GuidePage("вики", "", "\n".join(filter(None, [text if n == 0 else "", caption])),
-                               str(DATA_DIR / image["file"])))
+        local = DATA_DIR / image["file"]
+        # Скриншоты из свежей базы, которых ещё нет в папке программы, докачиваются с GitHub.
+        source = str(local) if local.exists() else REMOTE_DATA_URL + image["file"]
+        pages.append(GuidePage("вики", "", "\n".join(filter(None, [text if n == 0 else "", caption])), source))
     return pages
 
 

@@ -2,6 +2,7 @@
 
 from __future__ import annotations
 
+import json
 import sys
 
 from PyQt6.QtCore import Qt, QTimer, QUrl
@@ -12,14 +13,16 @@ from . import guide, winapi
 from .input_window import InputWindow
 from .net import CachedDownloader
 from .overlay import OverlayCard
-from .quest_db import Quest, QuestDB
+from .quest_db import REMOTE_DATA_URL, Quest, QuestDB
 
 MODS = winapi.MOD_CONTROL | winapi.MOD_SHIFT
 HOTKEY_INPUT = "Ctrl+Shift+Q"
 GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
 STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520"
 STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
-STEAM_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
+REMOTE_DB_URL = REMOTE_DATA_URL + "quests.json"
+DB_MAX_AGE = 24 * 60 * 60  # свежая база с GitHub скачивается раз в сутки
+SYNC_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
 
 
 def make_tray_icon() -> QIcon:
@@ -75,10 +78,10 @@ class OverlayApp:
         app.aboutToQuit.connect(self.hotkeys.unregister_all)
 
         self.tray = self._make_tray()
-        self.sync_steam_guide()
-        self._steam_timer = QTimer()
-        self._steam_timer.timeout.connect(self.sync_steam_guide)
-        self._steam_timer.start(STEAM_CHECK_INTERVAL_MS)
+        self.sync()
+        self._sync_timer = QTimer()
+        self._sync_timer.timeout.connect(self.sync)
+        self._sync_timer.start(SYNC_CHECK_INTERVAL_MS)
         self.card.show()
 
         if not winapi.IS_WINDOWS:
@@ -224,6 +227,27 @@ class OverlayApp:
     def _image_ready(self, page: guide.GuidePage, path):
         if self.guide_mode and self.pages and self.pages[self.page_index] is page:
             self.card.set_image(QPixmap(str(path)) if path else None, "" if path else "Скриншот не загрузился")
+
+    def sync(self):
+        self.sync_db()
+        self.sync_steam_guide()
+
+    def sync_db(self):
+        """Скачивает свежую базу квестов с GitHub (её раз в сутки пересобирает GitHub Actions)."""
+        self.downloader.get(REMOTE_DB_URL, self._remote_db_loaded, max_age=DB_MAX_AGE)
+
+    def _remote_db_loaded(self, path):
+        if not path:
+            return
+        try:
+            remote = QuestDB.from_dict(json.loads(path.read_text(encoding="utf-8")))
+        except (ValueError, KeyError, TypeError, AttributeError):
+            return  # битый или чужой файл — остаёмся на текущей базе
+        if len(remote.quests) < 50 or remote.generated_at <= self.db.generated_at:
+            return
+        self.db = remote
+        self.card.set_db(remote)
+        self.merge_steam_quests()
 
     def sync_steam_guide(self):
         """Скачивает руководство Steam (не чаще раза в сутки) и добавляет в поиск новые квесты из него."""
