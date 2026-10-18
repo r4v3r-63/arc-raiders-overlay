@@ -11,7 +11,9 @@ from PyQt6.QtCore import QLockFile, QStandardPaths, Qt, QTimer, QUrl
 from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QGuiApplication, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import autostart, guide, paths, winapi
+from . import autostart, guide, paths, shortcuts, winapi
+from .hotkeys_window import HotkeysWindow
+from .zoom import ZoomWindow
 from .progress import Progress, shopping_list
 from . import screen_import
 from .input_window import InputWindow
@@ -20,9 +22,6 @@ from .onboarding import OnboardingWindow
 from .overlay import OverlayCard
 from .quest_db import REMOTE_DATA_URL, Quest, QuestDB
 
-MODS = winapi.MOD_CONTROL | winapi.MOD_SHIFT
-HOTKEY_INPUT = "Ctrl+Shift+Q"
-GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
 RELEASE_API_URL = "https://api.github.com/repos/r4v3r-63/arc-raiders-overlay/releases/latest"
 DOWNLOAD_URL = "https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip"
 GAME_CHECK_INTERVAL_MS = 700
@@ -53,11 +52,16 @@ class OverlayApp:
     def __init__(self, app: QApplication):
         self.app = app
         self.db = QuestDB.load()
-        self.card = OverlayCard(self.db, HOTKEY_INPUT, GUIDE_HINT)
+        self.settings = paths.settings()
+        shortcuts.load(self.settings)
+        self.card = OverlayCard(self.db)
+        self.zoom = ZoomWindow()
+        self._zoom_on = False  # игрок открыл скриншот на весь экран
         self.downloader = CachedDownloader()
         self.progress = Progress.load(paths.user_data_dir() / "прогресс.json")
         self.downloader.cleanup()
         self.guide_mode = False
+        self._close_zoom()
         self.pages: list[guide.GuidePage] = []
         self.page_index = 0
         self.steam_pages: dict[str, list[guide.GuidePage]] = {}  # id раздела → страницы
@@ -71,26 +75,7 @@ class OverlayApp:
 
         self.hotkeys = winapi.HotkeyManager()
         app.installNativeEventFilter(self.hotkeys)
-        failed = [
-            name
-            for name, vk, callback in [
-                (HOTKEY_INPUT, winapi.VK_Q, self.input.open),
-                ("Ctrl+Shift+→", winapi.VK_RIGHT, self.next_step),
-                ("Ctrl+Shift+←", winapi.VK_LEFT, self.prev_step),
-                ("Ctrl+Shift+X", winapi.VK_X, self.toggle_card),
-                ("Ctrl+Shift+G", winapi.VK_G, self.toggle_guide),
-                ("Ctrl+Shift+↓", winapi.VK_DOWN, self.next_page),
-                ("Ctrl+Shift+↑", winapi.VK_UP, self.prev_page),
-                ("Ctrl+Shift+O", winapi.VK_O, self.open_guide_in_browser),
-                ("Ctrl+Shift+M", winapi.VK_M, self.toggle_editing),
-                ("Ctrl+Shift+Tab", winapi.VK_TAB, self.switch_quest),
-                ("Ctrl+Shift+D", winapi.VK_D, self.complete_quest),
-                ("Ctrl+Shift+I", winapi.VK_I, self.import_from_screen),
-                ("Ctrl+Shift+L", winapi.VK_L, self.show_shopping),
-                ("Ctrl+Shift+H", winapi.VK_H, self.show_help),
-            ]
-            if not self.hotkeys.register(MODS, vk, callback)
-        ]
+        failed = self.register_hotkeys()
         app.aboutToQuit.connect(self.hotkeys.unregister_all)
 
         self.tray = self._make_tray()
@@ -98,7 +83,6 @@ class OverlayApp:
         self.show_current()
         self.sync()
 
-        self.settings = paths.settings()
         self.onboarding = OnboardingWindow()
         self.onboarding.finished.connect(self._onboarding_finished)
         if not self.settings.value("onboarding_done", False, type=bool):
@@ -109,7 +93,7 @@ class OverlayApp:
         self._game_timer = QTimer()
         self._game_timer.timeout.connect(self._check_game)
         self._game_timer.start(GAME_CHECK_INTERVAL_MS)
-        self._user_visible = True  # видимость, которую выбрал игрок (Ctrl+Shift+X)
+        self._user_visible = True  # видимость, которую выбрал игрок (спрятать / показать карточку)
         self._hidden_outside_game = False  # игра запущена, но игрок переключился из неё
         self._game_hwnd = 0
         self._game_ticks = 0
@@ -124,17 +108,20 @@ class OverlayApp:
                 None,
                 "Горячие клавиши",
                 "Не удалось занять клавиши: " + ", ".join(failed)
-                + ".\nВозможно, их уже использует другая программа. Ввод квеста доступен через значок в трее.",
+                + ".\nВозможно, их уже использует другая программа. Поменять их можно в меню значка в трее: "
+                  "«Горячие клавиши…».",
             )
 
     def _make_tray(self) -> QSystemTrayIcon:
         tray = QSystemTrayIcon(make_tray_icon(), self.app)
-        tray.setToolTip("ARC Raiders — подсказчик\nCtrl+Shift+H — все сочетания клавиш")
+        tray.setToolTip("ARC Raiders — подсказчик")
         menu = QMenu()
         enter = QAction("Ввести квест", menu)
         enter.triggered.connect(self.input.open)
         tour_action = QAction("Как пользоваться", menu)
         tour_action.triggered.connect(lambda: self.onboarding.open())
+        hotkeys_action = QAction("Горячие клавиши…", menu)
+        hotkeys_action.triggered.connect(self.open_hotkeys_window)
         help_action = QAction("Сочетания клавиш (?)", menu)
         help_action.triggered.connect(self.show_help)
         edit_action = QAction("Переместить / изменить масштаб", menu)
@@ -164,7 +151,7 @@ class OverlayApp:
         self._update_action = QAction("Скачать новую версию программы", menu)
         self._update_action.triggered.connect(lambda: self._open(DOWNLOAD_URL))
         self._update_action.setVisible(False)
-        shopping_action = QAction("Что собрать (Ctrl+Shift+L)", menu)
+        shopping_action = QAction("Что собрать", menu)
         shopping_action.triggered.connect(self.show_shopping)
         self._clear_cache_action = QAction("Очистить кэш", menu)
         self._clear_cache_action.triggered.connect(self.clear_cache)
@@ -176,12 +163,13 @@ class OverlayApp:
         self._active_menu = menu.addMenu("Активные квесты")
         self._active_menu.aboutToShow.connect(self._fill_active_menu)
         menu.addAction(shopping_action)
-        import_action = QAction("Найти квесты на экране (Ctrl+Shift+I)", menu)
+        import_action = QAction("Найти квесты на экране", menu)
         import_action.triggered.connect(self.import_from_screen)
         menu.addAction(import_action)
         menu.addAction(self._toggle_action)
         menu.addAction(edit_action)
         menu.addAction(help_action)
+        menu.addAction(hotkeys_action)
         menu.addAction(tour_action)
         menu.addSeparator()
         for action in self._quest_actions:
@@ -226,6 +214,10 @@ class OverlayApp:
         visible = self.card.editing or (self._user_visible and not self._hidden_outside_game)
         if visible != self.card.isVisible():
             self.card.setVisible(visible)
+        if not visible and self.zoom.isVisible():
+            self.zoom.hide()
+        elif visible and self._zoom_on and not self.zoom.isVisible():
+            self._update_zoom()
 
     def toggle_card(self):
         if self.card.editing:
@@ -299,12 +291,14 @@ class OverlayApp:
 
     def next_step(self):
         self.guide_mode = False
+        self._close_zoom()
         self.card.next_step()
         self._save_step()
         self.set_card_visible(True)
 
     def prev_step(self):
         self.guide_mode = False
+        self._close_zoom()
         self.card.prev_step()
         self._save_step()
         self.set_card_visible(True)
@@ -316,6 +310,46 @@ class OverlayApp:
 
     # --- активные квесты --------------------------------------------------
 
+    # --- горячие клавиши --------------------------------------------------
+
+    def _hotkey_callbacks(self) -> dict:
+        return {
+            "input": self.input.open, "next_step": self.next_step, "prev_step": self.prev_step,
+            "switch_quest": self.switch_quest, "complete": self.complete_quest,
+            "import": self.import_from_screen, "shopping": self.show_shopping, "guide": self.toggle_guide,
+            "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
+            "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
+            "edit": self.toggle_editing, "help": self.show_help,
+        }
+
+    def register_hotkeys(self) -> list[str]:
+        """Регистрирует сочетания из настроек; возвращает те, что занять не удалось."""
+        self.hotkeys.unregister_all()
+        failed = []
+        for action, callback in self._hotkey_callbacks().items():
+            native = shortcuts.to_native(shortcuts.bindings()[action])
+            if native is None or not self.hotkeys.register(*native, callback):
+                failed.append(shortcuts.key(action))
+        return failed
+
+    def open_hotkeys_window(self):
+        if getattr(self, "_hotkeys_window", None) is None:
+            self._hotkeys_window = HotkeysWindow()
+            self._hotkeys_window.saved.connect(self._hotkeys_saved)
+            self._hotkeys_window.closed.connect(self.register_hotkeys)
+        # Пока окно открыто, свои сочетания отключены: иначе нажатие перехватилось бы, а не записалось.
+        self.hotkeys.unregister_all()
+        self._hotkeys_window.open(shortcuts.bindings())
+
+    def _hotkeys_saved(self, bindings: dict):
+        shortcuts.save(self.settings, bindings)
+        failed = self.register_hotkeys()
+        self.card.refresh()
+        if failed and winapi.IS_WINDOWS:
+            QMessageBox.warning(None, "Горячие клавиши",
+                                "Не удалось занять: " + ", ".join(failed)
+                                + ".\nИх уже использует другая программа — выберите другие сочетания.")
+
     def _onboarding_finished(self):
         self.settings.setValue("onboarding_done", True)
         self.settings.sync()
@@ -325,6 +359,7 @@ class OverlayApp:
         entry = self.progress.current_entry()
         quest = self.progress.resolve(self.db, entry)
         self.guide_mode = False
+        self._close_zoom()
         self.page_index = 0
         if quest is None:
             self.card.show_welcome(notice)
@@ -358,7 +393,7 @@ class OverlayApp:
             lines.append("Добавлены: " + ", ".join(f"«{q.name}»" for q in added) + ".")
         if skipped:
             lines.append("Открылись: " + ", ".join(f"«{q.name}»" for q in skipped)
-                         + ". Нужные возьми через Ctrl+Shift+Q.")
+                         + f". Нужные возьми через {shortcuts.key('input')}.")
         self.show_current("\n".join(lines))
         self.set_card_visible(True)
 
@@ -392,7 +427,7 @@ class OverlayApp:
         found = screen_import.match_quests(self.db, lines)
         if not found:
             self._show_notice("Квесты на экране не найдены. Откройте в игре экран, где виден список квестов "
-                              "(например, лобби), и нажмите Ctrl+Shift+I ещё раз.")
+                              f"(например, лобби), и нажмите {shortcuts.key('import')} ещё раз.")
             return
         had_current = self.progress.current_entry() is not None
         new = [q for q in found if not any(e.id == q.id or e.name == q.name for e in self.progress.active)]
@@ -416,12 +451,13 @@ class OverlayApp:
         else:
             self.card.show_quest(quest, entry.step, (self.progress.current, len(self.progress.active)), text)
         self.guide_mode = False
+        self._close_zoom()
         self.set_card_visible(True)
 
     def _fill_active_menu(self):
         self._active_menu.clear()
         if not self.progress.active:
-            empty = self._active_menu.addAction("Пока пусто — Ctrl+Shift+Q")
+            empty = self._active_menu.addAction(f"Пока пусто — {shortcuts.key('input')}")
             empty.setEnabled(False)
             return
         for i, entry in enumerate(self.progress.active):
@@ -430,7 +466,7 @@ class OverlayApp:
             action.setChecked(i == self.progress.current)
             action.triggered.connect(lambda _checked, i=i: self.select_quest(i))
         self._active_menu.addSeparator()
-        self._active_menu.addAction("Квест выполнен (Ctrl+Shift+D)", self.complete_quest)
+        self._active_menu.addAction(f"Квест выполнен ({shortcuts.key('complete')})", self.complete_quest)
         self._active_menu.addAction("Убрать текущий квест из списка", self.remove_quest)
 
     # --- гайд -------------------------------------------------------------
@@ -442,6 +478,7 @@ class OverlayApp:
         if self.guide_mode:
             self.render_page()
         else:
+            self._close_zoom()
             self.card.show_step()
         self.set_card_visible(True)
 
@@ -488,10 +525,49 @@ class OverlayApp:
             self.downloader.get(page.image, lambda path, p=page: self._image_ready(p, path))
         else:
             self.card.set_image(QPixmap(page.image))
+        self._update_zoom()
 
     def _image_ready(self, page: guide.GuidePage, path):
         if self.guide_mode and self.pages and self.pages[self.page_index] is page:
             self.card.set_image(QPixmap(str(path)) if path else None, "" if path else "Скриншот не загрузился")
+            self._update_zoom()
+
+    # --- скриншот на весь экран -------------------------------------------
+
+    def toggle_zoom(self):
+        if self._zoom_on:
+            self._close_zoom()
+            return
+        if self.card.quest is None:
+            return
+        self._zoom_on = True
+        if not self.guide_mode:
+            self.guide_mode = True
+            self.render_page()  # сам вызовет _update_zoom
+        else:
+            self._update_zoom()
+        self.set_card_visible(True)
+
+    def _update_zoom(self):
+        """Показывает на весь экран скриншот текущей страницы гайда (если просмотр включён)."""
+        if not self._zoom_on:
+            return
+        page = self.pages[self.page_index] if self.guide_mode and self.pages else None
+        pixmap = self.card.current_pixmap
+        if page is None or not page.image:
+            self._close_zoom()
+            self._show_notice("На этой странице гайда нет скриншота.") if page is not None else None
+            return
+        if pixmap is None:
+            return  # скриншот ещё загружается — покажем, когда придёт
+        caption = " — ".join(filter(None, [page.title, page.text]))
+        hint = (f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать · "
+                f"{shortcuts.key('zoom')} — закрыть · {self.page_index + 1} из {len(self.pages)}")
+        self.zoom.show_image(pixmap, caption, hint)
+
+    def _close_zoom(self):
+        self._zoom_on = False
+        self.zoom.hide()
 
     def sync(self):
         self.sync_db()
@@ -560,12 +636,13 @@ class OverlayApp:
             self.steam_status = ""
             return
         if self.steam_html is None:
-            self.steam_status = ("Гайд из Steam не загрузился — открой его в браузере (Ctrl+Shift+O)"
+            self.steam_status = (f"Гайд из Steam не загрузился — открой его в браузере ({shortcuts.key('open_browser')})"
                                  if self._steam_sync_done else "Загружаю гайд из Steam…")
             return
         pages = guide.parse_steam_section(self.steam_html, section)
         self.steam_pages[section] = pages
-        self.steam_status = "" if pages else "Раздел не найден в руководстве Steam — открой его в браузере (Ctrl+Shift+O)"
+        self.steam_status = "" if pages else (f"Раздел не найден в руководстве Steam — открой его в браузере "
+                                              f"({shortcuts.key('open_browser')})")
 
     def open_guide_in_browser(self):
         quest = self.card.quest

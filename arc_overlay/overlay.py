@@ -27,7 +27,6 @@ ACCENT = "#f2c94c"
 TEXT = "#f0f0f0"
 MUTED = "#a8adb5"
 SUCCESS = "#7bd88f"
-GUIDE_NAV_HINT = "Ctrl+Shift+↑ / ↓ — листать · Ctrl+Shift+G — назад к шагу"
 EDIT_HINT = "Перетащи карточку мышкой. Колёсико — масштаб, Ctrl + колёсико — прозрачность. Esc или «Готово» — выйти."
 
 
@@ -36,7 +35,7 @@ def _lines(text: str) -> str:
 
 
 class OverlayCard(QWidget):
-    def __init__(self, db: QuestDB, hotkey_hint: str, guide_hint: str = "", settings: QSettings | None = None):
+    def __init__(self, db: QuestDB, settings: QSettings | None = None):
         super().__init__()
         self.setWindowFlags(
             Qt.WindowType.FramelessWindowHint
@@ -105,8 +104,6 @@ class OverlayCard(QWidget):
         self._anchor: QPoint | None = anchor if isinstance(anchor, QPoint) else None
 
         self._db = db
-        self._hotkey_hint = hotkey_hint
-        self._guide_hint = guide_hint
         self._quest: Quest | None = None
         self._step = 0
         self._position = (0, 0)  # (номер текущего квеста, всего активных)
@@ -130,6 +127,15 @@ class OverlayCard(QWidget):
 
     def set_db(self, db: QuestDB):
         self._db = db
+
+    def refresh(self):
+        """Перерисовать текущее содержимое (например, после смены горячих клавиш)."""
+        self._render()
+
+    @property
+    def current_pixmap(self) -> QPixmap | None:
+        """Скриншот, который сейчас показан в гайде (для просмотра на весь экран)."""
+        return self._pixmap
 
     @property
     def scale(self) -> float:
@@ -245,8 +251,8 @@ class OverlayCard(QWidget):
         self._set_content(
             self._notice_html() +
             f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>ARC Raiders — подсказчик</div>"
-            f"<p>Нажми <b>{html.escape(self._hotkey_hint)}</b>, чтобы ввести квест.</p>",
-            footer="Ctrl+Shift+H — все сочетания клавиш",
+            f"<p>Нажми <b>{html.escape(shortcuts.key('input'))}</b>, чтобы ввести квест.</p>",
+            footer=f"{shortcuts.key('help')} — все сочетания клавиш",
         )
 
     def _render_step(self):
@@ -273,20 +279,22 @@ class OverlayCard(QWidget):
             parts.append(f"<p style='color:{MUTED};'>Для этого квеста в базе нет шагов.</p>")
         if q.required_items:
             parts.append(f"<div style='color:{MUTED};'>Нужно: {esc(', '.join(q.required_items))}</div>")
-        self._set_content("".join(parts), footer=self._guide_hint)
+        self._set_content("".join(parts), footer=f"{shortcuts.key('guide')} — гайд со скриншотами")
 
     def _render_guide(self, page: GuidePage | None, index: int, total: int, status: str):
         parts = [self._header(self._quest)]
         if page is None:
             parts.append(f"<p style='color:{MUTED};'>{html.escape(status or 'Гайда для этого квеста пока нет.')}</p>")
-            self._set_content("".join(parts), footer="Ctrl+Shift+G — назад к шагу", wide=True)
+            self._set_content("".join(parts), footer=f"{shortcuts.key('guide')} — назад к шагу", wide=True)
             return
         parts.append(f"<div style='color:{MUTED};'>Гайд · {html.escape(page.source)} · {index + 1} из {total}</div>")
         if page.title:
             parts.append(f"<p style='font-weight:bold; color:{ACCENT};'>{_lines(page.title)}</p>")
         if page.text:
             parts.append(f"<p>{_lines(page.text)}</p>")
-        footer = "\n".join(filter(None, [status, GUIDE_NAV_HINT]))
+        nav = (f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать · "
+               f"{shortcuts.key('zoom')} — крупно · {shortcuts.key('guide')} — назад к шагу")
+        footer = "\n".join(filter(None, [status, nav]))
         self._set_content("".join(parts), footer=footer, wide=True, keep_image=bool(page.image))
 
     def _render_shopping(self):
@@ -303,19 +311,19 @@ class OverlayCard(QWidget):
                 for name, qty, quests in self._shopping
             )
             body = f"<table style='margin-top:{self._px(6)}px;' cellspacing='{self._px(3)}'>{rows}</table>"
-        self._set_content(title + body, footer="Ctrl+Shift+L — закрыть сводку", wide=True)
+        self._set_content(title + body, footer=f"{shortcuts.key('shopping')} — закрыть сводку", wide=True)
 
     def _render_help(self):
         rows = "".join(
             f"<tr><td style='color:{ACCENT}; padding-right:{self._px(12)}px;'><b>{html.escape(keys)}</b></td>"
             f"<td>{html.escape(what)}</td></tr>"
-            for keys, what in shortcuts.SHORTCUTS
+            for keys, what in shortcuts.rows()
         )
         self._set_content(
             f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>Сочетания клавиш</div>"
             f"<table style='margin-top:{self._px(6)}px;' cellspacing='{self._px(3)}'>{rows}</table>"
             f"<p style='color:{MUTED};'>{html.escape(shortcuts.FOOTNOTE)}</p>",
-            footer="Ctrl+Shift+H — закрыть справку",
+            footer=f"{shortcuts.key('help')} — закрыть справку",
             wide=True,
         )
 

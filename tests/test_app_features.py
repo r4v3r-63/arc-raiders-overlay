@@ -78,3 +78,27 @@ def test_no_update_notice_for_same_build(app, tmp_path):
     release.write_text(json.dumps({"target_commitish": "same"}), encoding="utf-8")
     app._release_loaded(release, "same")
     assert not app._update_action.isVisible()
+
+
+def test_zoom_shows_guide_screenshot(app):
+    app.on_submitted("Первый плацдарм")
+    app.toggle_zoom()  # сам включает гайд
+    app.page_index = next(i for i, p in enumerate(app.pages) if p.source == "вики")
+    app.render_page()
+    assert app.zoom.isVisible()
+    app.toggle_zoom()
+    assert not app.zoom.isVisible()
+    app.toggle_zoom()
+    app.toggle_guide()  # выход из гайда закрывает просмотр
+    assert not app.zoom.isVisible()
+
+
+def test_hotkeys_saved_refreshes_hints(app):
+    from arc_overlay import shortcuts
+
+    bindings = shortcuts.bindings()
+    bindings["help"] = "Alt+H"
+    app._hotkeys_saved(bindings)
+    app.card.show_welcome()
+    assert "Alt+H" in app.card._footer.text()
+    app._hotkeys_saved(dict(shortcuts.DEFAULTS))

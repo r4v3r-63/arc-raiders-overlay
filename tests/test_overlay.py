@@ -7,7 +7,7 @@ from arc_overlay.quest_db import QuestDB
 
 def make_card(tmp_path):
     settings = QSettings(str(tmp_path / "overlay.ini"), QSettings.Format.IniFormat)
-    return OverlayCard(QuestDB.load(), "Ctrl+Shift+Q", settings=settings), settings
+    return OverlayCard(QuestDB.load(), settings=settings), settings
 
 
 def test_scale_changes_size_and_is_saved(qapp, tmp_path):
