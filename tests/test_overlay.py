@@ -93,7 +93,7 @@ def test_newer_remote_db_replaces_bundled(qapp, tmp_path):
 
 def test_opacity_is_clamped_saved_and_reset(qapp, tmp_path):
     card, settings = make_card(tmp_path)
-    assert card.opacity == 75
+    assert card.opacity == 100
     card.set_opacity(40)
     assert int(settings.value("opacity")) == 40
     card.set_opacity(5)
@@ -101,7 +101,7 @@ def test_opacity_is_clamped_saved_and_reset(qapp, tmp_path):
     again, _ = make_card(tmp_path)
     assert again.opacity == 20
     again.reset_geometry()
-    assert again.opacity == 75 and settings.value("opacity") is None
+    assert again.opacity == 100 and settings.value("opacity") is None
 
 
 def test_panel_over_guide_keeps_screenshot(qapp, tmp_path):
