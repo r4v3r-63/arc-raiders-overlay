@@ -35,7 +35,8 @@ ACTIONS = [
 DEFAULTS = {action: default for action, default, _ in ACTIONS}
 DESCRIPTIONS = {action: text for action, _, text in ACTIONS}
 
-FOOTNOTE = "Выход из программы — правый клик по значку «?» в трее → «Выход». Сочетания меняются там же."
+FOOTNOTE = ("Правый клик по значку «?» в трее: «Как пользоваться» — обзор возможностей заново, "
+            "«Горячие клавиши…» — поменять сочетания, «Выход» — закрыть программу.")
 
 _bindings: dict[str, str] = dict(DEFAULTS)
 
