@@ -62,7 +62,8 @@ MAPS = {
     "riven_tides": ("Riven Tides", "Бурные потоки", ["бурные потоки"]),
     "pendola_pass": ("Pendola Pass", "Перевал Пендола", ["перевал пендола", "пендола"]),
 }
-MAP_ID_FIXES = {"stella_montis_upper": "stella_montis", "stella_montis_lower": "stella_montis"}
+MAP_ID_FIXES = {"stella_montis_upper": "stella_montis", "stella_montis_lower": "stella_montis",
+                "riven_tide": "riven_tides"}
 
 
 def text(value: dict, lang: str = "ru") -> str:
@@ -179,6 +180,21 @@ class Hints:
 
 ARCTRACKER_API = "https://arctracker.io/api/"
 ARCTRACKER_MIN_ITEMS = 500  # меньше — сайт ответил не тем, берём данные из репозитория
+ARCTRACKER_MIN_QUESTS = 100
+
+
+def fetch_arctracker_quests() -> list[dict]:
+    """Квесты с arctracker.io в формате arcraiders-data; не удалось — пустой список."""
+    try:
+        req = urllib.request.Request(ARCTRACKER_API + "quests", headers={"User-Agent": wiki.USER_AGENT})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            quests = list(json.load(resp)["quests"].values())
+        if len(quests) < ARCTRACKER_MIN_QUESTS:
+            raise ValueError(f"квестов всего {len(quests)}")
+        return sorted((q for q in quests if q.get("id") and q.get("name")), key=lambda q: q["id"])
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
+        print(f"  квесты с arctracker.io недоступны ({error!r}) — квесты из репозитория")
+        return []
 
 
 def fetch_arctracker() -> tuple[dict, list]:
@@ -409,11 +425,22 @@ def build(data_dir: Path) -> dict:
     print(f"Гайдов: {len(guides)}, скриншотов: {len(all_files)}")
     urls = wiki.image_urls(all_files)
 
+    old_db = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
+    # У одного и того же квеста в разных источниках разные id. Прогресс игрока хранится по id,
+    # поэтому квест, который уже был в базе, сохраняет прежний id (сопоставление по английскому названию).
+    old_ids = {norm(q["aliases"][0]): q["id"] for q in old_db.get("quests", []) if q.get("aliases")}
+    old_names = {norm(q["aliases"][0]): q["name"] for q in old_db.get("quests", []) if q.get("aliases")}
+    print("Загружаю свежие квесты с arctracker.io…")
+    sources = fetch_arctracker_quests() or [json.loads(p.read_text(encoding="utf-8"))
+                                            for p in sorted((data_dir / "quests").glob("*.json"))]
+    final_id = {q["id"]: old_ids.get(norm(text(q["name"], "en")), q["id"]) for q in sources}
     quests = []
     seen = set()
-    for path in sorted((data_dir / "quests").glob("*.json")):
-        q = json.loads(path.read_text(encoding="utf-8"))
+    for q in sources:
         name_en = text(q["name"], "en")
+        tree = q.get("objectiveTree") if isinstance(q.get("objectiveTree"), dict) else {}
+        optional = {c.get("index") for c in tree.get("children", []) if isinstance(c, dict) and c.get("optional")}
+        objectives = [o for o in q.get("objectives", []) if text(o)]
         maps = []
         for map_id in q.get("map", []):
             map_id = MAP_ID_FIXES.get(map_id, map_id)
@@ -424,18 +451,21 @@ def build(data_dir: Path) -> dict:
         aliases = [name_en]
         if name_en in official and norm_ru(official[name_en]) != norm_ru(text(q["name"])):
             aliases.append(official[name_en])
+        old_name = old_names.get(norm(name_en))
+        if old_name and all(norm_ru(old_name) != norm_ru(n) for n in [text(q["name"]), *aliases]):
+            aliases.append(old_name)  # квест переименовали — по прежнему названию тоже находится
         quests.append({
-            "id": q["id"],
-            "_next": list(q.get("nextQuestIds", [])),
+            "id": final_id[q["id"]],
+            "_next": [final_id.get(i, i) for i in q.get("nextQuestIds", [])],
             "name": text(q["name"]),
             "official_name": True,
             "aliases": aliases,
             "trader": TRADERS_RU.get(q.get("trader", ""), q.get("trader", "")),
             "locations": maps,
-            "one_round": bool(q.get("objectivesOneRound")),
+            "one_round": bool(q.get("objectivesOneRound") or tree.get("oneRaid")),
             "required_items": [f"{r['quantity']}× {hints.item_ru(r['itemId'])}" for r in q.get("requiredItemIds", [])],
-            "steps": [text(obj) for obj in q.get("objectives", []) if text(obj)],
-            "_objectives_en": [text(obj, "en") for obj in q.get("objectives", []) if text(obj)],
+            "steps": [("(необязательно) " if n in optional else "") + text(obj) for n, obj in enumerate(objectives)],
+            "_objectives_en": [text(obj, "en") for obj in objectives],
             "hints": hints.for_objectives([text(o, "en") for o in q.get("objectives", [])], required),
             "wiki_url": "https://arcraiders.wiki/wiki/" + title.replace(" ", "_"),
             "_wiki_key": norm(title),
@@ -478,7 +508,6 @@ def build(data_dir: Path) -> dict:
         ids = [i for i in quest.pop("_next") if i in known_ids] + [id_by_name[norm(n)] for n in names if norm(n) in id_by_name]
         quest["next"] = list(dict.fromkeys(i for i in ids if i != quest["id"]))
 
-    old_db = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
     print("Загружаю карты и места на них…")
     old_maps = {m["id"]: {"image": m["image"], "rooms": m["rooms"]} for m in old_db.get("maps", []) if m.get("rooms")}
     try:
