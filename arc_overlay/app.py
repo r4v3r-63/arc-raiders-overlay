@@ -113,7 +113,6 @@ class OverlayApp:
             ("Открыть гайд в Steam", lambda: self._open(self.card.quest and self.card.quest.steam_url)),
             ("Найти видео на YouTube", lambda: self._open(self.card.quest and self.card.quest.video_url)),
             ("Открыть страницу на вики", lambda: self._open(self.card.quest and self.card.quest.wiki_url)),
-            ("Папка моих скриншотов для квеста", self.open_user_folder),
         ]:
             action = QAction(title, menu)
             action.triggered.connect(handler)
@@ -174,7 +173,6 @@ class OverlayApp:
             return
         self.guide_mode = not self.guide_mode
         if self.guide_mode:
-            self.rebuild_pages()  # игрок мог добавить свои скриншоты
             self.render_page()
         else:
             self.card.show_step()
@@ -202,7 +200,7 @@ class OverlayApp:
             return
         section = guide.steam_section_id(quest.steam_url)
         pages = list(self.steam_pages.get(section, []))
-        pages += guide.wiki_pages(quest) + guide.user_pages(quest)
+        pages += guide.wiki_pages(quest)
         if quest.hints:
             pages.append(guide.GuidePage("подсказки", "Подсказки", "\n".join("• " + h for h in quest.hints)))
         self.pages = pages
@@ -303,13 +301,6 @@ class OverlayApp:
         quest = self.card.quest
         if quest:
             self._open(quest.steam_url or quest.video_url)
-
-    def open_user_folder(self):
-        quest = self.card.quest
-        if quest:
-            folder = guide.user_folder(quest)
-            folder.mkdir(parents=True, exist_ok=True)
-            QDesktopServices.openUrl(QUrl.fromLocalFile(str(folder)))
 
     def _open(self, url: str | None):
         if url:

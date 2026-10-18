@@ -48,18 +48,6 @@ def test_wiki_pages():
     assert pages[0].image.endswith("guides/t/01.jpg")
 
 
-def test_user_pages(tmp_path, monkeypatch):
-    monkeypatch.setattr(guide, "USER_GUIDES_DIR", tmp_path)
-    quest = Quest(name="Квест: «тест»?", steps=[])
-    folder = guide.user_folder(quest)
-    assert folder.name == "Квест «тест»"
-    folder.mkdir()
-    (folder / "1.png").write_bytes(b"")
-    (folder / "заметка.txt").write_text("иди налево", encoding="utf-8")
-    pages = guide.user_pages(quest)
-    assert [(p.title, p.text, bool(p.image)) for p in pages] == [("1", "", True), ("заметка", "иди налево", False)]
-
-
 INDEX_HTML = """
 <div class="subSection detailBox" id="1"><div class="subSectionTitle">Информация</div>
   <div class="subSectionDesc">Текст без картинок</div></div>

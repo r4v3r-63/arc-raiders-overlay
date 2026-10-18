@@ -1,4 +1,4 @@
-"""Страницы гайда: из русского руководства в Steam, с вики и из своей папки игрока.
+"""Страницы гайда: из русского руководства в Steam и с вики.
 
 Страница — это заголовок шага, текст и (необязательно) одна картинка.
 Руководство Steam не хранится в репозитории: программа скачивает его на компьютере
@@ -10,17 +10,13 @@ from __future__ import annotations
 import html
 import re
 from dataclasses import dataclass
-from pathlib import Path
 
 from .quest_db import DATA_DIR, REMOTE_DATA_URL, Quest
-
-IMAGE_SUFFIXES = {".png", ".jpg", ".jpeg", ".webp", ".bmp"}
-USER_GUIDES_DIR = Path(__file__).resolve().parent.parent / "мои_скриншоты"
 
 
 @dataclass
 class GuidePage:
-    source: str  # «Steam», «вики» или «мои скриншоты»
+    source: str  # «Steam», «вики» или «подсказки»
     title: str = ""
     text: str = ""
     image: str = ""  # путь к файлу или ссылка (для Steam)
@@ -114,24 +110,4 @@ def wiki_pages(quest: Quest) -> list[GuidePage]:
         # Скриншоты из свежей базы, которых ещё нет в папке программы, докачиваются с GitHub.
         source = str(local) if local.exists() else REMOTE_DATA_URL + image["file"]
         pages.append(GuidePage("вики", "", "\n".join(filter(None, [text if n == 0 else "", caption])), source))
-    return pages
-
-
-def user_folder(quest: Quest) -> Path:
-    safe = re.sub(r'[<>:"/\\|?*]', "", quest.name).strip() or quest.english_name
-    return USER_GUIDES_DIR / safe
-
-
-def user_pages(quest: Quest) -> list[GuidePage]:
-    folder = user_folder(quest)
-    if not folder.is_dir():
-        return []
-    pages = []
-    for path in sorted(folder.iterdir()):
-        if path.suffix.lower() == ".txt":
-            text = path.read_text(encoding="utf-8", errors="replace").strip()
-            if text:
-                pages.append(GuidePage("мои скриншоты", path.stem, text))
-        elif path.suffix.lower() in IMAGE_SUFFIXES:
-            pages.append(GuidePage("мои скриншоты", path.stem, "", str(path)))
     return pages
