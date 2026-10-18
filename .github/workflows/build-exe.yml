@@ -95,7 +95,8 @@ jobs:
           # Один постоянный релиз «latest»: архив заменяется на месте, чтобы ссылка на скачивание
           # не пропадала ни на минуту. (exe — прежнее имя метки, удаляется на случай, если осталось.)
           gh release delete exe --cleanup-tag --yes || true
-          BUILD_DATE=$(TZ=Europe/Moscow date "+%d.%m.%Y, %H:%M (МСК)")
+          # Москва — UTC+3 круглый год; часовой пояс по имени в bash на Windows не распознаётся.
+          BUILD_DATE=$(date -u -d "+3 hours" "+%d.%m.%Y, %H:%M (МСК)")
           # Скрытая строка с коммитом: по ней программа понимает, что вышла новая сборка.
           { echo "**Сборка от $BUILD_DATE.**"; echo; cat .github/release-notes.md; echo; echo "<!-- commit: $GITHUB_SHA -->"; } > notes.md
           if gh release view latest > /dev/null 2>&1; then
