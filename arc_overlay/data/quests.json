@@ -1,0 +1,71 @@
+{
+  "source": "https://arcraiders.wiki/wiki/Quests",
+  "note": "Статичная стартовая база для MVP. На этапе 2 её заменит автоматический парсер вики.",
+  "quests": [
+    {
+      "name": "Picking Up The Pieces",
+      "trader": "Shani",
+      "locations": ["Any"],
+      "required_items": [],
+      "steps": [
+        "Открой карту и иди в любую зону со значком категории лута",
+        "Обыщи 3 контейнера"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces"
+    },
+    {
+      "name": "Clearer Skies",
+      "trader": "Shani",
+      "locations": ["Any"],
+      "required_items": ["3× ARC Alloy"],
+      "steps": [
+        "Уничтожь 3 машины ARC (проще всего — мелкие, вроде Wasp)",
+        "Собери 3 ARC Alloy с обломков и отнеси Шани"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clearer_Skies"
+    },
+    {
+      "name": "Trash Into Treasure",
+      "trader": "Shani",
+      "locations": ["Any"],
+      "required_items": ["6× Wires", "1× Battery"],
+      "steps": [
+        "Добудь 6 Wires (можно разбирать лут на переработку)",
+        "Добудь 1 Battery и сдай всё Шани"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure"
+    },
+    {
+      "name": "Off The Radar",
+      "trader": "Shani",
+      "locations": ["Any"],
+      "required_items": [],
+      "steps": [
+        "За один рейд: найди Field Depot — постройку с синим брезентом и антенной на крыше",
+        "Почини антенну на крыше Field Depot"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Off_The_Radar"
+    },
+    {
+      "name": "A Bad Feeling",
+      "trader": "Celeste",
+      "locations": ["Any"],
+      "required_items": [],
+      "steps": [
+        "Найди и обыщи любой ARC Probe или ARC Courier (Probe слышно издалека, к упавшему Courier ведёт столб дыма)"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Bad_Feeling"
+    },
+    {
+      "name": "Hatch Repairs",
+      "trader": "Shani",
+      "locations": ["Any"],
+      "required_items": [],
+      "steps": [
+        "Почини протекающие гидравлические трубы у Raider Hatch (такие люки отмечены на карте)",
+        "Найди Hatch Key в маленьком ящике рядом с этим люком"
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Hatch_Repairs"
+    }
+  ]
+}
