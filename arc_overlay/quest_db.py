@@ -98,6 +98,18 @@ class QuestDB:
         """Ищет квест: точное совпадение, затем по подстроке, затем с учётом опечаток."""
         return _lookup(query, self._by_name)
 
+    def find_exact(self, name: str) -> Quest | None:
+        """Точное совпадение названия (без учёта регистра, «ё» и знаков препинания)."""
+        return self._by_name.get(normalize(name))
+
+    def add(self, quest: Quest):
+        self.quests.append(quest)
+        for name in [quest.name, *quest.aliases]:
+            self._by_name.setdefault(normalize(name), quest)
+
+    def find_map_exact(self, name: str) -> GameMap | None:
+        return self._map_by_name.get(normalize(name))
+
     def find_map(self, query: str) -> GameMap | None:
         return _lookup(query, self._map_by_name)
 

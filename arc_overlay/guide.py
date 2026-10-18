@@ -30,6 +30,36 @@ def steam_section_id(url: str | None) -> str | None:
     return url.rsplit("#", 1)[1] if url and "#" in url else None
 
 
+@dataclass
+class SteamQuest:
+    section_id: str
+    title: str
+    category: str  # раздел руководства: «Любая Локация», «Космопорт»…
+    steps: list[str]
+
+
+def parse_steam_index(page_html: str) -> list[SteamQuest]:
+    """Оглавление руководства: квесты с их шагами (заголовки шагов — официальные цели из игры)."""
+    quests = []
+    category = ""
+    for block in re.split(r'<div class="subSection detailBox" id="', page_html)[1:]:
+        section_id = block.split('"', 1)[0]
+        match = re.search(r'<div class="subSectionTitle">(.*?)</div>\s*<div class="subSectionDesc">(.*?)'
+                          r'(?=<div class="subSection detailBox"|\Z)', block, re.S)
+        if not match:
+            continue
+        raw_title, desc = match.groups()
+        title = _plain(raw_title).split("\n")[0].strip()
+        has_images = "<img" in desc
+        if "bb_h1" in raw_title or not has_images:
+            category = title  # заголовок группы квестов, а не квест
+            continue
+        steps = [re.sub(r"^\d+\s*[.)]\s*", "", _plain(h)).strip()
+                 for h in re.findall(r'<div class="bb_h3">(.*?)</div>', desc, re.S)]
+        quests.append(SteamQuest(section_id, title, category, [s for s in steps if s]))
+    return quests
+
+
 def parse_steam_section(page_html: str, section_id: str) -> list[GuidePage]:
     """Разбивает раздел руководства на страницы: каждая картинка завершает страницу."""
     start = page_html.find(f'<div class="subSection detailBox" id="{section_id}">')

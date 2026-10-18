@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import sys
 
-from PyQt6.QtCore import Qt, QUrl
+from PyQt6.QtCore import Qt, QTimer, QUrl
 from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
@@ -12,13 +12,14 @@ from . import guide, winapi
 from .input_window import InputWindow
 from .net import CachedDownloader
 from .overlay import OverlayCard
-from .quest_db import QuestDB
+from .quest_db import Quest, QuestDB
 
 MODS = winapi.MOD_CONTROL | winapi.MOD_SHIFT
 HOTKEY_INPUT = "Ctrl+Shift+Q"
 GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
 STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520"
 STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
+STEAM_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
 
 
 def make_tray_icon() -> QIcon:
@@ -47,6 +48,8 @@ class OverlayApp:
         self.page_index = 0
         self.steam_pages: dict[str, list[guide.GuidePage]] = {}  # id раздела → страницы
         self.steam_status = ""
+        self.steam_html: str | None = None
+        self._steam_sync_done = False
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
         self.input.help_requested.connect(self.show_help)
@@ -72,6 +75,10 @@ class OverlayApp:
         app.aboutToQuit.connect(self.hotkeys.unregister_all)
 
         self.tray = self._make_tray()
+        self.sync_steam_guide()
+        self._steam_timer = QTimer()
+        self._steam_timer.timeout.connect(self.sync_steam_guide)
+        self._steam_timer.start(STEAM_CHECK_INTERVAL_MS)
         self.card.show()
 
         if not winapi.IS_WINDOWS:
@@ -218,26 +225,55 @@ class OverlayApp:
         if self.guide_mode and self.pages and self.pages[self.page_index] is page:
             self.card.set_image(QPixmap(str(path)) if path else None, "" if path else "Скриншот не загрузился")
 
+    def sync_steam_guide(self):
+        """Скачивает руководство Steam (не чаще раза в сутки) и добавляет в поиск новые квесты из него."""
+        self.downloader.get(STEAM_GUIDE_URL, self._steam_guide_loaded, max_age=STEAM_MAX_AGE)
+
+    def _steam_guide_loaded(self, path):
+        self._steam_sync_done = True
+        if path:
+            page_html = path.read_text(encoding="utf-8", errors="replace")
+            if page_html != self.steam_html:
+                self.steam_html = page_html
+                self.steam_pages.clear()
+                self.merge_steam_quests()
+        self.load_steam_guide()
+        self.rebuild_pages()
+        self.render_page()
+
+    def merge_steam_quests(self) -> int:
+        """Квесты из руководства, которых нет в базе, становятся доступны для поиска."""
+        added = 0
+        for item in guide.parse_steam_index(self.steam_html or ""):
+            url = f"{STEAM_GUIDE_URL}#{item.section_id}"
+            quest = self.db.find_exact(item.title)
+            if quest is not None:
+                quest.steam_url = quest.steam_url or url
+                continue
+            game_map = self.db.find_map_exact(item.category)
+            self.db.add(Quest(
+                id=f"steam_{item.section_id}",
+                name=item.title,
+                steps=item.steps,
+                locations=[game_map.id] if game_map else [],
+                steam_url=url,
+            ))
+            added += 1
+        return added
+
     def load_steam_guide(self):
         quest = self.card.quest
         section = guide.steam_section_id(quest.steam_url) if quest else None
         if not section or section in self.steam_pages:
             self.steam_status = ""
             return
-        self.steam_status = "Загружаю гайд из Steam…"
-
-        def ready(path):
-            pages = []
-            if path:
-                pages = guide.parse_steam_section(path.read_text(encoding="utf-8", errors="replace"), section)
-            self.steam_pages[section] = pages
-            self.steam_status = "" if pages else "Гайд из Steam не загрузился — открой его в браузере (Ctrl+Shift+O)"
-            current = self.card.quest
-            if current and guide.steam_section_id(current.steam_url) == section:
-                self.rebuild_pages()
-                self.render_page()
-
-        self.downloader.get(STEAM_GUIDE_URL, ready, max_age=STEAM_MAX_AGE)
+        if self.steam_html is None:
+            self.steam_status = ("Гайд из Steam не загрузился — открой его в браузере (Ctrl+Shift+O)"
+                                 if self._steam_sync_done else "Загружаю гайд из Steam…")
+            return
+        pages = guide.parse_steam_section(self.steam_html, section)
+        self.steam_pages[section] = pages
+        self.steam_status = "" if pages else "Раздел не найден в руководстве Steam — открой его в браузере (Ctrl+Shift+O)"
 
     def open_guide_in_browser(self):
         quest = self.card.quest

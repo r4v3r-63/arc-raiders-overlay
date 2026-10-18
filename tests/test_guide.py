@@ -58,3 +58,22 @@ def test_user_pages(tmp_path, monkeypatch):
     (folder / "заметка.txt").write_text("иди налево", encoding="utf-8")
     pages = guide.user_pages(quest)
     assert [(p.title, p.text, bool(p.image)) for p in pages] == [("1", "", True), ("заметка", "иди налево", False)]
+
+
+INDEX_HTML = """
+<div class="subSection detailBox" id="1"><div class="subSectionTitle">Информация</div>
+  <div class="subSectionDesc">Текст без картинок</div></div>
+<div class="subSection detailBox" id="2"><div class="subSectionTitle"><div class="bb_h1">Космопорт</div></div>
+  <div class="subSectionDesc"></div></div>
+<div class="subSection detailBox" id="3"><div class="subSectionTitle">Новый квест</div>
+  <div class="subSectionDesc"><div class="bb_h3"><b>1. Доберитесь до вышки</b></div><img src="a">
+  <div class="bb_h3">2.Почините антенну</div><img src="b"></div></div>
+"""
+
+
+def test_parse_steam_index():
+    quests = guide.parse_steam_index(INDEX_HTML)
+    assert len(quests) == 1
+    q = quests[0]
+    assert (q.section_id, q.title, q.category) == ("3", "Новый квест", "Космопорт")
+    assert q.steps == ["Доберитесь до вышки", "Почините антенну"]
