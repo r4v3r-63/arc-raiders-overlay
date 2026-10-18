@@ -3,13 +3,15 @@
 from __future__ import annotations
 
 import json
+import os
 import sys
+from pathlib import Path
 
-from PyQt6.QtCore import Qt, QTimer, QUrl
+from PyQt6.QtCore import QLockFile, QStandardPaths, Qt, QTimer, QUrl
 from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import guide, winapi
+from . import autostart, guide, winapi
 from .input_window import InputWindow
 from .net import CachedDownloader
 from .overlay import OverlayCard
@@ -79,6 +81,7 @@ class OverlayApp:
         app.aboutToQuit.connect(self.hotkeys.unregister_all)
 
         self.tray = self._make_tray()
+        autostart.refresh()
         self.sync()
         self._sync_timer = QTimer()
         self._sync_timer.timeout.connect(self.sync)
@@ -119,6 +122,11 @@ class OverlayApp:
             action.triggered.connect(handler)
             action.setEnabled(False)
             self._quest_actions.append(action)
+        self._autostart_action = QAction("Запускать вместе с Windows", menu)
+        self._autostart_action.setCheckable(True)
+        self._autostart_action.setEnabled(autostart.available())
+        self._autostart_action.setChecked(autostart.is_enabled())
+        self._autostart_action.toggled.connect(self.set_autostart)
         self._clear_cache_action = QAction("Очистить кэш", menu)
         self._clear_cache_action.triggered.connect(self.clear_cache)
         menu.aboutToShow.connect(self._update_cache_label)
@@ -132,6 +140,7 @@ class OverlayApp:
         for action in self._quest_actions:
             menu.addAction(action)
         menu.addSeparator()
+        menu.addAction(self._autostart_action)
         menu.addAction(self._clear_cache_action)
         menu.addAction(quit_action)
         tray.setContextMenu(menu)
@@ -139,6 +148,13 @@ class OverlayApp:
         tray.show()
         self._tray_menu = menu  # держим ссылку, иначе меню удалит сборщик мусора
         return tray
+
+    def set_autostart(self, enabled: bool):
+        try:
+            autostart.set_enabled(enabled)
+        except OSError as error:
+            self.tray.showMessage("ARC Raiders — подсказчик", f"Не удалось изменить автозапуск: {error}")
+        self._autostart_action.setChecked(autostart.is_enabled())
 
     def _update_cache_label(self):
         megabytes = self.downloader.size() / 1024 / 1024
@@ -337,8 +353,29 @@ class OverlayApp:
         self.input.close_and_return_focus()
 
 
+def self_test() -> int:
+    """Проверка собранного .exe без окон: база читается, HTTPS доступен. Код возврата 0 — всё в порядке."""
+    from PyQt6.QtNetwork import QSslSocket
+
+    db = QuestDB.load()
+    ok = len(db.quests) >= 100 and QSslSocket.supportsSsl()
+    print(f"квестов: {len(db.quests)}, HTTPS: {QSslSocket.supportsSsl()}")
+    return 0 if ok else 1
+
+
 def main() -> int:
+    if "--self-test" in sys.argv:
+        os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
+        _app = QApplication(sys.argv)
+        return self_test()
     app = QApplication(sys.argv)
     app.setQuitOnLastWindowClosed(False)  # окна прячутся, но программа живёт в трее
+    # Вторая копия программы делила бы горячие клавиши с первой — не запускаем её.
+    lock = QLockFile(str(Path(QStandardPaths.writableLocation(QStandardPaths.StandardLocation.TempLocation))
+                         / "arc_raiders_overlay.lock"))
+    if not lock.tryLock(100):
+        QMessageBox.information(None, "ARC Raiders — подсказчик",
+                                "Программа уже запущена — её значок «?» в трее рядом с часами.")
+        return 0
     _overlay = OverlayApp(app)
     return app.exec()
