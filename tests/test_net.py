@@ -26,3 +26,11 @@ def test_touch_keeps_download_time(qapp, tmp_path):
     cache._touch(f)
     assert f.stat().st_mtime == 2000
     assert f.stat().st_atime > 2000
+
+
+def test_data_lives_next_to_program(qapp):
+    from arc_overlay import paths
+
+    assert paths.user_data_dir() == paths.app_dir() / "Данные"
+    assert paths.cache_dir().parent == paths.user_data_dir()
+    assert paths.settings().fileName().endswith("настройки.ini")

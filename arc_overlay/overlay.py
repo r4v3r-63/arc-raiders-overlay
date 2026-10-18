@@ -13,7 +13,7 @@ from PyQt6.QtCore import QPoint, QRectF, QSettings, Qt
 from PyQt6.QtGui import QColor, QGuiApplication, QPainter, QPainterPath, QPen, QPixmap
 from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
 
-from . import shortcuts, winapi
+from . import paths, shortcuts, winapi
 from .guide import GuidePage
 from .quest_db import Quest, QuestDB
 
@@ -82,7 +82,7 @@ class OverlayCard(QWidget):
         layout.addWidget(self._image)
         layout.addWidget(self._footer)
 
-        self._settings = settings or QSettings("arc_raiders_overlay", "overlay")
+        self._settings = settings or paths.settings()
         self._scale = self._clamp_scale(float(self._settings.value("scale", 1.0)))
         anchor = self._settings.value("anchor")
         self._anchor: QPoint | None = anchor if isinstance(anchor, QPoint) else None

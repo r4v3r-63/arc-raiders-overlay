@@ -11,7 +11,7 @@ from PyQt6.QtCore import QLockFile, QStandardPaths, Qt, QTimer, QUrl
 from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import autostart, guide, winapi
+from . import autostart, guide, paths, winapi
 from .input_window import InputWindow
 from .net import CachedDownloader
 from .overlay import OverlayCard
@@ -377,5 +377,6 @@ def main() -> int:
         QMessageBox.information(None, "ARC Raiders — подсказчик",
                                 "Программа уже запущена — её значок «?» в трее рядом с часами.")
         return 0
+    paths.migrate_legacy()
     _overlay = OverlayApp(app)
     return app.exec()

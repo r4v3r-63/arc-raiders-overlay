@@ -1,6 +1,6 @@
 """Асинхронная загрузка по сети с кэшем на диске игрока.
 
-Кэш лежит в папке программы в профиле пользователя (не в репозитории), поэтому
+Кэш лежит в папке «Данные\кэш» рядом с программой (см. arc_overlay/paths.py), поэтому
 скачанное руководство Steam и картинки остаются только на этом компьютере.
 """
 
@@ -11,24 +11,19 @@ import os
 import time
 from pathlib import Path
 
-from PyQt6.QtCore import QStandardPaths, QTimer, QUrl
+from PyQt6.QtCore import QTimer, QUrl
 from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkReply, QNetworkRequest
+
+from . import paths
 
 UNUSED_DAYS = 30  # файлы, которые столько дней не открывались, удаляются при запуске
 USER_AGENT = b"Mozilla/5.0 (Windows NT 10.0; Win64; x64) arc-raiders-overlay"
 
 
-def cache_dir() -> Path:
-    base = QStandardPaths.writableLocation(QStandardPaths.StandardLocation.GenericCacheLocation)
-    path = Path(base or Path.home() / ".cache") / "arc_raiders_overlay"
-    path.mkdir(parents=True, exist_ok=True)
-    return path
-
-
 class CachedDownloader:
     def __init__(self, directory: Path | None = None):
         self._manager = QNetworkAccessManager()
-        self._dir = directory or cache_dir()
+        self._dir = directory or paths.cache_dir()
         self._waiting: dict[str, list] = {}
 
     def path_for(self, url: str) -> Path:
