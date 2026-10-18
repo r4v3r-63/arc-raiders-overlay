@@ -102,3 +102,51 @@ def test_hotkeys_saved_refreshes_hints(app):
     app.card.show_welcome()
     assert "Alt+H" in app.card._footer.text()
     app._hotkeys_saved(dict(shortcuts.DEFAULTS))
+
+
+def test_map_shows_quest_places(app):
+    app.on_submitted("Снова на вершине")
+    quest = app.card.quest
+    assert len(app.quest_maps()) > 1
+    app.toggle_map()
+    assert app.map_view.isVisible() and app.map_view._markers
+    first = app.map_view._caption
+    app.next_page()  # при открытой карте листаются карты квеста
+    assert app.map_view._caption != first
+    highlighted = [m for m in app.map_view._markers if m[3]]
+    assert all(m[2].startswith(f"{app.card.step + 1} ") for m in highlighted)
+    app.toggle_zoom()  # крупный скриншот и карта не открываются одновременно
+    assert not app.map_view.isVisible()
+    app.toggle_map()
+    assert app.map_view.isVisible() and not app.zoom.isVisible()
+    app.switch_quest() if len(app.progress.active) > 1 else app.show_current()
+    assert not app.map_view.isVisible()
+    assert quest.places
+
+
+def test_map_without_places_and_without_location(app):
+    app.on_submitted("Применение получше")
+    app.toggle_map()
+    assert app.map_view.isVisible() and not app.map_view._markers
+    assert "не отмечены" in app.map_view._caption
+    app.toggle_map()
+    app.on_submitted("Дурное предчувствие")
+    app.toggle_map()
+    assert not app.map_view.isVisible()
+    assert "нет карты" in app.card._label.text()
+
+
+def test_zoom_uses_full_size_wiki_image(app, tmp_path):
+    from PyQt6.QtGui import QPixmap
+
+    app.on_submitted("Первый плацдарм")
+    app.toggle_zoom()
+    app.page_index = next(i for i, p in enumerate(app.pages) if p.source == "вики" and p.full)
+    page = app.pages[app.page_index]
+    app.render_page()
+    big = QPixmap(3000, 2000)
+    big.fill()
+    path = tmp_path / "full.png"
+    big.save(str(path))
+    app._full_image_ready(page, path)
+    assert app.zoom._pixmap.width() == 3000

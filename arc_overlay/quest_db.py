@@ -20,6 +20,8 @@ class GameMap:
     name: str
     name_ru: str = ""
     aliases: list[str] = field(default_factory=list)
+    image: str = ""  # картинка карты (путь внутри data)
+    rooms: list[dict] = field(default_factory=list)  # места: {"name", "x", "y"}, координаты 0..1
 
 
 @dataclass
@@ -39,6 +41,7 @@ class Quest:
     official_name: bool = True
     id: str = ""
     next: list[str] = field(default_factory=list)  # id квестов, которые открываются после этого
+    places: list[dict] = field(default_factory=list)  # точки на карте: {"map", "name", "x", "y", "step"}
 
     @property
     def english_name(self) -> str:
@@ -75,7 +78,8 @@ class QuestDB:
     @classmethod
     def from_dict(cls, data: dict) -> "QuestDB":
         maps = [
-            GameMap(id=m["id"], name=m["name"], name_ru=m.get("name_ru", ""), aliases=list(m.get("aliases", [])))
+            GameMap(id=m["id"], name=m["name"], name_ru=m.get("name_ru", ""), aliases=list(m.get("aliases", [])),
+                    image=m.get("image", ""), rooms=list(m.get("rooms", [])))
             for m in data.get("maps", [])
         ]
         quests = [
@@ -95,6 +99,7 @@ class QuestDB:
                 official_name=item.get("official_name", True),
                 id=item.get("id", ""),
                 next=list(item.get("next", [])),
+                places=list(item.get("places", [])),
             )
             for item in data.get("quests", [])
         ]

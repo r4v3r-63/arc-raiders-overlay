@@ -195,8 +195,69 @@ def download_images(quest_id: str, images: list[dict], urls: dict[str, str], tr:
             "file": target.relative_to(DATA_DIR).as_posix(),
             "caption": tr(image["caption"]) if image["caption"] else "",
             "source": "https://arcraiders.wiki/wiki/File:" + urllib.parse.quote(image["file"].replace(" ", "_")),
+            "original": url,  # полный размер — программа скачивает его для просмотра на весь экран
         })
     return result
+
+
+# Карты и места на них (координаты 0..1 от ширины и высоты картинки): фанатский проект
+# Speranza Field Guide, данные из arcraiders.wiki (CC BY-SA 4.0).
+HUB_RAW = "https://raw.githubusercontent.com/tyler45455/Arc-Raiders-hub/main/"
+HUB_MAP_IDS = {"dam-battlegrounds": "dam_battlegrounds", "spaceport": "the_spaceport", "buried-city": "buried_city",
+               "the-blue-gate": "the_blue_gate", "stella-montis": "stella_montis", "riven-tides": "riven_tides",
+               "pendola-pass": "pendola_pass"}
+MAP_IMAGE_WIDTH = 1600
+
+
+def fetch_maps() -> dict[str, dict]:
+    """{id карты: {"image": путь, "rooms": [{"name", "x", "y"}]}}; картинки сохраняются в data/maps."""
+    from PIL import Image
+
+    req = urllib.request.Request(HUB_RAW + "api/v1/maps.json", headers={"User-Agent": wiki.USER_AGENT})
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        hub = json.load(resp)["maps"]
+    folder = DATA_DIR / "maps"
+    folder.mkdir(exist_ok=True)
+    result = {}
+    for item in hub:
+        map_id = HUB_MAP_IDS.get(item["id"])
+        if not map_id or not item.get("rooms"):
+            continue
+        target = folder / f"{map_id}.jpg"
+        if not target.exists():
+            # Координаты мест заданы относительно этой («detail») картинки.
+            url = item.get("image") or f"{HUB_RAW}maps/{item['id']}-detail.jpg"
+            url = url.replace("https://tyler45455.github.io/Arc-Raiders-hub/", HUB_RAW)
+            req = urllib.request.Request(url, headers={"User-Agent": wiki.USER_AGENT})
+            with urllib.request.urlopen(req, timeout=60) as resp:
+                picture = Image.open(io.BytesIO(resp.read())).convert("RGB")
+            if picture.width > MAP_IMAGE_WIDTH:
+                picture = picture.resize((MAP_IMAGE_WIDTH, round(picture.height * MAP_IMAGE_WIDTH / picture.width)),
+                                         Image.LANCZOS)
+            picture.save(target, "JPEG", quality=85, optimize=True)
+        result[map_id] = {
+            "image": target.relative_to(DATA_DIR).as_posix(),
+            "rooms": [{"name": r["name"], "x": r["x"], "y": r["y"]} for r in item["rooms"]],
+        }
+    return result
+
+
+def quest_places(objectives_en: list[str], map_ids: list[str], maps: dict[str, dict]) -> list[dict]:
+    """Места на карте, которые упоминаются в целях квеста (по названию места)."""
+    places, seen = [], set()
+    for step, objective in enumerate(objectives_en):
+        text = f" {norm_place(objective)} "
+        for map_id in map_ids or list(maps):
+            for room in maps.get(map_id, {}).get("rooms", []):
+                key = (map_id, room["name"])
+                if key not in seen and f" {norm_place(room['name'])} " in text:
+                    seen.add(key)
+                    places.append({"map": map_id, "name": room["name"], "x": room["x"], "y": room["y"], "step": step})
+    return places
+
+
+def norm_place(text: str) -> str:
+    return " ".join(re.sub(r"[^\w\s]", " ", text.lower().replace("’", "'")).split())
 
 
 MISSING_TRANSLATIONS: list[str] = []
@@ -253,6 +314,7 @@ def build(data_dir: Path) -> dict:
             "one_round": bool(q.get("objectivesOneRound")),
             "required_items": [f"{r['quantity']}× {hints.item_ru(r['itemId'])}" for r in q.get("requiredItemIds", [])],
             "steps": [text(obj) for obj in q.get("objectives", []) if text(obj)],
+            "_objectives_en": [text(obj, "en") for obj in q.get("objectives", []) if text(obj)],
             "hints": hints.for_objectives([text(o, "en") for o in q.get("objectives", [])], required),
             "wiki_url": "https://arcraiders.wiki/wiki/" + title.replace(" ", "_"),
             "_wiki_key": norm(title),
@@ -280,6 +342,7 @@ def build(data_dir: Path) -> dict:
             "one_round": "in-one-round" in (wiki.section(source, "Objectives") or ""),
             "required_items": [label for _, label in required],
             "steps": [tr(o) for o in objectives],
+            "_objectives_en": objectives,
             "hints": hints.for_objectives(objectives, [i for i, _ in required if i]),
             "wiki_url": "https://arcraiders.wiki/wiki/" + title.replace(" ", "_"),
             "_wiki_key": key,
@@ -293,6 +356,17 @@ def build(data_dir: Path) -> dict:
         names = [n for n in re.split(r"[;,]", wiki.parse_infobox(source).get("next", "")) if n.strip()]
         ids = [i for i in quest.pop("_next") if i in known_ids] + [id_by_name[norm(n)] for n in names if norm(n) in id_by_name]
         quest["next"] = list(dict.fromkeys(i for i in ids if i != quest["id"]))
+
+    print("Загружаю карты и места на них…")
+    try:
+        maps = fetch_maps()
+    except OSError as error:
+        print(f"  не удалось: {error}; карты из прошлой базы")
+        old = json.loads(OUT_PATH.read_text(encoding="utf-8")) if OUT_PATH.exists() else {}
+        maps = {m["id"]: {"image": m["image"], "rooms": m["rooms"]} for m in old.get("maps", []) if m.get("rooms")}
+    for quest in quests:
+        quest["places"] = quest_places(quest.pop("_objectives_en"), quest["locations"], maps)
+    print(f"  карт: {len(maps)}, квестов с точками: {sum(1 for q in quests if q['places'])}")
 
     print("Загружаю оглавление русского руководства в Steam…")
     try:
@@ -323,8 +397,10 @@ def build(data_dir: Path) -> dict:
     MISSING_TRANSLATIONS[:] = tr.missing
     return {
         "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
+                  "Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). "
                   "Игровые материалы © Embark Studios AB.",
-        "maps": [{"id": m, "name": en, "name_ru": ru, "aliases": aliases} for m, (en, ru, aliases) in MAPS.items()],
+        "maps": [{"id": m, "name": en, "name_ru": ru, "aliases": aliases, **maps.get(m, {})}
+                 for m, (en, ru, aliases) in MAPS.items()],
         "quests": quests,
     }
 

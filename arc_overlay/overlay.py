@@ -279,7 +279,10 @@ class OverlayCard(QWidget):
             parts.append(f"<p style='color:{MUTED};'>Для этого квеста в базе нет шагов.</p>")
         if q.required_items:
             parts.append(f"<div style='color:{MUTED};'>Нужно: {esc(', '.join(q.required_items))}</div>")
-        self._set_content("".join(parts), footer=f"{shortcuts.key('guide')} — гайд со скриншотами")
+        footer = f"{shortcuts.key('guide')} — гайд со скриншотами"
+        if q.places:
+            footer += f"\n{shortcuts.key('map')} — карта с точками"
+        self._set_content("".join(parts), footer=footer)
 
     def _render_guide(self, page: GuidePage | None, index: int, total: int, status: str):
         parts = [self._header(self._quest)]

@@ -20,6 +20,7 @@ class GuidePage:
     title: str = ""
     text: str = ""
     image: str = ""  # путь к файлу или ссылка (для Steam)
+    full: str = ""  # ссылка на картинку в полном размере, если в image уменьшенная копия
 
 
 def steam_section_id(url: str | None) -> str | None:
@@ -109,5 +110,6 @@ def wiki_pages(quest: Quest) -> list[GuidePage]:
         local = DATA_DIR / image["file"]
         # Скриншоты из свежей базы, которых ещё нет в папке программы, докачиваются с GitHub.
         source = str(local) if local.exists() else REMOTE_DATA_URL + image["file"]
-        pages.append(GuidePage("вики", "", "\n".join(filter(None, [text if n == 0 else "", caption])), source))
+        pages.append(GuidePage("вики", "", "\n".join(filter(None, [text if n == 0 else "", caption])), source,
+                               image.get("original", "")))
     return pages

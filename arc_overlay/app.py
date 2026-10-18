@@ -20,7 +20,7 @@ from .input_window import InputWindow
 from .net import CachedDownloader
 from .onboarding import OnboardingWindow
 from .overlay import OverlayCard
-from .quest_db import REMOTE_DATA_URL, Quest, QuestDB
+from .quest_db import DATA_DIR, REMOTE_DATA_URL, Quest, QuestDB
 
 RELEASE_API_URL = "https://api.github.com/repos/r4v3r-63/arc-raiders-overlay/releases/latest"
 DOWNLOAD_URL = "https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip"
@@ -57,6 +57,10 @@ class OverlayApp:
         self.card = OverlayCard(self.db)
         self.zoom = ZoomWindow()
         self._zoom_on = False  # игрок открыл скриншот на весь экран
+        self.map_view = ZoomWindow()
+        self._map_on = False  # игрок открыл карту с точками квеста
+        self._map_index = 0  # какая из карт квеста показана
+        self._full_images: dict[str, QPixmap] = {}  # скриншоты вики в полном размере
         self.downloader = CachedDownloader()
         self.progress = Progress.load(paths.user_data_dir() / "прогресс.json")
         self.downloader.cleanup()
@@ -131,6 +135,7 @@ class OverlayApp:
         self._quest_actions = []
         for title, handler in [
             ("Гайд со скриншотами", self.toggle_guide),
+            ("Карта с точками", self.toggle_map),
             ("Открыть гайд в Steam", lambda: self._open(self.card.quest and self.card.quest.steam_url)),
             ("Найти видео на YouTube", lambda: self._open(self.card.quest and self.card.quest.video_url)),
             ("Открыть страницу на вики", lambda: self._open(self.card.quest and self.card.quest.wiki_url)),
@@ -218,6 +223,10 @@ class OverlayApp:
             self.zoom.hide()
         elif visible and self._zoom_on and not self.zoom.isVisible():
             self._update_zoom()
+        if not visible and self.map_view.isVisible():
+            self.map_view.hide()
+        elif visible and self._map_on and not self.map_view.isVisible():
+            self._update_map()
 
     def toggle_card(self):
         if self.card.editing:
@@ -294,6 +303,7 @@ class OverlayApp:
         self._close_zoom()
         self.card.next_step()
         self._save_step()
+        self._update_map()  # на открытой карте выделится точка нового шага
         self.set_card_visible(True)
 
     def prev_step(self):
@@ -301,6 +311,7 @@ class OverlayApp:
         self._close_zoom()
         self.card.prev_step()
         self._save_step()
+        self._update_map()  # на открытой карте выделится точка нового шага
         self.set_card_visible(True)
 
     def _save_step(self):
@@ -318,6 +329,7 @@ class OverlayApp:
             "switch_quest": self.switch_quest, "complete": self.complete_quest,
             "import": self.import_from_screen, "shopping": self.show_shopping, "guide": self.toggle_guide,
             "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
+            "map": self.toggle_map,
             "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
             "edit": self.toggle_editing, "help": self.show_help,
         }
@@ -360,6 +372,8 @@ class OverlayApp:
         quest = self.progress.resolve(self.db, entry)
         self.guide_mode = False
         self._close_zoom()
+        self._close_map()
+        self._map_index = 0
         self.page_index = 0
         if quest is None:
             self.card.show_welcome(notice)
@@ -452,6 +466,7 @@ class OverlayApp:
             self.card.show_quest(quest, entry.step, (self.progress.current, len(self.progress.active)), text)
         self.guide_mode = False
         self._close_zoom()
+        self._close_map()
         self.set_card_visible(True)
 
     def _fill_active_menu(self):
@@ -490,6 +505,12 @@ class OverlayApp:
 
     def _turn_page(self, delta: int):
         if self.card.quest is None:
+            return
+        if self._map_on:  # при открытой карте те же клавиши переключают карты квеста
+            maps = self.quest_maps()
+            if maps:
+                self._map_index = max(0, min(len(maps) - 1, self._map_index + delta))
+                self._update_map()
             return
         if self.guide_mode and self.pages:
             self.page_index = max(0, min(len(self.pages) - 1, self.page_index + delta))
@@ -540,6 +561,7 @@ class OverlayApp:
             return
         if self.card.quest is None:
             return
+        self._close_map()
         self._zoom_on = True
         if not self.guide_mode:
             self.guide_mode = True
@@ -560,14 +582,106 @@ class OverlayApp:
             return
         if pixmap is None:
             return  # скриншот ещё загружается — покажем, когда придёт
+        if page.full:
+            # В базе уменьшенная копия: пока качается оригинал с вики, показываем её.
+            if page.full in self._full_images:
+                pixmap = self._full_images[page.full]
+            else:
+                self.downloader.get(page.full, lambda path, p=page: self._full_image_ready(p, path))
         caption = " — ".join(filter(None, [page.title, page.text]))
         hint = (f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать · "
                 f"{shortcuts.key('zoom')} — закрыть · {self.page_index + 1} из {len(self.pages)}")
         self.zoom.show_image(pixmap, caption, hint)
 
+    def _full_image_ready(self, page: guide.GuidePage, path):
+        if not path:
+            return  # оригинал не скачался — остаётся уменьшенная копия
+        pixmap = QPixmap(str(path))
+        if pixmap.isNull():
+            return
+        if len(self._full_images) > 6:  # не держим в памяти много больших картинок
+            self._full_images.clear()
+        self._full_images[page.full] = pixmap
+        if self._zoom_on and self.guide_mode and self.pages and self.pages[self.page_index] is page:
+            self._update_zoom()
+
     def _close_zoom(self):
         self._zoom_on = False
         self.zoom.hide()
+
+    # --- карта с точками квеста -------------------------------------------
+
+    def quest_maps(self) -> list[str]:
+        """id карт текущего квеста, для которых есть картинка: сначала карты с точками."""
+        quest = self.card.quest
+        if quest is None:
+            return []
+        ids = []
+        for map_id in [p["map"] for p in quest.places] + list(quest.locations):
+            game_map = self.db.maps.get(map_id)
+            if game_map is not None and game_map.image and map_id not in ids:
+                ids.append(map_id)
+        return ids
+
+    def toggle_map(self):
+        if self._map_on:
+            self._close_map()
+            return
+        if self.card.quest is None:
+            return
+        if not self.quest_maps():
+            self._show_notice("Для этого квеста нет карты: он выполняется на любой локации.")
+            return
+        self._close_zoom()
+        self._map_on = True
+        self._update_map()
+        self.set_card_visible(True)
+
+    def _update_map(self):
+        """Показывает карту текущего квеста с точками; точка текущего шага выделена."""
+        if not self._map_on:
+            return
+        maps = self.quest_maps()
+        if not maps:
+            self._close_map()
+            return
+        self._map_index = min(self._map_index, len(maps) - 1)
+        game_map = self.db.maps[maps[self._map_index]]
+        local = DATA_DIR / game_map.image
+        if local.exists():
+            pixmap = QPixmap(str(local))
+        else:
+            # Карта из свежей базы, которой ещё нет в папке программы, докачивается с GitHub.
+            url = REMOTE_DATA_URL + game_map.image
+            pixmap = self._full_images.get(url)
+            if pixmap is None:
+                self.downloader.get(url, lambda path, u=url: self._map_image_ready(u, path))
+                return
+        quest = self.card.quest
+        places = [p for p in quest.places if p["map"] == game_map.id]
+        markers = [(p["x"], p["y"], f"{p['step'] + 1} {p['name']}", p["step"] == self.card.step) for p in places]
+        name = game_map.name_ru or game_map.name
+        caption = f"{quest.name} — {name}"
+        if not places:
+            caption += ". Точные места на карте не отмечены"
+        hint = f"Цифра — номер шага квеста · {shortcuts.key('map')} — закрыть"
+        if len(maps) > 1:
+            hint += (f" · {shortcuts.key('page_up')} / {shortcuts.key('page_down')} — другая карта "
+                     f"({self._map_index + 1} из {len(maps)})")
+        self.map_view.show_image(pixmap, caption, hint, markers)
+
+    def _map_image_ready(self, url: str, path):
+        pixmap = QPixmap(str(path)) if path else QPixmap()
+        if pixmap.isNull():
+            self._close_map()
+            self._show_notice("Карта не загрузилась — проверьте интернет.")
+            return
+        self._full_images[url] = pixmap
+        self._update_map()
+
+    def _close_map(self):
+        self._map_on = False
+        self.map_view.hide()
 
     def sync(self):
         self.sync_db()
