@@ -72,3 +72,23 @@ def test_bundled_guide_images_exist():
     for q in db.quests:
         for image in (q.guide or {}).get("images", []):
             assert (DATA_DIR / image["file"]).exists(), image["file"]
+
+
+def test_suggest_ranks_prefix_first_and_ignores_yo():
+    db = QuestDB([
+        Quest(name="Небо в огне", steps=[]),
+        Quest(name="Чистое небо", aliases=["Clearer Skies"], steps=[]),
+        Quest(name="Ещё один тупик", steps=[]),
+        Quest(name="Тупик", steps=[]),
+    ])
+    assert db.suggest("небо") == ["Небо в огне", "Чистое небо"]
+    assert db.suggest("clear") == ["Чистое небо"]
+    assert db.suggest("еще") == ["Ещё один тупик"]
+    assert db.suggest("тупик") == ["Тупик", "Ещё один тупик"]
+    assert db.suggest("") == []
+
+
+def test_suggest_maps():
+    db = QuestDB.load()
+    assert db.suggest_maps("косм") == ["Космопорт"]
+    assert "Поле битвы у дамбы" in db.suggest_maps("дамб")

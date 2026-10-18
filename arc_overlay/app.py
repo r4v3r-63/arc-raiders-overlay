@@ -59,6 +59,7 @@ class OverlayApp:
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
         self.input.help_requested.connect(self.show_help)
+        self.input.set_suggesters(lambda text: self.db.suggest(text), lambda text: self.db.suggest_maps(text))
 
         self.hotkeys = winapi.HotkeyManager()
         app.installNativeEventFilter(self.hotkeys)

@@ -113,6 +113,14 @@ class QuestDB:
         for name in [quest.name, *quest.aliases]:
             self._by_name.setdefault(normalize(name), quest)
 
+    def suggest(self, query: str, limit: int = 10) -> list[str]:
+        """Названия квестов для автодополнения: сначала начинающиеся с введённого, потом содержащие."""
+        return _suggest(query, [(q.name, [q.name, *q.aliases]) for q in self.quests], limit)
+
+    def suggest_maps(self, query: str, limit: int = 10) -> list[str]:
+        return _suggest(query, [(m.name_ru or m.name, [m.name, m.name_ru, *m.aliases]) for m in self.maps.values()],
+                        limit)
+
     def find_map_exact(self, name: str) -> GameMap | None:
         return self._map_by_name.get(normalize(name))
 
@@ -143,3 +151,27 @@ def _lookup(query: str, index: dict):
     if close:
         return index[close[0]]
     return None
+
+
+def _suggest(query: str, entries: list[tuple[str, list[str]]], limit: int) -> list[str]:
+    """entries: (что показать, [названия, по которым искать])."""
+    query = normalize(query)
+    if not query:
+        return []
+    ranked = []
+    for display, names in entries:
+        keys = [normalize(n) for n in names if n]
+        if any(k.startswith(query) for k in keys):
+            rank = 0
+        elif any(f" {query}" in f" {k}" for k in keys):
+            rank = 1  # с начала одного из слов
+        elif any(query in k for k in keys):
+            rank = 2
+        else:
+            continue
+        ranked.append((rank, display.lower(), display))
+    result = []
+    for _, _, display in sorted(ranked):
+        if display not in result:
+            result.append(display)
+    return result[:limit]

@@ -11,7 +11,7 @@ import html
 
 from PyQt6.QtCore import QPoint, QRectF, QSettings, Qt
 from PyQt6.QtGui import QColor, QGuiApplication, QPainter, QPainterPath, QPen, QPixmap
-from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QSlider, QVBoxLayout, QWidget
 
 from . import paths, shortcuts, winapi
 from .guide import GuidePage
@@ -21,13 +21,14 @@ CARD_WIDTH = 380
 GUIDE_MAX_WIDTH = 640
 SCREEN_MARGIN = 24
 MIN_SCALE, MAX_SCALE, SCALE_STEP = 0.6, 2.0, 0.1
-BACKGROUND = QColor(15, 18, 24, 190)  # последний параметр — непрозрачность (0–255)
+MIN_OPACITY, MAX_OPACITY, DEFAULT_OPACITY, OPACITY_STEP = 20, 100, 75, 5  # непрозрачность фона, %
+BACKGROUND_RGB = (15, 18, 24)
 ACCENT = "#f2c94c"
 TEXT = "#f0f0f0"
 MUTED = "#a8adb5"
 WARNING = "#ff8a65"
 GUIDE_NAV_HINT = "Ctrl+Shift+↑ / ↓ — листать · Ctrl+Shift+G — назад к шагу"
-EDIT_HINT = "Перетащи карточку мышкой, колёсико — масштаб. Esc или «Готово» — выйти."
+EDIT_HINT = "Перетащи карточку мышкой. Колёсико — масштаб, Ctrl + колёсико — прозрачность. Esc или «Готово» — выйти."
 
 
 def _lines(text: str) -> str:
@@ -65,7 +66,19 @@ class OverlayCard(QWidget):
             if key == "done":
                 bar.addStretch()
             bar.addWidget(button)
+        self._opacity_row = QWidget()
+        row = QHBoxLayout(self._opacity_row)
+        row.setContentsMargins(0, 0, 0, 0)
+        self._opacity_label = QLabel()
+        self._opacity_slider = QSlider(Qt.Orientation.Horizontal)
+        self._opacity_slider.setRange(MIN_OPACITY, MAX_OPACITY)
+        self._opacity_slider.setSingleStep(OPACITY_STEP)
+        self._opacity_slider.setPageStep(OPACITY_STEP * 2)
+        self._opacity_slider.valueChanged.connect(self.set_opacity)
+        row.addWidget(self._opacity_label)
+        row.addWidget(self._opacity_slider, 1)
         self._toolbar.hide()
+        self._opacity_row.hide()
 
         self._label = QLabel()
         self._label.setWordWrap(True)
@@ -78,12 +91,16 @@ class OverlayCard(QWidget):
         self._footer.setWordWrap(True)
         layout = QVBoxLayout(self)
         layout.addWidget(self._toolbar)
+        layout.addWidget(self._opacity_row)
         layout.addWidget(self._label)
         layout.addWidget(self._image)
         layout.addWidget(self._footer)
 
         self._settings = settings or paths.settings()
         self._scale = self._clamp_scale(float(self._settings.value("scale", 1.0)))
+        self._opacity = self._clamp_opacity(int(self._settings.value("opacity", DEFAULT_OPACITY)))
+        self._opacity_slider.setValue(self._opacity)
+        self._update_opacity_label()
         anchor = self._settings.value("anchor")
         self._anchor: QPoint | None = anchor if isinstance(anchor, QPoint) else None
 
@@ -114,6 +131,10 @@ class OverlayCard(QWidget):
     @property
     def scale(self) -> float:
         return self._scale
+
+    @property
+    def opacity(self) -> int:
+        return self._opacity
 
     @property
     def editing(self) -> bool:
@@ -270,11 +291,29 @@ class OverlayCard(QWidget):
             self._apply_scale()
             self._render()
 
+    @staticmethod
+    def _clamp_opacity(value: int) -> int:
+        return min(MAX_OPACITY, max(MIN_OPACITY, value))
+
+    def set_opacity(self, value: int):
+        value = self._clamp_opacity(value)
+        if value != self._opacity:
+            self._opacity = value
+            self._settings.setValue("opacity", value)
+        if self._opacity_slider.value() != value:
+            self._opacity_slider.setValue(value)
+        self._update_opacity_label()
+        self.update()
+
+    def _update_opacity_label(self):
+        self._opacity_label.setText(f"Фон: {self._opacity}%")
+
     def reset_geometry(self):
         self._scale = 1.0
         self._anchor = None
-        self._settings.remove("scale")
-        self._settings.remove("anchor")
+        self.set_opacity(DEFAULT_OPACITY)
+        for key in ("scale", "anchor", "opacity"):
+            self._settings.remove(key)
         self._apply_scale()
         self._render()
 
@@ -284,6 +323,7 @@ class OverlayCard(QWidget):
         self._label.setStyleSheet(f"color: {TEXT}; font-size: {self._px(14)}px;")
         self._image.setStyleSheet(f"color: {MUTED}; font-size: {self._px(13)}px;")
         self._footer.setStyleSheet(f"color: {MUTED}; font-size: {self._px(12)}px;")
+        self._opacity_label.setStyleSheet(f"color: {MUTED}; font-size: {self._px(12)}px;")
         self._toolbar.setStyleSheet(
             f"QPushButton {{ background: #2a303b; color: {TEXT}; border: 1px solid #3a4250; border-radius: 4px;"
             f" padding: {self._px(3)}px {self._px(9)}px; font-size: {self._px(13)}px; }}"
@@ -332,6 +372,7 @@ class OverlayCard(QWidget):
         self.setWindowFlag(Qt.WindowType.WindowTransparentForInput, not editing)
         self.setWindowFlag(Qt.WindowType.WindowDoesNotAcceptFocus, not editing)
         self._toolbar.setVisible(editing)
+        self._opacity_row.setVisible(editing)
         self.setCursor(Qt.CursorShape.SizeAllCursor if editing else Qt.CursorShape.ArrowCursor)
         self._render()
         if editing:
@@ -366,8 +407,13 @@ class OverlayCard(QWidget):
             self._settings.setValue("anchor", self._anchor)
 
     def wheelEvent(self, event):
-        if self._editing:
-            self.change_scale(SCALE_STEP if event.angleDelta().y() > 0 else -SCALE_STEP)
+        if not self._editing:
+            return
+        up = event.angleDelta().y() > 0
+        if event.modifiers() & Qt.KeyboardModifier.ControlModifier:
+            self.set_opacity(self._opacity + (OPACITY_STEP if up else -OPACITY_STEP))
+        else:
+            self.change_scale(SCALE_STEP if up else -SCALE_STEP)
 
     def keyPressEvent(self, event):
         if self._editing and event.key() == Qt.Key.Key_Escape:
@@ -380,7 +426,7 @@ class OverlayCard(QWidget):
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         path = QPainterPath()
         path.addRoundedRect(QRectF(self.rect()).adjusted(1, 1, -1, -1), 12, 12)
-        painter.fillPath(path, BACKGROUND)
+        painter.fillPath(path, QColor(*BACKGROUND_RGB, round(self._opacity * 2.55)))
         if self._editing:
             pen = QPen(QColor(ACCENT), 2, Qt.PenStyle.DashLine)
             painter.setPen(pen)

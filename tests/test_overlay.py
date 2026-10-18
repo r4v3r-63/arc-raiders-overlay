@@ -89,3 +89,16 @@ def test_newer_remote_db_replaces_bundled(qapp, tmp_path):
     broken.write_text("<html>не база</html>", encoding="utf-8")
     app._remote_db_loaded(broken)
     assert app.db.find_exact("Совсем новый квест") is not None
+
+
+def test_opacity_is_clamped_saved_and_reset(qapp, tmp_path):
+    card, settings = make_card(tmp_path)
+    assert card.opacity == 75
+    card.set_opacity(40)
+    assert int(settings.value("opacity")) == 40
+    card.set_opacity(5)
+    assert card.opacity == 20
+    again, _ = make_card(tmp_path)
+    assert again.opacity == 20
+    again.reset_geometry()
+    assert again.opacity == 75 and settings.value("opacity") is None

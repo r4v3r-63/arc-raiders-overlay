@@ -2,9 +2,10 @@
 
 from __future__ import annotations
 
-from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtCore import QStringListModel, Qt, pyqtSignal
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
-from PyQt6.QtWidgets import QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import (QCompleter, QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout,
+                             QWidget)
 
 from . import winapi
 
@@ -33,6 +34,9 @@ class InputWindow(QWidget):
         self.quest_edit.setPlaceholderText("например, Чистое небо")
         self.location_edit = QLineEdit()
         self.location_edit.setPlaceholderText("необязательно, например, Космопорт")
+        self._quest_suggest = self._map_suggest = lambda text: []
+        self._attach_completer(self.quest_edit, lambda text: self._quest_suggest(text))
+        self._attach_completer(self.location_edit, lambda text: self._map_suggest(text))
         self.error_label = QLabel()
         self.error_label.setStyleSheet("color: #ff8a65;")
         self.error_label.setWordWrap(True)
@@ -62,6 +66,33 @@ class InputWindow(QWidget):
         layout.addLayout(bottom)
 
         self._previous_window = None
+
+    def set_suggesters(self, quests, maps):
+        """quests(text) и maps(text) возвращают варианты для выпадающего списка."""
+        self._quest_suggest, self._map_suggest = quests, maps
+
+    def _attach_completer(self, edit: QLineEdit, suggest):
+        model = QStringListModel(self)
+        completer = QCompleter(model, self)
+        # Список подбираем сами (без учёта «ё», регистра и кавычек), QCompleter только показывает его.
+        completer.setCompletionMode(QCompleter.CompletionMode.UnfilteredPopupCompletion)
+        completer.setMaxVisibleItems(10)
+        completer.popup().setStyleSheet(
+            "QListView { background: #2a303b; color: #f0f0f0; border: 1px solid #3a4250; font-size: 14px; }"
+            "QListView::item { padding: 4px 6px; }"
+            "QListView::item:selected { background: #f2c94c; color: #15181e; }"
+        )
+        edit.setCompleter(completer)
+
+        def update(text: str):
+            options = suggest(text)
+            model.setStringList(options)
+            if options and not (len(options) == 1 and options[0] == text):
+                completer.complete()
+            else:
+                completer.popup().hide()
+
+        edit.textEdited.connect(update)
 
     def open(self):
         """Показывает окно и забирает фокус, запомнив, какое окно (игра) было активно."""
