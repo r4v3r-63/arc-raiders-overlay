@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T18:58:42Z",
+  "generated_at": "2026-10-18T19:03:56Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -7229,8 +7229,7 @@
       "name": "Прекрасный вид",
       "official_name": true,
       "aliases": [
-        "With a View",
-        "С видом"
+        "With a View"
       ],
       "trader": "Шани",
       "locations": [
@@ -7267,8 +7266,7 @@
       "name": "Соль всё делает лучше",
       "official_name": true,
       "aliases": [
-        "Worth Your Salt",
-        "Мастер своего дела"
+        "Worth Your Salt"
       ],
       "trader": "Селеста",
       "locations": [
