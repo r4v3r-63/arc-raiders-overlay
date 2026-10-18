@@ -7,12 +7,14 @@
 from __future__ import annotations
 
 import hashlib
+import os
 import time
 from pathlib import Path
 
 from PyQt6.QtCore import QStandardPaths, QTimer, QUrl
 from PyQt6.QtNetwork import QNetworkAccessManager, QNetworkReply, QNetworkRequest
 
+UNUSED_DAYS = 30  # файлы, которые столько дней не открывались, удаляются при запуске
 USER_AGENT = b"Mozilla/5.0 (Windows NT 10.0; Win64; x64) arc-raiders-overlay"
 
 
@@ -24,9 +26,9 @@ def cache_dir() -> Path:
 
 
 class CachedDownloader:
-    def __init__(self):
+    def __init__(self, directory: Path | None = None):
         self._manager = QNetworkAccessManager()
-        self._dir = cache_dir()
+        self._dir = directory or cache_dir()
         self._waiting: dict[str, list] = {}
 
     def path_for(self, url: str) -> Path:
@@ -36,6 +38,7 @@ class CachedDownloader:
         """Вызывает callback(путь к файлу или None). max_age — сколько секунд кэш считается свежим."""
         path = self.path_for(url)
         if path.exists() and (max_age is None or time.time() - path.stat().st_mtime < max_age):
+            self._touch(path)
             QTimer.singleShot(0, lambda: callback(path))
             return
         if url in self._waiting:
@@ -57,5 +60,41 @@ class CachedDownloader:
         reply.deleteLater()
         # Нет сети — отдаём устаревшую копию, если она есть.
         result = path if path.exists() else None
+        if result:
+            self._touch(result)
         for callback in self._waiting.pop(url, []):
             callback(result)
+
+    @staticmethod
+    def _touch(path: Path):
+        """Отмечает, что файл открывали (время доступа), не трогая время загрузки (mtime)."""
+        try:
+            os.utime(path, (time.time(), path.stat().st_mtime))
+        except OSError:
+            pass
+
+    def size(self) -> int:
+        return sum(f.stat().st_size for f in self._dir.iterdir() if f.is_file())
+
+    def clear(self) -> int:
+        """Удаляет весь кэш, возвращает освобождённые байты."""
+        return self._remove(lambda f: True)
+
+    def cleanup(self, unused_days: float = UNUSED_DAYS) -> int:
+        """Удаляет файлы, которые не открывались дольше unused_days дней."""
+        limit = time.time() - unused_days * 24 * 60 * 60
+        return self._remove(lambda f: f.stat().st_atime < limit)
+
+    def _remove(self, should_remove) -> int:
+        freed = 0
+        for f in list(self._dir.iterdir()):
+            if not f.is_file():
+                continue
+            try:
+                if should_remove(f):
+                    size = f.stat().st_size
+                    f.unlink()
+                    freed += size
+            except OSError:
+                pass  # файл занят — удалим в следующий раз
+        return freed

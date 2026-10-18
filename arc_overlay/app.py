@@ -46,6 +46,7 @@ class OverlayApp:
         self.db = QuestDB.load()
         self.card = OverlayCard(self.db, HOTKEY_INPUT, GUIDE_HINT)
         self.downloader = CachedDownloader()
+        self.downloader.cleanup()
         self.guide_mode = False
         self.pages: list[guide.GuidePage] = []
         self.page_index = 0
@@ -118,6 +119,9 @@ class OverlayApp:
             action.triggered.connect(handler)
             action.setEnabled(False)
             self._quest_actions.append(action)
+        self._clear_cache_action = QAction("Очистить кэш", menu)
+        self._clear_cache_action.triggered.connect(self.clear_cache)
+        menu.aboutToShow.connect(self._update_cache_label)
         quit_action = QAction("Выход", menu)
         quit_action.triggered.connect(self.app.quit)
         menu.addAction(enter)
@@ -128,12 +132,22 @@ class OverlayApp:
         for action in self._quest_actions:
             menu.addAction(action)
         menu.addSeparator()
+        menu.addAction(self._clear_cache_action)
         menu.addAction(quit_action)
         tray.setContextMenu(menu)
         tray.activated.connect(self._on_tray_activated)
         tray.show()
         self._tray_menu = menu  # держим ссылку, иначе меню удалит сборщик мусора
         return tray
+
+    def _update_cache_label(self):
+        megabytes = self.downloader.size() / 1024 / 1024
+        self._clear_cache_action.setText(f"Очистить кэш ({megabytes:.0f} МБ)")
+
+    def clear_cache(self):
+        freed = self.downloader.clear() / 1024 / 1024
+        self.tray.showMessage("ARC Raiders — подсказчик",
+                              f"Кэш очищен: {freed:.0f} МБ. Нужное скачается заново при открытии гайда.")
 
     def _on_tray_activated(self, reason):
         if reason == QSystemTrayIcon.ActivationReason.Trigger:  # обычный клик по значку
