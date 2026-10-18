@@ -14,6 +14,7 @@ from PyQt6.QtGui import (QAction, QActionGroup, QColor, QCursor, QDesktopService
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
 from . import autostart, guide, items, paths, shortcuts, winapi
+from .blueprints_window import BlueprintsWindow
 from .hotkeys_window import HotkeysWindow
 from .zoom import ZoomWindow
 from .progress import Progress, shopping_list
@@ -205,6 +206,9 @@ class OverlayApp:
         menu.addAction(shopping_action)
         self._workshops_menu = menu.addMenu("Мастерские")
         self._workshops_menu.aboutToShow.connect(self._fill_workshops_menu)
+        blueprints_action = QAction("Чертежи…", menu)
+        blueprints_action.triggered.connect(self.open_blueprints_window)
+        menu.addAction(blueprints_action)
         import_action = QAction("Найти квесты на экране", menu)
         import_action.triggered.connect(self.import_from_screen)
         menu.addAction(import_action)
@@ -376,7 +380,8 @@ class OverlayApp:
             "input": self.open_quest_input, "next_step": self.next_step, "prev_step": self.prev_step,
             "switch_quest": self.switch_quest, "complete": self.complete_quest,
             "import": self.import_from_screen, "shopping": self.show_shopping,
-            "item": self.check_item, "find_item": self.open_item_search, "guide": self.toggle_guide,
+            "item": self.check_item, "find_item": self.open_item_search,
+            "blueprint": self.toggle_blueprint, "guide": self.toggle_guide,
             "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
             "map": self.toggle_map,
             "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
@@ -600,12 +605,39 @@ class OverlayApp:
 
     def _show_item(self, item, close_after_ms: int):
         report = items.item_report(self.db, item, self._active_quests(), self.progress.completed,
-                                   self.progress.workshops)
+                                   self.progress.workshops, set(self.progress.blueprints))
         self._close_map()
         self._close_zoom()
         self.card.show_item(report)
         self.set_card_visible(True)
         self._item_timer.start(close_after_ms)
+
+    def toggle_blueprint(self):
+        """Чертёж из карточки предмета (сам чертёж или чертёж для крафта) — изучен / не изучен."""
+        report = self.card.item
+        if report is None:
+            self._show_notice(f"Сначала проверьте чертёж ({shortcuts.key('item')}) или найдите его "
+                              f"({shortcuts.key('find_item')}), затем нажмите {shortcuts.key('blueprint')}.")
+            return
+        blueprint = report.item.id if report.item.unlocks else report.item.blueprint
+        if not blueprint:
+            return
+        if blueprint in self.progress.blueprints:
+            self.progress.blueprints.remove(blueprint)
+        else:
+            self.progress.blueprints.append(blueprint)
+        self.progress.save()
+        self._show_item(report.item, self._item_timer.remainingTime() if self._item_timer.isActive() else ITEM_PANEL_MS)
+
+    def open_blueprints_window(self):
+        if getattr(self, "_blueprints_window", None) is None:
+            self._blueprints_window = BlueprintsWindow()
+            self._blueprints_window.changed.connect(self._blueprints_changed)
+        self._blueprints_window.open(self.db, set(self.progress.blueprints))
+
+    def _blueprints_changed(self, learned: set):
+        self.progress.blueprints = sorted(learned)
+        self.progress.save()
 
     def _close_item_panel(self):
         if self._map_on and self._map_item is not None:

@@ -33,6 +33,10 @@ class Item:
     recycles: dict[str, int] = field(default_factory=dict)  # id предмета → сколько получится при разборке
     found: list[str] = field(default_factory=list)  # типы мест с лутом, где лежит: Mechanical, Medical…
     drops: list[dict] = field(default_factory=list)  # машины ARC, из которых выпадает: {"name", "maps"}
+    craft: dict | None = None  # {"benches": [id], "level": ур. верстака, "recipe": {id: штук}, "quantity": штук}
+    vendors: list[dict] = field(default_factory=list)  # {"trader", "cost": {валюта или id: сколько}, "limit", "level"}
+    unlocks: str = ""  # для чертежа: id предмета, который он открывает
+    blueprint: str = ""  # для предмета: id чертежа, без которого его не скрафтить
 
 
 @dataclass
@@ -83,11 +87,12 @@ def normalize(text: str) -> str:
 class QuestDB:
     def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = "",
                  items: list[Item] | None = None, workshops: list[Workshop] | None = None,
-                 loot_types: dict[str, str] | None = None):
+                 loot_types: dict[str, str] | None = None, benches: dict[str, str] | None = None):
         self.generated_at = generated_at  # дата сборки базы, ISO 8601 (UTC)
         self.items = {i.id: i for i in items or []}
         self.workshops = list(workshops or [])
         self.loot_types = dict(loot_types or {})  # тип места с лутом → по-русски
+        self.benches = dict(benches or {})  # где крафтится: id верстака → по-русски
         self._item_by_name: dict[str, Item] = {}
         for item in self.items.values():
             for name in (item.name, item.en):
@@ -140,10 +145,12 @@ class QuestDB:
         ]
         items = [Item(id=i["id"], name=i["name"], en=i.get("en", ""), value=int(i.get("value", 0)),
                       recycles=dict(i.get("recycles", {})), found=list(i.get("found", [])),
-                      drops=list(i.get("drops", []))) for i in data.get("items", [])]
+                      drops=list(i.get("drops", [])), craft=i.get("craft"), vendors=list(i.get("vendors", [])),
+                      unlocks=i.get("unlocks", ""), blueprint=i.get("blueprint", "")) for i in data.get("items", [])]
         workshops = [Workshop(id=w["id"], name=w["name"], levels=list(w.get("levels", [])))
                      for w in data.get("workshops", [])]
-        return cls(quests, maps, data.get("generated_at", ""), items, workshops, data.get("loot_types", {}))
+        return cls(quests, maps, data.get("generated_at", ""), items, workshops, data.get("loot_types", {}),
+                   data.get("benches", {}))
 
     def names(self) -> list[str]:
         return [q.name for q in self.quests]

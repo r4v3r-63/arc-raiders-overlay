@@ -359,7 +359,8 @@ class OverlayCard(QWidget):
     def _render_item(self):
         esc = html.escape
         r = self._item
-        color = SUCCESS if r.keep else (ACCENT if r.later_quests or r.later_workshops else MUTED)
+        unknown_blueprint = r.item.unlocks and not r.keep and "изучен" not in r.verdict
+        color = SUCCESS if r.keep else (ACCENT if r.later_quests or r.later_workshops or unknown_blueprint else MUTED)
         parts = [
             f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>{esc(r.item.name)}</div>",
             f"<div style='color:{color}; font-size:{self._px(15)}px; font-weight:bold;'>{esc(r.verdict)}</div>",
@@ -385,12 +386,16 @@ class OverlayCard(QWidget):
                 if w.sources else [])
         if not (w.types or w.drops or w.sources):
             parts.append(f"<div style='color:{MUTED};'>Где искать — в базе не указано.</div>")
+        section("Крафт:", r.craft + ([r.blueprint] if r.blueprint else []))
+        section("Купить:", r.vendors)
         section("Разбирается на:", [", ".join(f"{qty}× {name}" for name, qty in r.recycles)] if r.recycles else [])
         if r.item.value:
             parts.append(f"<div style='color:{MUTED};'>Цена продажи: {r.item.value} монет</div>")
         footer = f"{shortcuts.key('item')} — проверить предмет под курсором · {shortcuts.key('find_item')} — найти"
         if w.maps:
             footer += f"\n{shortcuts.key('map')} — эти места на карте"
+        if r.item.unlocks or r.item.blueprint:
+            footer += f"\n{shortcuts.key('blueprint')} — отметить чертёж изученным / не изученным"
         self._set_content("".join(parts), footer=footer, wide=True)
 
     def _render_help(self):

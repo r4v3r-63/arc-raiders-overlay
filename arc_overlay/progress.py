@@ -31,6 +31,7 @@ class Progress:
     current: int = 0
     completed: list[str] = field(default_factory=list)  # id выполненных квестов
     workshops: dict[str, int] = field(default_factory=dict)  # уровни мастерских, которые отметил игрок
+    blueprints: list[str] = field(default_factory=list)  # id изученных чертежей
 
     @classmethod
     def load(cls, path: Path) -> "Progress":
@@ -58,6 +59,7 @@ class Progress:
             progress.current = int(data.get("current", 0))
             progress.completed = [str(i) for i in data.get("completed", [])]
             progress.workshops = {str(k): int(v) for k, v in data.get("workshops", {}).items()}
+            progress.blueprints = [str(i) for i in data.get("blueprints", [])]
         except (TypeError, ValueError, AttributeError):
             pass
         progress._clamp()
@@ -65,7 +67,7 @@ class Progress:
 
     def save(self):
         data = {"active": [asdict(a) for a in self.active], "current": self.current, "completed": self.completed,
-                "workshops": self.workshops}
+                "workshops": self.workshops, "blueprints": self.blueprints}
         tmp = self.path.with_suffix(".tmp")
         try:
             tmp.write_text(json.dumps(data, ensure_ascii=False, indent=2), encoding="utf-8")

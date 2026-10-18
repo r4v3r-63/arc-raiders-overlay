@@ -2,7 +2,7 @@ import json
 import os
 
 import pytest
-from PyQt6.QtCore import QSettings
+from PyQt6.QtCore import QSettings, Qt
 
 
 @pytest.fixture
@@ -261,3 +261,22 @@ def test_hourly_steam_sync_keeps_open_panel(app, tmp_path):
     app.show_help()
     app._steam_guide_loaded(page)  # то же руководство — справка остаётся открытой
     assert app.card.panel == "help"
+
+
+def test_blueprint_hotkey_and_window(app):
+    app.on_item_submitted(app.db.items["anvil_blueprint"].name)
+    app.toggle_blueprint()
+    assert "anvil_blueprint" in app.progress.blueprints
+    assert "уже изучен" in app.card._label.text()
+    app.toggle_blueprint()
+    assert "anvil_blueprint" not in app.progress.blueprints
+
+    app.open_blueprints_window()
+    window = app._blueprints_window
+    assert window._list.count() >= 80
+    window._list.item(0).setCheckState(Qt.CheckState.Checked)
+    assert len(app.progress.blueprints) == 1
+    window._filter.setText("наковальн")
+    visible = [window._list.item(i) for i in range(window._list.count()) if not window._list.item(i).isHidden()]
+    assert visible and all("аковальн" in r.text().lower() for r in visible)
+    window.close()

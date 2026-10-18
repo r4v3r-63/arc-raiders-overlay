@@ -77,3 +77,25 @@ def test_item_search_by_name():
     assert base.find_item("насос") is None  # насосов несколько
     assert "Водяной насос" in base.similar_items("мини- насос")
     assert base.suggest_items("вод")[0].lower().startswith("вод")
+
+
+def test_craft_vendors_and_blueprints():
+    base = db()
+    anvil = base.items["anvil_i"]
+    report = items.item_report(base, anvil, [], [], {})
+    assert report.craft and "Оружейный верстак" in report.craft[0]
+    assert report.blueprint.startswith("Нужен чертёж") and "изучен" not in report.blueprint
+    report = items.item_report(base, anvil, [], [], {}, {"anvil_blueprint"})
+    assert report.blueprint.endswith("— изучен")
+
+    mag = base.items["extended_medium_mag_i"]
+    assert any("Тянь Вэнь" in v and "монет" in v for v in items.item_report(base, mag, [], [], {}).vendors)
+
+    blueprint = base.items["anvil_blueprint"]
+    unknown = items.item_report(base, blueprint, [], [], {})
+    assert "Отметьте" in unknown.verdict and not unknown.keep
+    other = next(i.id for i in base.items.values() if i.unlocks and i.id != "anvil_blueprint")
+    fresh = items.item_report(base, blueprint, [], [], {}, {other})
+    assert fresh.keep and "не изучен" in fresh.verdict
+    done = items.item_report(base, blueprint, [], [], {}, {"anvil_blueprint"})
+    assert not done.keep and "уже изучен" in done.verdict

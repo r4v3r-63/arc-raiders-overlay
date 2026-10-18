@@ -174,8 +174,19 @@ class Hints:
         return hints[:5]
 
 
-def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[dict]]:
-    """Предметы (проверка «брать или продавать», поиск) и улучшения мастерских по уровням."""
+def blueprint_target(blueprint_id: str, all_items: dict) -> str | None:
+    """Какой предмет открывает чертёж: «anvil_blueprint» → «anvil» или первая версия «anvil_i»."""
+    base = blueprint_id.removesuffix("_blueprint")
+    return next((i for i in (base, base + "_i") if i in all_items), None)
+
+
+def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[dict], dict[str, str]]:
+    """Предметы (проверка «брать или продавать», поиск, крафт, торговцы, чертежи), улучшения мастерских
+    по уровням и русские названия мест крафта."""
+    blueprint_of = {}
+    for item_id, item in hints.items.items():
+        if item.get("type") == "Blueprint" and (target := blueprint_target(item_id, hints.items)):
+            blueprint_of[target] = item_id
     items = []
     for item_id, item in sorted(hints.items.items()):
         name = text(item["name"])
@@ -195,15 +206,35 @@ def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[
             "found": [c.strip() for c in (item.get("foundIn") or "").split(",") if c.strip()],
             "drops": drops,
         })
+        entry = items[-1]
+        if item.get("recipe"):
+            benches = item.get("craftBench") or []
+            entry["craft"] = {
+                "benches": [benches] if isinstance(benches, str) else list(benches),
+                "level": int(item.get("stationLevelRequired") or 0),
+                "recipe": {k: int(v) for k, v in item["recipe"].items()},
+                "quantity": int(item.get("craftQuantity") or 1),
+            }
+        if item.get("vendors"):
+            entry["vendors"] = [{"trader": TRADERS_RU.get(v.get("trader", ""), v.get("trader", "")),
+                                 "cost": {k: int(c) for k, c in (v.get("cost") or {}).items()},
+                                 "limit": int(v.get("limit") or 0), "level": int(v.get("requiredLevel") or 0)}
+                                for v in item["vendors"]]
+        if item.get("type") == "Blueprint" and blueprint_target(item_id, hints.items):
+            entry["unlocks"] = blueprint_target(item_id, hints.items)
+        if item_id in blueprint_of and item.get("blueprintLocked"):
+            entry["blueprint"] = blueprint_of[item_id]
     workshops = []
+    bench_names = {"in_raid": "в рейде"}
     for path in sorted((data_dir / "hideout").glob("*.json")):
         bench = json.loads(path.read_text(encoding="utf-8"))
+        bench_names[bench["id"]] = text(bench["name"])
         levels = [{"level": int(level["level"]),
                    "items": {r["itemId"]: int(r["quantity"]) for r in level.get("requirementItemIds", [])}}
                   for level in bench.get("levels", [])]
         if any(level["items"] for level in levels):  # хранилище улучшается за монеты, верстак — без уровней
             workshops.append({"id": bench["id"], "name": text(bench["name"]), "levels": levels})
-    return items, workshops
+    return items, workshops, bench_names
 
 
 def save_image(url: str, target: Path, max_width: int, quality: int) -> bool:
@@ -459,7 +490,7 @@ def build(data_dir: Path) -> dict:
 
     remove_unused_images(quests, maps, old_db)
     MISSING_TRANSLATIONS[:] = tr.missing
-    items, workshops = items_and_workshops(data_dir, hints)
+    items, workshops, bench_names = items_and_workshops(data_dir, hints)
     print(f"Предметов: {len(items)}, мастерских: {len(workshops)}")
     return {
         "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
@@ -471,6 +502,7 @@ def build(data_dir: Path) -> dict:
         "items": items,
         "workshops": workshops,
         "loot_types": LOOT_CATEGORIES_RU,
+        "benches": bench_names,
     }
 
 

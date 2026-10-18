@@ -105,6 +105,42 @@ class ItemReport:
     later_workshops: list[tuple[str, int, int]] = field(default_factory=list)
     recycles: list[tuple[str, int]] = field(default_factory=list)  # (предмет, штук) при разборке
     where: Where = field(default_factory=Where)
+    craft: list[str] = field(default_factory=list)  # «Оружейный верстак, ур. 1: 5× …»
+    vendors: list[str] = field(default_factory=list)  # «Тянь Вэнь — 1920 монет, до 5 шт. в сутки, с ур. 7»
+    blueprint: str = ""  # что про чертёж: «Нужен чертёж — изучен» и т. п.
+
+
+CURRENCIES = {"coins": "монет", "creds": "кредитов"}
+
+
+def _name(db: QuestDB, item_id: str) -> str:
+    return db.items[item_id].name if item_id in db.items else item_id
+
+
+def _craft_lines(db: QuestDB, item: Item) -> list[str]:
+    craft = item.craft
+    if not craft:
+        return []
+    benches = ", ".join(db.benches.get(b, b) for b in craft.get("benches", []))
+    if craft.get("level"):
+        benches += f", ур. {craft['level']}"
+    recipe = ", ".join(f"{qty}× {_name(db, i)}" for i, qty in craft.get("recipe", {}).items())
+    quantity = f" → {craft['quantity']} шт." if craft.get("quantity", 1) > 1 else ""
+    return [f"{benches}: {recipe}{quantity}" if benches else recipe + quantity]
+
+
+def _vendor_lines(db: QuestDB, item: Item) -> list[str]:
+    lines = []
+    for vendor in item.vendors:
+        cost = ", ".join(f"{amount} {CURRENCIES[c]}" if c in CURRENCIES else f"{amount}× {_name(db, c)}"
+                         for c, amount in vendor.get("cost", {}).items())
+        parts = [f"{vendor.get('trader', '')} — {cost}"]
+        if vendor.get("limit"):
+            parts.append(f"до {vendor['limit']} шт. в сутки")
+        if vendor.get("level"):
+            parts.append(f"с уровня {vendor['level']}")
+        lines.append(", ".join(parts))
+    return lines
 
 
 def _needs(quest: Quest, item: Item) -> int:
@@ -113,8 +149,10 @@ def _needs(quest: Quest, item: Item) -> int:
 
 
 def item_report(db: QuestDB, item: Item, active: list[Quest], completed: list[str],
-                workshop_levels: dict[str, int]) -> ItemReport:
-    """Нужен ли предмет. workshop_levels — уровни мастерских, которые отметил игрок (id → уровень)."""
+                workshop_levels: dict[str, int], learned: set[str] | None = None) -> ItemReport:
+    """Нужен ли предмет. workshop_levels — уровни мастерских, которые отметил игрок (id → уровень);
+    learned — id изученных чертежей (пусто — игрок их не отмечал, и про чертежи ничего не утверждаем)."""
+    learned = learned or set()
     active_ids = {q.id for q in active}
     report = ItemReport(item, "", False)
     for quest in active:
@@ -137,8 +175,22 @@ def item_report(db: QuestDB, item: Item, active: list[Quest], completed: list[st
                 report.later_workshops.append(entry)
     report.recycles = [(db.items[i].name if i in db.items else i, qty) for i, qty in item.recycles.items()]
     report.where = where_to_find(db, item)
+    report.craft = _craft_lines(db, item)
+    report.vendors = _vendor_lines(db, item)
+    if item.blueprint:
+        status = "" if not learned else (" — изучен" if item.blueprint in learned else " — не изучен")
+        report.blueprint = f"Нужен чертёж{status}"
     report.keep = bool(report.quests or report.workshops)
-    if report.keep:
+    if item.unlocks:  # сам предмет — чертёж
+        target = _name(db, item.unlocks)
+        if not learned:
+            report.verdict = f"Чертёж: {target}. Отметьте изученные чертежи — программа подскажет, нужен ли он"
+        elif item.id in learned:
+            report.verdict = f"Чертёж уже изучен ({target}) — можно продать"
+        else:
+            report.keep = True
+            report.verdict = f"Чертёж не изучен ({target}) — забрать и изучить!"
+    elif report.keep:
         report.verdict = "Оставить — нужен сейчас"
     elif report.later_quests or report.later_workshops:
         report.verdict = "Пригодится позже"

@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T17:18:16Z",
+  "generated_at": "2026-10-18T17:39:06Z",
   "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -6547,7 +6547,17 @@
         "wires": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 70
+          },
+          "limit": 1,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "adrenaline_shot",
@@ -6559,7 +6569,29 @@
         "plastic_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "med_station"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3,
+          "plastic_parts": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 900
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "advanced_arc_powercell",
@@ -6637,7 +6669,18 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "electrical_components": 2,
+          "wires": 3
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "advanced_mechanical_components",
@@ -6660,7 +6703,18 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "steel_spring": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "agave",
@@ -6682,7 +6736,18 @@
       "value": 1800,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid"
+        ],
+        "level": 0,
+        "recipe": {
+          "agave": 1,
+          "empty_wine_bottle": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "air_freshener",
@@ -6736,7 +6801,28 @@
         "plastic_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "duct_tape": 1,
+          "plastic_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "angled_grip_ii",
@@ -6748,7 +6834,29 @@
         "mechanical_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "duct_tape": 3,
+          "mechanical_components": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 0
+        }
+      ],
+      "blueprint": "angled_grip_ii_blueprint"
     },
     {
       "id": "angled_grip_ii_blueprint",
@@ -6757,7 +6865,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "angled_grip_ii"
     },
     {
       "id": "angled_grip_iii",
@@ -6769,7 +6878,29 @@
         "mod_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "duct_tape": 5,
+          "mod_components": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 15000
+          },
+          "limit": 1,
+          "level": 7
+        }
+      ],
+      "blueprint": "angled_grip_iii_blueprint"
     },
     {
       "id": "angled_grip_iii_blueprint",
@@ -6778,7 +6909,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "angled_grip_iii"
     },
     {
       "id": "antiseptic",
@@ -6791,7 +6923,18 @@
       "found": [
         "Medical"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "chemicals": 10,
+          "great_mullein": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "anvil_blueprint",
@@ -6800,7 +6943,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "anvil_i"
     },
     {
       "id": "anvil_i",
@@ -6812,7 +6956,29 @@
         "simple_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "mechanical_components": 5,
+          "simple_gun_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 15000
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "anvil_blueprint"
     },
     {
       "id": "anvil_ii",
@@ -6872,7 +7038,20 @@
         "magnetic_accelerator": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "complex_gun_parts": 3,
+          "magnetic_accelerator": 3,
+          "matriarch_reactor": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "aphelion_blueprint"
     },
     {
       "id": "aphelion_blueprint",
@@ -6881,7 +7060,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "aphelion"
     },
     {
       "id": "apricot",
@@ -7124,7 +7304,17 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "arc_alloy": 8
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "arc_coolant",
@@ -7260,7 +7450,17 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "arc_alloy": 8
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "arc_performance_steel",
@@ -7516,7 +7716,18 @@
         "simple_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 6,
+          "simple_gun_parts": 6
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "arpeggio_ii",
@@ -7574,7 +7785,29 @@
         "fabric": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "med_station",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "fabric": 5
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 750
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "barricade_kit",
@@ -7585,7 +7818,28 @@
         "metal_parts": 4
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ],
+      "blueprint": "barricade_kit_blueprint"
     },
     {
       "id": "barricade_kit_blueprint",
@@ -7594,7 +7848,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "barricade_kit"
     },
     {
       "id": "bastion_cell",
@@ -7633,7 +7888,17 @@
         "Technological",
         "Electrical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 5
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "bettina_blueprint",
@@ -7642,7 +7907,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "bettina_i"
     },
     {
       "id": "bettina_i",
@@ -7654,7 +7920,20 @@
         "heavy_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_mechanical_components": 3,
+          "canister": 3,
+          "heavy_gun_parts": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "bettina_blueprint"
     },
     {
       "id": "bettina_ii",
@@ -7716,7 +7995,28 @@
         "rubber_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 8,
+          "rubber_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 20
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "blaze_grenade",
@@ -7728,7 +8028,19 @@
         "oil": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "explosive_compound": 1,
+          "oil": 2
+        },
+        "quantity": 1
+      },
+      "blueprint": "blaze_grenade_blueprint"
     },
     {
       "id": "blaze_grenade_blueprint",
@@ -7737,7 +8049,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "blaze_grenade"
     },
     {
       "id": "blaze_grenade_trap",
@@ -7746,7 +8059,19 @@
       "value": 1000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "blaze_grenade": 1,
+          "wires": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "bloated_tuna_can",
@@ -7805,7 +8130,36 @@
         "chemicals": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 450
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 10
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ],
+      "blueprint": "blue_light_stick_blueprint"
     },
     {
       "id": "blue_light_stick_blueprint",
@@ -7814,7 +8168,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "blue_light_stick"
     },
     {
       "id": "bobcat_blueprint",
@@ -7823,7 +8178,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "bobcat_i"
     },
     {
       "id": "bobcat_i",
@@ -7835,7 +8191,20 @@
         "light_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "exodus_modules": 2,
+          "light_gun_parts": 3,
+          "magnetic_accelerator": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "bobcat_blueprint"
     },
     {
       "id": "bobcat_ii",
@@ -8008,7 +8377,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "burletta_i"
     },
     {
       "id": "burletta_i",
@@ -8020,7 +8390,29 @@
         "simple_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "mechanical_components": 3,
+          "simple_gun_parts": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 8700
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "burletta_blueprint"
     },
     {
       "id": "burletta_ii",
@@ -8133,7 +8525,17 @@
       "found": [
         "Commercial"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 6
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "canto_blueprint",
@@ -8142,7 +8544,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "canto_i"
     },
     {
       "id": "cat_bed",
@@ -8176,7 +8579,17 @@
         "Residential",
         "Mechanical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "coffee_pot",
@@ -8226,7 +8639,36 @@
         "rubber_parts": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "rubber_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "free_loadout_augment": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "combat_mk2",
@@ -8238,7 +8680,36 @@
         "magnet": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "electrical_components": 2,
+          "magnet": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 7
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 1,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "combat_mk3_aggressive",
@@ -8250,7 +8721,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "combat_mk3_aggressive_blueprint"
     },
     {
       "id": "combat_mk3_aggressive_blueprint",
@@ -8259,7 +8742,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "combat_mk3_aggressive"
     },
     {
       "id": "combat_mk3_flanking",
@@ -8271,7 +8755,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "combat_mk3_flanking_blueprint"
     },
     {
       "id": "combat_mk3_flanking_blueprint",
@@ -8280,7 +8776,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "combat_mk3_flanking"
     },
     {
       "id": "comet_igniter",
@@ -8305,7 +8802,28 @@
         "metal_parts": 5
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 6,
+          "wires": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "compensator_ii",
@@ -8317,7 +8835,29 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "wires": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 0
+        }
+      ],
+      "blueprint": "compensator_ii_blueprint"
     },
     {
       "id": "compensator_ii_blueprint",
@@ -8326,7 +8866,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "compensator_ii"
     },
     {
       "id": "compensator_iii",
@@ -8338,7 +8879,19 @@
         "wires": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "compensator_iii_blueprint"
     },
     {
       "id": "compensator_iii_blueprint",
@@ -8347,7 +8900,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "compensator_iii"
     },
     {
       "id": "complex_gun_parts",
@@ -8369,7 +8923,30 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 3,
+        "recipe": {
+          "heavy_gun_parts": 2,
+          "light_gun_parts": 2,
+          "medium_gun_parts": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 60
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ],
+      "blueprint": "complex_gun_parts_blueprint"
     },
     {
       "id": "complex_gun_parts_blueprint",
@@ -8378,7 +8955,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "complex_gun_parts"
     },
     {
       "id": "coolant",
@@ -8446,7 +9024,19 @@
         "plastic_parts": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "durable_cloth": 1,
+          "electrical_components": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "crash_mat_blueprint"
     },
     {
       "id": "crash_mat_blueprint",
@@ -8455,7 +9045,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "crash_mat"
     },
     {
       "id": "crude_explosives",
@@ -8480,7 +9071,17 @@
             "stella_montis"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 6
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "crumpled_plastic_bottle",
@@ -8678,7 +9279,30 @@
         "explosive_compound": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "arc_circuitry": 2,
+          "comet_igniter": 1,
+          "explosive_compound": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 18000
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ],
+      "blueprint": "deadline_blueprint"
     },
     {
       "id": "deadline_blueprint",
@@ -8687,7 +9311,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "deadline"
     },
     {
       "id": "defibrillator",
@@ -8699,7 +9324,29 @@
         "plastic_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station"
+        ],
+        "level": 2,
+        "recipe": {
+          "moss": 1,
+          "plastic_parts": 9
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 3000
+          },
+          "limit": 0,
+          "level": 7
+        }
+      ],
+      "blueprint": "defibrillator_blueprint"
     },
     {
       "id": "defibrillator_blueprint",
@@ -8708,7 +9355,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "defibrillator"
     },
     {
       "id": "deflated_football",
@@ -8789,7 +9437,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "dolabra"
     },
     {
       "id": "doodly_duck",
@@ -8809,7 +9458,28 @@
         "metal_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 3,
+          "rubber_parts": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 810
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "dried_out_arc_resin",
@@ -8836,7 +9506,17 @@
         "Residential",
         "Commercial"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 6
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "durable_cloth",
@@ -8850,7 +9530,17 @@
         "Medical",
         "Commercial"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 1,
+        "recipe": {
+          "fabric": 14
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "dusty_film_reel",
@@ -8873,7 +9563,18 @@
       "found": [
         "Electrical"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 8,
+          "rubber_parts": 4
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "elephant_obelisk",
@@ -8903,7 +9604,28 @@
       "value": 200,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "advanced_arc_powercell": 1,
+          "battery": 2
+        },
+        "quantity": 5
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 3000
+          },
+          "limit": 0,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "equalizer",
@@ -8915,7 +9637,20 @@
         "magnetic_accelerator": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "complex_gun_parts": 3,
+          "magnetic_accelerator": 3,
+          "queen_reactor": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "equalizer_blueprint"
     },
     {
       "id": "equalizer_blueprint",
@@ -8924,7 +9659,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "equalizer"
     },
     {
       "id": "equatorial_sundial",
@@ -8965,7 +9701,17 @@
       "found": [
         "Exodus"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 55
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ]
     },
     {
       "id": "experimental_seed_sample",
@@ -9033,7 +9779,18 @@
             "buried_city"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "crude_explosives": 2,
+          "oil": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "explosive_mine",
@@ -9045,7 +9802,19 @@
         "sensors": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "explosive_compound": 1,
+          "sensors": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "explosive_mine_blueprint"
     },
     {
       "id": "explosive_mine_blueprint",
@@ -9054,7 +9823,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "explosive_mine"
     },
     {
       "id": "extended_barrel_i",
@@ -9065,7 +9835,18 @@
         "metal_parts": 5
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 6,
+          "wires": 3
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "extended_barrel_ii",
@@ -9077,7 +9858,19 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 3,
+          "wires": 6
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_barrel_ii_blueprint"
     },
     {
       "id": "extended_barrel_ii_blueprint",
@@ -9086,7 +9879,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_barrel_ii"
     },
     {
       "id": "extended_barrel_iii",
@@ -9098,7 +9892,19 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_barrel_iii_blueprint"
     },
     {
       "id": "extended_barrel_iii_blueprint",
@@ -9107,7 +9913,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_barrel_iii"
     },
     {
       "id": "extended_light_mag_i",
@@ -9118,7 +9925,28 @@
         "plastic_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "steel_spring": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "extended_light_mag_ii",
@@ -9130,7 +9958,37 @@
         "steel_spring": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "steel_spring": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 0
+        },
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "extended_light_mag_ii_blueprint"
     },
     {
       "id": "extended_light_mag_ii_blueprint",
@@ -9139,7 +9997,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_light_mag_ii"
     },
     {
       "id": "extended_light_mag_iii",
@@ -9151,7 +10010,19 @@
         "steel_spring": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "steel_spring": 5
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_light_mag_iii_blueprint"
     },
     {
       "id": "extended_light_mag_iii_blueprint",
@@ -9160,7 +10031,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_light_mag_iii"
     },
     {
       "id": "extended_medium_mag_i",
@@ -9171,7 +10043,28 @@
         "plastic_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "steel_spring": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "extended_medium_mag_ii",
@@ -9183,7 +10076,29 @@
         "steel_spring": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "steel_spring": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 0
+        }
+      ],
+      "blueprint": "extended_medium_mag_ii_blueprint"
     },
     {
       "id": "extended_medium_mag_ii_blueprint",
@@ -9192,7 +10107,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_medium_mag_ii"
     },
     {
       "id": "extended_medium_mag_iii",
@@ -9204,7 +10120,19 @@
         "steel_spring": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "steel_spring": 5
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_medium_mag_iii_blueprint"
     },
     {
       "id": "extended_medium_mag_iii_blueprint",
@@ -9213,7 +10141,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_medium_mag_iii"
     },
     {
       "id": "extended_shotgun_mag_i",
@@ -9224,7 +10153,28 @@
         "plastic_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "steel_spring": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "extended_shotgun_mag_ii",
@@ -9236,7 +10186,19 @@
         "steel_spring": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "steel_spring": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_shotgun_mag_ii_blueprint"
     },
     {
       "id": "extended_shotgun_mag_ii_blueprint",
@@ -9245,7 +10207,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_shotgun_mag_ii"
     },
     {
       "id": "extended_shotgun_mag_iii",
@@ -9257,7 +10220,19 @@
         "steel_spring": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "steel_spring": 5
+        },
+        "quantity": 1
+      },
+      "blueprint": "extended_shotgun_mag_iii_blueprint"
     },
     {
       "id": "extended_shotgun_mag_iii_blueprint",
@@ -9266,7 +10241,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "extended_shotgun_mag_iii"
     },
     {
       "id": "fabric",
@@ -9279,7 +10255,17 @@
         "Medical",
         "Residential"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "faded_photograph",
@@ -9311,7 +10297,29 @@
         "rubber_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 5,
+          "rubber_parts": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1425
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "ferro_ii",
@@ -9347,7 +10355,17 @@
         "simple_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 8700
+          },
+          "limit": 1,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "fertilizer",
@@ -9420,7 +10438,28 @@
         "plastic_parts": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "plastic_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 20
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "firefly_burner",
@@ -9445,7 +10484,29 @@
         "explosive_compound": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "explosive_compound": 1,
+          "pop_trigger": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 60
+          },
+          "limit": 3,
+          "level": 0
+        }
+      ],
+      "blueprint": "fireworks_box_blueprint"
     },
     {
       "id": "fireworks_box_blueprint",
@@ -9454,7 +10515,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "fireworks_box"
     },
     {
       "id": "first_wave_compass",
@@ -9493,7 +10555,18 @@
         "fireball_burner": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid"
+        ],
+        "level": 0,
+        "recipe": {
+          "air_freshener": 1,
+          "fireball_burner": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "flashy_duck",
@@ -9587,7 +10660,19 @@
       "value": 1800,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid"
+        ],
+        "level": 0,
+        "recipe": {
+          "apricot": 1,
+          "lemon": 1,
+          "prickly_pear": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "frying_pan",
@@ -9626,7 +10711,28 @@
         "rubber_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 4,
+          "rubber_parts": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 810
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "gas_grenade_trap",
@@ -9635,7 +10741,19 @@
       "value": 300,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "gas_grenade": 1,
+          "wires": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "gas_mine",
@@ -9647,7 +10765,29 @@
         "rubber_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 4,
+          "rubber_parts": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 810
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ],
+      "blueprint": "gas_mine_blueprint"
     },
     {
       "id": "gas_mine_blueprint",
@@ -9656,7 +10796,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "gas_mine"
     },
     {
       "id": "geiger_counter",
@@ -9761,7 +10902,17 @@
       "found": [
         "Nature"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 5
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "green_light_stick",
@@ -9772,7 +10923,36 @@
         "chemicals": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 450
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 10
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ],
+      "blueprint": "green_light_stick_blueprint"
     },
     {
       "id": "green_light_stick_blueprint",
@@ -9781,7 +10961,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "green_light_stick"
     },
     {
       "id": "hairpin_i",
@@ -9793,7 +10974,29 @@
         "rubber_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 2,
+          "plastic_parts": 5
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1350
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "hairpin_ii",
@@ -9872,6 +11075,27 @@
             "buried_city"
           ]
         }
+      ],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "metal_parts": 3
+        },
+        "quantity": 10
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 900
+          },
+          "limit": 0,
+          "level": 0
+        }
       ]
     },
     {
@@ -9884,7 +11108,18 @@
         "rubber_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "canister": 2,
+          "explosive_compound": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "heavy_gun_parts",
@@ -9908,7 +11143,28 @@
             "buried_city"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "simple_gun_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 15
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ],
+      "blueprint": "heavy_gun_parts_blueprint"
     },
     {
       "id": "heavy_gun_parts_blueprint",
@@ -9917,7 +11173,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "heavy_gun_parts"
     },
     {
       "id": "heavy_shield",
@@ -9929,7 +11186,28 @@
         "voltage_converter": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "power_rod": 1,
+          "voltage_converter": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 16500
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ]
     },
     {
       "id": "herbal_bandage",
@@ -9941,7 +11219,29 @@
         "fabric": 5
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "med_station"
+        ],
+        "level": 1,
+        "recipe": {
+          "durable_cloth": 1,
+          "great_mullein": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 2700
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "hidden_bunker_key",
@@ -10008,7 +11308,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "hullcracker_i"
     },
     {
       "id": "hullcracker_i",
@@ -10020,7 +11321,30 @@
         "heavy_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "exodus_modules": 1,
+          "heavy_gun_parts": 3,
+          "magnetic_accelerator": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 30000
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ],
+      "blueprint": "hullcracker_blueprint"
     },
     {
       "id": "hullcracker_ii",
@@ -10092,7 +11416,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "il_toro_i"
     },
     {
       "id": "il_toro_i",
@@ -10104,7 +11429,29 @@
         "simple_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "mechanical_components": 5,
+          "simple_gun_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 15000
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "il_toro_blueprint"
     },
     {
       "id": "il_toro_ii",
@@ -10221,7 +11568,29 @@
         "plastic_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "battery": 1,
+          "electrical_components": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 2550
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "jolt_mine_blueprint"
     },
     {
       "id": "jolt_mine_blueprint",
@@ -10230,7 +11599,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "jolt_mine"
     },
     {
       "id": "jupiter",
@@ -10242,7 +11612,20 @@
         "magnetic_accelerator": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "complex_gun_parts": 3,
+          "magnetic_accelerator": 3,
+          "queen_reactor": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "jupiter_blueprint"
     },
     {
       "id": "jupiter_blueprint",
@@ -10251,7 +11634,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "jupiter"
     },
     {
       "id": "kettle_i",
@@ -10263,7 +11647,29 @@
         "rubber_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 6,
+          "rubber_parts": 8
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 2520
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "kettle_ii",
@@ -10355,6 +11761,27 @@
             "the_blue_gate",
             "buried_city"
           ]
+        }
+      ],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "arc_motion_core": 1,
+          "crude_explosives": 2
+        },
+        "quantity": 6
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 4500
+          },
+          "limit": 0,
+          "level": 12
         }
       ]
     },
@@ -10449,6 +11876,27 @@
             "buried_city"
           ]
         }
+      ],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "metal_parts": 3
+        },
+        "quantity": 25
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 900
+          },
+          "limit": 0,
+          "level": 0
+        }
       ]
     },
     {
@@ -10474,7 +11922,28 @@
         "Raider",
         "Security"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "simple_gun_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 15
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ],
+      "blueprint": "light_gun_parts_blueprint"
     },
     {
       "id": "light_gun_parts_blueprint",
@@ -10483,7 +11952,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "light_gun_parts"
     },
     {
       "id": "light_impact_grenade",
@@ -10495,7 +11965,30 @@
         "plastic_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench",
+          "in_raid",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3,
+          "plastic_parts": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 810
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "light_shield",
@@ -10506,7 +11999,29 @@
         "plastic_parts": 4
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "arc_alloy": 2,
+          "plastic_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "lightweight_stock",
@@ -10518,7 +12033,19 @@
         "mod_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "duct_tape": 5,
+          "mod_components": 2
+        },
+        "quantity": 1
+      },
+      "blueprint": "lightweight_stock_blueprint"
     },
     {
       "id": "lightweight_stock_blueprint",
@@ -10527,7 +12054,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "lightweight_stock"
     },
     {
       "id": "lil_smoke_grenade",
@@ -10539,7 +12067,19 @@
         "plastic_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 5,
+          "plastic_parts": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "looting_mk1",
@@ -10551,7 +12091,37 @@
         "rubber_parts": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "rubber_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "free_loadout_augment": 1
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "looting_mk2",
@@ -10563,7 +12133,36 @@
         "magnet": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "electrical_components": 2,
+          "magnet": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 1,
+          "level": 7
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "looting_mk3_cautious",
@@ -10575,7 +12174,18 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "looting_mk3_safekeeper",
@@ -10587,7 +12197,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "looting_mk3_safekeeper_blueprint"
     },
     {
       "id": "looting_mk3_safekeeper_blueprint",
@@ -10596,7 +12218,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "looting_mk3_safekeeper"
     },
     {
       "id": "looting_mk3_survivor",
@@ -10608,7 +12231,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "looting_mk3_survivor_blueprint"
     },
     {
       "id": "looting_mk3_survivor_blueprint",
@@ -10617,7 +12252,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "looting_mk3_survivor"
     },
     {
       "id": "lure_grenade",
@@ -10628,7 +12264,19 @@
         "speaker_component": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "electrical_components": 1,
+          "speaker_component": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "lure_grenade_blueprint"
     },
     {
       "id": "lure_grenade_blueprint",
@@ -10637,7 +12285,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "lure_grenade"
     },
     {
       "id": "lure_grenade_trap",
@@ -10646,7 +12295,19 @@
       "value": 1000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "lure_grenade": 1,
+          "wires": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "magnet",
@@ -10659,7 +12320,17 @@
       "found": [
         "Exodus"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 6
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "magnetic_accelerator",
@@ -10688,7 +12359,18 @@
             "the_blue_gate"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "arc_motion_core": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "magnetron",
@@ -10772,7 +12454,18 @@
             "buried_city"
           ]
         }
-      ]
+      ],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 7,
+          "rubber_parts": 3
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "medium_ammo",
@@ -10791,6 +12484,27 @@
             "buried_city"
           ]
         }
+      ],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "metal_parts": 3
+        },
+        "quantity": 20
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 900
+          },
+          "limit": 0,
+          "level": 0
+        }
       ]
     },
     {
@@ -10805,7 +12519,28 @@
         "Raider",
         "Security"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "simple_gun_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 15
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ],
+      "blueprint": "medium_gun_parts_blueprint"
     },
     {
       "id": "medium_gun_parts_blueprint",
@@ -10814,7 +12549,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "medium_gun_parts"
     },
     {
       "id": "medium_shield",
@@ -10825,7 +12561,28 @@
         "arc_circuitry": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "arc_circuitry": 1,
+          "battery": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "metal_brackets",
@@ -10853,7 +12610,17 @@
         "Electrical",
         "Technological"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "microscope",
@@ -10895,7 +12662,18 @@
       "found": [
         "Security"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "steel_spring": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "moisture_meter",
@@ -10917,7 +12695,17 @@
       "found": [
         "Nature"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "motor",
@@ -10978,7 +12766,28 @@
         "metal_parts": 5
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 6,
+          "wires": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "muzzle_brake_ii",
@@ -10990,7 +12799,19 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "wires": 4
+        },
+        "quantity": 1
+      },
+      "blueprint": "muzzle_brake_ii_blueprint"
     },
     {
       "id": "muzzle_brake_ii_blueprint",
@@ -10999,7 +12820,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "muzzle_brake_ii"
     },
     {
       "id": "muzzle_brake_iii",
@@ -11011,7 +12833,19 @@
         "wires": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "muzzle_brake_iii_blueprint"
     },
     {
       "id": "muzzle_brake_iii_blueprint",
@@ -11020,7 +12854,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "muzzle_brake_iii"
     },
     {
       "id": "noisemaker",
@@ -11031,7 +12866,28 @@
         "speaker_component": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid"
+        ],
+        "level": 0,
+        "recipe": {
+          "plastic_parts": 2,
+          "speaker_component": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 6,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "number_plate",
@@ -11075,7 +12931,17 @@
       "found": [
         "Mechanical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 6
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "old_world_books",
@@ -11106,7 +12972,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "osprey_i"
     },
     {
       "id": "osprey_i",
@@ -11118,7 +12985,20 @@
         "medium_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "medium_gun_parts": 3,
+          "wires": 7
+        },
+        "quantity": 1
+      },
+      "blueprint": "osprey_blueprint"
     },
     {
       "id": "osprey_ii",
@@ -11166,7 +13046,29 @@
         "mod_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "duct_tape": 5,
+          "mod_components": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 15000
+          },
+          "limit": 1,
+          "level": 20
+        }
+      ],
+      "blueprint": "padded_stock_blueprint"
     },
     {
       "id": "padded_stock_blueprint",
@@ -11175,7 +13077,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "padded_stock"
     },
     {
       "id": "painted_box",
@@ -11209,7 +13112,18 @@
         "speaker_component": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "speaker_component": 4
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "pilgrims_peak_security_code",
@@ -11231,7 +13145,17 @@
         "Residential",
         "Technological"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "playing_cards",
@@ -11374,7 +13298,18 @@
       "found": [
         "Exodus"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "refiner"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "arc_circuitry": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "powered_descender",
@@ -11386,7 +13321,19 @@
         "arc_circuitry": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "power_rod": 1,
+          "turbine_compressor": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "powered_descender_blueprint"
     },
     {
       "id": "powered_descender_blueprint",
@@ -11395,7 +13342,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "powered_descender"
     },
     {
       "id": "precision_gimbal",
@@ -11431,7 +13379,17 @@
       "found": [
         "Technological"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "project_heartwood_blueprints",
@@ -11465,7 +13423,29 @@
         "chemicals": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "crude_explosives": 1,
+          "wires": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 1410
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ],
+      "blueprint": "pulse_mine_blueprint"
     },
     {
       "id": "pulse_mine_blueprint",
@@ -11474,7 +13454,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "pulse_mine"
     },
     {
       "id": "queen_reactor",
@@ -11544,7 +13525,29 @@
       "value": 2000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_electrical_components": 1,
+          "sensors": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "raiders_refuge_security_code",
@@ -11562,7 +13565,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "rascal_i"
     },
     {
       "id": "rascal_i",
@@ -11574,7 +13578,20 @@
         "heavy_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "canister": 5,
+          "heavy_gun_parts": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "rascal_blueprint"
     },
     {
       "id": "rascal_ii",
@@ -11621,7 +13638,18 @@
         "metal_parts": 8
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 16,
+          "rubber_parts": 12
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "rattler_ii",
@@ -11669,7 +13697,25 @@
       "found": [
         "Residential"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 3000
+          },
+          "limit": 6,
+          "level": 0
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 50
+          },
+          "limit": 3,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "red_coral_jewelry",
@@ -11693,7 +13739,36 @@
         "chemicals": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 450
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 10
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ],
+      "blueprint": "red_light_stick_blueprint"
     },
     {
       "id": "red_light_stick_blueprint",
@@ -11702,7 +13777,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "red_light_stick"
     },
     {
       "id": "reinforced_reception_security_code",
@@ -11737,7 +13813,29 @@
         "rubber_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "rubber_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 810
+          },
+          "limit": 0,
+          "level": 7
+        }
+      ],
+      "blueprint": "remote_raider_flare_blueprint"
     },
     {
       "id": "remote_raider_flare_blueprint",
@@ -11746,7 +13844,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "remote_raider_flare"
     },
     {
       "id": "renegade_i",
@@ -11758,7 +13857,29 @@
         "medium_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "medium_gun_parts": 3,
+          "oil": 5
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 21000
+          },
+          "limit": 1,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "renegade_ii",
@@ -11972,7 +14093,17 @@
         "Residential",
         "Commercial"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "rosary",
@@ -12033,7 +14164,17 @@
         "Industrial",
         "Electrical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "ruined_accordion",
@@ -12250,7 +14391,29 @@
         "crude_explosives": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "arc_alloy": 2,
+          "crude_explosives": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ],
+      "blueprint": "seeker_grenade_blueprint"
     },
     {
       "id": "seeker_grenade_blueprint",
@@ -12259,7 +14422,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "seeker_grenade"
     },
     {
       "id": "sensors",
@@ -12292,6 +14456,16 @@
             "the_blue_gate",
             "buried_city"
           ]
+        }
+      ],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
         }
       ]
     },
@@ -12339,7 +14513,28 @@
       "found": [
         "Residential"
       ],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid"
+        ],
+        "level": 0,
+        "recipe": {
+          "assorted_seeds": 7,
+          "canister": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 40
+          },
+          "limit": 3,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "shield_recharger",
@@ -12350,7 +14545,30 @@
         "rubber_parts": 4
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "med_station",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "arc_powercell": 1,
+          "rubber_parts": 5
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 1560
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "shotgun_ammo",
@@ -12366,6 +14584,27 @@
             "stella_montis"
           ]
         }
+      ],
+      "craft": {
+        "benches": [
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 2,
+          "metal_parts": 3
+        },
+        "quantity": 5
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 900
+          },
+          "limit": 0,
+          "level": 0
+        }
       ]
     },
     {
@@ -12377,7 +14616,28 @@
         "metal_parts": 5
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 6,
+          "wires": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "shotgun_choke_ii",
@@ -12389,7 +14649,29 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "wires": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "shotgun_choke_ii_blueprint"
     },
     {
       "id": "shotgun_choke_ii_blueprint",
@@ -12398,7 +14680,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "shotgun_choke_ii"
     },
     {
       "id": "shotgun_choke_iii",
@@ -12410,7 +14693,19 @@
         "wires": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "shotgun_choke_iii_blueprint"
     },
     {
       "id": "shotgun_choke_iii_blueprint",
@@ -12419,7 +14714,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "shotgun_choke_iii"
     },
     {
       "id": "shotgun_silencer",
@@ -12431,7 +14727,19 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "shotgun_silencer_blueprint"
     },
     {
       "id": "shotgun_silencer_blueprint",
@@ -12440,7 +14748,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "shotgun_silencer"
     },
     {
       "id": "showstopper",
@@ -12452,7 +14761,20 @@
         "voltage_converter": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "electrical_components": 1,
+          "hornet_driver": 1,
+          "voltage_converter": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "showstopper_blueprint"
     },
     {
       "id": "showstopper_blueprint",
@@ -12461,7 +14783,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "showstopper"
     },
     {
       "id": "shrapnel_grenade",
@@ -12473,7 +14796,18 @@
         "metal_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "crude_explosives": 1,
+          "steel_spring": 2
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "shredder_gyro",
@@ -12520,7 +14854,37 @@
         "wires": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 2,
+          "wires": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 1,
+          "level": 0
+        },
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 1,
+          "level": 7
+        }
+      ],
+      "blueprint": "silencer_i_blueprint"
     },
     {
       "id": "silencer_i_blueprint",
@@ -12529,7 +14893,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "silencer_i"
     },
     {
       "id": "silencer_ii",
@@ -12541,7 +14906,19 @@
         "wires": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "mod_components": 2,
+          "wires": 8
+        },
+        "quantity": 1
+      },
+      "blueprint": "silencer_ii_blueprint"
     },
     {
       "id": "silencer_ii_blueprint",
@@ -12550,7 +14927,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "silencer_ii"
     },
     {
       "id": "silencer_iii",
@@ -12609,6 +14987,16 @@
             "stella_montis"
           ]
         }
+      ],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 7
+          },
+          "limit": 5,
+          "level": 7
+        }
       ]
     },
     {
@@ -12630,7 +15018,29 @@
         "chemicals": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "canister": 1,
+          "chemicals": 14
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 3000
+          },
+          "limit": 6,
+          "level": 7
+        }
+      ],
+      "blueprint": "smoke_grenade_blueprint"
     },
     {
       "id": "smoke_grenade_blueprint",
@@ -12639,7 +15049,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "smoke_grenade"
     },
     {
       "id": "smoke_grenade_trap",
@@ -12648,7 +15059,19 @@
       "value": 640,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "in_raid",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "smoke_grenade": 1,
+          "wires": 1
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "snap_blast_grenade",
@@ -12660,7 +15083,28 @@
         "magnet": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "crude_explosives": 2,
+          "magnet": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 2400
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "snap_hook",
@@ -12672,7 +15116,20 @@
         "rope": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "exodus_modules": 1,
+          "power_rod": 2,
+          "rope": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "snap_hook_blueprint"
     },
     {
       "id": "snap_hook_blueprint",
@@ -12681,7 +15138,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "snap_hook"
     },
     {
       "id": "snitch_scanner",
@@ -12766,7 +15224,17 @@
       "found": [
         "Commercial"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "spectrometer",
@@ -12844,7 +15312,18 @@
         "rubber_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "duct_tape": 1,
+          "rubber_parts": 7
+        },
+        "quantity": 1
+      }
     },
     {
       "id": "stable_stock_ii",
@@ -12856,7 +15335,37 @@
         "mechanical_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "duct_tape": 3,
+          "mechanical_components": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 0
+        },
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 2,
+          "level": 7
+        }
+      ],
+      "blueprint": "stable_stock_ii_blueprint"
     },
     {
       "id": "stable_stock_ii_blueprint",
@@ -12865,7 +15374,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "stable_stock_ii"
     },
     {
       "id": "stable_stock_iii",
@@ -12877,7 +15387,19 @@
         "mod_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "duct_tape": 5,
+          "mod_components": 2
+        },
+        "quantity": 1
+      },
+      "blueprint": "stable_stock_iii_blueprint"
     },
     {
       "id": "stable_stock_iii_blueprint",
@@ -12886,7 +15408,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "stable_stock_iii"
     },
     {
       "id": "stack_of_movie_tapes",
@@ -12920,7 +15443,17 @@
       "found": [
         "Industrial"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 6
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "stella_montis_archives_key",
@@ -12968,7 +15501,36 @@
         "fabric": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station"
+        ],
+        "level": 2,
+        "recipe": {
+          "antiseptic": 1,
+          "durable_cloth": 2
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 40
+          },
+          "limit": 3,
+          "level": 0
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "stitcher_i",
@@ -12980,7 +15542,29 @@
         "rubber_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench",
+          "workbench"
+        ],
+        "level": 1,
+        "recipe": {
+          "metal_parts": 8,
+          "rubber_parts": 4
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 2400
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "stitcher_ii",
@@ -13025,7 +15609,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "surge_coil"
     },
     {
       "id": "surge_shield_recharger",
@@ -13036,7 +15621,36 @@
         "electrical_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_arc_powercell": 1,
+          "electrical_components": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 40
+          },
+          "limit": 5,
+          "level": 0
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 3600
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "surveyor_vault",
@@ -13074,7 +15688,17 @@
       "found": [
         "Exodus"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 14
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "syringe",
@@ -13088,7 +15712,17 @@
       "found": [
         "Medical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "tactical_mk1",
@@ -13100,7 +15734,36 @@
         "rubber_parts": 3
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "plastic_parts": 6,
+          "rubber_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "free_loadout_augment": 1
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "tactical_mk2",
@@ -13112,7 +15775,36 @@
         "magnet": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "electrical_components": 2,
+          "magnet": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Лэнс",
+          "cost": {
+            "coins": 6000
+          },
+          "limit": 1,
+          "level": 7
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 100
+          },
+          "limit": 2,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "tactical_mk3_defensive",
@@ -13124,7 +15816,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "tactical_mk3_defensive_blueprint"
     },
     {
       "id": "tactical_mk3_defensive_blueprint",
@@ -13133,7 +15837,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tactical_mk3_defensive"
     },
     {
       "id": "tactical_mk3_healing",
@@ -13145,7 +15850,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "tactical_mk3_healing_blueprint"
     },
     {
       "id": "tactical_mk3_healing_blueprint",
@@ -13154,7 +15871,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tactical_mk3_healing"
     },
     {
       "id": "tactical_mk3_revival",
@@ -13166,7 +15884,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "tactical_mk3_revival_blueprint"
     },
     {
       "id": "tactical_mk3_revival_blueprint",
@@ -13175,7 +15905,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tactical_mk3_revival"
     },
     {
       "id": "tactical_mk3_smoke",
@@ -13187,7 +15918,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "equipment_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "advanced_electrical_components": 2,
+          "processor": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "tactical_mk3_smoke_blueprint"
     },
     {
       "id": "tactical_mk3_smoke_blueprint",
@@ -13196,7 +15939,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tactical_mk3_smoke"
     },
     {
       "id": "tagging_grenade",
@@ -13208,7 +15952,19 @@
         "sensors": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "electrical_components": 1,
+          "sensors": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "tagging_grenade_blueprint"
     },
     {
       "id": "tagging_grenade_blueprint",
@@ -13217,7 +15973,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tagging_grenade"
     },
     {
       "id": "tattered_arc_lining",
@@ -13275,7 +16032,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "tempest_i"
     },
     {
       "id": "tempest_i",
@@ -13287,7 +16045,20 @@
         "medium_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "exodus_modules": 2,
+          "magnetic_accelerator": 1,
+          "medium_gun_parts": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "tempest_blueprint"
     },
     {
       "id": "tempest_ii",
@@ -13411,7 +16182,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "torrente_i"
     },
     {
       "id": "torrente_i",
@@ -13423,7 +16195,20 @@
         "medium_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "medium_gun_parts": 3,
+          "steel_spring": 6
+        },
+        "quantity": 1
+      },
+      "blueprint": "torrente_blueprint"
     },
     {
       "id": "torrente_ii",
@@ -13470,7 +16255,30 @@
         "crude_explosives": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "crude_explosives": 2,
+          "firefly_burner": 1,
+          "synthesized_fuel": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 6600
+          },
+          "limit": 3,
+          "level": 7
+        }
+      ],
+      "blueprint": "trailblazer_blueprint"
     },
     {
       "id": "trailblazer_blueprint",
@@ -13479,7 +16287,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "trailblazer"
     },
     {
       "id": "train_model",
@@ -13500,7 +16309,19 @@
         "processor": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "crude_explosives": 2,
+          "processor": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "trigger_nade_blueprint"
     },
     {
       "id": "trigger_nade_blueprint",
@@ -13509,7 +16330,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "trigger_nade"
     },
     {
       "id": "tropical_duck",
@@ -13600,7 +16422,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "venator_i"
     },
     {
       "id": "venator_i",
@@ -13612,7 +16435,20 @@
         "medium_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "advanced_mechanical_components": 2,
+          "magnet": 5,
+          "medium_gun_parts": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "venator_blueprint"
     },
     {
       "id": "venator_ii",
@@ -13659,7 +16495,28 @@
         "plastic_parts": 6
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "duct_tape": 1,
+          "plastic_parts": 6
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Тянь Вэнь",
+          "cost": {
+            "coins": 1920
+          },
+          "limit": 5,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "vertical_grip_ii",
@@ -13671,7 +16528,19 @@
         "mechanical_components": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "duct_tape": 3,
+          "mechanical_components": 2
+        },
+        "quantity": 1
+      },
+      "blueprint": "vertical_grip_ii_blueprint"
     },
     {
       "id": "vertical_grip_ii_blueprint",
@@ -13680,7 +16549,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "vertical_grip_ii"
     },
     {
       "id": "vertical_grip_iii",
@@ -13692,7 +16562,19 @@
         "mechanical_components": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "duct_tape": 5,
+          "mod_components": 2
+        },
+        "quantity": 1
+      },
+      "blueprint": "vertical_grip_iii_blueprint"
     },
     {
       "id": "vertical_grip_iii_blueprint",
@@ -13701,7 +16583,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "vertical_grip_iii"
     },
     {
       "id": "very_comfortable_pillow",
@@ -13734,7 +16617,19 @@
         "syringe": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station"
+        ],
+        "level": 3,
+        "recipe": {
+          "antiseptic": 2,
+          "syringe": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "vita_shot_blueprint"
     },
     {
       "id": "vita_shot_blueprint",
@@ -13743,7 +16638,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "vita_shot"
     },
     {
       "id": "vita_spray",
@@ -13755,7 +16651,20 @@
         "canister": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station"
+        ],
+        "level": 3,
+        "recipe": {
+          "antiseptic": 3,
+          "canister": 1,
+          "tick_pod": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "vita_spray_blueprint"
     },
     {
       "id": "vita_spray_blueprint",
@@ -13764,7 +16673,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "vita_spray"
     },
     {
       "id": "volcanic_rock",
@@ -13789,7 +16699,17 @@
       "found": [
         "Electrical"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 10
+          },
+          "limit": 5,
+          "level": 12
+        }
+      ]
     },
     {
       "id": "vulcano_blueprint",
@@ -13798,7 +16718,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "vulcano_i"
     },
     {
       "id": "vulcano_i",
@@ -13810,7 +16731,20 @@
         "heavy_gun_parts": 2
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "weapon_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "exodus_modules": 1,
+          "heavy_gun_parts": 3,
+          "magnetic_accelerator": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "vulcano_blueprint"
     },
     {
       "id": "vulcano_ii",
@@ -13910,7 +16844,20 @@
         "plastic_parts": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "med_station",
+          "in_raid"
+        ],
+        "level": 1,
+        "recipe": {
+          "fabric": 10,
+          "plastic_parts": 3
+        },
+        "quantity": 1
+      },
+      "blueprint": "white_flag_blueprint"
     },
     {
       "id": "white_flag_blueprint",
@@ -13919,7 +16866,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "white_flag"
     },
     {
       "id": "wind_sprite_ship_model",
@@ -13942,7 +16890,17 @@
         "Electrical",
         "Technological"
       ],
-      "drops": []
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 4
+          },
+          "limit": 10,
+          "level": 7
+        }
+      ]
     },
     {
       "id": "wolfpack",
@@ -13954,7 +16912,20 @@
         "explosive_compound": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "explosives_bench"
+        ],
+        "level": 3,
+        "recipe": {
+          "arc_motion_core": 2,
+          "explosive_compound": 1,
+          "rocketeer_driver": 1
+        },
+        "quantity": 1
+      },
+      "blueprint": "wolfpack_blueprint"
     },
     {
       "id": "wolfpack_blueprint",
@@ -13963,7 +16934,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "wolfpack"
     },
     {
       "id": "yellow_light_stick",
@@ -13974,7 +16946,36 @@
         "chemicals": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 1,
+        "recipe": {
+          "chemicals": 3
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 450
+          },
+          "limit": 0,
+          "level": 0
+        },
+        {
+          "trader": "Шани",
+          "cost": {
+            "creds": 10
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ],
+      "blueprint": "yellow_light_stick_blueprint"
     },
     {
       "id": "yellow_light_stick_blueprint",
@@ -13983,7 +16984,8 @@
       "value": 5000,
       "recycles": {},
       "found": [],
-      "drops": []
+      "drops": [],
+      "unlocks": "yellow_light_stick"
     },
     {
       "id": "zipline",
@@ -13995,7 +16997,28 @@
         "rope": 1
       },
       "found": [],
-      "drops": []
+      "drops": [],
+      "craft": {
+        "benches": [
+          "utility_bench"
+        ],
+        "level": 2,
+        "recipe": {
+          "mechanical_components": 1,
+          "rope": 1
+        },
+        "quantity": 1
+      },
+      "vendors": [
+        {
+          "trader": "Аполлон",
+          "cost": {
+            "coins": 3000
+          },
+          "limit": 3,
+          "level": 12
+        }
+      ]
     }
   ],
   "workshops": [
@@ -14227,5 +17250,17 @@
     "Medical": "медицина",
     "Technological": "технологии",
     "Raider": "рейдеры"
+  },
+  "benches": {
+    "in_raid": "в рейде",
+    "equipment_bench": "Верстак для снаряжения",
+    "explosives_bench": "Верстак для взрывчатки",
+    "med_station": "Медицинская лаборатория",
+    "refiner": "Очиститель",
+    "scrappy": "Плюшкин",
+    "stash": "Хранилище",
+    "utility_bench": "Верстак для инструментов",
+    "weapon_bench": "Оружейный верстак",
+    "workbench": "Верстак"
   }
 }
