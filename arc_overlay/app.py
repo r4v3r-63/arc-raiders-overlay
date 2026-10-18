@@ -292,19 +292,10 @@ class OverlayApp:
         QTimer.singleShot(200, self._grab_screen)
 
     def _grab_screen(self):
-        screen = QGuiApplication.primaryScreen()
-        image = screen.grabWindow(0).toImage()
-        # Мелкий текст распознаётся лучше, если картинку немного увеличить.
-        limit = screen_import.max_image_dimension()
-        factor = min(1.5, limit / max(image.width(), image.height(), 1))
-        if factor > 1.05 or factor < 1:
-            image = image.scaled(int(image.width() * factor), int(image.height() * factor),
-                                 Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
-        path = paths.cache_dir() / "экран.png"
-        image.save(str(path))
+        image = QGuiApplication.primaryScreen().grabWindow(0).toImage()
         self.card.setVisible(True)
         self._show_notice("Ищу квесты на экране…")
-        self._recognizer = screen_import.RecognizeThread(path)
+        self._recognizer = screen_import.RecognizeThread(image, paths.cache_dir() / "экран.png")
         self._recognizer.recognized.connect(self._screen_recognized)
         self._recognizer.failed.connect(lambda message: self._show_notice(message))
         self._recognizer.start()
@@ -531,13 +522,18 @@ def ocr_self_test() -> int:
     painter.drawText(40, 100, "Greasing Her Palms")
     painter.drawText(40, 200, "What Goes Around")
     painter.end()
-    path = paths.cache_dir() / "ocr-test.png"
-    image.save(str(path))
-    try:
-        lines = screen_import.recognize_file(path)
-    except screen_import.OcrUnavailable as error:
-        print(f"распознавание недоступно: {error}")
+    result: dict = {}
+    thread = screen_import.RecognizeThread(image, paths.cache_dir() / "ocr-test.png")
+    thread.recognized.connect(lambda lines: result.update(lines=lines), Qt.ConnectionType.DirectConnection)
+    thread.failed.connect(lambda message: result.update(error=message), Qt.ConnectionType.DirectConnection)
+    thread.start()
+    if not thread.wait(60_000):
+        print("распознавание зависло")
         return 1
+    if "error" in result:
+        print(f"распознавание недоступно: {result['error']}")
+        return 1
+    lines = result.get("lines", [])
     found = screen_import.match_quests(QuestDB.load(), lines)
     print(f"строки: {lines}; квесты: {[q.english_name for q in found]}")
     return 0 if len(found) >= 2 else 1

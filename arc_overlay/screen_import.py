@@ -12,7 +12,8 @@ import difflib
 import sys
 from pathlib import Path
 
-from PyQt6.QtCore import QThread, pyqtSignal
+from PyQt6.QtCore import QThread, Qt, pyqtSignal
+from PyQt6.QtGui import QImage
 
 from .quest_db import Quest, QuestDB, normalize
 
@@ -48,16 +49,32 @@ def match_quests(db: QuestDB, lines: list[str]) -> list[Quest]:
 
 
 # --- распознавание (только Windows) ---------------------------------------
+#
+# Всё, что касается Windows Runtime, выполняется в отдельном потоке с многопоточным
+# COM-апартаментом (MTA): в главном потоке Qt включает однопоточный (STA), и ожидание
+# асинхронных вызовов Windows там зависает.
+
+TIMEOUT_SECONDS = 30
+SAFE_MAX_DIMENSION = 2600
 
 
-def _engine():
+def _init_thread():
     if sys.platform != "win32":
         raise OcrUnavailable("Распознавание текста работает только в Windows.")
     try:
-        from winrt.windows.globalization import Language
-        from winrt.windows.media.ocr import OcrEngine
+        from winrt.runtime import ApartmentType, init_apartment
     except ImportError as error:
         raise OcrUnavailable(f"Не найден модуль распознавания текста Windows: {error}") from error
+    try:
+        init_apartment(ApartmentType.MULTI_THREADED)
+    except OSError:
+        pass  # поток уже инициализирован
+
+
+def _engine():
+    from winrt.windows.globalization import Language
+    from winrt.windows.media.ocr import OcrEngine
+
     russian = Language("ru")
     engine = OcrEngine.try_create_from_language(russian) if OcrEngine.is_language_supported(russian) else None
     engine = engine or OcrEngine.try_create_from_user_profile_languages()
@@ -68,19 +85,18 @@ def _engine():
     return engine
 
 
-def max_image_dimension() -> int:
+def _max_dimension() -> int:
     try:
         from winrt.windows.media.ocr import OcrEngine
-        return int(OcrEngine.max_image_dimension)
-    except Exception:  # noqa: BLE001 — не Windows или старая сборка: берём безопасное значение
-        return 2600
+        return int(OcrEngine.max_image_dimension) or SAFE_MAX_DIMENSION
+    except Exception:  # noqa: BLE001 — старая сборка Windows: берём безопасное значение
+        return SAFE_MAX_DIMENSION
 
 
-async def _recognize(path: Path) -> list[str]:
+async def _recognize(engine, path: Path) -> list[str]:
     from winrt.windows.graphics.imaging import BitmapDecoder
     from winrt.windows.storage import FileAccessMode, StorageFile
 
-    engine = _engine()
     file = await StorageFile.get_file_from_path_async(str(path.resolve()))
     stream = await file.open_async(FileAccessMode.READ)
     decoder = await BitmapDecoder.create_async(stream)
@@ -89,10 +105,23 @@ async def _recognize(path: Path) -> list[str]:
     return [line.text for line in result.lines]
 
 
-def recognize_file(path: Path) -> list[str]:
-    """Строки текста на картинке. Бросает OcrUnavailable, если распознавание недоступно."""
-    _engine()  # понятная ошибка до запуска асинхронной части
-    return asyncio.run(_recognize(path))
+def recognize_image(image: QImage, work_path: Path) -> list[str]:
+    """Строки текста на картинке. Вызывать из фонового потока (см. RecognizeThread).
+
+    Бросает OcrUnavailable, если распознавание недоступно.
+    """
+    _init_thread()
+    engine = _engine()
+    # Мелкий текст распознаётся лучше, если картинку немного увеличить (но не больше предела Windows).
+    factor = min(1.5, _max_dimension() / max(image.width(), image.height(), 1))
+    if abs(factor - 1) > 0.05:
+        image = image.scaled(int(image.width() * factor), int(image.height() * factor),
+                             Qt.AspectRatioMode.KeepAspectRatio, Qt.TransformationMode.SmoothTransformation)
+    image.save(str(work_path))
+    try:
+        return asyncio.run(asyncio.wait_for(_recognize(engine, work_path), TIMEOUT_SECONDS))
+    except asyncio.TimeoutError as error:
+        raise OcrUnavailable("Распознавание текста не ответило вовремя.") from error
 
 
 class RecognizeThread(QThread):
@@ -101,13 +130,14 @@ class RecognizeThread(QThread):
     recognized = pyqtSignal(list)
     failed = pyqtSignal(str)
 
-    def __init__(self, path: Path):
+    def __init__(self, image: QImage, work_path: Path):
         super().__init__()
-        self._path = path
+        self._image = image
+        self._path = work_path
 
     def run(self):
         try:
-            self.recognized.emit(recognize_file(self._path))
+            self.recognized.emit(recognize_image(self._image, self._path))
         except OcrUnavailable as error:
             self.failed.emit(str(error))
         except Exception as error:  # noqa: BLE001 — любая ошибка Windows API должна дойти до игрока текстом

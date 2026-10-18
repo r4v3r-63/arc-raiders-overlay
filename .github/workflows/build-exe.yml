@@ -61,6 +61,7 @@ jobs:
           if ($p.ExitCode -ne 0) { throw "Самопроверка не прошла, код $($p.ExitCode)" }
 
       - name: Проверка распознавания текста
+        timeout-minutes: 3
         continue-on-error: true  # на сервере GitHub может не быть языка распознавания — не блокируем выпуск
         shell: pwsh
         run: |
