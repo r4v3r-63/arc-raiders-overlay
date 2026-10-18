@@ -16,6 +16,7 @@ on:
       - "requirements.txt"
       - "assets/**"
       - ".github/workflows/build-exe.yml"
+      - ".github/release-notes.md"
   workflow_dispatch:
 
 permissions:
@@ -68,8 +69,9 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release delete exe --cleanup-tag --yes || true
+          VERSION=$(sed -n "s/.*'ProductVersion', '\([^']*\)'.*/\1/p" assets/version_info.txt)
           gh release create exe ARC-Raiders-Overlay.zip \
-            --title "ARC Raiders — подсказчик" \
-            --notes "Последняя сборка из коммита ${GITHUB_SHA::7}. Скачай ARC-Raiders-Overlay.zip, распакуй в любую папку и запусти ARC-Raiders-Overlay.exe — установка не нужна." \
+            --title "ARC Raiders — подсказчик $VERSION" \
+            --notes-file .github/release-notes.md \
             --target "$GITHUB_SHA" \
             --latest

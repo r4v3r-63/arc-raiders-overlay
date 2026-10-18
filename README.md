@@ -62,6 +62,11 @@ ARC-Raiders-Overlay\
 └── Данные\             скачанные гайды и настройки (появляется при первом запуске)
 ```
 
+## Нашли ошибку?
+
+[Напишите о проблеме](https://github.com/r4v3r-63/arc-raiders-overlay/issues/new/choose) — опишите,
+что случилось, и приложите скриншот.
+
 ## Источники
 
 - Квесты, предметы и враги — [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)
@@ -75,3 +80,7 @@ ARC-Raiders-Overlay\
   окна программы наложены поверх него.
 
 ARC Raiders и все игровые материалы © Embark Studios AB. Программа не связана с Embark Studios.
+
+## Лицензия
+
+Код программы — [MIT](LICENSE). Тексты гайдов с вики, их перевод и скриншоты — CC BY-SA 4.0.
