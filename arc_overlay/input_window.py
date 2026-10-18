@@ -1,4 +1,4 @@
-"""Окно ввода квеста и локации. Только оно забирает фокус, и только на время ввода."""
+"""Окно ввода названия квеста. Только оно забирает фокус, и только на время ввода."""
 
 from __future__ import annotations
 
@@ -11,8 +11,8 @@ from . import winapi
 
 
 class InputWindow(QWidget):
-    # Отправляется после Enter: (название квеста, локация).
-    submitted = pyqtSignal(str, str)
+    # Отправляется после Enter: название квеста.
+    submitted = pyqtSignal(str)
     help_requested = pyqtSignal()
 
     def __init__(self):
@@ -32,11 +32,8 @@ class InputWindow(QWidget):
 
         self.quest_edit = QLineEdit()
         self.quest_edit.setPlaceholderText("например, Чистое небо")
-        self.location_edit = QLineEdit()
-        self.location_edit.setPlaceholderText("необязательно, например, Космопорт")
-        self._quest_suggest = self._map_suggest = lambda text: []
+        self._quest_suggest = lambda text: []
         self._attach_completer(self.quest_edit, lambda text: self._quest_suggest(text))
-        self._attach_completer(self.location_edit, lambda text: self._map_suggest(text))
         self.error_label = QLabel()
         self.error_label.setStyleSheet("color: #ff8a65;")
         self.error_label.setWordWrap(True)
@@ -58,7 +55,6 @@ class InputWindow(QWidget):
 
         form = QFormLayout()
         form.addRow("Квест:", self.quest_edit)
-        form.addRow("Локация:", self.location_edit)
         layout = QVBoxLayout(self)
         layout.setContentsMargins(16, 16, 16, 12)
         layout.addLayout(form)
@@ -67,9 +63,9 @@ class InputWindow(QWidget):
 
         self._previous_window = None
 
-    def set_suggesters(self, quests, maps):
-        """quests(text) и maps(text) возвращают варианты для выпадающего списка."""
-        self._quest_suggest, self._map_suggest = quests, maps
+    def set_suggester(self, quests):
+        """quests(text) возвращает варианты для выпадающего списка."""
+        self._quest_suggest = quests
 
     def _attach_completer(self, edit: QLineEdit, suggest):
         model = QStringListModel(self)
@@ -122,7 +118,7 @@ class InputWindow(QWidget):
 
     def keyPressEvent(self, event: QKeyEvent):
         if event.key() in (Qt.Key.Key_Return, Qt.Key.Key_Enter):
-            self.submitted.emit(self.quest_edit.text(), self.location_edit.text())
+            self.submitted.emit(self.quest_edit.text())
         elif event.key() == Qt.Key.Key_Escape:
             self.close_and_return_focus()
         else:

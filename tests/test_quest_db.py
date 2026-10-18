@@ -45,25 +45,14 @@ def test_no_match():
     assert make_db().find("") is None
 
 
-def test_available_at():
-    db = make_db()
-    dead_end = db.find("Тупик")
-    assert db.available_at(dead_end, "Синие врата")
-    assert db.available_at(dead_end, "blue gate")
-    assert not db.available_at(dead_end, "космопорт")
-    assert db.available_at(dead_end, "")
-    assert db.available_at(dead_end, "неизвестная карта")
-    assert db.available_at(db.find("Чистое небо"), "космопорт")
-
-
 def test_bundled_db_has_guides_and_links():
     db = QuestDB.load()
     assert len(db.quests) >= 115
     assert all(q.steam_url for q in db.quests)
     assert sum(1 for q in db.quests if q.guide) >= 50
     assert db.find("В Небеса").english_name == "To The Skies"
-    assert db.find_map("Перевал Пендола").id == "pendola_pass"
-    assert db.find_map("поле битвы у дамбы").id == "dam_battlegrounds"
+    assert db.find_map_exact("Перевал Пендола").id == "pendola_pass"
+    assert db.find_map_exact("поле битвы у дамбы").id == "dam_battlegrounds"
 
 
 def test_bundled_guide_images_exist():
@@ -86,9 +75,3 @@ def test_suggest_ranks_prefix_first_and_ignores_yo():
     assert db.suggest("еще") == ["Ещё один тупик"]
     assert db.suggest("тупик") == ["Тупик", "Ещё один тупик"]
     assert db.suggest("") == []
-
-
-def test_suggest_maps():
-    db = QuestDB.load()
-    assert db.suggest_maps("косм") == ["Космопорт"]
-    assert "Поле битвы у дамбы" in db.suggest_maps("дамб")

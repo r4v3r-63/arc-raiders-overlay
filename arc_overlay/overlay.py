@@ -26,7 +26,6 @@ BACKGROUND_RGB = (15, 18, 24)
 ACCENT = "#f2c94c"
 TEXT = "#f0f0f0"
 MUTED = "#a8adb5"
-WARNING = "#ff8a65"
 GUIDE_NAV_HINT = "Ctrl+Shift+↑ / ↓ — листать · Ctrl+Shift+G — назад к шагу"
 EDIT_HINT = "Перетащи карточку мышкой. Колёсико — масштаб, Ctrl + колёсико — прозрачность. Esc или «Готово» — выйти."
 
@@ -108,7 +107,6 @@ class OverlayCard(QWidget):
         self._hotkey_hint = hotkey_hint
         self._guide_hint = guide_hint
         self._quest: Quest | None = None
-        self._location = ""
         self._step = 0
         self._wide = False
         self._width = CARD_WIDTH
@@ -146,9 +144,8 @@ class OverlayCard(QWidget):
         self._quest = None
         self._show(self._render_welcome)
 
-    def show_quest(self, quest: Quest, location: str = ""):
+    def show_quest(self, quest: Quest):
         self._quest = quest
-        self._location = location.strip()
         self._step = 0
         self.show_step()
 
@@ -218,13 +215,10 @@ class OverlayCard(QWidget):
         meta = []
         if q.trader:
             meta.append(f"Торговец: {esc(q.trader)}")
-        if self._location:
-            meta.append(f"Локация: {esc(self._location)}")
+        if q.locations:
+            meta.append(f"Где: {esc(', '.join(self._db.map_names(q)))}")
         if meta:
             parts.append(f"<div style='color:{MUTED};'>{' · '.join(meta)}</div>")
-        if not self._db.available_at(q, self._location):
-            places = ", ".join(self._db.map_names(q))
-            parts.append(f"<p style='color:{WARNING};'>Этот квест выполняется на: {esc(places)}</p>")
         if q.steps:
             one_round = " · всё за один рейд" if q.one_round else ""
             parts.append(

@@ -59,7 +59,7 @@ class OverlayApp:
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
         self.input.help_requested.connect(self.show_help)
-        self.input.set_suggesters(lambda text: self.db.suggest(text), lambda text: self.db.suggest_maps(text))
+        self.input.set_suggester(lambda text: self.db.suggest(text))
 
         self.hotkeys = winapi.HotkeyManager()
         app.installNativeEventFilter(self.hotkeys)
@@ -337,13 +337,13 @@ class OverlayApp:
         if url:
             QDesktopServices.openUrl(QUrl(url))
 
-    def on_submitted(self, quest_name: str, location: str):
+    def on_submitted(self, quest_name: str):
         quest = self.db.find(quest_name)
         if quest is None:
             examples = ", ".join(self.db.names()[:3])
             self.input.show_error(f"Квест «{quest_name.strip()}» не найден в базе. Например: {examples}.")
             return
-        self.card.show_quest(quest, location)
+        self.card.show_quest(quest)
         self.guide_mode = False
         self.page_index = 0
         for action in self._quest_actions:

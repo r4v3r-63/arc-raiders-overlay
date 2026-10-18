@@ -117,25 +117,11 @@ class QuestDB:
         """Названия квестов для автодополнения: сначала начинающиеся с введённого, потом содержащие."""
         return _suggest(query, [(q.name, [q.name, *q.aliases]) for q in self.quests], limit)
 
-    def suggest_maps(self, query: str, limit: int = 10) -> list[str]:
-        return _suggest(query, [(m.name_ru or m.name, [m.name, m.name_ru, *m.aliases]) for m in self.maps.values()],
-                        limit)
-
     def find_map_exact(self, name: str) -> GameMap | None:
         return self._map_by_name.get(normalize(name))
 
-    def find_map(self, query: str) -> GameMap | None:
-        return _lookup(query, self._map_by_name)
-
     def map_names(self, quest: Quest) -> list[str]:
         return [(self.maps[m].name_ru or self.maps[m].name) if m in self.maps else m for m in quest.locations]
-
-    def available_at(self, quest: Quest, location: str) -> bool:
-        """False, только если карта распознана и квест на ней точно не выполняется."""
-        if not quest.locations:
-            return True
-        game_map = self.find_map(location)
-        return game_map is None or game_map.id in quest.locations
 
 
 def _lookup(query: str, index: dict):
