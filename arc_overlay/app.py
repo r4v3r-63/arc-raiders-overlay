@@ -18,7 +18,8 @@ HOTKEY_INPUT = "Ctrl+Shift+Q"
 HOTKEY_HELP = (
     f"{HOTKEY_INPUT} — ввести квест\n"
     "Ctrl+Shift+→ / ← — следующий / предыдущий шаг\n"
-    "Ctrl+Shift+X — выход"
+    "Ctrl+Shift+X — спрятать / показать карточку\n"
+    "Выход — через меню значка в трее"
 )
 
 
@@ -51,9 +52,9 @@ class OverlayApp:
             name
             for name, vk, callback in [
                 (HOTKEY_INPUT, winapi.VK_Q, self.input.open),
-                ("Ctrl+Shift+→", winapi.VK_RIGHT, self.card.next_step),
-                ("Ctrl+Shift+←", winapi.VK_LEFT, self.card.prev_step),
-                ("Ctrl+Shift+X", winapi.VK_X, app.quit),
+                ("Ctrl+Shift+→", winapi.VK_RIGHT, self.next_step),
+                ("Ctrl+Shift+←", winapi.VK_LEFT, self.prev_step),
+                ("Ctrl+Shift+X", winapi.VK_X, self.toggle_card),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
         ]
@@ -79,15 +80,38 @@ class OverlayApp:
         menu = QMenu()
         enter = QAction("Ввести квест", menu)
         enter.triggered.connect(self.input.open)
+        self._toggle_action = QAction("Спрятать карточку", menu)
+        self._toggle_action.triggered.connect(self.toggle_card)
         quit_action = QAction("Выход", menu)
         quit_action.triggered.connect(self.app.quit)
         menu.addAction(enter)
+        menu.addAction(self._toggle_action)
         menu.addSeparator()
         menu.addAction(quit_action)
         tray.setContextMenu(menu)
+        tray.activated.connect(self._on_tray_activated)
         tray.show()
         self._tray_menu = menu  # держим ссылку, иначе меню удалит сборщик мусора
         return tray
+
+    def _on_tray_activated(self, reason):
+        if reason == QSystemTrayIcon.ActivationReason.Trigger:  # обычный клик по значку
+            self.toggle_card()
+
+    def set_card_visible(self, visible: bool):
+        self.card.setVisible(visible)
+        self._toggle_action.setText("Спрятать карточку" if visible else "Показать карточку")
+
+    def toggle_card(self):
+        self.set_card_visible(not self.card.isVisible())
+
+    def next_step(self):
+        self.card.next_step()
+        self.set_card_visible(True)
+
+    def prev_step(self):
+        self.card.prev_step()
+        self.set_card_visible(True)
 
     def on_submitted(self, quest_name: str, location: str):
         quest = self.db.find(quest_name)
@@ -96,6 +120,7 @@ class OverlayApp:
             self.input.show_error(f"Квест «{quest_name.strip()}» не найден в базе. Например: {examples}.")
             return
         self.card.show_quest(quest, location)
+        self.set_card_visible(True)
         self.input.close_and_return_focus()
 
 
