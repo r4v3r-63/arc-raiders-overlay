@@ -12,6 +12,7 @@ ARC-Raiders-Overlay\\
 
 from __future__ import annotations
 
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -80,3 +81,12 @@ def migrate_legacy():
     legacy_cache = _legacy_cache_dir()
     if legacy_cache.is_dir() and legacy_cache.resolve() != cache_dir().resolve():
         shutil.rmtree(legacy_cache, ignore_errors=True)
+
+
+def build_info() -> dict:
+    """Сведения о сборке (коммит), которые GitHub Actions кладёт в .exe; пусто при запуске из исходников."""
+    path = Path(__file__).resolve().parent / "data" / "build_info.json"
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except (OSError, ValueError):
+        return {}

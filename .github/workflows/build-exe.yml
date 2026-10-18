@@ -44,6 +44,11 @@ jobs:
           pip install -r requirements.txt
           pip install --no-binary pyinstaller pyinstaller
 
+      - name: Записать сведения о сборке
+        shell: bash
+        # По коммиту программа понимает, что на GitHub вышла новая версия.
+        run: echo "{\"commit\": \"$GITHUB_SHA\"}" > arc_overlay/data/build_info.json
+
       - name: Собрать exe
         run: >
           pyinstaller --noconfirm --onedir --windowed

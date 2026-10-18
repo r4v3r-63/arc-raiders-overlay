@@ -115,7 +115,9 @@ class OverlayCard(QWidget):
         self._width = CARD_WIDTH
         self._pixmap: QPixmap | None = None
         self._render = self._render_welcome
-        self._before_help = None
+        self._before_help = None  # что было на карточке до временной панели (справка, сводка)
+        self._panel = ""  # какая временная панель открыта: "help", "shopping" или ""
+        self._shopping: list = []
         self._editing = False
         self._drag_offset: QPoint | None = None
         self._previous_window = None
@@ -187,17 +189,38 @@ class OverlayCard(QWidget):
         self._relayout()
 
     def toggle_help(self):
+        self._toggle_panel("help", self._render_help)
+
+    def toggle_shopping(self, items: list):
+        """Сводка «что собрать»: items — [(предмет, количество, [квесты])]."""
+        self._shopping = items
+        self._toggle_panel("shopping", self._render_shopping)
+
+    def close_panel(self):
+        """Закрывает справку или сводку, если открыта, и возвращает прежнее содержимое."""
         if self._before_help is not None:
-            render, self._before_help = self._before_help, None
-            self._render = render
-            render()
-        else:
-            self._before_help = self._render
-            self._render = self._render_help
-            self._render_help()
+            previous, self._before_help = self._before_help, None
+            self._panel = ""
+            self._render = previous
+            previous()
+
+    def _toggle_panel(self, panel: str, render):
+        if self._before_help is not None:
+            previous, self._before_help = self._before_help, None
+            was = self._panel
+            self._panel = ""
+            self._render = previous
+            if was == panel:  # повторное нажатие закрывает панель
+                previous()
+                return
+        self._before_help = self._render
+        self._panel = panel
+        self._render = render
+        render()
 
     def _show(self, render):
         self._before_help = None
+        self._panel = ""
         self._render = render
         render()
 
@@ -265,6 +288,22 @@ class OverlayCard(QWidget):
             parts.append(f"<p>{_lines(page.text)}</p>")
         footer = "\n".join(filter(None, [status, GUIDE_NAV_HINT]))
         self._set_content("".join(parts), footer=footer, wide=True, keep_image=bool(page.image))
+
+    def _render_shopping(self):
+        esc = html.escape
+        title = (f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>"
+                 f"Что собрать для активных квестов</div>")
+        if not self._shopping:
+            body = f"<p style='color:{MUTED};'>Активным квестам предметы не нужны.</p>"
+        else:
+            rows = "".join(
+                f"<tr><td style='color:{ACCENT}; padding-right:{self._px(10)}px;' align='right'><b>{qty}×</b></td>"
+                f"<td>{esc(name)}<br><span style='color:{MUTED}; font-size:{self._px(12)}px;'>"
+                f"{esc(', '.join(quests))}</span></td></tr>"
+                for name, qty, quests in self._shopping
+            )
+            body = f"<table style='margin-top:{self._px(6)}px;' cellspacing='{self._px(3)}'>{rows}</table>"
+        self._set_content(title + body, footer="Ctrl+Shift+L — закрыть сводку", wide=True)
 
     def _render_help(self):
         rows = "".join(
@@ -398,8 +437,7 @@ class OverlayCard(QWidget):
             winapi.set_foreground_window(int(self.winId()))
             self.setFocus()
         else:
-            if self._before_help is not None:
-                self.toggle_help()
+            self.close_panel()
             self.setVisible(visible)
             winapi.set_foreground_window(self._previous_window)
             self._previous_window = None

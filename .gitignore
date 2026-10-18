@@ -6,3 +6,4 @@ dist/
 *.spec
 .pytest_cache/
 Данные/
+arc_overlay/data/build_info.json

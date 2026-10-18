@@ -8,6 +8,7 @@
 from __future__ import annotations
 
 import json
+import re
 from dataclasses import asdict, dataclass, field
 from pathlib import Path
 
@@ -124,3 +125,17 @@ class Progress:
             self.active.insert(insert_at + offset, ActiveQuest(nxt.id, nxt.name))
         self._clamp()
         return quest, added, skipped
+
+
+def shopping_list(quests: list[Quest]) -> list[tuple[str, int, list[str]]]:
+    """Предметы, которые нужно собрать для квестов: [(предмет, всего штук, [квесты])], по алфавиту."""
+    totals: dict[str, list] = {}
+    for quest in quests:
+        for item in quest.required_items:
+            match = re.match(r"^\s*(\d+)\s*[×x]\s*(.+)$", item)
+            qty, name = (int(match.group(1)), match.group(2).strip()) if match else (1, item.strip())
+            entry = totals.setdefault(name.lower(), [name, 0, []])
+            entry[1] += qty
+            if quest.name not in entry[2]:
+                entry[2].append(quest.name)
+    return [tuple(v) for _, v in sorted(totals.items())]

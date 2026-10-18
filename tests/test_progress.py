@@ -59,3 +59,18 @@ def test_remove_current(tmp_path):
     p.add(db.find_by_id("b"))
     assert p.remove_current().id == "b"
     assert p.current_entry().id == "a"
+
+
+def test_shopping_list_sums_items_across_quests():
+    from arc_overlay.progress import shopping_list
+
+    quests = [
+        Quest(name="И хлам богатство", steps=[], required_items=["6× Провода", "1× Батарея"]),
+        Quest(name="Другой", steps=[], required_items=["2× провода", "Ключ"]),
+        Quest(name="Пустой", steps=[]),
+    ]
+    assert shopping_list(quests) == [
+        ("Батарея", 1, ["И хлам богатство"]),
+        ("Ключ", 1, ["Другой"]),
+        ("Провода", 8, ["И хлам богатство", "Другой"]),
+    ]

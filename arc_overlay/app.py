@@ -12,7 +12,7 @@ from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QGuiApplicatio
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
 from . import autostart, guide, paths, winapi
-from .progress import Progress
+from .progress import Progress, shopping_list
 from . import screen_import
 from .input_window import InputWindow
 from .net import CachedDownloader
@@ -23,6 +23,9 @@ from .quest_db import REMOTE_DATA_URL, Quest, QuestDB
 MODS = winapi.MOD_CONTROL | winapi.MOD_SHIFT
 HOTKEY_INPUT = "Ctrl+Shift+Q"
 GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
+RELEASE_API_URL = "https://api.github.com/repos/r4v3r-63/arc-raiders-overlay/releases/latest"
+DOWNLOAD_URL = "https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip"
+GAME_CHECK_INTERVAL_MS = 700
 STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520"
 STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
 REMOTE_DB_URL = REMOTE_DATA_URL + "quests.json"
@@ -82,6 +85,7 @@ class OverlayApp:
                 ("Ctrl+Shift+Tab", winapi.VK_TAB, self.switch_quest),
                 ("Ctrl+Shift+D", winapi.VK_D, self.complete_quest),
                 ("Ctrl+Shift+I", winapi.VK_I, self.import_from_screen),
+                ("Ctrl+Shift+L", winapi.VK_L, self.show_shopping),
                 ("Ctrl+Shift+H", winapi.VK_H, self.show_help),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
@@ -101,7 +105,15 @@ class OverlayApp:
         self._sync_timer = QTimer()
         self._sync_timer.timeout.connect(self.sync)
         self._sync_timer.start(SYNC_CHECK_INTERVAL_MS)
-        self.card.show()
+        self._game_timer = QTimer()
+        self._game_timer.timeout.connect(self._check_game)
+        self._game_timer.start(GAME_CHECK_INTERVAL_MS)
+        self._user_visible = True  # видимость, которую выбрал игрок (Ctrl+Shift+X)
+        self._hidden_outside_game = False  # игра запущена, но игрок переключился из неё
+        self._game_hwnd = 0
+        self._game_ticks = 0
+        self._update_notified = False
+        self._apply_visibility()
 
         if not winapi.IS_WINDOWS:
             # Без Windows глобальных клавиш нет — сразу открываем ввод для проверки.
@@ -144,14 +156,25 @@ class OverlayApp:
         self._autostart_action.setEnabled(autostart.available())
         self._autostart_action.setChecked(autostart.is_enabled())
         self._autostart_action.toggled.connect(self.set_autostart)
+        self._auto_hide_action = QAction("Прятать карточку вне игры", menu)
+        self._auto_hide_action.setCheckable(True)
+        self._auto_hide_action.setChecked(paths.settings().value("auto_hide", True, type=bool))
+        self._auto_hide_action.toggled.connect(self.set_auto_hide)
+        self._update_action = QAction("Скачать новую версию программы", menu)
+        self._update_action.triggered.connect(lambda: self._open(DOWNLOAD_URL))
+        self._update_action.setVisible(False)
+        shopping_action = QAction("Что собрать (Ctrl+Shift+L)", menu)
+        shopping_action.triggered.connect(self.show_shopping)
         self._clear_cache_action = QAction("Очистить кэш", menu)
         self._clear_cache_action.triggered.connect(self.clear_cache)
         menu.aboutToShow.connect(self._update_cache_label)
         quit_action = QAction("Выход", menu)
         quit_action.triggered.connect(self.app.quit)
+        menu.addAction(self._update_action)
         menu.addAction(enter)
         self._active_menu = menu.addMenu("Активные квесты")
         self._active_menu.aboutToShow.connect(self._fill_active_menu)
+        menu.addAction(shopping_action)
         import_action = QAction("Найти квесты на экране (Ctrl+Shift+I)", menu)
         import_action.triggered.connect(self.import_from_screen)
         menu.addAction(import_action)
@@ -163,6 +186,7 @@ class OverlayApp:
         for action in self._quest_actions:
             menu.addAction(action)
         menu.addSeparator()
+        menu.addAction(self._auto_hide_action)
         menu.addAction(self._autostart_action)
         menu.addAction(self._clear_cache_action)
         menu.addAction(quit_action)
@@ -193,13 +217,76 @@ class OverlayApp:
             self.toggle_card()
 
     def set_card_visible(self, visible: bool):
-        self.card.setVisible(visible)
+        self._user_visible = visible
         self._toggle_action.setText("Спрятать карточку" if visible else "Показать карточку")
+        self._apply_visibility()
+
+    def _apply_visibility(self):
+        visible = self.card.editing or (self._user_visible and not self._hidden_outside_game)
+        if visible != self.card.isVisible():
+            self.card.setVisible(visible)
 
     def toggle_card(self):
         if self.card.editing:
             self.card.set_editing(False)
-        self.set_card_visible(not self.card.isVisible())
+        self.set_card_visible(not self._user_visible)
+
+    # --- карточка только в игре -------------------------------------------
+
+    def _check_game(self):
+        """Прячет карточку, когда игра запущена, но активно другое окно (браузер, рабочий стол)."""
+        info = winapi.foreground_info()
+        if info is None:
+            return  # не Windows
+        hwnd, pid, is_game = info
+        if pid == os.getpid():
+            return  # активно окно самой программы (ввод квеста, настройка)
+        if is_game:
+            self._game_hwnd = hwnd
+        elif not winapi.window_alive(self._game_hwnd):
+            self._game_ticks += 1
+            # Полный перебор окон — реже: раз в несколько секунд.
+            self._game_hwnd = winapi.find_game_window() if self._game_ticks % 8 == 0 else 0
+        hide = self._auto_hide_action.isChecked() and bool(self._game_hwnd) and not is_game
+        if hide != self._hidden_outside_game:
+            self._hidden_outside_game = hide
+            self._apply_visibility()
+
+    def set_auto_hide(self, enabled: bool):
+        self.settings.setValue("auto_hide", enabled)
+        if not enabled and self._hidden_outside_game:
+            self._hidden_outside_game = False
+            self._apply_visibility()
+
+    # --- что собрать ------------------------------------------------------
+
+    def show_shopping(self):
+        quests = [self.progress.resolve(self.db, entry) for entry in self.progress.active]
+        self.card.toggle_shopping(shopping_list([q for q in quests if q]))
+        self.set_card_visible(True)
+
+    # --- новая версия программы -------------------------------------------
+
+    def check_update(self):
+        """Раз в сутки сверяет сборку программы с последним релизом на GitHub."""
+        build = paths.build_info()
+        if build.get("commit"):
+            self.downloader.get(RELEASE_API_URL, lambda path: self._release_loaded(path, build["commit"]),
+                                max_age=DB_MAX_AGE)
+
+    def _release_loaded(self, path, commit: str):
+        if not path:
+            return
+        try:
+            latest = json.loads(path.read_text(encoding="utf-8")).get("target_commitish", "")
+        except (ValueError, AttributeError):
+            return
+        if latest and latest != commit:
+            self._update_action.setVisible(True)
+            if not self._update_notified:
+                self._update_notified = True
+                self.tray.showMessage("ARC Raiders — подсказчик",
+                                      "Вышла новая версия программы. Скачать — в меню значка в трее.")
 
     def toggle_editing(self):
         self.set_card_visible(True)
@@ -287,13 +374,13 @@ class OverlayApp:
         """Снимок экрана → распознавание → найденные квесты в список активных."""
         if getattr(self, "_recognizer", None) is not None and self._recognizer.isRunning():
             return
-        self.card.hide()  # своя карточка не должна попасть в снимок
+        self.card.hide()  # своя карточка не должна попасть в снимок (вернёт _apply_visibility)
         self.input.hide()
         QTimer.singleShot(200, self._grab_screen)
 
     def _grab_screen(self):
         image = QGuiApplication.primaryScreen().grabWindow(0).toImage()
-        self.card.setVisible(True)
+        self._apply_visibility()
         self._show_notice("Ищу квесты на экране…")
         self._recognizer = screen_import.RecognizeThread(image, paths.cache_dir() / "экран.png")
         self._recognizer.recognized.connect(self._screen_recognized)
@@ -408,6 +495,7 @@ class OverlayApp:
     def sync(self):
         self.sync_db()
         self.sync_steam_guide()
+        self.check_update()
 
     def sync_db(self):
         """Скачивает свежую базу квестов с GitHub (её раз в сутки пересобирает GitHub Actions)."""
