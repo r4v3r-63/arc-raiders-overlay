@@ -10,6 +10,7 @@ on:
 
 permissions:
   contents: write
+  issues: write  # задача «База отстаёт от игры»
 
 concurrency:
   group: update-db
@@ -50,4 +51,29 @@ jobs:
             git pull --rebase origin main  # пока собиралась база, в main могли запушить
             git push
             echo "База обновлена: $(git log -1 --format=%h)" >> "$GITHUB_STEP_SUMMARY"
+          fi
+
+      # Сравнивает дату последнего обновления игры (новости Steam) с датами источников.
+      # Если источники отстают больше недели — открывает задачу (придёт уведомление),
+      # когда догонят — закрывает её.
+      - name: Проверить, не отстаёт ли база от игры
+        id: fresh
+        continue-on-error: true
+        run: python tools/check_freshness.py /tmp/arcraiders-data
+
+      - name: Сообщить, если база отстаёт
+        if: steps.fresh.outcome == 'success'
+        continue-on-error: true
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          title="База отстаёт от игры"
+          existing=$(gh issue list --state open --search "in:title $title" --json number,title \
+                       -q ".[] | select(.title == \"$title\") | .number" | head -n 1)
+          if [ "${{ steps.fresh.outputs.lagging }}" = "true" ]; then
+            if [ -z "$existing" ]; then
+              gh issue create --title "$title" --body-file freshness.md
+            fi
+          elif [ -n "$existing" ]; then
+            gh issue close "$existing" --comment "Источники обновились — база снова не отстаёт от игры."
           fi
