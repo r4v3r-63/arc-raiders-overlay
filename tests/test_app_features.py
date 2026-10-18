@@ -181,7 +181,7 @@ def test_workshop_levels_saved(tmp_path):
 
 
 def test_item_search_and_item_map(app):
-    app.on_item_submitted("мини- насос")
+    app.on_item_submitted("супер насос")
     assert "Водяной насос" in app.item_input.error_label.text()
     app.on_item_submitted("водяной насос")
     assert app.card.panel == "item" and "Поле битвы у дамбы" in app.card._label.text()

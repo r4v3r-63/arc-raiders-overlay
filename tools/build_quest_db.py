@@ -3,6 +3,7 @@
 Источники:
 - RaidTheory/arcraiders-data (MIT) — официальные русские названия, цели, предметы, враги;
 - RaidTheory/arcraiders-data — также предметы (цена, разборка) и улучшения мастерских;
+- arctracker.io (сайт на той же базе) — более свежие предметы и мастерские, если сайт доступен;
 - arcraiders.wiki (CC BY-SA 4.0) — гайды со скриншотами и квесты, которых ещё нет в arcraiders-data.
 
 Использование (нужен Pillow: pip install -r requirements-dev.txt):
@@ -112,11 +113,13 @@ def maps_ru(map_ids: list[str]) -> str:
 class Hints:
     """Подсказки для простых целей: где водится враг и где искать предмет."""
 
-    def __init__(self, data_dir: Path):
+    def __init__(self, data_dir: Path, fresh_items: dict | None = None):
         self.items = {}
         for path in sorted((data_dir / "items").glob("*.json")):  # порядок не зависит от файловой системы
             item = json.loads(path.read_text(encoding="utf-8"))
             self.items[item["id"]] = item
+        # Свежие предметы с arctracker.io дополняют и заменяют устаревшие из репозитория.
+        self.items.update(sorted((fresh_items or {}).items()))
         self.bots = json.loads((data_dir / "bots.json").read_text(encoding="utf-8"))
         # Длинные названия раньше коротких, чтобы «Wasp Driver» не превратился в «Wasp».
         self.item_names = sorted(
@@ -174,13 +177,40 @@ class Hints:
         return hints[:5]
 
 
+ARCTRACKER_API = "https://arctracker.io/api/"
+ARCTRACKER_MIN_ITEMS = 500  # меньше — сайт ответил не тем, берём данные из репозитория
+
+
+def fetch_arctracker() -> tuple[dict, list]:
+    """Предметы {id: предмет} и мастерские [модуль] с arctracker.io в формате arcraiders-data.
+
+    Репозиторий arcraiders-data обновляется реже сайта: новых предметов (например, «Мини-насос»)
+    в нём может не быть. Не удалось — пустые значения, сборка берёт данные из репозитория.
+    """
+    def get(name: str):
+        req = urllib.request.Request(ARCTRACKER_API + name, headers={"User-Agent": wiki.USER_AGENT})
+        with urllib.request.urlopen(req, timeout=60) as resp:
+            return json.load(resp)
+
+    try:
+        items = get("items")["items"]
+        modules = list(get("hideout")["hideoutModules"].values())
+        if len(items) < ARCTRACKER_MIN_ITEMS:
+            raise ValueError(f"предметов всего {len(items)}")
+        return {i["id"]: i for i in items if i.get("id") and i.get("name")}, sorted(modules, key=lambda m: m["id"])
+    except (OSError, ValueError, KeyError, TypeError, AttributeError) as error:
+        print(f"  arctracker.io недоступен ({error!r}) — предметы и мастерские из репозитория")
+        return {}, []
+
+
 def blueprint_target(blueprint_id: str, all_items: dict) -> str | None:
     """Какой предмет открывает чертёж: «anvil_blueprint» → «anvil» или первая версия «anvil_i»."""
     base = blueprint_id.removesuffix("_blueprint")
     return next((i for i in (base, base + "_i") if i in all_items), None)
 
 
-def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[dict], dict[str, str]]:
+def items_and_workshops(data_dir: Path, hints: Hints, modules: list | None = None
+                        ) -> tuple[list[dict], list[dict], dict[str, str]]:
     """Предметы (проверка «брать или продавать», поиск, крафт, торговцы, чертежи), улучшения мастерских
     по уровням и русские названия мест крафта."""
     blueprint_of = {}
@@ -226,8 +256,9 @@ def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[
             entry["blueprint"] = blueprint_of[item_id]
     workshops = []
     bench_names = {"in_raid": "в рейде"}
-    for path in sorted((data_dir / "hideout").glob("*.json")):
-        bench = json.loads(path.read_text(encoding="utf-8"))
+    if not modules:
+        modules = [json.loads(p.read_text(encoding="utf-8")) for p in sorted((data_dir / "hideout").glob("*.json"))]
+    for bench in modules:
         bench_names[bench["id"]] = text(bench["name"])
         levels = [{"level": int(level["level"]),
                    "items": {r["itemId"]: int(r["quantity"]) for r in level.get("requirementItemIds", [])}}
@@ -367,7 +398,9 @@ def report_missing_translations():
 def build(data_dir: Path) -> dict:
     tr = Translator(TRANSLATIONS_PATH)
     official = {k: v for k, v in json.loads(OFFICIAL_NAMES_PATH.read_text(encoding="utf-8")).items() if not k.startswith("_")}
-    hints = Hints(data_dir)
+    print("Загружаю свежие предметы и мастерские с arctracker.io…")
+    fresh_items, modules = fetch_arctracker()
+    hints = Hints(data_dir, fresh_items)
     print("Загружаю страницы квестов с вики…")
     pages = wiki.fetch_quest_pages()
     pages_by_name = {norm(title): (title, text_) for title, text_ in pages.items()}
@@ -490,10 +523,10 @@ def build(data_dir: Path) -> dict:
 
     remove_unused_images(quests, maps, old_db)
     MISSING_TRANSLATIONS[:] = tr.missing
-    items, workshops, bench_names = items_and_workshops(data_dir, hints)
+    items, workshops, bench_names = items_and_workshops(data_dir, hints, modules)
     print(f"Предметов: {len(items)}, мастерских: {len(workshops)}")
     return {
-        "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
+        "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). "
                   "Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). "
                   "Игровые материалы © Embark Studios AB.",
         "maps": [{"id": m, "name": en, "name_ru": ru, "aliases": aliases, **maps.get(m, {})}

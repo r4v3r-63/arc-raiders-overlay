@@ -122,7 +122,8 @@ ARC-Raiders-Overlay\
 ## Источники
 
 - Квесты, предметы, враги и мастерские — [RaidTheory/arcraiders-data](https://github.com/RaidTheory/arcraiders-data)
-  и [arctracker.io](https://arctracker.io) (MIT).
+  и [arctracker.io](https://arctracker.io) (MIT); свежие предметы и мастерские — с arctracker.io,
+  если в репозитории их ещё нет.
 - Гайды и скриншоты — [arcraiders.wiki](https://arcraiders.wiki/wiki/Quests) (CC BY-SA 4.0)
   и [«[RU] Руководство по квестам Arc Raiders»](https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520)
   в Steam от El1teHarp521. Руководство Steam не хранится в репозитории: программа загружает его

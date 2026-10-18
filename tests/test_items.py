@@ -26,7 +26,7 @@ def test_match_item_prefers_tooltip_title_near_cursor():
 def test_item_report_for_quest_and_workshops():
     base = db()
     quest = base.find_by_id("a_dead_end")
-    reel = next(i for i in base.items.values() if i.name == "Пыльная катушка с пленкой")
+    reel = base.find_item(items.parse_required(quest.required_items[0])[1])
     report = items.item_report(base, reel, [quest], [], {})
     assert report.keep and report.quests == [(quest.name, 1)]
     report = items.item_report(base, reel, [], [], {})
@@ -75,7 +75,8 @@ def test_item_search_by_name():
     assert base.find_item("водяной насос").id == "water_pump"
     assert base.find_item("Water Pump").id == "water_pump"
     assert base.find_item("насос") is None  # насосов несколько
-    assert "Водяной насос" in base.similar_items("мини- насос")
+    assert base.find_item("мини- насос").id == "mini_pump"  # новый предмет из свежих данных
+    assert "Водяной насос" in base.similar_items("супер насос")
     assert base.suggest_items("вод")[0].lower().startswith("вод")
 
 
@@ -88,8 +89,8 @@ def test_craft_vendors_and_blueprints():
     report = items.item_report(base, anvil, [], [], {}, {"anvil_blueprint"})
     assert report.blueprint.endswith("— изучен")
 
-    mag = base.items["extended_medium_mag_i"]
-    assert any("Тянь Вэнь" in v and "монет" in v for v in items.item_report(base, mag, [], [], {}).vendors)
+    sold = next(i for i in base.items.values() if any("coins" in v["cost"] and v["limit"] for v in i.vendors))
+    assert any("монет" in v and "в сутки" in v for v in items.item_report(base, sold, [], [], {}).vendors)
 
     blueprint = base.items["anvil_blueprint"]
     unknown = items.item_report(base, blueprint, [], [], {})
