@@ -31,9 +31,9 @@ jobs:
     runs-on: windows-latest
     timeout-minutes: 30
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v7
 
-      - uses: actions/setup-python@v5
+      - uses: actions/setup-python@v7
         with:
           python-version: "3.12"
 
@@ -68,10 +68,14 @@ jobs:
         env:
           GH_TOKEN: ${{ github.token }}
         run: |
+          # Один постоянный релиз: старый удаляется и публикуется заново с новым архивом.
+          # (exe — прежнее имя метки, удаляется на случай, если остался.)
+          gh release delete latest --cleanup-tag --yes || true
           gh release delete exe --cleanup-tag --yes || true
-          VERSION=$(sed -n "s/.*'ProductVersion', '\([^']*\)'.*/\1/p" assets/version_info.txt)
-          gh release create exe ARC-Raiders-Overlay.zip \
-            --title "ARC Raiders — подсказчик $VERSION" \
-            --notes-file .github/release-notes.md \
+          BUILD_DATE=$(date -u +%d.%m.%Y)
+          { echo "**Сборка от $BUILD_DATE.**"; echo; cat .github/release-notes.md; } > notes.md
+          gh release create latest ARC-Raiders-Overlay.zip \
+            --title "ARC Raiders — подсказчик" \
+            --notes-file notes.md \
             --target "$GITHUB_SHA" \
             --latest
