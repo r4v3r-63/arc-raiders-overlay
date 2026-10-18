@@ -21,6 +21,10 @@
 
 ## Установка
 
+Нужна **Windows 10 или 11 (64-бит)**. Ничего дополнительно устанавливать не нужно — всё,
+что требуется программе, уже в архиве. Интернет нужен для гайдов из Steam и обновлений;
+без него работают встроенная база квестов и гайды с вики.
+
 1. Скачайте [**ARC-Raiders-Overlay.zip**](https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip)
    и распакуйте в любую папку.
 2. Запустите `ARC-Raiders-Overlay.exe`. Если Windows покажет «Система Windows защитила ваш
