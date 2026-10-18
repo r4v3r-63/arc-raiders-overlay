@@ -18,7 +18,7 @@ HOTKEY_INPUT = "Ctrl+Shift+Q"
 HOTKEY_HELP = (
     f"{HOTKEY_INPUT} — ввести квест\n"
     "Ctrl+Shift+→ / ← — следующий / предыдущий шаг\n"
-    "Ctrl+Shift+End — выход"
+    "Ctrl+Shift+X — выход"
 )
 
 
@@ -53,7 +53,7 @@ class OverlayApp:
                 (HOTKEY_INPUT, winapi.VK_Q, self.input.open),
                 ("Ctrl+Shift+→", winapi.VK_RIGHT, self.card.next_step),
                 ("Ctrl+Shift+←", winapi.VK_LEFT, self.card.prev_step),
-                ("Ctrl+Shift+End", winapi.VK_END, app.quit),
+                ("Ctrl+Shift+X", winapi.VK_X, app.quit),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
         ]

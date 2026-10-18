@@ -22,8 +22,8 @@ MOD_NOREPEAT = 0x4000  # не повторять событие, пока кла
 
 VK_LEFT = 0x25
 VK_RIGHT = 0x27
-VK_END = 0x23
 VK_Q = 0x51
+VK_X = 0x58
 
 if IS_WINDOWS:
     from ctypes import wintypes
