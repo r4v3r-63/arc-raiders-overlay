@@ -31,6 +31,8 @@ class Item:
     en: str = ""
     value: int = 0  # цена продажи, монет
     recycles: dict[str, int] = field(default_factory=dict)  # id предмета → сколько получится при разборке
+    found: list[str] = field(default_factory=list)  # типы мест с лутом, где лежит: Mechanical, Medical…
+    drops: list[dict] = field(default_factory=list)  # машины ARC, из которых выпадает: {"name", "maps"}
 
 
 @dataclass
@@ -80,10 +82,17 @@ def normalize(text: str) -> str:
 
 class QuestDB:
     def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = "",
-                 items: list[Item] | None = None, workshops: list[Workshop] | None = None):
+                 items: list[Item] | None = None, workshops: list[Workshop] | None = None,
+                 loot_types: dict[str, str] | None = None):
         self.generated_at = generated_at  # дата сборки базы, ISO 8601 (UTC)
         self.items = {i.id: i for i in items or []}
         self.workshops = list(workshops or [])
+        self.loot_types = dict(loot_types or {})  # тип места с лутом → по-русски
+        self._item_by_name: dict[str, Item] = {}
+        for item in self.items.values():
+            for name in (item.name, item.en):
+                if name:
+                    self._item_by_name.setdefault(normalize(name), item)
         self.quests = quests
         self._by_id = {q.id: q for q in quests if q.id}
         self.maps = {m.id: m for m in maps or []}
@@ -130,10 +139,11 @@ class QuestDB:
             for item in data.get("quests", [])
         ]
         items = [Item(id=i["id"], name=i["name"], en=i.get("en", ""), value=int(i.get("value", 0)),
-                      recycles=dict(i.get("recycles", {}))) for i in data.get("items", [])]
+                      recycles=dict(i.get("recycles", {})), found=list(i.get("found", [])),
+                      drops=list(i.get("drops", []))) for i in data.get("items", [])]
         workshops = [Workshop(id=w["id"], name=w["name"], levels=list(w.get("levels", [])))
                      for w in data.get("workshops", [])]
-        return cls(quests, maps, data.get("generated_at", ""), items, workshops)
+        return cls(quests, maps, data.get("generated_at", ""), items, workshops, data.get("loot_types", {}))
 
     def names(self) -> list[str]:
         return [q.name for q in self.quests]
@@ -159,6 +169,41 @@ class QuestDB:
     def suggest(self, query: str, limit: int = 10) -> list[str]:
         """Названия квестов для автодополнения: сначала начинающиеся с введённого, потом содержащие."""
         return _suggest(query, [(q.name, [q.name, *q.aliases]) for q in self.quests], limit)
+
+    def find_item(self, query: str) -> Item | None:
+        """Предмет по названию (русскому или английскому): точно или единственный по подстроке."""
+        key = normalize(query)
+        if not key:
+            return None
+        if key in self._item_by_name:
+            return self._item_by_name[key]
+        partial = {i.id: i for k, i in self._item_by_name.items() if key in k}
+        return next(iter(partial.values())) if len(partial) == 1 else None
+
+    def suggest_items(self, query: str, limit: int = 10) -> list[str]:
+        """Названия предметов для автодополнения."""
+        return _suggest(query, [(i.name, [i.name, i.en]) for i in self.items.values()], limit)
+
+    def similar_items(self, query: str, limit: int = 5) -> list[str]:
+        """Похожие названия, если точного предмета нет: по совпавшим словам, затем с учётом опечаток."""
+        typed = [w for w in normalize(query).split() if len(w) >= 4]
+
+        def matches(w: str, word: str) -> bool:
+            # начало слова без окончания («батарейка» → «батаре…») или целое слово внутри («турбонасос»)
+            return word.startswith(w[:max(4, len(w) - 2)]) or (len(w) >= 5 and w in word)
+
+        scored = []
+        for item in self.items.values():
+            words = normalize(item.name).split()
+            score = sum(1 for w in typed if any(matches(w, word) for word in words))
+            if score:
+                scored.append((-score, item.name))
+        result = [name for _, name in sorted(scored)]
+        if result:
+            return result[:limit]
+        close = difflib.get_close_matches(normalize(query), list(self._item_by_name), n=3, cutoff=0.6)
+        result += [self._item_by_name[key].name for key in close]
+        return list(dict.fromkeys(result))[:limit]
 
     def find_map_exact(self, name: str) -> GameMap | None:
         return self._map_by_name.get(normalize(name))

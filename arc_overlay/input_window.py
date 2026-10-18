@@ -15,14 +15,14 @@ class InputWindow(QWidget):
     submitted = pyqtSignal(str)
     help_requested = pyqtSignal()
 
-    def __init__(self):
+    def __init__(self, title: str = "Ввод квеста", label: str = "Квест:", example: str = "например, Чистое небо"):
         super().__init__()
         self.setWindowFlags(
             Qt.WindowType.FramelessWindowHint
             | Qt.WindowType.WindowStaysOnTopHint
             | Qt.WindowType.Tool
         )
-        self.setWindowTitle("Ввод квеста")
+        self.setWindowTitle(title)
         self.setFixedWidth(420)
         self.setStyleSheet(
             "QWidget { background: #1b1f27; color: #f0f0f0; font-size: 14px; }"
@@ -31,7 +31,7 @@ class InputWindow(QWidget):
         )
 
         self.quest_edit = QLineEdit()
-        self.quest_edit.setPlaceholderText("например, Чистое небо")
+        self.quest_edit.setPlaceholderText(example)
         self._quest_suggest = lambda text: []
         self._attach_completer(self.quest_edit, lambda text: self._quest_suggest(text))
         self.error_label = QLabel()
@@ -54,7 +54,7 @@ class InputWindow(QWidget):
         bottom.addWidget(help_button)
 
         form = QFormLayout()
-        form.addRow("Квест:", self.quest_edit)
+        form.addRow(label, self.quest_edit)
         layout = QVBoxLayout(self)
         layout.setContentsMargins(16, 16, 16, 12)
         layout.addLayout(form)

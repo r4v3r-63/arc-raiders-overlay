@@ -1,8 +1,12 @@
-"""«Брать или продавать?»: какой предмет под курсором и нужен ли он игроку.
+"""Предметы: нужен ли предмет игроку и где его искать.
 
 Предмет находится по названию во всплывающей подсказке игры (снимок экрана + распознавание
-текста Windows, как у импорта квестов). Дальше по базе: нужен ли он для квестов и
-улучшения мастерских, на что разбирается и сколько стоит.
+текста Windows, как у импорта квестов) или через поиск по названию. Дальше по базе: нужен ли
+он для квестов и улучшения мастерских, на что разбирается, сколько стоит и где искать.
+
+Где искать: в базе у предмета есть типы мест с лутом (механические, медицина…), а у мест на
+картах — их типы. Карты ранжируются по числу подходящих мест. Это не точная статистика
+выпадения, а ориентир: где таких мест больше, там и шансов больше.
 """
 
 from __future__ import annotations
@@ -58,6 +62,37 @@ def match_item(db: QuestDB, lines: list[Line], cursor: tuple[float, float]) -> I
 
 
 @dataclass
+class MapSpots:
+    map_id: str
+    name: str
+    rooms: list[dict]  # места карты с подходящим типом лута: {"name", "x", "y", "types"}
+
+
+@dataclass
+class Where:
+    types: list[str] = field(default_factory=list)  # «механические (Mechanical)»
+    maps: list[MapSpots] = field(default_factory=list)  # сначала карты, где подходящих мест больше
+    drops: list[str] = field(default_factory=list)  # «Оса (Поле битвы у дамбы, Космопорт)»
+    sources: list[str] = field(default_factory=list)  # предметы, при разборке которых он получается
+
+
+def where_to_find(db: QuestDB, item: Item) -> Where:
+    where = Where()
+    wanted = set(item.found)
+    where.types = [f"{db.loot_types[t]} ({t})" if t in db.loot_types else t for t in item.found]
+    for game_map in db.maps.values():
+        rooms = [r for r in game_map.rooms if wanted & set(r.get("types", []))]
+        if rooms:
+            where.maps.append(MapSpots(game_map.id, game_map.name_ru or game_map.name, rooms))
+    where.maps.sort(key=lambda spots: -len(spots.rooms))
+    for drop in item.drops[:6]:
+        maps = [db.maps[m].name_ru or db.maps[m].name for m in drop.get("maps", []) if m in db.maps]
+        where.drops.append(drop["name"] + (f" ({', '.join(maps)})" if maps else ""))
+    where.sources = sorted(i.name for i in db.items.values() if item.id in i.recycles)
+    return where
+
+
+@dataclass
 class ItemReport:
     item: Item
     verdict: str
@@ -67,6 +102,7 @@ class ItemReport:
     workshops: list[tuple[str, int, int]] = field(default_factory=list)  # следующий уровень: (мастерская, ур., штук)
     later_workshops: list[tuple[str, int, int]] = field(default_factory=list)
     recycles: list[tuple[str, int]] = field(default_factory=list)  # (предмет, штук) при разборке
+    where: Where = field(default_factory=Where)
 
 
 def _needs(quest: Quest, item: Item) -> int:
@@ -98,6 +134,7 @@ def item_report(db: QuestDB, item: Item, active: list[Quest], completed: list[st
             else:
                 report.later_workshops.append(entry)
     report.recycles = [(db.items[i].name if i in db.items else i, qty) for i, qty in item.recycles.items()]
+    report.where = where_to_find(db, item)
     report.keep = bool(report.quests or report.workshops)
     if report.keep:
         report.verdict = "Оставить — нужен сейчас"

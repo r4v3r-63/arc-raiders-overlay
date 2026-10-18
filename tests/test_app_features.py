@@ -178,3 +178,19 @@ def test_workshop_levels_saved(tmp_path):
     progress.workshops["scrappy"] = 3
     progress.save()
     assert Progress.load(tmp_path / "p.json").workshops == {"scrappy": 3}
+
+
+def test_item_search_and_item_map(app):
+    app.on_item_submitted("мини- насос")
+    assert "Водяной насос" in app.item_input.error_label.text()
+    app.on_item_submitted("водяной насос")
+    assert app.card.panel == "item" and "Поле битвы у дамбы" in app.card._label.text()
+    app.toggle_map()
+    assert app.map_view.isVisible() and app.map_view._markers
+    first = app.map_view._caption
+    app.next_page()  # другая карта, где искать
+    assert app.map_view._caption != first and "Водяной насос" in app.map_view._caption
+    app.toggle_map()
+    assert not app.map_view.isVisible()
+    app.on_item_submitted("батарейка")  # единственный похожий предмет находится сам
+    assert "Батарея" in app.card._label.text()

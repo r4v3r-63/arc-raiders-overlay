@@ -174,18 +174,25 @@ class Hints:
 
 
 def items_and_workshops(data_dir: Path, hints: Hints) -> tuple[list[dict], list[dict]]:
-    """Предметы (для проверки «брать или продавать») и улучшения мастерских по уровням."""
+    """Предметы (проверка «брать или продавать», поиск) и улучшения мастерских по уровням."""
     items = []
     for item_id, item in sorted(hints.items.items()):
         name = text(item["name"])
         if not name or not re.search("[а-яё]", name, re.I):
             continue
+        drops = []
+        for bot in hints.bots:
+            if item_id in bot.get("drops", []) and bot["id"] in BOTS_RU:
+                maps = list(dict.fromkeys(MAP_ID_FIXES.get(m, m) for m in bot.get("maps", [])))
+                drops.append({"name": BOTS_RU[bot["id"]][0], "maps": [m for m in maps if m in MAPS]})
         items.append({
             "id": item_id,
             "name": name,
             "en": text(item["name"], "en"),
             "value": int(item.get("value") or 0),
             "recycles": {k: int(v) for k, v in (item.get("recyclesInto") or {}).items() if k in hints.items},
+            "found": [c.strip() for c in (item.get("foundIn") or "").split(",") if c.strip()],
+            "drops": drops,
         })
     workshops = []
     for path in sorted((data_dir / "hideout").glob("*.json")):
@@ -263,7 +270,9 @@ def fetch_maps() -> dict[str, dict]:
             picture.save(target, "JPEG", quality=85, optimize=True)
         result[map_id] = {
             "image": target.relative_to(DATA_DIR).as_posix(),
-            "rooms": [{"name": r["name"], "x": r["x"], "y": r["y"]} for r in item["rooms"]],
+            # types — типы лута в этом месте (как на легенде карты): Mechanical, Medical…
+            "rooms": [{"name": r["name"], "x": r["x"], "y": r["y"], "types": list(r.get("areaTypes", []))}
+                      for r in item["rooms"]],
         }
     return result
 
@@ -432,6 +441,7 @@ def build(data_dir: Path) -> dict:
         "quests": quests,
         "items": items,
         "workshops": workshops,
+        "loot_types": LOOT_CATEGORIES_RU,
     }
 
 

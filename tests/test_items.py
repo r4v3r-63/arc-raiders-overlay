@@ -58,3 +58,22 @@ def test_shopping_includes_next_workshop_level():
     purposes = [p for _, _, ps in rows for p in ps]
     assert "Верстак для снаряжения → ур. 2" in purposes and base.find_by_id("a_dead_end").name in purposes
     assert not any("Плюшкин" in p for p in purposes)  # максимальный уровень — улучшать нечего
+
+
+def test_where_to_find_ranks_maps_by_matching_spots():
+    base = db()
+    where = items.where_to_find(base, base.items["water_pump"])
+    assert where.types == ["механические (Mechanical)", "промышленные (Industrial)"]
+    counts = [len(m.rooms) for m in where.maps]
+    assert counts == sorted(counts, reverse=True) and counts[0] > 0
+    assert all({"Mechanical", "Industrial"} & set(r["types"]) for m in where.maps for r in m.rooms)
+    assert "Акустическая гитара" in items.where_to_find(base, base.items["wires"]).sources
+
+
+def test_item_search_by_name():
+    base = db()
+    assert base.find_item("водяной насос").id == "water_pump"
+    assert base.find_item("Water Pump").id == "water_pump"
+    assert base.find_item("насос") is None  # насосов несколько
+    assert "Водяной насос" in base.similar_items("мини- насос")
+    assert base.suggest_items("вод")[0].lower().startswith("вод")

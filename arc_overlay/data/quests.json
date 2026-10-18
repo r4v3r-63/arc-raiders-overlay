@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T16:22:17Z",
+  "generated_at": "2026-10-18T16:32:03Z",
   "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -16,132 +16,190 @@
         {
           "name": "West Broken Bridge",
           "x": 0.5145,
-          "y": 0.0911
+          "y": 0.0911,
+          "types": []
         },
         {
           "name": "Pattern House",
           "x": 0.6165,
-          "y": 0.1287
+          "y": 0.1287,
+          "types": []
         },
         {
           "name": "Ruby Residence",
           "x": 0.31,
-          "y": 0.1687
+          "y": 0.1687,
+          "types": []
         },
         {
           "name": "Pale Apartments",
           "x": 0.2045,
-          "y": 0.2445
+          "y": 0.2445,
+          "types": []
         },
         {
           "name": "Ben Welder's Sunroof",
           "x": 0.28,
-          "y": 0.2894
+          "y": 0.2894,
+          "types": []
         },
         {
           "name": "Generator Hall",
           "x": 0.618,
-          "y": 0.226
+          "y": 0.226,
+          "types": []
         },
         {
           "name": "Power Generation Complex",
           "x": 0.6815,
-          "y": 0.2654
+          "y": 0.2654,
+          "types": [
+            "Electrical",
+            "Industrial"
+          ]
         },
         {
           "name": "Controlled Access Zone",
           "x": 0.605,
-          "y": 0.314
+          "y": 0.314,
+          "types": [
+            "ARC",
+            "Mechanical"
+          ]
         },
         {
           "name": "Hydroponic Dome Complex",
           "x": 0.4425,
-          "y": 0.343
+          "y": 0.343,
+          "types": [
+            "Nature",
+            "Industrial",
+            "Security"
+          ]
         },
         {
           "name": "Pipeline Tower",
           "x": 0.662,
-          "y": 0.3559
+          "y": 0.3559,
+          "types": []
         },
         {
           "name": "The Breach",
           "x": 0.578,
-          "y": 0.4058
+          "y": 0.4058,
+          "types": []
         },
         {
           "name": "Old Battleground",
           "x": 0.1945,
-          "y": 0.4415
+          "y": 0.4415,
+          "types": [
+            "ARC"
+          ]
         },
         {
           "name": "Floodgates",
           "x": 0.539,
-          "y": 0.4938
+          "y": 0.4938,
+          "types": []
         },
         {
           "name": "Water Treatment Control",
           "x": 0.344,
-          "y": 0.577
+          "y": 0.577,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "South Swamp Outpost",
           "x": 0.194,
-          "y": 0.5837
+          "y": 0.5837,
+          "types": []
         },
         {
           "name": "Primary Facility",
           "x": 0.478,
-          "y": 0.5948
+          "y": 0.5948,
+          "types": [
+            "Mechanical",
+            "Industrial"
+          ]
         },
         {
           "name": "Control Tower",
           "x": 0.547,
-          "y": 0.6164
+          "y": 0.6164,
+          "types": [
+            "Technological",
+            "Security"
+          ]
         },
         {
           "name": "Research & Administration",
           "x": 0.5215,
-          "y": 0.67
+          "y": 0.67,
+          "types": [
+            "Commercial",
+            "Technological"
+          ]
         },
         {
           "name": "Red Lakes Balcony",
           "x": 0.6315,
-          "y": 0.6995
+          "y": 0.6995,
+          "types": []
         },
         {
           "name": "Electrical Substation",
           "x": 0.3225,
-          "y": 0.7445
+          "y": 0.7445,
+          "types": [
+            "Electrical"
+          ]
         },
         {
           "name": "Small Creek",
           "x": 0.4975,
-          "y": 0.7432
+          "y": 0.7432,
+          "types": []
         },
         {
           "name": "Testing Annex",
           "x": 0.661,
-          "y": 0.798
+          "y": 0.798,
+          "types": [
+            "Medical",
+            "Commercial"
+          ]
         },
         {
           "name": "Water Towers",
           "x": 0.2485,
-          "y": 0.8017
+          "y": 0.8017,
+          "types": []
         },
         {
           "name": "Wreckage",
           "x": 0.544,
-          "y": 0.8584
+          "y": 0.8584,
+          "types": []
         },
         {
           "name": "Scrap Yard",
           "x": 0.4645,
-          "y": 0.8762
+          "y": 0.8762,
+          "types": [
+            "Mechanical",
+            "Industrial"
+          ]
         },
         {
           "name": "Formicai Outpost",
           "x": 0.473,
-          "y": 0.9908
+          "y": 0.9908,
+          "types": []
         }
       ]
     },
@@ -159,137 +217,195 @@
         {
           "name": "Fuel Depot",
           "x": 0.2,
-          "y": 0.1158
+          "y": 0.1158,
+          "types": []
         },
         {
           "name": "West Hangar",
           "x": 0.548,
-          "y": 0.0872
+          "y": 0.0872,
+          "types": []
         },
         {
           "name": "West Container Yard",
           "x": 0.4485,
-          "y": 0.1501
+          "y": 0.1501,
+          "types": []
         },
         {
           "name": "Jiangsu Warehouse",
           "x": 0.1375,
-          "y": 0.1756
+          "y": 0.1756,
+          "types": []
         },
         {
           "name": "Shipping Warehouse",
           "x": 0.4045,
-          "y": 0.1899
+          "y": 0.1899,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "East Hangar",
           "x": 0.6295,
-          "y": 0.1719
+          "y": 0.1719,
+          "types": []
         },
         {
           "name": "North Trench Tower",
           "x": 0.551,
-          "y": 0.1936
+          "y": 0.1936,
+          "types": [
+            "Technological"
+          ]
         },
         {
           "name": "South Trench Tower",
           "x": 0.528,
-          "y": 0.2285
+          "y": 0.2285,
+          "types": [
+            "Technological"
+          ]
         },
         {
           "name": "The Trench",
           "x": 0.5635,
-          "y": 0.2628
+          "y": 0.2628,
+          "types": []
         },
         {
           "name": "Car Park",
           "x": 0.2945,
-          "y": 0.2503
+          "y": 0.2503,
+          "types": []
         },
         {
           "name": "Arrival Building",
           "x": 0.328,
-          "y": 0.2933
+          "y": 0.2933,
+          "types": [
+            "Commercial",
+            "Technological"
+          ]
         },
         {
           "name": "Little Hangar",
           "x": 0.716,
-          "y": 0.2939
+          "y": 0.2939,
+          "types": []
         },
         {
           "name": "Water Towers",
           "x": 0.042,
-          "y": 0.345
+          "y": 0.345,
+          "types": []
         },
         {
           "name": "Fuel Control",
           "x": 0.6085,
-          "y": 0.3829
+          "y": 0.3829,
+          "types": [
+            "Mechanical",
+            "Electrical"
+          ]
         },
         {
           "name": "Launch Towers",
           "x": 0.458,
-          "y": 0.4228
+          "y": 0.4228,
+          "types": [
+            "Technological",
+            "Security"
+          ]
         },
         {
           "name": "East Container Yard",
           "x": 0.7055,
-          "y": 0.411
+          "y": 0.411,
+          "types": []
         },
         {
           "name": "Rocket Assembly",
           "x": 0.646,
-          "y": 0.4502
+          "y": 0.4502,
+          "types": [
+            "Exodus",
+            "Industrial"
+          ]
         },
         {
           "name": "Departure Building",
           "x": 0.322,
-          "y": 0.4795
+          "y": 0.4795,
+          "types": [
+            "Commercial",
+            "Technological"
+          ]
         },
         {
           "name": "Fuel Processing",
           "x": 0.147,
-          "y": 0.5797
+          "y": 0.5797,
+          "types": []
         },
         {
           "name": "Fuel Lines",
           "x": 0.313,
-          "y": 0.6252
+          "y": 0.6252,
+          "types": []
         },
         {
           "name": "Control Tower A6",
           "x": 0.513,
-          "y": 0.6171
+          "y": 0.6171,
+          "types": [
+            "Technological",
+            "Commercial"
+          ]
         },
         {
           "name": "Container Storage",
           "x": 0.605,
-          "y": 0.6706
+          "y": 0.6706,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "Vehicle Maintenance",
           "x": 0.5025,
-          "y": 0.7105
+          "y": 0.7105,
+          "types": [
+            "Mechanical",
+            "Industrial"
+          ]
         },
         {
           "name": "Fuel Storage",
           "x": 0.2575,
-          "y": 0.8898
+          "y": 0.8898,
+          "types": []
         },
         {
           "name": "Maintenance Hangar",
           "x": 0.4305,
-          "y": 0.8823
+          "y": 0.8823,
+          "types": []
         },
         {
           "name": "Staff Parking",
           "x": 0.572,
-          "y": 0.9359
+          "y": 0.9359,
+          "types": []
         },
         {
           "name": "Security Checkpoint",
           "x": 0.667,
-          "y": 0.9938
+          "y": 0.9938,
+          "types": []
         }
       ]
     },
@@ -305,47 +421,80 @@
         {
           "name": "Hospital",
           "x": 0.519,
-          "y": 0.2182
+          "y": 0.2182,
+          "types": [
+            "Medical"
+          ]
         },
         {
           "name": "Library",
           "x": 0.43,
-          "y": 0.2941
+          "y": 0.2941,
+          "types": [
+            "Commercial",
+            "Old World"
+          ]
         },
         {
           "name": "Space Travel",
           "x": 0.5925,
-          "y": 0.3724
+          "y": 0.3724,
+          "types": [
+            "Commercial",
+            "Technological"
+          ]
         },
         {
           "name": "Research",
           "x": 0.568,
-          "y": 0.41
+          "y": 0.41,
+          "types": [
+            "Medical",
+            "Technological"
+          ]
         },
         {
           "name": "Town Hall",
           "x": 0.5485,
-          "y": 0.5382
+          "y": 0.5382,
+          "types": [
+            "Old World"
+          ]
         },
         {
           "name": "Piazza Arbusto",
           "x": 0.681,
-          "y": 0.5894
+          "y": 0.5894,
+          "types": [
+            "Medical",
+            "Commercial"
+          ]
         },
         {
           "name": "Grandioso Apartments",
           "x": 0.2855,
-          "y": 0.6735
+          "y": 0.6735,
+          "types": [
+            "Residential"
+          ]
         },
         {
           "name": "Santa Maria Houses",
           "x": 0.504,
-          "y": 0.6759
+          "y": 0.6759,
+          "types": [
+            "Residential",
+            "Old World"
+          ]
         },
         {
           "name": "Plaza Rosa",
           "x": 0.517,
-          "y": 0.7771
+          "y": 0.7771,
+          "types": [
+            "Medical",
+            "Commercial"
+          ]
         }
       ]
     },
@@ -362,107 +511,158 @@
         {
           "name": "Village",
           "x": 0.2795,
-          "y": 0.2124
+          "y": 0.2124,
+          "types": [
+            "Commercial",
+            "Residential"
+          ]
         },
         {
           "name": "Barren Clearing",
           "x": 0.09,
-          "y": 0.2914
+          "y": 0.2914,
+          "types": [
+            "ARC"
+          ]
         },
         {
           "name": "Raider's Refuge",
           "x": 0.204,
-          "y": 0.335
+          "y": 0.335,
+          "types": [
+            "Residential"
+          ]
         },
         {
           "name": "Reinforced Reception",
           "x": 0.4385,
-          "y": 0.2908
+          "y": 0.2908,
+          "types": [
+            "Security",
+            "Technological"
+          ]
         },
         {
           "name": "Data Vault",
           "x": 0.5685,
-          "y": 0.2408
+          "y": 0.2408,
+          "types": []
         },
         {
           "name": "Headhouse",
           "x": 0.5215,
-          "y": 0.318
+          "y": 0.318,
+          "types": []
         },
         {
           "name": "Pilgrim's Peak",
           "x": 0.7145,
-          "y": 0.2408
+          "y": 0.2408,
+          "types": [
+            "Technological",
+            "Electrical"
+          ]
         },
         {
           "name": "Trapper's Glade",
           "x": 0.1925,
-          "y": 0.4153
+          "y": 0.4153,
+          "types": [
+            "Nature"
+          ]
         },
         {
           "name": "Outer Gates",
           "x": 0.4515,
-          "y": 0.4355
+          "y": 0.4355,
+          "types": []
         },
         {
           "name": "Warehouse Complex",
           "x": 0.5665,
-          "y": 0.4431
+          "y": 0.4431,
+          "types": [
+            "Industrial"
+          ]
         },
         {
           "name": "Gate Control Room",
           "x": 0.5245,
-          "y": 0.4684
+          "y": 0.4684,
+          "types": []
         },
         {
           "name": "Abandoned Housing Project",
           "x": 0.719,
-          "y": 0.4665
+          "y": 0.4665,
+          "types": []
         },
         {
           "name": "Adorned Wreckage",
           "x": 0.153,
-          "y": 0.4893
+          "y": 0.4893,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "Checkpoint",
           "x": 0.3885,
-          "y": 0.5278
+          "y": 0.5278,
+          "types": [
+            "Mechanical"
+          ]
         },
         {
           "name": "Ridgeline",
           "x": 0.6845,
-          "y": 0.5702
+          "y": 0.5702,
+          "types": []
         },
         {
           "name": "Maintenance Bunker",
           "x": 0.4835,
-          "y": 0.658
+          "y": 0.658,
+          "types": []
         },
         {
           "name": "Highway Collapse",
           "x": 0.226,
-          "y": 0.7061
+          "y": 0.7061,
+          "types": []
         },
         {
           "name": "Broken Earth",
           "x": 0.515,
-          "y": 0.7118
+          "y": 0.7118,
+          "types": []
         },
         {
           "name": "Olive Grove",
           "x": 0.344,
-          "y": 0.7351
+          "y": 0.7351,
+          "types": [
+            "Nature"
+          ]
         },
         {
           "name": "Ruined Homestead",
           "x": 0.394,
-          "y": 0.7743
+          "y": 0.7743,
+          "types": [
+            "Old World",
+            "Residential"
+          ]
         },
         {
           "name": "Ancient Fort",
           "x": 0.4665,
-          "y": 0.8704
+          "y": 0.8704,
+          "types": [
+            "Old World",
+            "Technological"
+          ]
         }
       ]
     },
@@ -478,57 +678,83 @@
         {
           "name": "Collapsed Tunnel",
           "x": 0.1896,
-          "y": 0.1506
+          "y": 0.1506,
+          "types": []
         },
         {
           "name": "Western Tunnel",
           "x": 0.2067,
-          "y": 0.206
+          "y": 0.206,
+          "types": [
+            "Electrical"
+          ]
         },
         {
           "name": "Lobby Metro",
           "x": 0.4446,
-          "y": 0.1805
+          "y": 0.1805,
+          "types": [
+            "Industrial",
+            "Technological"
+          ]
         },
         {
           "name": "Robotic Sandbox A",
           "x": 0.3308,
-          "y": 0.4025
+          "y": 0.4025,
+          "types": []
         },
         {
           "name": "Logistics Admin",
           "x": 0.0433,
-          "y": 0.454
+          "y": 0.454,
+          "types": []
         },
         {
           "name": "Loading Bay",
           "x": 0.1504,
-          "y": 0.4795
+          "y": 0.4795,
+          "types": [
+            "Industrial"
+          ]
         },
         {
           "name": "Sandbox",
           "x": 0.335,
-          "y": 0.5205
+          "y": 0.5205,
+          "types": [
+            "Mechanical",
+            "Technological"
+          ]
         },
         {
           "name": "Control Room",
           "x": 0.32,
-          "y": 0.6058
+          "y": 0.6058,
+          "types": []
         },
         {
           "name": "Robotic Sandbox B",
           "x": 0.3283,
-          "y": 0.732
+          "y": 0.732,
+          "types": []
         },
         {
           "name": "Eastern Tunnel",
           "x": 0.6521,
-          "y": 0.5781
+          "y": 0.5781,
+          "types": [
+            "Electrical",
+            "Old World"
+          ]
         },
         {
           "name": "Seed Vault",
           "x": 0.61,
-          "y": 0.9181
+          "y": 0.9181,
+          "types": [
+            "Nature"
+          ]
         }
       ]
     },
@@ -544,57 +770,89 @@
         {
           "name": "Wavebreaker",
           "x": 0.5975,
-          "y": 0.2727
+          "y": 0.2727,
+          "types": []
         },
         {
           "name": "Seabed",
           "x": 0.319,
-          "y": 0.3122
+          "y": 0.3122,
+          "types": [
+            "Nature"
+          ]
         },
         {
           "name": "Port Authority Building",
           "x": 0.412,
-          "y": 0.3561
+          "y": 0.3561,
+          "types": [
+            "Technological",
+            "Exodus"
+          ]
         },
         {
           "name": "Wreckage",
           "x": 0.49,
-          "y": 0.3871
+          "y": 0.3871,
+          "types": [
+            "ARC"
+          ]
         },
         {
           "name": "Azzurro Beach",
           "x": 0.2215,
-          "y": 0.4245
+          "y": 0.4245,
+          "types": [
+            "Residential"
+          ]
         },
         {
           "name": "Stacking Yard",
           "x": 0.622,
-          "y": 0.5007
+          "y": 0.5007,
+          "types": [
+            "Industrial",
+            "Exodus"
+          ]
         },
         {
           "name": "Hotel Panorama Azzurro",
           "x": 0.2405,
-          "y": 0.6237
+          "y": 0.6237,
+          "types": [
+            "Commercial",
+            "Residential"
+          ]
         },
         {
           "name": "Transfer Depot",
           "x": 0.687,
-          "y": 0.6374
+          "y": 0.6374,
+          "types": []
         },
         {
           "name": "Weighing Checkpoint",
           "x": 0.5885,
-          "y": 0.6921
+          "y": 0.6921,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "Customs House",
           "x": 0.469,
-          "y": 0.7683
+          "y": 0.7683,
+          "types": [
+            "Industrial",
+            "Electrical"
+          ]
         },
         {
           "name": "Tennis Court",
           "x": 0.1995,
-          "y": 0.7849
+          "y": 0.7849,
+          "types": []
         }
       ]
     },
@@ -611,52 +869,88 @@
         {
           "name": "Deep-Space Telescope",
           "x": 0.6225,
-          "y": 0.1989
+          "y": 0.1989,
+          "types": [
+            "Exodus"
+          ]
         },
         {
           "name": "Cielo Sereno Observatory",
           "x": 0.6225,
-          "y": 0.2947
+          "y": 0.2947,
+          "types": [
+            "Technological",
+            "Exodus"
+          ]
         },
         {
           "name": "Almatera Station",
           "x": 0.3605,
-          "y": 0.3706
+          "y": 0.3706,
+          "types": [
+            "Commercial"
+          ]
         },
         {
           "name": "Railroad Junction",
           "x": 0.5025,
-          "y": 0.3799
+          "y": 0.3799,
+          "types": [
+            "Mechanical",
+            "Electrical"
+          ]
         },
         {
           "name": "Fallen Emperor",
           "x": 0.1905,
-          "y": 0.4637
+          "y": 0.4637,
+          "types": [
+            "ARC"
+          ]
         },
         {
           "name": "Commissary Supermarket",
           "x": 0.421,
-          "y": 0.5323
+          "y": 0.5323,
+          "types": [
+            "Commercial",
+            "Medical"
+          ]
         },
         {
           "name": "Railyard",
           "x": 0.5435,
-          "y": 0.6021
+          "y": 0.6021,
+          "types": [
+            "Industrial",
+            "Mechanical"
+          ]
         },
         {
           "name": "Old Town",
           "x": 0.261,
-          "y": 0.6221
+          "y": 0.6221,
+          "types": [
+            "Residential",
+            "Old World"
+          ]
         },
         {
           "name": "Loading Platforms",
           "x": 0.6065,
-          "y": 0.7365
+          "y": 0.7365,
+          "types": [
+            "Industrial",
+            "Exodus"
+          ]
         },
         {
           "name": "Old Hamlet",
           "x": 0.565,
-          "y": 0.9275
+          "y": 0.9275,
+          "types": [
+            "Old World"
+          ]
         }
       ]
     }
@@ -6251,7 +6545,9 @@
       "recycles": {
         "metal_parts": 4,
         "wires": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "adrenaline_shot",
@@ -6261,7 +6557,9 @@
       "recycles": {
         "chemicals": 1,
         "plastic_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "advanced_arc_powercell",
@@ -6270,7 +6568,53 @@
       "value": 640,
       "recycles": {
         "arc_powercell": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бомбардир",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "advanced_electrical_components",
@@ -6280,7 +6624,20 @@
       "recycles": {
         "electrical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [
+        "Electrical"
+      ],
+      "drops": [
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "advanced_mechanical_components",
@@ -6290,7 +6647,20 @@
       "recycles": {
         "mechanical_components": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": [
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "agave",
@@ -6299,21 +6669,31 @@
       "value": 1000,
       "recycles": {
         "assorted_seeds": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "agave_juice",
       "name": "Сок агавы",
       "en": "Agave Juice",
       "value": 1800,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "air_freshener",
       "name": "Освежитель воздуха",
       "en": "Air Freshener",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "alarm_clock",
@@ -6323,21 +6703,29 @@
       "recycles": {
         "plastic_parts": 6,
         "processor": 1
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "alien_duck",
       "name": "Инопланетная уточка",
       "en": "Alien Duck",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "ancient_fort_security_code",
       "name": "Код безопасности Древнего Форта",
       "en": "Ancient Fort Security Code",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "angled_grip_i",
@@ -6346,7 +6734,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "angled_grip_ii",
@@ -6356,14 +6746,18 @@
       "recycles": {
         "duct_tape": 1,
         "mechanical_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "angled_grip_ii_blueprint",
       "name": "Чертеж — Угловая рукоятка II",
       "en": "Angled Grip II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "angled_grip_iii",
@@ -6373,14 +6767,18 @@
       "recycles": {
         "duct_tape": 2,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "angled_grip_iii_blueprint",
       "name": "Чертеж — Угловая рукоятка III",
       "en": "Angled Grip III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "antiseptic",
@@ -6389,14 +6787,20 @@
       "value": 1000,
       "recycles": {
         "chemicals": 10
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "anvil_blueprint",
       "name": "Чертеж — Наковальня",
       "en": "Anvil Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "anvil_i",
@@ -6406,7 +6810,9 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "anvil_ii",
@@ -6416,7 +6822,9 @@
       "recycles": {
         "mechanical_components": 3,
         "simple_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "anvil_iii",
@@ -6426,7 +6834,9 @@
       "recycles": {
         "mechanical_components": 4,
         "simple_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "anvil_iv",
@@ -6436,7 +6846,9 @@
       "recycles": {
         "mechanical_components": 5,
         "simple_gun_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "anvil_splitter",
@@ -6446,7 +6858,9 @@
       "recycles": {
         "mod_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "aphelion",
@@ -6456,14 +6870,18 @@
       "recycles": {
         "complex_gun_parts": 1,
         "magnetic_accelerator": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "aphelion_blueprint",
       "name": "Чертеж — Афелий",
       "en": "Aphelion Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "apricot",
@@ -6472,7 +6890,11 @@
       "value": 640,
       "recycles": {
         "assorted_seeds": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "arc_alloy",
@@ -6481,7 +6903,163 @@
       "value": 200,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бастион",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Бомбардир",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Огнешар",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Шершень",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Поп",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Измельчитель",
+          "maps": [
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Стукач",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наводчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наблюдатель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        },
+        {
+          "name": "Блоха",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Турель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Оса",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_circuitry",
@@ -6490,7 +7068,63 @@
       "value": 1000,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бастион",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наблюдатель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_coolant",
@@ -6499,7 +7133,29 @@
       "value": 1000,
       "recycles": {
         "chemicals": 16
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_flex_rubber",
@@ -6508,7 +7164,35 @@
       "value": 1000,
       "recycles": {
         "rubber_parts": 16
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_motion_core",
@@ -6517,7 +7201,66 @@
       "value": 1000,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бастион",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наблюдатель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_performance_steel",
@@ -6526,14 +7269,155 @@
       "value": 1000,
       "recycles": {
         "metal_parts": 12
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_powercell",
       "name": "Энергоячейка ARC",
       "en": "ARC Powercell",
       "value": 270,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бастион",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Огнешар",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Шершень",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Поп",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Измельчитель",
+          "maps": [
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Стукач",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наводчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наблюдатель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Оса",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_synthetic_resin",
@@ -6542,7 +7426,44 @@
       "value": 1000,
       "recycles": {
         "plastic_parts": 14
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Стукач",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arc_thermo_lining",
@@ -6551,7 +7472,39 @@
       "value": 1000,
       "recycles": {
         "fabric": 16
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Поп",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "arpeggio_i",
@@ -6561,7 +7514,9 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "arpeggio_ii",
@@ -6571,7 +7526,9 @@
       "recycles": {
         "mechanical_components": 3,
         "simple_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "arpeggio_iii",
@@ -6581,7 +7538,9 @@
       "recycles": {
         "mechanical_components": 4,
         "simple_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "arpeggio_iv",
@@ -6591,14 +7550,20 @@
       "recycles": {
         "mechanical_components": 5,
         "simple_gun_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "assorted_seeds",
       "name": "Различные семена",
       "en": "Assorted Seeds",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "bandage",
@@ -6607,7 +7572,9 @@
       "value": 250,
       "recycles": {
         "fabric": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "barricade_kit",
@@ -6616,14 +7583,18 @@
       "value": 640,
       "recycles": {
         "metal_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "barricade_kit_blueprint",
       "name": "Чертёж набора баррикад",
       "en": "Barricade Kit Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "bastion_cell",
@@ -6633,7 +7604,22 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бастион",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "battery",
@@ -6642,14 +7628,21 @@
       "value": 250,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [
+        "Technological",
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "bettina_blueprint",
       "name": "Чертеж — Беттина",
       "en": "Bettina Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "bettina_i",
@@ -6659,7 +7652,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bettina_ii",
@@ -6669,7 +7664,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bettina_iii",
@@ -6679,7 +7676,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bettina_iv",
@@ -6689,7 +7688,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bicycle_pump",
@@ -6699,7 +7700,11 @@
       "recycles": {
         "canister": 4,
         "metal_parts": 10
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "binoculars",
@@ -6709,7 +7714,9 @@
       "recycles": {
         "plastic_parts": 4,
         "rubber_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "blaze_grenade",
@@ -6719,56 +7726,75 @@
       "recycles": {
         "metal_parts": 4,
         "oil": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "blaze_grenade_blueprint",
       "name": "Чертёж огненной гранаты",
       "en": "Blaze Grenade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "blaze_grenade_trap",
       "name": "Лазерная ловушка: Огонь",
       "en": "Blaze Grenade Trap",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "bloated_tuna_can",
       "name": "Вздутая банка тунца",
       "en": "Bloated Tuna Can",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "blue_gate_cellar_key",
       "name": "Ключ от подвала Синих Врат",
       "en": "Blue Gate Cellar Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "blue_gate_communication_tower_key",
       "name": "Ключ от Коммуникационной Башни у Синих Ворот",
       "en": "Blue Gate Communication Tower Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "blue_gate_confiscation_room_key",
       "name": "Ключ от комнаты конфиската Синих ворот",
       "en": "Blue Gate Confiscation Room Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "blue_gate_village_key",
       "name": "Ключ от деревни Синих Врат",
       "en": "Blue Gate Village Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "blue_light_stick",
@@ -6777,21 +7803,27 @@
       "value": 150,
       "recycles": {
         "chemicals": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "blue_light_stick_blueprint",
       "name": "Чертёж синего светящегося стержня",
       "en": "Blue Light Stick Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "bobcat_blueprint",
       "name": "Чертеж — Бобкэт",
       "en": "Bobcat Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "bobcat_i",
@@ -6801,7 +7833,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "light_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bobcat_ii",
@@ -6811,7 +7845,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "light_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bobcat_iii",
@@ -6821,7 +7857,9 @@
       "recycles": {
         "advanced_mechanical_components": 4,
         "light_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bobcat_iv",
@@ -6831,7 +7869,9 @@
       "recycles": {
         "advanced_mechanical_components": 5,
         "light_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "bombardier_cell",
@@ -6841,14 +7881,34 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Бомбардир",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "breathtaking_snow_globe",
       "name": "Захватывающий снежный шар",
       "en": "Breathtaking Snow Globe",
       "value": 7000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Old World",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "broken_flashlight",
@@ -6858,7 +7918,11 @@
       "recycles": {
         "battery": 2,
         "metal_parts": 6
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "broken_guidance_system",
@@ -6867,7 +7931,11 @@
       "value": 2000,
       "recycles": {
         "processor": 4
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "broken_handheld_radio",
@@ -6877,7 +7945,11 @@
       "recycles": {
         "sensors": 3,
         "wires": 2
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "broken_taser",
@@ -6887,42 +7959,56 @@
       "recycles": {
         "battery": 2,
         "wires": 2
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "buried_city_hospital_key",
       "name": "Ключ от больницы Погребённого города",
       "en": "Buried City Hospital Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "buried_city_jkv_employee_access_card",
       "name": "Карта доступа сотрудника JKV Погребённого города",
       "en": "Buried City JKV Employee Access Card",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "buried_city_residential_master_key",
       "name": "Главный ключ от жилых районов Погребённого города",
       "en": "Buried City Residential Master Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "buried_city_town_hall_key",
       "name": "Ключ от мэрии в Погребенном городе",
       "en": "Buried City Town Hall Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "burletta_blueprint",
       "name": "Чертеж Бурлетты",
       "en": "Burletta Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "burletta_i",
@@ -6932,7 +8018,9 @@
       "recycles": {
         "mechanical_components": 1,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "burletta_ii",
@@ -6942,7 +8030,9 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "burletta_iii",
@@ -6952,7 +8042,9 @@
       "recycles": {
         "mechanical_components": 3,
         "simple_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "burletta_iv",
@@ -6962,7 +8054,9 @@
       "recycles": {
         "mechanical_components": 4,
         "simple_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "burned_arc_circuitry",
@@ -6971,14 +8065,23 @@
       "value": 640,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "burnt_out_candles",
       "name": "Сгоревшие свечи",
       "en": "Burnt-Out Candles",
       "value": 640,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Old World"
+      ],
+      "drops": []
     },
     {
       "id": "camera_lens",
@@ -6987,7 +8090,11 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 8
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "candle_holder",
@@ -6996,7 +8103,11 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "candleberries",
@@ -7005,7 +8116,11 @@
       "value": 460,
       "recycles": {
         "assorted_seeds": 2
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "canister",
@@ -7014,63 +8129,92 @@
       "value": 300,
       "recycles": {
         "plastic_parts": 3
-      }
+      },
+      "found": [
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "canto_blueprint",
       "name": "Canto Чертеж",
       "en": "Canto Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "cat_bed",
       "name": "Кошачья лежанка",
       "en": "Cat Bed",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "celeste_journal",
       "name": "Дневник Селесты",
       "en": "Celeste's Journal",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "chemicals",
       "name": "Химикаты",
       "en": "Chemicals",
       "value": 50,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Medical",
+        "Residential",
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "coffee_pot",
       "name": "Кофейник",
       "en": "Coffee Pot",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "colorful_shoes_green",
       "name": "Разноцветная обувь (зеленая)",
       "en": "Colorful Shoes (Green)",
       "value": 7000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "colorful_shoes_red",
       "name": "Разноцветная обувь (красная)",
       "en": "Colorful Shoes (Red)",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "colorful_shoes_silver",
       "name": "Разноцветная обувь (серебристая)",
       "en": "Colorful Shoes (Silver)",
       "value": 10000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk1",
@@ -7080,7 +8224,9 @@
       "recycles": {
         "plastic_parts": 3,
         "rubber_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk2",
@@ -7090,7 +8236,9 @@
       "recycles": {
         "electrical_components": 1,
         "magnet": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk3_aggressive",
@@ -7100,14 +8248,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk3_aggressive_blueprint",
       "name": "Чертёж Боевой Mk. 3 (Агрессивный)",
       "en": "Combat Mk. 3 (Aggressive) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk3_flanking",
@@ -7117,14 +8269,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "combat_mk3_flanking_blueprint",
       "name": "Чертеж — Боевой Mk. 3 (Фланговый)",
       "en": "Combat Mk. 3 (Flanking) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "comet_igniter",
@@ -7134,7 +8290,11 @@
       "recycles": {
         "arc_alloy": 2,
         "crude_explosives": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "compensator_i",
@@ -7143,7 +8303,9 @@
       "value": 640,
       "recycles": {
         "metal_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "compensator_ii",
@@ -7153,14 +8315,18 @@
       "recycles": {
         "mechanical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "compensator_ii_blueprint",
       "name": "Чертёж компенсатора II",
       "en": "Compensator II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "compensator_iii",
@@ -7170,14 +8336,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "compensator_iii_blueprint",
       "name": "Чертеж — Компенсатор III",
       "en": "Compensator III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "complex_gun_parts",
@@ -7186,14 +8356,29 @@
       "value": 3000,
       "recycles": {
         "simple_gun_parts": 3
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": [
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "complex_gun_parts_blueprint",
       "name": "Чертёж сложных деталей оружия",
       "en": "Complex Gun Parts Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "coolant",
@@ -7203,7 +8388,11 @@
       "recycles": {
         "chemicals": 5,
         "oil": 2
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "cooling_coil",
@@ -7213,7 +8402,11 @@
       "recycles": {
         "chemicals": 6,
         "steel_spring": 2
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "cooling_fan",
@@ -7223,7 +8416,11 @@
       "recycles": {
         "plastic_parts": 14,
         "wires": 4
-      }
+      },
+      "found": [
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "cracked_bioscanner",
@@ -7233,7 +8430,11 @@
       "recycles": {
         "battery": 3,
         "rubber_parts": 3
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "crash_mat",
@@ -7243,14 +8444,18 @@
       "recycles": {
         "fabric": 6,
         "plastic_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "crash_mat_blueprint",
       "name": "Чертеж посадочного мата",
       "en": "Crash Mat Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "crude_explosives",
@@ -7259,7 +8464,23 @@
       "value": 270,
       "recycles": {
         "chemicals": 3
-      }
+      },
+      "found": [
+        "Industrial",
+        "Security"
+      ],
+      "drops": [
+        {
+          "name": "Поп",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "crumpled_plastic_bottle",
@@ -7268,42 +8489,56 @@
       "value": 270,
       "recycles": {
         "plastic_parts": 4
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "dam_control_tower_key",
       "name": "Ключ от диспетчерской вышки у дамбы",
       "en": "Dam Control Tower Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dam_controlled_access_zone_key",
       "name": "Ключ от зоны ограниченного доступа на Дамбе",
       "en": "Dam Controlled Access Zone Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dam_staff_room_key",
       "name": "Ключ от комнаты персонала дамбы",
       "en": "Dam Staff Room Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dam_surveillance_key",
       "name": "Ключ от комнаты наблюдения дамбы",
       "en": "Dam Surveillance Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dam_testing_annex_key",
       "name": "Ключ от испытательной пристройки плотины",
       "en": "Dam Testing Annex Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "damaged_arc_motion_core",
@@ -7312,7 +8547,11 @@
       "value": 640,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_arc_powercell",
@@ -7321,7 +8560,11 @@
       "value": 293,
       "recycles": {
         "arc_alloy": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_fireball_burner",
@@ -7330,7 +8573,11 @@
       "value": 270,
       "recycles": {
         "arc_alloy": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_heat_sink",
@@ -7340,7 +8587,11 @@
       "recycles": {
         "metal_parts": 6,
         "wires": 2
-      }
+      },
+      "found": [
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_hornet_driver",
@@ -7349,7 +8600,11 @@
       "value": 640,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_rocketeer_driver",
@@ -7358,14 +8613,22 @@
       "value": 1000,
       "recycles": {
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_snitch_scanner",
       "name": "Поврежденный сканер Snitch",
       "en": "Damaged Snitch Scanner",
       "value": 659,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_tick_pod",
@@ -7374,7 +8637,11 @@
       "value": 270,
       "recycles": {
         "arc_alloy": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "damaged_wasp_driver",
@@ -7383,14 +8650,23 @@
       "value": 270,
       "recycles": {
         "arc_alloy": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "dart_board",
       "name": "Мишень для дартса",
       "en": "Dart Board",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "deadline",
@@ -7400,14 +8676,18 @@
       "recycles": {
         "arc_circuitry": 1,
         "explosive_compound": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "deadline_blueprint",
       "name": "Чертеж Deadline",
       "en": "Deadline Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "defibrillator",
@@ -7417,14 +8697,18 @@
       "recycles": {
         "moss": 1,
         "plastic_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "defibrillator_blueprint",
       "name": "Чертеж — Дефибриллятор",
       "en": "Defibrillator Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "deflated_football",
@@ -7434,7 +8718,11 @@
       "recycles": {
         "fabric": 9,
         "rubber_parts": 9
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "degraded_arc_rubber",
@@ -7443,7 +8731,11 @@
       "value": 640,
       "recycles": {
         "rubber_parts": 11
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "diving_goggles",
@@ -7452,21 +8744,29 @@
       "value": 640,
       "recycles": {
         "rubber_parts": 12
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "dockmasters_detector",
       "name": "Детектор начальника порта",
       "en": "Dockmaster's Detector",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dodgers_note",
       "name": "Записка Доджера",
       "en": "Dodger's Note",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "dog_collar",
@@ -7476,21 +8776,29 @@
       "recycles": {
         "fabric": 8,
         "metal_parts": 1
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "dolabra_blueprint",
       "name": "Dolabra Чертеж",
       "en": "Dolabra Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "doodly_duck",
       "name": "Разрисованная уточка",
       "en": "Doodly Duck",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "door_blocker",
@@ -7499,7 +8807,9 @@
       "value": 270,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "dried_out_arc_resin",
@@ -7508,7 +8818,11 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 9
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "duct_tape",
@@ -7517,7 +8831,12 @@
       "value": 300,
       "recycles": {
         "fabric": 3
-      }
+      },
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "durable_cloth",
@@ -7526,14 +8845,21 @@
       "value": 640,
       "recycles": {
         "fabric": 6
-      }
+      },
+      "found": [
+        "Medical",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "dusty_film_reel",
       "name": "Пыльная катушка с пленкой",
       "en": "Dusty Film Reel",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "electrical_components",
@@ -7543,28 +8869,41 @@
       "recycles": {
         "plastic_parts": 3,
         "rubber_parts": 3
-      }
+      },
+      "found": [
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "elephant_obelisk",
       "name": "Обелиск слона",
       "en": "Elephant Obelisk",
       "value": 10000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "empty_wine_bottle",
       "name": "Пустая бутылка из-под вина",
       "en": "Empty Wine Bottle",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "energy_clip",
       "name": "Энергетический зажим",
       "en": "Energy Clip",
       "value": 200,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "equalizer",
@@ -7574,35 +8913,45 @@
       "recycles": {
         "complex_gun_parts": 1,
         "magnetic_accelerator": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "equalizer_blueprint",
       "name": "Чертёж Уравнителя",
       "en": "Equalizer Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "equatorial_sundial",
       "name": "Экваториальные солнечные часы",
       "en": "Equatorial Sundial",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "espresso_machine_parts",
       "name": "Детали кофемашины",
       "en": "Espresso Machine Parts",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "esr_analyzer",
       "name": "Анализатор СОЭ",
       "en": "ESR Analyzer",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "exodus_modules",
@@ -7612,21 +8961,32 @@
       "recycles": {
         "magnet": 2,
         "processor": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "experimental_seed_sample",
       "name": "Экспериментальный образец семян",
       "en": "Experimental Seed Sample",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "expired_pasta",
       "name": "Просроченные макароны",
       "en": "Expired Pasta",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Commercial",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "expired_respirator",
@@ -7636,14 +8996,20 @@
       "recycles": {
         "fabric": 4,
         "rubber_parts": 8
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "expired_security_code",
       "name": "Просроченный код безопасности",
       "en": "Expired Security Code",
       "value": 10,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "explosive_compound",
@@ -7652,7 +9018,22 @@
       "value": 1000,
       "recycles": {
         "crude_explosives": 2
-      }
+      },
+      "found": [
+        "Industrial",
+        "Security"
+      ],
+      "drops": [
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "explosive_mine",
@@ -7662,14 +9043,18 @@
       "recycles": {
         "oil": 1,
         "sensors": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "explosive_mine_blueprint",
       "name": "Чертеж — Взрывная мина",
       "en": "Explosive Mine Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_barrel_i",
@@ -7678,7 +9063,9 @@
       "value": 1000,
       "recycles": {
         "metal_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_barrel_ii",
@@ -7688,14 +9075,18 @@
       "recycles": {
         "mechanical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_barrel_ii_blueprint",
       "name": "Чертеж — Удлиненный ствол II",
       "en": "Extended Barrel II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_barrel_iii",
@@ -7705,14 +9096,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_barrel_iii_blueprint",
       "name": "Чертеж — Удлиненный ствол III",
       "en": "Extended Barrel III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_light_mag_i",
@@ -7721,7 +9116,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_light_mag_ii",
@@ -7731,14 +9128,18 @@
       "recycles": {
         "mechanical_components": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_light_mag_ii_blueprint",
       "name": "Чертеж — Увеличенный магазин для легкого оружия II",
       "en": "Extended Light Mag II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_light_mag_iii",
@@ -7748,14 +9149,18 @@
       "recycles": {
         "mod_components": 1,
         "steel_spring": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_light_mag_iii_blueprint",
       "name": "Чертеж — Увеличенный магазин для легкого оружия III",
       "en": "Extended Light Mag III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_medium_mag_i",
@@ -7764,7 +9169,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_medium_mag_ii",
@@ -7774,14 +9181,18 @@
       "recycles": {
         "mechanical_components": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_medium_mag_ii_blueprint",
       "name": "Чертеж — Увеличенный магазин для оружия среднего калибра II",
       "en": "Extended Medium Mag II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_medium_mag_iii",
@@ -7791,14 +9202,18 @@
       "recycles": {
         "mod_components": 1,
         "steel_spring": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_medium_mag_iii_blueprint",
       "name": "Чертеж — Увеличенный магазин для оружия среднего калибра III",
       "en": "Extended Medium Mag III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_shotgun_mag_i",
@@ -7807,7 +9222,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_shotgun_mag_ii",
@@ -7817,14 +9234,18 @@
       "recycles": {
         "mechanical_components": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_shotgun_mag_ii_blueprint",
       "name": "Чертёж расширенного магазина для дробовика II",
       "en": "Extended Shotgun Mag II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_shotgun_mag_iii",
@@ -7834,35 +9255,51 @@
       "recycles": {
         "mod_components": 1,
         "steel_spring": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "extended_shotgun_mag_iii_blueprint",
       "name": "Чертеж расширенного магазина для дробовика III",
       "en": "Extended Shotgun Mag III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "fabric",
       "name": "Ткань",
       "en": "Fabric",
       "value": 50,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Commercial",
+        "Medical",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "faded_photograph",
       "name": "Выцветшая фотография",
       "en": "Faded Photograph",
       "value": 640,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "familiar_duck",
       "name": "Знакомая уточка",
       "en": "Familiar Duck",
       "value": 7000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "ferro_i",
@@ -7872,7 +9309,9 @@
       "recycles": {
         "metal_parts": 2,
         "rubber_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "ferro_ii",
@@ -7882,7 +9321,9 @@
       "recycles": {
         "metal_parts": 4,
         "rubber_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "ferro_iii",
@@ -7892,7 +9333,9 @@
       "recycles": {
         "metal_parts": 6,
         "simple_gun_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "ferro_iv",
@@ -7902,7 +9345,9 @@
       "recycles": {
         "mechanical_components": 1,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "fertilizer",
@@ -7911,21 +9356,35 @@
       "value": 1000,
       "recycles": {
         "assorted_seeds": 2
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "film_reel",
       "name": "Кинопленка",
       "en": "Film Reel",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "fine_wristwatch",
       "name": "Изысканные наручные часы",
       "en": "Fine Wristwatch",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "fireball_burner",
@@ -7935,7 +9394,22 @@
       "recycles": {
         "arc_alloy": 1,
         "crude_explosives": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Огнешар",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "firecracker",
@@ -7944,7 +9418,9 @@
       "value": 270,
       "recycles": {
         "plastic_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "firefly_burner",
@@ -7954,7 +9430,11 @@
       "recycles": {
         "arc_alloy": 2,
         "crude_explosives": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "fireworks_box",
@@ -7963,35 +9443,45 @@
       "value": 2000,
       "recycles": {
         "explosive_compound": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "fireworks_box_blueprint",
       "name": "Чертеж — Коробка фейерверков",
       "en": "Fireworks Box Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "first_wave_compass",
       "name": "Компас Первой Волны",
       "en": "First Wave Compass",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "first_wave_rations",
       "name": "Пайки Первой Волны",
       "en": "First Wave Rations",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "first_wave_tape",
       "name": "Кассета Первой Волны",
       "en": "First Wave Tape",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "flame_spray",
@@ -8001,14 +9491,18 @@
       "recycles": {
         "canister": 1,
         "fireball_burner": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "flashy_duck",
       "name": "Яркая уточка",
       "en": "Flashy Duck",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "flow_controller",
@@ -8018,14 +9512,20 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "sensors": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "flushing_terminal_key",
       "name": "Ключ от терминала Flushing",
       "en": "Flushing Terminal Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "fossilized_lightning",
@@ -8034,7 +9534,11 @@
       "value": 4000,
       "recycles": {
         "explosive_compound": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "free_loadout_augment",
@@ -8044,7 +9548,9 @@
       "recycles": {
         "plastic_parts": 6,
         "rubber_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "frequency_modulation_box",
@@ -8054,7 +9560,11 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "speaker_component": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "fried_motherboard",
@@ -8064,14 +9574,20 @@
       "recycles": {
         "electrical_components": 2,
         "plastic_parts": 5
-      }
+      },
+      "found": [
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "fruit_mix",
       "name": "Фруктовый микс",
       "en": "Fruit Mix",
       "value": 1800,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "frying_pan",
@@ -8080,7 +9596,11 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "garlic_press",
@@ -8089,7 +9609,12 @@
       "value": 1000,
       "recycles": {
         "metal_parts": 12
-      }
+      },
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "gas_grenade",
@@ -8099,14 +9624,18 @@
       "recycles": {
         "chemicals": 1,
         "rubber_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "gas_grenade_trap",
       "name": "Лазерная ловушка: Газ",
       "en": "Gas Grenade Trap",
       "value": 300,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "gas_mine",
@@ -8116,14 +9645,18 @@
       "recycles": {
         "chemicals": 1,
         "rubber_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "gas_mine_blueprint",
       "name": "Чертеж — Газовая мина",
       "en": "Gas Mine Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "geiger_counter",
@@ -8133,14 +9666,20 @@
       "recycles": {
         "battery": 3,
         "exodus_modules": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "gentle_duck",
       "name": "Нежная уточка",
       "en": "Gentle Duck",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "glitched_arc_circuitry",
@@ -8150,7 +9689,11 @@
       "recycles": {
         "arc_alloy": 6,
         "exodus_modules": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "glitched_arc_light_ring",
@@ -8160,7 +9703,11 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "glitched_arc_phased_array",
@@ -8170,7 +9717,11 @@
       "recycles": {
         "arc_alloy": 3,
         "sensors": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "glitched_arc_power_converter",
@@ -8179,7 +9730,11 @@
       "value": 640,
       "recycles": {
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "glitched_arc_transmitter",
@@ -8189,7 +9744,11 @@
       "recycles": {
         "arc_alloy": 1,
         "electrical_components": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "great_mullein",
@@ -8198,7 +9757,11 @@
       "value": 300,
       "recycles": {
         "assorted_seeds": 2
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "green_light_stick",
@@ -8207,14 +9770,18 @@
       "value": 150,
       "recycles": {
         "chemicals": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "green_light_stick_blueprint",
       "name": "Чертёж зелёной светящейся палочки",
       "en": "Green Light Stick Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "hairpin_i",
@@ -8224,7 +9791,9 @@
       "recycles": {
         "metal_parts": 2,
         "rubber_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hairpin_ii",
@@ -8234,7 +9803,9 @@
       "recycles": {
         "metal_parts": 4,
         "rubber_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hairpin_iii",
@@ -8244,7 +9815,9 @@
       "recycles": {
         "metal_parts": 6,
         "simple_gun_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hairpin_iv",
@@ -8254,7 +9827,9 @@
       "recycles": {
         "mechanical_components": 1,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "headphones",
@@ -8264,14 +9839,40 @@
       "recycles": {
         "rubber_parts": 7,
         "speaker_component": 1
-      }
+      },
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "heavy_ammo",
       "name": "Тяжелый патрон",
       "en": "Heavy Ammo",
       "value": 12,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": [
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "heavy_fuze_grenade",
@@ -8281,7 +9882,9 @@
       "recycles": {
         "oil": 1,
         "rubber_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "heavy_gun_parts",
@@ -8290,14 +9893,31 @@
       "value": 700,
       "recycles": {
         "simple_gun_parts": 2
-      }
+      },
+      "found": [
+        "Security",
+        "Raider"
+      ],
+      "drops": [
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "heavy_gun_parts_blueprint",
       "name": "Чертеж деталей тяжелого оружия",
       "en": "Heavy Gun Parts Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "heavy_shield",
@@ -8307,7 +9927,9 @@
       "recycles": {
         "arc_circuitry": 2,
         "voltage_converter": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "herbal_bandage",
@@ -8317,14 +9939,18 @@
       "recycles": {
         "assorted_seeds": 2,
         "fabric": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hidden_bunker_key",
       "name": "Ключ от скрытого бункера",
       "en": "Hidden Bunker Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "horizontal_grip",
@@ -8334,7 +9960,9 @@
       "recycles": {
         "duct_tape": 2,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hornet_driver",
@@ -8344,7 +9972,21 @@
       "recycles": {
         "arc_alloy": 1,
         "electrical_components": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Шершень",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "household_cleaner",
@@ -8353,14 +9995,20 @@
       "value": 640,
       "recycles": {
         "chemicals": 11
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "hullcracker_blueprint",
       "name": "Чертёж Hullcracker",
       "en": "Hullcracker Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "hullcracker_i",
@@ -8370,7 +10018,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hullcracker_ii",
@@ -8380,7 +10030,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hullcracker_iii",
@@ -8390,7 +10042,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "heavy_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "hullcracker_iv",
@@ -8400,7 +10054,9 @@
       "recycles": {
         "advanced_mechanical_components": 4,
         "heavy_gun_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "humidifier",
@@ -8410,7 +10066,11 @@
       "recycles": {
         "canister": 2,
         "wires": 2
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "ice_cream_scooper",
@@ -8419,14 +10079,20 @@
       "value": 640,
       "recycles": {
         "metal_parts": 7
-      }
+      },
+      "found": [
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "il_toro_blueprint",
       "name": "Чертеж — Эль-Торо",
       "en": "Il Toro Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "il_toro_i",
@@ -8436,7 +10102,9 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "il_toro_ii",
@@ -8446,7 +10114,9 @@
       "recycles": {
         "mechanical_components": 3,
         "simple_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "il_toro_iii",
@@ -8456,7 +10126,9 @@
       "recycles": {
         "mechanical_components": 4,
         "simple_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "il_toro_iv",
@@ -8466,7 +10138,9 @@
       "recycles": {
         "mechanical_components": 5,
         "simple_gun_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "impure_arc_coolant",
@@ -8475,7 +10149,11 @@
       "value": 640,
       "recycles": {
         "chemicals": 12
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "industrial_battery",
@@ -8485,7 +10163,11 @@
       "recycles": {
         "battery": 2,
         "chemicals": 7
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "industrial_charger",
@@ -8495,7 +10177,11 @@
       "recycles": {
         "metal_parts": 5,
         "voltage_converter": 1
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "industrial_magnet",
@@ -8505,7 +10191,11 @@
       "recycles": {
         "magnet": 2,
         "metal_parts": 4
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "ion_sputter",
@@ -8515,7 +10205,11 @@
       "recycles": {
         "exodus_modules": 1,
         "voltage_converter": 4
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "jolt_mine",
@@ -8525,14 +10219,18 @@
       "recycles": {
         "battery": 1,
         "plastic_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "jolt_mine_blueprint",
       "name": "Чертеж — Электрическая мина",
       "en": "Jolt Mine Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "jupiter",
@@ -8542,14 +10240,18 @@
       "recycles": {
         "complex_gun_parts": 1,
         "magnetic_accelerator": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "jupiter_blueprint",
       "name": "Чертеж Юпитера",
       "en": "Jupiter Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "kettle_i",
@@ -8559,7 +10261,9 @@
       "recycles": {
         "metal_parts": 3,
         "rubber_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "kettle_ii",
@@ -8569,7 +10273,9 @@
       "recycles": {
         "metal_parts": 6,
         "rubber_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "kettle_iii",
@@ -8579,7 +10285,9 @@
       "recycles": {
         "metal_parts": 12,
         "simple_gun_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "kettle_iv",
@@ -8589,7 +10297,9 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "kinetic_converter",
@@ -8599,7 +10309,9 @@
       "recycles": {
         "duct_tape": 2,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "laboratory_reagents",
@@ -8609,21 +10321,42 @@
       "recycles": {
         "chemicals": 16,
         "crude_explosives": 3
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "lances_mixtape_5th_edition",
       "name": "Микстейп Лэнса (5-е издание)",
       "en": "Lance's Mixtape (5th Edition)",
       "value": 10000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "launcher_ammo",
       "name": "Патрон для ракетницы",
       "en": "Launcher Ammo",
       "value": 250,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": [
+        {
+          "name": "Бомбардир",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "leaper_pulse_unit",
@@ -8633,7 +10366,21 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "lemon",
@@ -8642,42 +10389,78 @@
       "value": 640,
       "recycles": {
         "assorted_seeds": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "leviathans_crown_ship_model",
       "name": "Модель корабля «Leviathan's Crown»",
       "en": "\"Leviathan's Crown\" Ship Model",
       "value": 10000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "library_book",
       "name": "Книга",
       "en": "Book",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "lidar_scanner",
       "name": "Лидарный сканер",
       "en": "Lidar Scanner",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "light_ammo",
       "name": "Легкий патрон",
       "en": "Light Ammo",
       "value": 4,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": [
+        {
+          "name": "Турель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        },
+        {
+          "name": "Оса",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "light_bulb",
       "name": "Лампочка",
       "en": "Light Bulb",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "light_gun_parts",
@@ -8686,14 +10469,21 @@
       "value": 700,
       "recycles": {
         "simple_gun_parts": 2
-      }
+      },
+      "found": [
+        "Raider",
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "light_gun_parts_blueprint",
       "name": "Чертеж — Детали для легкого оружия",
       "en": "Light Gun Parts Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "light_impact_grenade",
@@ -8703,7 +10493,9 @@
       "recycles": {
         "chemicals": 1,
         "plastic_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "light_shield",
@@ -8712,7 +10504,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "lightweight_stock",
@@ -8722,14 +10516,18 @@
       "recycles": {
         "duct_tape": 1,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "lightweight_stock_blueprint",
       "name": "Чертёж облегчённого приклада",
       "en": "Lightweight Stock Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "lil_smoke_grenade",
@@ -8739,7 +10537,9 @@
       "recycles": {
         "chemicals": 1,
         "plastic_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk1",
@@ -8749,7 +10549,9 @@
       "recycles": {
         "plastic_parts": 3,
         "rubber_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk2",
@@ -8759,7 +10561,9 @@
       "recycles": {
         "electrical_components": 1,
         "magnet": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk3_cautious",
@@ -8769,7 +10573,9 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk3_safekeeper",
@@ -8779,14 +10585,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk3_safekeeper_blueprint",
       "name": "Чертеж: Мародерство Мк. 3 (Хранитель)",
       "en": "Looting Mk. 3 (Safekeeper) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk3_survivor",
@@ -8796,14 +10606,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "looting_mk3_survivor_blueprint",
       "name": "Чертеж грабительского Mk. 3 (выживший)",
       "en": "Looting Mk. 3 (Survivor) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "lure_grenade",
@@ -8812,21 +10626,27 @@
       "value": 1000,
       "recycles": {
         "speaker_component": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "lure_grenade_blueprint",
       "name": "Чертеж — Граната-приманка",
       "en": "Lure Grenade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "lure_grenade_trap",
       "name": "Лазерная ловушка: Приманка",
       "en": "Lure Grenade Trap",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "magnet",
@@ -8835,7 +10655,11 @@
       "value": 300,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "magnetic_accelerator",
@@ -8845,7 +10669,26 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "arc_motion_core": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": [
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        },
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "magnetron",
@@ -8855,28 +10698,38 @@
       "recycles": {
         "magnetic_accelerator": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "major_aivas_mementos",
       "name": "Памятные вещи майора Айвы",
       "en": "Major Aiva's Mementos",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "major_aivas_patch",
       "name": "Нашивка майора Айвы",
       "en": "Major Aiva's Patch",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "marano_market_business_card",
       "name": "Визитка рынка Марано",
       "en": "Marano Market Business Card",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "matriarch_reactor",
@@ -8886,7 +10739,16 @@
       "recycles": {
         "magnetic_accelerator": 1,
         "power_rod": 1
-      }
+      },
+      "found": [],
+      "drops": [
+        {
+          "name": "Матриарх",
+          "maps": [
+            "dam_battlegrounds"
+          ]
+        }
+      ]
     },
     {
       "id": "mechanical_components",
@@ -8896,14 +10758,40 @@
       "recycles": {
         "metal_parts": 3,
         "rubber_parts": 2
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": [
+        {
+          "name": "Прыгун",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "medium_ammo",
       "name": "Патрон среднего калибра",
       "en": "Medium Ammo",
       "value": 6,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": [
+        {
+          "name": "Шершень",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "medium_gun_parts",
@@ -8912,14 +10800,21 @@
       "value": 700,
       "recycles": {
         "simple_gun_parts": 2
-      }
+      },
+      "found": [
+        "Raider",
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "medium_gun_parts_blueprint",
       "name": "Чертёж средних деталей оружия",
       "en": "Medium Gun Parts Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "medium_shield",
@@ -8928,7 +10823,9 @@
       "value": 2000,
       "recycles": {
         "arc_circuitry": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "metal_brackets",
@@ -8937,14 +10834,26 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "Mechanical",
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "metal_parts",
       "name": "Металлические детали",
       "en": "Metal Parts",
       "value": 75,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Mechanical",
+        "Industrial",
+        "Electrical",
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "microscope",
@@ -8954,7 +10863,11 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "magnet": 3
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "mini_centrifuge",
@@ -8964,7 +10877,11 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "canister": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "mod_components",
@@ -8974,14 +10891,20 @@
       "recycles": {
         "mechanical_components": 1,
         "steel_spring": 1
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "moisture_meter",
       "name": "Измеритель влажности",
       "en": "Moisture Meter",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "moss",
@@ -8990,7 +10913,11 @@
       "value": 500,
       "recycles": {
         "assorted_seeds": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "motor",
@@ -9000,28 +10927,47 @@
       "recycles": {
         "mechanical_components": 2,
         "oil": 2
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "mushroom",
       "name": "Гриб",
       "en": "Mushroom",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "music_album",
       "name": "Музыкальный альбом",
       "en": "Music Album",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "music_box",
       "name": "Музыкальная шкатулка",
       "en": "Music Box",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "muzzle_brake_i",
@@ -9030,7 +10976,9 @@
       "value": 640,
       "recycles": {
         "metal_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "muzzle_brake_ii",
@@ -9040,14 +10988,18 @@
       "recycles": {
         "mechanical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "muzzle_brake_ii_blueprint",
       "name": "Чертёж дульного тормоза II",
       "en": "Muzzle Brake II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "muzzle_brake_iii",
@@ -9057,14 +11009,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "muzzle_brake_iii_blueprint",
       "name": "Чертеж — Дульный тормоз III",
       "en": "Muzzle Brake III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "noisemaker",
@@ -9073,7 +11029,9 @@
       "value": 640,
       "recycles": {
         "speaker_component": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "number_plate",
@@ -9082,21 +11040,29 @@
       "value": 270,
       "recycles": {
         "metal_parts": 3
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "nutrient_meter",
       "name": "Измеритель питательных веществ",
       "en": "Nutrient Meter",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "official_shutdown_documentation",
       "name": "Официальная документация о прекращении работы",
       "en": "Official Shutdown Documentation",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "oil",
@@ -9105,14 +11071,20 @@
       "value": 300,
       "recycles": {
         "chemicals": 3
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "old_world_books",
       "name": "Книги Старого мира",
       "en": "Old World Books",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "olives",
@@ -9121,14 +11093,20 @@
       "value": 640,
       "recycles": {
         "assorted_seeds": 2
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "osprey_blueprint",
       "name": "Чертеж — Ястреб",
       "en": "Osprey Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "osprey_i",
@@ -9138,7 +11116,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "osprey_ii",
@@ -9148,7 +11128,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "osprey_iii",
@@ -9158,7 +11140,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "osprey_iv",
@@ -9168,7 +11152,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "padded_stock",
@@ -9178,28 +11164,40 @@
       "recycles": {
         "duct_tape": 1,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "padded_stock_blueprint",
       "name": "Чертеж: Мягкий приклад",
       "en": "Padded Stock Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "painted_box",
       "name": "Расписная коробка",
       "en": "Painted Box",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World"
+      ],
+      "drops": []
     },
     {
       "id": "patrol_car_key",
       "name": "Ключ от патрульной машины",
       "en": "Patrol Car Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "photoelectric_cloak",
@@ -9209,28 +11207,43 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "speaker_component": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "pilgrims_peak_security_code",
       "name": "Код безопасности Пилгримс Пик",
       "en": "Pilgrim's Peak Security Code",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "plastic_parts",
       "name": "Пластиковые детали",
       "en": "Plastic Parts",
       "value": 60,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Commercial",
+        "Residential",
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "playing_cards",
       "name": "Игральные карты",
       "en": "Playing Cards",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "polluted_air_filter",
@@ -9240,7 +11253,11 @@
       "recycles": {
         "fabric": 6,
         "oil": 2
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "pop_trigger",
@@ -9250,7 +11267,22 @@
       "recycles": {
         "arc_alloy": 1,
         "crude_explosives": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Поп",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "portable_tv",
@@ -9260,28 +11292,44 @@
       "recycles": {
         "battery": 2,
         "wires": 6
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "possibly_toxic_plant",
       "name": "Возможно ядовитое растение",
       "en": "Possibly Toxic Plant",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "poster_of_natural_wonders",
       "name": "Плакат Чудеса природы",
       "en": "Poster of Natural Wonders",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "pottery",
       "name": "Глиняная посуда",
       "en": "Pottery",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "power_bank",
@@ -9291,7 +11339,13 @@
       "recycles": {
         "battery": 2,
         "wires": 2
-      }
+      },
+      "found": [
+        "Electrical",
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "power_cable",
@@ -9300,7 +11354,13 @@
       "value": 1000,
       "recycles": {
         "wires": 4
-      }
+      },
+      "found": [
+        "Electrical",
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "power_rod",
@@ -9310,7 +11370,11 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "arc_circuitry": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "powered_descender",
@@ -9320,21 +11384,27 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "arc_circuitry": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "powered_descender_blueprint",
       "name": "Чертеж моторизованного спускового устройства",
       "en": "Powered Descender Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "precision_gimbal",
       "name": "Прецизионный подвес",
       "en": "Precision Gimbal",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "prickly_pear",
@@ -9343,7 +11413,11 @@
       "value": 640,
       "recycles": {
         "assorted_seeds": 3
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "processor",
@@ -9353,14 +11427,20 @@
       "recycles": {
         "plastic_parts": 1,
         "wires": 1
-      }
+      },
+      "found": [
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "project_heartwood_blueprints",
       "name": "Чертежи проекта «Хартвуд»",
       "en": "Project Heartwood Blueprints",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "projector",
@@ -9370,7 +11450,11 @@
       "recycles": {
         "processor": 1,
         "wires": 2
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "pulse_mine",
@@ -9379,14 +11463,18 @@
       "value": 470,
       "recycles": {
         "chemicals": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "pulse_mine_blueprint",
       "name": "Чертеж — Импульсная мина",
       "en": "Pulse Mine Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "queen_reactor",
@@ -9396,7 +11484,20 @@
       "recycles": {
         "magnetic_accelerator": 1,
         "power_rod": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Королева",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate"
+          ]
+        }
+      ]
     },
     {
       "id": "radio",
@@ -9406,7 +11507,12 @@
       "recycles": {
         "sensors": 1,
         "speaker_component": 1
-      }
+      },
+      "found": [
+        "Commercial",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "radio_relay",
@@ -9416,35 +11522,47 @@
       "recycles": {
         "sensors": 2,
         "speaker_component": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "raider_flag",
       "name": "Флаг рейдера",
       "en": "Raider Flag",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "raider_hatch_key",
       "name": "Ключ от рейдерского люка",
       "en": "Raider Hatch Key",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "raiders_refuge_security_code",
       "name": "Код безопасности Убежища Рейдеров",
       "en": "Raider's Refuge Security Code",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "rascal_blueprint",
       "name": "Чертеж Раскала",
       "en": "Rascal Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "rascal_i",
@@ -9454,7 +11572,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rascal_ii",
@@ -9464,7 +11584,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rascal_iii",
@@ -9474,7 +11596,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rascal_iv",
@@ -9484,7 +11608,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rattler_i",
@@ -9493,7 +11619,9 @@
       "value": 1750,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rattler_ii",
@@ -9502,7 +11630,9 @@
       "value": 3000,
       "recycles": {
         "metal_parts": 12
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rattler_iii",
@@ -9512,7 +11642,9 @@
       "recycles": {
         "mechanical_components": 3,
         "simple_gun_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "rattler_iv",
@@ -9522,7 +11654,9 @@
       "recycles": {
         "mechanical_components": 4,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "recorder",
@@ -9531,14 +11665,24 @@
       "value": 1000,
       "recycles": {
         "plastic_parts": 10
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "red_coral_jewelry",
       "name": "Украшение из красного коралла",
       "en": "Red Coral Jewelry",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Old World",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "red_light_stick",
@@ -9547,21 +11691,27 @@
       "value": 150,
       "recycles": {
         "chemicals": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "red_light_stick_blueprint",
       "name": "Чертёж красной светящейся палочки",
       "en": "Red Light Stick Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "reinforced_reception_security_code",
       "name": "Код безопасности Усиленной Приёмной",
       "en": "Reinforced Reception Security Code",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "remote_control",
@@ -9571,7 +11721,11 @@
       "recycles": {
         "plastic_parts": 7,
         "sensors": 1
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "remote_raider_flare",
@@ -9581,14 +11735,18 @@
       "recycles": {
         "chemicals": 1,
         "rubber_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "remote_raider_flare_blueprint",
       "name": "Чертёж дистанционной сигнальной ракеты рейдера",
       "en": "Remote Raider Flare Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "renegade_i",
@@ -9598,7 +11756,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "renegade_ii",
@@ -9608,7 +11768,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "renegade_iii",
@@ -9618,7 +11780,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "renegade_iv",
@@ -9628,14 +11792,20 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "resin",
       "name": "Смола",
       "en": "Resin",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "ripped_safety_vest",
@@ -9645,77 +11815,99 @@
       "recycles": {
         "durable_cloth": 1,
         "magnet": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_classified_records_keycard",
       "name": "Карта-ключ к секретным архивам Riven Tides",
       "en": "Riven Tides Classified Records Keycard",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_crane_house_keycard",
       "name": "Карта-ключ к крановому домику Riven Tides",
       "en": "Riven Tides Crane House Keycard",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_102",
       "name": "Карта-ключ отеля Riven Tides № 102",
       "en": "Riven Tides Hotel Keycard No. 102",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_107",
       "name": "Карта-ключ отеля Riven Tides № 107",
       "en": "Riven Tides Hotel Keycard No. 107",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_113",
       "name": "Карта-ключ отеля Riven Tides № 113",
       "en": "Riven Tides Hotel Keycard No. 113",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_205",
       "name": "Карта-ключ отеля Riven Tides № 205",
       "en": "Riven Tides Hotel Keycard No. 205",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_208",
       "name": "Карта-ключ отеля Riven Tides № 208",
       "en": "Riven Tides Hotel Keycard No. 208",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_311",
       "name": "Карта-ключ отеля Riven Tides № 311",
       "en": "Riven Tides Hotel Keycard No. 311",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_hotel_keycard_no_404",
       "name": "Карта-ключ отеля Riven Tides № 404",
       "en": "Riven Tides Hotel Keycard No. 404",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "riven_tides_secure_storage_keycard",
       "name": "Карта-ключ к охраняемому складу Riven Tides",
       "en": "Riven Tides Secure Storage Keycard",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "rocket_thruster",
@@ -9725,7 +11917,11 @@
       "recycles": {
         "metal_parts": 6,
         "synthesized_fuel": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "rocketeer_driver",
@@ -9735,7 +11931,21 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "arc_alloy": 3
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Ракетчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "roots",
@@ -9744,7 +11954,11 @@
       "value": 640,
       "recycles": {
         "assorted_seeds": 1
-      }
+      },
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "rope",
@@ -9753,14 +11967,24 @@
       "value": 500,
       "recycles": {
         "fabric": 5
-      }
+      },
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "rosary",
       "name": "Чётки",
       "en": "Rosary",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "rotary_encoder",
@@ -9770,14 +11994,20 @@
       "recycles": {
         "electrical_components": 2,
         "processor": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "rubber_duck",
       "name": "Резиновая уточка",
       "en": "Rubber Duck",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "rubber_pad",
@@ -9786,14 +12016,24 @@
       "value": 1000,
       "recycles": {
         "rubber_parts": 18
-      }
+      },
+      "found": [
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "rubber_parts",
       "name": "Резиновые детали",
       "en": "Rubber Parts",
       "value": 50,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Mechanical",
+        "Industrial",
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_accordion",
@@ -9803,7 +12043,11 @@
       "recycles": {
         "rubber_parts": 18,
         "steel_spring": 3
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_augment",
@@ -9813,7 +12057,11 @@
       "recycles": {
         "plastic_parts": 2,
         "rubber_parts": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_baton",
@@ -9823,7 +12071,11 @@
       "recycles": {
         "metal_parts": 6,
         "rubber_parts": 3
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_handcuffs",
@@ -9832,7 +12084,11 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_parachute",
@@ -9841,7 +12097,11 @@
       "value": 640,
       "recycles": {
         "fabric": 10
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_riot_shield",
@@ -9851,7 +12111,11 @@
       "recycles": {
         "plastic_parts": 10,
         "rubber_parts": 6
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "ruined_tactical_vest",
@@ -9861,7 +12125,11 @@
       "recycles": {
         "fabric": 5,
         "magnet": 1
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "rusted_bolts",
@@ -9870,7 +12138,12 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "Industrial",
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "rusted_gear",
@@ -9880,7 +12153,11 @@
       "recycles": {
         "mechanical_components": 2,
         "metal_parts": 4
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "rusted_shut_medical_kit",
@@ -9890,7 +12167,11 @@
       "recycles": {
         "antiseptic": 1,
         "syringe": 2
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "rusted_tools",
@@ -9900,7 +12181,11 @@
       "recycles": {
         "metal_parts": 8,
         "steel_spring": 1
-      }
+      },
+      "found": [
+        "Mechanical"
+      ],
+      "drops": []
     },
     {
       "id": "rusty_arc_steel",
@@ -9909,7 +12194,11 @@
       "value": 640,
       "recycles": {
         "metal_parts": 8
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "sample_cleaner",
@@ -9919,28 +12208,38 @@
       "recycles": {
         "assorted_seeds": 14,
         "electrical_components": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "scout_patrol_note",
       "name": "Записка разведывательного патруля",
       "en": "Scout Patrol Note",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "secret_meeting_info",
       "name": "Информация о секретной встрече",
       "en": "Secret Meeting Info",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "seed_vault_box_key",
       "name": "Ключ от ящика хранилища семян",
       "en": "Seed Vault Box Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "seeker_grenade",
@@ -9949,14 +12248,18 @@
       "value": 640,
       "recycles": {
         "crude_explosives": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "seeker_grenade_blueprint",
       "name": "Чертёж — Самонаводящаяся граната",
       "en": "Seeker Grenade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "sensors",
@@ -9966,7 +12269,31 @@
       "recycles": {
         "metal_parts": 1,
         "wires": 1
-      }
+      },
+      "found": [
+        "Security",
+        "Technological"
+      ],
+      "drops": [
+        {
+          "name": "Стукач",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Наводчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "sentinel_firing_core",
@@ -9976,14 +12303,30 @@
       "recycles": {
         "arc_alloy": 2,
         "mechanical_components": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Страж",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "sextant",
       "name": "Секстант",
       "en": "Sextant",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "shaker",
@@ -9992,7 +12335,11 @@
       "value": 1000,
       "recycles": {
         "plastic_parts": 10
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "shield_recharger",
@@ -10001,14 +12348,25 @@
       "value": 520,
       "recycles": {
         "rubber_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_ammo",
       "name": "Патрон для дробовика",
       "en": "Shotgun Ammo",
       "value": 20,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": [
+        {
+          "name": "Измельчитель",
+          "maps": [
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "shotgun_choke_i",
@@ -10017,7 +12375,9 @@
       "value": 640,
       "recycles": {
         "metal_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_choke_ii",
@@ -10027,14 +12387,18 @@
       "recycles": {
         "mechanical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_choke_ii_blueprint",
       "name": "Чертеж — Чок для дробовика II",
       "en": "Shotgun Choke II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_choke_iii",
@@ -10044,14 +12408,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_choke_iii_blueprint",
       "name": "Чертеж — Чок для дробовика III",
       "en": "Shotgun Choke III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_silencer",
@@ -10061,14 +12429,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shotgun_silencer_blueprint",
       "name": "Чертеж — Глушитель для дробовика",
       "en": "Shotgun Silencer Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "showstopper",
@@ -10078,14 +12450,18 @@
       "recycles": {
         "electrical_components": 1,
         "voltage_converter": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "showstopper_blueprint",
       "name": "Чертеж — Коронный номер",
       "en": "Showstopper Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "shrapnel_grenade",
@@ -10095,7 +12471,9 @@
       "recycles": {
         "crude_explosives": 1,
         "metal_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "shredder_gyro",
@@ -10105,7 +12483,18 @@
       "recycles": {
         "arc_alloy": 2,
         "mechanical_components": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Измельчитель",
+          "maps": [
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "signal_amplifier",
@@ -10115,7 +12504,11 @@
       "recycles": {
         "electrical_components": 2,
         "voltage_converter": 2
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "silencer_i",
@@ -10125,14 +12518,18 @@
       "recycles": {
         "mechanical_components": 1,
         "wires": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "silencer_i_blueprint",
       "name": "Чертёж глушителя I",
       "en": "Silencer I Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "silencer_ii",
@@ -10142,14 +12539,18 @@
       "recycles": {
         "mod_components": 1,
         "wires": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "silencer_ii_blueprint",
       "name": "Чертёж глушителя II",
       "en": "Silencer II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "silencer_iii",
@@ -10159,14 +12560,22 @@
       "recycles": {
         "mod_components": 1,
         "wires": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "silver_teaspoon_set",
       "name": "Набор серебряных чайных ложек",
       "en": "Silver Teaspoon Set",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Old World",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "simple_gun_parts",
@@ -10175,14 +12584,41 @@
       "value": 330,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [
+        "Raider",
+        "Security"
+      ],
+      "drops": [
+        {
+          "name": "Шершень",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        },
+        {
+          "name": "Турель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "sirena_dorata_ship_model",
       "name": "Модель корабля «Sirena Dorata»",
       "en": "\"Sirena Dorata\" Ship Model",
       "value": 7000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "smoke_grenade",
@@ -10192,21 +12628,27 @@
       "recycles": {
         "canister": 1,
         "chemicals": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "smoke_grenade_blueprint",
       "name": "Чертеж — Дымовая граната",
       "en": "Smoke Grenade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "smoke_grenade_trap",
       "name": "Лазерная ловушка: Дым",
       "en": "Smoke Grenade Trap",
       "value": 640,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "snap_blast_grenade",
@@ -10216,7 +12658,9 @@
       "recycles": {
         "chemicals": 1,
         "magnet": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "snap_hook",
@@ -10226,14 +12670,18 @@
       "recycles": {
         "power_rod": 1,
         "rope": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "snap_hook_blueprint",
       "name": "Чертёж Snap Hook",
       "en": "Snap Hook Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "snitch_scanner",
@@ -10243,42 +12691,68 @@
       "recycles": {
         "arc_alloy": 1,
         "electrical_components": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Стукач",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "snowball",
       "name": "Снежок",
       "en": "Snowball",
       "value": 10,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "spaceport_container_storage_key",
       "name": "Ключ от хранилища контейнеров космопорта",
       "en": "Spaceport Container Storage Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "spaceport_control_tower_key",
       "name": "Ключ от диспетчерской башни космопорта",
       "en": "Spaceport Control Tower Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "spaceport_trench_tower_key",
       "name": "Ключ от башни траншей космопорта",
       "en": "Spaceport Trench Tower Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "spaceport_warehouse_key",
       "name": "Ключ от склада космопорта",
       "en": "Spaceport Warehouse Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "speaker_component",
@@ -10288,7 +12762,11 @@
       "recycles": {
         "plastic_parts": 2,
         "rubber_parts": 3
-      }
+      },
+      "found": [
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "spectrometer",
@@ -10298,7 +12776,11 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "sensors": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "spectrum_analyzer",
@@ -10308,7 +12790,11 @@
       "recycles": {
         "exodus_modules": 1,
         "sensors": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "spotter_relay",
@@ -10318,7 +12804,21 @@
       "recycles": {
         "arc_alloy": 1,
         "electrical_components": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Наводчик",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "spring_cushion",
@@ -10328,7 +12828,12 @@
       "recycles": {
         "durable_cloth": 2,
         "steel_spring": 2
-      }
+      },
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "stable_stock_i",
@@ -10337,7 +12842,9 @@
       "value": 640,
       "recycles": {
         "rubber_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stable_stock_ii",
@@ -10347,14 +12854,18 @@
       "recycles": {
         "duct_tape": 1,
         "mechanical_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stable_stock_ii_blueprint",
       "name": "Чертеж — Надежный приклад II",
       "en": "Stable Stock II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "stable_stock_iii",
@@ -10364,28 +12875,39 @@
       "recycles": {
         "duct_tape": 2,
         "mod_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stable_stock_iii_blueprint",
       "name": "Чертеж — Надежный приклад III",
       "en": "Stable Stock III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "stack_of_movie_tapes",
       "name": "Стопка видеокассет",
       "en": "Stack of Movie Tapes",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "statuette",
       "name": "Статуэтка",
       "en": "Statuette",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "steel_spring",
@@ -10394,35 +12916,47 @@
       "value": 300,
       "recycles": {
         "metal_parts": 2
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "stella_montis_archives_key",
       "name": "Ключ от архива Стелла Монтис",
       "en": "Stella Montis Archives Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "stella_montis_assembly_admin_key",
       "name": "Административный Ключ Сборочного Цеха Стелла Монтис",
       "en": "Stella Montis Assembly Admin Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "stella_montis_medical_storage_key",
       "name": "Ключ от медицинского склада Стелла Монтис",
       "en": "Stella Montis Medical Storage Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "stella_montis_security_checkpoint_key",
       "name": "Ключ от контрольно-пропускного пункта Стелла Монтис",
       "en": "Stella Montis Security Checkpoint Key",
       "value": 100,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "sterilized_bandage",
@@ -10432,7 +12966,9 @@
       "recycles": {
         "antiseptic": 1,
         "fabric": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stitcher_i",
@@ -10442,7 +12978,9 @@
       "recycles": {
         "metal_parts": 3,
         "rubber_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stitcher_ii",
@@ -10452,7 +12990,9 @@
       "recycles": {
         "metal_parts": 6,
         "rubber_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stitcher_iii",
@@ -10462,7 +13002,9 @@
       "recycles": {
         "metal_parts": 12,
         "simple_gun_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "stitcher_iv",
@@ -10472,14 +13014,18 @@
       "recycles": {
         "mechanical_components": 2,
         "simple_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "surge_coil_blueprint",
       "name": "Surge Coil Чертеж",
       "en": "Surge Coil Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "surge_shield_recharger",
@@ -10488,7 +13034,9 @@
       "value": 1200,
       "recycles": {
         "electrical_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "surveyor_vault",
@@ -10498,7 +13046,21 @@
       "recycles": {
         "arc_alloy": 1,
         "mechanical_components": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Наблюдатель",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "synthesized_fuel",
@@ -10508,7 +13070,11 @@
       "recycles": {
         "chemicals": 1,
         "oil": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "syringe",
@@ -10518,7 +13084,11 @@
       "recycles": {
         "chemicals": 2,
         "plastic_parts": 3
-      }
+      },
+      "found": [
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "tactical_mk1",
@@ -10528,7 +13098,9 @@
       "recycles": {
         "plastic_parts": 3,
         "rubber_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk2",
@@ -10538,7 +13110,9 @@
       "recycles": {
         "electrical_components": 1,
         "magnet": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_defensive",
@@ -10548,14 +13122,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_defensive_blueprint",
       "name": "Чертеж — Тактический Mk. 3 (Оборонительный)",
       "en": "Tactical Mk. 3 (Defensive) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_healing",
@@ -10565,14 +13143,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_healing_blueprint",
       "name": "Чертеж тактического Mk. 3 (лечение)",
       "en": "Tactical Mk. 3 (Healing) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_revival",
@@ -10582,14 +13164,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_revival_blueprint",
       "name": "Чертеж: Тактика Мк. 3 (Реанимация)",
       "en": "Tactical Mk. 3 (Revival) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_smoke",
@@ -10599,14 +13185,18 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tactical_mk3_smoke_blueprint",
       "name": "Чертеж тактического Mk. 3 (дым)",
       "en": "Tactical Mk. 3 (Smoke) Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tagging_grenade",
@@ -10616,14 +13206,18 @@
       "recycles": {
         "plastic_parts": 1,
         "sensors": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tagging_grenade_blueprint",
       "name": "Чертеж — Маркирующая граната",
       "en": "Tagging Grenade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tattered_arc_lining",
@@ -10632,7 +13226,11 @@
       "value": 640,
       "recycles": {
         "fabric": 12
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "tattered_clothes",
@@ -10641,7 +13239,11 @@
       "value": 640,
       "recycles": {
         "fabric": 11
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "telemetry_transceiver",
@@ -10651,21 +13253,29 @@
       "recycles": {
         "advanced_electrical_components": 1,
         "processor": 1
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "tellurion",
       "name": "Теллурион",
       "en": "Tellurion",
       "value": 7000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tempest_blueprint",
       "name": "Чертеж — Буря",
       "en": "Tempest Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tempest_i",
@@ -10675,7 +13285,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tempest_ii",
@@ -10685,7 +13297,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tempest_iii",
@@ -10695,7 +13309,9 @@
       "recycles": {
         "advanced_mechanical_components": 4,
         "medium_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "tempest_iv",
@@ -10705,7 +13321,9 @@
       "recycles": {
         "advanced_mechanical_components": 5,
         "medium_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "thermostat",
@@ -10715,7 +13333,11 @@
       "recycles": {
         "rubber_parts": 7,
         "sensors": 1
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "tick_pod",
@@ -10725,7 +13347,22 @@
       "recycles": {
         "arc_alloy": 2,
         "chemicals": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Блоха",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city",
+            "stella_montis"
+          ]
+        }
+      ]
     },
     {
       "id": "toaster",
@@ -10735,7 +13372,11 @@
       "recycles": {
         "plastic_parts": 5,
         "wires": 3
-      }
+      },
+      "found": [
+        "Residential"
+      ],
+      "drops": []
     },
     {
       "id": "torn_blanket",
@@ -10744,21 +13385,33 @@
       "value": 640,
       "recycles": {
         "fabric": 12
-      }
+      },
+      "found": [
+        "Residential",
+        "Medical"
+      ],
+      "drops": []
     },
     {
       "id": "torn_book",
       "name": "Порванная книга",
       "en": "Torn Book",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Old World"
+      ],
+      "drops": []
     },
     {
       "id": "torrente_blueprint",
       "name": "Чертеж Torrente",
       "en": "Torrente Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "torrente_i",
@@ -10768,7 +13421,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "torrente_ii",
@@ -10778,7 +13433,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "torrente_iii",
@@ -10788,7 +13445,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "torrente_iv",
@@ -10798,7 +13457,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "trailblazer",
@@ -10807,21 +13468,27 @@
       "value": 2200,
       "recycles": {
         "crude_explosives": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "trailblazer_blueprint",
       "name": "Чертёж — Trailblazer",
       "en": "Trailblazer Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "train_model",
       "name": "Модель поезда",
       "en": "Train Model",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "trigger_nade",
@@ -10831,21 +13498,27 @@
       "recycles": {
         "chemicals": 1,
         "processor": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "trigger_nade_blueprint",
       "name": "Чертеж — Триггер-граната",
       "en": "Trigger Nade Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "tropical_duck",
       "name": "Тропическая уточка",
       "en": "Tropical Duck",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "turbine_compressor",
@@ -10855,7 +13528,11 @@
       "recycles": {
         "arc_circuitry": 1,
         "arc_motion_core": 1
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": []
     },
     {
       "id": "turbo_pump",
@@ -10865,14 +13542,20 @@
       "recycles": {
         "mechanical_components": 1,
         "oil": 3
-      }
+      },
+      "found": [
+        "Exodus"
+      ],
+      "drops": []
     },
     {
       "id": "twilight_compass_ship_model",
       "name": "Модель корабля «Twilight Compass»",
       "en": "\"Twilight Compass\" Ship Model",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "unusable_weapon",
@@ -10882,28 +13565,42 @@
       "recycles": {
         "metal_parts": 4,
         "simple_gun_parts": 5
-      }
+      },
+      "found": [
+        "Security"
+      ],
+      "drops": []
     },
     {
       "id": "vase",
       "name": "Ваза",
       "en": "Vase",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Old World",
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "velocity_ship_model",
       "name": "Модель корабля «Velocity»",
       "en": "\"Velocity\" Ship Model",
       "value": 3000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "venator_blueprint",
       "name": "Чертеж — Охотник",
       "en": "Venator Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "venator_i",
@@ -10913,7 +13610,9 @@
       "recycles": {
         "advanced_mechanical_components": 1,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "venator_ii",
@@ -10923,7 +13622,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "venator_iii",
@@ -10933,7 +13634,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "venator_iv",
@@ -10943,7 +13646,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "medium_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vertical_grip_i",
@@ -10952,7 +13657,9 @@
       "value": 640,
       "recycles": {
         "plastic_parts": 6
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vertical_grip_ii",
@@ -10962,14 +13669,18 @@
       "recycles": {
         "duct_tape": 1,
         "mechanical_components": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vertical_grip_ii_blueprint",
       "name": "Чертеж — Вертикальная рукоятка II",
       "en": "Vertical Grip II Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "vertical_grip_iii",
@@ -10979,28 +13690,39 @@
       "recycles": {
         "duct_tape": 2,
         "mechanical_components": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vertical_grip_iii_blueprint",
       "name": "Чертеж вертикальной рукояти III",
       "en": "Vertical Grip III Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "very_comfortable_pillow",
       "name": "Очень удобная подушка",
       "en": "Very Comfortable Pillow",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Residential",
+        "Commercial"
+      ],
+      "drops": []
     },
     {
       "id": "vintage_steering_wheel",
       "name": "Винтажный руль",
       "en": "Vintage Steering Wheel",
       "value": 2000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "vita_shot",
@@ -11010,14 +13732,18 @@
       "recycles": {
         "chemicals": 4,
         "syringe": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vita_shot_blueprint",
       "name": "Чертёж Вита-инъекции",
       "en": "Vita Shot Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "vita_spray",
@@ -11027,21 +13753,29 @@
       "recycles": {
         "antiseptic": 1,
         "canister": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vita_spray_blueprint",
       "name": "Чертёж Вита-спрея",
       "en": "Vita Spray Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "volcanic_rock",
       "name": "Вулканическая порода",
       "en": "Volcanic Rock",
       "value": 270,
-      "recycles": {}
+      "recycles": {},
+      "found": [
+        "Nature"
+      ],
+      "drops": []
     },
     {
       "id": "voltage_converter",
@@ -11051,14 +13785,20 @@
       "recycles": {
         "rubber_parts": 1,
         "wires": 1
-      }
+      },
+      "found": [
+        "Electrical"
+      ],
+      "drops": []
     },
     {
       "id": "vulcano_blueprint",
       "name": "Чертеж — Вулкан",
       "en": "Vulcano Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "vulcano_i",
@@ -11068,7 +13808,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 2
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vulcano_ii",
@@ -11078,7 +13820,9 @@
       "recycles": {
         "advanced_mechanical_components": 2,
         "heavy_gun_parts": 3
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vulcano_iii",
@@ -11088,7 +13832,9 @@
       "recycles": {
         "advanced_mechanical_components": 3,
         "heavy_gun_parts": 4
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "vulcano_iv",
@@ -11098,7 +13844,9 @@
       "recycles": {
         "advanced_mechanical_components": 4,
         "heavy_gun_parts": 5
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "wasp_driver",
@@ -11107,7 +13855,21 @@
       "value": 640,
       "recycles": {
         "arc_alloy": 2
-      }
+      },
+      "found": [
+        "ARC"
+      ],
+      "drops": [
+        {
+          "name": "Оса",
+          "maps": [
+            "dam_battlegrounds",
+            "the_spaceport",
+            "the_blue_gate",
+            "buried_city"
+          ]
+        }
+      ]
     },
     {
       "id": "water_filter",
@@ -11117,7 +13879,11 @@
       "recycles": {
         "canister": 3,
         "rubber_parts": 2
-      }
+      },
+      "found": [
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "water_pump",
@@ -11127,7 +13893,12 @@
       "recycles": {
         "metal_parts": 4,
         "oil": 2
-      }
+      },
+      "found": [
+        "Mechanical",
+        "Industrial"
+      ],
+      "drops": []
     },
     {
       "id": "white_flag",
@@ -11137,21 +13908,27 @@
       "recycles": {
         "fabric": 5,
         "plastic_parts": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "white_flag_blueprint",
       "name": "Чертеж белого флага",
       "en": "White Flag Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "wind_sprite_ship_model",
       "name": "Модель корабля «Wind Sprite»",
       "en": "\"Wind Sprite\" Ship Model",
       "value": 1000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "wires",
@@ -11160,7 +13937,12 @@
       "value": 200,
       "recycles": {
         "rubber_parts": 2
-      }
+      },
+      "found": [
+        "Electrical",
+        "Technological"
+      ],
+      "drops": []
     },
     {
       "id": "wolfpack",
@@ -11170,14 +13952,18 @@
       "recycles": {
         "arc_motion_core": 1,
         "explosive_compound": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "wolfpack_blueprint",
       "name": "Чертеж — Волчья стая",
       "en": "Wolfpack Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "yellow_light_stick",
@@ -11186,14 +13972,18 @@
       "value": 150,
       "recycles": {
         "chemicals": 1
-      }
+      },
+      "found": [],
+      "drops": []
     },
     {
       "id": "yellow_light_stick_blueprint",
       "name": "Жёлтая светящаяся палочка",
       "en": "Yellow Light Stick Blueprint",
       "value": 5000,
-      "recycles": {}
+      "recycles": {},
+      "found": [],
+      "drops": []
     },
     {
       "id": "zipline",
@@ -11203,7 +13993,9 @@
       "recycles": {
         "metal_parts": 1,
         "rope": 1
-      }
+      },
+      "found": [],
+      "drops": []
     }
   ],
   "workshops": [
@@ -11420,5 +14212,20 @@
         }
       ]
     }
-  ]
+  ],
+  "loot_types": {
+    "Residential": "жилые",
+    "ARC": "машины ARC",
+    "Commercial": "торговые",
+    "Exodus": "Исход",
+    "Security": "охрана",
+    "Nature": "природа",
+    "Industrial": "промышленные",
+    "Mechanical": "механические",
+    "Old World": "старый мир",
+    "Electrical": "электрика",
+    "Medical": "медицина",
+    "Technological": "технологии",
+    "Raider": "рейдеры"
+  }
 }

@@ -33,6 +33,7 @@ DB_MAX_AGE = 24 * 60 * 60  # свежая база с GitHub скачивает�
 UPDATE_CHECK_MAX_AGE = 6 * 60 * 60  # проверка новой версии программы — раз в 6 часов
 SYNC_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
 ITEM_PANEL_MS = 20 * 1000  # панель «брать или продавать» закрывается сама
+ITEM_SEARCH_PANEL_MS = 90 * 1000  # найденный поиском предмет читают дольше
 ITEM_GRAB_SIZE = (1600, 1100)  # область вокруг курсора, где ищем подсказку с названием предмета
 
 
@@ -63,6 +64,7 @@ class OverlayApp:
         self.map_view = ZoomWindow()
         self._map_on = False  # игрок открыл карту с точками квеста
         self._map_index = 0  # какая из карт квеста показана
+        self._map_item = None  # карта открыта для предмета: места, где его искать (ItemReport)
         self._full_images: dict[str, QPixmap] = {}  # скриншоты вики в полном размере
         self._item_timer = QTimer()
         self._item_timer.setSingleShot(True)
@@ -82,6 +84,10 @@ class OverlayApp:
         self.input.submitted.connect(self.on_submitted)
         self.input.help_requested.connect(self.show_help)
         self.input.set_suggester(lambda text: self.db.suggest(text))
+        self.item_input = InputWindow("Поиск предмета", "Предмет:", "например, Водяной насос")
+        self.item_input.submitted.connect(self.on_item_submitted)
+        self.item_input.help_requested.connect(self.show_help)
+        self.item_input.set_suggester(lambda text: self.db.suggest_items(text))
 
         self.hotkeys = winapi.HotkeyManager()
         app.installNativeEventFilter(self.hotkeys)
@@ -343,7 +349,7 @@ class OverlayApp:
             "input": self.input.open, "next_step": self.next_step, "prev_step": self.prev_step,
             "switch_quest": self.switch_quest, "complete": self.complete_quest,
             "import": self.import_from_screen, "shopping": self.show_shopping,
-            "item": self.check_item, "guide": self.toggle_guide,
+            "item": self.check_item, "find_item": self.item_input.open, "guide": self.toggle_guide,
             "page_down": self.next_page, "page_up": self.prev_page, "zoom": self.toggle_zoom,
             "map": self.toggle_map,
             "open_browser": self.open_guide_in_browser, "toggle_card": self.toggle_card,
@@ -506,13 +512,32 @@ class OverlayApp:
             self._show_notice("Не нашёл название предмета. Наведите курсор на предмет, чтобы появилась подсказка "
                               f"с его названием, и нажмите {shortcuts.key('item')} ещё раз.")
             return
+        self._show_item(item, ITEM_PANEL_MS)
+
+    def on_item_submitted(self, text: str):
+        item = self.db.find_item(text)
+        similar = self.db.similar_items(text) if item is None else []
+        if item is None and len(similar) == 1:  # «батарейка» → «Батарея»
+            item = self.db.find_item(similar[0])
+        if item is None:
+            hint = f" Возможно: {', '.join(similar)}." if similar else ""
+            self.item_input.show_error(f"Предмет «{text.strip()}» не найден.{hint}")
+            return
+        self.item_input.close_and_return_focus()
+        self._show_item(item, ITEM_SEARCH_PANEL_MS)
+
+    def _show_item(self, item, close_after_ms: int):
         report = items.item_report(self.db, item, self._active_quests(), self.progress.completed,
                                    self.progress.workshops)
+        self._close_map()
         self.card.show_item(report)
         self.set_card_visible(True)
-        self._item_timer.start(ITEM_PANEL_MS)
+        self._item_timer.start(close_after_ms)
 
     def _close_item_panel(self):
+        if self._map_on and self._map_item is not None:
+            self._item_timer.start(ITEM_PANEL_MS)  # пока смотрят карту, панель не закрываем
+            return
         if self.card.panel == "item":
             self.card.close_panel()
 
@@ -590,13 +615,13 @@ class OverlayApp:
         self._turn_page(-1)
 
     def _turn_page(self, delta: int):
-        if self.card.quest is None:
-            return
-        if self._map_on:  # при открытой карте те же клавиши переключают карты квеста
-            maps = self.quest_maps()
+        if self._map_on:  # при открытой карте те же клавиши переключают карты
+            maps = self._map_ids()
             if maps:
                 self._map_index = max(0, min(len(maps) - 1, self._map_index + delta))
                 self._update_map()
+            return
+        if self.card.quest is None:
             return
         if self.guide_mode and self.pages:
             self.page_index = max(0, min(len(self.pages) - 1, self.page_index + delta))
@@ -713,9 +738,14 @@ class OverlayApp:
         if self._map_on:
             self._close_map()
             return
-        if self.card.quest is None:
+        self._map_item = self.card.item if self.card.panel == "item" else None
+        self._map_index = 0 if self._map_item is not None else self._map_index
+        if self._map_item is not None:
+            if not self._map_item.where.maps:
+                return
+        elif self.card.quest is None:
             return
-        if not self.quest_maps():
+        elif not self.quest_maps():
             self._show_notice("Для этого квеста нет карты: он выполняется на любой локации.")
             return
         self._close_zoom()
@@ -727,7 +757,7 @@ class OverlayApp:
         """Показывает карту текущего квеста с точками; точка текущего шага выделена."""
         if not self._map_on:
             return
-        maps = self.quest_maps()
+        maps = self._map_ids()
         if not maps:
             self._close_map()
             return
@@ -743,14 +773,21 @@ class OverlayApp:
             if pixmap is None:
                 self.downloader.get(url, lambda path, u=url: self._map_image_ready(u, path))
                 return
-        quest = self.card.quest
-        places = [p for p in quest.places if p["map"] == game_map.id]
-        markers = [(p["x"], p["y"], f"{p['step'] + 1} {p['name']}", p["step"] == self.card.step) for p in places]
         name = game_map.name_ru or game_map.name
-        caption = f"{quest.name} — {name}"
-        if not places:
-            caption += ". Точные места на карте не отмечены"
-        hint = f"Цифра — номер шага квеста · {shortcuts.key('map')} — закрыть"
+        if self._map_item is not None:
+            report = self._map_item
+            spots = next(s for s in report.where.maps if s.map_id == game_map.id)
+            markers = [(r["x"], r["y"], f"{i + 1} {r['name']}", False) for i, r in enumerate(spots.rooms)]
+            caption = f"{report.item.name} — {name}: места с лутом «{', '.join(report.where.types)}»"
+            hint = f"{shortcuts.key('map')} — закрыть"
+        else:
+            quest = self.card.quest
+            places = [p for p in quest.places if p["map"] == game_map.id]
+            markers = [(p["x"], p["y"], f"{p['step'] + 1} {p['name']}", p["step"] == self.card.step) for p in places]
+            caption = f"{quest.name} — {name}"
+            if not places:
+                caption += ". Точные места на карте не отмечены"
+            hint = f"Цифра — номер шага квеста · {shortcuts.key('map')} — закрыть"
         if len(maps) > 1:
             hint += (f" · {shortcuts.key('page_up')} / {shortcuts.key('page_down')} — другая карта "
                      f"({self._map_index + 1} из {len(maps)})")
@@ -765,8 +802,14 @@ class OverlayApp:
         self._full_images[url] = pixmap
         self._update_map()
 
+    def _map_ids(self) -> list[str]:
+        if self._map_item is not None:
+            return [s.map_id for s in self._map_item.where.maps if self.db.maps[s.map_id].image]
+        return self.quest_maps()
+
     def _close_map(self):
         self._map_on = False
+        self._map_item = None
         self.map_view.hide()
 
     def sync(self):

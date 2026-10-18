@@ -209,6 +209,11 @@ class OverlayCard(QWidget):
     def panel(self) -> str:
         return self._panel
 
+    @property
+    def item(self):
+        """Предмет на панели «брать или продавать» (ItemReport) или None."""
+        return self._item if self._panel == "item" else None
+
     def show_item(self, report):
         """Панель «брать или продавать» (report — items.ItemReport). Повторный вызов обновляет её."""
         self._item = report
@@ -352,11 +357,23 @@ class OverlayCard(QWidget):
         later = r.later_quests[:4] + ([f"и ещё {len(r.later_quests) - 4}"] if len(r.later_quests) > 4 else [])
         section("Понадобится в квестах, которые ещё не взяты:", later)
         section("Для мастерских позже:", [f"{qty}× — {name}, ур. {lv}" for name, lv, qty in r.later_workshops[:4]])
+        w = r.where
+        maps = [f"{m.name} — {len(m.rooms)}: " + ", ".join(room["name"] for room in m.rooms[:4])
+                + (" …" if len(m.rooms) > 4 else "") for m in w.maps[:3]]
+        section("Где искать — места с лутом:", [", ".join(w.types)] if w.types else [])
+        section("Где таких мест больше всего:", maps)
+        section("Выпадает из машин:", w.drops)
+        section("Получается разборкой:", [", ".join(w.sources[:6]) + (" …" if len(w.sources) > 6 else "")]
+                if w.sources else [])
+        if not (w.types or w.drops or w.sources):
+            parts.append(f"<div style='color:{MUTED};'>Где искать — в базе не указано.</div>")
         section("Разбирается на:", [", ".join(f"{qty}× {name}" for name, qty in r.recycles)] if r.recycles else [])
         if r.item.value:
             parts.append(f"<div style='color:{MUTED};'>Цена продажи: {r.item.value} монет</div>")
-        self._set_content("".join(parts),
-                          footer=f"{shortcuts.key('item')} — проверить другой предмет · закроется само", wide=True)
+        footer = f"{shortcuts.key('item')} — проверить предмет под курсором · {shortcuts.key('find_item')} — найти"
+        if w.maps:
+            footer += f"\n{shortcuts.key('map')} — эти места на карте"
+        self._set_content("".join(parts), footer=footer, wide=True)
 
     def _render_help(self):
         rows = "".join(
