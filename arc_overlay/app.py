@@ -30,6 +30,7 @@ STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=367264
 STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
 REMOTE_DB_URL = REMOTE_DATA_URL + "quests.json"
 DB_MAX_AGE = 24 * 60 * 60  # свежая база с GitHub скачивается раз в сутки
+UPDATE_CHECK_MAX_AGE = 6 * 60 * 60  # проверка новой версии программы — раз в 6 часов
 SYNC_CHECK_INTERVAL_MS = 60 * 60 * 1000  # раз в час проверяем, не пора ли обновить
 
 
@@ -268,11 +269,11 @@ class OverlayApp:
     # --- новая версия программы -------------------------------------------
 
     def check_update(self):
-        """Раз в сутки сверяет сборку программы с последним релизом на GitHub."""
+        """Сверяет сборку программы с последним релизом на GitHub (не чаще раза в 6 часов)."""
         build = paths.build_info()
         if build.get("commit"):
             self.downloader.get(RELEASE_API_URL, lambda path: self._release_loaded(path, build["commit"]),
-                                max_age=DB_MAX_AGE)
+                                max_age=UPDATE_CHECK_MAX_AGE)
 
     def _release_loaded(self, path, commit: str):
         if not path:

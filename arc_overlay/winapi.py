@@ -107,9 +107,9 @@ def set_foreground_window(hwnd: int | None):
 
 # --- окно игры ----------------------------------------------------------------
 
-# Точное имя процесса игры не опубликовано: узнаём её по имени процесса (вероятные варианты)
-# или по заголовку окна «ARC Raiders», если это окно не браузера и не мессенджера.
-GAME_PROCESS_PREFIXES = ("pioneergame", "arcraiders", "arc raiders", "arc-raiders")
+# Процесс игры — PioneerGame.exe (…\steamapps\common\Arc Raiders\…). Запасной вариант —
+# заголовок окна «ARC Raiders», если это окно не браузера и не мессенджера.
+GAME_PROCESS_PREFIXES = ("pioneergame",)
 NOT_GAME_PROCESSES = {"chrome", "msedge", "firefox", "opera", "browser", "brave", "vivaldi", "yandex",
                       "steam", "steamwebhelper", "discord", "telegram", "explorer"}
 
