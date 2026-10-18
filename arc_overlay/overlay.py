@@ -26,6 +26,7 @@ BACKGROUND_RGB = (15, 18, 24)
 ACCENT = "#f2c94c"
 TEXT = "#f0f0f0"
 MUTED = "#a8adb5"
+SUCCESS = "#7bd88f"
 GUIDE_NAV_HINT = "Ctrl+Shift+↑ / ↓ — листать · Ctrl+Shift+G — назад к шагу"
 EDIT_HINT = "Перетащи карточку мышкой. Колёсико — масштаб, Ctrl + колёсико — прозрачность. Esc или «Готово» — выйти."
 
@@ -108,6 +109,8 @@ class OverlayCard(QWidget):
         self._guide_hint = guide_hint
         self._quest: Quest | None = None
         self._step = 0
+        self._position = (0, 0)  # (номер текущего квеста, всего активных)
+        self._notice = ""  # короткое сообщение над карточкой, например «квест выполнен»
         self._wide = False
         self._width = CARD_WIDTH
         self._pixmap: QPixmap | None = None
@@ -140,23 +143,32 @@ class OverlayCard(QWidget):
 
     # --- содержимое ---------------------------------------------------------
 
-    def show_welcome(self):
+    @property
+    def step(self) -> int:
+        return self._step
+
+    def show_welcome(self, notice: str = ""):
         self._quest = None
+        self._notice = notice
         self._show(self._render_welcome)
 
-    def show_quest(self, quest: Quest):
+    def show_quest(self, quest: Quest, step: int = 0, position: tuple[int, int] = (0, 0), notice: str = ""):
         self._quest = quest
-        self._step = 0
+        self._step = max(0, min(step, len(quest.steps) - 1)) if quest.steps else 0
+        self._position = position
+        self._notice = notice
         self.show_step()
 
     def next_step(self):
         if self._quest and self._step < len(self._quest.steps) - 1:
             self._step += 1
+        self._notice = ""
         self.show_step()
 
     def prev_step(self):
         if self._quest and self._step > 0:
             self._step -= 1
+        self._notice = ""
         self.show_step()
 
     def show_step(self):
@@ -201,8 +213,14 @@ class OverlayCard(QWidget):
             header += f"<div style='color:{MUTED}; font-size:{self._px(12)}px;'>{esc(q.english_name)}</div>"
         return header
 
+    def _notice_html(self) -> str:
+        if not self._notice:
+            return ""
+        return f"<p style='color:{SUCCESS};'>{_lines(self._notice)}</p>"
+
     def _render_welcome(self):
         self._set_content(
+            self._notice_html() +
             f"<div style='color:{ACCENT}; font-size:{self._px(16)}px; font-weight:bold;'>ARC Raiders — подсказчик</div>"
             f"<p>Нажми <b>{html.escape(self._hotkey_hint)}</b>, чтобы ввести квест.</p>",
             footer="Ctrl+Shift+H — все сочетания клавиш",
@@ -211,8 +229,11 @@ class OverlayCard(QWidget):
     def _render_step(self):
         q = self._quest
         esc = html.escape
-        parts = [self._header(q)]
+        parts = [self._notice_html(), self._header(q)]
         meta = []
+        index, total = self._position
+        if total > 1:
+            meta.append(f"Квест {index + 1} из {total}")
         if q.trader:
             meta.append(f"Торговец: {esc(q.trader)}")
         if q.locations:

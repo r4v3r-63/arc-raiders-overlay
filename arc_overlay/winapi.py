@@ -20,6 +20,8 @@ MOD_CONTROL = 0x0002
 MOD_SHIFT = 0x0004
 MOD_NOREPEAT = 0x4000  # не повторять событие, пока клавиша зажата
 
+VK_TAB = 0x09
+VK_D = 0x44
 VK_LEFT = 0x25
 VK_UP = 0x26
 VK_RIGHT = 0x27

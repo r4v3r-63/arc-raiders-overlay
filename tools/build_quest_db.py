@@ -244,6 +244,7 @@ def build(data_dir: Path) -> dict:
             aliases.append(official[name_en])
         quests.append({
             "id": q["id"],
+            "_next": list(q.get("nextQuestIds", [])),
             "name": text(q["name"]),
             "official_name": True,
             "aliases": aliases,
@@ -270,6 +271,7 @@ def build(data_dir: Path) -> dict:
             required.append((item_id, f"{qty}× {hints.item_ru(item_id) if item_id else name}"))
         quests.append({
             "id": slug(title),
+            "_next": [],
             "name": official.get(title) or tr(title),
             "official_name": title in official,
             "aliases": [title],
@@ -282,6 +284,15 @@ def build(data_dir: Path) -> dict:
             "wiki_url": "https://arcraiders.wiki/wiki/" + title.replace(" ", "_"),
             "_wiki_key": key,
         })
+
+    # Цепочки квестов: какие квесты открываются после этого (вики + arcraiders-data).
+    id_by_name = {norm(q["aliases"][0]): q["id"] for q in quests}
+    known_ids = {q["id"] for q in quests}
+    for quest in quests:
+        source = pages_by_name.get(quest["_wiki_key"], ("", ""))[1]
+        names = [n for n in re.split(r"[;,]", wiki.parse_infobox(source).get("next", "")) if n.strip()]
+        ids = [i for i in quest.pop("_next") if i in known_ids] + [id_by_name[norm(n)] for n in names if norm(n) in id_by_name]
+        quest["next"] = list(dict.fromkeys(i for i in ids if i != quest["id"]))
 
     print("Загружаю оглавление русского руководства в Steam…")
     try:

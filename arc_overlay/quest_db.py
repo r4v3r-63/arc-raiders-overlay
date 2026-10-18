@@ -38,6 +38,7 @@ class Quest:
     video_url: str = ""
     official_name: bool = True
     id: str = ""
+    next: list[str] = field(default_factory=list)  # id квестов, которые открываются после этого
 
     @property
     def english_name(self) -> str:
@@ -55,6 +56,7 @@ class QuestDB:
     def __init__(self, quests: list[Quest], maps: list[GameMap] | None = None, generated_at: str = ""):
         self.generated_at = generated_at  # дата сборки базы, ISO 8601 (UTC)
         self.quests = quests
+        self._by_id = {q.id: q for q in quests if q.id}
         self.maps = {m.id: m for m in maps or []}
         self._by_name: dict[str, Quest] = {}
         for q in quests:
@@ -92,6 +94,7 @@ class QuestDB:
                 video_url=item.get("video_url", ""),
                 official_name=item.get("official_name", True),
                 id=item.get("id", ""),
+                next=list(item.get("next", [])),
             )
             for item in data.get("quests", [])
         ]
@@ -108,8 +111,13 @@ class QuestDB:
         """Точное совпадение названия (без учёта регистра, «ё» и знаков препинания)."""
         return self._by_name.get(normalize(name))
 
+    def find_by_id(self, quest_id: str) -> Quest | None:
+        return self._by_id.get(quest_id)
+
     def add(self, quest: Quest):
         self.quests.append(quest)
+        if quest.id:
+            self._by_id.setdefault(quest.id, quest)
         for name in [quest.name, *quest.aliases]:
             self._by_name.setdefault(normalize(name), quest)
 

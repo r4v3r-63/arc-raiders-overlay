@@ -12,6 +12,7 @@ from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QIcon, QPainte
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
 from . import autostart, guide, paths, winapi
+from .progress import Progress
 from .input_window import InputWindow
 from .net import CachedDownloader
 from .overlay import OverlayCard
@@ -48,6 +49,7 @@ class OverlayApp:
         self.db = QuestDB.load()
         self.card = OverlayCard(self.db, HOTKEY_INPUT, GUIDE_HINT)
         self.downloader = CachedDownloader()
+        self.progress = Progress.load(paths.user_data_dir() / "прогресс.json")
         self.downloader.cleanup()
         self.guide_mode = False
         self.pages: list[guide.GuidePage] = []
@@ -75,6 +77,8 @@ class OverlayApp:
                 ("Ctrl+Shift+↑", winapi.VK_UP, self.prev_page),
                 ("Ctrl+Shift+O", winapi.VK_O, self.open_guide_in_browser),
                 ("Ctrl+Shift+M", winapi.VK_M, self.toggle_editing),
+                ("Ctrl+Shift+Tab", winapi.VK_TAB, self.switch_quest),
+                ("Ctrl+Shift+D", winapi.VK_D, self.complete_quest),
                 ("Ctrl+Shift+H", winapi.VK_H, self.show_help),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
@@ -83,6 +87,7 @@ class OverlayApp:
 
         self.tray = self._make_tray()
         autostart.refresh()
+        self.show_current()
         self.sync()
         self._sync_timer = QTimer()
         self._sync_timer.timeout.connect(self.sync)
@@ -134,6 +139,8 @@ class OverlayApp:
         quit_action = QAction("Выход", menu)
         quit_action.triggered.connect(self.app.quit)
         menu.addAction(enter)
+        self._active_menu = menu.addMenu("Активные квесты")
+        self._active_menu.aboutToShow.connect(self._fill_active_menu)
         menu.addAction(self._toggle_action)
         menu.addAction(edit_action)
         menu.addAction(help_action)
@@ -190,12 +197,85 @@ class OverlayApp:
     def next_step(self):
         self.guide_mode = False
         self.card.next_step()
+        self._save_step()
         self.set_card_visible(True)
 
     def prev_step(self):
         self.guide_mode = False
         self.card.prev_step()
+        self._save_step()
         self.set_card_visible(True)
+
+    def _save_step(self):
+        if self.card.quest is not None:
+            self.progress.set_step(self.card.step)
+            self.progress.save()
+
+    # --- активные квесты --------------------------------------------------
+
+    def show_current(self, notice: str = ""):
+        """Показывает текущий активный квест (или приглашение ввести квест, если список пуст)."""
+        entry = self.progress.current_entry()
+        quest = self.progress.resolve(self.db, entry)
+        self.guide_mode = False
+        self.page_index = 0
+        if quest is None:
+            self.card.show_welcome(notice)
+        else:
+            self.card.show_quest(quest, entry.step, (self.progress.current, len(self.progress.active)), notice)
+            self.load_steam_guide()
+            self.rebuild_pages()
+        for action in self._quest_actions:
+            action.setEnabled(quest is not None)
+
+    def switch_quest(self):
+        if len(self.progress.active) > 1:
+            self.progress.switch()
+            self.progress.save()
+        self.show_current()
+        self.set_card_visible(True)
+
+    def select_quest(self, index: int):
+        self.progress.select(index)
+        self.progress.save()
+        self.show_current()
+        self.set_card_visible(True)
+
+    def complete_quest(self):
+        done, added, skipped = self.progress.complete_current(self.db)
+        if done is None and not added:
+            return
+        self.progress.save()
+        lines = [f"✓ «{done.name if done else 'Квест'}» выполнен."]
+        if added:
+            lines.append("Добавлены: " + ", ".join(f"«{q.name}»" for q in added) + ".")
+        if skipped:
+            lines.append("Открылись: " + ", ".join(f"«{q.name}»" for q in skipped)
+                         + ". Нужные возьми через Ctrl+Shift+Q.")
+        self.show_current("\n".join(lines))
+        self.set_card_visible(True)
+
+    def remove_quest(self):
+        entry = self.progress.remove_current()
+        if entry is not None:
+            self.progress.save()
+            self.show_current(f"«{entry.name}» убран из списка.")
+            self.set_card_visible(True)
+
+    def _fill_active_menu(self):
+        self._active_menu.clear()
+        if not self.progress.active:
+            empty = self._active_menu.addAction("Пока пусто — Ctrl+Shift+Q")
+            empty.setEnabled(False)
+            return
+        for i, entry in enumerate(self.progress.active):
+            action = self._active_menu.addAction(entry.name)
+            action.setCheckable(True)
+            action.setChecked(i == self.progress.current)
+            action.triggered.connect(lambda _checked, i=i: self.select_quest(i))
+        self._active_menu.addSeparator()
+        self._active_menu.addAction("Квест выполнен (Ctrl+Shift+D)", self.complete_quest)
+        self._active_menu.addAction("Убрать текущий квест из списка", self.remove_quest)
 
     # --- гайд -------------------------------------------------------------
 
@@ -290,6 +370,8 @@ class OverlayApp:
                 self.steam_html = page_html
                 self.steam_pages.clear()
                 self.merge_steam_quests()
+                if self.card.quest is None and self.progress.active:
+                    self.show_current()  # текущий квест мог оказаться из руководства Steam
         self.load_steam_guide()
         self.rebuild_pages()
         self.render_page()
@@ -343,13 +425,9 @@ class OverlayApp:
             examples = ", ".join(self.db.names()[:3])
             self.input.show_error(f"Квест «{quest_name.strip()}» не найден в базе. Например: {examples}.")
             return
-        self.card.show_quest(quest)
-        self.guide_mode = False
-        self.page_index = 0
-        for action in self._quest_actions:
-            action.setEnabled(True)
-        self.load_steam_guide()
-        self.rebuild_pages()
+        self.progress.add(quest)
+        self.progress.save()
+        self.show_current()
         self.set_card_visible(True)
         self.input.close_and_return_focus()
 
