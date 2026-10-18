@@ -1,0 +1,64 @@
+from PyQt6.QtCore import QPoint, QPointF, QSettings, Qt
+from PyQt6.QtGui import QMouseEvent
+
+from arc_overlay.overlay import MAX_SCALE, MIN_SCALE, OverlayCard
+from arc_overlay.quest_db import QuestDB
+
+
+def make_card(tmp_path):
+    settings = QSettings(str(tmp_path / "overlay.ini"), QSettings.Format.IniFormat)
+    return OverlayCard(QuestDB.load(), "Ctrl+Shift+Q", settings=settings), settings
+
+
+def test_scale_changes_size_and_is_saved(qapp, tmp_path):
+    card, settings = make_card(tmp_path)
+    width = card.width()
+    card.change_scale(0.5)
+    assert card.scale == 1.5
+    assert card.width() > width
+    assert float(settings.value("scale")) == 1.5
+    for _ in range(30):
+        card.change_scale(0.1)
+    assert card.scale == MAX_SCALE
+    for _ in range(30):
+        card.change_scale(-0.1)
+    assert card.scale == MIN_SCALE
+    again, _ = make_card(tmp_path)
+    assert again.scale == MIN_SCALE
+
+
+def test_drag_moves_card_and_saves_anchor(qapp, tmp_path):
+    card, settings = make_card(tmp_path)
+    card.show()
+    card.set_editing(True)
+    start = card.pos()
+
+    def mouse(kind, pos):
+        global_pos = QPointF(card.mapToGlobal(pos))
+        return QMouseEvent(kind, QPointF(pos), global_pos, Qt.MouseButton.LeftButton,
+                           Qt.MouseButton.LeftButton, Qt.KeyboardModifier.NoModifier)
+
+    card.mousePressEvent(mouse(QMouseEvent.Type.MouseButtonPress, QPoint(10, 10)))
+    card.mouseMoveEvent(mouse(QMouseEvent.Type.MouseMove, QPoint(-90, 60)))
+    card.mouseReleaseEvent(mouse(QMouseEvent.Type.MouseButtonRelease, QPoint(-90, 60)))
+    assert card.pos() == start + QPoint(-100, 50)
+    assert settings.value("anchor") == QPoint(card.x() + card.width(), card.y())
+    card.set_editing(False)
+    assert not card.editing
+
+
+def test_help_toggles_back(qapp, tmp_path):
+    card, _ = make_card(tmp_path)
+    card.show_quest(QuestDB.load().find("Чистое небо"))
+    card.toggle_help()
+    assert "Сочетания клавиш" in card._label.text()
+    card.toggle_help()
+    assert "Чистое небо" in card._label.text()
+
+
+def test_reset_geometry(qapp, tmp_path):
+    card, settings = make_card(tmp_path)
+    card.change_scale(0.3)
+    card.reset_geometry()
+    assert card.scale == 1.0
+    assert settings.value("scale") is None

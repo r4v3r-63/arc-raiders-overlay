@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QGuiApplication, QKeyEvent
-from PyQt6.QtWidgets import QFormLayout, QLabel, QLineEdit, QVBoxLayout, QWidget
+from PyQt6.QtWidgets import QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
 from . import winapi
 
@@ -12,6 +12,7 @@ from . import winapi
 class InputWindow(QWidget):
     # Отправляется после Enter: (название квеста, локация).
     submitted = pyqtSignal(str, str)
+    help_requested = pyqtSignal()
 
     def __init__(self):
         super().__init__()
@@ -38,6 +39,18 @@ class InputWindow(QWidget):
         self.error_label.hide()
         hint = QLabel("Enter — показать подсказку · Esc — отмена")
         hint.setStyleSheet("color: #a8adb5; font-size: 12px;")
+        help_button = QPushButton("?")
+        help_button.setToolTip("Все сочетания клавиш")
+        help_button.setFixedWidth(28)
+        help_button.setStyleSheet(
+            "QPushButton { background: #2a303b; border: 1px solid #3a4250; border-radius: 4px; padding: 2px; }"
+            "QPushButton:hover { border-color: #f2c94c; }"
+        )
+        help_button.clicked.connect(self.help_requested.emit)
+        bottom = QHBoxLayout()
+        bottom.addWidget(hint)
+        bottom.addStretch()
+        bottom.addWidget(help_button)
 
         form = QFormLayout()
         form.addRow("Квест:", self.quest_edit)
@@ -46,7 +59,7 @@ class InputWindow(QWidget):
         layout.setContentsMargins(16, 16, 16, 12)
         layout.addLayout(form)
         layout.addWidget(self.error_label)
-        layout.addWidget(hint)
+        layout.addLayout(bottom)
 
         self._previous_window = None
 

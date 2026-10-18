@@ -19,14 +19,6 @@ HOTKEY_INPUT = "Ctrl+Shift+Q"
 GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
 STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520"
 STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
-HOTKEY_HELP = (
-    f"{HOTKEY_INPUT} — ввести квест\n"
-    "Ctrl+Shift+→ / ← — следующий / предыдущий шаг\n"
-    "Ctrl+Shift+G — гайд со скриншотами, Ctrl+Shift+↑ / ↓ — листать\n"
-    "Ctrl+Shift+O — открыть гайд в браузере\n"
-    "Ctrl+Shift+X — спрятать / показать карточку\n"
-    "Выход — через меню значка в трее"
-)
 
 
 def make_tray_icon() -> QIcon:
@@ -57,6 +49,7 @@ class OverlayApp:
         self.steam_status = ""
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
+        self.input.help_requested.connect(self.show_help)
 
         self.hotkeys = winapi.HotkeyManager()
         app.installNativeEventFilter(self.hotkeys)
@@ -71,6 +64,8 @@ class OverlayApp:
                 ("Ctrl+Shift+↓", winapi.VK_DOWN, self.next_page),
                 ("Ctrl+Shift+↑", winapi.VK_UP, self.prev_page),
                 ("Ctrl+Shift+O", winapi.VK_O, self.open_guide_in_browser),
+                ("Ctrl+Shift+M", winapi.VK_M, self.toggle_editing),
+                ("Ctrl+Shift+H", winapi.VK_H, self.show_help),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
         ]
@@ -92,10 +87,14 @@ class OverlayApp:
 
     def _make_tray(self) -> QSystemTrayIcon:
         tray = QSystemTrayIcon(make_tray_icon(), self.app)
-        tray.setToolTip("ARC Raiders — подсказчик\n" + HOTKEY_HELP)
+        tray.setToolTip("ARC Raiders — подсказчик\nCtrl+Shift+H — все сочетания клавиш")
         menu = QMenu()
         enter = QAction("Ввести квест", menu)
         enter.triggered.connect(self.input.open)
+        help_action = QAction("Сочетания клавиш (?)", menu)
+        help_action.triggered.connect(self.show_help)
+        edit_action = QAction("Переместить / изменить масштаб", menu)
+        edit_action.triggered.connect(self.toggle_editing)
         self._toggle_action = QAction("Спрятать карточку", menu)
         self._toggle_action.triggered.connect(self.toggle_card)
         self._quest_actions = []
@@ -114,6 +113,8 @@ class OverlayApp:
         quit_action.triggered.connect(self.app.quit)
         menu.addAction(enter)
         menu.addAction(self._toggle_action)
+        menu.addAction(edit_action)
+        menu.addAction(help_action)
         menu.addSeparator()
         for action in self._quest_actions:
             menu.addAction(action)
@@ -134,7 +135,17 @@ class OverlayApp:
         self._toggle_action.setText("Спрятать карточку" if visible else "Показать карточку")
 
     def toggle_card(self):
+        if self.card.editing:
+            self.card.set_editing(False)
         self.set_card_visible(not self.card.isVisible())
+
+    def toggle_editing(self):
+        self.set_card_visible(True)
+        self.card.toggle_editing()
+
+    def show_help(self):
+        self.card.toggle_help()
+        self.set_card_visible(True)
 
     def next_step(self):
         self.guide_mode = False
