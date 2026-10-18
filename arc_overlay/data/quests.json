@@ -1,26 +1,30 @@
 {
-  "source": "https://github.com/RaidTheory/arcraiders-data (MIT) — данные игры © Embark Studios AB",
+  "source": "Квесты: github.com/RaidTheory/arcraiders-data (MIT). Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
       "id": "dam_battlegrounds",
       "name": "Dam Battlegrounds",
+      "name_ru": "Поле битвы у дамбы",
       "aliases": [
         "дамба",
-        "дамба поля боя",
+        "поле битвы у дамбы",
         "dam"
       ]
     },
     {
       "id": "the_spaceport",
       "name": "The Spaceport",
+      "name_ru": "Космопорт",
       "aliases": [
         "космопорт",
-        "spaceport"
+        "spaceport",
+        "space port"
       ]
     },
     {
       "id": "buried_city",
       "name": "Buried City",
+      "name_ru": "Погребенный город",
       "aliases": [
         "погребенный город"
       ]
@@ -28,24 +32,35 @@
     {
       "id": "the_blue_gate",
       "name": "The Blue Gate",
+      "name_ru": "Синие ворота",
       "aliases": [
-        "синие врата",
-        "синяя врата",
+        "синие ворота",
         "blue gate"
       ]
     },
     {
       "id": "stella_montis",
       "name": "Stella Montis",
+      "name_ru": "Стелла Монтис",
       "aliases": [
-        "звезда горы"
+        "стелла монтис"
       ]
     },
     {
       "id": "riven_tides",
       "name": "Riven Tides",
+      "name_ru": "Бурные потоки",
       "aliases": [
         "бурные потоки"
+      ]
+    },
+    {
+      "id": "pendola_pass",
+      "name": "Pendola Pass",
+      "name_ru": "Перевал Пендола",
+      "aliases": [
+        "перевал пендола",
+        "пендола"
       ]
     }
   ],
@@ -53,6 +68,7 @@
     {
       "id": "a_bad_feeling",
       "name": "Дурное предчувствие",
+      "official_name": true,
       "aliases": [
         "A Bad Feeling"
       ],
@@ -63,11 +79,16 @@
       "steps": [
         "Найдите и обыщите любой зонд ARC или доставщик ARC"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Bad_Feeling"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Bad_Feeling",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700011",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Bad+Feeling+quest+guide"
     },
     {
       "id": "a_balanced_harvest",
       "name": "Достойный урожай",
+      "official_name": true,
       "aliases": [
         "A Balanced Harvest"
       ],
@@ -82,11 +103,30 @@
         "Найдите лабораторию 1 на верхнем этаже, над приемной.",
         "Найдите какую-либо информацию о сельскохозяйственных исследованиях."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Balanced_Harvest"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Balanced_Harvest",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8795974",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_balanced_harvest/01.jpg",
+            "caption": "Комната с объектом на верхнем этаже",
+            "source": "https://arcraiders.wiki/wiki/File:Balanced_harvest_door.jpg"
+          },
+          {
+            "file": "guides/a_balanced_harvest/02.jpg",
+            "caption": "Объект, который нужно собрать",
+            "source": "https://arcraiders.wiki/wiki/File:Balanced_harvest_obj.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Balanced+Harvest+quest+guide"
     },
     {
       "id": "a_better_use",
       "name": "Применение получше",
+      "official_name": true,
       "aliases": [
         "A Better Use"
       ],
@@ -103,11 +143,16 @@
         "Запросите ящик с припасами через станцию вызова.",
         "Возьмите добычу из ящика с припасами."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Better_Use"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Better_Use",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700081",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Better+Use+quest+guide"
     },
     {
       "id": "a_dead_end",
       "name": "Тупик",
+      "official_name": true,
       "aliases": [
         "A Dead End"
       ],
@@ -126,11 +171,40 @@
         "Найдите пыльную кинопленку.",
         "Доставьте Шани пыльную кинопленку."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Dead_End"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Dead_End",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8691997",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_dead_end/01.jpg",
+            "caption": "Отнесите батареи к запертой двери",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Carry_Battery.png"
+          },
+          {
+            "file": "guides/a_dead_end/02.jpg",
+            "caption": "Установите батареи у запертой двери",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Place_Battery.png"
+          },
+          {
+            "file": "guides/a_dead_end/03.jpg",
+            "caption": "Включите запись рядом с мониторами",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Play_Recording.png"
+          },
+          {
+            "file": "guides/a_dead_end/04.jpg",
+            "caption": "Найдите кинопленку рядом с мониторами",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Dead_End_Search.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Dead+End+quest+guide"
     },
     {
       "id": "a_first_foothold",
       "name": "Первый плацдарм",
+      "official_name": true,
       "aliases": [
         "A First Foothold"
       ],
@@ -146,11 +220,60 @@
         "Поверните спутниковые тарелки на крыше церкви к северу от хранилища данных.",
         "Закрепите крышу постройки рейдеров в прогалине зверолова."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_First_Foothold"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_First_Foothold",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793455",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_first_foothold/01.jpg",
+            "caption": "Смотровая площадка у хребтов на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:ObservationDeck_Ridgeline_Map.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/02.jpg",
+            "caption": "Смотровая площадка в игре. Взаимодействуйте с её боковыми частями.",
+            "source": "https://arcraiders.wiki/wiki/File:ObservationDeck_Ridgeline.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/03.jpg",
+            "caption": "Терминал связи у оливковой рощи на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:CommsTerminal_OliveGrove_Map.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/04.jpg",
+            "caption": "Терминал связи в игре. Взаимодействуйте с оранжевым терминалом.",
+            "source": "https://arcraiders.wiki/wiki/File:CommsTerminal_OliveGrove.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/05.jpg",
+            "caption": "Церковь со спутниковой тарелкой на крыше, у хранилища данных, на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:ChurchSatelite_DataVault_Map.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/06.jpg",
+            "caption": "Церковь со спутниковой тарелкой в игре. Заберитесь по строительным лесам к тарелке.",
+            "source": "https://arcraiders.wiki/wiki/File:ChurchSatelite_DataVault.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/07.jpg",
+            "caption": "Постройка рейдеров у прогалины зверолова на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:RoofPlates_TrappersGlade_Map.jpg"
+          },
+          {
+            "file": "guides/a_first_foothold/08.jpg",
+            "caption": "Постройка рейдеров в игре. Взаимодействуйте с её верхом, чтобы закрепить крышу.",
+            "source": "https://arcraiders.wiki/wiki/File:RoofPlates_TrappersGlade.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+First+Foothold+quest+guide"
     },
     {
       "id": "a_lay_of_the_land",
       "name": "Рельеф местности",
+      "official_name": true,
       "aliases": [
         "A Lay of the Land"
       ],
@@ -168,11 +291,40 @@
         "Найдите локаторы в центре управления полетами диспетчерской вышки A6.",
         "Доставьте Шани лазерные локаторы (1)."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Lay_of_the_Land"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Lay_Of_The_Land",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8795908",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_lay_of_the_land/01.jpg",
+            "caption": "Записи о поставках в офисе бригадира",
+            "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_obj_1.jpg"
+          },
+          {
+            "file": "guides/a_lay_of_the_land/02.jpg",
+            "caption": "Записи о поставках на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_map_1.jpg"
+          },
+          {
+            "file": "guides/a_lay_of_the_land/03.jpg",
+            "caption": "Лидарные сканеры в диспетчерской вышке А6",
+            "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_obj_2.jpg"
+          },
+          {
+            "file": "guides/a_lay_of_the_land/04.jpg",
+            "caption": "Лидарные сканеры на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Lay_of_the_land_map_2.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Lay+of+the+Land+quest+guide"
     },
     {
       "id": "a_new_type_of_plant",
       "name": "Новое растение",
+      "official_name": true,
       "aliases": [
         "A New Type of Plant"
       ],
@@ -188,11 +340,27 @@
         "Найдите новое растение у обломков «Барона» на старом поле битвы.",
         "Доставьте Лэнсу потенциально ядовитое растение."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_New_Type_of_Plant"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_New_Type_Of_Plant",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797887",
+      "guide": {
+        "text": [
+          "Растение растёт на обломках «Барона» в месте под названием «старое поле битвы»."
+        ],
+        "images": [
+          {
+            "file": "guides/a_new_type_of_plant/01.jpg",
+            "caption": "Где растёт ядовитое растение",
+            "source": "https://arcraiders.wiki/wiki/File:Toxic_Plant_Location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+New+Type+of+Plant+quest+guide"
     },
     {
       "id": "a_prime_specimen",
       "name": "Превосходный образец",
+      "official_name": true,
       "aliases": [
         "A Prime Specimen"
       ],
@@ -209,11 +377,18 @@
         "Взаимодействуйте с «Дровосеком» ARC.",
         "Заберите добычу с «Дровосека» ARC."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Prime_Specimen"
+      "hints": [
+        "Энергоячейка ARC: выпадает из большинства машин ARC."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Prime_Specimen",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798642",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Prime+Specimen+quest+guide"
     },
     {
       "id": "a_reveal_in_ruins",
       "name": "Что скрывают развалины",
+      "official_name": true,
       "aliases": [
         "A Reveal in Ruins"
       ],
@@ -229,11 +404,16 @@
         "Найдите анализатор СОЭ в аптеке Погребенного города.",
         "Доставьте Лэнсу анализатор СОЭ."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Reveal_in_Ruins"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Reveal_in_Ruins",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793897",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Reveal+in+Ruins+quest+guide"
     },
     {
       "id": "a_rising_tide",
       "name": "Прилив",
+      "official_name": true,
       "aliases": [
         "A Rising Tide"
       ],
@@ -251,11 +431,50 @@
         "Найдите путь в зону контролируемого доступа.",
         "Найдите в зоне контролируемого доступа сведения о проекте по реконструкции, которым занимался бригадир."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Rising_Tide"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Rising_Tide",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8692284",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_rising_tide/01.jpg",
+            "caption": "Электронный журнал на карте",
+            "source": "https://arcraiders.wiki/wiki/File:A_Rising_Tide_digital_logbook_location_map.jpg"
+          },
+          {
+            "file": "guides/a_rising_tide/02.jpg",
+            "caption": "Где электронный журнал (вход в самом дальнем от Пьяцца Рома здании)",
+            "source": "https://arcraiders.wiki/wiki/File:A_Rising_Tide_digital_logbook_location.jpg"
+          },
+          {
+            "file": "guides/a_rising_tide/03.jpg",
+            "caption": "Откройте электронный журнал бригадира",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Search.png"
+          },
+          {
+            "file": "guides/a_rising_tide/04.jpg",
+            "caption": "Отнесите топливный элемент наверх по лестницам",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Carry_Fuel_Cell.png"
+          },
+          {
+            "file": "guides/a_rising_tide/05.jpg",
+            "caption": "Вставьте топливный элемент в генератор",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Insert_Fuel_Cell.png"
+          },
+          {
+            "file": "guides/a_rising_tide/06.jpg",
+            "caption": "Сфотографируйте доску в открытой комнате",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_A_Rising_Tide_Take_Photo.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Rising+Tide+quest+guide"
     },
     {
       "id": "a_symbol_of_unification",
       "name": "Символ единства",
+      "official_name": true,
       "aliases": [
         "A Symbol of Unification"
       ],
@@ -270,11 +489,35 @@
         "Найдите флаг в аванпосте Формикаи.",
         "Поднимите флаг на небольшой платформе с видом на Алые озера."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Symbol_of_Unification"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Symbol_of_Unification",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802221",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_symbol_of_unification/01.jpg",
+            "caption": "Аванпост Формикаи.",
+            "source": "https://arcraiders.wiki/wiki/File:MapLocation.png"
+          },
+          {
+            "file": "guides/a_symbol_of_unification/02.jpg",
+            "caption": "Флаг лежит в сумке на медицинской койке.",
+            "source": "https://arcraiders.wiki/wiki/File:Flag.png"
+          },
+          {
+            "file": "guides/a_symbol_of_unification/03.jpg",
+            "caption": "Балкон, где нужно поднять флаг.",
+            "source": "https://arcraiders.wiki/wiki/File:Flagpole.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Symbol+of+Unification+quest+guide"
     },
     {
       "id": "a_toxic_trail",
       "name": "Ядовитый след",
+      "official_name": true,
       "aliases": [
         "A Toxic Trail"
       ],
@@ -290,11 +533,16 @@
         "Сфотографируйте грузовик с бочками.",
         "Поищите в грузовике зацепки о личности диверсанта."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Toxic_Trail"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Toxic_Trail",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797901",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Toxic+Trail+quest+guide"
     },
     {
       "id": "a_warm_place_to_rest",
       "name": "Место покоя",
+      "official_name": true,
       "aliases": [
         "A Warm Place To Rest"
       ],
@@ -310,11 +558,35 @@
         "Идите по красным меткам.",
         "Осмотрите могилу."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Warm_Place_To_Rest"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Warm_Place_To_Rest",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797668",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_warm_place_to_rest/01.jpg",
+            "caption": "Найдите покинутый лагерь на шоссе",
+            "source": "https://arcraiders.wiki/wiki/File:Highway_camp_map.jpg"
+          },
+          {
+            "file": "guides/a_warm_place_to_rest/02.jpg",
+            "caption": "Поищите следы выживших",
+            "source": "https://arcraiders.wiki/wiki/File:Abandoned_highway_camp_3p.png"
+          },
+          {
+            "file": "guides/a_warm_place_to_rest/03.jpg",
+            "caption": "Осмотрите могилу",
+            "source": "https://arcraiders.wiki/wiki/File:A_Warm_Place_to_Rest_Grave_Location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Warm+Place+To+Rest+quest+guide"
     },
     {
       "id": "a_wrench_in_the_works",
       "name": "Ключ в деле",
+      "official_name": true,
       "aliases": [
         "A Wrench in the Works"
       ],
@@ -328,11 +600,16 @@
         "Обыщите автобусы у западных ворот.",
         "Найдите хранилище с припасами для саботажа, спрятанное в водонапорных башнях."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/A_Wrench_in_the_Works"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Wrench_in_the_Works",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901644",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Wrench+in+the+Works+quest+guide"
     },
     {
       "id": "after_rain_comes",
       "name": "После дождя",
+      "official_name": true,
       "aliases": [
         "After Rain Comes"
       ],
@@ -349,11 +626,19 @@
         "Найдите затопленные солнечные панели около апартаментов «Грандиозо».",
         "Почините солнечные панели, используя 5 проводов и 2 батареи."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/After_Rain_Comes"
+      "hints": [
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological).",
+        "Батарея: ищите в местах с лутом: технологии (Technological), электрика (Electrical)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/After_Rain_Comes",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8796012",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+After+Rain+Comes+quest+guide"
     },
     {
       "id": "armored_transports",
       "name": "Бронированные машины",
+      "official_name": true,
       "aliases": [
         "Armored Transports"
       ],
@@ -369,11 +654,57 @@
         "Доберитесь до транспортного туннеля у контрольного пункта Синих ворот.",
         "Найдите и откройте заднюю дверь патрульной машины."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Armored_Transports"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Armored_Transports",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798563",
+      "guide": {
+        "text": [
+          "Если квест активен, а ключ-карты нет в инвентаре, запасную можно взять в будке охраны сразу за правым входом в туннель. Она лежит в контейнере с пайками на полу."
+        ],
+        "images": [
+          {
+            "file": "guides/armored_transports/01.jpg",
+            "caption": "Где ключ-карта бронированного патруля",
+            "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-02-key-location-map.png"
+          },
+          {
+            "file": "guides/armored_transports/02.jpg",
+            "caption": "Ключ-карта бронированного патруля",
+            "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-02-key-location-detail.png"
+          },
+          {
+            "file": "guides/armored_transports/03.jpg",
+            "caption": "Вход в туннель",
+            "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-03-tunnel-entrance.png"
+          },
+          {
+            "file": "guides/armored_transports/04.jpg",
+            "caption": "Одна из запертых машин на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-04-car-location-map.png"
+          },
+          {
+            "file": "guides/armored_transports/05.jpg",
+            "caption": "Одна из запертых машин",
+            "source": "https://arcraiders.wiki/wiki/File:Armored-Transport-04-car-location-detail.png"
+          },
+          {
+            "file": "guides/armored_transports/06.jpg",
+            "caption": "Будка охраны с запасным ключом",
+            "source": "https://arcraiders.wiki/wiki/File:Spare_Key_Guard_Shack.jpg"
+          },
+          {
+            "file": "guides/armored_transports/07.jpg",
+            "caption": "Где запасной ключ в будке охраны",
+            "source": "https://arcraiders.wiki/wiki/File:Spare_Key_Box.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Armored+Transports+quest+guide"
     },
     {
       "id": "back_on_top",
       "name": "Снова на вершине",
+      "official_name": true,
       "aliases": [
         "Back on Top"
       ],
@@ -392,11 +723,40 @@
         "Отметьте южную траншейную вышку в космопорте.",
         "Отметьте погребенное здание с граффити в Погребенном городе."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Back_on_Top"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Back_on_Top",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802373",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/back_on_top/01.jpg",
+            "caption": "Место для квеста «Снова на вершине» на поле битвы у дамбы",
+            "source": "https://arcraiders.wiki/wiki/File:BackOnTop_Dam.png"
+          },
+          {
+            "file": "guides/back_on_top/02.jpg",
+            "caption": "Место для квеста «Снова на вершине» у Синих ворот",
+            "source": "https://arcraiders.wiki/wiki/File:BackOnTop_BlueGate.png"
+          },
+          {
+            "file": "guides/back_on_top/03.jpg",
+            "caption": "Место для квеста «Снова на вершине» в космопорте",
+            "source": "https://arcraiders.wiki/wiki/File:BackOnTop_SpacePort.png"
+          },
+          {
+            "file": "guides/back_on_top/04.jpg",
+            "caption": "Место для квеста «Снова на вершине» в Погребенном городе",
+            "source": "https://arcraiders.wiki/wiki/File:BackOnTop_BuriedCity.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Back+on+Top+quest+guide"
     },
     {
       "id": "battening_down",
       "name": "Меры предосторожности",
+      "official_name": true,
       "aliases": [
         "Battening Down"
       ],
@@ -411,11 +771,16 @@
         "Возьмите образцы на побережье отельного пляжа.",
         "Устраните утечку нефтепровода на северо-востоке."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Battening_Down"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Battening_Down",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901620",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Battening+Down+quest+guide"
     },
     {
       "id": "bees",
       "name": "Пчелы!",
+      "official_name": true,
       "aliases": [
         "Bees!"
       ],
@@ -429,11 +794,16 @@
         "Доберитесь до оливковой рощи у Синих ворот.",
         "Поищите ульи в оливковой роще."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Bees!"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Bees!",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797727",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Bees%21+quest+guide"
     },
     {
       "id": "bombing_run",
       "name": "Заход на цель",
+      "official_name": true,
       "aliases": [
         "Bombing Run"
       ],
@@ -447,11 +817,19 @@
         "Уничтожьте «Бомбардира».",
         "Доставьте Шани ячейку «Бомбардира»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Bombing_Run"
+      "hints": [
+        "«Бомбардир»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: стреляйте в жёлтую канистру сзади — урон идёт прямо в ядро.",
+        "Ячейка Бомбардира: выпадает из машин: «Бомбардир»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Bombing_Run",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804395",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Bombing+Run+quest+guide"
     },
     {
       "id": "broken_monument",
       "name": "Поврежденный памятник",
+      "official_name": true,
       "aliases": [
         "Broken Monument"
       ],
@@ -474,11 +852,16 @@
         "Доставьте Тянь Вэнь компас времен Первой волны.",
         "Доставьте Тянь Вэнь пайки времен Первой волны."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Broken_Monument"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Broken_Monument",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798932",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Broken+Monument+quest+guide"
     },
     {
       "id": "building_a_library",
       "name": "Создавая библиотеку",
+      "official_name": true,
       "aliases": [
         "Building a Library"
       ],
@@ -497,11 +880,30 @@
         "Найдите 1 приключенческую книгу.",
         "Доставьте Аполлону книги (3)."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Building_a_Library"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Building_A_Library",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797864",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/building_a_library/01.jpg",
+            "caption": "Внутри библиотеки",
+            "source": "https://arcraiders.wiki/wiki/File:Building_a_library_quest_location.png"
+          },
+          {
+            "file": "guides/building_a_library/02.jpg",
+            "caption": "Где может появиться книга",
+            "source": "https://arcraiders.wiki/wiki/File:Adventure_Book_Location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Building+a+Library+quest+guide"
     },
     {
       "id": "celestes_journals",
       "name": "Дневники Селесты",
+      "official_name": true,
       "aliases": [
         "Celeste’s Journals"
       ],
@@ -518,11 +920,40 @@
         "Найдите дневники Селесты в восточном рейдерском аванпосте.",
         "Доставьте Селесте дневники (2)."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Celeste’s_Journals"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Celeste's_Journals",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802322",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/celestes_journals/01.jpg",
+            "caption": "Южный дневник на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Swamp.png"
+          },
+          {
+            "file": "guides/celestes_journals/02.jpg",
+            "caption": "Дневник Селесты у болота",
+            "source": "https://arcraiders.wiki/wiki/File:Swamp_Exact_Location.png"
+          },
+          {
+            "file": "guides/celestes_journals/03.jpg",
+            "caption": "Северный дневник на карте",
+            "source": "https://arcraiders.wiki/wiki/File:North.png"
+          },
+          {
+            "file": "guides/celestes_journals/04.jpg",
+            "caption": "Дневник Селесты на севере",
+            "source": "https://arcraiders.wiki/wiki/File:North_Exact_Location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Celeste%E2%80%99s+Journals+quest+guide"
     },
     {
       "id": "clamoring_for_attention",
       "name": "Привлечение внимания",
+      "official_name": true,
       "aliases": [
         "Clamoring for Attention"
       ],
@@ -537,11 +968,38 @@
         "Используйте батарею, чтобы запустить стереосистему в деревне.",
         "Опробуйте гудок любого автобуса у контрольного пункта."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Clamoring_for_Attention"
+      "hints": [
+        "Батарея: ищите в местах с лутом: технологии (Technological), электрика (Electrical).",
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clamoring_for_Attention",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798061",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/clamoring_for_attention/01.jpg",
+            "caption": "Ремонт аварийной сирены",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Sound_Klaxon.png"
+          },
+          {
+            "file": "guides/clamoring_for_attention/02.jpg",
+            "caption": "Замена батареи в магнитофоне",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Replace_Battery_And_Play.png"
+          },
+          {
+            "file": "guides/clamoring_for_attention/03.jpg",
+            "caption": "Гудок автобуса",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clamoring_For_Attention_Sound_Bus_Horn.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Clamoring+for+Attention+quest+guide"
     },
     {
       "id": "clearer_skies",
       "name": "Чистое небо",
+      "official_name": true,
       "aliases": [
         "Clearer Skies"
       ],
@@ -555,11 +1013,18 @@
         "Уничтожьте машины ARC (3)",
         "Добудьте сплав ARC (3) для Шани"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Clearer_Skies"
+      "hints": [
+        "Сплав ARC: выпадает из большинства машин ARC."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clearer_Skies",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700016",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Clearer+Skies+quest+guide"
     },
     {
       "id": "cold_storage",
       "name": "Холодное хранилище",
+      "official_name": true,
       "aliases": [
         "Cold Storage"
       ],
@@ -575,11 +1040,32 @@
         "Обыщите любой контейнер J Kozma Ventures.",
         "Доставьте Шани книги старого мира."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Cold_Storage"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Cold_Storage",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8694247",
+      "guide": {
+        "text": [
+          "Контейнеров много. Этот стоит в относительно тихом месте, рядом с эвакуацией у аэродинамической трубы. Чтобы до него добраться, спрыгните к нему со 2-го этажа."
+        ],
+        "images": [
+          {
+            "file": "guides/cold_storage/01.jpg",
+            "caption": "Контейнер у погрузочной площадки.",
+            "source": "https://arcraiders.wiki/wiki/File:J_container_loading_bay.jpg"
+          },
+          {
+            "file": "guides/cold_storage/02.jpg",
+            "caption": "Обыщите контейнер.",
+            "source": "https://arcraiders.wiki/wiki/File:J_countainer_3p.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Cold+Storage+quest+guide"
     },
     {
       "id": "collision_course",
       "name": "Траектория столкновения",
+      "official_name": true,
       "aliases": [
         "Collision Course"
       ],
@@ -593,11 +1079,16 @@
         "Уничтожьте «Комету».",
         "Доставьте Тянь Вэнь запальное устройство «Кометы»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Collision_Course"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Collision_Course",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901356",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Collision+Course+quest+guide"
     },
     {
       "id": "combat_recon",
       "name": "Разведка боем",
+      "official_name": true,
       "aliases": [
         "Combat Recon"
       ],
@@ -616,11 +1107,19 @@
         "Уничтожьте «Наводчиков»: 2.",
         "Доставьте Шани передатчик «Наводчика»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Combat_Recon"
+      "hints": [
+        "«Наводчик»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные двигатели.",
+        "Передатчик Наводчика: выпадает из машин: «Наводчик»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Combat_Recon",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803814",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Combat+Recon+quest+guide"
     },
     {
       "id": "communication_hideout",
       "name": "Убежище центра связи",
+      "official_name": true,
       "aliases": [
         "Communication Hideout"
       ],
@@ -637,11 +1136,62 @@
         "Включите питание от генератора.",
         "Включите терминал антенны около красной вышки."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Communication_Hideout"
+      "hints": [
+        "Батарея: ищите в местах с лутом: технологии (Technological), электрика (Electrical)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Communication_Hideout",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803686",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/communication_hideout/01.jpg",
+            "caption": "Общая зона квеста",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-01-area.png"
+          },
+          {
+            "file": "guides/communication_hideout/02.jpg",
+            "caption": "Где батарея",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-02-bat-location-map.png"
+          },
+          {
+            "file": "guides/communication_hideout/03.jpg",
+            "caption": "Батарея, которую нужно подобрать",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-02-bat-location-detail.png"
+          },
+          {
+            "file": "guides/communication_hideout/04.jpg",
+            "caption": "Где генератор",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-03-bat-install-map.png"
+          },
+          {
+            "file": "guides/communication_hideout/05.jpg",
+            "caption": "Установка батареи",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-03-bat-install-detail.png"
+          },
+          {
+            "file": "guides/communication_hideout/06.jpg",
+            "caption": "Включение питания",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-04-gen-power.png"
+          },
+          {
+            "file": "guides/communication_hideout/07.jpg",
+            "caption": "Где терминал антенны",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-05-boot-map.png"
+          },
+          {
+            "file": "guides/communication_hideout/08.jpg",
+            "caption": "Запуск терминала антенны",
+            "source": "https://arcraiders.wiki/wiki/File:Communication-Hideout-05-boot-detail.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Communication+Hideout+quest+guide"
     },
     {
       "id": "deciphering_the_data",
       "name": "Расшифровка данных",
+      "official_name": true,
       "aliases": [
         "Deciphering The Data"
       ],
@@ -656,11 +1206,45 @@
         "Доберитесь до зоны прилета космопорта.",
         "Используйте магнетический дешифратор на верхнем этаже зоны прилета."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Deciphering_The_Data"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Deciphering_The_Data",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804481",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/deciphering_the_data/01.jpg",
+            "caption": "Первое место: здание Управления подачей топлива (вход с юго-западной стороны).",
+            "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_1.jpg"
+          },
+          {
+            "file": "guides/deciphering_the_data/02.jpg",
+            "caption": "Войдите в дверь с надписью «Fuel Control — Authorised Personnel Only» рядом.",
+            "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_2.jpg"
+          },
+          {
+            "file": "guides/deciphering_the_data/03.jpg",
+            "caption": "В конце комнаты найдите терминал с действием «расшифровать данные».",
+            "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_3.jpg"
+          },
+          {
+            "file": "guides/deciphering_the_data/04.jpg",
+            "caption": "Второе место: зона прилета, верхний этаж.",
+            "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_4.jpg"
+          },
+          {
+            "file": "guides/deciphering_the_data/05.jpg",
+            "caption": "Среди офисов на верхнем этаже найдите ряд терминалов и взаимодействуйте с предпоследним справа, чтобы завершить квест.",
+            "source": "https://arcraiders.wiki/wiki/File:Deciphering_the_data_5.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Deciphering+The+Data+quest+guide"
     },
     {
       "id": "digging_up_dirt",
       "name": "Нарыть компромат",
+      "official_name": true,
       "aliases": [
         "Digging Up Dirt"
       ],
@@ -674,11 +1258,35 @@
         "Отыщите комплекс «Санта Мария» в Старом городе.",
         "Отыщите тайник во дворе."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Digging_Up_Dirt"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Digging_Up_Dirt",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797826",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/digging_up_dirt/01.jpg",
+            "caption": "Где вход",
+            "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Entrance_Location.jpg"
+          },
+          {
+            "file": "guides/digging_up_dirt/02.jpg",
+            "caption": "Как выглядит внутри",
+            "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Interior_.jpg"
+          },
+          {
+            "file": "guides/digging_up_dirt/03.jpg",
+            "caption": "Где точка взаимодействия",
+            "source": "https://arcraiders.wiki/wiki/File:Digging_Up_Dirt_Interaction_Prompt.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Digging+Up+Dirt+quest+guide"
     },
     {
       "id": "doctors_orders",
       "name": "Указания врача",
+      "official_name": true,
       "aliases": [
         "Doctor's Orders"
       ],
@@ -697,11 +1305,21 @@
         "Добудьте 1 прочную ткань.",
         "Добудьте 1 коровяк."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Doctor's_Orders"
+      "hints": [
+        "Шприц: ищите в местах с лутом: медицина (Medical).",
+        "Антисептик: ищите в местах с лутом: медицина (Medical).",
+        "Прочная ткань: ищите в местах с лутом: медицина (Medical), торговые (Commercial).",
+        "Коровяк: ищите в местах с лутом: природа (Nature)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Doctor's_Orders",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793844",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Doctor%27s+Orders+quest+guide"
     },
     {
       "id": "dormant_barons",
       "name": "Спящие «Бароны»",
+      "official_name": true,
       "aliases": [
         "Dormant Barons"
       ],
@@ -716,11 +1334,16 @@
       "steps": [
         "Соберите ресурсы с обломков «Барона»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Dormant_Barons"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Dormant_Barons",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793440",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Dormant+Barons+quest+guide"
     },
     {
       "id": "down_to_earth",
       "name": "Приземленные загадки",
+      "official_name": true,
       "aliases": [
         "Down to Earth"
       ],
@@ -737,11 +1360,16 @@
         "Доставьте ящик на полевую станцию.",
         "Получите награду"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Down_to_Earth"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Down_to_Earth",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700080",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Down+to+Earth+quest+guide"
     },
     {
       "id": "dust_on_the_wires",
       "name": "Пыль на проводах",
+      "official_name": true,
       "aliases": [
         "Dust on the Wires"
       ],
@@ -761,11 +1389,42 @@
         "Изучите всё, что оставили после себя разведчики.",
         "Доставьте Шани записку разведчиков."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Dust_on_the_Wires"
+      "hints": [
+        "Радио: ищите в местах с лутом: торговые (Commercial), жилые (Residential)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Dust_on_the_Wires",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798442",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/dust_on_the_wires/01.jpg",
+            "caption": "Повторная отправка журнала с восточной полевой станции",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Resend_Log_1.png"
+          },
+          {
+            "file": "guides/dust_on_the_wires/02.jpg",
+            "caption": "Повторная отправка журнала с рейдерской башни у ремонтного ангара",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Resend_Log_2.png"
+          },
+          {
+            "file": "guides/dust_on_the_wires/03.jpg",
+            "caption": "Передача местоположения у останков разведчика",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Transmit_Location.png"
+          },
+          {
+            "file": "guides/dust_on_the_wires/04.jpg",
+            "caption": "Поиск зацепок у останков разведчика",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Dust_On_The_Wires_Search_For_Clues.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Dust+on+the+Wires+quest+guide"
     },
     {
       "id": "echoes_of_victory_ridge",
       "name": "Эхо Хребта победы",
+      "official_name": true,
       "aliases": [
         "Echoes of Victory Ridge"
       ],
@@ -782,11 +1441,30 @@
         "Добудьте планы сражений из убежища под разрушенным шоссе.",
         "Доставьте Селесте нашивку майора Айвы."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Echoes_of_Victory_Ridge"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Echoes_Of_Victory_Ridge",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8799059",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/echoes_of_victory_ridge/01.jpg",
+            "caption": "Место для квеста «Эхо победы»",
+            "source": "https://arcraiders.wiki/wiki/File:Echos_of_Victory_Map.png"
+          },
+          {
+            "file": "guides/echoes_of_victory_ridge/02.jpg",
+            "caption": "Место под мостом",
+            "source": "https://arcraiders.wiki/wiki/File:Echos_of_VIctory_1.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Echoes+of+Victory+Ridge+quest+guide"
     },
     {
       "id": "espresso",
       "name": "Эспрессо",
+      "official_name": true,
       "aliases": [
         "Espresso"
       ],
@@ -802,11 +1480,25 @@
         "Найдите кофемашину и разберите ее на запчасти.",
         "Раздобудьте детали кофемашины для Аполлона."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Espresso"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Espresso",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797751",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/espresso/01.jpg",
+            "caption": "Кофемашина на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Location_of_Espresso_Machine.webp"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Espresso+quest+guide"
     },
     {
       "id": "eyes_in_the_sky",
       "name": "Взгляд в небеса",
+      "official_name": true,
       "aliases": [
         "Eyes in the Sky"
       ],
@@ -823,11 +1515,50 @@
         "Установите лазерный локатор в диспетчерской вышке космопорта.",
         "Установите лазерный локатор над вывеской галереи в Погребенном городе."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_in_the_Sky"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_in_the_Sky",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8795938",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/eyes_in_the_sky/01.jpg",
+            "caption": "Поле битвы у дамбы: карта",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_dam_map.jpg"
+          },
+          {
+            "file": "guides/eyes_in_the_sky/02.jpg",
+            "caption": "Поле битвы у дамбы: место",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_dam.jpg"
+          },
+          {
+            "file": "guides/eyes_in_the_sky/03.jpg",
+            "caption": "Космопорт: карта",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_spaceport_map.jpg"
+          },
+          {
+            "file": "guides/eyes_in_the_sky/04.jpg",
+            "caption": "Космопорт: место",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_spaceport.jpg"
+          },
+          {
+            "file": "guides/eyes_in_the_sky/05.jpg",
+            "caption": "Погребенный город: карта",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_buried_map.jpg"
+          },
+          {
+            "file": "guides/eyes_in_the_sky/06.jpg",
+            "caption": "Погребенный город: место (нужен зиплайн)",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_in_the_sky_buried.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Eyes+in+the+Sky+quest+guide"
     },
     {
       "id": "eyes_on_the_prize",
       "name": "Вижу цель, не вижу препятствий",
+      "official_name": true,
       "aliases": [
         "Eyes on the Prize"
       ],
@@ -843,11 +1574,32 @@
         "Найдите уединенную террасу на крыше к юго-западу от Южной станции (ориентируйтесь на синий брезент).",
         "Перенастройте солнечную панель, используя 3 провода."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_on_the_Prize"
+      "hints": [
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Eyes_On_The_Prize",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802089",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/eyes_on_the_prize/01.jpg",
+            "caption": "Место для квеста «Глаза на призе» на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_on_the_prize_map.jpg"
+          },
+          {
+            "file": "guides/eyes_on_the_prize/02.jpg",
+            "caption": "Место для квеста «Глаза на призе»",
+            "source": "https://arcraiders.wiki/wiki/File:Eyes_on_the_prize.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Eyes+on+the+Prize+quest+guide"
     },
     {
       "id": "flickering_threat",
       "name": "Мерцающая угроза",
+      "official_name": true,
       "aliases": [
         "Flickering Threat"
       ],
@@ -865,11 +1617,18 @@
         "Найдите вентиляционную шахту.",
         "Возобновите подачу питания с помощью переключателя под лестницей."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Flickering_Threat"
+      "hints": [
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Flickering_Threat",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797718",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Flickering+Threat+quest+guide"
     },
     {
       "id": "fragmented_logs",
       "name": "Разрозненные записи",
+      "official_name": true,
       "aliases": [
         "Fragmented Logs"
       ],
@@ -884,11 +1643,16 @@
         "Включите питание в любом кабельном помещении рядом с песочницей для роботов.",
         "Запустите главный терминал в технических помещениях культурного архива."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Fragmented_Logs"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Fragmented_Logs",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805186",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Fragmented+Logs+quest+guide"
     },
     {
       "id": "furtive_meetings",
       "name": "Плодотворные встречи",
+      "official_name": true,
       "aliases": [
         "Furtive Meetings"
       ],
@@ -907,11 +1671,16 @@
         "Обыщите место встречи.",
         "Принесите Шани информацию о тайных встречах."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Furtive_Meetings"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Furtive_Meetings",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805313",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Furtive+Meetings+quest+guide"
     },
     {
       "id": "greasing_her_palms",
       "name": "Взяточные запчасти",
+      "official_name": true,
       "aliases": [
         "Greasing Her Palms"
       ],
@@ -928,11 +1697,18 @@
         "Найдите ракетные двигатели снаружи цеха сбора ракет в космопорте.",
         "Проберитесь в забаррикадированную часть шестого этажа здания космических полетов в Погребенном городе."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Greasing_Her_Palms"
+      "hints": [
+        "Ракетный двигатель: ищите в местах с лутом: Исход (Exodus)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Greasing_Her_Palms",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700091",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Greasing+Her+Palms+quest+guide"
     },
     {
       "id": "groundbreaking",
       "name": "Первый шаг",
+      "official_name": true,
       "aliases": [
         "Groundbreaking"
       ],
@@ -948,11 +1724,40 @@
         "Найдите здание, изображенное на доске.",
         "Сфотографируйте недостроенный жилой комплекс."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Groundbreaking"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Groundbreaking",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804693",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/groundbreaking/01.jpg",
+            "caption": "Проникните в запертую комнату на Вершине странника",
+            "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_110624.png"
+          },
+          {
+            "file": "guides/groundbreaking/02.jpg",
+            "caption": "Поищите в комнате строительные исследования",
+            "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_110606.png"
+          },
+          {
+            "file": "guides/groundbreaking/03.jpg",
+            "caption": "Здание, которое нужно сфотографировать",
+            "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_111153.png"
+          },
+          {
+            "file": "guides/groundbreaking/04.jpg",
+            "caption": "Сфотографируйте заброшенный жилой комплекс",
+            "source": "https://arcraiders.wiki/wiki/File:Screenshot_2026-01-01_111140.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Groundbreaking+quest+guide"
     },
     {
       "id": "hatch_repairs",
       "name": "Ремонт люков",
+      "official_name": true,
       "aliases": [
         "Hatch Repairs"
       ],
@@ -963,11 +1768,37 @@
       "steps": [
         "Устраните утечку гидропровода у рейдерского люка."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Hatch_Repairs"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Hatch_Repairs",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700051",
+      "guide": {
+        "text": [
+          "Ключ от люка лежит в маленьком ящике рядом с рейдерским люком. Забрать его можно только один раз. Где именно стоит ящик, зависит от люка."
+        ],
+        "images": [
+          {
+            "file": "guides/hatch_repairs/01.jpg",
+            "caption": "Люк Good Old Baron's Hatch на поле битвы у дамбы, пример ящика.",
+            "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_1.png"
+          },
+          {
+            "file": "guides/hatch_repairs/02.jpg",
+            "caption": "Люк Good Old Baron's Hatch на поле битвы у дамбы, ящик крупным планом.",
+            "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_2.png"
+          },
+          {
+            "file": "guides/hatch_repairs/03.jpg",
+            "caption": "Люк Lucky Hatch у Синих ворот, ящик крупным планом.",
+            "source": "https://arcraiders.wiki/wiki/File:Raider_Hatch_Key_Container_3.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Hatch+Repairs+quest+guide"
     },
     {
       "id": "in_my_image",
       "name": "По образу и подобию",
+      "official_name": true,
       "aliases": [
         "In My Image"
       ],
@@ -981,11 +1812,16 @@
         "Зайдите в Стелла Монтис.",
         "Найдите и осмотрите андроидов (3)."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/In_My_Image"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/In_My_Image",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8694085",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+In+My+Image+quest+guide"
     },
     {
       "id": "industrial_espionage",
       "name": "Промышленный шпионаж",
+      "official_name": true,
       "aliases": [
         "Industrial Espionage"
       ],
@@ -1000,11 +1836,30 @@
         "Доставьте Бурлетту в тайник с оружием конкурента.",
         "Подложите жучок в тайник с оружием."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Industrial_Espionage"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Industrial_Espionage",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802108",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/industrial_espionage/01.jpg",
+            "caption": "Место для квеста «Промышленный шпионаж» на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Industrial_espionage_map.jpg"
+          },
+          {
+            "file": "guides/industrial_espionage/02.jpg",
+            "caption": "Место для квеста «Промышленный шпионаж»",
+            "source": "https://arcraiders.wiki/wiki/File:Industrial_espionage.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Industrial+Espionage+quest+guide"
     },
     {
       "id": "into_the_fray",
       "name": "В самое пекло",
+      "official_name": true,
       "aliases": [
         "Into the Fray"
       ],
@@ -1023,11 +1878,19 @@
         "Уничтожьте «Прыгуна».",
         "Добудьте импульсный блок «Прыгуна»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Into_the_Fray"
+      "hints": [
+        "«Прыгун»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: лучше всего действует огонь, ещё можно стрелять в глаз.",
+        "Импульсный блок Прыгуна: выпадает из машин: «Прыгун»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Into_The_Fray",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803713",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Into+the+Fray+quest+guide"
     },
     {
       "id": "keeping_an_eye_out",
       "name": "Бдительное око",
+      "official_name": true,
       "aliases": [
         "Keeping an Eye Out"
       ],
@@ -1041,11 +1904,32 @@
         "Найдите обрушившееся шоссе у южного края пустыря.",
         "Найдите хранилище Бильгуна и поищите в нем намеки, где он."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_an_Eye_Out"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_an_Eye_Out",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798703",
+      "guide": {
+        "text": [
+          "Проще всего попасть в убежище Бильгуна с помощью зиплайна или крюка с защелкой."
+        ],
+        "images": [
+          {
+            "file": "guides/keeping_an_eye_out/01.jpg",
+            "caption": "Вид из убежища Бильгуна.",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Keeping_An_Eye_Out_Hideout_View.png"
+          },
+          {
+            "file": "guides/keeping_an_eye_out/02.jpg",
+            "caption": "Фото символа-глаза Бильгуна.",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Keeping_An_Eye_Out_Take_Photo.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Keeping+an+Eye+Out+quest+guide"
     },
     {
       "id": "keeping_the_memory",
       "name": "В память о былом",
+      "official_name": true,
       "aliases": [
         "Keeping the Memory"
       ],
@@ -1060,11 +1944,35 @@
         "Найдите пропавший шлем.",
         "Верните шлем на мемориал."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_the_Memory"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Keeping_The_Memory",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8799032",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/keeping_the_memory/01.jpg",
+            "caption": "",
+            "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_map.jpg"
+          },
+          {
+            "file": "guides/keeping_the_memory/02.jpg",
+            "caption": "Куст со шлемом",
+            "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_1.jpg"
+          },
+          {
+            "file": "guides/keeping_the_memory/03.jpg",
+            "caption": "Куда положить шлем",
+            "source": "https://arcraiders.wiki/wiki/File:Keeping_the_memory_2.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Keeping+the+Memory+quest+guide"
     },
     {
       "id": "last_entry",
       "name": "Последняя запись",
+      "official_name": true,
       "aliases": [
         "Last Entry"
       ],
@@ -1083,11 +1991,16 @@
         "Обыщите камеру с семенами.",
         "Принесите Шани официальную документацию о закрытии проекта."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Last_Entry"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Last_Entry",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805388",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Last+Entry+quest+guide"
     },
     {
       "id": "life_of_a_pharmacist",
       "name": "Жизнь аптекаря",
+      "official_name": true,
       "aliases": [
         "Life of a Pharmacist"
       ],
@@ -1104,11 +2017,45 @@
         "Соберите материалы о вкусах аптекаря.",
         "Соберите материалы о навыках аптекаря."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Life_of_a_Pharmacist"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Life_Of_A_Pharmacist",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797784",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/life_of_a_pharmacist/01.jpg",
+            "caption": "В аптеке войдите через главный вход и поднимитесь наверх.",
+            "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_1.jpg"
+          },
+          {
+            "file": "guides/life_of_a_pharmacist/02.jpg",
+            "caption": "Первый предмет — рамка с фотографией на стене.",
+            "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_2.jpg"
+          },
+          {
+            "file": "guides/life_of_a_pharmacist/03.jpg",
+            "caption": "Второй предмет — пианино.",
+            "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_3.jpg"
+          },
+          {
+            "file": "guides/life_of_a_pharmacist/04.jpg",
+            "caption": "Третий предмет — растение в горшке.",
+            "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_4.jpg"
+          },
+          {
+            "file": "guides/life_of_a_pharmacist/05.jpg",
+            "caption": "Последний предмет лежит на столе.",
+            "source": "https://arcraiders.wiki/wiki/File:Life_of_a_pharmacist_5.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Life+of+a+Pharmacist+quest+guide"
     },
     {
       "id": "line_in_the_sand",
       "name": "Линия на песке",
+      "official_name": true,
       "aliases": [
         "Line in the Sand"
       ],
@@ -1124,11 +2071,50 @@
         "Найдите, куда припрятали клапаны двигателей.",
         "Обыщите подвал близлежащей квартиры продавца."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Line_in_the_Sand"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Line_in_the_Sand",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901440",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/line_in_the_sand/01.jpg",
+            "caption": "Где сошедший с рельсов поезд",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_map_1.jpg"
+          },
+          {
+            "file": "guides/line_in_the_sand/02.jpg",
+            "caption": "Выясните, кто организовал ограбление",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_2.jpg"
+          },
+          {
+            "file": "guides/line_in_the_sand/03.jpg",
+            "caption": "Поищите зацепки",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_2.1.jpg"
+          },
+          {
+            "file": "guides/line_in_the_sand/04.jpg",
+            "caption": "Выясните, где спрятаны клапаны двигателей",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_3.jpg"
+          },
+          {
+            "file": "guides/line_in_the_sand/05.jpg",
+            "caption": "Обыщите подвал в квартире торговца неподалёку",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_4.jpg"
+          },
+          {
+            "file": "guides/line_in_the_sand/06.jpg",
+            "caption": "Обыщите подвал в квартире торговца неподалёку",
+            "source": "https://arcraiders.wiki/wiki/File:Line_in_the_sand_4.1.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Line+in+the+Sand+quest+guide"
     },
     {
       "id": "lost_in_transmission",
       "name": "Трудности связи",
+      "official_name": true,
       "aliases": [
         "Lost in Transmission"
       ],
@@ -1143,11 +2129,37 @@
         "Поднимитесь на верх диспетчерской вышки A6.",
         "Установите связь через терминал."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Lost_in_Transmission"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Lost_In_Transmission",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803661",
+      "guide": {
+        "text": [
+          "Обязательно возьмите ключ, который выдают при получении квеста. У диспетчерской вышки опасно: чтобы избежать стычек с игроками, приходите туда первым или последним."
+        ],
+        "images": [
+          {
+            "file": "guides/lost_in_transmission/01.jpg",
+            "caption": "Зайдите в диспетчерскую вышку А6",
+            "source": "https://arcraiders.wiki/wiki/File:Control_tower_zip.jpg"
+          },
+          {
+            "file": "guides/lost_in_transmission/02.jpg",
+            "caption": "Поднимитесь наверх с помощью ключа от диспетчерской башни космопорта",
+            "source": "https://arcraiders.wiki/wiki/File:Control_tower_3p.jpg"
+          },
+          {
+            "file": "guides/lost_in_transmission/03.jpg",
+            "caption": "Установите соединение с терминала",
+            "source": "https://arcraiders.wiki/wiki/File:Computer_control_tower.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Lost+in+Transmission+quest+guide"
     },
     {
       "id": "marked_for_death",
       "name": "Метка смерти",
+      "official_name": true,
       "aliases": [
         "Marked for Death"
       ],
@@ -1162,11 +2174,30 @@
         "Обыщите тайник Тянь Вэнь около складов.",
         "Идите по следу."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Marked_for_Death"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Marked_For_Death",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802036",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/marked_for_death/01.jpg",
+            "caption": "Тайник снаружи склада, с северной стороны здания",
+            "source": "https://arcraiders.wiki/wiki/File:Marked_for_death_1.jpg"
+          },
+          {
+            "file": "guides/marked_for_death/02.jpg",
+            "caption": "Идите по следам дальше на северо-запад, в кусты на дюне",
+            "source": "https://arcraiders.wiki/wiki/File:Marked_for_death_2.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Marked+for+Death+quest+guide"
     },
     {
       "id": "market_correction",
       "name": "Коррекция рынка",
+      "official_name": true,
       "aliases": [
         "Market Correction"
       ],
@@ -1180,11 +2211,30 @@
         "Найдите тайник у станции Марано.",
         "Саботируйте тайник."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Market_Correction"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Market_Correction",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802054",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/market_correction/01.jpg",
+            "caption": "Место для квеста «Коррекция рынка» на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Market_correction_map.jpg"
+          },
+          {
+            "file": "guides/market_correction/02.jpg",
+            "caption": "Где цель квеста",
+            "source": "https://arcraiders.wiki/wiki/File:Market_correction.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Market+Correction+quest+guide"
     },
     {
       "id": "medical_merchandise",
       "name": "Медицинские товары",
+      "official_name": true,
       "aliases": [
         "Medical Merchandise"
       ],
@@ -1201,11 +2251,21 @@
         "Обыщите контейнеры (3) в больнице Погребенного города.",
         "Обыщите контейнеры (2) в медкабинете исследовательско-административного центра на поле битвы у дамбы."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Medical_Merchandise"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Medical_Merchandise",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793869",
+      "guide": {
+        "text": [
+          "• Смотровой кабинет в космопорте — на втором этаже здания (first floor), слева от лестницы с первого этажа.\n• Медкабинет на поле битвы у дамбы — на втором этаже (first floor), на двери белый крест на зелёном фоне."
+        ],
+        "images": []
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Medical+Merchandise+quest+guide"
     },
     {
       "id": "mixed_signals",
       "name": "Смешанный сигнал",
+      "official_name": true,
       "aliases": [
         "Mixed Signals"
       ],
@@ -1224,11 +2284,19 @@
         "Уничтожьте «Наблюдателя».",
         "Добудьте 1 сейф «Наблюдателя»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Mixed_Signals"
+      "hints": [
+        "«Наблюдатель»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: открывает энергетическое ядро, когда бьёт синим лучом в небо.",
+        "Сейф Наблюдателя: выпадает из машин: «Наблюдатель»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Mixed_Signals",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793569",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Mixed+Signals+quest+guide"
     },
     {
       "id": "movie_night",
       "name": "Киновечер",
+      "official_name": true,
       "aliases": [
         "Movie Night"
       ],
@@ -1244,11 +2312,27 @@
         "Найдите в культурном архиве «Стелла Монтис» кассеты со старыми фильмами.",
         "Доставьте Аполлону кассеты с фильмами."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Movie_Night"
+      "hints": [
+        "Портативный телевизор: ищите в местах с лутом: жилые (Residential)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Movie_Night",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8794055",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/movie_night/01.jpg",
+            "caption": "Вид от первого лица",
+            "source": "https://arcraiders.wiki/wiki/File:ArcRaidersVhsTapes_cropped.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Movie+Night+quest+guide"
     },
     {
       "id": "off_the_radar",
       "name": "Уход в тень",
+      "official_name": true,
       "aliases": [
         "Off The Radar"
       ],
@@ -1264,11 +2348,16 @@
         "Посетите полевую станцию",
         "Почините антенну на крыше полевой станции"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Off_The_Radar"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Off_The_Radar",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700004",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Off+The+Radar+quest+guide"
     },
     {
       "id": "on_deaf_ears",
       "name": "Проблемы со слухом",
+      "official_name": true,
       "aliases": [
         "On Deaf Ears"
       ],
@@ -1284,11 +2373,16 @@
         "Найдите информацию о прототипах на компьютере в корпусе медицинских исследований.",
         "Найдите в мастерских сборочного цеха распечатанные записи о поставках."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/On_Deaf_Ears"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/On_Deaf_Ears",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804860",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+On+Deaf+Ears+quest+guide"
     },
     {
       "id": "on_the_map",
       "name": "На карте",
+      "official_name": true,
       "aliases": [
         "On The Map"
       ],
@@ -1305,11 +2399,16 @@
         "Передайте свое местоположение с крыши хранилища контейнеров.",
         "Найдите накрытый брезентом контейнер и отметьте его."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/On_The_Map"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/On_The_Map",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805016",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+On+The+Map+quest+guide"
     },
     {
       "id": "our_presence_up_there",
       "name": "Наше присутствие наверху",
+      "official_name": true,
       "aliases": [
         "Our Presence up There"
       ],
@@ -1324,11 +2423,37 @@
         "Найдите и используйте переключатель питания.",
         "Завершите установку антенны на крыше."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Our_Presence_up_There"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Our_Presence_up_There",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803627",
+      "guide": {
+        "text": [
+          "Найдите Геометрическое здание и войдите в него. На 1-м этаже найдите рубильник и переключите его, затем поднимитесь на зиплайне на крышу и закончите установку антенны."
+        ],
+        "images": [
+          {
+            "file": "guides/our_presence_up_there/01.jpg",
+            "caption": "Рубильник на карте",
+            "source": "https://arcraiders.wiki/wiki/File:20260109082826_1.jpg"
+          },
+          {
+            "file": "guides/our_presence_up_there/02.jpg",
+            "caption": "Переключите рубильник",
+            "source": "https://arcraiders.wiki/wiki/File:20260109082818_1.jpg"
+          },
+          {
+            "file": "guides/our_presence_up_there/03.jpg",
+            "caption": "Почините антенну",
+            "source": "https://arcraiders.wiki/wiki/File:20260109082801_1.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Our+Presence+up+There+quest+guide"
     },
     {
       "id": "out_of_the_shadows",
       "name": "Из тени",
+      "official_name": true,
       "aliases": [
         "Out of the Shadows"
       ],
@@ -1347,11 +2472,19 @@
         "Уничтожьте «Ракетчика».",
         "Добудьте драйвер «Ракетчика»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Out_of_the_Shadows"
+      "hints": [
+        "«Ракетчик»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: уничтожьте два двигателя или стреляйте в ядро снизу.",
+        "Драйвер Ракетчика: выпадает из машин: «Ракетчик»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Out_of_the_Shadows",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802243",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Out+of+the+Shadows+quest+guide"
     },
     {
       "id": "outstanding_balance",
       "name": "Непогашенный долг",
+      "official_name": true,
       "aliases": [
         "Outstanding Balance"
       ],
@@ -1368,11 +2501,30 @@
         "Обыщите место, где Плут заключал сделки, возле антенны Вершины странника.",
         "Доставьте Тянь Вэнь записку Плута."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Outstanding_Balance"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Outstanding_Balance",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798767",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/outstanding_balance/01.jpg",
+            "caption": "Тайник Плута на карте (под землёй)",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Outstanding_Balance_Dodger_Stash_Map.png"
+          },
+          {
+            "file": "guides/outstanding_balance/02.jpg",
+            "caption": "Как выглядит тайник Плута",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Outstanding_Balance_Dodger_Stash.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Outstanding+Balance+quest+guide"
     },
     {
       "id": "paving_the_way",
       "name": "Проложить путь",
+      "official_name": true,
       "aliases": [
         "Paving the Way"
       ],
@@ -1390,11 +2542,42 @@
         "Отправляйтесь в Погребенный город и поднимитесь на этаж над «Конвинио» на Пьяцца Рома.",
         "Найдите квартиру исследователя и поищите полезные данные."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Paving_the_Way"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Paving_The_Way",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804457",
+      "guide": {
+        "text": [
+          "Здания ENELICA: исследовательско-административный центр и центр производства энергии на поле битвы у дамбы. Доска находится в офисе у входа."
+        ],
+        "images": [
+          {
+            "file": "guides/paving_the_way/01.jpg",
+            "caption": "Доска объявлений в центре производства энергии.",
+            "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_.png"
+          },
+          {
+            "file": "guides/paving_the_way/02.jpg",
+            "caption": "Доска объявлений в центре производства энергии на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:Paving_The_Way.png"
+          },
+          {
+            "file": "guides/paving_the_way/03.jpg",
+            "caption": "Точка взаимодействия в квартире исследователя на 6-м этаже.",
+            "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_-_Buried_City.png"
+          },
+          {
+            "file": "guides/paving_the_way/04.jpg",
+            "caption": "Квартира исследователя в доме «Конвинио» на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:Paving_the_Way_-_Buried_City_Map_Location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Paving+the+Way+quest+guide"
     },
     {
       "id": "picking_up_the_pieces",
       "name": "Сбор по крупицам",
+      "official_name": true,
       "aliases": [
         "Picking Up The Pieces"
       ],
@@ -1406,11 +2589,16 @@
         "Зайдите в любую зону со значком добычи на карте",
         "Возьмите добычу из контейнеров (3)"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Picking_Up_The_Pieces",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8699985",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Picking+Up+The+Pieces+quest+guide"
     },
     {
       "id": "power_out",
       "name": "Отключение энергии",
+      "official_name": true,
       "aliases": [
         "Power Out"
       ],
@@ -1426,13 +2614,33 @@
         "Установите предохранитель.",
         "Восстановите питание."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Power_Out"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Power_Out",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797687",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/power_out/01.jpg",
+            "caption": "",
+            "source": "https://arcraiders.wiki/wiki/File:Missing_Container_-_Power_Out.png"
+          },
+          {
+            "file": "guides/power_out/02.jpg",
+            "caption": "",
+            "source": "https://arcraiders.wiki/wiki/File:Power_Cell_Switch.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Power+Out+quest+guide"
     },
     {
       "id": "prescriptions_of_the_past",
       "name": "Лекарства прошлого",
+      "official_name": true,
       "aliases": [
-        "Prescriptions of the Past"
+        "Prescriptions of the Past",
+        "Лекарство прошлого"
       ],
       "trader": "Лэнс",
       "locations": [
@@ -1445,11 +2653,16 @@
         "Найдите комнату медосмотра в зоне отправления.",
         "Поищите записи."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Prescriptions_of_the_Past"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Prescriptions_of_the_Past",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797680",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Prescriptions+of+the+Past+quest+guide"
     },
     {
       "id": "reduced_to_rubble",
       "name": "Одни только щепки",
+      "official_name": true,
       "aliases": [
         "Reduced to Rubble"
       ],
@@ -1465,11 +2678,42 @@
         "Идите по следам разрушения через разломы.",
         "Осмотрите неизвестные машины ARC."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Reduced_to_Rubble"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Reduced_to_Rubble",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798514",
+      "guide": {
+        "text": [
+          "Разрушенное шоссе на юго-западе карты, подписано «Highway Collapse»."
+        ],
+        "images": [
+          {
+            "file": "guides/reduced_to_rubble/01.jpg",
+            "caption": "Разрушенное шоссе.",
+            "source": "https://arcraiders.wiki/wiki/File:Highway_map.jpg"
+          },
+          {
+            "file": "guides/reduced_to_rubble/02.jpg",
+            "caption": "Сфотографируйте разрушенное шоссе.",
+            "source": "https://arcraiders.wiki/wiki/File:Highway_3p.jpg"
+          },
+          {
+            "file": "guides/reduced_to_rubble/03.jpg",
+            "caption": "Где неизвестная машина ARC.",
+            "source": "https://arcraiders.wiki/wiki/File:Arc_map.jpg"
+          },
+          {
+            "file": "guides/reduced_to_rubble/04.jpg",
+            "caption": "Осмотрите её и эвакуируйтесь.",
+            "source": "https://arcraiders.wiki/wiki/File:Arc_3p.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Reduced+to+Rubble+quest+guide"
     },
     {
       "id": "safe_harbor",
       "name": "Тихая гавань",
+      "official_name": true,
       "aliases": [
         "Safe Harbor"
       ],
@@ -1487,11 +2731,40 @@
         "Раскопайте деталь.",
         "Доставьте Тянь Вэнь карданный подвес гироскопа."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Harbor"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Harbor",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901643",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/safe_harbor/01.jpg",
+            "caption": "Найдите зацепку, оставленную работниками кухни ресторана",
+            "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_1.jpg"
+          },
+          {
+            "file": "guides/safe_harbor/02.jpg",
+            "caption": "Найдите зацепку, оставленную работниками кухни ресторана",
+            "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_1.1.jpg"
+          },
+          {
+            "file": "guides/safe_harbor/03.jpg",
+            "caption": "Найдите место, изображённое на наброске",
+            "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_2.jpg"
+          },
+          {
+            "file": "guides/safe_harbor/04.jpg",
+            "caption": "Откопайте закопанную деталь",
+            "source": "https://arcraiders.wiki/wiki/File:Safe_Harbor_3.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Safe+Harbor+quest+guide"
     },
     {
       "id": "safe_passage",
       "name": "Безопасный проход",
+      "official_name": true,
       "aliases": [
         "Safe Passage"
       ],
@@ -1502,11 +2775,16 @@
       "steps": [
         "Уничтожьте 2 машины ARC при помощи любых взрывных гранат."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Passage"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Safe_Passage",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793779",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Safe+Passage+quest+guide"
     },
     {
       "id": "settled_in_full",
       "name": "В расчете",
+      "official_name": true,
       "aliases": [
         "Settled in Full"
       ],
@@ -1520,11 +2798,19 @@
         "Уничтожьте «Бастион».",
         "Доставьте Тянь Вэнь ячейку «Бастиона»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Settled_in_Full"
+      "hints": [
+        "«Бастион»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: уничтожьте канистру на спине, чтобы открыть уязвимое место.",
+        "Ячейка Бастиона: выпадает из машин: «Бастион»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Settled_in_Full",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798786",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Settled+in+Full+quest+guide"
     },
     {
       "id": "shoring_up_defenses",
       "name": "Прибрежная оборона",
+      "official_name": true,
       "aliases": [
         "Shoring Up Defenses"
       ],
@@ -1540,11 +2826,19 @@
         "Используйте сплав ARC (1), чтобы укрепить постройку рейдеров на любом из кранов складской площадки.",
         "Забейте досками окна в отеле."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Shoring_Up_Defenses"
+      "hints": [
+        "«Оса»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные двигатели.",
+        "Сплав ARC: выпадает из большинства машин ARC."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Shoring_Up_Defenses",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901395",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Shoring+Up+Defenses+quest+guide"
     },
     {
       "id": "snap_and_salvage",
       "name": "Фотогеничные детали",
+      "official_name": true,
       "aliases": [
         "Snap and Salvage"
       ],
@@ -1563,11 +2857,28 @@
         "Доставьте Тянь Вэнь магнетрон.",
         "Доставьте Тянь Вэнь регулятор потока."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Snap_and_Salvage"
+      "hints": [
+        "Магнетрон: ищите в местах с лутом: Исход (Exodus).",
+        "Регулятор Потока: ищите в местах с лутом: Исход (Exodus)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Snap_And_Salvage",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8694262",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/snap_and_salvage/01.jpg",
+            "caption": "Ровер в песочнице для роботов А",
+            "source": "https://arcraiders.wiki/wiki/File:Sandbox_Rover_obj.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Snap+and+Salvage+quest+guide"
     },
     {
       "id": "source_of_the_contamination",
       "name": "Источник заражения",
+      "official_name": true,
       "aliases": [
         "Source of the Contamination"
       ],
@@ -1582,11 +2893,30 @@
         "Найдите водозабор около болота.",
         "Изучите подозрительные объекты."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Source_of_the_Contamination"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Source_Of_The_Contamination",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8796040",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/source_of_the_contamination/01.jpg",
+            "caption": "Найдите водозабор около болота",
+            "source": "https://arcraiders.wiki/wiki/File:Flood_spill_map.jpg"
+          },
+          {
+            "file": "guides/source_of_the_contamination/02.jpg",
+            "caption": "Осмотрите подозрительные предметы",
+            "source": "https://arcraiders.wiki/wiki/File:Flood_spill.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Source+of+the+Contamination+quest+guide"
     },
     {
       "id": "sparks_fly",
       "name": "Искры летят",
+      "official_name": true,
       "aliases": [
         "Sparks Fly"
       ],
@@ -1597,11 +2927,18 @@
       "steps": [
         "Уничтожьте «Шершня» с помощью триггер-гранаты или разрывной гранаты"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Sparks_Fly"
+      "hints": [
+        "«Шершень»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные задние двигатели."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Sparks_Fly",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793829",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Sparks+Fly+quest+guide"
     },
     {
       "id": "stable_housing",
       "name": "Устойчивые дома",
+      "official_name": true,
       "aliases": [
         "Stable Housing"
       ],
@@ -1622,11 +2959,30 @@
         "Добудьте содержимое сейфа.",
         "Доставьте Тянь Вэнь чертежи проекта «Вечная зелень»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Stable_Housing"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Stable_Housing",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8692209",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/stable_housing/01.jpg",
+            "caption": "Печать карты доступа на четвёртом этаже",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Stable_Housing_Print_Access_Card.png"
+          },
+          {
+            "file": "guides/stable_housing/02.jpg",
+            "caption": "Цифровой код на третьем этаже",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Stable_Housing_Inspect_Notes.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Stable+Housing+quest+guide"
     },
     {
       "id": "straight_record",
       "name": "Поправки",
+      "official_name": true,
       "aliases": [
         "Straight Record"
       ],
@@ -1644,11 +3000,45 @@
         "Обесточьте третий переключатель.",
         "Отключите электромагнитную ловушку."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Straight_Record"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Straight_Record",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798964",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/straight_record/01.jpg",
+            "caption": "Места для квеста «Честная запись»",
+            "source": "https://arcraiders.wiki/wiki/File:Straight_Record-Map.png"
+          },
+          {
+            "file": "guides/straight_record/02.jpg",
+            "caption": "«Честная запись»: ЭМИ-ловушка",
+            "source": "https://arcraiders.wiki/wiki/File:Straight_record_1.jpg"
+          },
+          {
+            "file": "guides/straight_record/03.jpg",
+            "caption": "«Честная запись»: рубильник №1",
+            "source": "https://arcraiders.wiki/wiki/File:Straight_record_2.jpg"
+          },
+          {
+            "file": "guides/straight_record/04.jpg",
+            "caption": "«Честная запись»: рубильник №2",
+            "source": "https://arcraiders.wiki/wiki/File:Straight_record_3.jpg"
+          },
+          {
+            "file": "guides/straight_record/05.jpg",
+            "caption": "«Честная запись»: рубильник №3",
+            "source": "https://arcraiders.wiki/wiki/File:Straight_record_4.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Straight+Record+quest+guide"
     },
     {
       "id": "switching_the_supply",
       "name": "Смена груза",
+      "official_name": true,
       "aliases": [
         "Switching the Supply"
       ],
@@ -1662,11 +3052,25 @@
         "Найдите туннели под космопортом.",
         "Найдите и поверните вентиль в туннелях под космопортом."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Switching_the_Supply"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Switching_The_Supply",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797647",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/switching_the_supply/01.jpg",
+            "caption": "Где вентиль",
+            "source": "https://arcraiders.wiki/wiki/File:Switching_the_Supply_objective_location.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Switching+the+Supply+quest+guide"
     },
     {
       "id": "test_case",
       "name": "Прецедент",
+      "official_name": true,
       "aliases": [
         "Test Case"
       ],
@@ -1684,11 +3088,21 @@
         "Уничтожьте «Светлячка».",
         "Доставьте Аполлону горелку «Светлячка»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Test_Case"
+      "hints": [
+        "«Огнешар»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: ядро открывается, когда он стреляет из огнемёта.",
+        "«Шершень»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные задние двигатели.",
+        "Драйвер Шершня: выпадает из машин: «Шершень».",
+        "Горелка Огнешара: выпадает из машин: «Огнешар»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Test_Case",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798034",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Test+Case+quest+guide"
     },
     {
       "id": "the_clean_dream",
       "name": "Чистый сон",
+      "official_name": true,
       "aliases": [
         "The Clean Dream"
       ],
@@ -1706,11 +3120,30 @@
         "Осмотрите систему очистки в бункере.",
         "Найдите и сфотографируйте в бункере."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Clean_Dream"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Clean_Dream",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798601",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/the_clean_dream/01.jpg",
+            "caption": "Это цель «Система фильтрации»",
+            "source": "https://arcraiders.wiki/wiki/File:Filtration.jpg"
+          },
+          {
+            "file": "guides/the_clean_dream/02.jpg",
+            "caption": "Точка взаимодействия для квеста об очистке",
+            "source": "https://arcraiders.wiki/wiki/File:Purification_Quest_Interact_Location.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Clean+Dream+quest+guide"
     },
     {
       "id": "the_league",
       "name": "Лига",
+      "official_name": true,
       "aliases": [
         "The League"
       ],
@@ -1730,11 +3163,35 @@
         "Сфотографируйте цель рядом с водонапорными башнями на поле битвы у дамбы.",
         "Сфотографируйте футбольные журналы в любом киоске Погребенного города."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_League"
+      "hints": [
+        "Сдутый футбольный мяч: ищите в местах с лутом: жилые (Residential).",
+        "Велосипедный насос: ищите в местах с лутом: жилые (Residential)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_League",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797943",
+      "guide": {
+        "text": [
+          "На поле битвы у дамбы, у водонапорных башен, прямо рядом с одной из башен стоит квестовый ящик. В нём сдутый футбольный мяч."
+        ],
+        "images": [
+          {
+            "file": "guides/the_league/01.jpg",
+            "caption": "Один из киосков чуть севернее станции Марано",
+            "source": "https://arcraiders.wiki/wiki/File:Location_on_Map.png"
+          },
+          {
+            "file": "guides/the_league/02.jpg",
+            "caption": "Киоск в Погребенном городе у станции Марано",
+            "source": "https://arcraiders.wiki/wiki/File:Kiosk_on_Buried_City.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+League+quest+guide"
     },
     {
       "id": "the_majors_footlocker",
       "name": "Личные вещи майора",
+      "official_name": true,
       "aliases": [
         "The Major’s Footlocker"
       ],
@@ -1750,11 +3207,30 @@
         "Найдите памятные вещи майора Айвы в апартаментах к северо-западу от дамбы.",
         "Доставьте Тянь Вэнь памятные вещи майора Айвы."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Major’s_Footlocker"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Major's_Footlocker",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802355",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/the_majors_footlocker/01.jpg",
+            "caption": "Сундук майора на карте",
+            "source": "https://arcraiders.wiki/wiki/File:Majors_footlocker_map.jpg"
+          },
+          {
+            "file": "guides/the_majors_footlocker/02.jpg",
+            "caption": "Цель на 3-м этаже",
+            "source": "https://arcraiders.wiki/wiki/File:Majors_footlocker_obj.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Major%E2%80%99s+Footlocker+quest+guide"
     },
     {
       "id": "the_right_tool",
       "name": "Подходящий инструмент",
+      "official_name": true,
       "aliases": [
         "The Right Tool"
       ],
@@ -1767,11 +3243,26 @@
         "Уничтожьте «Шершня»",
         "Уничтожьте «Турель»"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Right_Tool"
+      "hints": [
+        "«Огнешар»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: ядро открывается, когда он стреляет из огнемёта.",
+        "«Шершень»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные задние двигатели.",
+        "«Турель»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: без брони, достаточно просто стрелять."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Right_Tool",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700015",
+      "guide": {
+        "text": [
+          "Нужные машины ARC можно уничтожать любым оружием.",
+          "«Шершни» обычно патрулируют открытые места. «Огнешары» и турели обычно стоят внутри зданий."
+        ],
+        "images": []
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Right+Tool+quest+guide"
     },
     {
       "id": "the_root_of_the_matter",
       "name": "Суть проблемы",
+      "official_name": true,
       "aliases": [
         "The Root of the Matter"
       ],
@@ -1788,11 +3279,32 @@
         "Найдите сейф с семенами в «комнате с красивым видом».",
         "Доставьте Селесте экспериментальный образец семян."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Root_of_the_Matter"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Root_of_the_Matter",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8795995",
+      "guide": {
+        "text": [
+          "«Комната с отличным видом» выходит на парк в северной части здания, на том этаже, где сходятся зиплайны вверх и вниз."
+        ],
+        "images": [
+          {
+            "file": "guides/the_root_of_the_matter/01.jpg",
+            "caption": "Комната на карте",
+            "source": "https://arcraiders.wiki/wiki/File:11111.png"
+          },
+          {
+            "file": "guides/the_root_of_the_matter/02.jpg",
+            "caption": "Комната с отличным видом",
+            "source": "https://arcraiders.wiki/wiki/File:22222.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Root+of+the+Matter+quest+guide"
     },
     {
       "id": "the_stench_of_corruption",
       "name": "Попахивает коррупцией",
+      "official_name": true,
       "aliases": [
         "The Stench of Corruption"
       ],
@@ -1809,11 +3321,40 @@
         "Доберитесь до туннелей под космопортом.",
         "Найдите любой промывочный терминал и используйте ключ для обхода протокола."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Stench_of_Corruption"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Stench_Of_Corruption",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797920",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/the_stench_of_corruption/01.jpg",
+            "caption": "Где раздевалка персонала в зоне отправления",
+            "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Door_Staff_Locker_Room.png"
+          },
+          {
+            "file": "guides/the_stench_of_corruption/02.jpg",
+            "caption": "Дверь в раздевалку персонала",
+            "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Door_Staff_Locker_Room_2.png"
+          },
+          {
+            "file": "guides/the_stench_of_corruption/03.jpg",
+            "caption": "Где найти ключ в раздевалке персонала",
+            "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Staff_Locker_Room_Key_Interaction.png"
+          },
+          {
+            "file": "guides/the_stench_of_corruption/04.jpg",
+            "caption": "Где использовать ключ в подземных туннелях",
+            "source": "https://arcraiders.wiki/wiki/File:The_Stench_Of_Corruption_Tunnels_Key_Interaction.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Stench+of+Corruption+quest+guide"
     },
     {
       "id": "the_trifecta",
       "name": "Триада",
+      "official_name": true,
       "aliases": [
         "The Trifecta"
       ],
@@ -1838,11 +3379,22 @@
         "Уничтожьте «Стукача»",
         "Добудьте сканер «Стукача» для Шани"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/The_Trifecta"
+      "hints": [
+        "«Шершень»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные задние двигатели.",
+        "«Стукач»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: двигатели или пластины снизу.",
+        "«Оса»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные двигатели.",
+        "Драйвер Осы: выпадает из машин: «Оса».",
+        "Драйвер Шершня: выпадает из машин: «Шершень»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/The_Trifecta",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700084",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+The+Trifecta+quest+guide"
     },
     {
       "id": "trash_into_treasure",
       "name": "И хлам богатство",
+      "official_name": true,
       "aliases": [
         "Trash Into Treasure"
       ],
@@ -1857,11 +3409,19 @@
         "Добудьте провода (6)",
         "Добудьте 1 батарею"
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure"
+      "hints": [
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological).",
+        "Батарея: ищите в местах с лутом: технологии (Technological), электрика (Electrical)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8699996",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Trash+Into+Treasure+quest+guide"
     },
     {
       "id": "tribute_to_toledo",
       "name": "Дань уважения Толедо",
+      "official_name": true,
       "aliases": [
         "Tribute to Toledo"
       ],
@@ -1874,11 +3434,23 @@
       "steps": [
         "Добудьте элемент питания для Селесты."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Tribute_to_Toledo"
+      "hints": [
+        "Энергетический стержень: ищите в местах с лутом: Исход (Exodus)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Tribute_To_Toledo",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797813",
+      "guide": {
+        "text": [
+          "В крайнем случае энергетический стержень можно получить, разобрав крюк с защелкой. Другой вариант — обыскать в центре производства энергии на поле битвы у дамбы механизмы, которые можно вскрыть: из них энергетические стержни выпадают чаще."
+        ],
+        "images": []
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Tribute+to+Toledo+quest+guide"
     },
     {
       "id": "turnabout",
       "name": "Разворот",
+      "official_name": true,
       "aliases": [
         "Turnabout"
       ],
@@ -1892,11 +3464,16 @@
         "Идите к северной траншейной вышке.",
         "Найдите файлы для шантажа и передайте их Селесте."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Turnabout"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Turnabout",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797842",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Turnabout+quest+guide"
     },
     {
       "id": "unexpected_initiative",
       "name": "Неожиданное дело",
+      "official_name": true,
       "aliases": [
         "Unexpected Initiative"
       ],
@@ -1917,11 +3494,40 @@
         "Доставьте Тянь Вэнь измеритель питательных веществ.",
         "Доставьте Тянь Вэнь измеритель влажности."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Unexpected_Initiative"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Unexpected_Initiative",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802121",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/unexpected_initiative/01.jpg",
+            "caption": "Крыша на Пьяцца Рома",
+            "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_123742.png"
+          },
+          {
+            "file": "guides/unexpected_initiative/02.jpg",
+            "caption": "Измеритель питательных веществ на Пьяцца Рома",
+            "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_123756.png"
+          },
+          {
+            "file": "guides/unexpected_initiative/03.jpg",
+            "caption": "Крыша апартаментов «Грандиозо»",
+            "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_124507.png"
+          },
+          {
+            "file": "guides/unexpected_initiative/04.jpg",
+            "caption": "Квестовый предмет в апартаментах «Грандиозо»",
+            "source": "https://arcraiders.wiki/wiki/File:Sn%C3%ADmek_obrazovky_2025-11-16_124441.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Unexpected+Initiative+quest+guide"
     },
     {
       "id": "untended_garden",
       "name": "Запущенный сад",
+      "official_name": true,
       "aliases": [
         "Untended Garden"
       ],
@@ -1936,11 +3542,37 @@
         "Получите доступ к архиву данных в одном из куполов.",
         "Загрузите данные через терминал любой полевой станции."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Untended_Garden"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Untended_Garden",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8795989",
+      "guide": {
+        "text": [
+          "Данные — в одном из компьютеров в самом северо-западном куполе."
+        ],
+        "images": [
+          {
+            "file": "guides/untended_garden/01.jpg",
+            "caption": "Здание с данными",
+            "source": "https://arcraiders.wiki/wiki/File:Dome_map.png"
+          },
+          {
+            "file": "guides/untended_garden/02.jpg",
+            "caption": "Скачайте исследовательские данные с компьютерного терминала",
+            "source": "https://arcraiders.wiki/wiki/File:Dome_3p.jpg"
+          },
+          {
+            "file": "guides/untended_garden/03.jpg",
+            "caption": "Загрузите данные на любой полевой станции. Ближайшая — к юго-западу от здания с данными, её видно на карте.",
+            "source": "https://arcraiders.wiki/wiki/File:Field_depot_3p.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Untended+Garden+quest+guide"
     },
     {
       "id": "waking_the_grid",
       "name": "Пробуждение сети",
+      "official_name": true,
       "aliases": [
         "Waking the Grid"
       ],
@@ -1955,11 +3587,37 @@
         "Включите в работу центр обеспечения безопасности в зоне отправления.",
         "Поищите свидетельства взлома в станции данных в зоне прилета."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Waking_the_Grid"
+      "hints": [
+        "Датчики: выпадает из машин: «Стукач», «Наводчик»; ищите в местах с лутом: охрана (Security), технологии (Technological)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Waking_the_Grid",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805119",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/waking_the_grid/01.jpg",
+            "caption": "Включение датчиков охраны",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Activate_Security_Sensors.png"
+          },
+          {
+            "file": "guides/waking_the_grid/02.jpg",
+            "caption": "Запуск электросети",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Bring_Online.png"
+          },
+          {
+            "file": "guides/waking_the_grid/03.jpg",
+            "caption": "Перерезание проводов сигнализации",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Waking_The_Grid_Cut_The_Wires.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Waking+the+Grid+quest+guide"
     },
     {
       "id": "water_troubles",
       "name": "Проблемы с водой",
+      "official_name": true,
       "aliases": [
         "Water Troubles"
       ],
@@ -1974,11 +3632,40 @@
         "Найдите точку забора воды района.",
         "Возьмите пробу воды."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Water_Troubles"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Water_Troubles",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8796025",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/water_troubles/01.jpg",
+            "caption": "Туннель к переливу — на внешней стене дамбы",
+            "source": "https://arcraiders.wiki/wiki/File:19a74975eb49-screenshotUrl.png"
+          },
+          {
+            "file": "guides/water_troubles/02.jpg",
+            "caption": "Войдите в туннель к переливу",
+            "source": "https://arcraiders.wiki/wiki/File:19a74976ee85-screenshotUrl.png"
+          },
+          {
+            "file": "guides/water_troubles/03.jpg",
+            "caption": "В конце туннеля слева находится водозабор",
+            "source": "https://arcraiders.wiki/wiki/File:19a7497782360-screenshotUrl.png"
+          },
+          {
+            "file": "guides/water_troubles/04.jpg",
+            "caption": "Возьмите пробу воды",
+            "source": "https://arcraiders.wiki/wiki/File:19a74978b2021-screenshotUrl.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Water+Troubles+quest+guide"
     },
     {
       "id": "what_goes_around",
       "name": "Что посеешь...",
+      "official_name": true,
       "aliases": [
         "What Goes Around"
       ],
@@ -1989,11 +3676,19 @@
       "steps": [
         "Уничтожьте любую машину ARC, используя горелку «Огнешара»."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/What_Goes_Around"
+      "hints": [
+        "«Огнешар»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: ядро открывается, когда он стреляет из огнемёта.",
+        "Горелка Огнешара: выпадает из машин: «Огнешар»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/What_Goes_Around",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793799",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+What+Goes+Around+quest+guide"
     },
     {
       "id": "what_we_left_behind",
       "name": "Следы прошлого",
+      "official_name": true,
       "aliases": [
         "What We Left Behind"
       ],
@@ -2010,11 +3705,16 @@
         "Поищите что-нибудь полезное в аванпосте на южном болоте на поле битвы у дамбы.",
         "Поищите что-нибудь полезное в убежище Бильгуна рядом с хранилищем контейнеров в космопорте."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/What_We_Left_Behind"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/What_We_Left_Behind",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793458",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+What+We+Left+Behind+quest+guide"
     },
     {
       "id": "with_a_trace",
       "name": "По горячим следам",
+      "official_name": true,
       "aliases": [
         "With A Trace"
       ],
@@ -2030,11 +3730,40 @@
         "Осмотрите украшенные обломки",
         "Осмотрите устройство связи."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/With_A_Trace"
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/With_A_Trace",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798549",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/with_a_trace/01.jpg",
+            "caption": "Знаки",
+            "source": "https://arcraiders.wiki/wiki/File:The_Signs.png"
+          },
+          {
+            "file": "guides/with_a_trace/02.jpg",
+            "caption": "Где знаки",
+            "source": "https://arcraiders.wiki/wiki/File:The_Signs_Location.png"
+          },
+          {
+            "file": "guides/with_a_trace/03.jpg",
+            "caption": "Где устройство связи / украшенные обломки",
+            "source": "https://arcraiders.wiki/wiki/File:Adorned_Wreckage_Location.jpg"
+          },
+          {
+            "file": "guides/with_a_trace/04.jpg",
+            "caption": "Осмотрите устройство связи",
+            "source": "https://arcraiders.wiki/wiki/File:Inspect_the_communication_device.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+With+A+Trace+quest+guide"
     },
     {
       "id": "with_a_view",
       "name": "С видом",
+      "official_name": true,
       "aliases": [
         "With a View"
       ],
@@ -2054,11 +3783,19 @@
         "Используйте ближайший компьютер, чтобы было проще определить правильные детали.",
         "Доставьте Шани ионный распылитель."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/With_a_View"
+      "hints": [
+        "Поворотный энкодер: ищите в местах с лутом: Исход (Exodus).",
+        "Ионный распылитель: ищите в местах с лутом: Исход (Exodus)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/With_a_View",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8794017",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+With+a+View+quest+guide"
     },
     {
       "id": "worth_your_salt",
       "name": "Мастер своего дела",
+      "official_name": true,
       "aliases": [
         "Worth Your Salt"
       ],
@@ -2075,7 +3812,521 @@
         "Используйте машины, чтобы зарядить батарею.",
         "Доставьте заряженную батарею в условную точку в углу."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Worth_Your_Salt"
+      "hints": [
+        "Батарея: ищите в местах с лутом: технологии (Technological), электрика (Electrical)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Worth_Your_Salt",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8692173",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/worth_your_salt/01.jpg",
+            "caption": "Как найти прототип батареи",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Search_For_Battery.png"
+          },
+          {
+            "file": "guides/worth_your_salt/02.jpg",
+            "caption": "Использование промышленного зарядного устройства",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Charge_Battery.png"
+          },
+          {
+            "file": "guides/worth_your_salt/03.jpg",
+            "caption": "Доставка прототипа батареи",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Worth_Your_Salt_Place_Battery.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Worth+Your+Salt+quest+guide"
+    },
+    {
+      "id": "a_path_not_yours",
+      "name": "Чужими путями",
+      "official_name": true,
+      "aliases": [
+        "A Path Not Yours"
+      ],
+      "trader": "Посланник кочевников",
+      "locations": [
+        "the_blue_gate"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите начало кочевой тропы под обвалом на шоссе",
+        "Идите по меткам на тропе до убежища кочевников",
+        "Найдите подарок Бильгуна в закопанном тайнике под убежищем",
+        "(Необязательно) Обыщите секретный тайник в убежище Бильгуна",
+        "Отдайте сломанный компас посланнику кочевников"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/A_Path_Not_Yours",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373901",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/a_path_not_yours/01.jpg",
+            "caption": "Как найти лагерь кочевников",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png"
+          },
+          {
+            "file": "guides/a_path_not_yours/02.jpg",
+            "caption": "Экваториальные солнечные часы на верху церкви",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+A+Path+Not+Yours+quest+guide"
+    },
+    {
+      "id": "bait_fetch_blast",
+      "name": "Убойная Наживка",
+      "official_name": true,
+      "aliases": [
+        "Bait, Fetch, Blast"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте «Задиру»",
+        "Уничтожьте голову «Задиры»",
+        "Уничтожьте 4 ноги «Задиры»",
+        "Доставьте Аполлону фрагментатор «Задиры»"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Bait,_Fetch,_Blast",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370530",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Bait%2C+Fetch%2C+Blast+quest+guide"
+    },
+    {
+      "id": "belly_of_the_beast",
+      "name": "В пасти чудища",
+      "official_name": true,
+      "aliases": [
+        "Belly Of The Beast"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "(Необязательно) Найдите переходник для шлюза «Императора»",
+        "Проникните внутрь «Императора»",
+        "Выясните, откуда берётся энергия внутри «Императора»",
+        "Выясните, что происходит с грузами «Харвестера», попадающими в «Императора»",
+        "Найдите, где хранятся грузы «Харвестера», отправленные в «Императора»",
+        "Обыщите 5 контейнеров внутри «Императора»",
+        "Добудьте уникальный предмет из «Императора»"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Belly_Of_The_Beast",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9375416",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Belly+Of+The+Beast+quest+guide"
+    },
+    {
+      "id": "boarding_the_frigate",
+      "name": "На борту «Фрегата»",
+      "official_name": true,
+      "aliases": [
+        "Boarding The Frigate"
+      ],
+      "trader": "Селеста",
+      "locations": [],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Придумайте, как забраться на «Фрегат»",
+        "Нанесите урон «Hydra»",
+        "Нанесите урон «Vaporizer»",
+        "Нанесите урон «Ракетчику»"
+      ],
+      "hints": [
+        "«Ракетчик»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: уничтожьте два двигателя или стреляйте в ядро снизу."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Boarding_The_Frigate",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373916",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Boarding+The+Frigate+quest+guide"
+    },
+    {
+      "id": "celeste_s_childhood_drawings",
+      "name": "Детские рисунки Селесты",
+      "official_name": true,
+      "aliases": [
+        "Celeste's Childhood Drawings"
+      ],
+      "trader": "Лэнс",
+      "locations": [
+        "riven_tides"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите детскую комнату Селесты в отеле Panorama Azzurro",
+        "Поищите что-нибудь важное в комнате Селесты",
+        "Найдите рисунок на крыше третьего здания таможни",
+        "Найдите рисунок на набережной"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Celeste's_Childhood_Drawings",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369742",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Celeste%27s+Childhood+Drawings+quest+guide"
+    },
+    {
+      "id": "celeste_s_teenage_rebellion",
+      "name": "Подростковое бунтарство Селесты",
+      "official_name": true,
+      "aliases": [
+        "Celeste's Teenage Rebellion"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "riven_tides"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Доберитесь до наблюдательной вышки на центральном холме",
+        "Поделитесь геолокацией с верхушки вышки",
+        "(Необязательно) Заметьте 3 машины ARC с наблюдательной вышки",
+        "Доберитесь до старого рейдерского лагеря у отеля с видом на пляж",
+        "Найдите радиопередатчик в лагере рейдеров",
+        "Найдите большую антенну с видом на гавань Бурных потоков",
+        "Заварите сломанный генератор",
+        "Включите передатчик"
+      ],
+      "hints": [
+        "Радио: ищите в местах с лутом: торговые (Commercial), жилые (Residential)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Celeste's_Teenage_Rebellion",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369762",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Celeste%27s+Teenage+Rebellion+quest+guide"
+    },
+    {
+      "id": "clean_hands",
+      "name": "Чистые руки",
+      "official_name": true,
+      "aliases": [
+        "Clean Hands"
+      ],
+      "trader": "Посланник кочевников",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Найдите лагерь кочевников под железнодорожной станцией",
+        "Обыщите загрязнённый предмет в лагере кочевников",
+        "Отнесите экваториальные солнечные часы на верх церкви в Старом городе",
+        "Отдайте экваториальные солнечные часы посланнику кочевников"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Clean_Hands",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373397",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/clean_hands/01.jpg",
+            "caption": "Как найти лагерь кочевников",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png"
+          },
+          {
+            "file": "guides/clean_hands/02.jpg",
+            "caption": "Экваториальные солнечные часы на верху церкви",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Clean+Hands+quest+guide"
+    },
+    {
+      "id": "divided",
+      "name": "Границы",
+      "official_name": true,
+      "aliases": [
+        "Divided"
+      ],
+      "trader": "Посланник кочевников",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Найдите запись кочевников на погрузочной платформе",
+        "Найдите запись кочевников на метеостанции",
+        "Найдите запись кочевников на диспетчерской башне",
+        "Найдите запись кочевников на станции Almatera"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Divided",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9385701",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/divided/01.jpg",
+            "caption": "Запись на погрузочной платформе",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Loading_Platform.png"
+          },
+          {
+            "file": "guides/divided/02.jpg",
+            "caption": "Запись на метеостанции",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Weather_Station.png"
+          },
+          {
+            "file": "guides/divided/03.jpg",
+            "caption": "Запись на диспетчерской башне",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Dispatch_Tower.png"
+          },
+          {
+            "file": "guides/divided/04.jpg",
+            "caption": "Запись на станции Almatera",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Divided_Almatera_Station.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Divided+quest+guide"
+    },
+    {
+      "id": "exploring_pendola_pass",
+      "name": "Прогулка по перевалу Пендола",
+      "official_name": true,
+      "aliases": [
+        "Exploring Pendola Pass"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Уничтожьте машины ARC (20)",
+        "Найдите источник питания в диспетчерской обсерватории «Чело Серено»",
+        "Подключитесь к антенне на самой высокой башне железнодорожной станции, используя 1 провод",
+        "Обыщите 3 контейнера в супермаркете Commissary"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Exploring_Pendola_Pass",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369853",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Exploring+Pendola+Pass+quest+guide"
+    },
+    {
+      "id": "ruins_and_reverberations",
+      "name": "Обломки и отголоски",
+      "official_name": true,
+      "aliases": [
+        "Ruins And Reverberations"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Подключите передатчик «Наводчика» к антенне на крыше обсерватории «Чело Серено»",
+        "Заварите провода в техническом подполье под диспетчерской, чтобы перенаправить питание",
+        "Снова включите передатчик Наводчика у антенны"
+      ],
+      "hints": [
+        "«Наводчик»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: небронированные двигатели.",
+        "Передатчик Наводчика: выпадает из машин: «Наводчик».",
+        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological)."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Ruins_And_Reverberations",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370064",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Ruins+And+Reverberations+quest+guide"
+    },
+    {
+      "id": "sizing_things_up",
+      "name": "Глазомер",
+      "official_name": true,
+      "aliases": [
+        "Sizing Things Up"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Сфотографируйте ногу «Императора» возле моста у Старого города",
+        "(Необязательно) Вскройте упавший зонд у ноги «Императора» возле станции Almatera",
+        "Осмотрите схемы внутри зонда",
+        "Изучите открытый участок на ноге «Императора» у железнодорожного узла",
+        "Доберитесь до основания «Императора»",
+        "Обыщите закопанный груз «Харвестера»",
+        "Отдайте Селесте токопроводящую муфту ARC (ARC Conductive Coupler)"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Sizing_Things_Up",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369806",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Sizing+Things+Up+quest+guide"
+    },
+    {
+      "id": "taking_stock",
+      "name": "Инвентаризация",
+      "official_name": true,
+      "aliases": [
+        "Taking Stock"
+      ],
+      "trader": "Посланник кочевников",
+      "locations": [
+        "stella_montis",
+        "the_spaceport",
+        "dam_battlegrounds",
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "В Стелла Монтис сфотографируйте скульптуру в атриуме",
+        "В космопорте сфотографируйте обломки «Барона»",
+        "На поле битвы у дамбы отметьте «Бомбардира»",
+        "В Погребенном городе отметьте «Бастион»",
+        "Отдайте посланнику кочевников 3 промышленные батареи"
+      ],
+      "hints": [
+        "«Бастион»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: уничтожьте канистру на спине, чтобы открыть уязвимое место.",
+        "«Бомбардир»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: стреляйте в жёлтую канистру сзади — урон идёт прямо в ядро."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Taking_Stock",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373889",
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/taking_stock/01.jpg",
+            "caption": "Как найти лагерь кочевников",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Nomad_Item.png"
+          },
+          {
+            "file": "guides/taking_stock/02.jpg",
+            "caption": "Экваториальные солнечные часы на верху церкви",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Clean_Hands_Hold_Item.png"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Taking+Stock+quest+guide"
+    },
+    {
+      "id": "to_the_skies",
+      "name": "В Небеса",
+      "official_name": true,
+      "aliases": [
+        "To The Skies"
+      ],
+      "trader": "Аполлон",
+      "locations": [
+        "dam_battlegrounds",
+        "the_blue_gate",
+        "the_spaceport",
+        "riven_tides"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Отсканируйте любой разбившийся зонд ARC",
+        "Отсканируйте любого доставщика ARC",
+        "Найдите прототип гондолы у Красных озёр",
+        "Найдите прототип гондолы на фермерских угодьях",
+        "Найдите прототип гондолы на восточных равнинах",
+        "Найдите прототип гондолы наверху высохшего русла реки",
+        "Установите высокопрочную сталь ARC",
+        "Установите поп-триггер ARC",
+        "Установите синтетическую смолу ARC",
+        "Установите термоподкладку ARC",
+        "Запустите прототип гондолы"
+      ],
+      "hints": [
+        "«Поп»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город, Стелла Монтис. Слабое место: достаточно просто стрелять.",
+        "Высокопрочная сталь ARC: выпадает из машин: «Прыгун», «Матриарх», «Королева».",
+        "Синтетическая смола ARC: выпадает из машин: «Матриарх», «Страж», «Стукач», «Королева».",
+        "Термоподкладка ARC: выпадает из машин: «Поп», «Страж», «Королева».",
+        "Поп-триггер: выпадает из машин: «Поп»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/To_The_Skies",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370187",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+To+The+Skies+quest+guide"
+    },
+    {
+      "id": "tracks_of_the_beast",
+      "name": "Следы чудища",
+      "official_name": true,
+      "aliases": [
+        "Tracks Of The Beast"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "pendola_pass"
+      ],
+      "one_round": true,
+      "required_items": [],
+      "steps": [
+        "Отправляйтесь к Северным путям от перевала Пендола",
+        "Найдите разрушенную станцию в конце путей",
+        "Отметьте «Задиру»",
+        "Отметьте «Проныру»",
+        "(Необязательно) Уничтожьте 3 «Проныры»",
+        "(Необязательно) Отдайте Шани целеуказатель «Проныры»"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Tracks_Of_The_Beast",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370485",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Tracks+Of+The+Beast+quest+guide"
+    },
+    {
+      "id": "wires_crossed",
+      "name": "Провода Крестиком",
+      "official_name": true,
+      "aliases": [
+        "Wires Crossed"
+      ],
+      "trader": "Селеста",
+      "locations": [
+        "the_blue_gate",
+        "the_spaceport",
+        "buried_city"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Прикрепите сканер «Стукача» к антенне на Вершине странника у Синих ворот",
+        "В космопорте прикрепите сейф Наблюдателя к антенне на верху стартовых башен",
+        "В Погребенном городе прикрепите огневое ядро стража к антенне на крыше апартаментов «Грандиозо»"
+      ],
+      "hints": [
+        "«Страж»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: главная цель — жёлтая небронированная канистра.",
+        "«Стукач»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: двигатели или пластины снизу.",
+        "«Наблюдатель»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: открывает энергетическое ядро, когда бьёт синим лучом в небо.",
+        "Огневое ядро стража: выпадает из машин: «Страж».",
+        "Сканер Стукача: выпадает из машин: «Стукач»."
+      ],
+      "wiki_url": "https://arcraiders.wiki/wiki/Wires_Crossed",
+      "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369917",
+      "guide": null,
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Wires+Crossed+quest+guide"
     }
   ]
 }

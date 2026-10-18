@@ -5,3 +5,4 @@ build/
 dist/
 *.spec
 .pytest_cache/
+мои_скриншоты/

@@ -4,20 +4,26 @@ from __future__ import annotations
 
 import sys
 
-from PyQt6.QtCore import Qt
-from PyQt6.QtGui import QAction, QColor, QFont, QIcon, QPainter, QPixmap
+from PyQt6.QtCore import Qt, QUrl
+from PyQt6.QtGui import QAction, QColor, QDesktopServices, QFont, QIcon, QPainter, QPixmap
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import winapi
+from . import guide, winapi
 from .input_window import InputWindow
+from .net import CachedDownloader
 from .overlay import OverlayCard
 from .quest_db import QuestDB
 
 MODS = winapi.MOD_CONTROL | winapi.MOD_SHIFT
 HOTKEY_INPUT = "Ctrl+Shift+Q"
+GUIDE_HINT = "Ctrl+Shift+G — гайд со скриншотами"
+STEAM_GUIDE_URL = "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520"
+STEAM_MAX_AGE = 24 * 60 * 60  # руководство перекачивается раз в сутки
 HOTKEY_HELP = (
     f"{HOTKEY_INPUT} — ввести квест\n"
     "Ctrl+Shift+→ / ← — следующий / предыдущий шаг\n"
+    "Ctrl+Shift+G — гайд со скриншотами, Ctrl+Shift+↑ / ↓ — листать\n"
+    "Ctrl+Shift+O — открыть гайд в браузере\n"
     "Ctrl+Shift+X — спрятать / показать карточку\n"
     "Выход — через меню значка в трее"
 )
@@ -42,7 +48,13 @@ class OverlayApp:
     def __init__(self, app: QApplication):
         self.app = app
         self.db = QuestDB.load()
-        self.card = OverlayCard(self.db, HOTKEY_INPUT)
+        self.card = OverlayCard(self.db, HOTKEY_INPUT, GUIDE_HINT)
+        self.downloader = CachedDownloader()
+        self.guide_mode = False
+        self.pages: list[guide.GuidePage] = []
+        self.page_index = 0
+        self.steam_pages: dict[str, list[guide.GuidePage]] = {}  # id раздела → страницы
+        self.steam_status = ""
         self.input = InputWindow()
         self.input.submitted.connect(self.on_submitted)
 
@@ -55,6 +67,10 @@ class OverlayApp:
                 ("Ctrl+Shift+→", winapi.VK_RIGHT, self.next_step),
                 ("Ctrl+Shift+←", winapi.VK_LEFT, self.prev_step),
                 ("Ctrl+Shift+X", winapi.VK_X, self.toggle_card),
+                ("Ctrl+Shift+G", winapi.VK_G, self.toggle_guide),
+                ("Ctrl+Shift+↓", winapi.VK_DOWN, self.next_page),
+                ("Ctrl+Shift+↑", winapi.VK_UP, self.prev_page),
+                ("Ctrl+Shift+O", winapi.VK_O, self.open_guide_in_browser),
             ]
             if not self.hotkeys.register(MODS, vk, callback)
         ]
@@ -82,10 +98,25 @@ class OverlayApp:
         enter.triggered.connect(self.input.open)
         self._toggle_action = QAction("Спрятать карточку", menu)
         self._toggle_action.triggered.connect(self.toggle_card)
+        self._quest_actions = []
+        for title, handler in [
+            ("Гайд со скриншотами", self.toggle_guide),
+            ("Открыть гайд в Steam", lambda: self._open(self.card.quest and self.card.quest.steam_url)),
+            ("Найти видео на YouTube", lambda: self._open(self.card.quest and self.card.quest.video_url)),
+            ("Открыть страницу на вики", lambda: self._open(self.card.quest and self.card.quest.wiki_url)),
+            ("Папка моих скриншотов для квеста", self.open_user_folder),
+        ]:
+            action = QAction(title, menu)
+            action.triggered.connect(handler)
+            action.setEnabled(False)
+            self._quest_actions.append(action)
         quit_action = QAction("Выход", menu)
         quit_action.triggered.connect(self.app.quit)
         menu.addAction(enter)
         menu.addAction(self._toggle_action)
+        menu.addSeparator()
+        for action in self._quest_actions:
+            menu.addAction(action)
         menu.addSeparator()
         menu.addAction(quit_action)
         tray.setContextMenu(menu)
@@ -106,12 +137,112 @@ class OverlayApp:
         self.set_card_visible(not self.card.isVisible())
 
     def next_step(self):
+        self.guide_mode = False
         self.card.next_step()
         self.set_card_visible(True)
 
     def prev_step(self):
+        self.guide_mode = False
         self.card.prev_step()
         self.set_card_visible(True)
+
+    # --- гайд -------------------------------------------------------------
+
+    def toggle_guide(self):
+        if self.card.quest is None:
+            return
+        self.guide_mode = not self.guide_mode
+        if self.guide_mode:
+            self.rebuild_pages()  # игрок мог добавить свои скриншоты
+            self.render_page()
+        else:
+            self.card.show_step()
+        self.set_card_visible(True)
+
+    def next_page(self):
+        self._turn_page(+1)
+
+    def prev_page(self):
+        self._turn_page(-1)
+
+    def _turn_page(self, delta: int):
+        if self.card.quest is None:
+            return
+        if self.guide_mode and self.pages:
+            self.page_index = max(0, min(len(self.pages) - 1, self.page_index + delta))
+        self.guide_mode = True
+        self.render_page()
+        self.set_card_visible(True)
+
+    def rebuild_pages(self):
+        quest = self.card.quest
+        if quest is None:
+            self.pages = []
+            return
+        section = guide.steam_section_id(quest.steam_url)
+        pages = list(self.steam_pages.get(section, []))
+        pages += guide.wiki_pages(quest) + guide.user_pages(quest)
+        if quest.hints:
+            pages.append(guide.GuidePage("подсказки", "Подсказки", "\n".join("• " + h for h in quest.hints)))
+        self.pages = pages
+        self.page_index = min(self.page_index, max(0, len(pages) - 1))
+
+    def render_page(self):
+        if not self.guide_mode or self.card.quest is None:
+            return
+        if not self.pages:
+            self.card.show_guide_page(None, 0, 0, self.steam_status)
+            return
+        page = self.pages[self.page_index]
+        self.card.show_guide_page(page, self.page_index, len(self.pages), self.steam_status)
+        if not page.image:
+            return
+        if page.image.startswith("http"):
+            self.card.set_image(None, "Загружаю скриншот…")
+            self.downloader.get(page.image, lambda path, p=page: self._image_ready(p, path))
+        else:
+            self.card.set_image(QPixmap(page.image))
+
+    def _image_ready(self, page: guide.GuidePage, path):
+        if self.guide_mode and self.pages and self.pages[self.page_index] is page:
+            self.card.set_image(QPixmap(str(path)) if path else None, "" if path else "Скриншот не загрузился")
+
+    def load_steam_guide(self):
+        quest = self.card.quest
+        section = guide.steam_section_id(quest.steam_url) if quest else None
+        if not section or section in self.steam_pages:
+            self.steam_status = ""
+            return
+        self.steam_status = "Загружаю гайд из Steam…"
+
+        def ready(path):
+            pages = []
+            if path:
+                pages = guide.parse_steam_section(path.read_text(encoding="utf-8", errors="replace"), section)
+            self.steam_pages[section] = pages
+            self.steam_status = "" if pages else "Гайд из Steam не загрузился — открой его в браузере (Ctrl+Shift+O)"
+            current = self.card.quest
+            if current and guide.steam_section_id(current.steam_url) == section:
+                self.rebuild_pages()
+                self.render_page()
+
+        self.downloader.get(STEAM_GUIDE_URL, ready, max_age=STEAM_MAX_AGE)
+
+    def open_guide_in_browser(self):
+        quest = self.card.quest
+        if quest:
+            self._open(quest.steam_url or quest.video_url)
+
+    def open_user_folder(self):
+        quest = self.card.quest
+        if quest:
+            folder = guide.user_folder(quest)
+            folder.mkdir(parents=True, exist_ok=True)
+            QDesktopServices.openUrl(QUrl.fromLocalFile(str(folder)))
+
+    def _open(self, url: str | None):
+        if url:
+            QDesktopServices.openUrl(QUrl(url))
 
     def on_submitted(self, quest_name: str, location: str):
         quest = self.db.find(quest_name)
@@ -120,6 +251,12 @@ class OverlayApp:
             self.input.show_error(f"Квест «{quest_name.strip()}» не найден в базе. Например: {examples}.")
             return
         self.card.show_quest(quest, location)
+        self.guide_mode = False
+        self.page_index = 0
+        for action in self._quest_actions:
+            action.setEnabled(True)
+        self.load_steam_guide()
+        self.rebuild_pages()
         self.set_card_visible(True)
         self.input.close_and_return_focus()
 

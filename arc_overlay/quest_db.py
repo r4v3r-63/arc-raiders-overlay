@@ -8,13 +8,15 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DEFAULT_DB_PATH = Path(__file__).parent / "data" / "quests.json"
+DATA_DIR = Path(__file__).resolve().parent / "data"
+DEFAULT_DB_PATH = DATA_DIR / "quests.json"
 
 
 @dataclass
 class GameMap:
     id: str
     name: str
+    name_ru: str = ""
     aliases: list[str] = field(default_factory=list)
 
 
@@ -27,7 +29,13 @@ class Quest:
     locations: list[str] = field(default_factory=list)  # id карт; пусто — любая карта
     one_round: bool = False
     required_items: list[str] = field(default_factory=list)
+    hints: list[str] = field(default_factory=list)
+    guide: dict | None = None  # {"text": [...], "images": [{"file", "caption"}]} с вики
     wiki_url: str = ""
+    steam_url: str | None = None
+    video_url: str = ""
+    official_name: bool = True
+    id: str = ""
 
     @property
     def english_name(self) -> str:
@@ -51,14 +59,17 @@ class QuestDB:
                 self._by_name.setdefault(normalize(name), q)
         self._map_by_name: dict[str, GameMap] = {}
         for m in self.maps.values():
-            for name in [m.name, *m.aliases]:
+            for name in [m.name, m.name_ru, *m.aliases]:
                 self._map_by_name.setdefault(normalize(name), m)
 
     @classmethod
     def load(cls, path: Path = DEFAULT_DB_PATH) -> "QuestDB":
         with open(path, encoding="utf-8") as f:
             data = json.load(f)
-        maps = [GameMap(id=m["id"], name=m["name"], aliases=list(m.get("aliases", []))) for m in data.get("maps", [])]
+        maps = [
+            GameMap(id=m["id"], name=m["name"], name_ru=m.get("name_ru", ""), aliases=list(m.get("aliases", [])))
+            for m in data.get("maps", [])
+        ]
         quests = [
             Quest(
                 name=item["name"],
@@ -68,7 +79,13 @@ class QuestDB:
                 locations=list(item.get("locations", [])),
                 one_round=bool(item.get("one_round", False)),
                 required_items=list(item.get("required_items", [])),
+                hints=list(item.get("hints", [])),
+                guide=item.get("guide"),
                 wiki_url=item.get("wiki_url", ""),
+                steam_url=item.get("steam_url"),
+                video_url=item.get("video_url", ""),
+                official_name=item.get("official_name", True),
+                id=item.get("id", ""),
             )
             for item in data.get("quests", [])
         ]
@@ -85,7 +102,7 @@ class QuestDB:
         return _lookup(query, self._map_by_name)
 
     def map_names(self, quest: Quest) -> list[str]:
-        return [self.maps[m].name if m in self.maps else m for m in quest.locations]
+        return [(self.maps[m].name_ru or self.maps[m].name) if m in self.maps else m for m in quest.locations]
 
     def available_at(self, quest: Quest, location: str) -> bool:
         """False, только если карта распознана и квест на ней точно не выполняется."""

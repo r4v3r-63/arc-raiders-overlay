@@ -54,3 +54,21 @@ def test_available_at():
     assert db.available_at(dead_end, "")
     assert db.available_at(dead_end, "неизвестная карта")
     assert db.available_at(db.find("Чистое небо"), "космопорт")
+
+
+def test_bundled_db_has_guides_and_links():
+    db = QuestDB.load()
+    assert len(db.quests) >= 115
+    assert all(q.steam_url for q in db.quests)
+    assert sum(1 for q in db.quests if q.guide) >= 50
+    assert db.find("В Небеса").english_name == "To The Skies"
+    assert db.find_map("Перевал Пендола").id == "pendola_pass"
+    assert db.find_map("поле битвы у дамбы").id == "dam_battlegrounds"
+
+
+def test_bundled_guide_images_exist():
+    from arc_overlay.quest_db import DATA_DIR
+    db = QuestDB.load()
+    for q in db.quests:
+        for image in (q.guide or {}).get("images", []):
+            assert (DATA_DIR / image["file"]).exists(), image["file"]

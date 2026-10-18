@@ -21,7 +21,11 @@ MOD_SHIFT = 0x0004
 MOD_NOREPEAT = 0x4000  # не повторять событие, пока клавиша зажата
 
 VK_LEFT = 0x25
+VK_UP = 0x26
 VK_RIGHT = 0x27
+VK_DOWN = 0x28
+VK_G = 0x47
+VK_O = 0x4F
 VK_Q = 0x51
 VK_X = 0x58
 
