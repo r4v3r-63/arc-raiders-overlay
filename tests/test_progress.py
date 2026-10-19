@@ -95,3 +95,29 @@ def test_save_survives_locked_file(tmp_path, monkeypatch):
 
     monkeypatch.setattr(Path, "replace", locked)
     progress.save()  # не бросает исключение
+
+
+def test_next_quest_waits_for_all_prerequisites(tmp_path):
+    db = QuestDB([
+        Quest(id="sky", name="Чистое небо", steps=["1"], next=["radar"]),
+        Quest(id="trash", name="И хлам богатство", steps=["1"], next=["radar"]),
+        Quest(id="radar", name="Уход в тень", steps=["1"], previous=["sky", "trash"]),
+    ])
+    p = Progress.load(tmp_path / "p.json")
+    p.add(db.find_by_id("sky"))
+    p.add(db.find_by_id("trash"), make_current=False)
+    _, added, _ = p.complete_current(db)
+    assert added == []  # «И хлам богатство» ещё не выполнен
+    _, added, _ = p.complete_current(db)
+    assert [q.id for q in added] == ["radar"]
+
+
+def test_steam_quest_progress_moves_to_main_id(tmp_path):
+    db = QuestDB([Quest(id="new_one", name="Новый квест", steps=["1"],
+                        steam_url="https://steamcommunity.com/sharedfiles/filedetails/?id=1#555")])
+    p = Progress.load(tmp_path / "p.json")
+    p.add(Quest(id="steam_777", name="Новый квест", steps=["1"]))
+    p.completed = ["steam_555", "a"]
+    assert p.migrate_ids(db)
+    assert p.active[0].id == "new_one" and p.completed == ["new_one", "a"]
+    assert not p.migrate_ids(db)  # повторно ничего не меняется

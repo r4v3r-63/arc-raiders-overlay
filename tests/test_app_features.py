@@ -289,3 +289,49 @@ def test_item_web_search(app, monkeypatch):
     assert "Технологии" in app.card._label.text() or "технологии" in app.card._label.text()  # места с вики
     app.open_guide_in_browser()
     assert opened and "google.com/search" in opened[0] and "%D0%9C%D0%B8%D0%BD%D0%B8" in opened[0]
+
+
+def test_hidden_overlay_stays_hidden_after_late_download(app, tmp_path):
+    from PyQt6.QtGui import QPixmap
+
+    app.on_submitted("Первый плацдарм")
+    app.toggle_zoom()
+    app.page_index = next(i for i, p in enumerate(app.pages) if p.source == "вики" and p.full)
+    page = app.pages[app.page_index]
+    app.render_page()
+    app.set_card_visible(False)
+    assert not app.zoom.isVisible()
+    big = QPixmap(30, 20)
+    big.fill()
+    path = tmp_path / "late.png"
+    big.save(str(path))
+    app._full_image_ready(page, path)  # оригинал догрузился, пока окна спрятаны
+    assert not app.zoom.isVisible()
+    app.set_card_visible(True)
+    assert app.zoom.isVisible()
+
+
+def test_long_shopping_list_has_pages(app):
+    names = [q.name for q in app.db.quests if q.required_items][:40]
+    for name in names:
+        app.on_submitted(name)
+    app.show_shopping()
+    assert app.card.shopping_pages() > 1
+    assert "Страница 1 из" in app.card._footer.text()
+    app.next_page()
+    assert "Страница 2 из" in app.card._footer.text() and app.card.panel == "shopping"
+
+
+def test_saved_quest_appears_after_fresh_db(app):
+    from arc_overlay.quest_db import Quest, QuestDB
+
+    app.progress.add(Quest(id="brand_new", name="Совсем новый квест", steps=["шаг"]))
+    app.show_current()
+    assert app.card.quest is None  # во встроенной базе его нет
+    path = app.downloader.path_for("remote")
+    data = {"generated_at": "2999-01-01T00:00:00Z", "quests": [
+        {"name": q.name, "id": q.id, "steps": q.steps} for q in app.db.quests] + [
+        {"name": "Совсем новый квест", "id": "brand_new", "steps": ["шаг"]}]}
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    app._remote_db_loaded(path)
+    assert app.card.quest is not None and app.card.quest.id == "brand_new"

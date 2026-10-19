@@ -70,6 +70,7 @@ class Quest:
     official_name: bool = True
     id: str = ""
     next: list[str] = field(default_factory=list)  # id квестов, которые открываются после этого
+    previous: list[str] = field(default_factory=list)  # id квестов, которые все нужно выполнить до этого
     places: list[dict] = field(default_factory=list)  # точки на карте: {"map", "name", "x", "y", "step"}
 
     @property
@@ -139,6 +140,7 @@ class QuestDB:
                 official_name=item.get("official_name", True),
                 id=item.get("id", ""),
                 next=list(item.get("next", [])),
+                previous=list(item.get("previous", [])),
                 places=list(item.get("places", [])),
             )
             for item in data.get("quests", [])

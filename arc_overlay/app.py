@@ -85,6 +85,8 @@ class OverlayApp:
         self._item_timer.timeout.connect(self._close_item_panel)
         self.downloader = CachedDownloader()
         self.progress = Progress.load(paths.user_data_dir() / "прогресс.json")
+        if self.progress.migrate_ids(self.db):
+            self.progress.save()
         self.downloader.cleanup()
         self.guide_mode = False
         self._close_zoom()
@@ -258,8 +260,13 @@ class OverlayApp:
         self._toggle_action.setText("Спрятать карточку" if visible else "Показать карточку")
         self._apply_visibility()
 
+    def _overlay_visible(self) -> bool:
+        """Должны ли окна программы быть видны: игрок их не прятал и не переключился из игры."""
+        return self.card.editing or (getattr(self, "_user_visible", True)
+                                     and not getattr(self, "_hidden_outside_game", False))
+
     def _apply_visibility(self):
-        visible = self.card.editing or (self._user_visible and not self._hidden_outside_game)
+        visible = self._overlay_visible()
         if visible != self.card.isVisible():
             self.card.setVisible(visible)
         if not visible and self.zoom.isVisible():
@@ -538,8 +545,13 @@ class OverlayApp:
         """Снимок экрана → распознавание → найденные квесты в список активных."""
         self._capture(self._grab_screen, 200)
 
+    @staticmethod
+    def _capture_screen():
+        """Экран, на котором курсор (а значит, и игра): она может быть и на втором мониторе."""
+        return QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()
+
     def _grab_screen(self):
-        image = QGuiApplication.primaryScreen().grabWindow(0).toImage()
+        image = self._capture_screen().grabWindow(0).toImage()
         self._apply_visibility()
         self._show_notice("Ищу квесты на экране…")
         self._recognize(image, "экран.png", self._screen_recognized)
@@ -570,8 +582,7 @@ class OverlayApp:
         self._capture(self._grab_item, 150)
 
     def _grab_item(self):
-        # Экран, на котором курсор: игра может быть и на втором мониторе.
-        screen = QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()
+        screen = self._capture_screen()
         image = screen.grabWindow(0).toImage()
         self._apply_visibility()
         ratio = image.width() / max(1, screen.geometry().width())
@@ -724,6 +735,9 @@ class OverlayApp:
         self._turn_page(-1)
 
     def _turn_page(self, delta: int):
+        if self.card.panel == "shopping":  # длинная сводка листается теми же клавишами
+            self.card.turn_shopping_page(delta)
+            return
         if self._map_on:  # при открытой карте те же клавиши переключают карты
             maps = self._map_ids()
             if maps:
@@ -793,8 +807,8 @@ class OverlayApp:
 
     def _update_zoom(self):
         """Показывает на весь экран скриншот текущей страницы гайда (если просмотр включён)."""
-        if not self._zoom_on:
-            return
+        if not self._zoom_on or not self._overlay_visible():
+            return  # окно покажет _apply_visibility, когда игрок вернёт карточку
         page = self.pages[self.page_index] if self.guide_mode and self.pages else None
         pixmap = self.card.current_pixmap
         if page is None or not page.image:
@@ -866,7 +880,7 @@ class OverlayApp:
 
     def _update_map(self):
         """Показывает карту текущего квеста с точками; точка текущего шага выделена."""
-        if not self._map_on:
+        if not self._map_on or not self._overlay_visible():
             return
         maps = self._map_ids()
         if not maps:
@@ -948,8 +962,10 @@ class OverlayApp:
         self.db = remote
         self.card.set_db(remote)
         self.merge_steam_quests()
-        if self.card.quest is not None and not self.guide_mode and not self.card.panel and not self._map_on:
-            self.show_current()  # шаги и подсказки текущего квеста — из новой базы
+        if (self.card.quest is not None or self.progress.active) and not self.guide_mode \
+                and not self.card.panel and not self._map_on:
+            # Шаги текущего квеста — из новой базы; квест, которого не было во встроенной базе, теперь найдётся.
+            self.show_current()
 
     def sync_steam_guide(self):
         """Скачивает руководство Steam (не чаще раза в сутки) и добавляет в поиск новые квесты из него."""
@@ -994,6 +1010,8 @@ class OverlayApp:
                 steam_url=url,
             ))
             added += 1
+        if self.progress.migrate_ids(self.db):  # квесты из руководства, появившиеся в основной базе
+            self.progress.save()
         return added
 
     def load_steam_guide(self):

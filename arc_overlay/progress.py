@@ -88,6 +88,25 @@ class Progress:
             return None
         return db.find_by_id(entry.id) or db.find_exact(entry.name)
 
+    def migrate_ids(self, db: QuestDB) -> bool:
+        """Квесты, взятые из руководства Steam (id «steam_…»), после появления в основной базе
+        получают её id — иначе выполненный квест снова считался бы невыполненным. True — что-то поменялось."""
+        changed = False
+        for entry in self.active:
+            current = db.find_by_id(entry.id)
+            if current is None or current.id.startswith("steam_"):
+                real = db.find_exact(entry.name)
+                if real is not None and real.id and not real.id.startswith("steam_") and real.id != entry.id:
+                    entry.id, changed = real.id, True
+        by_section = {q.steam_url.rsplit("#", 1)[-1]: q.id for q in db.quests
+                      if q.steam_url and "#" in q.steam_url and q.id and not q.id.startswith("steam_")}
+        for n, quest_id in enumerate(self.completed):
+            real = by_section.get(quest_id.removeprefix("steam_")) if quest_id.startswith("steam_") else None
+            if real is not None:
+                self.completed[n], changed = real, True
+        self.completed = list(dict.fromkeys(self.completed))
+        return changed
+
     # --- изменения --------------------------------------------------------
 
     def add(self, quest: Quest, make_current: bool = True) -> ActiveQuest:
@@ -142,7 +161,8 @@ class Progress:
         unlocked = []
         for next_id in (quest.next if quest else []):
             nxt = db.find_by_id(next_id)
-            if nxt and nxt.id not in self.completed and not any(a.id == nxt.id for a in self.active):
+            if nxt and nxt.id not in self.completed and not any(a.id == nxt.id for a in self.active) \
+                    and all(p in self.completed for p in nxt.previous):  # остальные предшественники выполнены
                 unlocked.append(nxt)
         added, skipped = (unlocked, []) if len(unlocked) <= AUTO_ADD_LIMIT else ([], unlocked)
         insert_at = self.current

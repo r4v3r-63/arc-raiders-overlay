@@ -473,6 +473,7 @@ def build(data_dir: Path) -> dict:
         quests.append({
             "id": final_id[q["id"]],
             "_next": [final_id.get(i, i) for i in q.get("nextQuestIds", [])],
+            "_previous": [final_id.get(i, i) for i in q.get("previousQuestIds", [])],
             "name": text(q["name"]),
             "official_name": True,
             "aliases": aliases,
@@ -523,6 +524,8 @@ def build(data_dir: Path) -> dict:
         names = [n for n in re.split(r"[;,]", wiki.parse_infobox(source).get("next", "")) if n.strip()]
         ids = [i for i in quest.pop("_next") if i in known_ids] + [id_by_name[norm(n)] for n in names if norm(n) in id_by_name]
         quest["next"] = list(dict.fromkeys(i for i in ids if i != quest["id"]))
+        # Квест открывается, только когда выполнены все предшественники, а не один из них.
+        quest["previous"] = [i for i in quest.pop("_previous", []) if i in known_ids and i != quest["id"]]
 
     print("Загружаю карты и места на них…")
     old_maps = {m["id"]: {"image": m["image"], "rooms": m["rooms"]} for m in old_db.get("maps", []) if m.get("rooms")}

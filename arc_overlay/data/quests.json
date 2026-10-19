@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T19:09:29Z",
+  "generated_at": "2026-10-19T16:19:47Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -980,6 +980,9 @@
       "next": [
         "snap_and_salvage"
       ],
+      "previous": [
+        "in_my_image"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8694247",
       "guide": {
@@ -1025,6 +1028,9 @@
       "next": [
         "cold_storage"
       ],
+      "previous": [
+        "a_bad_feeling"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8694085",
       "guide": null,
@@ -1060,6 +1066,9 @@
       "next": [
         "on_deaf_ears",
         "with_a_view"
+      ],
+      "previous": [
+        "cold_storage"
       ],
       "places": [
         {
@@ -1111,6 +1120,9 @@
       "next": [
         "a_rising_tide",
         "fragmented_logs"
+      ],
+      "previous": [
+        "groundbreaking"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8691997",
@@ -1172,6 +1184,9 @@
       "next": [
         "divided"
       ],
+      "previous": [
+        "taking_stock"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -1226,6 +1241,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/A_Prime_Specimen",
       "next": [],
+      "previous": [
+        "the_clean_dream"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798642",
       "guide": null,
@@ -1255,6 +1273,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/A_Rising_Tide",
       "next": [],
+      "previous": [
+        "a_dead_end"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -1339,6 +1360,9 @@
       "next": [
         "the_stench_of_corruption"
       ],
+      "previous": [
+        "life_of_a_pharmacist"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -1374,6 +1398,9 @@
       "next": [
         "home_to_roost"
       ],
+      "previous": [
+        "safe_harbor"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -1404,6 +1431,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Action_Economy",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -1433,6 +1461,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Bait,_Fetch,_Blast",
       "next": [],
+      "previous": [
+        "tracks_of_the_beast"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370530",
       "guide": null,
@@ -1459,6 +1490,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Battening_Down",
       "next": [],
+      "previous": [
+        "off_the_radar"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901620",
       "guide": null,
@@ -1481,6 +1515,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Beam_Resonance_Tech",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -1516,6 +1551,10 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Belly_Of_The_Beast",
       "next": [],
+      "previous": [
+        "tracks_of_the_beast",
+        "sizing_things_up"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9375416",
       "guide": null,
@@ -1545,6 +1584,9 @@
       "next": [
         "disrupting_the_frigate"
       ],
+      "previous": [
+        "off_the_radar"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373916",
       "guide": null,
@@ -1573,6 +1615,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Bombing_Run",
       "next": [],
+      "previous": [
+        "combat_recon"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804395",
       "guide": null,
@@ -1597,6 +1642,7 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Burst_Assembly_Recovery",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -1625,6 +1671,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Celeste's_Childhood_Drawings",
       "next": [
         "celeste_s_teenage_rebellion"
+      ],
+      "previous": [
+        "shoring_up_defenses"
       ],
       "places": [
         {
@@ -1674,6 +1723,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Celeste's_Teenage_Rebellion",
       "next": [],
+      "previous": [
+        "celeste_s_childhood_drawings"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369762",
       "guide": null,
@@ -1706,6 +1758,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Clamoring_for_Attention",
       "next": [],
+      "previous": [
+        "dormant_barons"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -1781,6 +1836,9 @@
       "next": [
         "taking_stock"
       ],
+      "previous": [
+        "off_the_radar"
+      ],
       "places": [
         {
           "map": "pendola_pass",
@@ -1837,6 +1895,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Collision_Course",
       "next": [],
+      "previous": [
+        "safe_passage"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901356",
       "guide": null,
@@ -1872,6 +1933,10 @@
       "next": [
         "bombing_run"
       ],
+      "previous": [
+        "into_the_fray",
+        "out_of_the_shadows"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803814",
       "guide": null,
@@ -1894,6 +1959,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Compact_Combustion_Charges",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -1921,6 +1987,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Deciphering_The_Data",
       "next": [
         "groundbreaking"
+      ],
+      "previous": [
+        "paving_the_way"
       ],
       "places": [
         {
@@ -2000,6 +2069,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Disrupting_the_Frigate",
       "next": [],
+      "previous": [
+        "boarding_the_frigate"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9375906",
       "guide": null,
@@ -2027,6 +2099,10 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Divided",
       "next": [],
+      "previous": [
+        "a_path_not_yours",
+        "ruins_and_reverberations"
+      ],
       "places": [
         {
           "map": "pendola_pass",
@@ -2106,6 +2182,9 @@
         "waking_the_grid",
         "fragmented_logs"
       ],
+      "previous": [
+        "the_trifecta"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -2171,6 +2250,7 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Embedded_Blast_Engineering",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2202,6 +2282,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Empathetic_Prototypes",
       "next": [
         "when_everything_falls"
+      ],
+      "previous": [
+        "someone_elses_shoes"
       ],
       "places": [
         {
@@ -2240,6 +2323,9 @@
       "next": [
         "wires_crossed",
         "tracks_of_the_beast"
+      ],
+      "previous": [
+        "off_the_radar"
       ],
       "places": [
         {
@@ -2285,6 +2371,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Extended_Burst_Cycles",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2312,6 +2399,10 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Fragmented_Logs",
       "next": [
         "furtive_meetings"
+      ],
+      "previous": [
+        "a_dead_end",
+        "dust_on_the_wires"
       ],
       "places": [
         {
@@ -2352,6 +2443,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Furtive_Meetings",
       "next": [
         "last_entry"
+      ],
+      "previous": [
+        "fragmented_logs"
       ],
       "places": [
         {
@@ -2405,6 +2499,9 @@
       "next": [
         "worth_your_salt",
         "a_dead_end"
+      ],
+      "previous": [
+        "deciphering_the_data"
       ],
       "places": [
         {
@@ -2471,6 +2568,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/High-Voltage_Exposure",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2504,6 +2602,9 @@
       "next": [
         "someone_elses_shoes"
       ],
+      "previous": [
+        "a_wrench_in_the_works"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369524",
       "guide": null,
@@ -2529,6 +2630,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Keeping_an_Eye_Out",
       "next": [],
+      "previous": [
+        "the_clean_dream"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -2587,6 +2691,9 @@
       "next": [
         "line_in_the_sand"
       ],
+      "previous": [
+        "furtive_meetings"
+      ],
       "places": [
         {
           "map": "stella_montis",
@@ -2623,6 +2730,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Line_in_the_Sand",
       "next": [
         "safe_harbor"
+      ],
+      "previous": [
+        "last_entry"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901440",
@@ -2689,6 +2799,7 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Magazine_Geometry_101",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2720,6 +2831,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Movie_Night",
       "next": [],
+      "previous": [
+        "with_a_view"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8794055",
       "guide": {
@@ -2763,6 +2877,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Nothing_Gained",
       "next": [],
+      "previous": [
+        "nothing_ventured"
+      ],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2806,6 +2923,7 @@
       "next": [
         "nothing_gained"
       ],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -2835,6 +2953,10 @@
       "next": [
         "on_the_map"
       ],
+      "previous": [
+        "worth_your_salt",
+        "snap_and_salvage"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804860",
       "guide": null,
@@ -2863,6 +2985,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/On_The_Map",
       "next": [],
+      "previous": [
+        "on_deaf_ears"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -2914,6 +3039,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Outstanding_Balance",
       "next": [
         "settled_in_full"
+      ],
+      "previous": [
+        "the_clean_dream"
       ],
       "places": [
         {
@@ -2969,6 +3097,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Paving_The_Way",
       "next": [
         "deciphering_the_data"
+      ],
+      "previous": [
+        "into_the_fray"
       ],
       "places": [
         {
@@ -3042,6 +3173,9 @@
       "next": [
         "divided"
       ],
+      "previous": [
+        "wires_crossed"
+      ],
       "places": [
         {
           "map": "pendola_pass",
@@ -3080,6 +3214,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Safe_Harbor",
       "next": [
         "a_wrench_in_the_works"
+      ],
+      "previous": [
+        "line_in_the_sand"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8901643",
@@ -3137,6 +3274,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Settled_in_Full",
       "next": [],
+      "previous": [
+        "outstanding_balance"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798786",
       "guide": null,
@@ -3159,6 +3299,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Shield_Stress_Testing",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -3192,6 +3333,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Shoring_Up_Defenses",
       "next": [
         "celeste_s_childhood_drawings"
+      ],
+      "previous": [
+        "off_the_radar"
       ],
       "places": [
         {
@@ -3234,6 +3378,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Sizing_Things_Up",
       "next": [
         "belly_of_the_beast"
+      ],
+      "previous": [
+        "off_the_radar"
       ],
       "places": [
         {
@@ -3279,6 +3426,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Solid-Core_Casting_Tech",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -3306,6 +3454,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Someone_Else's_Shoes",
       "next": [
         "empathetic_prototypes"
+      ],
+      "previous": [
+        "home_to_roost"
       ],
       "places": [
         {
@@ -3343,6 +3494,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Sprint_Shooting",
       "next": [],
+      "previous": [],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -3405,6 +3557,7 @@
         "clearer_skies",
         "trash_into_treasure"
       ],
+      "previous": [],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8699985",
       "guide": null,
@@ -3435,6 +3588,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/A_Better_Use",
       "next": [
         "greasing_her_palms"
+      ],
+      "previous": [
+        "the_right_tool"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700081",
@@ -3469,6 +3625,9 @@
       "next": [
         "dormant_barons",
         "doctors_orders"
+      ],
+      "previous": [
+        "a_better_use"
       ],
       "places": [
         {
@@ -3522,6 +3681,10 @@
         "clamoring_for_attention",
         "what_we_left_behind"
       ],
+      "previous": [
+        "greasing_her_palms",
+        "the_trifecta"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793440",
       "guide": null,
@@ -3560,6 +3723,9 @@
       "next": [
         "medical_merchandise"
       ],
+      "previous": [
+        "greasing_her_palms"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793844",
       "guide": null,
@@ -3594,6 +3760,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Mixed_Signals",
       "next": [],
+      "previous": [
+        "dormant_barons"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793569",
       "guide": null,
@@ -3623,6 +3792,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/What_We_Left_Behind",
       "next": [
         "broken_monument"
+      ],
+      "previous": [
+        "dormant_barons"
       ],
       "places": [
         {
@@ -3668,6 +3840,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Medical_Merchandise",
       "next": [
         "a_reveal_in_ruins"
+      ],
+      "previous": [
+        "doctors_orders"
       ],
       "places": [
         {
@@ -3732,6 +3907,9 @@
       "next": [
         "a_lay_of_the_land"
       ],
+      "previous": [
+        "medical_merchandise"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793897",
       "guide": null,
@@ -3769,6 +3947,9 @@
         "marked_for_death",
         "straight_record"
       ],
+      "previous": [
+        "what_we_left_behind"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -3804,6 +3985,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Marked_For_Death",
       "next": [
         "market_correction"
+      ],
+      "previous": [
+        "broken_monument"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802036",
@@ -3851,6 +4035,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Straight_Record",
       "next": [
         "keeping_the_memory"
+      ],
+      "previous": [
+        "broken_monument"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798964",
@@ -3916,6 +4103,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/A_Lay_Of_The_Land",
       "next": [
         "eyes_in_the_sky"
+      ],
+      "previous": [
+        "a_reveal_in_ruins"
       ],
       "places": [
         {
@@ -3987,6 +4177,9 @@
       "next": [
         "eyes_on_the_prize"
       ],
+      "previous": [
+        "marked_for_death"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802054",
       "guide": {
@@ -4034,6 +4227,9 @@
       "next": [
         "industrial_espionage"
       ],
+      "previous": [
+        "market_correction"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802089",
       "guide": {
@@ -4078,6 +4274,9 @@
       "next": [
         "unexpected_initiative"
       ],
+      "previous": [
+        "eyes_on_the_prize"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802108",
       "guide": {
@@ -4121,6 +4320,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Keeping_The_Memory",
       "next": [
         "echoes_of_victory_ridge"
+      ],
+      "previous": [
+        "straight_record"
       ],
       "places": [
         {
@@ -4182,6 +4384,9 @@
       "next": [
         "unexpected_initiative"
       ],
+      "previous": [
+        "keeping_the_memory"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8799059",
       "guide": {
@@ -4231,6 +4436,10 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Unexpected_Initiative",
       "next": [
         "a_symbol_of_unification"
+      ],
+      "previous": [
+        "industrial_espionage",
+        "echoes_of_victory_ridge"
       ],
       "places": [
         {
@@ -4298,6 +4507,9 @@
         "celestes_journals",
         "out_of_the_shadows"
       ],
+      "previous": [
+        "unexpected_initiative"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -4359,6 +4571,9 @@
         "after_rain_comes",
         "a_balanced_harvest",
         "back_on_top"
+      ],
+      "previous": [
+        "a_lay_of_the_land"
       ],
       "places": [
         {
@@ -4438,6 +4653,9 @@
       "next": [
         "back_on_top"
       ],
+      "previous": [
+        "a_symbol_of_unification"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -4503,6 +4721,9 @@
       "next": [
         "back_on_top"
       ],
+      "previous": [
+        "a_symbol_of_unification"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802355",
       "guide": {
@@ -4555,6 +4776,10 @@
       "next": [
         "combat_recon"
       ],
+      "previous": [
+        "a_symbol_of_unification",
+        "sparks_fly"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802243",
       "guide": null,
@@ -4586,6 +4811,11 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Back_on_Top",
       "next": [
         "our_presence_up_there"
+      ],
+      "previous": [
+        "the_majors_footlocker",
+        "eyes_in_the_sky",
+        "celestes_journals"
       ],
       "places": [
         {
@@ -4665,6 +4895,9 @@
       "next": [
         "untended_garden"
       ],
+      "previous": [
+        "eyes_in_the_sky"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -4718,6 +4951,9 @@
       "next": [
         "flickering_threat"
       ],
+      "previous": [
+        "prescriptions_of_the_past"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797687",
       "guide": {
@@ -4767,6 +5003,9 @@
       "next": [
         "bees"
       ],
+      "previous": [
+        "power_out"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797718",
       "guide": null,
@@ -4793,6 +5032,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Bees!",
       "next": [
         "espresso"
+      ],
+      "previous": [
+        "flickering_threat"
       ],
       "places": [
         {
@@ -4830,6 +5072,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Espresso",
       "next": [
         "life_of_a_pharmacist"
+      ],
+      "previous": [
+        "bees"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797751",
@@ -4871,6 +5116,9 @@
       "next": [
         "a_toxic_trail",
         "tribute_to_toledo"
+      ],
+      "previous": [
+        "espresso"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797784",
@@ -4934,6 +5182,9 @@
       "next": [
         "digging_up_dirt"
       ],
+      "previous": [
+        "life_of_a_pharmacist"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797813",
       "guide": {
@@ -4966,6 +5217,9 @@
       "next": [
         "turnabout",
         "building_a_library"
+      ],
+      "previous": [
+        "tribute_to_toledo"
       ],
       "places": [
         {
@@ -5023,6 +5277,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Turnabout",
       "next": [],
+      "previous": [
+        "digging_up_dirt"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -5062,6 +5319,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Building_A_Library",
       "next": [
         "a_new_type_of_plant"
+      ],
+      "previous": [
+        "digging_up_dirt"
       ],
       "places": [
         {
@@ -5116,6 +5376,9 @@
       "next": [
         "armored_transports"
       ],
+      "previous": [
+        "building_a_library"
+      ],
       "places": [
         {
           "map": "dam_battlegrounds",
@@ -5163,6 +5426,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Untended_Garden",
       "next": [
         "the_root_of_the_matter"
+      ],
+      "previous": [
+        "a_balanced_harvest"
       ],
       "places": [
         {
@@ -5226,6 +5492,10 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Armored_Transports",
       "next": [],
+      "previous": [
+        "with_a_trace",
+        "a_new_type_of_plant"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -5312,6 +5582,9 @@
       "next": [
         "water_troubles"
       ],
+      "previous": [
+        "untended_garden"
+      ],
       "places": [
         {
           "map": "buried_city",
@@ -5366,6 +5639,10 @@
       "next": [
         "into_the_fray",
         "source_of_the_contamination"
+      ],
+      "previous": [
+        "after_rain_comes",
+        "the_root_of_the_matter"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8796025",
@@ -5433,6 +5710,10 @@
         "combat_recon",
         "paving_the_way"
       ],
+      "previous": [
+        "water_troubles",
+        "communication_hideout"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803713",
       "guide": null,
@@ -5460,6 +5741,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Source_Of_The_Contamination",
       "next": [
         "switching_the_supply"
+      ],
+      "previous": [
+        "water_troubles"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8796040",
@@ -5504,6 +5788,9 @@
       "next": [
         "a_warm_place_to_rest"
       ],
+      "previous": [
+        "source_of_the_contamination"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797647",
       "guide": {
@@ -5542,6 +5829,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/A_Warm_Place_To_Rest",
       "next": [
         "prescriptions_of_the_past"
+      ],
+      "previous": [
+        "switching_the_supply"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797668",
@@ -5594,6 +5884,9 @@
       "next": [
         "power_out"
       ],
+      "previous": [
+        "a_warm_place_to_rest"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -5635,6 +5928,9 @@
       "next": [
         "water_troubles"
       ],
+      "previous": [
+        "eyes_in_the_sky"
+      ],
       "places": [
         {
           "map": "buried_city",
@@ -5670,6 +5966,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Our_Presence_up_There",
       "next": [
         "lost_in_transmission"
+      ],
+      "previous": [
+        "back_on_top"
       ],
       "places": [
         {
@@ -5731,6 +6030,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/A_First_Foothold",
       "next": [
         "reduced_to_rubble"
+      ],
+      "previous": [
+        "off_the_radar"
       ],
       "places": [
         {
@@ -5842,6 +6144,9 @@
       "next": [
         "with_a_trace"
       ],
+      "previous": [
+        "a_first_foothold"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -5909,6 +6214,9 @@
       "next": [
         "communication_hideout"
       ],
+      "previous": [
+        "our_presence_up_there"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -5972,6 +6280,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Communication_Hideout",
       "next": [
         "into_the_fray"
+      ],
+      "previous": [
+        "lost_in_transmission"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803686",
@@ -6055,6 +6366,9 @@
         "armored_transports",
         "the_clean_dream"
       ],
+      "previous": [
+        "reduced_to_rubble"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -6127,6 +6441,9 @@
       "next": [
         "off_the_radar"
       ],
+      "previous": [
+        "picking_up_the_pieces"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700016",
       "guide": null,
@@ -6157,6 +6474,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Trash_Into_Treasure",
       "next": [
         "off_the_radar"
+      ],
+      "previous": [
+        "picking_up_the_pieces"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8699996",
@@ -6196,6 +6516,10 @@
         "battening_down",
         "a_bad_feeling"
       ],
+      "previous": [
+        "clearer_skies",
+        "trash_into_treasure"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700004",
       "guide": null,
@@ -6223,6 +6547,9 @@
         "the_right_tool",
         "hatch_repairs"
       ],
+      "previous": [
+        "off_the_radar"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700011",
       "guide": null,
@@ -6247,6 +6574,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Hatch_Repairs",
       "next": [
         "down_to_earth"
+      ],
+      "previous": [
+        "a_bad_feeling"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700051",
@@ -6303,6 +6633,9 @@
       "next": [
         "the_trifecta"
       ],
+      "previous": [
+        "hatch_repairs"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700080",
       "guide": null,
@@ -6332,6 +6665,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/The_Right_Tool",
       "next": [
         "a_better_use"
+      ],
+      "previous": [
+        "a_bad_feeling"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700015",
@@ -6364,6 +6700,9 @@
         "what_goes_around",
         "collision_course"
       ],
+      "previous": [
+        "a_bad_feeling"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793779",
       "guide": null,
@@ -6390,6 +6729,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/What_Goes_Around",
       "next": [
         "sparks_fly"
+      ],
+      "previous": [
+        "safe_passage"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793799",
@@ -6418,6 +6760,9 @@
       "next": [
         "the_league",
         "out_of_the_shadows"
+      ],
+      "previous": [
+        "what_goes_around"
       ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8793829",
@@ -6457,6 +6802,9 @@
         "dormant_barons",
         "dust_on_the_wires"
       ],
+      "previous": [
+        "down_to_earth"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8700084",
       "guide": null,
@@ -6489,6 +6837,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Stable_Housing",
       "next": [],
+      "previous": [
+        "with_a_view"
+      ],
       "places": [
         {
           "map": "stella_montis",
@@ -6552,6 +6903,9 @@
       "next": [
         "a_path_not_yours"
       ],
+      "previous": [
+        "clean_hands"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9373889",
       "guide": {
@@ -6590,6 +6944,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Targeted_Component_Trial",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -6624,6 +6979,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Test_Case",
       "next": [],
+      "previous": [
+        "the_league"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798034",
       "guide": null,
@@ -6660,6 +7018,9 @@
         "keeping_an_eye_out",
         "outstanding_balance",
         "a_prime_specimen"
+      ],
+      "previous": [
+        "with_a_trace"
       ],
       "places": [
         {
@@ -6727,6 +7088,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/The_First_Nomads",
       "next": [],
+      "previous": [],
       "places": [
         {
           "map": "stella_montis",
@@ -6779,6 +7141,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/The_League",
       "next": [
         "test_case"
+      ],
+      "previous": [
+        "sparks_fly"
       ],
       "places": [
         {
@@ -6834,6 +7199,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/The_Stench_Of_Corruption",
       "next": [],
+      "previous": [
+        "a_toxic_trail"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -6894,6 +7262,7 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Thermite-Tipped_Rounds",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -6952,6 +7321,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/To_The_Skies",
       "next": [],
+      "previous": [
+        "off_the_radar"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370187",
       "guide": null,
@@ -6975,6 +7347,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Top_Mounted_Optics_Retrofittings",
       "next": [],
+      "previous": [],
       "places": [
         {
           "map": "the_blue_gate",
@@ -7017,6 +7390,9 @@
         "belly_of_the_beast",
         "bait_fetch_blast"
       ],
+      "previous": [
+        "exploring_pendola_pass"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9370485",
       "guide": null,
@@ -7039,6 +7415,7 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Trigger_Reset_Systems",
       "next": [],
+      "previous": [],
       "places": [],
       "steam_url": null,
       "guide": null,
@@ -7067,6 +7444,9 @@
       ],
       "wiki_url": "https://arcraiders.wiki/wiki/Waking_the_Grid",
       "next": [],
+      "previous": [
+        "dust_on_the_wires"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -7135,6 +7515,9 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/When_Everything_Falls",
       "next": [],
+      "previous": [
+        "empathetic_prototypes"
+      ],
       "places": [
         {
           "map": "the_spaceport",
@@ -7197,6 +7580,9 @@
       "next": [
         "ruins_and_reverberations"
       ],
+      "previous": [
+        "exploring_pendola_pass"
+      ],
       "places": [
         {
           "map": "the_blue_gate",
@@ -7256,6 +7642,9 @@
         "stable_housing",
         "movie_night"
       ],
+      "previous": [
+        "snap_and_salvage"
+      ],
       "places": [],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8794017",
       "guide": null,
@@ -7287,6 +7676,9 @@
       "wiki_url": "https://arcraiders.wiki/wiki/Worth_Your_Salt",
       "next": [
         "on_deaf_ears"
+      ],
+      "previous": [
+        "groundbreaking"
       ],
       "places": [
         {

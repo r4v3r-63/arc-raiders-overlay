@@ -118,6 +118,7 @@ class OverlayCard(QWidget):
         self._panel = ""  # какая временная панель открыта: "help", "shopping" или ""
         self._shopping: list = []
         self._shopping_note = ""
+        self._shopping_page = 0
         self._item = None  # ItemReport для панели «брать или продавать»
         self._saved_pixmap: QPixmap | None = None  # скриншот гайда, пока поверх открыта панель
         self._keeps_image = False  # текущее содержимое показывает скриншот (страница гайда)
@@ -210,7 +211,22 @@ class OverlayCard(QWidget):
         """Сводка «что собрать»: items — [(предмет, количество, [для чего])]."""
         self._shopping = items
         self._shopping_note = note
+        self._shopping_page = 0
         self._toggle_panel("shopping", self._render_shopping)
+
+    def _shopping_page_size(self) -> int:
+        """Сколько строк сводки помещается на экран при текущем масштабе (строка — около 40 px)."""
+        height = self._screen_geometry().height() * 0.8 - self._px(150)
+        return max(4, int(height // self._px(40)))
+
+    def shopping_pages(self) -> int:
+        size = self._shopping_page_size()
+        return max(1, -(-len(self._shopping) // size))
+
+    def turn_shopping_page(self, delta: int):
+        self._shopping_page = max(0, min(self.shopping_pages() - 1, self._shopping_page + delta))
+        if self._panel == "shopping":
+            self._render_shopping()
 
     @property
     def panel(self) -> str:
@@ -345,16 +361,23 @@ class OverlayCard(QWidget):
         if not self._shopping:
             body = f"<p style='color:{MUTED};'>Активным квестам предметы не нужны.</p>"
         else:
+            size = self._shopping_page_size()
+            self._shopping_page = min(self._shopping_page, self.shopping_pages() - 1)
+            page = self._shopping[self._shopping_page * size:(self._shopping_page + 1) * size]
             rows = "".join(
                 f"<tr><td style='color:{ACCENT}; padding-right:{self._px(10)}px;' align='right'><b>{qty}×</b></td>"
                 f"<td>{esc(name)}<br><span style='color:{MUTED}; font-size:{self._px(12)}px;'>"
                 f"{esc(', '.join(quests))}</span></td></tr>"
-                for name, qty, quests in self._shopping
+                for name, qty, quests in page
             )
             body = f"<table style='margin-top:{self._px(6)}px;' cellspacing='{self._px(3)}'>{rows}</table>"
         if self._shopping_note:
             body += f"<p style='color:{MUTED}; font-size:{self._px(12)}px;'>{esc(self._shopping_note)}</p>"
-        self._set_content(title + body, footer=f"{shortcuts.key('shopping')} — закрыть сводку", wide=True)
+        footer = f"{shortcuts.key('shopping')} — закрыть сводку"
+        if self.shopping_pages() > 1:
+            footer = (f"Страница {self._shopping_page + 1} из {self.shopping_pages()} · "
+                      f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать\n" + footer)
+        self._set_content(title + body, footer=footer, wide=True)
 
     def _render_item(self):
         esc = html.escape
