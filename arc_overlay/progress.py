@@ -38,8 +38,8 @@ class Progress:
         progress = cls(path)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))
-            if not isinstance(data, dict):
-                raise ValueError("не словарь")
+            if not isinstance(data, dict) or not isinstance(data.get("active", []), list):
+                raise ValueError("неожиданный формат")
         except FileNotFoundError:
             return progress
         except (OSError, ValueError) as error:

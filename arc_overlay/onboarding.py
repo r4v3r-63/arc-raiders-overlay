@@ -9,7 +9,8 @@ import html
 
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QGuiApplication, QKeyEvent, QTextDocument
-from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QVBoxLayout, QWidget
+from PyQt6.QtGui import QCursor
+from PyQt6.QtWidgets import QFrame, QHBoxLayout, QLabel, QPushButton, QScrollArea, QVBoxLayout, QWidget
 
 from . import shortcuts
 
@@ -145,8 +146,14 @@ class OnboardingWindow(QWidget):
         layout = QVBoxLayout(self)
         layout.setContentsMargins(24, 20, 24, 18)
         layout.setSpacing(12)
+        # Длинный текст («Что нового» за несколько обновлений) прокручивается, кнопки остаются на месте.
+        self._scroll = QScrollArea()
+        self._scroll.setWidget(self._text)
+        self._scroll.setWidgetResizable(True)
+        self._scroll.setFrameShape(QFrame.Shape.NoFrame)
+        self._scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
         layout.addWidget(self._title)
-        layout.addWidget(self._text)
+        layout.addWidget(self._scroll)
         layout.addLayout(buttons)
 
         self._page = 0
@@ -167,7 +174,10 @@ class OnboardingWindow(QWidget):
         doc.setDefaultFont(self._text.font())
         doc.setHtml(self._text.text())
         doc.setTextWidth(self.width() - 48)
-        self._text.setMinimumHeight(max(170, int(doc.size().height()) + 8))
+        needed = max(170, int(doc.size().height()) + 8)
+        self._text.setMinimumHeight(needed)
+        screen = QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()
+        self._scroll.setFixedHeight(min(needed, int(screen.availableGeometry().height() * 0.6)))
         self._counter.setText(f"{self._page + 1} из {len(self._pages)}")
         self._counter.setVisible(len(self._pages) > 1)
         self._back.setVisible(self._page > 0)
@@ -187,7 +197,7 @@ class OnboardingWindow(QWidget):
     def open(self):
         self.show_page(0)
         self.adjustSize()
-        screen = QGuiApplication.primaryScreen().availableGeometry()
+        screen = (QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()).availableGeometry()
         self.move(screen.center().x() - self.width() // 2, screen.center().y() - self.height() // 2)
         self.show()
         self.raise_()

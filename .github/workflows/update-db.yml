@@ -37,7 +37,12 @@ jobs:
         run: python tools/build_quest_db.py /tmp/arcraiders-data
 
       - name: Проверить базу
-        run: python -m pytest -q tests/test_quest_db.py tests/test_guide.py
+        env:
+          QT_QPA_PLATFORM: offscreen
+        run: |
+          sudo apt-get install -y -qq libegl1 libxkbcommon0 libfontconfig1 > /dev/null
+          pip install -q -r requirements.txt
+          python -m pytest -q  # вся программа с новой базой, а не только сама база
 
       - name: Закоммитить изменения
         run: |

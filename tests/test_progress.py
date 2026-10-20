@@ -121,3 +121,10 @@ def test_steam_quest_progress_moves_to_main_id(tmp_path):
     assert p.migrate_ids(db)
     assert p.active[0].id == "new_one" and p.completed == ["new_one", "a"]
     assert not p.migrate_ids(db)  # повторно ничего не меняется
+
+
+def test_active_of_wrong_type_does_not_crash(tmp_path):
+    path = tmp_path / "p.json"
+    path.write_text('{"active": null}', encoding="utf-8")
+    assert Progress.load(path).active == []
+    assert (tmp_path / "p.json.bad").exists()

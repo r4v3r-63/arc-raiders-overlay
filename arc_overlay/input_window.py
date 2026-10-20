@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from PyQt6.QtCore import QStringListModel, Qt, pyqtSignal
-from PyQt6.QtGui import QGuiApplication, QKeyEvent
+from PyQt6.QtGui import QCursor, QGuiApplication, QKeyEvent
 from PyQt6.QtWidgets import (QCompleter, QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout,
                              QWidget)
 
@@ -96,7 +96,8 @@ class InputWindow(QWidget):
             self._previous_window = winapi.get_foreground_window()
         self.error_label.hide()
         self.adjustSize()
-        screen = QGuiApplication.primaryScreen().availableGeometry()
+        # Монитор, где курсор (а значит, игра), а не всегда основной.
+        screen = (QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()).availableGeometry()
         self.move(screen.center().x() - self.width() // 2, screen.top() + screen.height() // 4)
         self.show()
         self.raise_()

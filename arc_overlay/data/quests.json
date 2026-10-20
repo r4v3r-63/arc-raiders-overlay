@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-19T16:19:47Z",
+  "generated_at": "2026-10-20T11:19:34Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -1290,6 +1290,13 @@
           "x": 0.605,
           "y": 0.314,
           "step": 3
+        },
+        {
+          "map": "dam_battlegrounds",
+          "name": "Controlled Access Zone",
+          "x": 0.605,
+          "y": 0.314,
+          "step": 4
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8692284",
@@ -2005,6 +2012,13 @@
           "x": 0.328,
           "y": 0.2933,
           "step": 1
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Arrival Building",
+          "x": 0.328,
+          "y": 0.2933,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8804481",
@@ -2192,6 +2206,13 @@
           "x": 0.4305,
           "y": 0.8823,
           "step": 2
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Maintenance Hangar",
+          "x": 0.4305,
+          "y": 0.8823,
+          "step": 3
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798442",
@@ -2468,6 +2489,13 @@
           "x": 0.61,
           "y": 0.9181,
           "step": 1
+        },
+        {
+          "map": "stella_montis",
+          "name": "Seed Vault",
+          "x": 0.61,
+          "y": 0.9181,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805313",
@@ -2701,6 +2729,13 @@
           "x": 0.61,
           "y": 0.9181,
           "step": 0
+        },
+        {
+          "map": "stella_montis",
+          "name": "Seed Vault",
+          "x": 0.61,
+          "y": 0.9181,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8805388",
@@ -4448,6 +4483,13 @@
           "x": 0.2855,
           "y": 0.6735,
           "step": 0
+        },
+        {
+          "map": "buried_city",
+          "name": "Grandioso Apartments",
+          "x": 0.2855,
+          "y": 0.6735,
+          "step": 1
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802121",
@@ -4517,6 +4559,13 @@
           "x": 0.473,
           "y": 0.9908,
           "step": 0
+        },
+        {
+          "map": "dam_battlegrounds",
+          "name": "Formicai Outpost",
+          "x": 0.473,
+          "y": 0.9908,
+          "step": 1
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8802221",
@@ -5043,6 +5092,13 @@
           "x": 0.344,
           "y": 0.7351,
           "step": 0
+        },
+        {
+          "map": "the_blue_gate",
+          "name": "Olive Grove",
+          "x": 0.344,
+          "y": 0.7351,
+          "step": 1
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797727",
@@ -5503,6 +5559,13 @@
           "x": 0.3885,
           "y": 0.5278,
           "step": 0
+        },
+        {
+          "map": "the_blue_gate",
+          "name": "Checkpoint",
+          "x": 0.3885,
+          "y": 0.5278,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798563",
@@ -5894,6 +5957,13 @@
           "x": 0.322,
           "y": 0.4795,
           "step": 0
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Departure Building",
+          "x": 0.322,
+          "y": 0.4795,
+          "step": 1
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8797680",
@@ -6154,6 +6224,13 @@
           "x": 0.515,
           "y": 0.7118,
           "step": 1
+        },
+        {
+          "map": "the_blue_gate",
+          "name": "Broken Earth",
+          "x": 0.515,
+          "y": 0.7118,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8798514",
@@ -6224,6 +6301,13 @@
           "x": 0.513,
           "y": 0.6171,
           "step": 0
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Control Tower A6",
+          "x": 0.513,
+          "y": 0.6171,
+          "step": 2
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#8803661",
@@ -7098,6 +7182,13 @@
           "step": 1
         },
         {
+          "map": "stella_montis",
+          "name": "Control Room",
+          "x": 0.32,
+          "y": 0.6058,
+          "step": 2
+        },
+        {
           "map": "the_blue_gate",
           "name": "Pilgrim's Peak",
           "x": 0.7145,
@@ -7539,6 +7630,13 @@
           "x": 0.458,
           "y": 0.4228,
           "step": 5
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Launch Towers",
+          "x": 0.458,
+          "y": 0.4228,
+          "step": 6
         }
       ],
       "steam_url": "https://steamcommunity.com/sharedfiles/filedetails/?id=3672641520#9369663",

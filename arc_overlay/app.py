@@ -79,6 +79,7 @@ class OverlayApp:
         self._map_on = False  # игрок открыл карту с точками квеста
         self._map_index = 0  # какая из карт квеста показана
         self._map_item = None  # карта открыта для предмета: места, где его искать (ItemReport)
+        self._waiting_map_url = ""  # картинка карты, которую сейчас ждём
         self._full_images: dict[str, QPixmap] = {}  # скриншоты вики в полном размере
         self._item_timer = QTimer()
         self._item_timer.setSingleShot(True)
@@ -545,6 +546,10 @@ class OverlayApp:
         """Снимок экрана → распознавание → найденные квесты в список активных."""
         self._capture(self._grab_screen, 200)
 
+    def _card_screen(self):
+        """Экран, где стоит карточка: там же открываются карта и крупный скриншот."""
+        return QGuiApplication.screenAt(self.card.geometry().center()) or QGuiApplication.primaryScreen()
+
     @staticmethod
     def _capture_screen():
         """Экран, на котором курсор (а значит, и игра): она может быть и на втором мониторе."""
@@ -827,7 +832,7 @@ class OverlayApp:
         caption = " — ".join(filter(None, [page.title, page.text]))
         hint = (f"{shortcuts.key('page_up')} / {shortcuts.key('page_down')} — листать · "
                 f"{shortcuts.key('zoom')} — закрыть · {self.page_index + 1} из {len(self.pages)}")
-        self.zoom.show_image(pixmap, caption, hint)
+        self.zoom.show_image(pixmap, caption, hint, screen=self._card_screen())
 
     def _full_image_ready(self, page: guide.GuidePage, path):
         if not path:
@@ -896,6 +901,7 @@ class OverlayApp:
             url = REMOTE_DATA_URL + game_map.image
             pixmap = self._full_images.get(url)
             if pixmap is None:
+                self._waiting_map_url = url
                 self.downloader.get(url, lambda path, u=url: self._map_image_ready(u, path), validate=net.is_image)
                 return
         name = game_map.name_ru or game_map.name
@@ -908,7 +914,12 @@ class OverlayApp:
         else:
             quest = self.card.quest
             places = [p for p in quest.places if p["map"] == game_map.id]
-            markers = [(p["x"], p["y"], f"{p['step'] + 1} {p['name']}", p["step"] == self.card.step) for p in places]
+            # Одно место на нескольких шагах — одна точка с номерами всех шагов: «2,4 Olive Grove».
+            spots: dict[tuple, list] = {}
+            for p in places:
+                spots.setdefault((p["name"], p["x"], p["y"]), []).append(p["step"])
+            markers = [(x, y, ",".join(str(s + 1) for s in steps) + f" {name}", self.card.step in steps)
+                       for (name, x, y), steps in spots.items()]
             caption = f"{quest.name} — {name}"
             if not places:
                 caption += ". Точные места на карте не отмечены"
@@ -916,12 +927,15 @@ class OverlayApp:
         if len(maps) > 1:
             hint += (f" · {shortcuts.key('page_up')} / {shortcuts.key('page_down')} — другая карта "
                      f"({self._map_index + 1} из {len(maps)})")
-        self.map_view.show_image(pixmap, caption, hint, markers)
+        self.map_view.show_image(pixmap, caption, hint, markers, screen=self._card_screen())
 
     def _map_image_ready(self, url: str, path):
-        if not self._map_on:
-            return  # карту уже закрыли
         pixmap = QPixmap(str(path)) if path else QPixmap()
+        if not pixmap.isNull():
+            self._full_images[url] = pixmap
+        if not self._map_on or url != self._waiting_map_url:
+            return  # карту закрыли или уже переключились на другую — этот ответ ни при чём
+        self._waiting_map_url = ""
         if pixmap.isNull():
             self._close_map()
             self._show_notice("Карта не загрузилась — проверьте интернет.")
@@ -966,6 +980,12 @@ class OverlayApp:
                 and not self.card.panel and not self._map_on:
             # Шаги текущего квеста — из новой базы; квест, которого не было во встроенной базе, теперь найдётся.
             self.show_current()
+        elif self.card.quest is not None:
+            # Открыт гайд, панель или карта: не сбиваем игрока, но квест и страницы гайда — уже из новой базы.
+            fresh = self.progress.resolve(self.db, self.progress.current_entry())
+            if fresh is not None:
+                self.card.replace_quest(fresh)
+                self.rebuild_pages()
 
     def sync_steam_guide(self):
         """Скачивает руководство Steam (не чаще раза в сутки) и добавляет в поиск новые квесты из него."""

@@ -31,14 +31,14 @@ class ZoomWindow(QWidget):
         self._markers: list[tuple[float, float, str, bool]] = []
 
     def show_image(self, pixmap: QPixmap, caption: str = "", hint: str = "",
-                   markers: list[tuple[float, float, str, bool]] | None = None):
-        """markers — точки на картинке: (x 0..1, y 0..1, подпись, выделить)."""
+                   markers: list[tuple[float, float, str, bool]] | None = None, screen=None):
+        """markers — точки на картинке: (x 0..1, y 0..1, подпись, выделить); screen — на каком мониторе."""
         self._pixmap = pixmap
         self._caption = caption
         self._hint = hint
         self._markers = markers or []
-        screen = QGuiApplication.primaryScreen().availableGeometry()
-        self.setGeometry(screen.adjusted(MARGIN, MARGIN, -MARGIN, -MARGIN))
+        area = (screen or QGuiApplication.primaryScreen()).availableGeometry()
+        self.setGeometry(area.adjusted(MARGIN, MARGIN, -MARGIN, -MARGIN))
         self.show()
         self.raise_()
         self.update()

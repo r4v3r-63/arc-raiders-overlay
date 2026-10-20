@@ -400,7 +400,7 @@ def quest_places(objectives_en: list[str], map_ids: list[str], maps: dict[str, d
         text = f" {norm_place(objective)} "
         for map_id in map_ids or list(maps):
             for room in maps.get(map_id, {}).get("rooms", []):
-                key = (map_id, room["name"])
+                key = (map_id, room["name"], step)  # в одно место можно вернуться на другом шаге
                 if key not in seen and f" {norm_place(room['name'])} " in text:
                     seen.add(key)
                     places.append({"map": map_id, "name": room["name"], "x": room["x"], "y": room["y"], "step": step})

@@ -3,9 +3,9 @@
 from __future__ import annotations
 
 from PyQt6.QtCore import Qt, pyqtSignal
-from PyQt6.QtGui import QCloseEvent, QKeySequence
-from PyQt6.QtWidgets import (QGridLayout, QHBoxLayout, QKeySequenceEdit, QLabel, QPushButton, QVBoxLayout,
-                             QWidget)
+from PyQt6.QtGui import QCloseEvent, QCursor, QGuiApplication, QKeySequence
+from PyQt6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QKeySequenceEdit, QLabel, QPushButton, QScrollArea,
+                             QVBoxLayout, QWidget)
 
 from . import shortcuts
 
@@ -81,7 +81,15 @@ class HotkeysWindow(QWidget):
         layout.setSpacing(10)
         layout.addWidget(title)
         layout.addWidget(hint)
-        layout.addLayout(grid)
+        # Список сочетаний прокручивается, если экран невысокий; ошибки и кнопки всегда видны.
+        rows = QWidget()
+        rows.setLayout(grid)
+        self._scroll = QScrollArea()
+        self._scroll.setWidget(rows)
+        self._scroll.setWidgetResizable(True)
+        self._scroll.setFrameShape(QFrame.Shape.NoFrame)
+        self._scroll.setHorizontalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOff)
+        layout.addWidget(self._scroll, 1)
         layout.addWidget(self._error)
         layout.addLayout(buttons)
         self.setMinimumWidth(620)
@@ -90,6 +98,10 @@ class HotkeysWindow(QWidget):
         for action, edit in self._edits.items():
             edit.setKeySequence(QKeySequence(bindings.get(action, shortcuts.DEFAULTS[action])))
         self._validate()
+        # Высота по содержимому, но не больше экрана: остальное прокручивается.
+        screen = (QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()).availableGeometry()
+        wanted = self._scroll.widget().sizeHint().height() + 220
+        self.resize(self.width(), min(wanted, int(screen.height() * 0.9)))
         self.show()
         self.raise_()
         self.activateWindow()

@@ -174,6 +174,11 @@ class OverlayCard(QWidget):
         self._notice = notice
         self.show_step()
 
+    def replace_quest(self, quest: Quest):
+        """Тот же квест из обновлённой базы — без перерисовки: игрок может смотреть гайд или панель."""
+        self._quest = quest
+        self._step = max(0, min(self._step, len(quest.steps) - 1)) if quest.steps else 0
+
     def next_step(self):
         if self._quest and self._step < len(self._quest.steps) - 1:
             self._step += 1

@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 from PyQt6.QtCore import Qt, pyqtSignal
+from PyQt6.QtGui import QCursor, QGuiApplication
 from PyQt6.QtWidgets import QLabel, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QVBoxLayout, QWidget
 
 from .quest_db import QuestDB, normalize
@@ -53,6 +54,8 @@ class BlueprintsWindow(QWidget):
         self._filling = False
 
     def open(self, db: QuestDB, learned: set[str]):
+        screen = (QGuiApplication.screenAt(QCursor.pos()) or QGuiApplication.primaryScreen()).availableGeometry()
+        self.resize(self.width(), min(640, int(screen.height() * 0.9)))  # список и так прокручивается
         self._filling = True
         self._list.clear()
         blueprints = sorted((i for i in db.items.values() if i.unlocks), key=lambda i: i.name.lower())

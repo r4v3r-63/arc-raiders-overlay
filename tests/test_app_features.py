@@ -335,3 +335,48 @@ def test_saved_quest_appears_after_fresh_db(app):
     path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
     app._remote_db_loaded(path)
     assert app.card.quest is not None and app.card.quest.id == "brand_new"
+
+
+def test_late_map_error_does_not_close_other_map(app, tmp_path):
+    from PyQt6.QtGui import QPixmap
+
+    app.on_submitted("Первый плацдарм")
+    app._map_on = True
+    app._waiting_map_url = "B"
+    good = QPixmap(10, 10)
+    good.fill()
+    path = tmp_path / "b.png"
+    good.save(str(path))
+    app._map_image_ready("A", None)  # ответ по карте, с которой уже ушли
+    assert app._map_on
+    app._map_image_ready("B", path)
+    assert app._full_images["B"].width() == 10
+
+
+def test_fresh_db_replaces_quest_while_guide_open(app, tmp_path):
+    app.on_submitted("Первый плацдарм")
+    quest = app.card.quest
+    app.toggle_guide()
+    from arc_overlay.quest_db import DEFAULT_DB_PATH
+
+    data = json.loads(DEFAULT_DB_PATH.read_text(encoding="utf-8"))
+    data["generated_at"] = "2999-01-01T00:00:00Z"
+    for q in data["quests"]:
+        if q["id"] == quest.id:
+            q["steps"] = ["НОВАЯ ЦЕЛЬ"] + q["steps"][1:]
+    path = tmp_path / "remote.json"
+    path.write_text(json.dumps(data, ensure_ascii=False), encoding="utf-8")
+    app._remote_db_loaded(path)
+    assert app.guide_mode  # гайд не закрылся
+    app.toggle_guide()
+    assert "НОВАЯ ЦЕЛЬ" in app.card._label.text()
+
+
+def test_same_place_on_two_steps_is_one_marker(app):
+    from arc_overlay.quest_db import Quest
+
+    app.card.show_quest(Quest(id="t", name="Т", steps=["a", "b", "c"], locations=["the_blue_gate"], places=[
+        {"map": "the_blue_gate", "name": "Olive Grove", "x": 0.3, "y": 0.6, "step": 0},
+        {"map": "the_blue_gate", "name": "Olive Grove", "x": 0.3, "y": 0.6, "step": 2}]), 2)
+    app.toggle_map()
+    assert [m[2] for m in app.map_view._markers] == ["1,3 Olive Grove"] and app.map_view._markers[0][3]
