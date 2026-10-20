@@ -46,6 +46,7 @@ jobs:
 
       # Все тесты перед сборкой: сломанная программа не попадёт в релиз.
       - name: Тесты
+        timeout-minutes: 5
         env:
           QT_QPA_PLATFORM: offscreen
         run: python -m pytest -q

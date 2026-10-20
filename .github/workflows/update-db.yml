@@ -37,6 +37,7 @@ jobs:
         run: python tools/build_quest_db.py /tmp/arcraiders-data
 
       - name: Проверить базу
+        timeout-minutes: 5
         env:
           QT_QPA_PLATFORM: offscreen
         run: |
