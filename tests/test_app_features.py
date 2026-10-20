@@ -380,3 +380,34 @@ def test_same_place_on_two_steps_is_one_marker(app):
         {"map": "the_blue_gate", "name": "Olive Grove", "x": 0.3, "y": 0.6, "step": 2}]), 2)
     app.toggle_map()
     assert [m[2] for m in app.map_view._markers] == ["1,3 Olive Grove"] and app.map_view._markers[0][3]
+
+
+def test_late_map_error_after_switch_to_local_or_cached_map(app, monkeypatch):
+    from arc_overlay import app as app_module
+
+    app.on_submitted("Снова на вершине")  # квест на нескольких картах
+    maps = app.quest_maps()
+    assert len(maps) > 1
+    remote = app.db.maps[maps[0]]
+    real_dir = app_module.DATA_DIR
+    # Первая карта «ещё не скачана»: её картинки нет в папке программы.
+    monkeypatch.setattr(app_module, "DATA_DIR", type(real_dir)(str(real_dir) + "-нет"))
+    monkeypatch.setattr(app.downloader, "get", lambda *args, **kwargs: None)  # ответ придёт позже
+    app.toggle_map()
+    url = app_module.REMOTE_DATA_URL + remote.image
+    assert app._waiting_map_url == url
+
+    monkeypatch.setattr(app_module, "DATA_DIR", real_dir)
+    app.next_page()  # переключились на встроенную карту — она показана сразу
+    assert app.map_view.isVisible() and app._waiting_map_url == ""
+    app._map_image_ready(url, None)  # запоздалая ошибка первой карты
+    assert app._map_on and app.map_view.isVisible()
+
+    app._full_images[url] = app.map_view._pixmap  # первая карта уже в памяти
+    app.prev_page()
+    assert app._waiting_map_url == ""
+    app._map_image_ready(url, None)
+    assert app._map_on
+
+    app.toggle_map()  # закрыли — ожидание сброшено
+    assert app._waiting_map_url == ""

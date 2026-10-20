@@ -894,6 +894,7 @@ class OverlayApp:
         self._map_index = min(self._map_index, len(maps) - 1)
         game_map = self.db.maps[maps[self._map_index]]
         local = DATA_DIR / game_map.image
+        self._waiting_map_url = ""  # ждём картинку только той карты, что показываем сейчас
         if local.exists():
             pixmap = QPixmap(str(local))
         else:
@@ -951,6 +952,7 @@ class OverlayApp:
 
     def _close_map(self):
         self._map_on = False
+        self._waiting_map_url = ""
         self._map_item = None
         self.map_view.hide()
 
