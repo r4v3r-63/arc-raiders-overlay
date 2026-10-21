@@ -23,7 +23,7 @@ def command() -> str:
     if getattr(sys, "frozen", False):
         return f'"{sys.executable}"'
     pythonw = Path(sys.executable).with_name("pythonw.exe")
-    script = Path(__file__).resolve().parent.parent / "run_overlay.py"
+    script = Path(__file__).resolve().parents[2] / "run_overlay.py"
     return f'"{pythonw if pythonw.exists() else sys.executable}" "{script}"'
 
 

@@ -34,7 +34,7 @@ class Progress:
     blueprints: list[str] = field(default_factory=list)  # id изученных чертежей
 
     @classmethod
-    def load(cls, path: Path) -> "Progress":
+    def load(cls, path: Path) -> Progress:
         progress = cls(path)
         try:
             data = json.loads(path.read_text(encoding="utf-8"))

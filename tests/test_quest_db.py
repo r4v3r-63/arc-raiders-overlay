@@ -1,4 +1,4 @@
-from arc_overlay.quest_db import GameMap, Quest, QuestDB
+from arc_overlay.core.quest_db import GameMap, Quest, QuestDB
 
 
 def make_db():
@@ -57,7 +57,7 @@ def test_bundled_db_has_guides_and_links():
 
 
 def test_bundled_guide_images_exist():
-    from arc_overlay.quest_db import DATA_DIR
+    from arc_overlay.core.quest_db import DATA_DIR
     db = QuestDB.load()
     for q in db.quests:
         for image in (q.guide or {}).get("images", []):

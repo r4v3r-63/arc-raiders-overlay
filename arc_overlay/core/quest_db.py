@@ -8,7 +8,7 @@ import re
 from dataclasses import dataclass, field
 from pathlib import Path
 
-DATA_DIR = Path(__file__).resolve().parent / "data"
+DATA_DIR = Path(__file__).resolve().parent.parent / "data"  # arc_overlay/data
 DEFAULT_DB_PATH = DATA_DIR / "quests.json"
 # Отсюда программа скачивает свежую базу и недостающие скриншоты (их обновляет GitHub Actions).
 REMOTE_DATA_URL = "https://raw.githubusercontent.com/r4v3r-63/arc-raiders-overlay/main/arc_overlay/data/"
@@ -112,12 +112,12 @@ class QuestDB:
                 self._map_by_name.setdefault(normalize(name), m)
 
     @classmethod
-    def load(cls, path: Path = DEFAULT_DB_PATH) -> "QuestDB":
+    def load(cls, path: Path = DEFAULT_DB_PATH) -> QuestDB:
         with open(path, encoding="utf-8") as f:
             return cls.from_dict(json.load(f))
 
     @classmethod
-    def from_dict(cls, data: dict) -> "QuestDB":
+    def from_dict(cls, data: dict) -> QuestDB:
         maps = [
             GameMap(id=m["id"], name=m["name"], name_ru=m.get("name_ru", ""), aliases=list(m.get("aliases", [])),
                     image=m.get("image", ""), rooms=list(m.get("rooms", [])))

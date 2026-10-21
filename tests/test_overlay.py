@@ -1,8 +1,8 @@
 from PyQt6.QtCore import QPoint, QPointF, QSettings, Qt
 from PyQt6.QtGui import QMouseEvent
 
-from arc_overlay.overlay import MAX_SCALE, MIN_SCALE, OverlayCard
-from arc_overlay.quest_db import QuestDB
+from arc_overlay.core.quest_db import QuestDB
+from arc_overlay.ui.overlay import MAX_SCALE, MIN_SCALE, OverlayCard
 
 
 def make_card(tmp_path):
@@ -68,7 +68,7 @@ def test_newer_remote_db_replaces_bundled(qapp, tmp_path):
     import json
 
     from arc_overlay.app import OverlayApp
-    from arc_overlay.quest_db import DEFAULT_DB_PATH
+    from arc_overlay.core.quest_db import DEFAULT_DB_PATH
 
     app = OverlayApp(qapp)
     data = json.loads(DEFAULT_DB_PATH.read_text(encoding="utf-8"))
@@ -107,7 +107,7 @@ def test_opacity_is_clamped_saved_and_reset(qapp, tmp_path):
 def test_panel_over_guide_keeps_screenshot(qapp, tmp_path):
     from PyQt6.QtGui import QPixmap
 
-    from arc_overlay.guide import GuidePage
+    from arc_overlay.core.guide import GuidePage
 
     card, _ = make_card(tmp_path)
     card.show_quest(card._db.quests[0])

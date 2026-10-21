@@ -1,4 +1,4 @@
-from arc_overlay.onboarding import PAGES, OnboardingWindow
+from arc_overlay.ui.onboarding import PAGES, OnboardingWindow
 
 
 def test_pages_navigation_and_finish(qapp):

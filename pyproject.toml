@@ -1,0 +1,15 @@
+# Настройки инструментов разработки. Программа не устанавливается как пакет:
+# зависимости — в requirements.txt (программа) и requirements-dev.txt (сборка базы, тесты).
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"
+
+[tool.ruff]
+line-length = 120
+target-version = "py312"
+extend-exclude = ["arc_overlay/data"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+ignore = ["E501"]  # длинные строки — это тексты и данные; переносить их ради правила незачем

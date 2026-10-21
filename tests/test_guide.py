@@ -1,5 +1,5 @@
-from arc_overlay import guide
-from arc_overlay.quest_db import Quest
+from arc_overlay.core import guide
+from arc_overlay.core.quest_db import Quest
 
 # Упрощённая разметка раздела руководства Steam (не настоящий текст).
 STEAM_HTML = """

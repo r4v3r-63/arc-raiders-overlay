@@ -4,10 +4,9 @@ from __future__ import annotations
 
 from PyQt6.QtCore import QStringListModel, Qt, pyqtSignal
 from PyQt6.QtGui import QCursor, QGuiApplication, QKeyEvent
-from PyQt6.QtWidgets import (QCompleter, QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout,
-                             QWidget)
+from PyQt6.QtWidgets import QCompleter, QFormLayout, QHBoxLayout, QLabel, QLineEdit, QPushButton, QVBoxLayout, QWidget
 
-from . import winapi
+from ..system import winapi
 
 
 class InputWindow(QWidget):

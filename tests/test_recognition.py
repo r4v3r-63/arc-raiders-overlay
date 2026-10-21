@@ -1,5 +1,5 @@
-from arc_overlay.quest_db import QuestDB
-from arc_overlay.screen_import import match_quests
+from arc_overlay.core.quest_db import QuestDB
+from arc_overlay.core.recognition import match_quests
 
 
 def test_matches_quest_lines_and_ignores_other_text():

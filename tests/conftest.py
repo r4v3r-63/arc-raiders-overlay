@@ -18,7 +18,7 @@ def no_system_side_effects(monkeypatch):
     на сервере сборки их некому закрыть, и тесты зависли бы."""
     from PyQt6.QtWidgets import QMessageBox
 
-    from arc_overlay import winapi
+    from arc_overlay.system import winapi
 
     monkeypatch.setattr(winapi.HotkeyManager, "register", lambda self, *args, **kwargs: True)
     for name in ("warning", "information", "critical", "question"):

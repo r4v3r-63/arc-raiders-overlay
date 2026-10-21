@@ -5,6 +5,6 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 
-from arc_overlay.app import main  # noqa: E402
+from arc_overlay.main import main  # noqa: E402
 
 sys.exit(main())

@@ -47,9 +47,12 @@ jobs:
       # Все тесты перед сборкой: сломанная программа не попадёт в релиз.
       - name: Тесты
         timeout-minutes: 5
+        shell: bash  # в bash сборка остановится на первой же неудачной проверке
         env:
           QT_QPA_PLATFORM: offscreen
-        run: python -m pytest -q
+        run: |
+          ruff check .
+          python -m pytest -q
 
       - name: Записать сведения о сборке
         shell: bash

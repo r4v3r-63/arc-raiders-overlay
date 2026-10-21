@@ -7,7 +7,7 @@ from PyQt6.QtCore import QSettings, Qt
 
 @pytest.fixture
 def app(qapp, tmp_path, monkeypatch):
-    from arc_overlay import paths
+    from arc_overlay.system import paths
 
     monkeypatch.setattr(paths, "user_data_dir", lambda: tmp_path)
     monkeypatch.setattr(paths, "cache_dir", lambda: tmp_path)
@@ -30,7 +30,7 @@ def test_shopping_panel_toggles(app):
 
 
 def test_card_hides_outside_game(app, monkeypatch):
-    from arc_overlay import winapi
+    from arc_overlay.system import winapi
 
     state = {"fg": (100, 999, True), "alive": True}
     monkeypatch.setattr(winapi, "foreground_info", lambda: state["fg"])
@@ -55,7 +55,7 @@ def test_card_hides_outside_game(app, monkeypatch):
 
 
 def test_auto_hide_can_be_disabled(app, monkeypatch):
-    from arc_overlay import winapi
+    from arc_overlay.system import winapi
 
     monkeypatch.setattr(winapi, "foreground_info", lambda: (200, 998, False))
     monkeypatch.setattr(winapi, "window_alive", lambda hwnd: True)
@@ -94,7 +94,7 @@ def test_zoom_shows_guide_screenshot(app):
 
 
 def test_hotkeys_saved_refreshes_hints(app):
-    from arc_overlay import shortcuts
+    from arc_overlay.system import shortcuts
 
     bindings = shortcuts.bindings()
     bindings["help"] = "Alt+H"
@@ -172,7 +172,7 @@ def test_item_check_shows_panel_and_workshop_levels(app):
 
 
 def test_workshop_levels_saved(tmp_path):
-    from arc_overlay.progress import Progress
+    from arc_overlay.core.progress import Progress
 
     progress = Progress.load(tmp_path / "p.json")
     progress.workshops["scrappy"] = 3
@@ -197,8 +197,9 @@ def test_item_search_and_item_map(app):
 
 
 def test_whats_new_after_update(qapp, tmp_path, monkeypatch):
-    from arc_overlay import onboarding, paths
     from arc_overlay.app import OverlayApp
+    from arc_overlay.core import news
+    from arc_overlay.system import paths
 
     ini = str(tmp_path / "n.ini")
     monkeypatch.setattr(paths, "user_data_dir", lambda: tmp_path)
@@ -206,22 +207,22 @@ def test_whats_new_after_update(qapp, tmp_path, monkeypatch):
     monkeypatch.setattr(paths, "settings", lambda: QSettings(ini, QSettings.Format.IniFormat))
     old = QSettings(ini, QSettings.Format.IniFormat)
     old.setValue("onboarding_done", True)  # игрок с прошлой версии: обзор прошёл, новостей не видел
-    old.setValue("news_seen", onboarding.LATEST_NEWS - 1)
+    old.setValue("news_seen", news.LATEST_NEWS - 1)
     old.sync()
 
     overlay = OverlayApp(qapp)
     overlay._game_timer.stop()
     overlay.input.close_and_return_focus()
     assert overlay.news.isVisible() and not overlay.onboarding.isVisible()
-    assert onboarding.NEWS[0][1] in overlay.news._text.text()
-    assert onboarding.NEWS[1][1] not in overlay.news._text.text()  # уже видел
+    assert news.NEWS[0][1] in overlay.news._text.text()
+    assert news.NEWS[1][1] not in overlay.news._text.text()  # уже видел
     overlay.news._next.click()
     assert not overlay.news.isVisible()
-    assert QSettings(ini, QSettings.Format.IniFormat).value("news_seen", type=int) == onboarding.LATEST_NEWS
+    assert QSettings(ini, QSettings.Format.IniFormat).value("news_seen", type=int) == news.LATEST_NEWS
     overlay.show_news(only_unseen=True)
     assert not overlay.news.isVisible()  # второй раз сам не показывается
     overlay.show_news(only_unseen=False)  # из меню трея — все новости
-    assert overlay.news.isVisible() and onboarding.NEWS[-1][1] in overlay.news._text.text()
+    assert overlay.news.isVisible() and news.NEWS[-1][1] in overlay.news._text.text()
     overlay.news.finish()
 
 
@@ -323,7 +324,7 @@ def test_long_shopping_list_has_pages(app):
 
 
 def test_saved_quest_appears_after_fresh_db(app):
-    from arc_overlay.quest_db import Quest, QuestDB
+    from arc_overlay.core.quest_db import Quest
 
     app.progress.add(Quest(id="brand_new", name="Совсем новый квест", steps=["шаг"]))
     app.show_current()
@@ -357,7 +358,7 @@ def test_fresh_db_replaces_quest_while_guide_open(app, tmp_path):
     app.on_submitted("Первый плацдарм")
     quest = app.card.quest
     app.toggle_guide()
-    from arc_overlay.quest_db import DEFAULT_DB_PATH
+    from arc_overlay.core.quest_db import DEFAULT_DB_PATH
 
     data = json.loads(DEFAULT_DB_PATH.read_text(encoding="utf-8"))
     data["generated_at"] = "2999-01-01T00:00:00Z"
@@ -373,7 +374,7 @@ def test_fresh_db_replaces_quest_while_guide_open(app, tmp_path):
 
 
 def test_same_place_on_two_steps_is_one_marker(app):
-    from arc_overlay.quest_db import Quest
+    from arc_overlay.core.quest_db import Quest
 
     app.card.show_quest(Quest(id="t", name="Т", steps=["a", "b", "c"], locations=["the_blue_gate"], places=[
         {"map": "the_blue_gate", "name": "Olive Grove", "x": 0.3, "y": 0.6, "step": 0},

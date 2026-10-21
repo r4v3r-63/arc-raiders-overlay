@@ -6,10 +6,8 @@ from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QCursor, QGuiApplication
 from PyQt6.QtWidgets import QLabel, QLineEdit, QListWidget, QListWidgetItem, QPushButton, QVBoxLayout, QWidget
 
-from .quest_db import QuestDB, normalize
-
-ACCENT = "#f2c94c"
-MUTED = "#a8adb5"
+from ..core.quest_db import QuestDB, normalize
+from .theme import ACCENT, MUTED
 
 
 class BlueprintsWindow(QWidget):

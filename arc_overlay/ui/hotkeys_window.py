@@ -4,14 +4,20 @@ from __future__ import annotations
 
 from PyQt6.QtCore import Qt, pyqtSignal
 from PyQt6.QtGui import QCloseEvent, QCursor, QGuiApplication, QKeySequence
-from PyQt6.QtWidgets import (QFrame, QGridLayout, QHBoxLayout, QKeySequenceEdit, QLabel, QPushButton, QScrollArea,
-                             QVBoxLayout, QWidget)
+from PyQt6.QtWidgets import (
+    QFrame,
+    QGridLayout,
+    QHBoxLayout,
+    QKeySequenceEdit,
+    QLabel,
+    QPushButton,
+    QScrollArea,
+    QVBoxLayout,
+    QWidget,
+)
 
-from . import shortcuts
-
-ACCENT = "#f2c94c"
-MUTED = "#a8adb5"
-ERROR = "#ff8a65"
+from ..system import shortcuts
+from .theme import ACCENT, ERROR, MUTED
 
 
 class HotkeysWindow(QWidget):

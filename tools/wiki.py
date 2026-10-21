@@ -137,10 +137,11 @@ def parse_guide(wikitext: str) -> dict | None:
     body = re.sub(r"\[\[(?:File|Image):[^\]]*\]\]", "", body)
     paragraphs = []
     for chunk in re.split(r"\n\s*\n", body):
-        lines = [clean(l).lstrip("*#: ").strip() for l in chunk.splitlines()]
-        lines = [l for l in lines if l and not l.startswith("{|") and not l.startswith("|")]
+        lines = [clean(line).lstrip("*#: ").strip() for line in chunk.splitlines()]
+        lines = [line for line in lines if line and not line.startswith("{|") and not line.startswith("|")]
         if lines:
-            paragraphs.append(" ".join(lines) if not chunk.lstrip().startswith(("*", "#")) else "\n".join("• " + l for l in lines))
+            bulleted = chunk.lstrip().startswith(("*", "#"))
+            paragraphs.append("\n".join("• " + line for line in lines) if bulleted else " ".join(lines))
     if not paragraphs and not images:
         return None
     return {"text": paragraphs, "images": images}
@@ -165,7 +166,7 @@ def parse_objectives(wikitext: str) -> list[str]:
         # Внутри цели вложенный шаблон или ссылка, которые регулярное выражение не разбирает.
         print(f"  внимание: разобрано целей {len(objectives)} из {total}, проверьте разбор вики-разметки")
     if not objectives:
-        objectives = [clean(l.lstrip("*# ")) for l in body.splitlines() if l.strip().startswith(("*", "#"))]
+        objectives = [clean(line.lstrip("*# ")) for line in body.splitlines() if line.strip().startswith(("*", "#"))]
     return [o for o in objectives if o]
 
 

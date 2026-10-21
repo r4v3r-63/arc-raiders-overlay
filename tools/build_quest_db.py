@@ -25,7 +25,7 @@ import re
 import sys
 import urllib.parse
 import urllib.request
-from datetime import datetime, timezone
+from datetime import UTC, datetime
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
@@ -616,7 +616,7 @@ def main() -> int:
     if old == db and old_generated:
         generated = old_generated
     else:
-        generated = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+        generated = datetime.now(UTC).strftime("%Y-%m-%dT%H:%M:%SZ")
     db = {"generated_at": generated, **db}
     OUT_PATH.write_text(json.dumps(db, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
     report_missing_translations()

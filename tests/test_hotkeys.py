@@ -1,7 +1,7 @@
 from PyQt6.QtCore import QSettings
 from PyQt6.QtGui import QKeySequence
 
-from arc_overlay import shortcuts, winapi
+from arc_overlay.system import shortcuts, winapi
 
 
 def test_to_native_converts_common_keys(qapp):
@@ -32,7 +32,7 @@ def test_save_and_load(qapp, tmp_path):
 
 
 def test_window_rejects_duplicates_and_bare_keys(qapp):
-    from arc_overlay.hotkeys_window import HotkeysWindow
+    from arc_overlay.ui.hotkeys_window import HotkeysWindow
 
     w = HotkeysWindow()
     w.open(dict(shortcuts.DEFAULTS))

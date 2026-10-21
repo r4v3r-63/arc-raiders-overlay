@@ -1,5 +1,5 @@
-from arc_overlay.progress import Progress
-from arc_overlay.quest_db import Quest, QuestDB
+from arc_overlay.core.progress import Progress
+from arc_overlay.core.quest_db import Quest, QuestDB
 
 
 def make_db():
@@ -62,7 +62,7 @@ def test_remove_current(tmp_path):
 
 
 def test_shopping_list_sums_items_across_quests():
-    from arc_overlay.progress import shopping_list
+    from arc_overlay.core.progress import shopping_list
 
     quests = [
         Quest(name="И хлам богатство", steps=[], required_items=["6× Провода", "1× Батарея"]),

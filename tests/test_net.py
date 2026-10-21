@@ -1,7 +1,7 @@
 import os
 import time
 
-from arc_overlay.net import CachedDownloader
+from arc_overlay.system.net import CachedDownloader
 
 
 def test_cleanup_removes_only_unused(qapp, tmp_path):
@@ -29,7 +29,7 @@ def test_touch_keeps_download_time(qapp, tmp_path):
 
 
 def test_data_lives_next_to_program(qapp):
-    from arc_overlay import paths
+    from arc_overlay.system import paths
 
     assert paths.user_data_dir() == paths.app_dir() / "Данные"
     assert paths.cache_dir().parent == paths.user_data_dir()
@@ -75,7 +75,7 @@ def test_is_image(qapp):
     from PyQt6.QtCore import QBuffer, QByteArray
     from PyQt6.QtGui import QImage
 
-    from arc_overlay.net import is_image
+    from arc_overlay.system.net import is_image
 
     image = QImage(4, 4, QImage.Format.Format_RGB32)
     data = QByteArray()

@@ -1,31 +1,43 @@
-"""Точка входа: связывает базу квестов, карточку, окно ввода, горячие клавиши и трей."""
+"""OverlayApp — связывает базу квестов, карточку, окна, горячие клавиши и трей.
+
+Здесь только «клей»: правила (квесты, предметы, прогресс) живут в core/, работа с Windows,
+сетью и файлами — в system/, окна — в ui/. Запуск программы — arc_overlay/main.py.
+"""
 
 from __future__ import annotations
 
 import json
 import os
 import re
-import sys
-from pathlib import Path
 from urllib.parse import urlencode
 
-from PyQt6.QtCore import QLockFile, QRect, QStandardPaths, Qt, QTimer, QUrl
-from PyQt6.QtGui import (QAction, QActionGroup, QColor, QCursor, QDesktopServices, QFont, QGuiApplication, QIcon,
-                         QPainter, QPixmap)
+from PyQt6.QtCore import QRect, Qt, QTimer, QUrl
+from PyQt6.QtGui import (
+    QAction,
+    QActionGroup,
+    QColor,
+    QCursor,
+    QDesktopServices,
+    QFont,
+    QGuiApplication,
+    QIcon,
+    QPainter,
+    QPixmap,
+)
 from PyQt6.QtWidgets import QApplication, QMenu, QMessageBox, QSystemTrayIcon
 
-from . import autostart, guide, items, paths, shortcuts, winapi
-from .blueprints_window import BlueprintsWindow
-from .hotkeys_window import HotkeysWindow
-from .zoom import ZoomWindow
-from .progress import Progress, shopping_list
-from . import screen_import
-from .input_window import InputWindow
-from . import net
-from .net import CachedDownloader
-from .onboarding import LATEST_NEWS, NEWS, OnboardingWindow, news_pages
-from .overlay import OverlayCard
-from .quest_db import DATA_DIR, REMOTE_DATA_URL, Quest, QuestDB
+from .core import guide, items, recognition
+from .core.news import LATEST_NEWS, NEWS, news_pages
+from .core.progress import Progress, shopping_list
+from .core.quest_db import DATA_DIR, REMOTE_DATA_URL, Quest, QuestDB
+from .system import autostart, net, ocr, paths, shortcuts, winapi
+from .system.net import CachedDownloader
+from .ui.blueprints_window import BlueprintsWindow
+from .ui.hotkeys_window import HotkeysWindow
+from .ui.input_window import InputWindow
+from .ui.onboarding import OnboardingWindow
+from .ui.overlay import OverlayCard
+from .ui.zoom import ZoomWindow
 
 RELEASE_API_URL = "https://api.github.com/repos/r4v3r-63/arc-raiders-overlay/releases/latest"
 DOWNLOAD_URL = "https://github.com/r4v3r-63/arc-raiders-overlay/releases/latest/download/ARC-Raiders-Overlay.zip"
@@ -528,7 +540,7 @@ class OverlayApp:
         QTimer.singleShot(delay_ms, grab)
 
     def _recognize(self, image, file_name: str, on_done, boxes: bool = False):
-        thread = screen_import.RecognizeThread(image, paths.cache_dir() / file_name, boxes)
+        thread = ocr.RecognizeThread(image, paths.cache_dir() / file_name, boxes)
         thread.recognized.connect(on_done)
         thread.failed.connect(self._show_notice)
         thread.finished.connect(self._capture_finished)
@@ -562,7 +574,7 @@ class OverlayApp:
         self._recognize(image, "экран.png", self._screen_recognized)
 
     def _screen_recognized(self, lines: list):
-        found = screen_import.match_quests(self.db, lines)
+        found = recognition.match_quests(self.db, lines)
         if not found:
             self._show_notice("Квесты на экране не найдены. Откройте в игре экран, где виден список квестов "
                               f"(например, лобби), и нажмите {shortcuts.key('import')} ещё раз.")
@@ -1076,86 +1088,3 @@ class OverlayApp:
         self.show_current()
         self.set_card_visible(True)
         self.input.close_and_return_focus()
-
-
-def self_test() -> int:
-    """Проверка собранного .exe без окон: база читается, HTTPS доступен. Код возврата 0 — всё в порядке."""
-    from PyQt6.QtNetwork import QSslSocket
-
-    db = QuestDB.load()
-    ok = len(db.quests) >= 100 and QSslSocket.supportsSsl()
-    print(f"квестов: {len(db.quests)}, HTTPS: {QSslSocket.supportsSsl()}")
-    return 0 if ok else 1
-
-
-def ocr_self_test() -> int:
-    """Проверка распознавания в собранном .exe: рисуем названия квестов и распознаём их."""
-    from PyQt6.QtGui import QImage
-
-    image = QImage(1400, 300, QImage.Format.Format_RGB32)
-    image.fill(QColor("#15181e"))
-    painter = QPainter(image)
-    painter.setPen(QColor("#f0f0f0"))
-    painter.setFont(QFont("Arial", 28))
-    painter.drawText(40, 100, "Greasing Her Palms")
-    painter.drawText(40, 200, "What Goes Around")
-    painter.end()
-    result: dict = {}
-    thread = screen_import.RecognizeThread(image, paths.cache_dir() / "ocr-test.png")
-    thread.recognized.connect(lambda lines: result.update(lines=lines), Qt.ConnectionType.DirectConnection)
-    thread.failed.connect(lambda message: result.update(error=message), Qt.ConnectionType.DirectConnection)
-    thread.start()
-    if not thread.wait(60_000):
-        print("распознавание зависло")
-        return 1
-    if "error" in result:
-        print(f"распознавание недоступно: {result['error']}")
-        return 1
-    lines = result.get("lines", [])
-    found = screen_import.match_quests(QuestDB.load(), lines)
-    print(f"строки: {lines}; квесты: {[q.english_name for q in found]}")
-    return 0 if len(found) >= 2 else 1
-
-
-def _log_unhandled(exc_type, exc, tb):
-    """Ошибка в обработчике Qt иначе закрыла бы программу без следа: пишем её в «Данные\\ошибки.log»."""
-    import datetime
-    import traceback
-
-    text = "".join(traceback.format_exception(exc_type, exc, tb))
-    print(text, file=sys.stderr)
-    try:
-        log = paths.user_data_dir() / "ошибки.log"
-        if log.exists() and log.stat().st_size > 1_000_000:
-            log.unlink()  # не даём журналу разрастись
-        with open(log, "a", encoding="utf-8") as f:
-            f.write(f"--- {datetime.datetime.now():%Y-%m-%d %H:%M:%S}\n{text}\n")
-    except OSError:
-        pass
-
-
-def main() -> int:
-    if "--ocr-test" in sys.argv:
-        os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-        _app = QApplication(sys.argv)
-        code = ocr_self_test()
-        sys.stdout.flush()
-        # Зависший вызов Windows в фоновом потоке не даёт процессу завершиться обычным путём.
-        os._exit(code)
-    if "--self-test" in sys.argv:
-        os.environ.setdefault("QT_QPA_PLATFORM", "offscreen")
-        _app = QApplication(sys.argv)
-        return self_test()
-    app = QApplication(sys.argv)
-    app.setQuitOnLastWindowClosed(False)  # окна прячутся, но программа живёт в трее
-    # Вторая копия программы делила бы горячие клавиши с первой — не запускаем её.
-    lock = QLockFile(str(Path(QStandardPaths.writableLocation(QStandardPaths.StandardLocation.TempLocation))
-                         / "arc_raiders_overlay.lock"))
-    if not lock.tryLock(100):
-        QMessageBox.information(None, "ARC Raiders — подсказчик",
-                                "Программа уже запущена — её значок «?» в трее рядом с часами.")
-        return 0
-    paths.migrate_legacy()
-    sys.excepthook = _log_unhandled  # с ним PyQt не завершает программу при ошибке в обработчике
-    _overlay = OverlayApp(app)
-    return app.exec()

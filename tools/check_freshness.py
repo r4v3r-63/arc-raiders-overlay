@@ -20,7 +20,7 @@ import re
 import subprocess
 import sys
 import urllib.request
-from datetime import date, datetime, timezone
+from datetime import UTC, date, datetime
 from pathlib import Path
 
 STEAM_APP_ID = 1808500
@@ -45,7 +45,7 @@ def is_content_update(title: str) -> bool:
 
 def last_game_update(news: list[dict]) -> tuple[str, date] | None:
     """(название, дата) последнего контентного обновления игры."""
-    updates = [(n["title"], datetime.fromtimestamp(n["date"], timezone.utc).date())
+    updates = [(n["title"], datetime.fromtimestamp(n["date"], UTC).date())
                for n in news if is_content_update(n.get("title", ""))]
     return max(updates, key=lambda u: u[1]) if updates else None
 
@@ -108,7 +108,7 @@ def main() -> int:
     except (OSError, ValueError, KeyError, TypeError) as error:
         print(f"Новости Steam недоступны: {error!r}")
         update = None
-    lagging, report = check(update, source_dates(Path(sys.argv[1])), datetime.now(timezone.utc).date())
+    lagging, report = check(update, source_dates(Path(sys.argv[1])), datetime.now(UTC).date())
     print(report)
     REPORT_PATH.write_text(report + "\n", encoding="utf-8")
     for name in ("GITHUB_OUTPUT", "GITHUB_STEP_SUMMARY"):

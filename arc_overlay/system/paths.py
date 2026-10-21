@@ -19,6 +19,7 @@ from pathlib import Path
 
 from PyQt6.QtCore import QSettings, QStandardPaths
 
+PACKAGE_DIR = Path(__file__).resolve().parent.parent  # папка arc_overlay
 DATA_DIR_NAME = "Данные"
 LEGACY_SETTINGS = ("arc_raiders_overlay", "overlay")  # прежние настройки в реестре
 
@@ -27,7 +28,7 @@ def app_dir() -> Path:
     """Папка с ARC-Raiders-Overlay.exe (или корень проекта при запуске из исходников)."""
     if getattr(sys, "frozen", False):
         return Path(sys.executable).resolve().parent
-    return Path(__file__).resolve().parent.parent
+    return PACKAGE_DIR.parent
 
 
 def _writable(folder: Path) -> bool:
@@ -85,7 +86,7 @@ def migrate_legacy():
 
 def build_info() -> dict:
     """Сведения о сборке (коммит), которые GitHub Actions кладёт в .exe; пусто при запуске из исходников."""
-    path = Path(__file__).resolve().parent / "data" / "build_info.json"
+    path = PACKAGE_DIR / "data" / "build_info.json"
     try:
         return json.loads(path.read_text(encoding="utf-8"))
     except (OSError, ValueError):

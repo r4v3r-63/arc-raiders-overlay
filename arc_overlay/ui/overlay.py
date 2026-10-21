@@ -13,20 +13,16 @@ from PyQt6.QtCore import QPoint, QRectF, QSettings, Qt, pyqtSignal
 from PyQt6.QtGui import QColor, QGuiApplication, QPainter, QPainterPath, QPen, QPixmap
 from PyQt6.QtWidgets import QHBoxLayout, QLabel, QPushButton, QSlider, QVBoxLayout, QWidget
 
-from . import paths, shortcuts, winapi
-from .guide import GuidePage
-from .quest_db import Quest, QuestDB
+from ..core.guide import GuidePage
+from ..core.quest_db import Quest, QuestDB
+from ..system import paths, shortcuts, winapi
+from .theme import ACCENT, BACKGROUND_RGB, MUTED, SUCCESS, TEXT
 
 CARD_WIDTH = 380
 GUIDE_MAX_WIDTH = 640
 SCREEN_MARGIN = 24
 MIN_SCALE, MAX_SCALE, SCALE_STEP = 0.6, 2.0, 0.1
 MIN_OPACITY, MAX_OPACITY, DEFAULT_OPACITY, OPACITY_STEP = 20, 100, 100, 5  # непрозрачность фона, %
-BACKGROUND_RGB = (15, 18, 24)
-ACCENT = "#f2c94c"
-TEXT = "#f0f0f0"
-MUTED = "#a8adb5"
-SUCCESS = "#7bd88f"
 EDIT_HINT = "Перетащи карточку мышкой. Колёсико — масштаб, Ctrl + колёсико — прозрачность. Esc или «Готово» — выйти."
 
 

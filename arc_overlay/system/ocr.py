@@ -1,52 +1,23 @@
-"""Импорт квестов с экрана: снимок экрана → распознавание текста Windows → квесты из базы.
+"""Распознавание текста на снимке экрана встроенным распознаванием Windows (Windows.Media.Ocr).
 
-С игрой программа не взаимодействует: это обычный снимок экрана, как скриншот.
-Распознавание — встроенное в Windows (Windows.Media.Ocr), для русского текста
-в Windows должен быть установлен русский язык с компонентом «Распознавание текста».
+С игрой программа не взаимодействует: это обычный снимок экрана, как скриншот. Что делать
+с распознанными строками, решают core/recognition.py (квесты) и core/items.py (предметы).
+Для русского текста в Windows должен быть установлен русский язык с компонентом
+«Распознавание текста».
 """
 
 from __future__ import annotations
 
 import asyncio
-import difflib
 import sys
 from pathlib import Path
 
-from PyQt6.QtCore import QThread, Qt, pyqtSignal
+from PyQt6.QtCore import Qt, QThread, pyqtSignal
 from PyQt6.QtGui import QImage
-
-from .quest_db import Quest, QuestDB, normalize
-
-MATCH_CUTOFF = 0.85  # насколько строка должна совпасть с названием квеста (опечатки распознавания)
-MIN_LENGTH = 4
-FUZZY_MIN_LENGTH = 8  # короткие названия («Лига», «Тупик») — только точное совпадение, иначе ложные находки
 
 
 class OcrUnavailable(Exception):
     """Распознавание текста недоступно (не Windows или не установлен язык)."""
-
-
-def match_quests(db: QuestDB, lines: list[str]) -> list[Quest]:
-    """Квесты, названия которых встречаются среди распознанных строк (по порядку, без повторов)."""
-    index = {}
-    for quest in db.quests:
-        for name in [quest.name, *quest.aliases]:
-            key = normalize(name)
-            if len(key) >= MIN_LENGTH:
-                index.setdefault(key, quest)
-    keys = [k for k in index if len(k) >= FUZZY_MIN_LENGTH]
-    found: list[Quest] = []
-    for line in lines:
-        text = normalize(line)
-        if len(text) < MIN_LENGTH:
-            continue
-        quest = index.get(text)
-        if quest is None and len(text) >= FUZZY_MIN_LENGTH:
-            close = difflib.get_close_matches(text, keys, n=1, cutoff=MATCH_CUTOFF)
-            quest = index[close[0]] if close else None
-        if quest is not None and quest not in found:
-            found.append(quest)
-    return found
 
 
 # --- распознавание (только Windows) ---------------------------------------
@@ -136,7 +107,7 @@ def recognize_image(image: QImage, work_path: Path, boxes: bool = False) -> list
         raise OcrUnavailable("Не удалось сохранить снимок экрана для распознавания (нет места на диске?).")
     try:
         lines = asyncio.run(asyncio.wait_for(_recognize(engine, work_path, boxes), TIMEOUT_SECONDS))
-    except asyncio.TimeoutError as error:
+    except TimeoutError as error:
         raise OcrUnavailable("Распознавание текста не ответило вовремя.") from error
     if boxes and abs(factor - 1) > 0.05:
         lines = [(text, x / factor, y / factor, w / factor, h / factor) for text, x, y, w, h in lines]
