@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-24T08:09:32Z",
+  "generated_at": "2026-10-28T09:41:34Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -1053,7 +1053,7 @@
         "1× Регулятор потока"
       ],
       "steps": [
-        "Сфотографируйте самоходного робота в песочнице.",
+        "Осмотрите самоходного робота в песочнице",
         "Найдите бумаги в помещении контрольного пункта охраны у лобби.",
         "Доставьте Тянь Вэнь магнетрон.",
         "Доставьте Тянь Вэнь регулятор потока."
@@ -1359,7 +1359,7 @@
       "steps": [
         "Вернитесь к водозабору у здания диспетчерской водоочистителя.",
         "Осмотрите болото, чтобы найти, откуда могла появиться бочка.",
-        "Сфотографируйте грузовик с бочками.",
+        "Поделитесь геолокацией грузовика с бочками",
         "Поищите в грузовике зацепки о личности диверсанта."
       ],
       "hints": [],
@@ -1541,7 +1541,7 @@
       ],
       "one_round": false,
       "required_items": [
-        "1× Провода",
+        "1× Переходник для шлюза «Императора»",
         "1× Модулятор «Императора»"
       ],
       "steps": [
@@ -1553,9 +1553,7 @@
         "Осмотрите 5 контейнеров внутри «Императора».",
         "Получите уникальную добычу с «Императора»."
       ],
-      "hints": [
-        "Провода: ищите в местах с лутом: электрика (Electrical), технологии (Technological)."
-      ],
+      "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Belly_Of_The_Beast",
       "next": [],
       "previous": [
@@ -1574,7 +1572,7 @@
       "aliases": [
         "Boarding the Frigate"
       ],
-      "trader": "Селеста",
+      "trader": "Шани",
       "locations": [],
       "one_round": false,
       "required_items": [],
@@ -2302,7 +2300,8 @@
       "hints": [],
       "wiki_url": "https://arcraiders.wiki/wiki/Empathetic_Prototypes",
       "next": [
-        "when_everything_falls"
+        "when_everything_falls",
+        "where_everything_falls"
       ],
       "previous": [
         "someone_elses_shoes"
@@ -2626,7 +2625,7 @@
         "Передайте Шани последние записи службы безопасности «МАНТИКОРЫ»."
       ],
       "hints": [],
-      "wiki_url": "https://arcraiders.wiki/wiki/Home_to_Roost",
+      "wiki_url": "https://arcraiders.wiki/wiki/Home_To_Roost",
       "next": [
         "someone_elses_shoes"
       ],
@@ -3404,7 +3403,7 @@
         "Сфотографируйте ногу «Императора» возле моста у Старого города.",
         "Вскройте разбитый зонд у ноги «Императора» неподалеку от станции Альматера.",
         "Рассмотрите электронные схемы зонда.",
-        "Изучите открытый участок на ноге «Императора» неподалеку от грузовой станции.",
+        "Изучите открытый участок на ноге «Императора» неподалеку от железнодорожного узла",
         "Доберитесь до корпуса «Императора».",
         "Осмотрите закопанный груз «Сборщика».",
         "Доставьте Селесте проводящую муфту ARC."
@@ -3579,7 +3578,14 @@
         "Picking Up The Pieces"
       ],
       "trader": "Шани",
-      "locations": [],
+      "locations": [
+        "dam_battlegrounds",
+        "the_blue_gate",
+        "the_spaceport",
+        "riven_tides",
+        "stella_montis",
+        "buried_city"
+      ],
       "one_round": false,
       "required_items": [],
       "steps": [
@@ -7396,7 +7402,7 @@
         "Используйте синтетическую смолу ARC.",
         "Используйте термопрокладку ARC.",
         "Активируйте прототип гондолы.",
-        "Найдите прототип гондолы в высохшем русле реки.",
+        "Найдите прототип гондолы в высохшем русле реки",
         "Используйте высокопрочную сталь ARC.",
         "Используйте пусковое устройство «Взрывобота» ARC.",
         "Используйте синтетическую смолу ARC.",
@@ -7812,6 +7818,113 @@
         ]
       },
       "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Worth+Your+Salt+quest+guide"
+    },
+    {
+      "id": "where_everything_falls",
+      "name": "Where Everything Falls",
+      "official_name": false,
+      "aliases": [
+        "Where Everything Falls"
+      ],
+      "trader": "Шани",
+      "locations": [
+        "the_spaceport"
+      ],
+      "one_round": false,
+      "required_items": [],
+      "steps": [
+        "Go to the Water Towers",
+        "Photograph a Security Booth",
+        "Photograph a reinforced bus",
+        "Photograph the breach in the walls",
+        "Photograph the Arrival Building security room",
+        "Photograph Port A of the Launch Towers",
+        "Photograph the Launch Towers control room",
+        "Photograph the launch platform"
+      ],
+      "hints": [],
+      "wiki_url": "https://arcraiders.wiki/wiki/Where_Everything_Falls",
+      "next": [],
+      "previous": [],
+      "places": [
+        {
+          "map": "the_spaceport",
+          "name": "Water Towers",
+          "x": 0.042,
+          "y": 0.345,
+          "step": 0
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Arrival Building",
+          "x": 0.328,
+          "y": 0.2933,
+          "step": 4
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Launch Towers",
+          "x": 0.458,
+          "y": 0.4228,
+          "step": 5
+        },
+        {
+          "map": "the_spaceport",
+          "name": "Launch Towers",
+          "x": 0.458,
+          "y": 0.4228,
+          "step": 6
+        }
+      ],
+      "steam_url": null,
+      "guide": {
+        "text": [],
+        "images": [
+          {
+            "file": "guides/where_everything_falls/7a70dcb16a64.jpg",
+            "caption": "Security Booth Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Security_Booth_.jpg",
+            "original": "https://arcraiders.wiki/w/images/8/81/Quest_Everything_Falls_Photo_Security_Booth_.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/98f81a52201c.jpg",
+            "caption": "Reinforced Bus Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Reinforced_Bus.jpg",
+            "original": "https://arcraiders.wiki/w/images/9/91/Quest_Everything_Falls_Photo_Reinforced_Bus.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/2179b21f9be5.jpg",
+            "caption": "Breach in the Wall Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Wall_Breach.jpg",
+            "original": "https://arcraiders.wiki/w/images/5/55/Quest_Everything_Falls_Photo_Wall_Breach.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/c16d5b4b7bbd.jpg",
+            "caption": "Security Room Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Security_Room.jpg",
+            "original": "https://arcraiders.wiki/w/images/f/f6/Quest_Everything_Falls_Photo_Security_Room.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/c9e665726155.jpg",
+            "caption": "Port A Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Port_A.jpg",
+            "original": "https://arcraiders.wiki/w/images/0/0b/Quest_Everything_Falls_Photo_Port_A.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/76d2c9f8536d.jpg",
+            "caption": "Control Room Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Control_Room.jpg",
+            "original": "https://arcraiders.wiki/w/images/e/ea/Quest_Everything_Falls_Photo_Control_Room.jpg"
+          },
+          {
+            "file": "guides/where_everything_falls/c9973d0a453a.jpg",
+            "caption": "Launch Platform Photo",
+            "source": "https://arcraiders.wiki/wiki/File:Quest_Everything_Falls_Photo_Launch_Platform.jpg",
+            "original": "https://arcraiders.wiki/w/images/5/5f/Quest_Everything_Falls_Photo_Launch_Platform.jpg"
+          }
+        ]
+      },
+      "video_url": "https://www.youtube.com/results?search_query=ARC+Raiders+Where+Everything+Falls+quest+guide"
     }
   ],
   "items": [
@@ -8106,7 +8219,7 @@
     },
     {
       "id": "alpine_wardrobe",
-      "name": "Альпийский шкаф для одежды",
+      "name": "Альпийский шкаф",
       "en": "Alpine Wardrobe",
       "value": 0,
       "recycles": {
@@ -8117,7 +8230,7 @@
     },
     {
       "id": "alpine_wardrobe_design",
-      "name": "Схема Альпийского шкафа для одежды",
+      "name": "Схема — Альпийский шкаф",
       "en": "Alpine Wardrobe Design",
       "value": 5000,
       "recycles": {},
@@ -8176,6 +8289,15 @@
       "recycles": {
         "amplified_fragments": 7
       },
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "amplified_fragments",
+      "name": "Усовершенствованные фрагменты",
+      "en": "Amplified Fragments",
+      "value": 500,
+      "recycles": {},
       "found": [],
       "drops": []
     },
@@ -8438,8 +8560,8 @@
     },
     {
       "id": "anvil_splitter",
-      "name": "Разделитель пуль для Наковальни",
-      "en": "Anvil Splitter",
+      "name": "Устаревший разделитель пуль для Наковальни",
+      "en": "Deprecated Anvil Splitter",
       "value": 7000,
       "recycles": {
         "amplified_fragments": 5
@@ -9336,7 +9458,7 @@
     },
     {
       "id": "archive_floor_lamp_design",
-      "name": "Схема Архивной напольной лампы",
+      "name": "Схема — Архивная напольная лампа",
       "en": "Archive Floor Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -9596,7 +9718,7 @@
     },
     {
       "id": "bar_table_design",
-      "name": "Схема барного стола",
+      "name": "Схема — Барный стол",
       "en": "Bar Table Design",
       "value": 5000,
       "recycles": {},
@@ -9658,7 +9780,7 @@
     },
     {
       "id": "barstool_design",
-      "name": "Схема барного табурета",
+      "name": "Схема — Барный табурет",
       "en": "Barstool Design",
       "value": 5000,
       "recycles": {},
@@ -9733,7 +9855,7 @@
     },
     {
       "id": "battered_aviary_table",
-      "name": "Потрепанный стол вольера",
+      "name": "Старенький птичий стол",
       "en": "Battered Aviary Table",
       "value": 0,
       "recycles": {
@@ -9744,7 +9866,7 @@
     },
     {
       "id": "battered_aviary_table_design",
-      "name": "Схема Потрепанного стола вольера",
+      "name": "Схема — Старенький птичий стол",
       "en": "Battered Aviary Table Design",
       "value": 5000,
       "recycles": {},
@@ -9753,7 +9875,7 @@
     },
     {
       "id": "battered_bureau_chair",
-      "name": "Потрепанное кресло бюро",
+      "name": "Старенький офисный стул",
       "en": "Battered Bureau Chair",
       "value": 0,
       "recycles": {
@@ -9764,7 +9886,7 @@
     },
     {
       "id": "battered_bureau_chair_design",
-      "name": "Схема: Потрепанное кресло бюро",
+      "name": "Схема — Старенький офисный стул",
       "en": "Battered Bureau Chair Design",
       "value": 5000,
       "recycles": {},
@@ -9773,7 +9895,7 @@
     },
     {
       "id": "battered_bureau_sofa",
-      "name": "Потрепанный диван бюро",
+      "name": "Старенький офисный диван",
       "en": "Battered Bureau Sofa",
       "value": 0,
       "recycles": {
@@ -9784,7 +9906,7 @@
     },
     {
       "id": "battered_bureau_sofa_design",
-      "name": "Схема Потрепанного дивана бюро",
+      "name": "Схема — Старенький офисный диван",
       "en": "Battered Bureau Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -9793,7 +9915,7 @@
     },
     {
       "id": "battered_den_bed",
-      "name": "Потрепанная кровать рейдерской базы",
+      "name": "Старенькая кровать с базы",
       "en": "Battered Den Bed",
       "value": 0,
       "recycles": {
@@ -9804,7 +9926,7 @@
     },
     {
       "id": "battered_den_bed_design",
-      "name": "Схема: Потрепанная кровать рейдерской базы",
+      "name": "Схема — Старенькая кровать с базы",
       "en": "Battered Den Bed Design",
       "value": 5000,
       "recycles": {},
@@ -9813,7 +9935,7 @@
     },
     {
       "id": "battered_den_shelf",
-      "name": "Потрепанная полка рейдерской базы",
+      "name": "Старенькая полка с базы",
       "en": "Battered Den Shelf",
       "value": 0,
       "recycles": {
@@ -9824,7 +9946,7 @@
     },
     {
       "id": "battered_den_shelf_design",
-      "name": "Схема: Потрепанная полка рейдерской базы",
+      "name": "Схема — Старенькая полка с базы",
       "en": "Battered Den Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -9833,7 +9955,7 @@
     },
     {
       "id": "battered_diner_chair",
-      "name": "Потрепанный стул из закусочной",
+      "name": "Старенький стул из забегаловки",
       "en": "Battered Diner Chair",
       "value": 100,
       "recycles": {
@@ -9844,7 +9966,7 @@
     },
     {
       "id": "battered_diner_chair_design",
-      "name": "Схема потрепанного стула из закусочной",
+      "name": "Схема — Старенький стул из забегаловки",
       "en": "Battered Diner Chair Design",
       "value": 5000,
       "recycles": {},
@@ -9853,7 +9975,7 @@
     },
     {
       "id": "battered_faculty_table",
-      "name": "Потрепанный факультетский стол",
+      "name": "Старенький профессорский стол",
       "en": "Battered Faculty Table",
       "value": 0,
       "recycles": {
@@ -9864,7 +9986,7 @@
     },
     {
       "id": "battered_faculty_table_design",
-      "name": "Схема: Потрепанный факультетский стол",
+      "name": "Схема — Старенький профессорский стол",
       "en": "Battered Faculty Table Design",
       "value": 5000,
       "recycles": {},
@@ -9873,7 +9995,7 @@
     },
     {
       "id": "battered_lab_cabinet",
-      "name": "Потрепанный лабораторный шкаф",
+      "name": "Старенький лабораторный шкафчик",
       "en": "Battered Lab Cabinet",
       "value": 0,
       "recycles": {
@@ -9884,7 +10006,7 @@
     },
     {
       "id": "battered_lab_cabinet_design",
-      "name": "Схема потрепанного лабораторного шкафа",
+      "name": "Схема — Старенький лабораторный шкафчик",
       "en": "Battered Lab Cabinet Design",
       "value": 5000,
       "recycles": {},
@@ -9893,7 +10015,7 @@
     },
     {
       "id": "battered_lab_cabinet_wide",
-      "name": "Потрепанный лабораторный шкаф (широкий)",
+      "name": "Старенький лабораторный шкаф (широкий)",
       "en": "Battered Lab Cabinet (Wide)",
       "value": 0,
       "recycles": {
@@ -9904,7 +10026,7 @@
     },
     {
       "id": "battered_lab_cabinet_wide_design",
-      "name": "Схема потрепанного лабораторного шкафа (широкий)",
+      "name": "Схема — Старенький лабораторный шкаф",
       "en": "Battered Lab Cabinet (Wide) Design",
       "value": 5000,
       "recycles": {},
@@ -9913,7 +10035,7 @@
     },
     {
       "id": "battered_lab_chair",
-      "name": "Потрепанный лабораторный стул",
+      "name": "Старенький лабораторный стул",
       "en": "Battered Lab Chair",
       "value": 0,
       "recycles": {
@@ -9924,7 +10046,7 @@
     },
     {
       "id": "battered_lab_chair_design",
-      "name": "Схема: Потрепанный лабораторный стул",
+      "name": "Схема — Старенький лабораторный стул",
       "en": "Battered Lab Chair Design",
       "value": 5000,
       "recycles": {},
@@ -9942,7 +10064,7 @@
     },
     {
       "id": "battered_shelf",
-      "name": "Потрепанная полка",
+      "name": "Старенькие полки",
       "en": "Battered Shelf",
       "value": 0,
       "recycles": {
@@ -9953,7 +10075,7 @@
     },
     {
       "id": "battered_shelf_design",
-      "name": "Схема: Потрепанная полка",
+      "name": "Схема — Старенькие полки",
       "en": "Battered Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -9962,7 +10084,7 @@
     },
     {
       "id": "battered_stash",
-      "name": "Потрепанное хранилище",
+      "name": "Старенький сейф",
       "en": "Battered Stash",
       "value": 0,
       "recycles": {
@@ -9973,7 +10095,7 @@
     },
     {
       "id": "battered_stash_design",
-      "name": "Схема Потрепанного хранилища",
+      "name": "Схема — Старенький сейф",
       "en": "Battered Stash Design",
       "value": 5000,
       "recycles": {},
@@ -9982,7 +10104,7 @@
     },
     {
       "id": "battered_weapon_rack",
-      "name": "Потрепанная стойка для оружия",
+      "name": "Старенький стенд для оружия",
       "en": "Battered Weapon Rack",
       "value": 0,
       "recycles": {
@@ -9993,7 +10115,7 @@
     },
     {
       "id": "battered_weapon_rack_design",
-      "name": "Схема: Потрепанная стойка для оружия",
+      "name": "Схема — Старенький стенд для оружия",
       "en": "Battered Weapon Rack Design",
       "value": 5000,
       "recycles": {},
@@ -10311,7 +10433,7 @@
     },
     {
       "id": "blue_lab_cabinet",
-      "name": "Синий лабораторный шкаф",
+      "name": "Синяя лабораторная тумбочка",
       "en": "Blue Lab Cabinet",
       "value": 0,
       "recycles": {
@@ -10322,7 +10444,7 @@
     },
     {
       "id": "blue_lab_cabinet_design",
-      "name": "Схема синего лабораторного шкафа",
+      "name": "Схема — Синяя лабораторная тумбочка",
       "en": "Blue Lab Cabinet Design",
       "value": 5000,
       "recycles": {},
@@ -10577,7 +10699,7 @@
     },
     {
       "id": "bureau_ceiling_lamp",
-      "name": "Потолочная лампа бюро",
+      "name": "Офисный светильник",
       "en": "Bureau Ceiling Lamp",
       "value": 0,
       "recycles": {
@@ -10588,7 +10710,7 @@
     },
     {
       "id": "bureau_ceiling_lamp_design",
-      "name": "Схема потолочной лампы бюро",
+      "name": "Схема — Офисный светильник",
       "en": "Bureau Ceiling Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -10597,7 +10719,7 @@
     },
     {
       "id": "bureau_desk_lamp",
-      "name": "Настольная лампа для бюро",
+      "name": "Офисная настольная лампа",
       "en": "Bureau Desk Lamp",
       "value": 1000,
       "recycles": {},
@@ -10862,7 +10984,7 @@
     },
     {
       "id": "cafeteria_table",
-      "name": "Стол в столовой",
+      "name": "Стол из столовой",
       "en": "Cafeteria Table",
       "value": 100,
       "recycles": {
@@ -10873,7 +10995,7 @@
     },
     {
       "id": "cafeteria_table_design",
-      "name": "Схема стола в столовой",
+      "name": "Схема — Стол из столовой",
       "en": "Cafeteria Table Design",
       "value": 5000,
       "recycles": {},
@@ -11126,7 +11248,7 @@
     },
     {
       "id": "chalet_room",
-      "name": "Комната-шале",
+      "name": "Комната-коттедж",
       "en": "Chalet Room",
       "value": 0,
       "recycles": {},
@@ -11135,7 +11257,7 @@
     },
     {
       "id": "chambers_lamp",
-      "name": "Лампа в Камерах",
+      "name": "Лампа из покоев",
       "en": "Chambers Lamp",
       "value": 0,
       "recycles": {
@@ -11146,7 +11268,7 @@
     },
     {
       "id": "chambers_lamp_design",
-      "name": "Схема Лампы в Камерах",
+      "name": "Схема — Лампа из покоев",
       "en": "Chambers Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -11155,7 +11277,7 @@
     },
     {
       "id": "chambers_nightstand",
-      "name": "Прикроватная тумбочка в Камерах",
+      "name": "Тумбочка из покоев",
       "en": "Chambers Nightstand",
       "value": 0,
       "recycles": {
@@ -11166,7 +11288,7 @@
     },
     {
       "id": "chambers_nightstand_design",
-      "name": "Схема прикроватной тумбочки в Камерах",
+      "name": "Схема — Тумбочка из покоев",
       "en": "Chambers Nightstand Design",
       "value": 5000,
       "recycles": {},
@@ -11175,7 +11297,7 @@
     },
     {
       "id": "chambers_shelf",
-      "name": "Полка в Камерах",
+      "name": "Полки из покоев",
       "en": "Chambers Shelf",
       "value": 0,
       "recycles": {
@@ -11186,7 +11308,7 @@
     },
     {
       "id": "chambers_shelf_design",
-      "name": "Схема Полки в Камерах",
+      "name": "Схема — Полки из покоев",
       "en": "Chambers Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -11206,7 +11328,7 @@
     },
     {
       "id": "chandelier_design",
-      "name": "Схема люстры",
+      "name": "Схема — Люстра",
       "en": "Chandelier Design",
       "value": 5000,
       "recycles": {},
@@ -11238,7 +11360,7 @@
     },
     {
       "id": "clinic_medical_cabinet",
-      "name": "Медицинский шкаф клиники",
+      "name": "Медицинский шкаф из клиники",
       "en": "Clinic Medical Cabinet",
       "value": 0,
       "recycles": {
@@ -11249,7 +11371,7 @@
     },
     {
       "id": "clinic_medical_cabinet_design",
-      "name": "Схема медицинского шкафа клиники",
+      "name": "Схема — Медицинский шкаф из клиники",
       "en": "Clinic Medical Cabinet Design",
       "value": 5000,
       "recycles": {},
@@ -11616,7 +11738,7 @@
     },
     {
       "id": "console_chest",
-      "name": "Терминальный сундук",
+      "name": "Шкафчик-консоль",
       "en": "Console Chest",
       "value": 0,
       "recycles": {
@@ -11627,7 +11749,7 @@
     },
     {
       "id": "console_chest_design",
-      "name": "Схема терминального сундука",
+      "name": "Схема — Шкафчик-консоль",
       "en": "Console Chest Design",
       "value": 5000,
       "recycles": {},
@@ -11947,6 +12069,15 @@
       "drops": []
     },
     {
+      "id": "dead_flowers",
+      "name": "Завядшие цветы",
+      "en": "Dead Flowers",
+      "value": 640,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
       "id": "deadline",
       "name": "Дедлайн",
       "en": "Deadline",
@@ -12082,7 +12213,7 @@
     },
     {
       "id": "diner_ceiling_lamp",
-      "name": "Потолочная лампа закусочной",
+      "name": "Светильник из забегаловки",
       "en": "Diner Ceiling Lamp",
       "value": 0,
       "recycles": {
@@ -12093,7 +12224,7 @@
     },
     {
       "id": "diner_ceiling_lamp_design",
-      "name": "Схема потолочной лампы закусочной",
+      "name": "Схема — Светильник из забегаловки",
       "en": "Diner Ceiling Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -12102,7 +12233,7 @@
     },
     {
       "id": "diner_cupboard",
-      "name": "Шкафчик в закусочной",
+      "name": "Шкаф из забегаловки",
       "en": "Diner Cupboard",
       "value": 0,
       "recycles": {
@@ -12113,7 +12244,7 @@
     },
     {
       "id": "diner_cupboard_design",
-      "name": "Схема: Шкафчик в закусочной",
+      "name": "Схема — Шкаф из забегаловки",
       "en": "Diner Cupboard Design",
       "value": 5000,
       "recycles": {},
@@ -12122,7 +12253,7 @@
     },
     {
       "id": "diner_shelf",
-      "name": "Полка закусочной",
+      "name": "Стеллаж из забегаловки",
       "en": "Diner Shelf",
       "value": 0,
       "recycles": {
@@ -12133,7 +12264,7 @@
     },
     {
       "id": "diner_shelf_design",
-      "name": "Схема полки закусочной",
+      "name": "Схема — Стеллаж из забегаловки",
       "en": "Diner Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -12142,7 +12273,7 @@
     },
     {
       "id": "diner_sofa",
-      "name": "Диван в закусочной",
+      "name": "Диван из забегаловки",
       "en": "Diner Sofa",
       "value": 0,
       "recycles": {
@@ -12153,7 +12284,7 @@
     },
     {
       "id": "diner_sofa_design",
-      "name": "Схема дивана в закусочной",
+      "name": "Схема — Диван из забегаловки",
       "en": "Diner Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -12162,7 +12293,7 @@
     },
     {
       "id": "diner_stool",
-      "name": "Табурет в закусочной",
+      "name": "Табурет из забегаловки",
       "en": "Diner Stool",
       "value": 0,
       "recycles": {
@@ -12173,7 +12304,7 @@
     },
     {
       "id": "diner_stool_design",
-      "name": "Схема табурета в закусочной",
+      "name": "Схема — Табурет из забегаловки",
       "en": "Diner Stool Design",
       "value": 5000,
       "recycles": {},
@@ -12182,7 +12313,7 @@
     },
     {
       "id": "diner_table",
-      "name": "Столик в закусочной",
+      "name": "Стол из забегаловки",
       "en": "Diner Table",
       "value": 0,
       "recycles": {
@@ -12193,7 +12324,7 @@
     },
     {
       "id": "diner_table_design",
-      "name": "Схема столика в закусочной",
+      "name": "Схема — Стол из забегаловки",
       "en": "Diner Table Design",
       "value": 5000,
       "recycles": {},
@@ -12341,7 +12472,7 @@
     },
     {
       "id": "draped_debris_a",
-      "name": "Драпированные обломки A",
+      "name": "Прикрытый хлам А",
       "en": "Draped Debris A",
       "value": 0,
       "recycles": {
@@ -12352,7 +12483,7 @@
     },
     {
       "id": "draped_debris_a_design",
-      "name": "Схема: Драпированные обломки A",
+      "name": "Схема — Прикрытый хлам А",
       "en": "Draped Debris A Design",
       "value": 5000,
       "recycles": {},
@@ -12361,7 +12492,7 @@
     },
     {
       "id": "draped_debris_b",
-      "name": "Драпированные обломки B",
+      "name": "Прикрытый хлам Б",
       "en": "Draped Debris B",
       "value": 0,
       "recycles": {
@@ -12372,7 +12503,7 @@
     },
     {
       "id": "draped_debris_b_design",
-      "name": "Схема: Драпированные обломки B",
+      "name": "Схема — Прикрытый хлам Б",
       "en": "Draped Debris B Design",
       "value": 5000,
       "recycles": {},
@@ -12381,7 +12512,7 @@
     },
     {
       "id": "draped_debris_c",
-      "name": "Драпированные обломки C",
+      "name": "Прикрытый хлам В",
       "en": "Draped Debris C",
       "value": 0,
       "recycles": {
@@ -12392,7 +12523,7 @@
     },
     {
       "id": "draped_debris_c_design",
-      "name": "Схема Драпированных обломков C",
+      "name": "Схема — Прикрытый хлам В",
       "en": "Draped Debris C Design",
       "value": 5000,
       "recycles": {},
@@ -12401,7 +12532,7 @@
     },
     {
       "id": "draped_debris_e",
-      "name": "Драпированные обломки E",
+      "name": "Прикрытый хлам Г",
       "en": "Draped Debris E",
       "value": 0,
       "recycles": {
@@ -12412,7 +12543,7 @@
     },
     {
       "id": "draped_debris_e_design",
-      "name": "Схема: Драпированные обломки E",
+      "name": "Схема — Прикрытый хлам Г",
       "en": "Draped Debris E Design",
       "value": 5000,
       "recycles": {},
@@ -12421,7 +12552,7 @@
     },
     {
       "id": "draped_debris_f",
-      "name": "Драпированные обломки F",
+      "name": "Прикрытый хлам Д",
       "en": "Draped Debris F",
       "value": 0,
       "recycles": {
@@ -12432,7 +12563,7 @@
     },
     {
       "id": "draped_debris_f_design",
-      "name": "Схема: Драпированные обломки F",
+      "name": "Схема — Прикрытый хлам Д",
       "en": "Draped Debris F Design",
       "value": 5000,
       "recycles": {},
@@ -12441,7 +12572,7 @@
     },
     {
       "id": "draped_debris_g",
-      "name": "Драпированные обломки G",
+      "name": "Прикрытый хлам Е",
       "en": "Draped Debris G",
       "value": 0,
       "recycles": {
@@ -12452,7 +12583,7 @@
     },
     {
       "id": "draped_debris_g_design",
-      "name": "Схема: Драпированные обломки G",
+      "name": "Схема — Прикрытый хлам Е",
       "en": "Draped Debris G Design",
       "value": 5000,
       "recycles": {},
@@ -13395,7 +13526,7 @@
     },
     {
       "id": "faculty_closet",
-      "name": "Кладовка факультета",
+      "name": "Профессорский шкаф",
       "en": "Faculty Closet",
       "value": 0,
       "recycles": {
@@ -13406,7 +13537,7 @@
     },
     {
       "id": "faculty_closet_design",
-      "name": "Схема Кладовки факультета",
+      "name": "Схема — Профессорский шкаф",
       "en": "Faculty Closet Design",
       "value": 5000,
       "recycles": {},
@@ -13415,7 +13546,7 @@
     },
     {
       "id": "faculty_dresser",
-      "name": "Комод факультета",
+      "name": "Профессорский комод",
       "en": "Faculty Dresser",
       "value": 0,
       "recycles": {
@@ -13426,7 +13557,7 @@
     },
     {
       "id": "faculty_dresser_design",
-      "name": "Схема Комода факультета",
+      "name": "Схема — Профессорский комод",
       "en": "Faculty Dresser Design",
       "value": 5000,
       "recycles": {},
@@ -13448,6 +13579,15 @@
       "id": "familiar_duck",
       "name": "Обычная уточка",
       "en": "Familiar Duck",
+      "value": 7000,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "fancy_plate",
+      "name": "Красивая тарелка",
+      "en": "Fancy Plate",
       "value": 7000,
       "recycles": {},
       "found": [],
@@ -13756,7 +13896,7 @@
     },
     {
       "id": "floor_lamp_design",
-      "name": "Схема напольной лампы",
+      "name": "Схема — Напольная лампа",
       "en": "Floor Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -13782,6 +13922,15 @@
       "name": "Ключ от промывочного терминала",
       "en": "Flushing Terminal Key",
       "value": 100,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "fluted_rotor_core",
+      "name": "Сердечник ротора с пазами",
+      "en": "Fluted Rotor Core",
+      "value": 5000,
       "recycles": {},
       "found": [],
       "drops": []
@@ -14075,7 +14224,7 @@
     },
     {
       "id": "geometric_fabric_chair",
-      "name": "Геометрический тканевый стул",
+      "name": "Тканевое кресло с геометрическим рисунком",
       "en": "Geometric Fabric Chair",
       "value": 0,
       "recycles": {
@@ -14086,7 +14235,7 @@
     },
     {
       "id": "geometric_fabric_chair_design",
-      "name": "Схема геометрического тканевого стула",
+      "name": "Схема — Тканевое кресло с геометрическим рисунком",
       "en": "Geometric Fabric Chair Design",
       "value": 5000,
       "recycles": {},
@@ -14095,7 +14244,7 @@
     },
     {
       "id": "glass_ceiling_lamp",
-      "name": "Потолочная стеклянная лампа",
+      "name": "Стеклянный светильник",
       "en": "Glass Ceiling Lamp",
       "value": 0,
       "recycles": {
@@ -14106,7 +14255,7 @@
     },
     {
       "id": "glass_ceiling_lamp_design",
-      "name": "Схема потолочной стеклянной лампы",
+      "name": "Схема — Стеклянный светильник",
       "en": "Glass Ceiling Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -14243,7 +14392,7 @@
     },
     {
       "id": "green_geometric_chair",
-      "name": "Зеленый геометрический стул",
+      "name": "Кресло с зеленым геометрическим рисунком",
       "en": "Green Geometric Chair",
       "value": 0,
       "recycles": {
@@ -14254,7 +14403,7 @@
     },
     {
       "id": "green_geometric_chair_design",
-      "name": "Схема зеленого геометрического стула",
+      "name": "Схема — Кресло с зеленым геометрическим рисунком",
       "en": "Green Geometric Chair Design",
       "value": 5000,
       "recycles": {},
@@ -14263,7 +14412,7 @@
     },
     {
       "id": "green_geometric_sofa",
-      "name": "Зеленый геометрический диван",
+      "name": "Диван с зеленым геометрическим рисунком",
       "en": "Green Geometric Sofa",
       "value": 0,
       "recycles": {
@@ -14274,7 +14423,7 @@
     },
     {
       "id": "green_geometric_sofa_design",
-      "name": "Схема: Зеленый геометрический диван",
+      "name": "Схема — Диван с зеленым геометрическим рисунком",
       "en": "Green Geometric Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -14294,7 +14443,7 @@
     },
     {
       "id": "green_lab_sofa_design",
-      "name": "Схема зеленого лабораторного дивана",
+      "name": "Схема — Зеленый лабораторный диван",
       "en": "Green Lab Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -14725,7 +14874,7 @@
     },
     {
       "id": "holly_bush",
-      "name": "Куст падуба",
+      "name": "Куст остролиста",
       "en": "Holly Bush",
       "value": 0,
       "recycles": {
@@ -14737,7 +14886,7 @@
     },
     {
       "id": "holly_bush_design",
-      "name": "Схема куста падуба",
+      "name": "Схема — Куст остролиста",
       "en": "Holly Bush Design",
       "value": 5000,
       "recycles": {},
@@ -14793,7 +14942,7 @@
     },
     {
       "id": "hotel_chair_design",
-      "name": "Схема отельного кресла",
+      "name": "Схема — Отельное кресло",
       "en": "Hotel Chair Design",
       "value": 5000,
       "recycles": {},
@@ -15455,7 +15604,7 @@
     },
     {
       "id": "lab_ceiling_light",
-      "name": "Потолочная лампа лаборатории",
+      "name": "Лабораторный светильник",
       "en": "Lab Ceiling Light",
       "value": 0,
       "recycles": {
@@ -15466,7 +15615,7 @@
     },
     {
       "id": "lab_ceiling_light_design",
-      "name": "Схема потолочной лампы лаборатории",
+      "name": "Схема — Лабораторный светильник",
       "en": "Lab Ceiling Light Design",
       "value": 5000,
       "recycles": {},
@@ -15486,7 +15635,7 @@
     },
     {
       "id": "lab_stool_design",
-      "name": "Схема: Лабораторный табурет",
+      "name": "Схема — Лабораторный табурет",
       "en": "Lab Stool Design",
       "value": 5000,
       "recycles": {},
@@ -16215,6 +16364,15 @@
       "drops": []
     },
     {
+      "id": "mask_fragment",
+      "name": "Фрагмент маски",
+      "en": "Mask Fragment",
+      "value": 7000,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
       "id": "matriarch_reactor",
       "name": "Реактор «Матриарха»",
       "en": "Matriarch Reactor",
@@ -16590,7 +16748,7 @@
     },
     {
       "id": "multicolored_geometric_sofa",
-      "name": "Разноцветный геометрический диван",
+      "name": "Диван с разноцветным геометрическим рисунком",
       "en": "Multicolored Geometric Sofa",
       "value": 0,
       "recycles": {
@@ -16601,7 +16759,7 @@
     },
     {
       "id": "multicolored_geometric_sofa_design",
-      "name": "Схема: Разноцветный геометрический диван",
+      "name": "Схема — Диван с разноцветным геометрическим рисунком",
       "en": "Multicolored Geometric Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -16817,6 +16975,24 @@
       "drops": []
     },
     {
+      "id": "offering_display_table",
+      "name": "Стол для подношений",
+      "en": "Offering Display Table",
+      "value": 0,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "offering_display_table_design",
+      "name": "Схема — Стол для подношений",
+      "en": "Offering Display Table Design",
+      "value": 0,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
       "id": "official_shutdown_documentation",
       "name": "Официальная документация о закрытии проекта",
       "en": "Official Shutdown Documentation",
@@ -16872,7 +17048,7 @@
     },
     {
       "id": "ornate_den_bed",
-      "name": "Украшенная кровать рейдерской базы",
+      "name": "Затейливая кровать с базы",
       "en": "Ornate Den Bed",
       "value": 0,
       "recycles": {
@@ -16883,7 +17059,7 @@
     },
     {
       "id": "ornate_den_bed_design",
-      "name": "Схема украшенной кровати рейдерской базы",
+      "name": "Схема — Затейливая кровать с базы",
       "en": "Ornate Den Bed Design",
       "value": 5000,
       "recycles": {},
@@ -16892,7 +17068,7 @@
     },
     {
       "id": "ornate_den_shelf",
-      "name": "Украшенная полка рейдерской базы",
+      "name": "Затейливая полка с базы",
       "en": "Ornate Den Shelf",
       "value": 0,
       "recycles": {
@@ -16903,7 +17079,7 @@
     },
     {
       "id": "ornate_den_shelf_design",
-      "name": "Схема украшенной полки рейдерской базы",
+      "name": "Схема — Затейливая полка с базы",
       "en": "Ornate Den Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -16912,7 +17088,7 @@
     },
     {
       "id": "ornate_stash",
-      "name": "Украшенное хранилище",
+      "name": "Затейливый сейф",
       "en": "Ornate Stash",
       "value": 0,
       "recycles": {
@@ -16923,7 +17099,7 @@
     },
     {
       "id": "ornate_stash_design",
-      "name": "Схема: Украшенное хранилище",
+      "name": "Схема — Затейливый сейф",
       "en": "Ornate Stash Design",
       "value": 5000,
       "recycles": {},
@@ -16932,7 +17108,7 @@
     },
     {
       "id": "ornate_wardrobe",
-      "name": "Украшенный шкаф для одежды",
+      "name": "Затейливый шкаф",
       "en": "Ornate Wardrobe",
       "value": 0,
       "recycles": {
@@ -16943,7 +17119,7 @@
     },
     {
       "id": "ornate_wardrobe_design",
-      "name": "Схема: Украшенный шкаф для одежды",
+      "name": "Схема — Затейливый шкаф",
       "en": "Ornate Wardrobe Design",
       "value": 5000,
       "recycles": {},
@@ -17154,7 +17330,7 @@
     },
     {
       "id": "panoramic_room",
-      "name": "Панорамная комната",
+      "name": "Комната с панорамным видом",
       "en": "Panoramic Room",
       "value": 0,
       "recycles": {},
@@ -17295,8 +17471,19 @@
       "drops": []
     },
     {
+      "id": "pneumatic_actuator",
+      "name": "Пневмопривод",
+      "en": "Pneumatic Actuator",
+      "value": 5000,
+      "recycles": {},
+      "found": [
+        "ARC"
+      ],
+      "drops": []
+    },
+    {
       "id": "polished_den_bed",
-      "name": "Полированная кровать рейдерской базы",
+      "name": "Солидная кровать с базы",
       "en": "Polished Den Bed",
       "value": 0,
       "recycles": {
@@ -17307,7 +17494,7 @@
     },
     {
       "id": "polished_den_bed_design",
-      "name": "Схема полированной кровати рейдерской базы",
+      "name": "Схема — Солидная кровать с базы",
       "en": "Polished Den Bed Design",
       "value": 5000,
       "recycles": {},
@@ -17316,7 +17503,7 @@
     },
     {
       "id": "polished_den_shelf",
-      "name": "Полированная полка рейдерской базы",
+      "name": "Солидная полка с базы",
       "en": "Polished Den Shelf",
       "value": 0,
       "recycles": {
@@ -17327,7 +17514,7 @@
     },
     {
       "id": "polished_den_shelf_design",
-      "name": "Схема: Полированная полка рейдерской базы",
+      "name": "Схема — Солидная полка с базы",
       "en": "Polished Den Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -17336,7 +17523,7 @@
     },
     {
       "id": "polished_diner_chair",
-      "name": "Полированный закусочный стул",
+      "name": "Солидный стул из забегаловки",
       "en": "Polished Diner Chair",
       "value": 100,
       "recycles": {
@@ -17347,7 +17534,7 @@
     },
     {
       "id": "polished_diner_chair_design",
-      "name": "Схема полированного закусочного стула",
+      "name": "Схема — Солидный стул из забегаловки",
       "en": "Polished Diner Chair Design",
       "value": 5000,
       "recycles": {},
@@ -17356,7 +17543,7 @@
     },
     {
       "id": "polished_faculty_chair",
-      "name": "Полированное кресло факультета",
+      "name": "Солидный профессорский стул",
       "en": "Polished Faculty Chair",
       "value": 0,
       "recycles": {
@@ -17367,7 +17554,7 @@
     },
     {
       "id": "polished_faculty_chair_design",
-      "name": "Схема Полированного кресла факультета",
+      "name": "Схема — Солидный профессорский стул",
       "en": "Polished Faculty Chair Design",
       "value": 5000,
       "recycles": {},
@@ -17376,7 +17563,7 @@
     },
     {
       "id": "polished_faculty_table",
-      "name": "Полированный стол факультета",
+      "name": "Солидный профессорский стол",
       "en": "Polished Faculty Table",
       "value": 0,
       "recycles": {
@@ -17387,7 +17574,7 @@
     },
     {
       "id": "polished_faculty_table_design",
-      "name": "Схема Полированного стола факультета",
+      "name": "Схема — Солидный профессорский стол",
       "en": "Polished Faculty Table Design",
       "value": 5000,
       "recycles": {},
@@ -17396,7 +17583,7 @@
     },
     {
       "id": "polished_round_sofa",
-      "name": "Полированный круглый диван",
+      "name": "Солидный круглый диван",
       "en": "Polished Round Sofa",
       "value": 0,
       "recycles": {
@@ -17407,7 +17594,7 @@
     },
     {
       "id": "polished_round_sofa_design",
-      "name": "Схема полированного круглого дивана",
+      "name": "Схема — Солидный круглый диван",
       "en": "Polished Round Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -17416,7 +17603,7 @@
     },
     {
       "id": "polished_stash",
-      "name": "Полированное хранилище",
+      "name": "Солидный сейф",
       "en": "Polished Stash",
       "value": 0,
       "recycles": {
@@ -17427,7 +17614,7 @@
     },
     {
       "id": "polished_stash_design",
-      "name": "Схема Полированного хранилища",
+      "name": "Схема — Солидный сейф",
       "en": "Polished Stash Design",
       "value": 5000,
       "recycles": {},
@@ -17436,7 +17623,7 @@
     },
     {
       "id": "polished_study_sofa",
-      "name": "Полированный кабинетный диван",
+      "name": "Солидный диван из кабинета",
       "en": "Polished Study Sofa",
       "value": 0,
       "recycles": {
@@ -17447,7 +17634,7 @@
     },
     {
       "id": "polished_study_sofa_design",
-      "name": "Схема: Полированный кабинетный диван",
+      "name": "Схема — Солидный диван из кабинета",
       "en": "Polished Study Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -17456,7 +17643,7 @@
     },
     {
       "id": "polished_wardrobe",
-      "name": "Полированный шкаф для одежды",
+      "name": "Солидный шкаф",
       "en": "Polished Wardrobe",
       "value": 0,
       "recycles": {
@@ -17467,7 +17654,7 @@
     },
     {
       "id": "polished_wardrobe_design",
-      "name": "Схема полированного шкафа для одежды",
+      "name": "Схема — Солидный шкаф",
       "en": "Polished Wardrobe Design",
       "value": 5000,
       "recycles": {},
@@ -17476,7 +17663,7 @@
     },
     {
       "id": "polished_weapon_rack",
-      "name": "Полированная стойка для оружия",
+      "name": "Солидный стенд для оружия",
       "en": "Polished Weapon Rack",
       "value": 150,
       "recycles": {
@@ -17487,7 +17674,7 @@
     },
     {
       "id": "polished_weapon_rack_design",
-      "name": "Схема полированной стойки для оружия",
+      "name": "Схема — Солидный стенд для оружия",
       "en": "Polished Weapon Rack Design",
       "value": 5000,
       "recycles": {},
@@ -17689,6 +17876,15 @@
       "drops": []
     },
     {
+      "id": "pressure_regulator",
+      "name": "Регулятор давления",
+      "en": "Pressure Regulator",
+      "value": 5000,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
       "id": "prickly_pear",
       "name": "Опунция",
       "en": "Prickly Pear",
@@ -17703,7 +17899,7 @@
     },
     {
       "id": "printed_fabric_chair",
-      "name": "Стул из ткани с принтом",
+      "name": "Тканевое кресло с принтом",
       "en": "Printed Fabric Chair",
       "value": 0,
       "recycles": {
@@ -17714,7 +17910,7 @@
     },
     {
       "id": "printed_fabric_chair_design",
-      "name": "Схема: Стул из ткани с принтом",
+      "name": "Схема — Тканевое кресло с принтом",
       "en": "Printed Fabric Chair Design",
       "value": 5000,
       "recycles": {},
@@ -17723,7 +17919,7 @@
     },
     {
       "id": "printed_lab_sofa",
-      "name": "Печатный лабораторный диван",
+      "name": "Лабораторный диван с принтом",
       "en": "Printed Lab Sofa",
       "value": 0,
       "recycles": {
@@ -17734,7 +17930,7 @@
     },
     {
       "id": "printed_lab_sofa_design",
-      "name": "Схема Печатного лабораторного дивана",
+      "name": "Схема — Лабораторный диван с принтом",
       "en": "Printed Lab Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -17795,6 +17991,15 @@
       "found": [
         "Residential"
       ],
+      "drops": []
+    },
+    {
+      "id": "propellant_valve_assembly",
+      "name": "Сборка топливного клапана",
+      "en": "Propellant Valve Assembly",
+      "value": 5000,
+      "recycles": {},
+      "found": [],
       "drops": []
     },
     {
@@ -17971,6 +18176,15 @@
       "name": "Код безопасности от убежища рейдера",
       "en": "Raider's Refuge Security Code",
       "value": 100,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "railway_lantern",
+      "name": "Железнодорожный фонарь",
+      "en": "Railway Lantern",
+      "value": 3000,
       "recycles": {},
       "found": [],
       "drops": []
@@ -18349,7 +18563,7 @@
     },
     {
       "id": "red_study_sofa",
-      "name": "Красный диван для кабинета",
+      "name": "Красный диван из кабинета",
       "en": "Red Study Sofa",
       "value": 0,
       "recycles": {
@@ -18360,7 +18574,7 @@
     },
     {
       "id": "red_study_sofa_design",
-      "name": "Схема: Красный диван для кабинета",
+      "name": "Схема — Красный диван из кабинета",
       "en": "Red Study Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -18550,7 +18764,7 @@
     },
     {
       "id": "res_sofa_01_y150_a",
-      "name": "Кабинетное кресло",
+      "name": "Кресло из кабинета",
       "en": "Study Armchair",
       "value": 0,
       "recycles": {
@@ -18561,7 +18775,7 @@
     },
     {
       "id": "res_sofa_01_y150_a_design",
-      "name": "Схема кабинетного кресла",
+      "name": "Схема — Кресло из кабинета",
       "en": "Study Armchair Design",
       "value": 5000,
       "recycles": {},
@@ -18592,7 +18806,7 @@
     },
     {
       "id": "restaurant_table_design",
-      "name": "Схема ресторанного стола",
+      "name": "Схема — Ресторанный стол",
       "en": "Restaurant Table Design",
       "value": 5000,
       "recycles": {},
@@ -18699,6 +18913,15 @@
       "name": "Ключ-карта от защищенного хранилища в Бурных потоках",
       "en": "Riven Tides Secure Storage Keycard",
       "value": 100,
+      "recycles": {},
+      "found": [],
+      "drops": []
+    },
+    {
+      "id": "rock_salt",
+      "name": "Каменная соль",
+      "en": "Rock Salt",
+      "value": 640,
       "recycles": {},
       "found": [],
       "drops": []
@@ -19066,7 +19289,7 @@
     },
     {
       "id": "security_chair",
-      "name": "Стул охранника",
+      "name": "Стул охраны",
       "en": "Security Chair",
       "value": 0,
       "recycles": {
@@ -19077,7 +19300,7 @@
     },
     {
       "id": "security_chair_design",
-      "name": "Схема: Стул охранника",
+      "name": "Схема — Стул охраны",
       "en": "Security Chair Design",
       "value": 5000,
       "recycles": {},
@@ -19245,6 +19468,25 @@
         },
         "quantity": 1
       }
+    },
+    {
+      "id": "sheetmetal",
+      "name": "Листы металла",
+      "en": "Sheet Metal",
+      "value": 100,
+      "recycles": {},
+      "found": [],
+      "drops": [],
+      "vendors": [
+        {
+          "trader": "Селеста",
+          "cost": {
+            "assorted_seeds": 3
+          },
+          "limit": 0,
+          "level": 0
+        }
+      ]
     },
     {
       "id": "shield_recharger",
@@ -19755,7 +19997,7 @@
     },
     {
       "id": "small_lab_cabinet",
-      "name": "Малый лабораторный шкафчик",
+      "name": "Маленькая лабораторная тумбочка",
       "en": "Small Lab Cabinet",
       "value": 0,
       "recycles": {
@@ -19766,7 +20008,7 @@
     },
     {
       "id": "small_lab_cabinet_design",
-      "name": "Схема малого лабораторного шкафчика",
+      "name": "Схема — Маленькая лабораторная тумбочка",
       "en": "Small Lab Cabinet Design",
       "value": 5000,
       "recycles": {},
@@ -19952,7 +20194,7 @@
     },
     {
       "id": "solid_green_chair",
-      "name": "Однотонный зеленый стул",
+      "name": "Однотонное зеленое кресло",
       "en": "Solid Green Chair",
       "value": 0,
       "recycles": {
@@ -19963,7 +20205,7 @@
     },
     {
       "id": "solid_green_chair_design",
-      "name": "Схема: Однотонный зеленый стул",
+      "name": "Схема — Однотонное зеленое кресло",
       "en": "Solid Green Chair Design",
       "value": 5000,
       "recycles": {},
@@ -20486,7 +20728,7 @@
     },
     {
       "id": "studious_room",
-      "name": "Учебная комната",
+      "name": "Исследовательская комната",
       "en": "Studious Room",
       "value": 0,
       "recycles": {},
@@ -20495,7 +20737,7 @@
     },
     {
       "id": "study_armchair",
-      "name": "Кабинетное кресло",
+      "name": "Кресло из кабинета",
       "en": "Study Armchair",
       "value": 100,
       "recycles": {
@@ -20506,7 +20748,7 @@
     },
     {
       "id": "study_armchair_design",
-      "name": "Схема кабинетного кресла",
+      "name": "Схема — Кресло из кабинета",
       "en": "Study Armchair Design",
       "value": 5000,
       "recycles": {},
@@ -20515,7 +20757,7 @@
     },
     {
       "id": "study_ceiling_lamp",
-      "name": "Потолочная лампа для кабинета",
+      "name": "Светильник из кабинета",
       "en": "Study Ceiling Lamp",
       "value": 0,
       "recycles": {
@@ -20526,7 +20768,7 @@
     },
     {
       "id": "study_ceiling_lamp_design",
-      "name": "Схема потолочной лампы для кабинета",
+      "name": "Схема — Светильник из кабинета",
       "en": "Study Ceiling Lamp Design",
       "value": 5000,
       "recycles": {},
@@ -20535,7 +20777,7 @@
     },
     {
       "id": "study_piano",
-      "name": "Кабинетное пианино",
+      "name": "Пианино из кабинета",
       "en": "Study Piano",
       "value": 0,
       "recycles": {
@@ -20546,7 +20788,7 @@
     },
     {
       "id": "study_piano_design",
-      "name": "Схема — Кабинетное пианино",
+      "name": "Схема — Пианино из кабинета",
       "en": "Study Piano Design",
       "value": 5000,
       "recycles": {},
@@ -20555,7 +20797,7 @@
     },
     {
       "id": "study_tv_stand",
-      "name": "Тумба под телевизор (кабинет)",
+      "name": "Подставка для телевизора из кабинета",
       "en": "Study TV Stand",
       "value": 0,
       "recycles": {
@@ -20566,7 +20808,7 @@
     },
     {
       "id": "study_tv_stand_design",
-      "name": "Схема тумбы под телевизор (кабинет)",
+      "name": "Схема — Подставка для телевизора из кабинета",
       "en": "Study TV Stand Design",
       "value": 5000,
       "recycles": {},
@@ -20575,7 +20817,7 @@
     },
     {
       "id": "sturdy_aviary_table",
-      "name": "Крепкий стол для вольера",
+      "name": "Надежный птичий стол",
       "en": "Sturdy Aviary Table",
       "value": 0,
       "recycles": {
@@ -20586,7 +20828,7 @@
     },
     {
       "id": "sturdy_aviary_table_design",
-      "name": "Схема: Крепкий стол для вольера",
+      "name": "Схема — Надежный птичий стол",
       "en": "Sturdy Aviary Table Design",
       "value": 5000,
       "recycles": {},
@@ -20595,7 +20837,7 @@
     },
     {
       "id": "sturdy_bureau_chair",
-      "name": "Крепкий стул бюро",
+      "name": "Надежный офисный стул",
       "en": "Sturdy Bureau Chair",
       "value": 0,
       "recycles": {
@@ -20606,7 +20848,7 @@
     },
     {
       "id": "sturdy_bureau_chair_design",
-      "name": "Схема: Крепкий стул бюро",
+      "name": "Схема — Надежный офисный стул",
       "en": "Sturdy Bureau Chair Design",
       "value": 5000,
       "recycles": {},
@@ -20615,7 +20857,7 @@
     },
     {
       "id": "sturdy_bureau_sofa",
-      "name": "Крепкий диван бюро",
+      "name": "Надежный офисный диван",
       "en": "Sturdy Bureau Sofa",
       "value": 0,
       "recycles": {
@@ -20626,7 +20868,7 @@
     },
     {
       "id": "sturdy_bureau_sofa_design",
-      "name": "Схема: Крепкий диван бюро",
+      "name": "Схема — Надежный офисный диван",
       "en": "Sturdy Bureau Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -20635,7 +20877,7 @@
     },
     {
       "id": "sturdy_den_bed",
-      "name": "Крепкая кровать рейдерской базы",
+      "name": "Надежная кровать с базы",
       "en": "Sturdy Den Bed",
       "value": 0,
       "recycles": {
@@ -20646,7 +20888,7 @@
     },
     {
       "id": "sturdy_den_bed_design",
-      "name": "Схема: Крепкая кровать рейдерской базы",
+      "name": "Схема — Надежная кровать с базы",
       "en": "Sturdy Den Bed Design",
       "value": 5000,
       "recycles": {},
@@ -20655,7 +20897,7 @@
     },
     {
       "id": "sturdy_den_shelf",
-      "name": "Крепкая полка рейдерской базы",
+      "name": "Надежная полка с базы",
       "en": "Sturdy Den Shelf",
       "value": 0,
       "recycles": {
@@ -20666,7 +20908,7 @@
     },
     {
       "id": "sturdy_den_shelf_design",
-      "name": "Схема: Крепкая полка рейдерской базы",
+      "name": "Схема — Надежная полка с базы",
       "en": "Sturdy Den Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -20675,7 +20917,7 @@
     },
     {
       "id": "sturdy_faculty_chair",
-      "name": "Крепкое кресло факультета",
+      "name": "Надежный профессорский стул",
       "en": "Sturdy Faculty Chair",
       "value": 0,
       "recycles": {
@@ -20686,7 +20928,7 @@
     },
     {
       "id": "sturdy_faculty_chair_design",
-      "name": "Схема Крепкого кресла факультета",
+      "name": "Схема — Надежный профессорский стул",
       "en": "Sturdy Faculty Chair Design",
       "value": 5000,
       "recycles": {},
@@ -20695,7 +20937,7 @@
     },
     {
       "id": "sturdy_faculty_table",
-      "name": "Крепкий факультетский стол",
+      "name": "Надежный профессорский стол",
       "en": "Sturdy Faculty Table",
       "value": 0,
       "recycles": {
@@ -20706,7 +20948,7 @@
     },
     {
       "id": "sturdy_faculty_table_design",
-      "name": "Схема Крепкого факультетского стола",
+      "name": "Схема — Надежный профессорский стол",
       "en": "Sturdy Faculty Table Design",
       "value": 5000,
       "recycles": {},
@@ -20715,7 +20957,7 @@
     },
     {
       "id": "sturdy_lab_cabinet",
-      "name": "Крепкий лабораторный шкаф",
+      "name": "Надежная лабораторная тумбочка",
       "en": "Sturdy Lab Cabinet",
       "value": 0,
       "recycles": {
@@ -20726,7 +20968,7 @@
     },
     {
       "id": "sturdy_lab_cabinet_design",
-      "name": "Схема: Крепкий лабораторный шкаф",
+      "name": "Схема — Надежная лабораторная тумбочка",
       "en": "Sturdy Lab Cabinet Design",
       "value": 5000,
       "recycles": {},
@@ -20735,7 +20977,7 @@
     },
     {
       "id": "sturdy_lab_cabinet_wide",
-      "name": "Крепкий лабораторный шкаф (широкий)",
+      "name": "Надежная лабораторная тумба (широкая)",
       "en": "Sturdy Lab Cabinet (Wide)",
       "value": 0,
       "recycles": {
@@ -20746,7 +20988,7 @@
     },
     {
       "id": "sturdy_lab_cabinet_wide_design",
-      "name": "Схема: Крепкий лабораторный шкаф (широкий)",
+      "name": "Схема — Надежная лабораторная тумба",
       "en": "Sturdy Lab Cabinet (Wide) Design",
       "value": 5000,
       "recycles": {},
@@ -20755,7 +20997,7 @@
     },
     {
       "id": "sturdy_lab_chair",
-      "name": "Крепкий лабораторный стул",
+      "name": "Надежный лабораторный стул",
       "en": "Sturdy Lab Chair",
       "value": 0,
       "recycles": {
@@ -20766,7 +21008,7 @@
     },
     {
       "id": "sturdy_lab_chair_design",
-      "name": "Схема крепкого лабораторного стула",
+      "name": "Схема — Надежный лабораторный стул",
       "en": "Sturdy Lab Chair Design",
       "value": 5000,
       "recycles": {},
@@ -20775,7 +21017,7 @@
     },
     {
       "id": "sturdy_shelf",
-      "name": "Крепкая полка",
+      "name": "Надежные полки",
       "en": "Sturdy Shelf",
       "value": 0,
       "recycles": {
@@ -20786,7 +21028,7 @@
     },
     {
       "id": "sturdy_shelf_design",
-      "name": "Схема: Крепкая полка",
+      "name": "Схема — Надежные полки",
       "en": "Sturdy Shelf Design",
       "value": 5000,
       "recycles": {},
@@ -20795,7 +21037,7 @@
     },
     {
       "id": "sturdy_stash",
-      "name": "Крепкое хранилище",
+      "name": "Надежный сейф",
       "en": "Sturdy Stash",
       "value": 0,
       "recycles": {
@@ -20806,7 +21048,7 @@
     },
     {
       "id": "sturdy_stash_design",
-      "name": "Схема Крепкого хранилища",
+      "name": "Схема — Надежный сейф",
       "en": "Sturdy Stash Design",
       "value": 5000,
       "recycles": {},
@@ -20815,7 +21057,7 @@
     },
     {
       "id": "sturdy_wardrobe",
-      "name": "Крепкий шкаф для одежды",
+      "name": "Надежный шкаф",
       "en": "Sturdy Wardrobe",
       "value": 0,
       "recycles": {
@@ -20826,7 +21068,7 @@
     },
     {
       "id": "sturdy_wardrobe_design",
-      "name": "Схема Крепкого шкафа для одежды",
+      "name": "Схема — Надежный шкаф",
       "en": "Sturdy Wardrobe Design",
       "value": 5000,
       "recycles": {},
@@ -20835,7 +21077,7 @@
     },
     {
       "id": "sturdy_weapon_rack",
-      "name": "Крепкая стойка для оружия",
+      "name": "Надежный стенд для оружия",
       "en": "Sturdy Weapon Rack",
       "value": 0,
       "recycles": {
@@ -20846,7 +21088,7 @@
     },
     {
       "id": "sturdy_weapon_rack_design",
-      "name": "Схема: Крепкая стойка для оружия",
+      "name": "Схема — Надежный стенд для оружия",
       "en": "Sturdy Weapon Rack Design",
       "value": 5000,
       "recycles": {},
@@ -21181,7 +21423,7 @@
     {
       "id": "tactical_mk3_revival_blueprint",
       "name": "Чертеж для стратегии 3 (восстановление)",
-      "en": "Tactical Mk. 3 (Revival) Blueprint",
+      "en": "Tactical Mk.3 (Revival) Blueprint",
       "value": 5000,
       "recycles": {},
       "found": [],
@@ -21215,7 +21457,7 @@
     {
       "id": "tactical_mk3_smoke_blueprint",
       "name": "Чертеж — Стратегия 3 (дым)",
-      "en": "Tactical Mk. 3 (Smoke) Blueprint",
+      "en": "Tactical Mk.3 (Smoke) Blueprint",
       "value": 5000,
       "recycles": {},
       "found": [],
@@ -21495,7 +21737,7 @@
     },
     {
       "id": "timeless_room",
-      "name": "Комната вне времени",
+      "name": "Комната на все времена",
       "en": "Timeless Room",
       "value": 0,
       "recycles": {},
@@ -21759,7 +22001,7 @@
     },
     {
       "id": "tufted_sofa_design",
-      "name": "Схема стеганого дивана",
+      "name": "Схема — Стеганый диван",
       "en": "Tufted Sofa Design",
       "value": 5000,
       "recycles": {},
@@ -21946,7 +22188,7 @@
     },
     {
       "id": "venetian_dresser_design",
-      "name": "Схема Венецианского комода",
+      "name": "Схема — Венецианский комод",
       "en": "Venetian Dresser Design",
       "value": 5000,
       "recycles": {},
@@ -22260,7 +22502,7 @@
     },
     {
       "id": "warehouse_chair",
-      "name": "Складской стул",
+      "name": "Стул со склада",
       "en": "Warehouse Chair",
       "value": 0,
       "recycles": {
@@ -22271,7 +22513,7 @@
     },
     {
       "id": "warehouse_chair_design",
-      "name": "Схема складского стула",
+      "name": "Схема — Стул со склада",
       "en": "Warehouse Chair Design",
       "value": 5000,
       "recycles": {},
@@ -22280,7 +22522,7 @@
     },
     {
       "id": "warehouse_desk",
-      "name": "Складской письменный стол",
+      "name": "Стол со склада",
       "en": "Warehouse Desk",
       "value": 0,
       "recycles": {
@@ -22291,7 +22533,7 @@
     },
     {
       "id": "warehouse_desk_design",
-      "name": "Схема складского письменного стола",
+      "name": "Схема — Стол со склада",
       "en": "Warehouse Desk Design",
       "value": 5000,
       "recycles": {},
@@ -22300,7 +22542,7 @@
     },
     {
       "id": "warehouse_dresser",
-      "name": "Складской комод",
+      "name": "Стеллаж со склада",
       "en": "Warehouse Dresser",
       "value": 0,
       "recycles": {
@@ -22311,7 +22553,7 @@
     },
     {
       "id": "warehouse_dresser_design",
-      "name": "Схема складского комода",
+      "name": "Схема — Стеллаж со склада",
       "en": "Warehouse Dresser Design",
       "value": 5000,
       "recycles": {},
@@ -22372,7 +22614,7 @@
     },
     {
       "id": "weather_station_chair",
-      "name": "Стул метеостанции",
+      "name": "Стул с метеостанции",
       "en": "Weather Station Chair",
       "value": 0,
       "recycles": {
@@ -22383,7 +22625,7 @@
     },
     {
       "id": "weather_station_chair_design",
-      "name": "Схема стула метеостанции",
+      "name": "Схема — Стул с метеостанции",
       "en": "Weather Station Chair Design",
       "value": 5000,
       "recycles": {},
@@ -22392,7 +22634,7 @@
     },
     {
       "id": "weather_station_table",
-      "name": "Стол метеостанции",
+      "name": "Стол с метеостанции",
       "en": "Weather Station Table",
       "value": 0,
       "recycles": {
@@ -22403,7 +22645,7 @@
     },
     {
       "id": "weather_station_table_design",
-      "name": "Схема стола метеостанции",
+      "name": "Схема — Стол с метеостанции",
       "en": "Weather Station Table Design",
       "value": 5000,
       "recycles": {},
@@ -22467,7 +22709,7 @@
     },
     {
       "id": "winter_table_design",
-      "name": "Схема Зимнего стола",
+      "name": "Схема — Зимний стол",
       "en": "Winter Table Design",
       "value": 5000,
       "recycles": {},
@@ -22535,7 +22777,7 @@
     },
     {
       "id": "work_light",
-      "name": "Рабочая лампа",
+      "name": "Рабочий свет",
       "en": "Work Light",
       "value": 0,
       "recycles": {
@@ -22546,7 +22788,7 @@
     },
     {
       "id": "work_light_design",
-      "name": "Схема рабочей лампы",
+      "name": "Схема — Рабочий свет",
       "en": "Work Light Design",
       "value": 5000,
       "recycles": {},
