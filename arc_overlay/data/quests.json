@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-28T09:41:34Z",
+  "generated_at": "2026-10-29T10:00:02Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -12074,7 +12074,11 @@
       "en": "Dead Flowers",
       "value": 640,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Old World",
+        "Residential",
+        "Commercial"
+      ],
       "drops": []
     },
     {
@@ -13590,7 +13594,9 @@
       "en": "Fancy Plate",
       "value": 7000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Old World"
+      ],
       "drops": []
     },
     {
@@ -16369,7 +16375,9 @@
       "en": "Mask Fragment",
       "value": 7000,
       "recycles": {},
-      "found": [],
+      "found": [
+        "Old World"
+      ],
       "drops": []
     },
     {
