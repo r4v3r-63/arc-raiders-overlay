@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-29T10:00:02Z",
+  "generated_at": "2026-10-31T09:40:33Z",
   "source": "Квесты и предметы: github.com/RaidTheory/arcraiders-data (MIT) и arctracker.io. Гайды и скриншоты: arcraiders.wiki (CC BY-SA 4.0). Карты и места: github.com/tyler45455/Arc-Raiders-hub (данные arcraiders.wiki, CC BY-SA 4.0). Игровые материалы © Embark Studios AB.",
   "maps": [
     {
@@ -2079,7 +2079,7 @@
       "hints": [
         "«Ракетчик»: встречается — Поле битвы у дамбы, Космопорт, Синие ворота, Погребенный город. Слабое место: уничтожьте два двигателя или стреляйте в ядро снизу."
       ],
-      "wiki_url": "https://arcraiders.wiki/wiki/Disrupting_the_Frigate",
+      "wiki_url": "https://arcraiders.wiki/wiki/Disrupting_The_Frigate",
       "next": [],
       "previous": [
         "boarding_the_frigate"
